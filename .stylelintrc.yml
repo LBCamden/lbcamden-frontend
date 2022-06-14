@@ -9,6 +9,7 @@ rules:
   #
   # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
   scss/at-extend-no-missing-placeholder: null
+  scss/double-slash-comment-whitespace-inside: null
   max-nesting-depth: 8
   selector-max-id: 1
   selector-id-pattern: null
