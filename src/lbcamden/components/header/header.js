@@ -2,7 +2,7 @@ import '../../vendor/polyfills/Event'
 import '../../vendor/polyfills/Element/prototype/classList'
 import '../../vendor/polyfills/Function/prototype/bind'
 
-function LBCHeader ($module) {
+function LBCamdenHeader ($module) {
   this.$module = $module
   this.$menuButton = $module && $module.querySelector('.govuk-js-header-toggle')
   this.$menu = this.$menuButton && $module.querySelector(
@@ -16,7 +16,7 @@ function LBCHeader ($module) {
  * Check for the presence of the header, menu and menu button – if any are
  * missing then there's nothing to do so return early.
  */
-LBCHeader.prototype.init = function () {
+LBCamdenHeader.prototype.init = function () {
   if (!this.$module || !this.$menuButton || !this.$menu) {
     return
   }
@@ -33,7 +33,7 @@ LBCHeader.prototype.init = function () {
  *
  * @param {boolean} isVisible Whether the menu is currently visible
  */
-LBCHeader.prototype.syncState = function (isVisible) {
+LBCamdenHeader.prototype.syncState = function (isVisible) {
   this.$menuButton.classList.toggle('govuk-header__menu-button--open', isVisible)
   this.$menuButton.setAttribute('aria-expanded', isVisible)
 }
@@ -44,9 +44,9 @@ LBCHeader.prototype.syncState = function (isVisible) {
  * When the menu button is clicked, change the visibility of the menu and then
  * sync the accessibility state and menu button state
  */
-LBCHeader.prototype.handleMenuButtonClick = function () {
+LBCamdenHeader.prototype.handleMenuButtonClick = function () {
   var isVisible = this.$menu.classList.toggle('govuk-header__navigation-list--open')
   this.syncState(isVisible)
 }
 
-export default LBCHeader
+export default LBCamdenHeader
