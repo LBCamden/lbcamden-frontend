@@ -1,7 +1,6 @@
 {% from "govuk/components/skip-link/macro.njk" import govukSkipLink -%}
-{% from "../../../src/LBS/components/header/macro.njk" import lbsHeader -%}
-{% from "../../../src/LBS/components/footer/macro.njk" import lbsFooter -%}
-{% from "../../../src/LBS/components/page-feedback/macro.njk" import lbsPageFeedback -%}
+{% from "../../../src/lbcamden/components/header/macro.njk" import LBCamdenHeader -%}
+
 {# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
 {%- set assetUrl = assetUrl | default(assetPath) -%}
 <!DOCTYPE html>
@@ -51,8 +50,8 @@
 {% endblock %}
 
 {% block header %}
-  {{ lbsHeader({
-    phaseBanner: true
+  {{ LBCamdenHeader({
+
   }) }}
 {% endblock %}
 
@@ -71,9 +70,9 @@
 {% endblock %}
 
 {% block footer %}
-  {{ lbsFooter({
-    pageFeedback: true
-  }) }}
+{#  {{ lbsFooter({#}
+{#    pageFeedback: true#}
+{#  }) }}#}
 {% endblock %}
 
 {% block bodyEnd %}{% endblock %}
