@@ -7,7 +7,7 @@
 /// Get colour
 ///
 /// @param {String} $colour - Name of colour from the colour palette
-///   (`$govuk-colours`)
+///   (`$lbcamden-colours`)
 /// @param {String} $legacy - Either the name of colour from the legacy palette
 ///   or a colour literal, to return instead when in 'legacy mode' - matching
 ///   the palette from GOV.UK Template, Elements or Frontend Toolkit
@@ -15,12 +15,12 @@
 ///
 /// @example scss - Using legacy colours from the palette
 ///  .foo {
-///    background-colour: govuk-colour("mid-grey", $legacy: "grey-2");
+///    background-colour: lbcamden-colour("mid-grey", $legacy: "grey-2");
 ///  }
 ///
 /// @example scss - Using legacy colour literals
 ///  .foo {
-///    background-colour: govuk-colour("green", $legacy: #BADA55);
+///    background-colour: lbcamden-colour("green", $legacy: #BADA55);
 ///  }
 ///
 /// @throw if `$colour` is not a colour from the colour palette
@@ -37,33 +37,6 @@
   @return map-get($lbcamden-colours, $colour);
 }
 
-/// Get the colour for a government organisation
-///
-/// @param {String} $organisation - Organisation name, lowercase, hyphenated
-/// @param {Boolean} $websafe [true] - By default a 'websafe' version of the
-///   colour will be returned which meets contrast requirements . If you want to
-///   use the non-websafe version you can set this to `false` but your should
-///   ensure that you still meets contrast requirements for accessibility - for
-///   example, do not use the non-websafe version for text.
-///
-/// @return {Colour} Representation of colour for organisation
-/// @throw if `$organisation` is not a known organisation
-/// @access public
-
-@function govuk-organisation-colour($organisation, $websafe: true) {
-  @if not map-has-key($govuk-colours-organisations, $organisation) {
-    @error "Unknown organisation `#{$organisation}`";
-  }
-
-  $org-colour: map-get($govuk-colours-organisations, $organisation);
-
-  @if $websafe and map-has-key($org-colour, colour-websafe) {
-    @return map-get($org-colour, colour-websafe);
-  } @else {
-    @return map-get($org-colour, colour);
-  }
-}
-
 /// Make a colour darker by mixing it with black
 ///
 /// @param {Colour} $colour - colour to shade
@@ -71,7 +44,7 @@
 /// @return {Colour}
 /// @access public
 
-@function govuk-shade($colour, $percentage) {
+@function lbcamden-shade($colour, $percentage) {
   @return mix(#000000, $colour, $percentage);
 }
 
@@ -82,6 +55,6 @@
 /// @return {Colour}
 /// @access public
 
-@function govuk-tint($colour, $percentage) {
-  @return mix(govuk-colour("white"), $colour, $percentage);
+@function lbcamden-tint($colour, $percentage) {
+  @return mix(lbcamden-colour("white"), $colour, $percentage);
 }
