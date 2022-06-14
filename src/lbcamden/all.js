@@ -13,7 +13,6 @@ function initAll (options) {
   nodeListForEach($LBCamdenHeaders, function ($LBCamdenHeader) {
     new LBCamdenHeader($LBCamdenHeader).init()
   })
-
 }
 
 export {

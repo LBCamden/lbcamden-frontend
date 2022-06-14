@@ -119,43 +119,43 @@ function compileOldIE (done) {
   done()
 }
 
-function compileLegacy (done) {
-  gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
-    .pipe(plumber(errorHandler))
-    .pipe(sass({
-      includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-    }))
-    .pipe(postcss([
-      autoprefixer,
-      // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
-      // :hover class you can use to simulate the hover state in the review app
-      postcsspseudoclasses
-    ]))
-    .pipe(gulp.dest(taskArguments.destination + '/'))
+// function compileLegacy (done) {
+//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
+//     .pipe(plumber(errorHandler))
+//     .pipe(sass({
+//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
+//     }))
+//     .pipe(postcss([
+//       autoprefixer,
+//       // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
+//       // :hover class you can use to simulate the hover state in the review app
+//       postcsspseudoclasses
+//     ]))
+//     .pipe(gulp.dest(taskArguments.destination + '/'))
+//
+//   done()
+// }
 
-  done()
-}
-
-function compileLegacyIE (done) {
-  gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy-ie8.scss'))
-    .pipe(plumber(errorHandler))
-    .pipe(sass({
-      includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-    }))
-    .pipe(postcss([
-      autoprefixer,
-      postcsspseudoclasses,
-      require('oldie')({
-        rgba: { filter: true },
-        rem: { disable: true },
-        unmq: { disable: true },
-        pseudo: { disable: true }
-      })
-    ]))
-    .pipe(gulp.dest(taskArguments.destination + '/'))
-
-  done()
-}
+// function compileLegacyIE (done) {
+//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy-ie8.scss'))
+//     .pipe(plumber(errorHandler))
+//     .pipe(sass({
+//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
+//     }))
+//     .pipe(postcss([
+//       autoprefixer,
+//       postcsspseudoclasses,
+//       require('oldie')({
+//         rgba: { filter: true },
+//         rem: { disable: true },
+//         unmq: { disable: true },
+//         pseudo: { disable: true }
+//       })
+//     ]))
+//     .pipe(gulp.dest(taskArguments.destination + '/'))
+//
+//   done()
+// }
 
 function compileFullPageStyles (done) {
   const compileFullPageExampleStylesheets = configPaths.fullPageExamples + '**/styles.scss'
@@ -177,9 +177,9 @@ gulp.task('scss:compile', function (done) {
   var tasks = gulp.parallel(compileStyles, compileOldIE)
 
   if (isPublic) {
-    tasks = gulp.parallel(compileStyles, compileOldIE, compileLegacy, compileLegacyIE, compileFullPageStyles)
+    tasks = gulp.parallel(compileStyles, compileOldIE, compileFullPageStyles)
   } else if (!isDist) {
-    tasks = gulp.parallel(compileStyles, compileOldIE, compileLegacy, compileLegacyIE)
+    tasks = gulp.parallel(compileStyles, compileOldIE)
   }
 
   tasks()
