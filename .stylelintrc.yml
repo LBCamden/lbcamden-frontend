@@ -8,6 +8,11 @@ rules:
   # rules
   #
   # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
+  scss/at-extend-no-missing-placeholder: null
+  max-nesting-depth: 8
+  selector-max-id: 1
+  selector-id-pattern: null
+  declaration-property-value-disallowed-list: null
   order/properties-order:
     - content
     - quotes

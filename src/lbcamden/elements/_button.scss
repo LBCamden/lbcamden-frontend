@@ -1,0 +1,59 @@
+.lbs-button {
+  transition: .2s all;
+  //border-radius: $lbs-border-radius;
+  color: $lbs-black;
+  background: $lbs-yellow;
+  font-family: $lbs-heading-font;
+
+  &:link,
+  &:active,
+  &:visited {
+    color: $lbs-black;
+  }
+
+  svg {
+    transition: .2s all;
+  }
+
+  &:hover {
+    color: $lbs-black;
+    background: darken($lbs-yellow, 15%);
+
+    svg {
+      transform: translateX(2px);
+    }
+  }
+
+  &--secondary {
+    background: lighten($lbs-grey, 40%);
+
+    &:hover {
+      background: lighten($lbs-grey, 25%);
+    }
+  }
+
+  &--tertiary {
+    border-color: $lbs-green-1;
+    color: $lbs-green-1;
+    background: $lbs-white;
+    box-shadow: none;
+
+    &:link,
+    &:active,
+    &:visited {
+      color: $lbs-green-1;
+    }
+
+    &:hover {
+      border-color: $lbs-white;
+      color: $lbs-white;
+      background: rgba($lbs-green-1, 1);
+    }
+  }
+
+  &:focus {
+    outline: 3px solid $lbs-black;
+    background: darken($lbs-yellow, 15%);
+    box-shadow: none;
+  }
+}
