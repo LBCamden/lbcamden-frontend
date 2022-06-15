@@ -1,5 +1,6 @@
 {% from "govuk/components/skip-link/macro.njk" import govukSkipLink -%}
 {% from "../../../src/lbcamden/components/header/macro.njk" import LBCamdenHeader -%}
+{% from "../../../src/lbcamden/components/footer/macro.njk" import LBCamdenFooter -%}
 
 {# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
 {%- set assetUrl = assetUrl | default(assetPath) -%}
@@ -70,9 +71,9 @@
 {% endblock %}
 
 {% block footer %}
-{#  {{ lbsFooter({#}
-{#    pageFeedback: true#}
-{#  }) }}#}
+  {{ LBCamdenFooter({
+
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}{% endblock %}
