@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
-{% from "back-link/macro.njk" import govukBackLink %}
-{% from "button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -80,7 +80,7 @@
     }) }}
 
     <a href="#" class="govuk-link">Upgrade it</a>
-    
+
     <a href="#" class="govuk-link">Charge it</a>
 
     {{ govukButton({
