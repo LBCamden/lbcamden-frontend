@@ -49,7 +49,7 @@ gulp.task('copy-files', () => {
       path.extname = '.json'
     }))
     .pipe(yamlFiles.restore)
-    .pipe(gulp.dest(taskArguments.destination + '/govuk/'))
+    .pipe(gulp.dest(taskArguments.destination + '/lbcamden/'))
 })
 
 function generateFixtures (file) {
@@ -92,7 +92,7 @@ gulp.task('js:copy-esm', () => {
         path.extname = '.mjs'
       }
     }))
-    .pipe(gulp.dest(taskArguments.destination + '/govuk-esm/'))
+    .pipe(gulp.dest(taskArguments.destination + '/lbcamden-esm/'))
 })
 
 function generateMacroOptions (file) {

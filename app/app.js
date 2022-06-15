@@ -15,6 +15,7 @@ const configPaths = require('../config/paths.json')
 
 // Set up views
 const appViews = [
+  'node_modules/govuk-frontend/',
   configPaths.layouts,
   configPaths.views,
   configPaths.examples,

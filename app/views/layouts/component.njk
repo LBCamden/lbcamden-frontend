@@ -1,4 +1,4 @@
-{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "macros/showExamples.njk" import showExamples %}
 
 {% extends "full-width.njk" %}
@@ -17,7 +17,7 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     "items": [
-    { text: 'GOV.UK Frontend', href: '/' + legacyQuery },
+    { text: 'CAMDEN.GOV.UK Frontend', href: '/' + legacyQuery },
     { text: componentNameHuman | capitalize }
     ]
   }) }}

@@ -35,11 +35,11 @@ const isDist = taskArguments.destination === 'dist' || false
 
 // Set the destination
 const destinationPath = function () {
-  // Public & Dist directories do no need namespaced with `govuk`
+  // Public & Dist directories do no need namespaced with `lbcamden`
   if (taskArguments.destination === 'dist' || taskArguments.destination === 'public') {
     return taskArguments.destination
   } else {
-    return `${taskArguments.destination}/govuk/`
+    return `${taskArguments.destination}/lbcamden/`
   }
 }
 
@@ -71,7 +71,7 @@ function compileStyles (done) {
     ])))
     .pipe(gulpif(isDist,
       rename({
-        basename: 'govuk-frontend',
+        basename: 'lbcamden-frontend',
         extname: '.min.css'
       })
     ))
@@ -110,7 +110,7 @@ function compileOldIE (done) {
     ])))
     .pipe(gulpif(isDist,
       rename({
-        basename: 'govuk-frontend-ie8',
+        basename: 'lbcamden-frontend-ie8',
         extname: '.min.css'
       })
     ))
@@ -119,43 +119,43 @@ function compileOldIE (done) {
   done()
 }
 
-function compileLegacy (done) {
-  gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
-    .pipe(plumber(errorHandler))
-    .pipe(sass({
-      includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-    }))
-    .pipe(postcss([
-      autoprefixer,
-      // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
-      // :hover class you can use to simulate the hover state in the review app
-      postcsspseudoclasses
-    ]))
-    .pipe(gulp.dest(taskArguments.destination + '/'))
+// function compileLegacy (done) {
+//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
+//     .pipe(plumber(errorHandler))
+//     .pipe(sass({
+//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
+//     }))
+//     .pipe(postcss([
+//       autoprefixer,
+//       // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
+//       // :hover class you can use to simulate the hover state in the review app
+//       postcsspseudoclasses
+//     ]))
+//     .pipe(gulp.dest(taskArguments.destination + '/'))
+//
+//   done()
+// }
 
-  done()
-}
-
-function compileLegacyIE (done) {
-  gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy-ie8.scss'))
-    .pipe(plumber(errorHandler))
-    .pipe(sass({
-      includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-    }))
-    .pipe(postcss([
-      autoprefixer,
-      postcsspseudoclasses,
-      require('oldie')({
-        rgba: { filter: true },
-        rem: { disable: true },
-        unmq: { disable: true },
-        pseudo: { disable: true }
-      })
-    ]))
-    .pipe(gulp.dest(taskArguments.destination + '/'))
-
-  done()
-}
+// function compileLegacyIE (done) {
+//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy-ie8.scss'))
+//     .pipe(plumber(errorHandler))
+//     .pipe(sass({
+//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
+//     }))
+//     .pipe(postcss([
+//       autoprefixer,
+//       postcsspseudoclasses,
+//       require('oldie')({
+//         rgba: { filter: true },
+//         rem: { disable: true },
+//         unmq: { disable: true },
+//         pseudo: { disable: true }
+//       })
+//     ]))
+//     .pipe(gulp.dest(taskArguments.destination + '/'))
+//
+//   done()
+// }
 
 function compileFullPageStyles (done) {
   const compileFullPageExampleStylesheets = configPaths.fullPageExamples + '**/styles.scss'
@@ -177,9 +177,9 @@ gulp.task('scss:compile', function (done) {
   var tasks = gulp.parallel(compileStyles, compileOldIE)
 
   if (isPublic) {
-    tasks = gulp.parallel(compileStyles, compileOldIE, compileLegacy, compileLegacyIE, compileFullPageStyles)
+    tasks = gulp.parallel(compileStyles, compileOldIE, compileFullPageStyles)
   } else if (!isDist) {
-    tasks = gulp.parallel(compileStyles, compileOldIE, compileLegacy, compileLegacyIE)
+    tasks = gulp.parallel(compileStyles, compileOldIE)
   }
 
   tasks()
@@ -198,10 +198,10 @@ gulp.task('js:compile', (done) => {
   srcFiles.forEach(function (file) {
     // This is combined with desinationPath in gulp.dest()
     // so the files are output to the correct folders
-    const newDirectoryPath = path.dirname(file).replace('src/govuk', '')
+    const newDirectoryPath = path.dirname(file).replace('src/lbcamden', '')
 
     // We only want to give component JavaScript a unique module name
-    let moduleName = 'GOVUKFrontend'
+    let moduleName = 'LBCamdenFrontend'
     if (path.dirname(file).includes('/components/')) {
       moduleName = componentNameToJavaScriptModuleName(path.parse(file).name)
     }
@@ -221,7 +221,7 @@ gulp.task('js:compile', (done) => {
       })))
       .pipe(gulpif(isDist,
         rename({
-          basename: 'govuk-frontend',
+          basename: 'lbcamden-frontend',
           extname: '.min.js'
         })
       ))

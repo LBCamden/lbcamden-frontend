@@ -1,0 +1,59 @@
+.lbs-button {
+  transition: .2s all;
+  //border-radius: $lbs-border-radius; @todo - add $lbs-colour("colour") function
+  color: lbcamden-colour("black");
+  background: lbcamden-colour("yellow");
+  //font-family: $lbs-heading-font;
+
+  &:link,
+  &:active,
+  &:visited {
+    color: lbcamden-colour("black");
+  }
+
+  svg {
+    transition: .2s all;
+  }
+
+  &:hover {
+    color: lbcamden-colour("black");
+    //background: darken(lbcamden-colour("yellow"), 15%);
+
+    svg {
+      transform: translateX(2px);
+    }
+  }
+
+  &--secondary {
+    //background: lighten(lbcamden-colour("grey"), 40%);
+
+    &:hover {
+      //background: lighten(lbcamden-colour("grey"), 25%);
+    }
+  }
+
+  &--tertiary {
+    border-color: lbcamden-colour("green");
+    color: lbcamden-colour("green");
+    background: lbcamden-colour("white");
+    box-shadow: none;
+
+    &:link,
+    &:active,
+    &:visited {
+      color: lbcamden-colour("green");
+    }
+
+    &:hover {
+      border-color: lbcamden-colour("white");
+      color: lbcamden-colour("white");
+      background: lbcamden-colour("green");
+    }
+  }
+
+  &:focus {
+    outline: 3px solid lbcamden-colour("black");
+    //background: darken(lbcamden-colour("yellow"), 15%);
+    box-shadow: none;
+  }
+}
