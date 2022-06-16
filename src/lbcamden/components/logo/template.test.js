@@ -24,21 +24,20 @@ describe('logo', () => {
       const $ = render('logo', examples.classes)
 
       const $component = $('.LBCamden-Logo')
-      expect($component.attr('class')).toContain('logo-class-test')
       expect($component.hasClass('logo-class-test')).toBeTruthy()
     })
 
     it('renders custom fill colour', () => {
       const $ = render('logo', examples.fillColour)
 
-      const $component = $('.LBCamden-Logo')
+      const $component = $('.LBCamden-Logo path')
       expect($component.attr('fill')).toContain('ae094e')
     })
   })
 
   describe('SVG logo', () => {
     const $ = render('logo', examples.default)
-    const $svg = $('.govuk-header__logotype-crown')
+    const $svg = $('.LBCamden-Logo')
 
     it('sets focusable="false" so that IE does not treat it as an interactive element', () => {
       expect($svg.attr('focusable')).toEqual('false')

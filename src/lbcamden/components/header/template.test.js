@@ -39,7 +39,7 @@ describe('header', () => {
       const $ = render('header', examples.classes)
 
       const $component = $('.LBCamden-Header')
-      expect($component.hasClass('app-logo--custom-modifier')).toBeTruthy()
+      expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
   })
 })
