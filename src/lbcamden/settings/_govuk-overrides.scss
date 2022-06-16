@@ -1,0 +1,26 @@
+// GOVUK Overrides
+
+$govuk-focus-colour: lbcamden-colour("yellow");
+$button-shadow-size: 2;
+
+$govuk-font-family: inherit;
+$govuk-font-family: "GDS Transport", arial, sans-serif;
+$govuk-global-styles: true; // Applies styles to entire site eg. p and ul
+
+$govuk-page-width: 1100px; // Taken from current sutton.gov.uk site
+
+$govuk-text-colour: lbcamden-colour("black");
+$govuk-link-colour: lbcamden-colour("blue");
+$govuk-link-visited-colour: darken($govuk-link-colour, 20%);
+
+$govuk-brand-colour: lbcamden-colour("plum");
+$govuk-success-colour: lbcamden-colour("green");
+
+$govuk-error-colour: lbcamden-colour("dark-red");
+
+$govuk-breakpoints: (
+  mobile:  320px,
+  tablet:  641px,
+  desktop: 769px,
+  wide: 1024px
+);
