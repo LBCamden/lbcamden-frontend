@@ -1,0 +1,79 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: fillColour
+    type: string
+    required: false
+    description: Hex colour value that will replace the defautl colour.
+  - name: pride
+    type: boolean
+    required: false
+    description: Option to display 'pride gradient' version of the logo
+  - name: icon
+    type: boolean
+    required: false
+    description: Option to show the icon only (with no text).
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Header must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Header must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Header must:
+  - be presentational when linked to from accompanying text (crown icon).
+
+  Landmarks and Roles in the Header should:
+  - have a role of `banner` at the root of the component (<header>) (https://www.w3.org/TR/wai-aria-1.1/#banner)
+
+examples:
+  - name: default
+    description: The standard header as used on information pages on GOV.UK
+    data:
+
+  - name: colour override
+    description: Provide a colour value to the logo
+    data:
+      fillColour: ae094e
+
+  - name: icon only
+    description: Provide an icon only version of the logo with a colour override
+    data:
+      icon: true
+
+  - name: icon and colour override
+    description: Provide an icon only version of the logo
+    data:
+      icon: true
+      fillColour: ae094e
+
+  - name: pride variation
+    description: INCOMPLETE! - (requires assets from designer) Provide an a 'pride gradient' version of the logo
+    data:
+      pride: true
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: attributes
+    hidden: true
+    data:
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+  - name: classes
+    hidden: true
+    data:
+      classes: logo-class-test
+  - name: fillColour
+    hidden: true
+    data:
+      fillColour: ae094e

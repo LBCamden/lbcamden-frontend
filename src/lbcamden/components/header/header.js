@@ -4,7 +4,6 @@
 
 function LBCamdenHeader ($module) {
   this.$module = $module
-  console.log(123)
   // this.$menuButton = $module && $module.querySelector('.govuk-js-header-toggle')
   // this.$menu = this.$menuButton && $module.querySelector(
   //   '#' + this.$menuButton.getAttribute('aria-controls')
@@ -17,10 +16,9 @@ function LBCamdenHeader ($module) {
 //  * Check for the presence of the header, menu and menu button – if any are
 //  * missing then there's nothing to do so return early.
 //  */
-// LBCamdenHeader.prototype.init = function () {
-//   if (!this.$module || !this.$menuButton || !this.$menu) {
-//     return
-//   }
+LBCamdenHeader.prototype.init = function () {
+  console.log(123)
+}
 //
 //   this.syncState(this.$menu.classList.contains('govuk-header__navigation-list--open'))
 //   this.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this))
