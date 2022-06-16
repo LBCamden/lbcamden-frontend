@@ -9,7 +9,7 @@ function initAll (options) {
   // Defaults to the entire document if nothing is set.
   var scope = typeof options.scope !== 'undefined' ? options.scope : document
 
-  var $LBCamdenHeaders = scope.querySelectorAll('[data-module="lbcamden-button"]')
+  var $LBCamdenHeaders = scope.querySelectorAll('[data-module="lbcamden-header"]')
   nodeListForEach($LBCamdenHeaders, function ($LBCamdenHeader) {
     new LBCamdenHeader($LBCamdenHeader).init()
   })

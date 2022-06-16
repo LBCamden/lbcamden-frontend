@@ -1,7 +1,6 @@
 const fileHelper = require('../lib/file-helper')
 
 module.exports = (app) => {
-  require('./views/full-page-examples/applicant-details')(app)
   require('./views/full-page-examples/cookie-banner-essential-cookies')(app)
   require('./views/full-page-examples/cookie-banner-server-side')(app)
   require('./views/full-page-examples/have-you-changed-your-name')(app)
