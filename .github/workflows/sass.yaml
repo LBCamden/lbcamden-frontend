@@ -14,7 +14,7 @@ jobs:
       - run: |
           npm install -g sass@v1.0.0
           sass --version
-      - run: time sass src/govuk/all.scss > /dev/null
+      - run: time sass src/LBCamden/all.scss > /dev/null
 
   dart-sass-latest:
     name: Dart Sass v1 (latest)
@@ -27,13 +27,13 @@ jobs:
       - run: |
           npm install -g sass@v1
           sass --version
-      # Treat GOV.UK Frontend as a dependency by importing it via load paths,
+      # Treat CAMDEN.GOV.UK Frontend as a dependency by importing it via load paths,
       # allowing us to mimic the way we recommend our users silence deprecation
       # warnings using the `quiet-deps` flag.
       #
       # Run the command through a shell to ensure `time` measures the time
       # taken by the entire pipeline, as we are now piping input into `sass`.
-      - run: time sh -c 'echo "@import "\""govuk/all"\"";" | sass --stdin --quiet-deps --load-path=src > /dev/null'
+      - run: time sh -c 'echo "@import "\""LBCamden/all"\"";" | sass --stdin --quiet-deps --load-path=src > /dev/null'
 
 
   # Node Sass v3.4.0 = LibSass v3.3.0
@@ -48,7 +48,7 @@ jobs:
       - run: |
           npm install -g node-sass@v3.4.0
           node-sass --version
-      - run: time node-sass src/govuk/all.scss > /dev/null
+      - run: time node-sass src/LBCamden/all.scss > /dev/null
 
   # Node Sass v7.x = LibSass v3 latest
   lib-sass-latest:
@@ -62,7 +62,7 @@ jobs:
       - run: |
           npm install -g node-sass@v7
           node-sass --version
-      - run: time node-sass src/govuk/all.scss > /dev/null
+      - run: time node-sass src/LBCamden/all.scss > /dev/null
 
   ruby-sass:
     name: Ruby Sass v3.4.0 (deprecated)
@@ -75,7 +75,7 @@ jobs:
       - run: |
           gem install sass -v 3.4.0
           sass --version
-      - run: time sass src/govuk/all.scss > /dev/null
+      - run: time sass src/LBCamden/all.scss > /dev/null
 
   ruby-sass-latest:
     name: Ruby Sass v3 (latest, deprecated)
@@ -88,4 +88,4 @@ jobs:
       - run: |
           gem install sass -v '~> 3.0'
           sass --version
-      - run: time sass src/govuk/all.scss > /dev/null
+      - run: time sass src/LBCamden/all.scss > /dev/null
