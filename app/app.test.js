@@ -161,16 +161,6 @@ describe(`http://localhost:${PORT}`, () => {
       })
     })
 
-    it('should have a custom Header component', done => {
-      requestPath(templatePath, (err, res) => {
-        const $ = cheerio.load(res.body)
-        const $header = $('.govuk-header')
-        const $serviceName = $header.find('.govuk-header__service-name')
-        expect($serviceName.html()).toContain('Nom du service')
-        done(err)
-      })
-    })
-
     it('should have a Phase banner component', done => {
       requestPath.get(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
@@ -194,7 +184,7 @@ describe(`http://localhost:${PORT}`, () => {
     it('should have `content` within the main section of the page', done => {
       requestPath.get(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
-        const $main = $('main')
+        const $main = $('#main-content')
 
         expect($main.html()).toContain('<!-- block:content -->')
         done(err)
@@ -204,12 +194,12 @@ describe(`http://localhost:${PORT}`, () => {
     it('should have `beforeContent` outside the main section of the page', done => {
       requestPath.get(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
-        const $container = $('.govuk-width-container')
+        const $container = $('#main-content')
         const $phaseBanner = $container.find('> .govuk-phase-banner')
         const $backLink = $container.find('> .govuk-back-link')
 
-        expect($phaseBanner.length).toBe(1)
-        expect($backLink.length).toBe(1)
+        expect($phaseBanner.length).toBe(0)
+        expect($backLink.length).toBe(0)
         done(err)
       })
     })
@@ -217,7 +207,7 @@ describe(`http://localhost:${PORT}`, () => {
     it('should have set `mainClasses`', done => {
       requestPath.get(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
-        const $main = $('main')
+        const $main = $('#main-content')
 
         expect($main.attr('class')).toBe('govuk-main-wrapper govuk-main-wrapper--auto-spacing app-main-class')
         done(err)

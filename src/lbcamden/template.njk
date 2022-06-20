@@ -10,7 +10,9 @@
   <meta charset="utf-8">
   <title{% if pageTitleLang %} lang="{{ pageTitleLang }}"{% endif %}>{% block pageTitle %}LBCamden Front End Components{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  {#  @todo - update all assets to match Camden equivelants#}
+  {# @todo - experiment with themes and colours #}
+  <meta name="theme-color" content="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
+  {# @todo - make images relevant to Camden #}
   {# Ensure that older IE versions always render with the correct rendering engine #}
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -49,9 +51,9 @@
 {% endblock %}
 
 {% block header %}
-  {# {{ LBCamdenHeader({ #}
+   {{ LBCamdenHeader({
 
-  {# }) }} #}
+   }) }}
 {% endblock %}
 
 {% block main %}
