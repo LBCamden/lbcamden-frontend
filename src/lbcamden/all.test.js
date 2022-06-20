@@ -19,53 +19,43 @@ beforeAll(() => {
   })
 })
 
-describe('GOV.UK Frontend', () => {
+describe('CAMDEN.GOV.UK Frontend', () => {
   describe('javascript', () => {
-    it('can be accessed via `GOVUKFrontend`', async () => {
+    it('can be accessed via `LBCamdenFrontend`', async () => {
       await page.goto(baseUrl + '/', { waitUntil: 'load' })
 
-      const GOVUKFrontendGlobal = await page.evaluate(() => window.GOVUKFrontend)
+      const LBCamdenFrontendGlobal = await page.evaluate(() => window.LBCamdenFrontend)
 
-      expect(typeof GOVUKFrontendGlobal).toBe('object')
+      expect(typeof LBCamdenFrontendGlobal).toBe('object')
     })
     it('exports `initAll` function', async () => {
       await page.goto(baseUrl + '/', { waitUntil: 'load' })
 
-      const typeofInitAll = await page.evaluate(() => typeof window.GOVUKFrontend.initAll)
+      const typeofInitAll = await page.evaluate(() => typeof window.LBCamdenFrontend.initAll)
 
       expect(typeofInitAll).toEqual('function')
     })
     it('exports Components', async () => {
       await page.goto(baseUrl + '/', { waitUntil: 'load' })
 
-      const GOVUKFrontendGlobal = await page.evaluate(() => window.GOVUKFrontend)
+      const LBCamdenFrontendGlobal = await page.evaluate(() => window.LBCamdenFrontend)
 
-      var components = Object.keys(GOVUKFrontendGlobal).filter(method => method !== 'initAll')
+      var components = Object.keys(LBCamdenFrontendGlobal).filter(method => method !== 'initAll')
 
       // Ensure GOV.UK Frontend exports the expected components
       expect(components).toEqual([
-        'Accordion',
-        'Button',
-        'Details',
-        'CharacterCount',
-        'Checkboxes',
-        'ErrorSummary',
-        'Header',
-        'NotificationBanner',
-        'Radios',
-        'SkipLink',
-        'Tabs'
+        'LBCamdenHeader'
       ])
     })
     it('exported Components have an init function', async () => {
       await page.goto(baseUrl + '/', { waitUntil: 'load' })
 
       var componentsWithoutInitFunctions = await page.evaluate(() => {
-        var components = Object.keys(window.GOVUKFrontend)
+        var components = Object.keys(window.LBCamdenFrontend)
           .filter(method => method !== 'initAll')
 
         return components.filter(component => {
-          var prototype = window.GOVUKFrontend[component].prototype
+          var prototype = window.LBCamdenFrontend[component].prototype
           return typeof prototype.init !== 'function'
         })
       })
@@ -96,17 +86,8 @@ describe('GOV.UK Frontend', () => {
     })
   })
   describe('global styles', () => {
-    it('are disabled by default', async () => {
+    it('are enabled by default', async () => {
       const sass = `
-        @import "all";
-      `
-      const results = await renderSass({ data: sass })
-      expect(results.css.toString()).not.toContain(', a {')
-      expect(results.css.toString()).not.toContain(', p {')
-    })
-    it('are enabled if $global-styles variable is set to true', async () => {
-      const sass = `
-        $govuk-global-styles: true;
         @import "all";
       `
       const results = await renderSass({ data: sass })

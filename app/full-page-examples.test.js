@@ -7,12 +7,10 @@ const configPaths = require('../config/paths.json')
 const PORT = configPaths.ports.test
 
 const expectedPages = [
-  'bank-holidays',
+  'announcements',
+  'campaign-page',
   'check-your-answers',
   'feedback',
-  'have-you-changed-your-name',
-  'how-do-you-want-to-sign-in',
-  'passport-details',
   'service-manual-topic',
   'start-page',
   'update-your-account-details',
