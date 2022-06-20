@@ -70,14 +70,14 @@ describe('Template', () => {
       const $ = renderTemplate()
       const $icon = $('link[rel="shortcut icon"]')
 
-      expect($icon.attr('href')).toEqual('/assets/images/favicon.ico')
+      expect($icon.attr('href')).toEqual('/assets/images/favicons/favicon.ico')
     })
 
     it('can have the assets path overridden using assetPath', () => {
       const $ = renderTemplate({ assetPath: '/whatever' })
       const $icon = $('link[rel="shortcut icon"]')
 
-      expect($icon.attr('href')).toEqual('/whatever/images/favicon.ico')
+      expect($icon.attr('href')).toEqual('/whatever/images/favicons/favicon.ico')
     })
 
     it('uses a default assets URL of whatever assetPath is', () => {
@@ -94,20 +94,8 @@ describe('Template', () => {
       expect($ogImage.attr('content')).toEqual('//a.gov.uk/images/govuk-opengraph-image.png')
     })
 
-    describe('<meta name="theme-color">', () => {
-      it('has a default content of #0b0c0c', () => {
-        const $ = renderTemplate()
-        expect($('meta[name="theme-color"]').attr('content')).toEqual('#0b0c0c')
-      })
-
-      it('can be overridden using themeColor', () => {
-        const $ = renderTemplate({ themeColor: '#ff69b4' })
-        expect($('meta[name="theme-color"]').attr('content')).toEqual('#ff69b4')
-      })
-    })
-
     describe('<title>', () => {
-      const expectedTitle = 'GOV.UK - The best place to find government services and information'
+      const expectedTitle = 'LBCamden Front End Components'
       it(`defaults to '${expectedTitle}'`, () => {
         const $ = renderTemplate()
         expect($('title').text()).toEqual(expectedTitle)
@@ -167,7 +155,7 @@ describe('Template', () => {
 
         // A change to the inline script would be a breaking change, and it would also require
         // updating the hash published in https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#if-your-javascript-isn-t-working-properly
-        expect('sha256-' + hash).toEqual('sha256-+6WnXIl4mbFTCARd8N3COQmT3bJJmo32N8q8ZSQAIcU=')
+        expect('sha256-' + hash).toEqual('sha256-Pr+CvxfIyJtoiztVJC4wh40deiLbmllHfy6rpCAxoAQ=')
       })
       it('should not have a nonce attribute by default', () => {
         const $ = renderTemplate()
@@ -213,7 +201,7 @@ describe('Template', () => {
 
       it('can have custom classes added using mainClasses', () => {
         const $ = renderTemplate({ mainClasses: 'custom-main-class' })
-        expect($('main').hasClass('custom-main-class')).toBeTruthy()
+        expect($('div#main-content').hasClass('custom-main-class')).toBeTruthy()
       })
 
       it('does not have a lang attribute by default', () => {
@@ -240,7 +228,7 @@ describe('Template', () => {
 
         const $ = renderTemplate({}, { beforeContent })
 
-        expect($('.before-content').next().is('main')).toBe(true)
+        expect($('.before-content').next().is('div#main-content')).toBe(true)
       })
 
       it('can have content specified using the content block', () => {
