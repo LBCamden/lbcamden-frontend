@@ -7,9 +7,13 @@ const crypto = require('crypto')
 const { renderTemplate } = require('../../lib/jest-helpers')
 
 describe('Template', () => {
+  const appViews = [
+    'node_modules/govuk-frontend/',
+    configPaths.src
+  ]
   describe('with default nunjucks configuration', () => {
     it('should not have any whitespace before the doctype', () => {
-      nunjucks.configure(configPaths.src)
+      nunjucks.configure(appViews)
       const output = nunjucks.render('./template.njk')
       expect(output.charAt(0)).toEqual('<')
     })
@@ -17,7 +21,7 @@ describe('Template', () => {
 
   describe('with nunjucks block trimming enabled', () => {
     it('should not have any whitespace before the doctype', () => {
-      nunjucks.configure(configPaths.src, {
+      nunjucks.configure(appViews, {
         trimBlocks: true,
         lstripBlocks: true
       })
