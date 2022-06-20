@@ -12,7 +12,7 @@
 {% if params.icon %}
   <!--[if gt IE 8]><!-->
   <svg xmlns="http://www.w3.org/2000/svg"
-       class="LBCamden-Logo"
+       class="LBCamden-Logo {% if params.classes %}{{ params.classes }}{% endif %}"
        width="60"
        height="60"
        viewBox="0 0 60 60"
@@ -33,7 +33,7 @@
 {% else %}
   <!--[if gt IE 8]><!-->
   <svg width="250" height="50"
-       class="LBCamden-Logo"
+       class="LBCamden-Logo {% if params.classes %}{{ params.classes }}{% endif %}"
        viewBox="0 0 150 31"
        fill="none"
        xmlns="http://www.w3.org/2000/svg"

@@ -13,13 +13,19 @@ const sassFiles = glob.sync(`${configPaths.src}/settings/**/*.scss`)
 describe('The settings layer', () => {
   it('should not output any CSS', async () => {
     const settings = path.join(configPaths.src, 'settings', '_all.scss')
+    const data = `
+    @import "../helpers/colour";`
 
-    const output = await renderSass({ file: settings })
+    const output = await renderSass({ data: data, file: settings })
     expect(output.css.toString()).toEqual('')
   })
 
   it.each(sassFiles)('%s renders to CSS without errors', (file) => {
-    return renderSass({ file: file })
+    if (file !== 'src/lbcamden/settings/_colours.scss') {
+      const data = `
+      @import "../helpers/colour";`
+      return renderSass({ data: data, file: file })
+    }
   })
 
   describe('Sass documentation', () => {

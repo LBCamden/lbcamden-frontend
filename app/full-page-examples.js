@@ -1,13 +1,8 @@
 const fileHelper = require('../lib/file-helper')
 
 module.exports = (app) => {
-  require('./views/full-page-examples/cookie-banner-essential-cookies')(app)
-  require('./views/full-page-examples/cookie-banner-server-side')(app)
-  require('./views/full-page-examples/have-you-changed-your-name')(app)
   require('./views/full-page-examples/feedback')(app)
-  require('./views/full-page-examples/how-do-you-want-to-sign-in')(app)
   require('./views/full-page-examples/search')(app)
-  require('./views/full-page-examples/passport-details')(app)
   require('./views/full-page-examples/update-your-account-details')(app)
   require('./views/full-page-examples/upload-your-photo')(app)
   require('./views/full-page-examples/upload-your-photo-success')(app)
