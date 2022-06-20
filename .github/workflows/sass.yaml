@@ -92,6 +92,6 @@ jobs:
           ruby-version: 2.6 # Latest Ruby when Ruby Sass was EOL'ed (April 2019)
       - run: |
           gem install sass -v '~> 3.0'
-          gem install govuk-frontend@v4.1.0
+          gem install govuk-frontend -v '~> 4.1.0'
           sass --version
       - run: time sass src/lbcamden/all.scss > /dev/null
