@@ -85,9 +85,6 @@ module.exports = (options) => {
   // Turn form POSTs into data that can be used for validation.
   app.use(bodyParser.urlencoded({ extended: true }))
 
-  // Handle the banner component serverside.
-  require('./banner.js')(app)
-
   // Define middleware for all routes
   app.use('*', function (request, response, next) {
     response.locals.legacy = (request.query.legacy === '1' || request.query.legacy === 'true')

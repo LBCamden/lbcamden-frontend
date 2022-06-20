@@ -88,74 +88,6 @@ describe(`http://localhost:${PORT}/full-page-examples/`, () => {
       })
     })
 
-    describe('have-you-changed-your-name', () => {
-      it('should not show errors if submit with no input', (done) => {
-        requestPath.get('have-you-changed-your-name', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('Have you changed your name?')
-
-          // Check that the error summary is not visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeFalsy()
-          done(err)
-        })
-      })
-      it('should show errors if form is submitted with no input', (done) => {
-        requestPath.post('have-you-changed-your-name', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('Have you changed your name?')
-
-          // Check the title has an error
-          expect($('title').text()).toContain('Error:')
-
-          // Check that the error summary is visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeTruthy()
-          done(err)
-        })
-      })
-    })
-
-    describe('passport-details', () => {
-      it('should not show errors if submit with no input', (done) => {
-        requestPath.get('passport-details', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('Passport details')
-
-          // Check that the error summary is not visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeFalsy()
-          done(err)
-        })
-      })
-      it('should show errors if form is submitted with no input', (done) => {
-        requestPath.post('passport-details', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('Passport details')
-
-          // Check the title has an error
-          expect($('title').text()).toContain('Error:')
-
-          // Check that the error summary is visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeTruthy()
-          done(err)
-        })
-      })
-    })
-
     describe('update-your-account-details', () => {
       it('should not show errors if submit with no input', (done) => {
         requestPath.get('update-your-account-details', (err, res) => {
@@ -212,40 +144,6 @@ describe(`http://localhost:${PORT}/full-page-examples/`, () => {
           // Check the page responded correctly
           expect(res.statusCode).toBe(200)
           expect($.html()).toContain('Upload your photo')
-
-          // Check the title has an error
-          expect($('title').text()).toContain('Error:')
-
-          // Check that the error summary is visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeTruthy()
-          done(err)
-        })
-      })
-    })
-
-    describe('how-do-you-want-to-sign-in', () => {
-      it('should not show errors if submit with no input', (done) => {
-        requestPath.get('how-do-you-want-to-sign-in', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('How do you want to sign in?')
-
-          // Check that the error summary is not visible
-          const $errorSummary = $('[data-module="govuk-error-summary"]')
-          expect($errorSummary.length).toBeFalsy()
-          done(err)
-        })
-      })
-      it('should show errors if form is submitted with no input', (done) => {
-        requestPath.post('how-do-you-want-to-sign-in', (err, res) => {
-          const $ = cheerio.load(res.body)
-
-          // Check the page responded correctly
-          expect(res.statusCode).toBe(200)
-          expect($.html()).toContain('How do you want to sign in?')
 
           // Check the title has an error
           expect($('title').text()).toContain('Error:')
