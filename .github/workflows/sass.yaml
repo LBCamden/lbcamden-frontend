@@ -15,7 +15,7 @@ jobs:
           npm install -g sass@v1.0.0
           npm install -g govuk-frontend@v4.1.0
           sass --version
-      - run: time sass src/lbcamden/all.scss > /dev/null
+      - run: time sass src/lbcamden/all.scss --load-path=node_modules > /dev/null
 
   dart-sass-latest:
     name: Dart Sass v1 (latest)
@@ -91,6 +91,6 @@ jobs:
           ruby-version: 2.6 # Latest Ruby when Ruby Sass was EOL'ed (April 2019)
       - run: |
           gem install sass -v '~> 3.0'
-          gem install govuk-frontend -v '~> 4.1.0'
+          npm install govuk-frontend@v4.1.0
           sass --version
       - run: time sass src/lbcamden/all.scss > /dev/null
