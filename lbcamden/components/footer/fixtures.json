@@ -1,0 +1,30 @@
+{
+    "component": "footer",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {},
+            "html": "<footer class=\"LBCamden-Footer \" role=\"contentinfo\">\n  <div class=\"govuk-width-container\">\n    Camden Footer\n  </div>\n</footer>",
+            "hidden": false
+        },
+        {
+            "name": "attributes",
+            "options": {
+                "attributes": {
+                    "data-test-attribute": "value",
+                    "data-test-attribute-2": "value-2"
+                }
+            },
+            "html": "<footer class=\"LBCamden-Footer \" role=\"contentinfo\" data-test-attribute=\"value\" data-test-attribute-2=\"value-2\">\n  <div class=\"govuk-width-container\">\n    Camden Footer\n  </div>\n</footer>",
+            "hidden": true
+        },
+        {
+            "name": "classes",
+            "options": {
+                "classes": "app-footer--custom-modifier"
+            },
+            "html": "<footer class=\"LBCamden-Footer app-footer--custom-modifier\" role=\"contentinfo\">\n  <div class=\"govuk-width-container\">\n    Camden Footer\n  </div>\n</footer>",
+            "hidden": true
+        }
+    ]
+}

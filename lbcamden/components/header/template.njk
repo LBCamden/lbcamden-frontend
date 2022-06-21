@@ -1,0 +1,15 @@
+{% from "../../../../src/lbcamden/components/logo/macro.njk" import LBCamdenLogo %}
+
+<header class="LBCamden-Header {{ params.classes if params.classes }}" role="banner" data-module="lbcamden-header"
+{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="govuk-header__logo">
+    <a href="{{ params.homepageUrl | default('/') }}" class="govuk-header__link govuk-header__link--homepage">
+      {{ LBCamdenLogo({
+        fillColour: 'ffffff'
+      }) }}
+      <span class="govuk-visually-hidden">Camden.gov.uk</span>
+    </a>
+  </div>
+</div>
+</header>
