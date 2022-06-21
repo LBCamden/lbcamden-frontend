@@ -3,20 +3,6 @@ name: Sass
 on: [push, pull_request]
 
 jobs:
-  dart-sass:
-    name: Dart Sass v1.0.0
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 8 # v8 required for sass v1.0.0
-      - run: |
-          npm install -g sass@v1.0.0
-          npm install govuk-frontend@v4.1.0
-          sass --version
-      - run: time sass --includePaths=node_modules src/lbcamden/all.scss > /dev/null
-
   dart-sass-latest:
     name: Dart Sass v1 (latest)
     runs-on: ubuntu-latest
@@ -36,6 +22,21 @@ jobs:
       # Run the command through a shell to ensure `time` measures the time
       # taken by the entire pipeline, as we are now piping input into `sass`.
       - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=node_modules > /dev/null'
+
+  # Node Sass v3.4.0 = LibSass v3.3.0
+  lib-sass:
+    name: LibSass v3.3.0 (deprecated)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 4 # v4 required for node-sass v3.4.0
+      - run: |
+          npm install govuk-frontend@v4.1.0 --verbose
+          npm install -g node-sass@v3.3.0
+          node-sass --version
+      - run: time node-sass --includePaths=node_modules src/lbcamden/all.scss > /dev/null
 
   # Node Sass v7.x = LibSass v3 latest
   lib-sass-latest:
