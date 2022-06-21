@@ -12,10 +12,10 @@ jobs:
         with:
           node-version: 8 # v8 required for sass v1.0.0
       - run: |
-          npm install -g sass@v1.0.0
           npm install -g govuk-frontend@v4.1.0
+          npm install -g sass@v1.0.0
           sass --version
-      - run: time sass --load-path=node_modules/ src/lbcamden/all.scss > /dev/null
+      - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
 
   dart-sass-latest:
     name: Dart Sass v1 (latest)
@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 14
       - run: |
-          npm install -g sass@v1
           npm install -g govuk-frontend@v4.1.0
+          npm install -g sass@v1
           sass --version
       # Treat CAMDEN.GOV.UK Frontend as a dependency by importing it via load paths,
       # allowing us to mimic the way we recommend our users silence deprecation
@@ -35,7 +35,7 @@ jobs:
       #
       # Run the command through a shell to ensure `time` measures the time
       # taken by the entire pipeline, as we are now piping input into `sass`.
-      - run: time sh -c 'echo "@import "\""lbcamden/all"\"";" | sass --stdin --quiet-deps --load-path=src > /dev/null'
+      - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=node_modules > /dev/null'
 
   # Node Sass v3.4.0 = LibSass v3.3.0
   lib-sass:
@@ -50,7 +50,7 @@ jobs:
           npm install -g node-sass@v3.4.0
           npm install govuk-frontend@v4.1.0
           node-sass --version
-      - run: time node-sass src/lbcamden/all.scss > /dev/null
+      - run: time node-sass --includePath=node_modules src/lbcamden/all.scss > /dev/null
 
   # Node Sass v7.x = LibSass v3 latest
   lib-sass-latest:
@@ -65,7 +65,7 @@ jobs:
           npm install -g node-sass@v7
           npm install govuk-frontend@v4.1.0
           node-sass --version
-      - run: time node-sass src/lbcamden/all.scss > /dev/null
+      - run: time node-sass --includePath=node_modules src/lbcamden/all.scss > /dev/null
 
   ruby-sass:
     name: Ruby Sass v3.4.0 (deprecated)
@@ -79,7 +79,7 @@ jobs:
           gem install sass -v 3.4.0
           npm install govuk-frontend@v4.1.0
           sass --version
-      - run: time sass src/lbcamden/all.scss > /dev/null
+      - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
 
   ruby-sass-latest:
     name: Ruby Sass v3 (latest, deprecated)
@@ -93,4 +93,4 @@ jobs:
           gem install sass -v '~> 3.0'
           npm install govuk-frontend@v4.1.0
           sass --version
-      - run: time sass src/lbcamden/all.scss > /dev/null
+      - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
