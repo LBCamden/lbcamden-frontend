@@ -23,21 +23,6 @@ jobs:
       # taken by the entire pipeline, as we are now piping input into `sass`.
       - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=node_modules > /dev/null'
 
-  # Node Sass v3.4.0 = LibSass v3.3.0
-  lib-sass:
-    name: LibSass v3.3.0 (deprecated)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 4 # v4 required for node-sass v3.4.0
-      - run: |
-          npm install govuk-frontend@v4.1.0 --verbose
-          npm install -g node-sass@v3.3.0
-          node-sass --version
-      - run: time node-sass --includePaths=node_modules src/lbcamden/all.scss > /dev/null
-
   # Node Sass v7.x = LibSass v3 latest
   lib-sass-latest:
     name: LibSass v3 (latest, deprecated)
