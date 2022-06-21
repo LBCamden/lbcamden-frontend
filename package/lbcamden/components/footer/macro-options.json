@@ -1,0 +1,8 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the footer container."
+    }
+]

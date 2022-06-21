@@ -3,12 +3,12 @@
     "/"
   ],
   "scripts": [
-    "/govuk/all.js"
+    "/lbcamden/all.js"
   ],
   "assets": [
-    "/govuk/assets"
+    "/lbcamden/assets"
   ],
   "sass": [
-    "/govuk/all.scss"
+    "/lbcamden/all.scss"
   ]
 }

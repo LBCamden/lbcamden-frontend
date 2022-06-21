@@ -83,7 +83,8 @@ gulp.task('build:dist', gulp.series(
   'clean',
   'copy-assets',
   'copy:assets',
-  'update-assets-version'
+  'update-assets-version',
+  'update-govuk-assets-version'
 ))
 
 // Default task -------------------------

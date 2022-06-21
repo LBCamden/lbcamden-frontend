@@ -236,7 +236,22 @@ gulp.task('js:compile', (done) => {
 })
 
 gulp.task('js:copy-govukfrontend', () => {
-  if (!isDist) {
+  if (isDist) {
+    return gulp.src([
+      configPaths.node_modules + 'govuk-frontend/govuk/all.js'
+    ])
+      .pipe(uglify({
+        ie8: true
+      }))
+      .pipe(
+        rename({
+          basename: 'govuk-frontend',
+          extname: '.min.js'
+        })
+      )
+      .pipe(eol())
+      .pipe(gulp.dest(destinationPath()))
+  } else {
     return gulp.src([
       configPaths.node_modules + 'govuk-frontend/govuk/all.js'
     ])
