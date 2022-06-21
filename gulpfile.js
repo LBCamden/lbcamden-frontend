@@ -21,8 +21,8 @@ require('./tasks/gulp/sassdoc.js')
 // --------------------------------------
 gulp.task('scripts', gulp.series(
   'js:lint',
-  'js:compile',
-  'js:copy-govukfrontend'
+  'js:compile'//,
+  // 'js:copy-govukfrontend'
 ))
 
 // Umbrella styles tasks for preview ----
