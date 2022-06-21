@@ -18,7 +18,7 @@ describe('dist/', () => {
           files => {
             return files
               // Remove /package prefix from filenames
-              .map(file => file.replace(/^src\/govuk\/assets\//, ''))
+              .map(file => file.replace(/^src\/lbcamden\/assets\//, ''))
               // Sort to make comparison easier
               .sort()
           },
@@ -54,30 +54,34 @@ describe('dist/', () => {
     })
   })
 
-  describe(`govuk-frontend-${version}.min.css`, () => {
-    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend-${version}.min.css`))
-
-    it('should not contain current media query displayed on body element', () => {
-      expect(stylesheet).not.toMatch(/body:before{content:/)
-    })
-
-    it('should contain the copyright notice', () => {
-      expect(stylesheet).toContain('/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */')
-    })
-  })
-
-  describe(`govuk-frontend-ie8-${version}.min.css`, () => {
-    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend-ie8-${version}.min.css`))
+  describe(`lbcamden-frontend-${version}.min.css`, () => {
+    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `lbcamden-frontend-${version}.min.css`))
 
     it('should not contain current media query displayed on body element', () => {
       expect(stylesheet).not.toMatch(/body:before{content:/)
     })
   })
 
-  describe(`govuk-frontend-${version}.min.js`, () => {
-    const javascript = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend-${version}.min.js`))
+  describe(`lbcamden-frontend-ie8-${version}.min.css`, () => {
+    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `lbcamden-frontend-ie8-${version}.min.css`))
+
+    it('should not contain current media query displayed on body element', () => {
+      expect(stylesheet).not.toMatch(/body:before{content:/)
+    })
+  })
+
+  describe(`lbcamden-frontend-${version}.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `lbcamden-frontend-${version}.min.js`))
 
     it('should have the correct version name', () => {
+      expect(javascript).toBeTruthy()
+    })
+  })
+
+  describe('govuk-frontend.min.js', () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, 'govuk-frontend.min.js'))
+
+    it('should have a bundled version of govuk-frontend', () => {
       expect(javascript).toBeTruthy()
     })
   })
