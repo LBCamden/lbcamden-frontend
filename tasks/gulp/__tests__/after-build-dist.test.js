@@ -6,6 +6,7 @@ const recursive = require('recursive-readdir')
 
 describe('dist/', () => {
   const version = require(path.join('../../../', configPaths.package, 'package.json')).version
+  const govukVersion = require(path.join('../../../', configPaths.node_modules, 'govuk-frontend/package.json')).version
 
   describe('assets/', () => {
     it('should include the same files as in src/assets', () => {
@@ -78,8 +79,8 @@ describe('dist/', () => {
     })
   })
 
-  describe('govuk-frontend.min.js', () => {
-    const javascript = lib.readFileContents(path.join(configPaths.dist, 'govuk-frontend.min.js'))
+  describe(`govuk-frontend-${govukVersion}.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend-${govukVersion}.min.js`))
 
     it('should have a bundled version of govuk-frontend', () => {
       expect(javascript).toBeTruthy()
