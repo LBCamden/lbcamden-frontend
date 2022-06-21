@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: 8 # v8 required for sass v1.0.0
       - run: |
-          npm install govuk-frontend@v4.1.0
           npm install -g sass@v1.0.0
+          npm install govuk-frontend@v4.1.0
           sass --version
       - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
 
@@ -35,7 +35,7 @@ jobs:
       #
       # Run the command through a shell to ensure `time` measures the time
       # taken by the entire pipeline, as we are now piping input into `sass`.
-      - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=node_modules > /dev/null'
+      - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=/home/runner/work/lbcamden-frontend/lbcamden-frontend/node_modules > /dev/null'
 
   # Node Sass v3.4.0 = LibSass v3.3.0
   lib-sass:
