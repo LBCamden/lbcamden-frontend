@@ -15,7 +15,7 @@ jobs:
           npm install -g sass@v1.0.0
           npm install -g govuk-frontend@v4.1.0
           sass --version
-      - run: time sass --load-path=/ src/lbcamden/all.scss > /dev/null
+      - run: time sass --load-path=node_modules/ src/lbcamden/all.scss > /dev/null
 
   dart-sass-latest:
     name: Dart Sass v1 (latest)

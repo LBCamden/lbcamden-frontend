@@ -54,10 +54,12 @@ const errorHandler = function (error) {
 
 function compileStyles (done) {
   const compileStylesheet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
-
+  const sassOptions = {
+    includePaths: ['node_modules']
+  }
   gulp.src(compileStylesheet)
     .pipe(plumber(errorHandler))
-    .pipe(sass())
+    .pipe(sass(sassOptions))
     // minify css add vendor prefixes and normalize to compiled css
     .pipe(gulpif(isDist, postcss([
       autoprefixer,
@@ -82,10 +84,12 @@ function compileStyles (done) {
 
 function compileOldIE (done) {
   const compileOldIeStylesheet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
-
+  const sassOptions = {
+    includePaths: ['node_modules']
+  }
   gulp.src(compileOldIeStylesheet)
     .pipe(plumber(errorHandler))
-    .pipe(sass())
+    .pipe(sass(sassOptions))
     // minify css add vendor prefixes and normalize to compiled css
     .pipe(gulpif(isDist, postcss([
       autoprefixer,
