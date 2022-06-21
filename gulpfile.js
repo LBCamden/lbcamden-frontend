@@ -21,8 +21,8 @@ require('./tasks/gulp/sassdoc.js')
 // --------------------------------------
 gulp.task('scripts', gulp.series(
   'js:lint',
-  'js:compile'//,
-  // 'js:copy-govukfrontend'
+  'js:compile',
+  'js:copy-govukfrontend'
 ))
 
 // Umbrella styles tasks for preview ----
@@ -83,8 +83,8 @@ gulp.task('build:dist', gulp.series(
   'clean',
   'copy-assets',
   'copy:assets',
-  'update-assets-version'//,
-  // 'update-govuk-assets-version'
+  'update-assets-version',
+  'update-govuk-assets-version'
 ))
 
 // Default task -------------------------
