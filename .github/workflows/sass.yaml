@@ -13,8 +13,9 @@ jobs:
           node-version: 8 # v8 required for sass v1.0.0
       - run: |
           npm install -g sass@v1.0.0
+          npm install govuk-frontend@v4.1.0
           sass --version
-      - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
+      - run: time sass --includePaths=node_modules src/lbcamden/all.scss > /dev/null
 
   dart-sass-latest:
     name: Dart Sass v1 (latest)
@@ -26,7 +27,7 @@ jobs:
           node-version: 14
       - run: |
           npm install govuk-frontend@v4.1.0
-          npm install -g sass@v1
+          npm install -g sass@v1.52.3
           sass --version
       # Treat CAMDEN.GOV.UK Frontend as a dependency by importing it via load paths,
       # allowing us to mimic the way we recommend our users silence deprecation
@@ -35,21 +36,6 @@ jobs:
       # Run the command through a shell to ensure `time` measures the time
       # taken by the entire pipeline, as we are now piping input into `sass`.
       - run:  time sh -c 'echo "@import "\""src/lbcamden/all"\""" | sass --stdin --load-path=node_modules > /dev/null'
-
-  # Node Sass v3.4.0 = LibSass v3.3.0
-  lib-sass:
-    name: LibSass v3.3.0 (deprecated)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 4 # v4 required for node-sass v3.4.0
-      - run: |
-          npm install govuk-frontend@v4.1.0 --verbose
-          npm install -g node-sass@v3.4.0
-          node-sass --version
-      - run: time node-sass --includePath=node_modules src/lbcamden/all.scss > /dev/null
 
   # Node Sass v7.x = LibSass v3 latest
   lib-sass-latest:
