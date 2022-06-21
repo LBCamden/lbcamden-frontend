@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 8 # v8 required for sass v1.0.0
       - run: |
-          npm install -g govuk-frontend@v4.1.0
+          npm install govuk-frontend@v4.1.0
           npm install -g sass@v1.0.0
           sass --version
       - run: time sass --load-path=node_modules src/lbcamden/all.scss > /dev/null
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 14
       - run: |
-          npm install -g govuk-frontend@v4.1.0
+          npm install govuk-frontend@v4.1.0
           npm install -g sass@v1
           sass --version
       # Treat CAMDEN.GOV.UK Frontend as a dependency by importing it via load paths,
