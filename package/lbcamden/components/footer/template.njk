@@ -1,0 +1,6 @@
+<footer class="LBCamden-Footer {{ params.classes if params.classes }}" role="contentinfo"
+{%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  <div class="{{ params.containerClasses | default('govuk-width-container') }}">
+    Camden Footer
+  </div>
+</footer>
