@@ -1,4 +1,9 @@
 .LBCamden-Footer {
-  color: lbcamden-colour("white");
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
   background: lbcamden-colour("grey");
+
+  a {
+    color: lbcamden-colour("white");
+  }
 }
