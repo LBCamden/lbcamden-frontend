@@ -7,7 +7,7 @@
     <div class="govuk-footer__navigation">
       {% for nav in params.navigation %}
         <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default('full') }}">
-          <h2 class="govuk-footer__heading govuk-heading-m">{{ nav.title }}</h2>
+          <h2 class="govuk-visually-hidden">{{ nav.title }}</h2>
           {% if nav.items | length %}
             {% set listClasses %}
               {% if nav.columns %}
@@ -18,7 +18,7 @@
               {% for item in nav.items %}
                 {% if item.href and item.text %}
                   <li class="govuk-footer__list-item">
-                    <a class="govuk-footer__link"
+                    <a class=""
                        href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
                     >
                     {{ item.text }}
@@ -39,7 +39,7 @@
     }) }}
     </div>
     <div class="govuk-grid-column-three-quarters">
-    <p>Copyright &copy 2022 The London Borough of Camden</p>
+{#    <p>Copyright &copy 2022 The London Borough of Camden</p>#}
   </div>
   </div>
   </footer>

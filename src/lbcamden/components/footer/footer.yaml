@@ -72,7 +72,7 @@ examples:
   - name: with navigation
     data:
       navigation:
-        - title: Two column list
+        - title: Single column list
           width: two-thirds
           columns: 2
           items:
@@ -88,8 +88,11 @@ examples:
               text: Navigation item 5
             - href: '#6'
               text: Navigation item 6
-        - title: Single column list
-          width: one-third
+
+  - name: with default width navigation (one column)
+    data:
+      navigation:
+        - title: Navigation section
           items:
             - href: '#1'
               text: Navigation item 1
@@ -97,6 +100,31 @@ examples:
               text: Navigation item 2
             - href: '#3'
               text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+            - href: '#5'
+              text: Navigation item 5
+            - href: '#6'
+              text: Navigation item 6
+
+  - name: with default width navigation (two columns)
+    data:
+      navigation:
+        - title: Navigation section
+          columns: 2
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+            - href: '#5'
+              text: Navigation item 5
+            - href: '#6'
+              text: Navigation item 6
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
@@ -109,3 +137,18 @@ examples:
     hidden: true
     data:
       classes: app-footer--custom-modifier
+  - name: with empty navigation
+    hidden: true
+    data:
+      navigation: [ ]
+  - name: with navigation item attributes
+    hidden: true
+    data:
+      navigation:
+        - title: Single column list 1
+          items:
+            - href: '#1'
+              text: Navigation item 1
+              attributes:
+                data-attribute: my-attribute
+                data-attribute-2: my-attribute-2
