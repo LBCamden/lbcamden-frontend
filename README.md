@@ -1,10 +1,15 @@
-GOV.UK Frontend ·
-[![Build Status](https://github.com/alphagov/govuk-frontend/workflows/Tests/badge.svg)](https://github.com/alphagov/govuk-frontend/actions?query=workflow%3ATests+branch%3Amain)
+LBCamden Frontend ·
+[![Build Status](https://github.com/benwatsonuk/lbcamden-frontend/workflows/Tests/badge.svg)](https://github.com/benwatsonuk/lbcamden-frontend/actions?query=workflow%3ATests+branch%3Amain)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 =====================
 
-GOV.UK Frontend contains the code you need to start building a user interface
+LBCamden Frontend contains the code you need to start building a user interface
 for government platforms and services.
+
+It is built on top of the amazing [GOV.UK Frontend
+System](https://frontend.design-system.service.gov.uk/). The aim of the project is to follow conventions set out in GOV.UK Frontend and incorporate updates and releases in that project.
+
+This documentation should be updated soon - at time of writing (v0.0.1) only basic files are present and are being used to validate a number of assumptions. 
 
 See live examples of GOV.UK Frontend components, and guidance on when to use
 them in your service, in the [GOV.UK Design
@@ -12,12 +17,11 @@ System](https://design-system.service.gov.uk/).
 
 ## Contact the team
 
-GOV.UK Frontend is maintained by a team at Government Digital Service. If you want to know more about GOV.UK Frontend, please email the [Design System
-team](mailto:govuk-design-system-support@digital.cabinet-office.gov.uk) or get in touch with them on [Slack](https://ukgovernmentdigital.slack.com/messages/govuk-design-system).
+TBC
 
 ## Quick start
 
-There are 2 ways to start using GOV.UK Frontend in your app.
+The set-up process should mirror that of GOV.UK Frontend exactly: There are 2 ways to start using GOV.UK Frontend in your app.
 
 Once installed, you will be able to use the code from the examples in the
 [GOV.UK Design System](https://design-system.service.gov.uk/)
@@ -85,10 +89,4 @@ Open Government 3.0 licence.
 
 ## Contributing
 
-[To learn how to help us build GOV.UK Frontend, see our contribution guidelines.](https://github.com/alphagov/govuk-frontend/blob/f07569c9e7724606970c0d2764f1e9ce7fa14092/CONTRIBUTING.md)
-
-The govuk-frontend repository is public and we welcome contributions from anyone.
-
-Contributors to alphagov repositories are expected to follow the [Contributor Covenant Code of Conduct](https://github.com/alphagov/.github/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct). Contributors working within government are also expected to follow the [Civil Service code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code).
-
-We're unable to monitor activity on this repository outside of our office hours (10am to 4pm, UK time). To get a faster response at other times, you can [report abuse or spam to GitHub](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam).
+TBC
