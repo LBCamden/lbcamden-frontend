@@ -1,6 +1,45 @@
+{% from "../logo/macro.njk" import LBCamdenLogo %}
+
 <footer class="LBCamden-Footer {{ params.classes if params.classes }}" role="contentinfo"
-{%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-  <div class="{{ params.containerClasses | default('govuk-width-container') }}">
-    Camden Footer
+{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="{{ params.containerClasses | default('govuk-width-container') }}">
+  {% if params.navigation | length %}
+    <div class="govuk-footer__navigation">
+      {% for nav in params.navigation %}
+        <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default('full') }}">
+          <h2 class="govuk-visually-hidden">{{ nav.title }}</h2>
+          {% if nav.items | length %}
+            {% set listClasses %}
+              {% if nav.columns %}
+                govuk-footer__list--columns-{{ nav.columns }}
+              {% endif %}
+            {% endset %}
+            <ul class="govuk-footer__list {{ listClasses | trim }}">
+              {% for item in nav.items %}
+                {% if item.href and item.text %}
+                  <li class="govuk-footer__list-item">
+                    <a class=""
+                       href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
+                    >
+                    {{ item.text }}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+    {{ LBCamdenLogo({
+      fillColour: 'ffffff'
+    }) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+{#    <p>Copyright &copy 2022 The London Borough of Camden</p>#}
   </div>
-</footer>
+  </div>
+  </footer>

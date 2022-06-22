@@ -3,6 +3,40 @@ params:
     type: string
     required: false
     description: Classes to add to the footer container.
+  - name: navigation
+    type: array
+    required: false
+    description: Array of items for use in the navigation section of the footer.
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Title for a section.
+      - name: columns
+        type: integer
+        required: false
+        description: Amount of columns to display items in navigation section of the footer.
+      - name: width
+        type: string
+        required: false
+        description: Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'.
+      - name: items
+        type: array
+        required: false
+        description: Array of items to display in the list in navigation section of the footer.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: List item text in the navigation section of the footer.
+          - name: href
+            type: string
+            required: true
+            description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+          - name: attributes
+            type: object
+            required: false
+            description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -35,6 +69,63 @@ examples:
     data:
       {}
 
+  - name: with navigation
+    data:
+      navigation:
+        - title: Single column list
+          width: two-thirds
+          columns: 2
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+            - href: '#5'
+              text: Navigation item 5
+            - href: '#6'
+              text: Navigation item 6
+
+  - name: with default width navigation (one column)
+    data:
+      navigation:
+        - title: Navigation section
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+            - href: '#5'
+              text: Navigation item 5
+            - href: '#6'
+              text: Navigation item 6
+
+  - name: with default width navigation (two columns)
+    data:
+      navigation:
+        - title: Navigation section
+          columns: 2
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+            - href: '#5'
+              text: Navigation item 5
+            - href: '#6'
+              text: Navigation item 6
+
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
     hidden: true
@@ -46,3 +137,18 @@ examples:
     hidden: true
     data:
       classes: app-footer--custom-modifier
+  - name: with empty navigation
+    hidden: true
+    data:
+      navigation: [ ]
+  - name: with navigation item attributes
+    hidden: true
+    data:
+      navigation:
+        - title: Single column list 1
+          items:
+            - href: '#1'
+              text: Navigation item 1
+              attributes:
+                data-attribute: my-attribute
+                data-attribute-2: my-attribute-2
