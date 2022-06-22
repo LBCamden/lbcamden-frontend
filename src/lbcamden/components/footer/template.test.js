@@ -57,7 +57,6 @@ describe('footer', () => {
       const $ = render('footer', examples['with navigation'])
 
       const $firstSection = $('.govuk-footer__section:first-child')
-      const $lastSection = $('.govuk-footer__section:last-child')
       const $firstHeading = $firstSection.find('h2.govuk-visually-hidden')
       expect($firstHeading.text()).toEqual('Single column list')
     })

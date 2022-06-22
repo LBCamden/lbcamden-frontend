@@ -35,7 +35,11 @@ it('_all.scss renders to CSS without errors', () => {
 })
 
 it.each(allComponents)('%s.scss renders to CSS without errors', (component) => {
+  const sass = `
+        @import "base";
+      `
   return renderSass({
+    data: sass,
     file: `${configPaths.src}/components/${component}/_${component}.scss`
   })
 })

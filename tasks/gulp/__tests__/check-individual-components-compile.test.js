@@ -14,7 +14,10 @@ describe('Individual components', () => {
     const getSassRenders = () => {
       return componentNames.map(name => {
         const filePath = path.join(configPaths.components, name, `_${name}.scss`)
-        return renderSass({ file: filePath })
+        const sass = `
+        @import "base";
+      `
+        return renderSass({ data: sass, file: filePath })
       })
     }
 
