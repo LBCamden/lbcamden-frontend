@@ -3,6 +3,7 @@
 ////
 
 @import "govuk-frontend/govuk/tools/exports";
+//@import "../base";
 
 /// Font Face - Inter
 ///
@@ -13,7 +14,7 @@
 
 @mixin _lbcamden-font-face-inter {
   @include govuk-not-ie8 { // In IE8, which cannot render WOFF format, we fall back to system fonts
-    @include govuk-exports("govuk/helpers/font-faces") {
+    @include govuk-exports("lbcamden/helpers/font-faces") {
       @at-root {
         // Copyright (c) 2016-2020 The Inter Project Authors. Inter is trademark of Rasmus Andersson. https://github.com/rsms/inter  This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
         @font-face {
