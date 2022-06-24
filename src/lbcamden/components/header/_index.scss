@@ -1,3 +1,31 @@
 .LBCamden-Header {
+  color: lbcamden-colour("white");
   background: lbcamden-colour("govuk-brand1-1-colour");
+  @include govuk-responsive-margin(6, "bottom");
+
+  &__logo {
+    @include govuk-responsive-margin(2, "top");
+    @include govuk-responsive-margin(2, "bottom");
+    display: inline-block;
+    width: 50%;
+
+    @include govuk-media-query($from: tablet) {
+      width: 20%;
+    }
+  }
+
+  &__link {
+    display: block;
+    max-width: 100%;
+    color: lbcamden-colour("white");
+
+    &:visited {
+      color: lbcamden-colour("white");
+    }
+
+    &:focus {
+      color: lbcamden-colour("black");
+      background: $govuk-focus-colour;
+    }
+  }
 }
