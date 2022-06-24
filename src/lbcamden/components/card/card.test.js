@@ -12,34 +12,55 @@ describe('Card', () => {
     await page.emulate(iPhone)
   })
 
-  // describe('when JavaScript is unavailable or fails', () => {
-  //   beforeAll(async () => {
-  //     await page.setJavaScriptEnabled(false)
-  //     await page.goto(`${baseUrl}/components/header/with-navigation/preview`, {
-  //       waitUntil: 'load'
-  //     })
-  //   })
-  //
-  //   afterAll(async () => {
-  //     await page.setJavaScriptEnabled(true)
-  //   })
-  //
-  //   // it('shows the navigation', async () => {
-  //   //   await expect(page).toMatchElement('.govuk-header__navigation', {
-  //   //     visible: true,
-  //   //     timeout: 1000
-  //   //   })
-  //   // })
-  // })
-
   describe('when JavaScript is available', () => {
     describe('when no navigation is present', () => {
-      it('exits gracefully with no errors', async () => {
-        // Errors logged to the console will cause this test to fail
-        await page.goto(`${baseUrl}/components/card/preview`, {
-          waitUntil: 'load'
+      afterEach(async () => {
+        await page.evaluate(() => window.sessionStorage.clear())
+      })
+      describe('the clickable function', () => {
+        it('clicking anywhere on the card should change document.location', async () => {
+          await page.goto(baseUrl + '/components/card/clickable-card/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => document.location)
+          await page.click('.LBCamden-Card')
+          const newState = await page.evaluate(() => document.location)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('should have a pointer cursor', async () => {
+          await page.goto(baseUrl + '/components/card/clickable-card/preview', { waitUntil: 'load' })
+
+          const state = await page.evaluate(() => {
+            const clickableCard = document.querySelector('.LBCamden-Card')
+            return window.getComputedStyle(clickableCard).getPropertyValue('cursor')
+          })
+          expect(state).toEqual('pointer')
         })
       })
+    })
+  })
+
+  describe('when JavaScript is not available', () => {
+    beforeAll(async () => {
+      await page.setJavaScriptEnabled(false)
+    })
+
+    afterEach(async () => {
+      await page.evaluate(() => window.sessionStorage.clear())
+    })
+
+    afterAll(async () => {
+      await page.setJavaScriptEnabled(true)
+    })
+
+    it('should not have a pointer cursor', async () => {
+      await page.goto(baseUrl + '/components/card/clickable-card/preview', { waitUntil: 'load' })
+
+      const state = await page.evaluate(() => {
+        const clickableCard = document.querySelector('.LBCamden-Card')
+        return window.getComputedStyle(clickableCard).getPropertyValue('cursor')
+      })
+      expect(state).not.toEqual('pointer')
     })
   })
 })
