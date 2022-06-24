@@ -13,7 +13,8 @@ $govuk-page-width: 1100px; // Taken from current sutton.gov.uk site
 
 $govuk-text-colour: lbcamden-colour("black");
 $govuk-link-colour: lbcamden-colour("blue");
-$govuk-link-visited-colour: darken($govuk-link-colour, 20%);
+$govuk-link-hover-colour: lbcamden-colour("dark-blue");
+$govuk-link-visited-colour: lbcamden-colour("purple");
 
 $govuk-brand-colour: lbcamden-colour("govuk-brand1-1-colour");
 $govuk-success-colour: lbcamden-colour("green");

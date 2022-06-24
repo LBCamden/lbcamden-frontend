@@ -1,0 +1,23 @@
+.LBCamden-Card {
+  @include govuk-responsive-padding(2, "all");
+  background: lbcamden-colour("govuk-bg-bright1-colour");
+
+  * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--featured {
+    color: lbcamden-colour("white");
+    background: lbcamden-colour("govuk-brand1-1-colour");
+
+    a:first-child {
+      color: lbcamden-colour("white");
+    }
+
+    * {
+      color: lbcamden-colour("white");
+    }
+  }
+}
