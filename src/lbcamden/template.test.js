@@ -84,14 +84,14 @@ describe('Template', () => {
       const $ = renderTemplate({ assetPath: '/whatever' })
       const $ogImage = $('meta[property="og:image"]')
 
-      expect($ogImage.attr('content')).toEqual('/whatever/images/govuk-opengraph-image.png')
+      expect($ogImage.attr('content')).toEqual('/whatever/images/ms-icon-310x310.png')
     })
 
     it('can have the assets URL overridden using assetUrl', () => {
       const $ = renderTemplate({ assetUrl: '//a.gov.uk' })
       const $ogImage = $('meta[property="og:image"]')
 
-      expect($ogImage.attr('content')).toEqual('//a.gov.uk/images/govuk-opengraph-image.png')
+      expect($ogImage.attr('content')).toEqual('//a.gov.uk/images/ms-icon-310x310.png')
     })
 
     describe('<title>', () => {

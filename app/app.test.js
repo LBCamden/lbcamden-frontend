@@ -79,7 +79,6 @@ describe(`http://localhost:${PORT}`, () => {
     const templatePath = '/examples/template-custom'
 
     it.each([
-      'headIcons',
       'bodyStart',
       'main',
       'content',
@@ -105,23 +104,23 @@ describe(`http://localhost:${PORT}`, () => {
     it('should have assets overriden', done => {
       requestPath(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
-        const $linkAsset = $('link[href^="/images/"]')
-        expect($linkAsset.length).toBe(6)
+        const $linkAsset = $('link[href^="/assets/images/favicons/"]')
+        expect($linkAsset.length).toBe(5)
         done(err)
       })
     })
 
-    it('should have theme-color overriden', done => {
-      requestPath(templatePath, (err, res) => {
-        const $ = cheerio.load(res.body)
-        const $linkMaskIcon = $('link[rel="mask-icon"]')
-        const $metaThemeColor = $('meta[name="theme-color"]')
-
-        expect($linkMaskIcon.attr('color')).toBe('blue')
-        expect($metaThemeColor.attr('content')).toBe('blue')
-        done(err)
-      })
-    })
+    // it('should have theme-color overriden', done => {
+    //   requestPath(templatePath, (err, res) => {
+    //     const $ = cheerio.load(res.body)
+    //     const $linkMaskIcon = $('link[rel="mask-icon"]')
+    //     const $metaThemeColor = $('meta[name="theme-color"]')
+    //
+    //     expect($linkMaskIcon.attr('color')).toBe('blue')
+    //     expect($metaThemeColor.attr('content')).toBe('blue')
+    //     done(err)
+    //   })
+    // })
 
     it('should have additional `bodyClasses`', done => {
       requestPath(templatePath, (err, res) => {
