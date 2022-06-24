@@ -14,15 +14,16 @@
     }
   }
 
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5 {
-    //color: $lbs-green-1;
+  &--naked {
+    background: initial;
+  }
 
+  &:not(.LBCamden-Card--naked) > h2,
+  &:not(.LBCamden-Card--naked) > h3,
+  &:not(.LBCamden-Card--naked) > h4,
+  &:not(.LBCamden-Card--naked) > h5 {
     a {
       display: flex;
-      //color: $lbs-green-1;
       align-items: center;
       justify-content: space-between;
 
@@ -66,15 +67,12 @@
       color: lbcamden-colour("white");
     }
 
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5 {
-      //color: $lbs-green-1;
-
+    &:not(.LBCamden-Card--naked) > h2,
+    &:not(.LBCamden-Card--naked) > h3,
+    &:not(.LBCamden-Card--naked) > h4,
+    &:not(.LBCamden-Card--naked) > h5 {
       a {
         display: flex;
-        //color: $lbs-green-1;
         align-items: center;
         justify-content: space-between;
 

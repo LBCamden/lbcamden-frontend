@@ -1,0 +1,106 @@
+---
+scenario: The top level page for a topic, service or category.
+notes:
+---
+{% extends "full-page-example.njk" %}
+
+{% from "card/macro.njk" import LBCamdenCard %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageTitle = "Business" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Business</h1>
+
+      <p class="govuk-body-l">Advice and support for businesses in Camden. Licensing information, guidance on paying
+        your business rates and more.</p>
+
+    </div>
+  </div>
+  <h2 class="govuk-heading-l">Popular</h2>
+
+{#  <div class="govuk-grid-row">#}
+
+      {% set widthClass = 'govuk-grid-column-one-quarter' %}
+        {{ LBCamdenCard({
+          classes: widthClass,
+          heading: {
+            title: "Paying your business rates",
+            href: "#"
+          },
+          "clickable": true
+        }) }}
+
+      {{ LBCamdenCard({
+        classes: widthClass,
+        heading: {
+          title: "Camden's new e-invoicing service",
+          href: "#"
+        },
+        "clickable": true
+      }) }}
+
+      {{ LBCamdenCard({
+        classes: widthClass,
+        heading: {
+          title: "Search the licensing public register",
+          href: "#"
+        },
+        "clickable": true
+      }) }}
+
+      {{ LBCamdenCard({
+        classes: widthClass,
+        heading: {
+          title: "Discounts and exemptions for business rates",
+          href: "#"
+        },
+        "clickable": true
+      }) }}
+
+      {{ LBCamdenCard({
+        classes: widthClass,
+        heading: {
+          title: "Pavement licensing",
+          href: "#"
+        },
+        "clickable": true
+      }) }}
+
+      {{ LBCamdenCard({
+        classes: widthClass,
+        heading: {
+          title: "Alcohol premises licensing",
+          href: "#"
+        },
+        "clickable": true
+      }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l">Contents</h2>
+
+    </div>
+  </div>
+{% endblock %}
