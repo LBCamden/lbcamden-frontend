@@ -1,3 +1,7 @@
 .govuk-breadcrumbs {
   @extend .govuk-width-container;
+
+  .govuk-breadcrumbs__link {
+    color: $govuk-link-colour;
+  }
 }
