@@ -8,6 +8,24 @@
 
 We’ve made fixes to CAMDEN.GOV.UK Frontend in the following pull requests:
 
+## 0.0.3
+
+🆕 New features:
+
+- Typography updated to include brand font (Inter)
+- Basic implementation of the card component 
+- Added correct favicons etc.
+
+🔧 Fixes:
+ 
+- Added correct favicons etc.
+
+## 0.0.2
+
+🔧 Fixes: 
+
+- Internal references to macros that were breaking when used as a package
+
 ## 0.0.1
 
 Leverages GOV.UK Frontend 4.1.0
