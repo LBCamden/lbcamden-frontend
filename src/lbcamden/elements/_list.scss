@@ -1,0 +1,16 @@
+.LBCamden-List {
+  &--dash {
+    list-style: none outside;
+
+    li {
+      @include govuk-responsive-padding(6, "left");
+
+      &:before {
+        content: "";
+        @include govuk-responsive-padding(6, "left");
+        height: 1px;
+        background: $govuk-link-colour;
+      }
+    }
+  }
+}
