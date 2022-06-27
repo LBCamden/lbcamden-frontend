@@ -16,6 +16,7 @@
   }
 
   &--naked {
+    padding: 0;
     background: initial;
   }
 
@@ -27,18 +28,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      //
-      //&:after {
-      //  content: "";
-      //  display: inline-block;
-      //  @include govuk-responsive-padding(2);
-      //  @include govuk-responsive-margin(4, "left");
-      //  @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 7 15"><defs><path d="M9.9995 19c-.226 0-.453-.076-.64-.232-.424-.353-.481-.984-.128-1.408l4.476-5.371-4.315-5.362c-.346-.43-.278-1.06.152-1.406.431-.346 1.06-.278 1.407.152l4.828 6c.298.371.294.901-.011 1.267l-5 6c-.198.237-.482.36-.769.36" id="a"/></defs><use fill="' + $govuk-link-colour + '" fill-rule="nonzero" xlink:href="#a" transform="translate(-9 -4.5)"/></svg>');
-      //  background-repeat: no-repeat;
-      //  background-position: center;
-      //  background-size: contain;
-      //  vertical-align: middle;
-      //}
+
+      // CSS approach to making entire card clickable
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
 
       &:before {
         $dimension: 7px;
@@ -46,7 +45,7 @@
         content: "";
         position: absolute;
         top: govuk-spacing(3);
-        right: govuk-spacing(1);
+        right: govuk-spacing(3);
         width: $dimension;
         height: $dimension;
         transform: rotate(45deg);
@@ -56,11 +55,16 @@
 
       &[rel="external"] {
         &:before {
+          $dimension: 7px;
           content: "";
           display: inline-block;
-          @include govuk-responsive-padding(2);
+          @include govuk-responsive-padding(1);
           @include govuk-responsive-margin(4, "left");
           @include background-svg('<svg fill="none" height="24" stroke="' + $govuk-link-colour + '" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>');
+          width: $dimension;
+          height: $dimension;
+          transform: none;
+          border: none;
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain;
@@ -74,12 +78,29 @@
     color: lbcamden-colour("white");
     background: lbcamden-colour("govuk-brand1-1-colour");
 
-    a:first-child {
-      color: lbcamden-colour("white");
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5 {
+      a:first-child {
+        color: lbcamden-colour("white");
+
+        &:before {
+          border-color: lbcamden-colour("white");
+        }
+
+        &:focus {
+          color: lbcamden-colour("black");
+        }
+      }
     }
 
     * {
       color: lbcamden-colour("white");
+
+      &:focus {
+        color: lbcamden-colour("black");
+      }
     }
   }
 

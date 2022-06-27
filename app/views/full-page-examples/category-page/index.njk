@@ -39,7 +39,7 @@ notes:
   </div>
   <h2 class="govuk-heading-l">Popular</h2>
 
-  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular">
+  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
     {% set widthClass = 'LBCamden-Card--popular' %}
 
     {{ LBCamdenCard({
@@ -159,9 +159,9 @@ notes:
         ]
         }
       ] %}
-      <div class="govuk-grid-row LBCamden-Card_Wrapper">
+      <ul class="LBCamden-Card_Wrapper">
         {% for item in items %}
-          <div class="{{ widthClass }}">
+          <li class="{{ widthClass }}">
             <h3 class="govuk-heading-m">{{ item.title }}</h3>
             {% if item.links %}
               <ul class="govuk-list LBCamden-List--dash">
@@ -171,9 +171,9 @@ notes:
               </ul>
             {% endif %}
             <a href="#" class="LBCamden-Link--action">View all</a>
-          </div>
+          </li>
         {% endfor %}
-      </div>
+      </ul>
     </div>
   </div>
 {% endblock %}
