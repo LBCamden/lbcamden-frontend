@@ -35,4 +35,20 @@ describe('card', () => {
       expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
   })
+
+  describe('popular card', () => {
+    it('renders classes', () => {
+      const $ = render('card', examples.popular)
+
+      const $component = $('.LBCamden-Card')
+      expect($component.hasClass('LBCamden-Card--popular')).toBeTruthy()
+    })
+
+    it('has smaller heading size', () => {
+      const $ = render('card', examples.popular)
+
+      const $component = $('.LBCamden-Card h2')
+      expect($component.hasClass('govuk-heading-s')).toBeTruthy()
+    })
+  })
 })
