@@ -26,6 +26,7 @@
   &:not(.LBCamden-Card--naked) > h5 {
     a {
       display: flex;
+      @include govuk-responsive-padding($lbc-default-spacing--small, "right");
       align-items: center;
       justify-content: space-between;
 
