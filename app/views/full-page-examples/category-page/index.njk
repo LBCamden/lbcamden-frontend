@@ -39,68 +39,75 @@ notes:
   </div>
   <h2 class="govuk-heading-l">Popular</h2>
 
-  {# <div class="govuk-grid-row"> #}
+  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular">
+    {% set widthClass = 'LBCamden-Card--popular' %}
 
-  {% set widthClass = 'govuk-grid-column-one-quarter' %}
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Paying your business rates",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Paying your business rates",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
 
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Camden's new e-invoicing service",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Camden's new e-invoicing service",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
 
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Search the licensing public register",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Search the licensing public register",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
 
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Discounts and exemptions for business rates",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Discounts and exemptions for business rates",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
 
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Pavement licensing",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Pavement licensing",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
 
-  {{ LBCamdenCard({
-    classes: widthClass,
-    heading: {
-      title: "Alcohol premises licensing",
-      href: "#"
-    },
-    "clickable": true
-  }) }}
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Alcohol premises licensing",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+  </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h2 class="govuk-heading-l">Contents</h2>
-      {% set widthClass = 'govuk-grid-column-one-third' %}
+      {% set widthClass = 'LBCamden-Card LBCamden-Card--naked' %}
 
       {% set items = [
         {
