@@ -34,12 +34,16 @@
   {% endif %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-    {{ LBCamdenLogo({
-      fillColour: 'ffffff'
-    }) }}
+      <div class="LBCamden-Footer__logo">
+        <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Footer__link">
+          {{ LBCamdenLogo({
+          }) }}
+          <span class="govuk-visually-hidden">Camden.gov.uk</span>
+        </a>
+      </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
-{#    <p>Copyright &copy 2022 The London Borough of Camden</p>#}
-  </div>
+      {# <p>Copyright &copy 2022 The London Borough of Camden</p> #}
+    </div>
   </div>
   </footer>
