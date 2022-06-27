@@ -176,3 +176,49 @@ notes:
     </div>
   </div>
 {% endblock %}
+
+{% block footer %}
+  {{ LBCamdenFooter({
+    navigation: [
+      {
+        "title": "Single column list",
+        "width": "two-thirds",
+        "columns": 2,
+        "items": [
+        {
+          "href": "#1",
+          "text": "Home"
+        },
+        {
+          "href": "#2",
+          "text": "Search"
+        },
+        {
+          "href": "#3",
+          "text": "Sitemap"
+        },
+        {
+          "href": "#4",
+          "text": "Contact Camden Council"
+        },
+        {
+          "href": "#5",
+          "text": "Accessibility statement"
+        },
+        {
+          "href": "#6",
+          "text": "Freedom of Information Disclaimer"
+        },
+        {
+          "href": "#7",
+          "text": "Privacy Statement & Cookies"
+        },
+        {
+          "href": "#8",
+          "text": "Modern Slavery Statement"
+        }
+      ]
+      }
+    ]
+  }) }}
+{% endblock %}

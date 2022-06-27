@@ -15,14 +15,14 @@ params:
   type: boolean
   required: false
   description: If set, the 'popular' modifier class will be added (intended for use in collection of popular links)
-- name: heading
-  type: array
-  required: true
-  description: If set, entire card will be wrapped in a link
 - name: naked
   type: boolean
   required: false
   description: If set, will display a very basic version of the 'card'
+- name: heading
+  type: array
+  required: true
+  description: If set, entire card will be wrapped in a link
   params:
     - name: title
       type: string
