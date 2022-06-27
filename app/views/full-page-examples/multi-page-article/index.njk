@@ -1,0 +1,93 @@
+---
+scenario: You are interested in birth re-registration
+notes:
+---
+{% extends "full-page-example.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% set pageTitle = "Birth Re-registrations" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      },
+      {
+        text: "Births, deaths, marriages and citizenship",
+        href: "#/"
+      },
+      {
+        text: "Birth registrations in Camden",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1>Birth Re-registrations</h1>
+
+      <h2>You can re-register a birth if</h2>
+
+      <h3>Parents have married after the birth:</h3>
+
+      <ul>
+        <li>If the parents have married after the child was born and you want the natural father’s details to be on the
+          birth record, you must re-register your child’s birth by completing <a
+            href="#"
+            class="link-external">Form LA1.</a></li>
+      </ul>
+
+      <h3>Parents are not married:</h3>
+
+      <ul>
+        <li>If you want the father’s name on the birth record, both parents will need to fill in an <a
+            href="#"
+            class="link-external">application form to re-register a child’s birth</a> and return it to the Camden
+          Register Office.
+        </li>
+        <li>If one of you can not be there, that person also needs to fill in a <a
+            href="#"
+            class="link-external">statutory declaration of parentage form.</a></li>
+        <li>If the child is 16 years of age or over, you must get their written consent before their surname can be
+          changed.
+        </li>
+      </ul>
+
+      <h3>Apply for re-registration</h3>
+
+      <p>To apply for re-registration, <a href="#"
+                                          class="link-external">please see the gov.uk website and download the
+          appropriate form.</a></p>
+
+      <p>You should then complete the form and <a
+          href="#" class="link-external">send it in
+          to us</a> (rather than the General Register Office as is stated on some of the advice) &nbsp;together with any
+        original documents required such as child’s existing birth certificate and (where applicable) marriage
+        certificate (and, if in a foreign language, also a translation).&nbsp;</p>
+
+      <p>Once we receive your application we will book an appointment for you. &nbsp;In some cases it involves statutory
+        declarations, foreign marriages or court orders we will have to refer to the General Register Office for
+        approval which could take up to 6 weeks before an appointment can be made.</p>
+
+      <p>There is no&nbsp;charge for re-registrations, but if you would like a new birth certificate displaying the
+        changes, you need to purchase one. See our fees list for current prices.</p>
+
+      <p><a
+          href="#">Download
+          fees (pdf)</a></p>
+    </div>
+  </div>
+{% endblock %}

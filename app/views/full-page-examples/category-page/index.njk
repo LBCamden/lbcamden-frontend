@@ -1,0 +1,239 @@
+---
+scenario: The top level page for a topic, service or category.
+notes:
+---
+{% extends "full-page-example.njk" %}
+
+{% from "card/macro.njk" import LBCamdenCard %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageTitle = "Business" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Business</h1>
+
+      <p class="govuk-body-l">Advice and support for businesses in Camden. Licensing information, guidance on paying
+        your business rates and more.</p>
+
+    </div>
+  </div>
+  <h2 class="govuk-heading-l">Popular</h2>
+
+  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+    {% set widthClass = 'LBCamden-Card--popular' %}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Paying your business rates",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Camden's new e-invoicing service",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Search the licensing public register",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Discounts and exemptions for business rates",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Pavement licensing",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+
+    {{ LBCamdenCard({
+      classes: widthClass,
+      heading: {
+        title: "Alcohol premises licensing",
+        href: "#"
+      },
+      clickable: true,
+      popular: true
+    }) }}
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l">Contents</h2>
+      {% set widthClass = 'LBCamden-Card LBCamden-Card--naked' %}
+
+      {% set items = [
+        {
+          title: 'Business rates',
+          links: [
+          'Business rates explained',
+          'Discounts and exemptions for business rates',
+          'Paying your business rates'
+        ]
+        },
+        {
+          title: 'Markets',
+          links: [
+          'Visit Camden’s markets',
+          'Apply to trade in Camden',
+          'Market news'
+        ]
+        },
+        {
+          title: 'Licensing',
+          links: [
+          'Alcohol and entertainment',
+          'Other licenses and permits',
+          'Search the licensing public register'
+        ]
+        },
+        {
+          title: 'Doing business in Camden',
+          links: [
+          'Starting or growing your business',
+          'Business rates, licensing and permits',
+          'Trading standards'
+        ]
+        },
+        {
+          title: 'Food business',
+          links: [
+          'Registering a food business',
+          'Food and hygiene information',
+          'Food safety training'
+        ]
+        },
+        {
+          title: 'Getting paid by Camden',
+          links: [
+          'Camden\'s Accounts Payable Policy',
+          'Camden\'s new e-invoicing service',
+          'e-invoicing Support'
+        ]
+        }
+      ] %}
+      <ul class="LBCamden-Card_Wrapper">
+        {% for item in items %}
+          <li class="{{ widthClass }}">
+            <h3 class="govuk-heading-m">{{ item.title }}</h3>
+            {% if item.links %}
+              <ul class="govuk-list LBCamden-List--dash">
+                {% for link in item.links %}
+                  <li><a href="#">{{ link }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            <a href="#" class="LBCamden-Link--action">View all</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block afterContent %}
+  <section class="LBCamden-Row LBCamden-Row--related">
+    <div class="govuk-width-container">
+      <h2 class="govuk-heading-l">Related</h2>
+      <ul class="govuk-list LBCamden-List--dash">
+        <li><a href="#">Business rates</a></li>
+        <li><a href="#">Apply for business and trade parking permits</a></li>
+        <li><a href="#">Advertisements and signs and planning permission</a></li>
+        <li><a href="#">Estate agent boards and planning permission</a></li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  {{ LBCamdenFooter({
+    navigation: [
+      {
+        "title": "Single column list",
+        "width": "two-thirds",
+        "columns": 2,
+        "items": [
+        {
+          "href": "#1",
+          "text": "Home"
+        },
+        {
+          "href": "#2",
+          "text": "Search"
+        },
+        {
+          "href": "#3",
+          "text": "Sitemap"
+        },
+        {
+          "href": "#4",
+          "text": "Contact Camden Council"
+        },
+        {
+          "href": "#5",
+          "text": "Accessibility statement"
+        },
+        {
+          "href": "#6",
+          "text": "Freedom of Information Disclaimer"
+        },
+        {
+          "href": "#7",
+          "text": "Privacy Statement & Cookies"
+        },
+        {
+          "href": "#8",
+          "text": "Modern Slavery Statement"
+        }
+      ]
+      }
+    ]
+  }) }}
+{% endblock %}

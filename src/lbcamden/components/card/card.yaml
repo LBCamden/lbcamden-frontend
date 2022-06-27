@@ -1,0 +1,133 @@
+params:
+- name: classes
+  type: string
+  required: false
+  description: Classes to add to the header container.
+- name: attributes
+  type: object
+  required: false
+  description: HTML attributes (for example data attributes) to add to the header container.
+- name: clickable
+  type: boolean
+  required: false
+  description: If set, entire card will be clickable (requires JavaScript)
+- name: popular
+  type: boolean
+  required: false
+  description: If set, the 'popular' modifier class will be added (intended for use in collection of popular links)
+- name: heading
+  type: array
+  required: true
+  description: If set, entire card will be wrapped in a link
+- name: naked
+  type: boolean
+  required: false
+  description: If set, will display a very basic version of the 'card'
+  params:
+    - name: title
+      type: string
+      required: true
+      description: The title of the card heading
+    - name: href
+      type: string
+      required: false
+      description: If set, the heading will contain a link
+    - name: headingLevel
+      type: int
+      required: false
+      description: Sets the heading level - if omitted will default to H2
+- name: cardBodyHtml
+  type: string
+  required: false
+  description: If set, card body will display this value
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Header must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Card must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Card must:
+  - be presentational when linked to from accompanying text
+
+examples:
+- name: default
+  description: Standard application of a card.
+  data:
+    heading:
+      title: Example heading
+    cardBodyHtml: 'This is a description'
+
+- name: popular
+  description: Polpular card
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    popular: true
+
+- name: card with link in header
+  description: Standard application of a card with a link in the header.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    cardBodyHtml: 'This is a description'
+
+- name: clickable card
+  description: Clickable version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    cardBodyHtml: 'This is a description'
+    clickable: true
+
+- name: external link card
+  description: Version of the card with an external link.
+  data:
+    heading:
+      title: Example heading
+      href: 'https://google.com'
+      externalLink: true
+    cardBodyHtml: 'This is a description'
+    clickable: true
+
+- name: feature card
+  description: Version of the card that has a stronger visual presence and hierachy.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    cardBodyHtml: 'This is a description'
+    clickable: true
+    featureCard: true
+
+- name: naked card
+  description: Basic stripped back version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    cardBodyHtml: 'This is a description'
+    clickable: true
+    naked: true
+# Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+- name: attributes
+  hidden: true
+  data:
+    attributes:
+      data-test-attribute: value
+      data-test-attribute-2: value-2
+- name: classes
+  hidden: true
+  data:
+    classes: app-header--custom-modifier

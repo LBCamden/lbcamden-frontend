@@ -19,7 +19,8 @@
     max-width: 100%;
     color: lbcamden-colour("white");
 
-    &:visited {
+    &:visited,
+    &:link {
       color: lbcamden-colour("white");
     }
 

@@ -1,0 +1,21 @@
+.LBCamden-Link {
+  &--action {
+    position: relative;
+    font-weight: bold;
+    @include govuk-responsive-padding(2, "right");
+
+    &:before {
+      $dimension: 6px;
+      $width: 2px;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: $dimension;
+      width: $dimension;
+      height: $dimension;
+      transform: rotate(45deg);
+      border-top: $width solid $govuk-link-colour;
+      border-right: $width solid $govuk-link-colour;
+    }
+  }
+}
