@@ -39,7 +39,7 @@ notes:
 
       <h2 class="govuk-heading-s">Contents</h2>
 
-      <ul>
+      <ul class="LBCamden-List LBCamden-List--dash">
         <li><a href="#link1">Housing</a></li>
         <li><a href="#link2">Health and safety</a></li>
         <li><a href="#link3">Environment and street issues</a></li>
@@ -175,4 +175,50 @@ notes:
 
     </div>
   </div>
+{% endblock %}
+
+{% block footer %}
+  {{ LBCamdenFooter({
+    navigation: [
+      {
+        "title": "Single column list",
+        "width": "two-thirds",
+        "columns": 2,
+        "items": [
+        {
+          "href": "#1",
+          "text": "Home"
+        },
+        {
+          "href": "#2",
+          "text": "Search"
+        },
+        {
+          "href": "#3",
+          "text": "Sitemap"
+        },
+        {
+          "href": "#4",
+          "text": "Contact Camden Council"
+        },
+        {
+          "href": "#5",
+          "text": "Accessibility statement"
+        },
+        {
+          "href": "#6",
+          "text": "Freedom of Information Disclaimer"
+        },
+        {
+          "href": "#7",
+          "text": "Privacy Statement & Cookies"
+        },
+        {
+          "href": "#8",
+          "text": "Modern Slavery Statement"
+        }
+      ]
+      }
+    ]
+  }) }}
 {% endblock %}

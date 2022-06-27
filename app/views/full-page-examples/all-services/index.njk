@@ -1,0 +1,207 @@
+---
+scenario: You want to find information about services provided by Camden
+notes:
+---
+{% extends "full-page-example.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "components/card/macro.njk" import LBCamdenCard %}
+
+{% set pageTitle = "Services" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1>Services</h1>
+
+      <p class="govuk-body-lead">Services, information and guidance for residents and businesses in Camden.</p>
+
+      <h2>Do it online</h2>
+      {% set items = [
+      {
+        title: 'Report',
+        description: 'Housing repairs, problems, complaints and more'
+      },
+      {
+        title: 'Pay',
+        description: 'Council tax, rent, business rates, PCN and more'
+      },
+      {
+        title: 'Apply',
+        description: 'Parking permits, council tax support, freedom pass, and more'
+      },
+      {
+        title: 'Request',
+        description: 'Voting, birth certificates, bins, and more'
+      }
+      ] %}
+      <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+        {% for item in items %}
+          {{ LBCamdenCard({
+            heading: {
+              title: item.title,
+              href: '#',
+              headingLevel: 3
+            },
+            cardBodyHtml: item.description
+          }) }}
+        {% endfor %}
+      </div>
+
+
+
+      {% set items = [
+        {
+          title: 'Benefits and support',
+          description: 'Information and advice for people in need of benefits and other support'
+        },
+        {
+          title: 'Births, deaths, marriages and citizenship',
+          description: 'Register a birth or a death. Apply for citizenship, and guidance on getting married'
+        },
+        {
+          title: 'Business',
+          description: 'Advice and support for businesses in Camden. Licensing information, guidance on paying your business rates and more'
+        },
+        {
+          title: 'Children, families and young people',
+          description: 'Support for families with children. Youth services and activities'
+        },
+        {
+          title: 'Council tax',
+          description: 'Advice on how to pay, information on discounts and exemptions'
+        },
+        {
+          title: 'Crime and safety',
+          description: 'Working together to keep our community safe'
+        },
+        {
+          title: 'Education',
+          description: 'Advice on school admissions, term information and support with other educational needs'
+        },
+        {
+          title: 'Environmental issues',
+          description: 'Advice on climate change and pollution, and how to report environmental issues'
+        },
+        {
+          title: 'Housing',
+          description: 'Apply for council housing, report a repair, homelessness information. Guidance for leaseholders homeowners and private tenants'
+        },
+        {
+          title: 'Jobs and skills',
+          description: 'Support with finding employment and developing skills'
+        },
+        {
+          title: 'Libraries and local studies',
+          description: 'Camden libraries and their services, information on local studies and archives'
+        },
+        {
+          title: 'Parking',
+          description: 'Information on permits, paying tickets and traffic management'
+        },
+        {
+          title: 'Planning and building development',
+          description: 'Search for and comment on planning applications. Information on regeneration development. Guidance on building control'
+        },
+        {
+          title: 'Recycling and rubbish',
+          description: 'Collection information and guidance on what to recycle'
+        },
+        {
+          title: 'Roads and travel',
+          description: 'Report an issue with a street or road. Find out about disabled and older persons\' travel. Keep informed on transport strategies and projects'
+        },
+        {
+          title: 'Social care and health',
+          description: 'Information and advice for people in need of social care and those living with an illness or disability'
+        },
+        {
+          title: 'Sports and leisure',
+          description: 'Take part in local activities,  put on events, visit green spaces and parks'
+        }
+      ] %}
+
+      <h2>All services A-Z</h2>
+
+      <div class="LBCamden-Card_Wrapper">
+      {% for item in items %}
+        {{ LBCamdenCard({
+          naked: true,
+          heading: {
+            title: item.title,
+            href: '#',
+            headingLevel: 3
+          },
+          cardBodyHtml: item.description
+        }) }}
+      {% endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ LBCamdenFooter({
+    navigation: [
+      {
+        "title": "Single column list",
+        "width": "two-thirds",
+        "columns": 2,
+        "items": [
+        {
+          "href": "#1",
+          "text": "Home"
+        },
+        {
+          "href": "#2",
+          "text": "Search"
+        },
+        {
+          "href": "#3",
+          "text": "Sitemap"
+        },
+        {
+          "href": "#4",
+          "text": "Contact Camden Council"
+        },
+        {
+          "href": "#5",
+          "text": "Accessibility statement"
+        },
+        {
+          "href": "#6",
+          "text": "Freedom of Information Disclaimer"
+        },
+        {
+          "href": "#7",
+          "text": "Privacy Statement & Cookies"
+        },
+        {
+          "href": "#8",
+          "text": "Modern Slavery Statement"
+        }
+      ]
+      }
+    ]
+  }) }}
+{% endblock %}
