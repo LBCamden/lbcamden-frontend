@@ -1,5 +1,19 @@
+ul,
+ol {
+  @extend .govuk-list;
+}
+
+ol {
+  @extend .govuk-list--number;
+}
+
+ul {
+  @extend .govuk-list--bullet;
+}
+
 .LBCamden-List {
   &--dash {
+    padding: 0;
     list-style: none outside;
 
     li {

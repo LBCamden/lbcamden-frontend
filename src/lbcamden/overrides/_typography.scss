@@ -3,3 +3,21 @@
 @include govuk-exports("lbcamden/overrides/typography") {
   @include _lbcamden-font-face-inter;
 }
+
+h1 {
+  @extend .govuk-heading-xl;
+}
+
+h2 {
+  @extend .govuk-heading-l;
+}
+
+h3 {
+  @extend .govuk-heading-m;
+}
+
+h4,
+h5,
+h6 {
+  @extend .govuk-heading-s;
+}
