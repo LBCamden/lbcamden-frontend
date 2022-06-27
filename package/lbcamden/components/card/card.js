@@ -17,19 +17,13 @@ function LBCamdenCard ($module) {
 //  */
 LBCamdenCard.prototype.init = function () {
   if (!this.$module) {
-    return
+    return false
+  } else {
+    console.log('Card init');
   }
-  if (this.$module.classList.contains('LBCamden-Card--clickable')) {
-    this.handleClickable();
-  }
-};
-
-LBCamdenCard.prototype.handleClickable = function () {
-  if (this.$module.querySelector('a') !== null) {
-    this.$module.addEventListener('click', () => {
-      this.$module.querySelector('a').click();
-    });
-  }
+  // if (this.$module.classList.contains('LBCamden-Card--clickable')) {
+  //   this.handleClickable()
+  // }
 };
 
 return LBCamdenCard;
