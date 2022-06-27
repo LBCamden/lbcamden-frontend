@@ -3,13 +3,15 @@
     list-style: none outside;
 
     li {
-      @include govuk-responsive-padding(6, "left");
+      @include govuk-responsive-padding(4, "left");
+      position: relative;
 
       &:before {
-        content: "";
-        @include govuk-responsive-padding(6, "left");
-        height: 1px;
-        background: $govuk-link-colour;
+        content: "-";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        overflow: hidden;
       }
     }
   }
