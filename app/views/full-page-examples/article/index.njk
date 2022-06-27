@@ -1,0 +1,161 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+{% extends "full-page-example.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% set pageTitle = "2018’s oddest requests from Brits abroad: ‘Strictly’, vampires and sausages" %}
+{% block pageTitle %}{{ pageTitle }} - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      },
+      {
+        text: "Births, deaths, marriages and citizenship",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1>Change your name by deed poll</h1>
+
+      <h2>What is a deed poll?</h2>
+
+      <p>A deed poll is a legal document that binds an individual to a particular course of action. The most common
+        use
+        of a deed poll is to change a name. A deed poll commits you to the following actions:</p>
+
+      <ul>
+        <li>to renounce and abandon the use of your former name(s)</li>
+        <li>to use your new name(s) at all times</li>
+        <li>requires everybody to address you only by your new name(s)</li>
+      </ul>
+
+      <h3>Adults</h3>
+
+      <p>Anyone over the age of 16 can change their name by deed poll. If you are aged over 16 years but not yet 18
+        years old, the process is the same as it is for an adult. You do not need the consent of whoever has parental
+        responsibility for you. Please book an appointment and come with relevant ID and a witness.</p>
+
+      <h3>Children</h3>
+
+      <p>A person who has parental responsibility must apply for the name change on behalf of the child. Camden only
+        completes a deed poll service where all parents mentioned on a birth certificate (or organisations) that have
+        parental rights and responsibilities over the child are able to attend and agree to the name change.&nbsp;Please
+        book an appointment and come with relevant ID and a witness.</p>
+
+      <h2>How much does a deed poll cost?</h2>
+
+      <ul>
+        <li>Monday to&nbsp;Friday 9am-3.30pm: £62</li>
+        <li>Monday to Friday from 4.45pm: £75</li>
+        <li>Saturday: £75</li>
+        <li>Additional copy of document: £12.60&nbsp;</li>
+      </ul>
+
+      <p>You cannot obtain further copies afterwards, so make sure you order as many as you need at the time you sign
+        your deed poll</p>
+
+      <h2>When&nbsp;would I need to use a deed poll?</h2>
+
+      <p>For most purposes a deed poll will be accepted to change documents, but there are some important exceptions.
+        Birth and marriage certificates cannot be changed. However, your deed poll together with your birth
+        certificate
+        will be sufficient for the passport office to issue you with a passport in the new name.&nbsp;<br> If the
+        purpose of your deed poll is to alter a particular document it is important to check first with the issuer
+        that
+        a change will be allowed.</p>
+
+      <h2>What about my name can I change?</h2>
+
+      <h3>You can:</h3>
+
+      <ul>
+        <li>change your entire name</li>
+        <li>add or remove surnames, forenames and middle names</li>
+        <li>rearrange your names</li>
+        <li>alter spellings of names</li>
+      </ul>
+
+      <p>Although the possibilities are almost limitless there are some basic conditions that your new name will have
+        to
+        meet. On the whole these restrictions are to ensure that you will not have problems when changing documents
+        such
+        as your passport.</p>
+      <p>We will not accept names in the following circumstances:</p>
+
+      <ul>
+        <li>If the name is offensive.</li>
+        <li>If the name is impossible to pronounce.</li>
+        <li>If the name contains numbers, symbols or punctuation marks. &nbsp;Apostrophes are accepted in the context
+          of
+          a name (such as O’Neill) as are hyphens to link two names together (such as Smith-Johnson).
+        </li>
+        <li>Recognized accents are accepted, but be aware that the use of accents in the UK is not widespread and
+          confusion can arise if they are inconsistently used.
+        </li>
+        <li>The name must contain at least one forename and at least one surname.</li>
+        <li>You may not add a title such as Lord or Duke unless you can provide documentary proof of your entitlement
+          to
+          usage. &nbsp;Purchased titles are not accepted.
+        </li>
+        <li>Academic titles such as Professor will only be included if documentary proof is provided. &nbsp;Purchased
+          qualifications will not be accepted.
+        </li>
+        <li>Amusing names can be accepted, but you should consider carefully if this will have consequences in your
+          personal or professional life.
+        </li>
+      </ul>
+
+      <p>The conditions listed above are guidelines and the acceptance or refusal of a name is at the discretion of
+        the
+        Registering Officer.</p>
+
+      <h2>Do I really need to change my name by deed poll?</h2>
+
+      <p>In theory, you could change your name simply by starting to use a new one. This is called a name change by
+        usage.&nbsp;The main problem with this method is that many organisations will only change your name if you
+        produce substantial documentary evidence of the name change.</p>
+      <p>There are times when a deed poll is not needed to change a name:</p>
+
+      <ul>
+        <li>After marriage or civil partnership. A woman who wants to change her surname to that of her husband uses
+          her
+          marriage certificate. A civil partner uses their civil partnership certificate to change their surname
+        </li>
+        <li>After divorce. A woman can revert to her maiden surname by using her decree absolute</li>
+        <li>After being widowed. A woman reverting to her maiden name after being widowed can use her late husband’s
+          death certificate together with her marriage certificate to change her name.&nbsp;
+        </li>
+      </ul>
+
+      <h2>How do I apply for a deed poll?</h2>
+
+      <p>You will need to book an appointment. Once you’ve booked your appointment your completed online application
+        form will need to be printed and signed when you attend.</p>
+
+      <p>Ensure you bring a suitable witness and the appropriate evidence of your identity to your
+        appointment.&nbsp;</p>
+
+      <p><a class="button button--base link-external"
+            href="#">Book
+          an appointment</a></p>
+    </div>
+  </div>
+{% endblock %}
