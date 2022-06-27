@@ -1,0 +1,32 @@
+ul,
+ol {
+  @extend .govuk-list;
+}
+
+ol {
+  @extend .govuk-list--number;
+}
+
+ul {
+  @extend .govuk-list--bullet;
+}
+
+.LBCamden-List {
+  &--dash {
+    padding: 0;
+    list-style: none outside;
+
+    li {
+      @include govuk-responsive-padding(4, "left");
+      position: relative;
+
+      &:before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        overflow: hidden;
+      }
+    }
+  }
+}

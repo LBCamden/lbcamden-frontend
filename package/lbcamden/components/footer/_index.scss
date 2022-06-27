@@ -6,4 +6,30 @@
   a {
     color: lbcamden-colour("white");
   }
+
+  &__logo {
+    @include govuk-responsive-margin(2, "top");
+    @include govuk-responsive-margin(2, "bottom");
+    display: inline-block;
+    width: 30%;
+
+    @include govuk-media-query($from: tablet) {
+      width: 60%;
+    }
+  }
+
+  &__link {
+    display: block;
+    max-width: 100%;
+    color: lbcamden-colour("white");
+
+    &:visited {
+      color: lbcamden-colour("white");
+    }
+
+    &:focus {
+      color: lbcamden-colour("black");
+      background: $govuk-focus-colour;
+    }
+  }
 }

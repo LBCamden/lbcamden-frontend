@@ -1,0 +1,64 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the header container."
+    },
+    {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the header container."
+    },
+    {
+        "name": "clickable",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, entire card will be clickable (requires JavaScript)"
+    },
+    {
+        "name": "popular",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, the 'popular' modifier class will be added (intended for use in collection of popular links)"
+    },
+    {
+        "name": "naked",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, will display a very basic version of the 'card'"
+    },
+    {
+        "name": "heading",
+        "type": "array",
+        "required": true,
+        "description": "If set, entire card will be wrapped in a link",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title of the card heading"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "If set, the heading will contain a link"
+            },
+            {
+                "name": "headingLevel",
+                "type": "int",
+                "required": false,
+                "description": "Sets the heading level - if omitted will default to H2"
+            }
+        ]
+    },
+    {
+        "name": "cardBodyHtml",
+        "type": "string",
+        "required": false,
+        "description": "If set, card body will display this value"
+    }
+]

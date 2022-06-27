@@ -1,0 +1,19 @@
+{% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
+<div class="LBCamden-Card {{ params.classes if params.classes }} {% if params.featureCard %}LBCamden-Card--featured{% endif %}{% if params.popular %} LBCamden-Card--popular{% endif %}{% if params.naked %} LBCamden-Card--naked{% endif %}{% if params.clickable %} LBCamden-Card--clickable{% endif %}"
+data-module="lbcamden-card"
+{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ headingLevel }} class="{% if params.popular %}govuk-heading-s{% else %}govuk-heading-m{% endif %}">
+    {% if params.heading.href %}
+      <a href="{{ params.heading.href }}" {% if params.heading.externalLink %}rel="external"{% endif %}>
+        {{ params.heading.title }}
+      </a>
+    {% else %}
+      {{ params.heading.title }}
+    {% endif %}
+  </h{{ headingLevel }}>
+{%- if params.cardBodyHtml %}
+  <div class="LBCamden-Card__content">
+    <p>{{ params.cardBodyHtml | safe }}</p>
+  </div>
+{%- endif %}
+</div>

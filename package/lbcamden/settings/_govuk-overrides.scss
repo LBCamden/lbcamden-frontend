@@ -3,17 +3,20 @@
 $govuk-focus-colour: lbcamden-colour("yellow");
 $button-shadow-size: 2;
 
+$govuk-canvas-background-colour: lbcamden-colour("govuk-bg-dark1-colour");
+
 $govuk-font-family: inherit;
-$govuk-font-family: arial, sans-serif;
+$govuk-font-family: "Inter", arial, sans-serif;
 $govuk-global-styles: true; // Applies styles to entire site eg. p and ul
 
-$govuk-page-width: 1100px; // Taken from current sutton.gov.uk site
+$govuk-page-width: 1170px;
 
 $govuk-text-colour: lbcamden-colour("black");
 $govuk-link-colour: lbcamden-colour("blue");
-$govuk-link-visited-colour: darken($govuk-link-colour, 20%);
+$govuk-link-hover-colour: lbcamden-colour("dark-blue");
+$govuk-link-visited-colour: lbcamden-colour("purple");
 
-$govuk-brand-colour: lbcamden-colour("plum");
+$govuk-brand-colour: lbcamden-colour("govuk-brand1-1-colour");
 $govuk-success-colour: lbcamden-colour("green");
 
 $govuk-error-colour: lbcamden-colour("dark-red");
