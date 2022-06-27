@@ -15,10 +15,10 @@ function initAll (options) {
     new LBCamdenHeader($LBCamdenHeader).init()
   })
 
-  var $LBCamdenCards = scope.querySelectorAll('[data-module="lbcamden-card"]')
-  nodeListForEach($LBCamdenCards, function ($LBCamdenCard) {
-    new LBCamdenCard($LBCamdenCard).init()
-  })
+  // var $LBCamdenCards = scope.querySelectorAll('[data-module="lbcamden-card"]')
+  // nodeListForEach($LBCamdenCards, function ($LBCamdenCard) {
+  //   new LBCamdenCard($LBCamdenCard).init()
+  // })
 }
 
 export {
