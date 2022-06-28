@@ -8,6 +8,16 @@
 
 We’ve made fixes to CAMDEN.GOV.UK Frontend in the following pull requests:
 
+## 0.0.4
+
+🆕 New features:
+
+- Card component available from exported template.njk 
+
+- 🔧 Fixes:
+
+- Removed border from global banner
+
 ## 0.0.3
 
 🆕 New features:
