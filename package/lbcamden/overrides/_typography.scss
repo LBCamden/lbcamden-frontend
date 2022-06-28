@@ -21,3 +21,22 @@ h5,
 h6 {
   @extend .govuk-heading-s;
 }
+
+p {
+  @extend %govuk-body-m;
+}
+
+strong,
+b {
+  @include govuk-typography-weight-bold;
+}
+
+a {
+  @extend %govuk-link;
+}
+
+hr {
+  @extend %govuk-section-break;
+  @extend %govuk-section-break--visible;
+  @extend %govuk-section-break--xl;
+}

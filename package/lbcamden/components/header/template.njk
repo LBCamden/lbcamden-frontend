@@ -2,7 +2,7 @@
 
 <header class="LBCamden-Header {{ params.classes if params.classes }}" role="banner" data-module="lbcamden-header"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="{{ params.containerClasses | default('govuk-width-container') }}">
     <div class="LBCamden-Header__logo">
       <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Header__link">
         {{ LBCamdenLogo({
