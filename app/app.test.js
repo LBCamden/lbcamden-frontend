@@ -105,7 +105,7 @@ describe(`http://localhost:${PORT}`, () => {
       requestPath(templatePath, (err, res) => {
         const $ = cheerio.load(res.body)
         const $linkAsset = $('link[href^="/assets/images/favicons/"]')
-        expect($linkAsset.length).toBe(5)
+        expect($linkAsset.length).toBe(4)
         done(err)
       })
     })
