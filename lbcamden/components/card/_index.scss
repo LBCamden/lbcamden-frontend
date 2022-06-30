@@ -132,9 +132,9 @@
   // Use the tallest cell in the grid to set the height for all rows
   grid-auto-rows: fractions(1);
   grid-template-columns: fractions(1);
-  -webkit-column-gap: govuk-spacing($lbc-default-spacing / 2);
-          column-gap: govuk-spacing($lbc-default-spacing / 2);
-  row-gap: govuk-spacing($lbc-default-spacing / 2);
+  -webkit-column-gap: govuk-spacing($lbc-default-spacing--small);
+          column-gap: govuk-spacing($lbc-default-spacing--small);
+  row-gap: govuk-spacing($lbc-default-spacing--small);
 
   @include govuk-media-query($from: "tablet") {
     grid-template-columns: fractions(2);
