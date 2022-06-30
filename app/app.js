@@ -12,6 +12,7 @@ const readdir = util.promisify(fs.readdir)
 const helperFunctions = require('../lib/helper-functions')
 const fileHelper = require('../lib/file-helper')
 const configPaths = require('../config/paths.json')
+const pjson = require('../package.json')
 
 // Set up views
 const appViews = [
@@ -93,6 +94,7 @@ module.exports = (options) => {
     } else {
       response.locals.legacyQuery = ''
     }
+    response.locals.version = pjson.version
     next()
   })
 
