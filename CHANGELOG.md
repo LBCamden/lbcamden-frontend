@@ -8,6 +8,11 @@
 
 We’ve made fixes to CAMDEN.GOV.UK Frontend in the following pull requests:
 
+## 0.0.5
+🆕 New features:
+
+- Header now accommodates phase banner 
+
 ## 0.0.4
 
 🆕 New features:

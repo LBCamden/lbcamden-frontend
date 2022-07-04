@@ -1,14 +1,30 @@
 {% from "../logo/macro.njk" import LBCamdenLogo %}
 
-<header class="LBCamden-Header {{ params.classes if params.classes }}" role="banner" data-module="lbcamden-header"
+<header
+  class="LBCamden-Header {{ params.classes if params.classes }}{% if params.phaseBanner %} LBCamden-Header--with-phase-banner{% endif %}"
+  role="banner" data-module="lbcamden-header"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <div class="{{ params.containerClasses | default('govuk-width-container') }}">
-    <div class="LBCamden-Header__logo">
-      <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Header__link">
-        {{ LBCamdenLogo({
-        }) }}
-        <span class="govuk-visually-hidden">Camden.gov.uk</span>
-      </a>
+<div class="{{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="LBCamden-Header__logo">
+    <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Header__link">
+      {{ LBCamdenLogo({
+      }) }}
+      <span class="govuk-visually-hidden">Camden.gov.uk</span>
+    </a>
+  </div>
+</div>
+</header>
+{% if params.phaseBanner %}
+  <div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+      </p>
     </div>
   </div>
-</header>
+{% endif %}

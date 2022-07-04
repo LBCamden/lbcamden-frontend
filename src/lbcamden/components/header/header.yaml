@@ -7,6 +7,10 @@ params:
   type: object
   required: false
   description: HTML attributes (for example data attributes) to add to the header container.
+- name: phaseBanner
+  type: boolean
+  required: false
+  description: If present, adds a phasebanner to the header
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -30,10 +34,14 @@ accessibilityCriteria: |
 
 examples:
 - name: default
-  description: The standard header as used on information pages on GOV.UK
+  description: The standard header
   data:
     {}
 
+- name: phasebanner
+  description: The standard header with phase banner
+  data:
+    phaseBanner: true
 # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
 - name: attributes
   hidden: true
