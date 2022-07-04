@@ -48,8 +48,8 @@
         $width: 3px;
         content: "";
         position: absolute;
-        top: govuk-spacing(3);
-        right: govuk-spacing(3);
+        top: govuk-spacing(4);
+        right: govuk-spacing(2);
         width: $dimension;
         height: $dimension;
         -webkit-transform: rotate(45deg);
