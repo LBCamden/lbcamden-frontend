@@ -10,5 +10,11 @@
         "type": "object",
         "required": false,
         "description": "HTML attributes (for example data attributes) to add to the header container."
+    },
+    {
+        "name": "phaseBanner",
+        "type": "boolean",
+        "required": false,
+        "description": "If present, adds a phasebanner to the header"
     }
 ]
