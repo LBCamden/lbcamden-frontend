@@ -41,5 +41,12 @@ describe('header', () => {
       const $component = $('.LBCamden-Header')
       expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
+
+    it('adds phase banner modifier', () => {
+      const $ = render('header', examples.phasebanner)
+
+      const $component = $('.LBCamden-Header')
+      expect($component.hasClass('LBCamden-Header--with-phase-banner')).toBeTruthy()
+    })
   })
 })

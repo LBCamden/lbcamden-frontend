@@ -38,7 +38,7 @@ examples:
   data:
     {}
 
-- name: phase banner
+- name: phasebanner
   description: The standard header with phase banner
   data:
     phaseBanner: true
