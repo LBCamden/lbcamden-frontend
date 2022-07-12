@@ -6,7 +6,11 @@
 
 ### Fixes
 
-We’ve made fixes to CAMDEN.GOV.UK Frontend in the following pull requests:
+## 0.0.6
+🆕 New features:
+
+- Documented all current code examples
+- Upgraded to GOVUK Frontend 4.2.0
 
 ## 0.0.5
 🆕 New features:

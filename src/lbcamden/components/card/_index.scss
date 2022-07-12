@@ -150,6 +150,14 @@
     row-gap: govuk-spacing($lbc-default-spacing);
   }
 
+  &--two-columns {
+    grid-template-columns: fractions(2);
+  }
+
+  &--three-columns {
+    grid-template-columns: fractions(3);
+  }
+
   &--two-columns-from-desktop {
     @include govuk-media-query($from: "desktop") {
       grid-template-columns: fractions(2);
