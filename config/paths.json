@@ -12,7 +12,9 @@
   "public": "public/",
   "sassdoc": "sassdoc/",
   "src": "src/lbcamden/",
-    "components": "src/lbcamden/components/",
+  "components": "src/lbcamden/components/",
+  "govukSrc": "node_modules/govuk-frontend/govuk/",
+  "govukComponents": "node_modules/govuk-frontend/govuk/components",
   "ports": {
     "app": 3000,
     "test": 8888

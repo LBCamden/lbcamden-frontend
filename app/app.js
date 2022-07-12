@@ -23,6 +23,8 @@ const appViews = [
   configPaths.fullPageExamples,
   configPaths.components,
   configPaths.src,
+  configPaths.govukComponents,
+  configPaths.govukSrc,
   configPaths.node_modules
 ]
 
@@ -42,6 +44,7 @@ module.exports = (options) => {
 
   // make the function available as a filter for all templates
   env.addFilter('componentNameToMacroName', helperFunctions.componentNameToMacroName)
+  env.addFilter('govukComponentNameToMacroName', helperFunctions.govukComponentNameToMacroName)
   env.addGlobal('markdown', marked)
 
   // Set view engine
@@ -103,11 +106,13 @@ module.exports = (options) => {
   // Index page - render the component list template
   app.get('/', async function (req, res) {
     const components = fileHelper.allComponents
+    const govukComponents = fileHelper.allGovukComponents
     const examples = await readdir(path.resolve(configPaths.examples))
     const fullPageExamples = fileHelper.fullPageExamples()
 
     res.render('index', {
       componentsDirectory: components,
+      govukComponentsDirectory: govukComponents,
       examplesDirectory: examples,
       fullPageExamples: fullPageExamples
     })
@@ -117,6 +122,22 @@ module.exports = (options) => {
   // from its YAML file
   app.param('component', function (req, res, next, componentName) {
     res.locals.componentData = fileHelper.getComponentData(componentName)
+    next()
+  })
+
+  app.param('govukComponent', function (req, res, next, componentName) {
+    const theComponent = JSON.parse(fileHelper.getGovukComponentData(componentName, true))
+    // console.log(theComponent.fixtures)
+    const examples = theComponent.fixtures.map(x => ({
+      name: x.name,
+      hidden: x.hidden,
+      data: x.options
+    }))
+    const mappedObject = {
+      params: [],
+      examples: examples
+    }
+    res.locals.componentData = mappedObject
     next()
   })
 
@@ -134,6 +155,35 @@ module.exports = (options) => {
         examples: [defaultExample]
       }
     })
+
+    // console.log(res.locals.componentData)
+
+    res.render('all-components', function (error, html) {
+      if (error) {
+        next(error)
+      } else {
+        res.send(html)
+      }
+    })
+  })
+
+  app.get('/govukComponents/all', function (req, res, next) {
+    const govukComponents = fileHelper.allGovukComponents
+    // console.log(govukComponents)
+
+    res.locals.govukComponentData = govukComponents.map(componentName => {
+      const govukComponentData = fileHelper.getGovukComponentData(componentName)
+      const defaultExample = JSON.parse(govukComponentData).fixtures.find(
+        example => example.name === 'default'
+      )
+      return {
+        componentName,
+        examples: [defaultExample]
+      }
+    })
+
+    // console.log(res.locals.govukComponentData)
+
     res.render('all-components', function (error, html) {
       if (error) {
         next(error)
@@ -147,6 +197,25 @@ module.exports = (options) => {
   app.get('/components/:component', function (req, res, next) {
     // make variables available to nunjucks template
     res.locals.componentPath = req.params.component
+    res.locals.govukComponent = false
+
+    // console.log(res.locals.componentData)
+
+    res.render('component', function (error, html) {
+      if (error) {
+        next(error)
+      } else {
+        res.send(html)
+      }
+    })
+  })
+
+  app.get('/govukComponents/:govukComponent', function (req, res, next) {
+    // make variables available to nunjucks template
+    res.locals.componentPath = req.params.govukComponent
+    res.locals.govukComponent = true
+
+    // console.log(res.locals.componentData)
 
     res.render('component', function (error, html) {
       if (error) {
@@ -175,6 +244,38 @@ module.exports = (options) => {
 
     // Construct and evaluate the component with the data for this example
     const macroName = helperFunctions.componentNameToMacroName(componentName)
+    const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+
+    res.locals.componentView = env.renderString(
+      `{% from '${componentName}/macro.njk' import ${macroName} %}
+      {{ ${macroName}(${macroParameters}) }}`
+    )
+
+    let bodyClasses = ''
+    if (req.query.iframe) {
+      bodyClasses = 'app-iframe-in-component-preview'
+    }
+
+    res.render('component-preview', { bodyClasses, previewLayout })
+  })
+
+  app.get('/govukComponents/:govukComponent/:example*?/preview', function (req, res, next) {
+    // Find the data for the specified example (or the default example)
+    const componentName = req.params.govukComponent
+    const requestedExampleName = req.params.example || 'default'
+
+    const previewLayout = res.locals.componentData.previewLayout || 'layout'
+
+    const exampleConfig = res.locals.componentData.examples.find(
+      example => example.name.replace(/ /g, '-') === requestedExampleName
+    )
+
+    if (!exampleConfig) {
+      next()
+    }
+
+    // Construct and evaluate the component with the data for this example
+    const macroName = helperFunctions.govukComponentNameToMacroName(componentName)
     const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
 
     res.locals.componentView = env.renderString(
