@@ -124,6 +124,11 @@ module.exports = (options) => {
     next()
   })
 
+  app.param('govukComponent', function (req, res, next, componentName) {
+    res.locals.componentData = fileHelper.getComponentData(componentName, true)
+    next()
+  })
+
   // All components view
   app.get('/components/all', function (req, res, next) {
     const components = fileHelper.allComponents
@@ -138,6 +143,37 @@ module.exports = (options) => {
         examples: [defaultExample]
       }
     })
+
+    console.log(res.locals.componentData)
+
+    res.render('all-components', function (error, html) {
+      if (error) {
+        next(error)
+      } else {
+        res.send(html)
+      }
+    })
+  })
+
+  app.get('/govukComponents/all', function (req, res, next) {
+    const govukComponents = fileHelper.allGovukComponents
+    console.log(govukComponents)
+
+    res.locals.govukComponentData = govukComponents.map(componentName => {
+      const govukComponentData = fileHelper.getGovukComponentData(componentName)
+      // console.log('GC: ' + govukComponentData)
+      // @todo - expose GovUKComponent fixtures as they were a YAML example
+      const defaultExample = JSON.parse(govukComponentData).fixtures.find(
+        example => example.name === 'default'
+      )
+      return {
+        componentName,
+        examples: [defaultExample]
+      }
+    })
+
+    console.log(res.locals.govukComponentData)
+
     res.render('all-components', function (error, html) {
       if (error) {
         next(error)
@@ -151,6 +187,23 @@ module.exports = (options) => {
   app.get('/components/:component', function (req, res, next) {
     // make variables available to nunjucks template
     res.locals.componentPath = req.params.component
+    res.locals.govukComponent = false
+
+    res.render('component', function (error, html) {
+      if (error) {
+        next(error)
+      } else {
+        res.send(html)
+      }
+    })
+  })
+
+  app.get('/govukComponents/:govukComponent', function (req, res, next) {
+    // make variables available to nunjucks template
+    res.locals.componentPath = req.params.govukComponent
+    res.locals.govukComponent = true
+
+    // @todo - expose GovUKComponent fixtures as they were a YAML example
 
     res.render('component', function (error, html) {
       if (error) {
@@ -165,6 +218,38 @@ module.exports = (options) => {
   app.get('/components/:component/:example*?/preview', function (req, res, next) {
     // Find the data for the specified example (or the default example)
     const componentName = req.params.component
+    const requestedExampleName = req.params.example || 'default'
+
+    const previewLayout = res.locals.componentData.previewLayout || 'layout'
+
+    const exampleConfig = res.locals.componentData.examples.find(
+      example => example.name.replace(/ /g, '-') === requestedExampleName
+    )
+
+    if (!exampleConfig) {
+      next()
+    }
+
+    // Construct and evaluate the component with the data for this example
+    const macroName = helperFunctions.componentNameToMacroName(componentName)
+    const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+
+    res.locals.componentView = env.renderString(
+      `{% from '${componentName}/macro.njk' import ${macroName} %}
+      {{ ${macroName}(${macroParameters}) }}`
+    )
+
+    let bodyClasses = ''
+    if (req.query.iframe) {
+      bodyClasses = 'app-iframe-in-component-preview'
+    }
+
+    res.render('component-preview', { bodyClasses, previewLayout })
+  })
+
+  app.get('/govukComponents/:govukComponent/:example*?/preview', function (req, res, next) {
+    // Find the data for the specified example (or the default example)
+    const componentName = req.params.govukComponent
     const requestedExampleName = req.params.example || 'default'
 
     const previewLayout = res.locals.componentData.previewLayout || 'layout'

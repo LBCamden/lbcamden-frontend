@@ -20,9 +20,9 @@
       <h2 class="govuk-heading-m">Base Components</h2>
 
       <ul class="govuk-list">
-        <li><a href="/components/all{{ legacyQuery }}" class="govuk-link">All</a></li>
+        <li><a href="/govukComponents/all{{ legacyQuery }}" class="govuk-link">All</a></li>
         {% for componentName in govukComponentsDirectory | sort %}
-          <li><a href="/components/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
+          <li><a href="/govukComponents/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
         {% endfor %}
       </ul>
     </div>

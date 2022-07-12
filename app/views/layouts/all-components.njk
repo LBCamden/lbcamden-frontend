@@ -19,9 +19,17 @@
       All components
     </h1>
   </div>
-  {% for data in componentData %}
-    {% set componentName = data.componentName %}
-    {% set componentNameHuman = componentName | replace("-", " ") %}
-    {{ showExamples(componentName, componentNameHuman, data, legacyQuery) }}
-  {% endfor %}
+  {% if govukComponentData.length > 0 %}
+    {% for data in govukComponentData %}
+      {% set componentName = data.componentName %}
+      {% set componentNameHuman = componentName | replace("-", " ") %}
+      {{ showExamples(componentName, componentNameHuman, data, legacyQuery, true) }}
+    {% endfor %}
+  {% else %}
+    {% for data in componentData %}
+      {% set componentName = data.componentName %}
+      {% set componentNameHuman = componentName | replace("-", " ") %}
+      {{ showExamples(componentName, componentNameHuman, data, legacyQuery, false) }}
+    {% endfor %}
+  {% endif %}
 {% endblock %}
