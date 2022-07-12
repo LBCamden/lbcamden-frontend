@@ -23,6 +23,8 @@ const appViews = [
   configPaths.fullPageExamples,
   configPaths.components,
   configPaths.src,
+  configPaths.govukComponents,
+  configPaths.govukSrc,
   configPaths.node_modules
 ]
 
@@ -103,11 +105,13 @@ module.exports = (options) => {
   // Index page - render the component list template
   app.get('/', async function (req, res) {
     const components = fileHelper.allComponents
+    const govukComponents = fileHelper.allGovukComponents
     const examples = await readdir(path.resolve(configPaths.examples))
     const fullPageExamples = fileHelper.fullPageExamples()
 
     res.render('index', {
       componentsDirectory: components,
+      govukComponentsDirectory: govukComponents,
       examplesDirectory: examples,
       fullPageExamples: fullPageExamples
     })

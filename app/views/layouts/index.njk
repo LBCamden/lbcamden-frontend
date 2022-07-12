@@ -8,11 +8,20 @@
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-m">Components</h2>
+      <h2 class="govuk-heading-m">Bepsoke Components</h2>
 
       <ul class="govuk-list">
         <li><a href="/components/all{{ legacyQuery }}" class="govuk-link">All</a></li>
         {% for componentName in componentsDirectory | sort %}
+          <li><a href="/components/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+
+      <h2 class="govuk-heading-m">Base Components</h2>
+
+      <ul class="govuk-list">
+        <li><a href="/components/all{{ legacyQuery }}" class="govuk-link">All</a></li>
+        {% for componentName in govukComponentsDirectory | sort %}
           <li><a href="/components/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
         {% endfor %}
       </ul>
