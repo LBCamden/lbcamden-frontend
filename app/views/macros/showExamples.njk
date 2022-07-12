@@ -2,9 +2,9 @@
 
 {% macro showExamples(componentSlug, componentName, data, legacyQuery, govukComponent) %}
 
-  <code>{{ data | safe }}</code>
+{#  <code>{{ data | safe }}</code>#}
 
-  <p>GC: {{ govukComponent }}</p>
+{#  <p>GC: {{ govukComponent }}</p>#}
 
   <p>Examples: {{ data.examples.length }}</p>
 
@@ -12,7 +12,7 @@
   {# <p>Data: {{ data.fixtures }}</p> #}
   {# {% else %} #}
 
-  <p>Data: {{ data.examples }}</p>
+{#  <p>Data: {{ data.examples | safe }}</p>#}
 
   {% for example in data.examples | rejectattr('hidden') %}
 

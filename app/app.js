@@ -280,7 +280,7 @@ module.exports = (options) => {
     }
 
     // Construct and evaluate the component with the data for this example
-    const macroName = helperFunctions.componentNameToMacroName(componentName)
+    const macroName = helperFunctions.govukComponentNameToMacroName(componentName)
     const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
 
     res.locals.componentView = env.renderString(
