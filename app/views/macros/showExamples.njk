@@ -2,18 +2,6 @@
 
 {% macro showExamples(componentSlug, componentName, data, legacyQuery, govukComponent) %}
 
-{#  <code>{{ data | safe }}</code>#}
-
-{#  <p>GC: {{ govukComponent }}</p>#}
-
-  <p>Examples: {{ data.examples.length }}</p>
-
-  {# {% if govukComponent %} #}
-  {# <p>Data: {{ data.fixtures }}</p> #}
-  {# {% else %} #}
-
-{#  <p>Data: {{ data.examples | safe }}</p>#}
-
   {% for example in data.examples | rejectattr('hidden') %}
 
     {% set exampleSlug = (example.name | replace(" ", "-")) %}
@@ -68,5 +56,4 @@
 
     </section>
   {% endfor %}
-  {# {% endif %} #}
 {% endmacro %}
