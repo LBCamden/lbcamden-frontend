@@ -125,7 +125,20 @@ module.exports = (options) => {
   })
 
   app.param('govukComponent', function (req, res, next, componentName) {
-    res.locals.componentData = fileHelper.getComponentData(componentName, true)
+    const theComponent = JSON.parse(fileHelper.getGovukComponentData(componentName, true))
+    const examples = theComponent.fixtures.map(x => {
+
+    })
+    const mappedObject = {
+      params: [],
+      examples: [
+        {
+          name: 'default',
+          description: 'The standard header as used on information pages on GOV.UK',
+          data: null
+        }]
+    }
+    res.locals.componentData = mappedObject
     next()
   })
 
@@ -189,6 +202,8 @@ module.exports = (options) => {
     res.locals.componentPath = req.params.component
     res.locals.govukComponent = false
 
+    console.log(res.locals.componentData)
+
     res.render('component', function (error, html) {
       if (error) {
         next(error)
@@ -202,6 +217,8 @@ module.exports = (options) => {
     // make variables available to nunjucks template
     res.locals.componentPath = req.params.govukComponent
     res.locals.govukComponent = true
+
+    console.log(res.locals.componentData)
 
     // @todo - expose GovUKComponent fixtures as they were a YAML example
 
