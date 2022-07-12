@@ -129,9 +129,9 @@ module.exports = (options) => {
     const theComponent = JSON.parse(fileHelper.getGovukComponentData(componentName, true))
     // console.log(theComponent.fixtures)
     const examples = theComponent.fixtures.map(x => ({
-        name: x.name,
-        hidden: x.hidden,
-        data: x.options
+      name: x.name,
+      hidden: x.hidden,
+      data: x.options
     }))
     const mappedObject = {
       params: [],
