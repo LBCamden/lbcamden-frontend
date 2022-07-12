@@ -44,6 +44,7 @@ module.exports = (options) => {
 
   // make the function available as a filter for all templates
   env.addFilter('componentNameToMacroName', helperFunctions.componentNameToMacroName)
+  env.addFilter('govukComponentNameToMacroName', helperFunctions.govukComponentNameToMacroName)
   env.addGlobal('markdown', marked)
 
   // Set view engine
@@ -126,7 +127,7 @@ module.exports = (options) => {
 
   app.param('govukComponent', function (req, res, next, componentName) {
     const theComponent = JSON.parse(fileHelper.getGovukComponentData(componentName, true))
-    console.log(theComponent.fixtures)
+    // console.log(theComponent.fixtures)
     const examples = theComponent.fixtures.map(x => ({
         name: x.name,
         hidden: x.hidden,
@@ -155,7 +156,7 @@ module.exports = (options) => {
       }
     })
 
-    console.log(res.locals.componentData)
+    // console.log(res.locals.componentData)
 
     res.render('all-components', function (error, html) {
       if (error) {
@@ -168,12 +169,10 @@ module.exports = (options) => {
 
   app.get('/govukComponents/all', function (req, res, next) {
     const govukComponents = fileHelper.allGovukComponents
-    console.log(govukComponents)
+    // console.log(govukComponents)
 
     res.locals.govukComponentData = govukComponents.map(componentName => {
       const govukComponentData = fileHelper.getGovukComponentData(componentName)
-      // console.log('GC: ' + govukComponentData)
-      // @todo - expose GovUKComponent fixtures as they were a YAML example
       const defaultExample = JSON.parse(govukComponentData).fixtures.find(
         example => example.name === 'default'
       )
@@ -183,7 +182,7 @@ module.exports = (options) => {
       }
     })
 
-    console.log(res.locals.govukComponentData)
+    // console.log(res.locals.govukComponentData)
 
     res.render('all-components', function (error, html) {
       if (error) {
@@ -200,7 +199,7 @@ module.exports = (options) => {
     res.locals.componentPath = req.params.component
     res.locals.govukComponent = false
 
-    console.log(res.locals.componentData)
+    // console.log(res.locals.componentData)
 
     res.render('component', function (error, html) {
       if (error) {
@@ -216,9 +215,7 @@ module.exports = (options) => {
     res.locals.componentPath = req.params.govukComponent
     res.locals.govukComponent = true
 
-    console.log(res.locals.componentData)
-
-    // @todo - expose GovUKComponent fixtures as they were a YAML example
+    // console.log(res.locals.componentData)
 
     res.render('component', function (error, html) {
       if (error) {

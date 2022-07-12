@@ -5,8 +5,16 @@
 <pre><code class="govuk-!-font-size-16">{{- componentHtml | e -}}</code></pre>
 
 <h4 class="govuk-heading-s">Macro</h4>
-<pre class="govuk-!-margin-bottom-0 govuk-!-font-size-16"><code>{% raw %}{%{% endraw %} from "{{ componentSlug }}/macro.njk" import {{ componentSlug | componentNameToMacroName }} {% raw %}%}{% endraw %}
+<pre class="govuk-!-margin-bottom-0 govuk-!-font-size-16">
+  <code>
+    {% if govukComponent %}
+      {% raw %}{%{% endraw %} from "govuk/components/{{ componentSlug }}/macro.njk" import {{ componentSlug | govukComponentNameToMacroName }} {% raw %}%}{% endraw %}
+    {% else %}
+      {% raw %}{%{% endraw %} from "{{ componentSlug }}/macro.njk" import {{ componentSlug | componentNameToMacroName }} {% raw %}%}{% endraw %}
+    {% endif %}
+    {% raw %}
 
-{% raw %}{{ {% endraw %}{{ componentSlug | componentNameToMacroName }}(
+{{ {% endraw %}{% if govukComponent %}{{ componentSlug | govukComponentNameToMacroName }}{% else %}{{ componentSlug | componentNameToMacroName }}{% endif %}(
   {{- example.data | dump(2) -}}
-  ){% raw %} }}{% endraw %}</code></pre>
+  ){% raw %} }}{% endraw %}
+  </code></pre>
