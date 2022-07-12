@@ -126,17 +126,15 @@ module.exports = (options) => {
 
   app.param('govukComponent', function (req, res, next, componentName) {
     const theComponent = JSON.parse(fileHelper.getGovukComponentData(componentName, true))
-    const examples = theComponent.fixtures.map(x => {
-
-    })
+    console.log(theComponent.fixtures)
+    const examples = theComponent.fixtures.map(x => ({
+        name: x.name,
+        hidden: x.hidden,
+        data: x.options
+    }))
     const mappedObject = {
       params: [],
-      examples: [
-        {
-          name: 'default',
-          description: 'The standard header as used on information pages on GOV.UK',
-          data: null
-        }]
+      examples: examples
     }
     res.locals.componentData = mappedObject
     next()
