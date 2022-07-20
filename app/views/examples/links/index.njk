@@ -15,7 +15,9 @@
   'Link with no visited state': 'govuk-link--no-visited-state',
   'Text link': 'govuk-link--text-colour',
   'Muted link': 'govuk-link--muted',
-  'Inverse': 'govuk-link--inverse'
+  'Inverse': 'govuk-link--inverse',
+  'Action': 'LBCamden-Link--action',
+  'Promo': 'LBCamden-Link--promo'
 } %}
 
 {% set states = {
@@ -46,6 +48,14 @@
 
       <p class="govuk-body">
         <a class="govuk-link govuk-link--no-underline" href="#">Link with no underline</a>
+      </p>
+
+      <p class="govuk-body">
+        <a class="LBCamden-Link--action" href="#">Camden action link</a>
+      </p>
+
+      <p class="govuk-body">
+        <a class="LBCamden-Link--promo" href="#">Camden promo link</a>
       </p>
 
     {% for variant_description, variant_class in variants %}
