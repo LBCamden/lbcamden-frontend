@@ -1,4 +1,4 @@
-LBCamden Frontend ·
+# LBCamden Frontend
 [![Build Status](https://github.com/benwatsonuk/lbcamden-frontend/workflows/Tests/badge.svg)](https://github.com/benwatsonuk/lbcamden-frontend/actions?query=workflow%3ATests+branch%3Amain)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 =====================
