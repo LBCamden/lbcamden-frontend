@@ -6,6 +6,12 @@
 
 ### Fixes
 
+## 0.1.1
+🆕 New features:
+
+- 'Promo' and 'action' links added
+- Spacing and typographic overrides added to match specified designs
+
 ## 0.1.0
 🆕 New features:
 
