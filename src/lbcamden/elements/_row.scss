@@ -7,4 +7,12 @@
     border-top: 3px solid lbcamden-colour("govuk-brand1-2-colour");
     background: lbcamden-colour("govuk-bg-bright1-colour");
   }
+
+  &--alt {
+    background: lbcamden-colour("govuk-bg-bright1-colour");
+  }
+
+  &--alt-2 {
+    background: lbcamden-colour("govuk-brand1-7-colour");
+  }
 }

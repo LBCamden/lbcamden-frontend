@@ -208,7 +208,7 @@ describe(`http://localhost:${PORT}`, () => {
         const $ = cheerio.load(res.body)
         const $main = $('#main-content')
 
-        expect($main.attr('class')).toBe('govuk-main-wrapper govuk-main-wrapper--auto-spacing app-main-class')
+        expect($main.attr('class')).toBe('govuk-main-wrapper--auto-spacing app-main-class')
         done(err)
       })
     })
