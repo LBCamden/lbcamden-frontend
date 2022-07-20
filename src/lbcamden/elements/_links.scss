@@ -23,6 +23,7 @@
     @extend .LBCamden-Button;
     display: block;
     position: relative;
+    margin-bottom: 0;
     border-radius: 3px;
     border-bottom-right-radius: 1rem;
     color: lbcamden-colour("white");

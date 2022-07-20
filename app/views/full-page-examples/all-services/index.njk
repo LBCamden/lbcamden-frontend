@@ -60,14 +60,17 @@ notes:
   ] %}
   <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
     {% for item in items %}
-      {{ LBCamdenCard({
-        heading: {
-          title: item.title,
-          href: '#',
-          headingLevel: 3
-        },
-        cardBodyHtml: item.description
-      }) }}
+      <div>
+        <h3 class="govuk-heading-m">
+          <a href="#"
+             class="LBCamden-Link--promo">
+            {{ item.title }}
+          </a>
+        </h3>
+        <div class="LBCamden-Card__content">
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
     {% endfor %}
   </div>
 
