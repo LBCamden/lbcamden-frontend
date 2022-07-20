@@ -3,6 +3,7 @@ scenario: You want to find information about services provided by Camden
 notes:
 ---
 {% extends "full-page-example.njk" %}
+{% set mainClasses = 'govuk-wrapper-spacing--auto' %}
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -28,53 +29,110 @@ notes:
   }) }}
 {% endblock %}
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-!-margin-bottom-4">Services</h1>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-!-margin-bottom-4">Services</h1>
 
-      <p class="govuk-body-lead">Services, information and guidance for residents and businesses in Camden.</p>
+        <p class="govuk-body-lead">Services, information and guidance for residents and businesses in Camden.</p>
 
+      </div>
+    </div>
+
+    <h2>Do it online</h2>
+
+    <p>Find online services from across the council</p>
+    {% set items = [
+      {
+        title: 'Report',
+        description: 'Housing repairs, problems, complaints and more'
+      },
+      {
+        title: 'Pay',
+        description: 'Council tax, rent, business rates, PCN and more'
+      },
+      {
+        title: 'Apply',
+        description: 'Parking permits, council tax support, freedom pass, and more'
+      },
+      {
+        title: 'Request',
+        description: 'Voting, birth certificates, bins, and more'
+      }
+    ] %}
+    <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+      {% for item in items %}
+        <div>
+          <h3 class="govuk-heading-m">
+            <a href="#"
+               class="LBCamden-Link--promo">
+              {{ item.title }}
+            </a>
+          </h3>
+          <div class="LBCamden-Card__content">
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 
-  <h2>Do it online</h2>
+  <section class="LBCamden-Row">
+    <div class="govuk-width-container">
 
-  <p>Find online services from across the council</p>
-  {% set items = [
-    {
-      title: 'Report',
-      description: 'Housing repairs, problems, complaints and more'
-    },
-    {
-      title: 'Pay',
-      description: 'Council tax, rent, business rates, PCN and more'
-    },
-    {
-      title: 'Apply',
-      description: 'Parking permits, council tax support, freedom pass, and more'
-    },
-    {
-      title: 'Request',
-      description: 'Voting, birth certificates, bins, and more'
-    }
-  ] %}
-  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
-    {% for item in items %}
-      <div>
-        <h3 class="govuk-heading-m">
-          <a href="#"
-             class="LBCamden-Link--promo">
-            {{ item.title }}
-          </a>
-        </h3>
-        <div class="LBCamden-Card__content">
-          <p>{{ item.description }}</p>
+      <h2>Featured links</h2>
+
+      <p>Information and guidance important right now.</p>
+
+      <div class="LBCamden-Card_Wrapper govuk-!-margin-bottom-6">
+        <div class="LBCamden-Card LBCamden-Card--clickable"
+             data-module="lbcamden-card">
+          <h3 class="govuk-heading-s">
+            <a href="/alpha/{{ versionDirectory }}/#">
+              Refugees from Ukraine
+            </a>
+          </h3>
+          <p class="govuk-body-s">Information for Ukrainians arriving in Camden and their hosts</p>
         </div>
+
+        <div class="LBCamden-Card LBCamden-Card--clickable"
+             data-module="lbcamden-card">
+          <h3 class="govuk-heading-s">
+            <a href="/alpha/{{ versionDirectory }}/#">
+              Covid 19
+            </a>
+          </h3>
+          <p class="govuk-body-s">Information and guidance about the corona virus</p>
+        </div>
+
+        <div class="LBCamden-Card LBCamden-Card--clickable"
+             data-module="lbcamden-card">
+          <h3 class="govuk-heading-s">
+            <a href="/alpha/{{ versionDirectory }}/collection/worried-about-someone">
+              When you need support
+            </a>
+          </h3>
+          <p class="govuk-body-s">Information and guidance if you're worried about your own or someone else's
+            well-being</p>
+        </div>
+
       </div>
-    {% endfor %}
-  </div>
+    </div>
 
+  </section>
 
+  <section class="LBCamden-Row LBCamden-Row--alt-2">
+    <div class="govuk-width-container">
+      <h2>Services near you</h2>
+
+      <p>Libraries, schools and other community services near <strong>St. Pancras & Somerstown</strong> (NW1 OHY)</p>
+
+      <div class="govuk-button-group">
+        <a href="#" class="govuk-button LBCamden-Button LBCamden-Button--action">View map</a>
+        <a href="#" class="">Change location</a>
+      </div>
+    </div>
+  </section>
 
   {% set items = [
     {
@@ -146,27 +204,47 @@ notes:
       description: 'Take part in local activities,  put on events, visit green spaces and parks'
     }
   ] %}
+  <section class="LBCamden-Row govuk-width-container">
 
-  <h2>All services A-Z</h2>
+    <h2>All services</h2>
 
-  <div class="LBCamden-Card_Wrapper">
-    {% for item in items %}
-      {{ LBCamdenCard({
-        naked: true,
-        heading: {
-          title: item.title,
-          href: '#',
-          headingLevel: 3
-        },
-        cardBodyHtml: item.description
-      }) }}
-    {% endfor %}
-  </div>
+    <p>All services and information grouped by topics</p>
 
-  </div>
-  </div>
+    <div class="LBCamden-Card_Wrapper">
+      {% for item in items %}
+        {{ LBCamdenCard({
+          naked: true,
+          heading: {
+            title: item.title,
+            href: '#',
+            headingLevel: 3
+          },
+          cardBodyHtml: '<p class="govuk-body-s">' + item.description + '</p>'
+        }) }}
+      {% endfor %}
+    </div>
+
+    </div>
+    </div>
+  </section>
 {% endblock %}
 
+{% block afterContent %}
+  <section class="LBCamden-Row LBCamden-Row--alt">
+    <div class="govuk-width-container">
+
+      <h2 class="govuk-heading-m">Can't find what you're looking for?</h2>
+
+      <p>You can't find here what you're looking for: <a href="./search">Search our site</a></p>
+
+      <p>You want to find out about how the council works, Its activities, policies, and plans fo the future: <a
+          href="#">Your Council</a></p>
+
+      <p>You think the information or service you need is not available online: <a href="#">Contact us</a></p>
+
+    </div>
+  </section>
+{% endblock %}
 
 {% block footer %}
   {{ LBCamdenFooter({

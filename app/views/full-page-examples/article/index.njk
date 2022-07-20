@@ -3,6 +3,7 @@ scenario: You want to change your name by deed poll
 notes:
 ---
 {% extends "full-page-example.njk" %}
+{% set mainClasses = 'govuk-width-container' %}
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -159,7 +160,6 @@ notes:
     </div>
   </div>
 {% endblock %}
-
 
 {% block footer %}
   {{ LBCamdenFooter({
