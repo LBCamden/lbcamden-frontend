@@ -6,6 +6,10 @@
 
 h1 {
   @extend .govuk-heading-xl;
+
+  + .govuk-body-lead {
+    @include govuk-responsive-margin(8, "bottom");
+  }
 }
 
 h2 {

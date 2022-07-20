@@ -47,23 +47,21 @@
 {% endblock %}
 
 {% block header %}
-   {{ LBCamdenHeader({
+  {{ LBCamdenHeader({
 
-   }) }}
+  }) }}
 {% endblock %}
 
 {% block main %}
-  <div class="{{ containerClasses }}">
-    <main role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-      {% block beforeContent %}
+  <main class="govuk-main-wrapper {{ containerClasses }}" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% block beforeContent %}
 
-      {% endblock %}
-      <div class="govuk-main-wrapper {{ mainClasses }}" id="main-content">
-        {% block content %}{% endblock %}
-      </div>
+    {% endblock %}
+    <div class="{{ mainClasses }}" id="main-content">
+      {% block content %}{% endblock %}
+    </div>
 
-    </main>
-  </div>
+  </main>
   {% block afterContent %}
 
   {% endblock %}

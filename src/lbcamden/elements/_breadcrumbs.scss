@@ -1,5 +1,7 @@
 .govuk-breadcrumbs {
   @extend .govuk-width-container;
+  @include govuk-responsive-margin(0, "top");
+  @include govuk-responsive-margin(4, "bottom");
 
   .govuk-breadcrumbs__link {
     color: $govuk-link-colour;
