@@ -43,6 +43,10 @@
   {% endblock %}
 {% endblock %}
 
+{% if not mainClasses %}
+  {% set mainClasses = 'govuk-width-container' %}
+{% endif %}
+
 {% block bodyEnd %}
   {% if legacy %}
     {% include "partials/legacyJavaScript.njk" %}
