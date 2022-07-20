@@ -1,0 +1,3 @@
+.govuk-main-wrapper {
+  @include govuk-responsive-padding(6, "top");
+}
