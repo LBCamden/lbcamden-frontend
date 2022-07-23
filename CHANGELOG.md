@@ -6,6 +6,11 @@
 
 ### Fixes
 
+## 0.1.2
+🔧 Fixes:
+
+- Breadcrumbs sizes
+
 ## 0.1.1
 🆕 New features:
 
