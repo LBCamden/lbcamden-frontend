@@ -3,6 +3,10 @@
   @include govuk-responsive-margin(0, "top");
   @include govuk-responsive-margin(4, "bottom");
 
+  &__list {
+    @extend .govuk-body-s;
+  }
+
   .govuk-breadcrumbs__link {
     color: $govuk-link-colour;
   }
