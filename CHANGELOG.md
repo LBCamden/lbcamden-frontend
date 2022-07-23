@@ -6,6 +6,12 @@
 
 ### Fixes
 
+## 0.1.3
+🔧 Fixes:
+
+- Breadcrumbs sizes
+- Lists problems introduced by 0.1.2 
+
 ## 0.1.2
 🔧 Fixes:
 
