@@ -1,6 +1,8 @@
 ul,
 ol {
-  @extend .govuk-list;
+  &:not(.govuk-breadcrumbs__list) {
+    @extend .govuk-list;
+  }
 }
 
 ol {

@@ -1,9 +1,9 @@
 .LBCamden-Row {
-  @include govuk-responsive-padding(6, "top");
-  @include govuk-responsive-padding(6, "bottom");
+  @include govuk-responsive-padding(7, "top");
+  @include govuk-responsive-padding(7, "bottom");
 
   &--related {
-    @include govuk-responsive-margin(6, "top");
+    @include govuk-responsive-margin(7, "top");
     border-top: 3px solid lbcamden-colour("govuk-brand1-2-colour");
     background: lbcamden-colour("govuk-bg-bright1-colour");
   }

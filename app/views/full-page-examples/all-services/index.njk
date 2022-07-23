@@ -62,7 +62,7 @@ notes:
     ] %}
     <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
       {% for item in items %}
-        <div>
+        <div class="LBCamden-Card LBCamden-Card--naked">
           <h3 class="govuk-heading-m">
             <a href="#"
                class="LBCamden-Link--promo">
@@ -127,8 +127,8 @@ notes:
 
       <p>Libraries, schools and other community services near <strong>St. Pancras & Somerstown</strong> (NW1 OHY)</p>
 
-      <div class="govuk-button-group">
-        <a href="#" class="LBCamden-Link--promo">View map</a>
+      <div class="govuk-button-group govuk-!-margin-bottom-0">
+        <a href="#" class="LBCamden-Link--promo govuk-!-margin-bottom-0">View map</a>
         <a href="#" class="">Change location</a>
       </div>
     </div>
@@ -232,17 +232,22 @@ notes:
 {% block afterContent %}
   <section class="LBCamden-Row LBCamden-Row--alt">
     <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h2 class="govuk-heading-m">Can't find what you're looking for?</h2>
+          <h2 class="govuk-heading-m">Can't find what you're looking for?</h2>
 
-      <p>You can't find here what you're looking for: <a href="./search">Search our site</a></p>
+          <p>You can't find here what you're looking for: <a href="./search">Search our site</a></p>
 
-      <p>You want to find out about how the council works, Its activities, policies, and plans fo the future: <a
-          href="#">Your Council</a></p>
+          <p>You want to find out about how the council works, Its activities, policies, and plans for the future: <a
+              href="#">Your Council</a></p>
 
-      <p>You think the information or service you need is not available online: <a href="#">Contact us</a></p>
+          <p>You think the information or service you need is not available online: <a href="#">Contact us</a></p>
 
+        </div>
+      </div>
     </div>
+
   </section>
 {% endblock %}
 
