@@ -7,6 +7,9 @@
 {% if params.disabled %}
   {% set classNames = classNames + " LBCamden-Button--disabled" %}
 {% endif -%}
+{% if params.largeButton %}
+  {% set classNames = classNames + " LBCamden-Button--large" %}
+{% endif -%}
 
 {# Determine type of element to use, if not explicitly set #}
 {%- if params.element %}

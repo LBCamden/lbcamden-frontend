@@ -1,13 +1,13 @@
-$govuk-button-colour: $govuk-link-colour;
-$govuk-button-hover-colour: govuk-shade($govuk-button-colour, 20%);
-$govuk-button-shadow-colour: govuk-shade($govuk-button-colour, 60%);
-$govuk-button-text-colour: govuk-colour("white");
+$lbcamden-button-colour: $govuk-link-colour;
+$lbcamden-button-hover-colour: $govuk-link-hover-colour;
+$lbcamden-button-shadow-colour: govuk-shade($lbcamden-button-colour, 60%);
+$lbcamden-button-text-colour: lbcamden-colour("white");
+$lbcamden-button-border-radius: 3px;
 
 // Secondary button variables
-$govuk-secondary-button-colour: govuk-colour("light-grey", $legacy: "grey-3");
-$govuk-secondary-button-hover-colour: govuk-shade($govuk-secondary-button-colour, 10%);
-$govuk-secondary-button-shadow-colour: govuk-shade($govuk-secondary-button-colour, 40%);
-$govuk-secondary-button-text-colour: govuk-colour("black");
+$lbcamden-secondary-button-colour: lbcamden-colour("white");
+$lbcamden-secondary-button-hover-colour: $govuk-link-hover-colour;
+$lbcamden-secondary-button-text-colour: $govuk-link-colour;
 
 // Warning button variables
 $govuk-warning-button-colour: govuk-colour("red");
@@ -31,19 +31,19 @@ $button-shadow-size: $govuk-border-width-form-element;
   margin-right: 0;
   margin-left: 0;
   @include govuk-responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
-  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2) (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
+  padding: (govuk-spacing(3) - $govuk-border-width-form-element) govuk-spacing(3) (govuk-spacing(3) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
   border: $govuk-border-width-form-element solid transparent;
-  border-radius: 0;
-  color: $govuk-button-text-colour;
-  background-color: $govuk-button-colour;
-  box-shadow: 0 $button-shadow-size 0 $govuk-button-shadow-colour; // s0
+  border-radius: $lbcamden-button-border-radius;
+  color: $lbcamden-button-text-colour;
+  background-color: $lbcamden-button-colour;
+  //box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
   text-align: center;
   vertical-align: top;
   cursor: pointer;
   -webkit-appearance: none;
 
   @include govuk-if-ie8 {
-    border-bottom: $button-shadow-size solid $govuk-button-shadow-colour;
+    border-bottom: $button-shadow-size solid $lbcamden-button-shadow-colour;
   }
 
   @include govuk-media-query($from: tablet) {
@@ -55,7 +55,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   &:visited,
   &:active,
   &:hover {
-    color: $govuk-button-text-colour;
+    color: $lbcamden-button-text-colour;
     text-decoration: none;
   }
 
@@ -66,7 +66,8 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 
   &:hover {
-    background-color: $govuk-button-hover-colour;
+    background-color: $lbcamden-button-hover-colour;
+    text-decoration: underline;
   }
 
   &:active {
@@ -102,7 +103,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   // text when focussed.
   @include govuk-compatibility(govuk_template) {
     &:link:focus {
-      color: $govuk-button-text-colour;
+      color: $lbcamden-button-text-colour;
     }
   }
 
@@ -145,37 +146,44 @@ $button-shadow-size: $govuk-border-width-form-element;
   &:active:before {
     top: -($govuk-border-width-form-element + $button-shadow-size);
   }
+
+  &--large {
+    @include govuk-responsive-padding(4, "top");
+    @include govuk-responsive-padding(4, "bottom");
+    font-weight: bold;
+  }
 }
 
-.govuk-button--disabled,
-.govuk-button[disabled="disabled"],
-.govuk-button[disabled] {
+.LBCamden-Button--disabled,
+.LBCamden-Button[disabled="disabled"],
+.LBCamden-Button[disabled] {
   opacity: (.5);
 
   &:hover {
-    background-color: $govuk-button-colour;
+    background-color: $lbcamden-button-colour;
     cursor: default;
   }
 
   &:active {
     top: 0;
-    box-shadow: 0 $button-shadow-size 0 $govuk-button-shadow-colour; // s0
+    box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
     @include govuk-if-ie8 {
-      border-bottom: $button-shadow-size solid $govuk-button-shadow-colour; // s0
+      border-bottom: $button-shadow-size solid $lbcamden-button-shadow-colour; // s0
     }
   }
 }
 
-.govuk-button--secondary {
-  background-color: $govuk-secondary-button-colour;
-  box-shadow: 0 $button-shadow-size 0 $govuk-secondary-button-shadow-colour;
+.LBCamden-Button--secondary {
+  border: 3px solid $lbcamden-button-colour;
+  background-color: lbcamden-colour("white");
+  //box-shadow: 0 $button-shadow-size 0 $lbcamden-secondary-button-shadow-colour;
 
   &,
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: $govuk-secondary-button-text-colour;
+    color: $lbcamden-secondary-button-text-colour;
   }
 
   // alphagov/govuk_template includes a specific a:link:focus selector
@@ -185,20 +193,22 @@ $button-shadow-size: $govuk-border-width-form-element;
   // text when focussed.
   @include govuk-compatibility(govuk_template) {
     &:link:focus {
-      color: $govuk-secondary-button-text-colour;
+      color: $lbcamden-secondary-button-text-colour;
     }
   }
 
   &:hover {
-    background-color: $govuk-secondary-button-hover-colour;
+    border-color: $lbcamden-secondary-button-hover-colour;
+    color: $lbcamden-secondary-button-hover-colour;
+    background: $lbcamden-secondary-button-colour;
 
     &[disabled] {
-      background-color: $govuk-secondary-button-colour;
+      background-color: $lbcamden-secondary-button-colour;
     }
   }
 }
 
-.govuk-button--warning {
+.LBCamden-Button--warning {
   background-color: $govuk-warning-button-colour;
   box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
 
@@ -230,7 +240,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 }
 
-.govuk-button--start {
+.LBCamden-Button--start {
   @include govuk-typography-weight-bold;
   @include govuk-typography-responsive($size: 24, $override-line-height: 1);
 
@@ -240,7 +250,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   justify-content: center;
 }
 
-.govuk-button__start-icon {
+.LBCamden-Button__start-icon {
   margin-left: govuk-spacing(1);
 
   @include govuk-media-query($from: desktop) {
@@ -258,12 +268,12 @@ $button-shadow-size: $govuk-border-width-form-element;
   // Begin adjustments for font baseline offset when using v1 of nta
   $offset: 2;
 
-  .govuk-button {
+  .LBCamden-Button {
     padding-top: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
     padding-bottom: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
   }
 
-  .govuk-button__start-icon {
+  .LBCamden-Button__start-icon {
     margin-top: -3px;
   }
 }

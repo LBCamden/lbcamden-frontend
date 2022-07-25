@@ -39,6 +39,10 @@ params:
   type: object
   required: false
   description: HTML attributes (for example data attributes) to add to the button component.
+- name: largeButton
+  type: boolean
+  required: false
+  description: Modifier to increase size of the button or link
 - name: preventDoubleClick
   type: boolean
   required: false
@@ -52,6 +56,10 @@ examples:
 - name: default
   data:
     text: Save and continue
+- name: large button
+  data:
+    text: Save and continue
+    largeButton: true
 - name: disabled
   data:
     text: Disabled button
