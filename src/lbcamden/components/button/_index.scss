@@ -19,7 +19,8 @@ $govuk-warning-button-text-colour: govuk-colour("white");
 // increase the bottom margin to include it (s2).
 $button-shadow-size: $govuk-border-width-form-element;
 
-.LBCamden-Button {
+.LBCamden-Button,
+.govuk-button {
   @include govuk-font($size: 19, $line-height: 19px);
 
   box-sizing: border-box;
