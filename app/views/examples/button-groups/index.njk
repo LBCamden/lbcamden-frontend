@@ -4,9 +4,11 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block beforeContent %}
+  <div class="govuk-width-container">
   {{ govukBackLink({
     "href": "/"
   }) }}
+  </div>
 {% endblock %}
 
 {% block content %}
