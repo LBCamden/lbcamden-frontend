@@ -25,6 +25,7 @@
     'Large': 'LBCamden-Button--large',
     'Hovered': ':hover',
     'Active': ':active',
+    'Disabled': ':disabled',
     'Focussed': ':focus',
     'Focussed visited': ':focus :visited',
     'Focussed hovered': ':focus :hover',
@@ -47,35 +48,23 @@
 
           {% for state_description, state_class in states %}
             <p class="govuk-body">
-              {% if variant_description === 'Start Button' %}
 
                 {{ LBCamdenButton({
                   classes: variant_class + ' ' + state_class,
                   text: state_description + ' Button',
-                  isStartButton: true
+                  disabled: state_description === 'Disabled',
+                  isStartButton: variant_description === 'Start Button'
                 }) }}
 
                 {{ LBCamdenButton({
                   classes: variant_class + ' ' + state_class,
                   text: state_description + ' Link',
                   href: randomPageHash,
-                  isStartButton: true
+                  disabled: state_description === 'Disabled',
+                  isStartButton: variant_description === 'Start Button'
                 }) }}
 
-              {% else %}
 
-                {{ LBCamdenButton({
-                  classes: variant_class + ' ' + state_class,
-                  text: state_description + ' Button'
-                }) }}
-
-                {{ LBCamdenButton({
-                  classes: variant_class + ' ' + state_class,
-                  text: state_description + ' Link',
-                  href: randomPageHash
-                }) }}
-
-              {% endif %}
 
             </p>
           {% endfor %}
