@@ -2,9 +2,11 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
+<div class="govuk-width-container">
+{{ govukBackLink({
     href: "/" + legacyQuery
   }) }}
+</div>
 {% endblock %}
 
 {% block content %}
