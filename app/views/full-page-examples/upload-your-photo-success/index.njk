@@ -19,16 +19,12 @@ scenario: >-
 {% block pageTitle %}Upload your photo - GOV.UK{% endblock %}
 
 {% block beforeContent %}
-    {{ govukPhaseBanner({
-        tag: {
-            text: "beta"
-        },
-        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-    }) }}
+  <div class="govuk-width-container">
     {{ govukBackLink({
-        text: "Back",
-        href: "#"
+      text: "Back",
+      href: "#"
     }) }}
+  </div>
 {% endblock %}
 
 {% block content %}

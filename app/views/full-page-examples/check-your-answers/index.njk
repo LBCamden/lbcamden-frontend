@@ -24,10 +24,12 @@ notes: The links to change your answers are not functional.
 {% block pageTitle %}{{ pageTitle }} - {{ serviceName }} - GOV.UK{% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"
-  }) }}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      text: "Back",
+      href: "#"
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}

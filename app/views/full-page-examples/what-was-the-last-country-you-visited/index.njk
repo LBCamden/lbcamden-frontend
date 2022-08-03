@@ -21,10 +21,12 @@ scenario: >-
 {% block pageTitle %}{{ "Error: " if errors }}{{ pageTitle }} - GOV.UK{% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"
-  }) }}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      text: "Back",
+      href: "#"
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}
