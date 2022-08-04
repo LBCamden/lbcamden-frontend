@@ -18,14 +18,15 @@ ul {
     list-style: none outside;
 
     li {
-      @include govuk-responsive-padding(4, "left");
+      @include govuk-responsive-padding(5, "left");
+      @include govuk-font(16);
       position: relative;
 
       &:before {
-        content: "-";
+        content: "—";
         position: absolute;
         left: 0;
-        width: 20px;
+        width: 15px;
         overflow: hidden;
       }
     }

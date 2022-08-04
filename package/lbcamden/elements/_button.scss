@@ -3,7 +3,7 @@
   transition: .2s all;
   //border-radius: $lbs-border-radius; @todo - add $lbs-colour("colour") function
   color: lbcamden-colour("white");
-  background: lbcamden-colour("govuk-brand1-1-colour");
+  background: $govuk-link-colour;
   //font-family: $lbs-heading-font;
 
   &:link,
