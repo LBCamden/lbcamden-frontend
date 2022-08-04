@@ -11,6 +11,10 @@ $govuk-global-styles: true; // Applies styles to entire site eg. p and ul
 
 $govuk-page-width: 1170px;
 
+$govuk-font-weight-regular: 400 !default;
+$govuk-font-weight-semibold: 600 !default;
+$govuk-font-weight-bold: 700 !default;
+
 $govuk-text-colour: lbcamden-colour("black");
 $govuk-link-colour: lbcamden-colour("blue");
 $govuk-link-hover-colour: lbcamden-colour("dark-blue");
