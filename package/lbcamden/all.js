@@ -78,28 +78,6 @@ Button.prototype.init = function () {
   this.$module.addEventListener('click', this.debounce);
 };
 
-function LBCamdenCard ($module) {
-  this.$module = $module;
-}
-
-//
-// /**
-//  * Initialise card
-//  *
-//  * Check for the presence of a card – if any are
-//  * missing then there's nothing to do so return early.
-//  */
-LBCamdenCard.prototype.init = function () {
-  if (!this.$module) {
-    return false
-  } else {
-    console.log('Card init');
-  }
-  // if (this.$module.classList.contains('LBCamden-Card--clickable')) {
-  //   this.handleClickable()
-  // }
-};
-
 // import '../../vendor/polyfills/Event'
 // import '../../vendor/polyfills/Element/prototype/classList'
 // import '../../vendor/polyfills/Function/prototype/bind'
@@ -139,16 +117,10 @@ function initAll (options) {
   nodeListForEach($LBCamdenButtons, function ($LBCamdenButton) {
     new Button($LBCamdenButton).init();
   });
-
-  // var $LBCamdenCards = scope.querySelectorAll('[data-module="lbcamden-card"]')
-  // nodeListForEach($LBCamdenCards, function ($LBCamdenCard) {
-  //   new LBCamdenCard($LBCamdenCard).init()
-  // })
 }
 
 exports.initAll = initAll;
 exports.LBCamdenButton = Button;
-exports.LBCamdenCard = LBCamdenCard;
 exports.LBCamdenHeader = LBCamdenHeader;
 
 })));

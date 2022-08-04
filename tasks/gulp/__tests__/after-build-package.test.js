@@ -125,7 +125,7 @@ describe('package/', () => {
 
       return readFile(allJsFile, 'utf8')
         .then((data) => {
-          expect(data).toContain("typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports'], factory)")
+          expect(data).toContain("typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports'")
         })
         .catch(error => {
           throw error
