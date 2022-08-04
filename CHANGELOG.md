@@ -12,7 +12,7 @@
 - 'Buttons' added
 - 'Promo' alternative links added
 
-- 🔧 Fixes:
+🔧 Fixes:
 
 - Lists spacing
 - Problem with container widths for examples
