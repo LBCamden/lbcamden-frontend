@@ -6,6 +6,17 @@
 
 ### Fixes
 
+## 0.1.4
+🆕 New features:
+
+- 'Buttons' added
+- 'Promo' alternative links added
+
+- 🔧 Fixes:
+
+- Lists spacing
+- Problem with container widths for examples
+
 ## 0.1.3
 🔧 Fixes:
 
