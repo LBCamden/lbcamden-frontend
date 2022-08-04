@@ -22,8 +22,9 @@
   }
 
   &--promo {
-    @extend .LBCamden-Button;
-    display: block;
+    //@extend .LBCamden-Button;
+    box-sizing: border-box;
+    display: inline-block;
     position: relative;
     margin-bottom: 0;
     border-radius: 3px;
@@ -32,8 +33,18 @@
     background: lbcamden-colour("govuk-brand1-1-colour");
     font-weight: bold;
     text-align: left;
+    text-decoration: none;
     @include govuk-responsive-padding(4, "all");
     @include govuk-responsive-padding(8, "right");
+
+    &:visited,
+    &:link {
+      color: lbcamden-colour("white");
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:after {
       content: "";
@@ -49,7 +60,39 @@
       border-right: 3px solid lbcamden-colour("white");
     }
 
+    &-alt {
+      color: $govuk-link-colour;
+      background: lbcamden-colour("govuk-bg-bright1-colour");
+      box-shadow: 1px 1px 1px rgba(lbcamden-colour("black"), .25);
+
+      &:link {
+        color: $govuk-link-colour;
+      }
+
+      &:visited {
+        color: $govuk-link-visited-colour;
+      }
+
+      &:hover {
+        color: $govuk-link-hover-colour;
+      }
+
+      &:after {
+        border-width: 2px;
+        border-color: $govuk-link-colour;
+      }
+    }
+
+    &--large {
+      @include govuk-responsive-padding(6, "top");
+      @include govuk-responsive-padding(6, "bottom");
+      font-weight: bold;
+    }
+
     &:focus {
+      color: lbcamden-colour("black");
+      box-shadow: none;
+
       &:after {
         border-color: lbcamden-colour("black");
       }
