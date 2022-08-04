@@ -31,7 +31,11 @@ $button-shadow-size: $govuk-border-width-form-element;
   margin-right: 0;
   margin-left: 0;
   @include govuk-responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
-  padding: (govuk-spacing(3) - $govuk-border-width-form-element) govuk-spacing(3) (govuk-spacing(3) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
+  //padding: (govuk-spacing(3) - $govuk-border-width-form-element) govuk-spacing(3) (govuk-spacing(3) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
+  padding: govuk-spacing(2) govuk-spacing(3); // s1
+  @include govuk-media-query($from: desktop) {
+    padding: govuk-spacing(3);
+  }
   border: $govuk-border-width-form-element solid transparent;
   border-radius: $lbcamden-button-border-radius;
   color: $lbcamden-button-text-colour;
@@ -93,7 +97,7 @@ $button-shadow-size: $govuk-border-width-form-element;
       color: $govuk-focus-text-colour;
       background-color: $govuk-focus-colour;
     }
-    box-shadow: inset 0 0 0 1px $govuk-focus-colour;
+    box-shadow: none;
   }
 
   // alphagov/govuk_template includes a specific a:link:focus selector
@@ -111,7 +115,7 @@ $button-shadow-size: $govuk-border-width-form-element;
     border-color: $govuk-focus-colour;
     color: $govuk-focus-text-colour;
     background-color: $govuk-focus-colour;
-    box-shadow: 0 2px 0 $govuk-focus-text-colour;
+    box-shadow: none;
   }
 
   // The following adjustments do not work for <input type="button"> as
@@ -210,7 +214,7 @@ $button-shadow-size: $govuk-border-width-form-element;
 
 .LBCamden-Button--warning {
   background-color: $govuk-warning-button-colour;
-  box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
+  //box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
 
   &,
   &:link,
@@ -232,7 +236,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 
   &:hover {
-    background-color: $govuk-warning-button-hover-colour;
+    background-color: $govuk-warning-button-colour;
 
     &[disabled] {
       background-color: $govuk-warning-button-colour;
@@ -242,8 +246,9 @@ $button-shadow-size: $govuk-border-width-form-element;
 
 .LBCamden-Button--start {
   @include govuk-typography-weight-bold;
-  @include govuk-typography-responsive($size: 24, $override-line-height: 1);
-
+  @include govuk-typography-responsive($size: 19, $override-line-height: 1);
+  @include govuk-responsive-padding(4, "top");
+  @include govuk-responsive-padding(4, "bottom");
   display: inline-flex;
   min-height: auto;
 

@@ -197,7 +197,7 @@ describe('Button', () => {
     it('renders a svg', () => {
       const $ = render('button', examples['start link'])
 
-      const $component = $('.LBCamden-Button .govuk-button__start-icon')
+      const $component = $('.LBCamden-Button .LBCamden-Button__start-icon')
       expect($component.get(0).tagName).toEqual('svg')
     })
   })
