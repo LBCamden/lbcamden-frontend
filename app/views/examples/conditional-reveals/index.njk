@@ -7,9 +7,11 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    "href": "/"
-  }) }}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      "href": "/"
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}

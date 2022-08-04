@@ -8,9 +8,11 @@
 {% endset %}
 
 {% block beforeContent %}
+  <div class="govuk-width-container">
   {{ govukBackLink({
     href: "/" + legacyQuery
   }) }}
+  </div>
 {% endblock %}
 
 {% block content %}

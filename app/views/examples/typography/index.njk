@@ -4,9 +4,11 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    "href": "/"
-  }) }}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      "href": "/"
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}
@@ -163,6 +165,21 @@
           <li>Payment</li>
           <li>Confirmation</li>
         </ol>
+        <h3 class="govuk-heading-m">LBCamden-List--dash</h3>
+        <ul class="LBCamden-List--dash">
+          <li>
+            <a href="#" class="govuk-link">Benefits calculators</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Benefit overpayments</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Benefit fraud</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">More</a>
+          </li>
+        </ul>
         <h3 class="govuk-heading-m">Nested govuk-list 1</h3>
         <ul class="govuk-list govuk-list--number">
           <li><a class="govuk-link" href="#">Download kit</a></li>
