@@ -6,6 +6,11 @@
 
 ### Fixes
 
+## 0.1.5
+🔧 Fixes:
+
+- Notification banner styles
+
 ## 0.1.4
 🆕 New features:
 
