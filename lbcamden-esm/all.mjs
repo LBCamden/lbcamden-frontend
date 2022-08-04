@@ -1,6 +1,5 @@
 import { nodeListForEach } from './common'
 import LBCamdenButton from './components/button/button.mjs'
-import LBCamdenCard from './components/card/card'
 import LBCamdenHeader from './components/header/header'
 
 function initAll (options) {
@@ -20,16 +19,10 @@ function initAll (options) {
   nodeListForEach($LBCamdenButtons, function ($LBCamdenButton) {
     new LBCamdenButton($LBCamdenButton).init()
   })
-
-  // var $LBCamdenCards = scope.querySelectorAll('[data-module="lbcamden-card"]')
-  // nodeListForEach($LBCamdenCards, function ($LBCamdenCard) {
-  //   new LBCamdenCard($LBCamdenCard).init()
-  // })
 }
 
 export {
   initAll,
   LBCamdenButton,
-  LBCamdenCard,
   LBCamdenHeader
 }
