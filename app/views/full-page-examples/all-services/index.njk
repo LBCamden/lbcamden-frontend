@@ -60,12 +60,12 @@ notes:
         description: 'Voting, birth certificates, bins, and more'
       }
     ] %}
-    <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+    <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
       {% for item in items %}
         <div class="LBCamden-Card LBCamden-Card--naked">
           <h3 class="govuk-heading-m">
             <a href="#"
-               class="LBCamden-Link--promo">
+               class="LBCamden-Link--promo govuk-!-display-block">
               {{ item.title }}
             </a>
           </h3>
@@ -74,7 +74,7 @@ notes:
           </div>
         </div>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 
   <section class="LBCamden-Row">
@@ -88,7 +88,7 @@ notes:
         <div class="LBCamden-Card LBCamden-Card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
-            <a href="/alpha/{{ versionDirectory }}/#">
+            <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
               Refugees from Ukraine
             </a>
           </h3>
@@ -98,7 +98,7 @@ notes:
         <div class="LBCamden-Card LBCamden-Card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
-            <a href="/alpha/{{ versionDirectory }}/#">
+            <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
               Covid 19
             </a>
           </h3>
@@ -108,7 +108,7 @@ notes:
         <div class="LBCamden-Card LBCamden-Card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
-            <a href="/alpha/{{ versionDirectory }}/collection/worried-about-someone">
+            <a href="/alpha/{{ versionDirectory }}/collection/worried-about-someone" class="govuk-link--no-underline">
               When you need support
             </a>
           </h3>
