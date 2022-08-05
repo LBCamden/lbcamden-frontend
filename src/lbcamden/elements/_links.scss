@@ -1,26 +1,42 @@
 .LBCamden-Link {
   &--action {
     position: relative;
-    font-weight: bold;
-    @include govuk-responsive-padding(2, "right");
+    font-weight: $govuk-font-weight-bold;
+    text-decoration: none;
+    @include govuk-responsive-padding(3, "right");
 
     &:before {
       $dimension: 6px;
       $width: 2px;
       content: "";
       position: absolute;
-      right: 0;
+      right: govuk-spacing(1);
       bottom: $dimension;
       width: $dimension;
       height: $dimension;
       transform: rotate(45deg);
-      border-top: $width solid $govuk-link-colour;
-      border-right: $width solid $govuk-link-colour;
+      border-top: $width solid currentcolor;
+      border-right: $width solid currentcolor;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      @include govuk-link-hover-decoration;
+    }
+
+    &:focus {
+      color: lbcamden-colour("black");
+      box-shadow: none;
+
+      &:after {
+        border-color: lbcamden-colour("black");
+      }
     }
   }
 
   &--promo {
     //@extend .LBCamden-Button;
+    @include govuk-font(19);
     box-sizing: border-box;
     display: inline-block;
     position: relative;
@@ -29,7 +45,7 @@
     border-bottom-right-radius: 1rem;
     color: lbcamden-colour("white");
     background: lbcamden-colour("govuk-brand1-1-colour");
-    font-weight: bold;
+    font-weight: $govuk-font-weight-bold;
     text-align: left;
     text-decoration: none;
     @include govuk-responsive-padding(4, "all");
@@ -42,6 +58,7 @@
 
     &:hover {
       text-decoration: underline;
+      @include govuk-link-hover-decoration;
     }
 
     &:after {
@@ -60,13 +77,14 @@
       color: $govuk-link-colour;
       background: lbcamden-colour("govuk-bg-bright1-colour");
       box-shadow: 1px 1px 1px rgba(lbcamden-colour("black"), .25);
+      font-weight: $govuk-font-weight-semibold;
 
       &:link {
         color: $govuk-link-colour;
       }
 
       &:visited {
-        color: $govuk-link-visited-colour;
+        color: $govuk-link-colour;
       }
 
       &:hover {

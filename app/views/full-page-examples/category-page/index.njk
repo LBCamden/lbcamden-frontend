@@ -40,69 +40,40 @@ notes:
 
   <h2>Popular</h2>
 
-  <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+  <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
     {% set widthClass = 'LBCamden-Card--popular' %}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+    {% set popularItems = [
+      {
         title: "Paying your business rates",
         href: "#"
       },
-      clickable: true,
-      popular: true
-    }) }}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+      {
         title: "Camden's new e-invoicing service",
         href: "#"
       },
-      clickable: true,
-      popular: true
-    }) }}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+      {
         title: "Search the licensing public register",
         href: "#"
       },
-      clickable: true,
-      popular: true
-    }) }}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+      {
         title: "Discounts and exemptions for business rates",
         href: "#"
       },
-      clickable: true,
-      popular: true
-    }) }}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+      {
         title: "Pavement licensing",
         href: "#"
       },
-      clickable: true,
-      popular: true
-    }) }}
-
-    {{ LBCamdenCard({
-      classes: widthClass,
-      heading: {
+      {
         title: "Alcohol premises licensing",
         href: "#"
-      },
-      clickable: true,
-      popular: true
-    }) }}
-  </div>
+      }
+    ] %}
+
+    {% for item in popularItems %}
+        <a href="#" class="LBCamden-Link--promo LBCamden-Link--promo-alt">{{ item.title }}</a>
+    {% endfor %}
+
+  </ul>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
