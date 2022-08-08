@@ -16,6 +16,7 @@
 - Accordion uses rounded chevron
 - Back link uses rounded chevron
 - Breadcrumb uses rounded chevron
+- Warning text uses custom style
 
 ## 0.1.5
 🔧 Fixes:
