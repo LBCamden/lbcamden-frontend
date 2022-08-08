@@ -67,7 +67,6 @@
 
 // Chevron helper
 @mixin lbcamden-chevron($colour, $rotation: 0, $stroke: 1, $size: 2) {
-  left: -(govuk-spacing(1) / 2);
   width: $size * 5 + px;
   height: $size * 5 + px;
   transform: rotate($rotation + deg);
