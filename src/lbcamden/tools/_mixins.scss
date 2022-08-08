@@ -67,12 +67,12 @@
 
 // Chevron helper
 @mixin lbcamden-chevron($colour, $rotation: 0, $stroke: 1, $size: 2) {
-  left: -(govuk-spacing(1) / 2);
   width: $size * 5 + px;
   height: $size * 5 + px;
   transform: rotate($rotation + deg);
   border: none;
   background: chevron-stroke-width($stroke, $colour);
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -82,5 +82,8 @@
   }
   @if $stroke == 2 {
     @return svg-url("<svg width='56' height='56' xmlns='http://www.w3.org/2000/svg'><path d='M29.9246628,14.0000793 L13.6376822,30.8037018 L13.6370331,30.8037018 C12.2065197,32.3317866 11.6630217,34.525565 12.2078253,36.5744415 C12.7526308,38.622868 14.3041325,40.2235387 16.2898102,40.785596 C18.2754742,41.3476533 20.4017828,40.786946 21.8829714,39.3113769 L42.2928914,18.2538494 C43.3856457,17.1250998 44,15.59544 44,14.0000793 C44,12.4047187 43.3856,10.8750139 42.2928914,9.74630924 L21.8829714,-11.3110383 C20.4016914,-12.7869283 18.2754742,-13.3476769 16.2898102,-12.7855917 C14.3041325,-12.2235061 12.7526445,-10.6227859 12.2078253,-8.57412088 C11.6630052,-6.52545137 12.2065165,-4.33171797 13.6370331,-2.80354319 L29.9246628,14.0000793 Z' fill='" + $colour + "' transform='translate(0, 14.000000)' /></svg>");
+  }
+  @if $stroke == 3 {
+    @return svg-url("<svg width='14' height='14' xmlns='http://www.w3.org/2000/svg'><path d='M0 1.741A1 1 0 0 1 1.504.877l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 0 12.259V1.741Z' fill='" + $colour + "' /></svg>");
   }
 }

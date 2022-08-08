@@ -3,25 +3,32 @@
     position: relative;
     font-weight: $govuk-font-weight-bold;
     text-decoration: none;
-    @include govuk-responsive-padding(3, "right");
+    @include govuk-responsive-padding(4, "right");
 
     &:before {
-      $dimension: 6px;
-      $width: 2px;
+      @include lbcamden-chevron(lbcamden-colour("blue"), 0, 1, 3);
       content: "";
       position: absolute;
-      right: govuk-spacing(1);
-      bottom: $dimension;
-      width: $dimension;
-      height: $dimension;
-      transform: rotate(45deg);
-      border-top: $width solid currentcolor;
-      border-right: $width solid currentcolor;
+      top: 50%;
+      right: govuk-spacing(0);
+      transform: translateY(-50%);
     }
 
     &:hover {
       text-decoration: underline;
       @include govuk-link-hover-decoration;
+
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 3);
+        transform: translateY(-50%);
+      }
+    }
+
+    &:visited {
+      &:before {
+        @include lbcamden-chevron($govuk-link-visited-colour, 0, 1, 3);
+        transform: translateY(-50%);
+      }
     }
 
     &:focus {
@@ -30,6 +37,11 @@
 
       &:after {
         border-color: lbcamden-colour("black");
+      }
+
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("black"), 0, 1, 3);
+        transform: translateY(-50%);
       }
     }
   }
@@ -62,15 +74,22 @@
     }
 
     &:after {
+      @include lbcamden-chevron(lbcamden-colour("white"), 0, 2, 3);
       content: "";
       position: absolute;
       top: 50%;
       right: govuk-spacing(4);
-      width: 7px;
-      height: 7px;
-      transform: rotate(45deg) translateY(-50%);
-      border-top: 3px solid lbcamden-colour("white");
-      border-right: 3px solid lbcamden-colour("white");
+      transform: translateY(-50%);
+    }
+
+    &:focus {
+      color: lbcamden-colour("black");
+      box-shadow: none;
+
+      &:after {
+        @include lbcamden-chevron(lbcamden-colour("black"), 0, 2, 3);
+        transform: translateY(-50%);
+      }
     }
 
     &-alt {
@@ -89,27 +108,32 @@
 
       &:hover {
         color: $govuk-link-hover-colour;
+
+        &:after {
+          @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 3);
+          transform: translateY(-50%);
+        }
       }
 
       &:after {
-        border-width: 2px;
-        border-color: $govuk-link-colour;
+        @include lbcamden-chevron(lbcamden-colour("blue"), 0, 1, 3);
+        transform: translateY(-50%);
+      }
+
+      &:focus {
+        color: lbcamden-colour("black");
+
+        &:after {
+          @include lbcamden-chevron(lbcamden-colour("black"), 0, 1, 3);
+          transform: translateY(-50%);
+        }
       }
     }
 
     &--large {
-      @include govuk-responsive-padding(6, "top");
-      @include govuk-responsive-padding(6, "bottom");
-      font-weight: bold;
-    }
-
-    &:focus {
-      color: lbcamden-colour("black");
-      box-shadow: none;
-
-      &:after {
-        border-color: lbcamden-colour("black");
-      }
+      @include govuk-responsive-padding(5, "top");
+      @include govuk-responsive-padding(5, "bottom");
+      @include govuk-typography-weight-bold;
     }
   }
 }

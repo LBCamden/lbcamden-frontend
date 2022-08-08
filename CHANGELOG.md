@@ -6,6 +6,12 @@
 
 ### Fixes
 
+## 0.1.7
+🔧 Fixes:
+
+- Promo links uses rounded chevrons
+- Details use rounded icon
+
 ## 0.1.6
 🆕 New features:
 
