@@ -1,0 +1,5 @@
+.govuk-back-link {
+  &:before {
+    @include lbcamden-chevron2(lbcamden-colour("black"), 180);
+  }
+}
