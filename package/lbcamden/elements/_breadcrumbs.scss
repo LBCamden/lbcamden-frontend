@@ -13,6 +13,7 @@
 
   .govuk-breadcrumbs__list-item {
     &:before {
+      left: -(govuk-spacing(1) / 2);
       @include lbcamden-chevron(lbcamden-colour("black"), 0);
     }
   }
