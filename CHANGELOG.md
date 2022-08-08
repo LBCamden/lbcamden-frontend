@@ -6,6 +6,17 @@
 
 ### Fixes
 
+## 0.1.6
+🆕 New features:
+
+- Rounded chevron feature added
+
+🔧 Fixes:
+
+- Accordion uses rounded chevron
+- Back link uses rounded chevron
+- Breadcrumb uses rounded chevron
+
 ## 0.1.5
 🔧 Fixes:
 
