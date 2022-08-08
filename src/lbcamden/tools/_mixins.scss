@@ -66,19 +66,6 @@
 }
 
 // Chevron helper
-@mixin lbcamden-chevron2($colour, $rotation: 45, $size: 2) {
-  width: $size * 3 + px;
-  height: $size * 3 + px;
-  //clip-path: path("M7.48316 3.7425L7.07104 8.75608C7.0428 9.09874 6.74128 9.3771 6.39755 9.37785C6.05373 9.37867 5.79781 9.10147 5.82605 8.75882L6.1872 4.36549L1.77906 4.37521C1.43524 4.37604 1.17933 4.09884 1.20757 3.75619C1.23573 3.4136 1.53724 3.13524 1.88106 3.13442L6.91154 3.12333C7.25528 3.12257 7.51119 3.39977 7.48302 3.74235L7.48316 3.7425Z");
-  //clip-path: path("M1,0.099 L0.934,0.901 C0.93,0.955,0.882,1,0.827,1 C0.772,1,0.731,0.956,0.736,0.901 L0.793,0.199 L0.091,0.2 C0.037,0.2,-0.004,0.156,0,0.101 C0.005,0.046,0.053,0.002,0.108,0.002 L0.909,0 C0.963,0,1,0.044,1,0.099 L1,0.099");
-  object-fit: cover;
-  clip-path: url("#chevron-clip-path");
-  transform: rotate($rotation + 45 + deg);
-  border-top: $size + px solid $colour;
-  border-right: $size + px solid $colour;
-}
-
-// This version does not require an inline SVG present on the page
 @mixin lbcamden-chevron($colour, $rotation: 0, $stroke: 1, $size: 2) {
   left: -(govuk-spacing(1) / 2);
   width: $size * 5 + px;
