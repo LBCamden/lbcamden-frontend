@@ -11,6 +11,8 @@
 
 - Checkboxes using rounded icons
 - Pagination using rounded icons
+- Tab colours updated
+- Inset text border colour updated
 
 ## 0.1.7
 🔧 Fixes:
