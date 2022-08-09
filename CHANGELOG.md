@@ -6,6 +6,14 @@
 
 ### Fixes
 
+## 0.1.9
+🔧 Fixes:
+
+- Pagination icon colour updated
+- Breadcrumb icon colour updated
+- Back link icon colour updated
+- Tags customised
+
 ## 0.1.8
 🔧 Fixes:
 
