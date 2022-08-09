@@ -14,6 +14,7 @@
 - Tab colours and rounded borders updated
 - Inset text border colour updated
 - Tags updated
+- Padding on promo links adjusted to match designs
 
 ## 0.1.7
 🔧 Fixes:
