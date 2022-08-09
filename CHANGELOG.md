@@ -13,6 +13,7 @@
 - Breadcrumb icon colour updated
 - Back link icon colour updated
 - Tags customised
+- Cookie banner customised
 
 ## 0.1.8
 🔧 Fixes:
