@@ -14,6 +14,8 @@
 - Back link icon colour updated
 - Tags customised
 - Cookie banner customised
+- Phase banner colours updated
+- Table colours updated
 
 ## 0.1.8
 🔧 Fixes:
