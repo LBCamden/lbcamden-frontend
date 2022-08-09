@@ -9,12 +9,16 @@
 
   .govuk-breadcrumbs__link {
     color: $govuk-link-colour;
+
+    &:focus {
+      color: lbcamden-colour("black");
+    }
   }
 
   .govuk-breadcrumbs__list-item {
     &:before {
       left: -(govuk-spacing(1) / 2);
-      @include lbcamden-chevron(lbcamden-colour("black"), 0);
+      @include lbcamden-chevron(lbcamden-colour("grey"), 0);
     }
   }
 }

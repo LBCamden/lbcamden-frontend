@@ -6,6 +6,17 @@
 
 ### Fixes
 
+## 0.1.9
+🔧 Fixes:
+
+- Pagination icon colour updated
+- Breadcrumb icon colour updated
+- Back link icon colour updated
+- Tags customised
+- Cookie banner customised
+- Phase banner colours updated
+- Table colours updated
+
 ## 0.1.8
 🔧 Fixes:
 
