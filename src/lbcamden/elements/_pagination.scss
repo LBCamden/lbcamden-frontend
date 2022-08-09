@@ -38,4 +38,25 @@
       }
     }
   }
+
+  &--block {
+    .govuk-pagination__prev,
+    .govuk-pagination__next {
+      .govuk-pagination__link {
+        position: relative;
+
+        &:before {
+          top: 4px;
+          left: 0;
+        }
+      }
+    }
+
+    .govuk-pagination__next {
+      .govuk-pagination__link {
+        @include govuk-responsive-padding(5, "left");
+        @include govuk-responsive-padding(0, "right");
+      }
+    }
+  }
 }
