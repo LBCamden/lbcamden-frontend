@@ -1,0 +1,41 @@
+.govuk-pagination {
+  .govuk-pagination__link {
+    svg {
+      @extend .govuk-visually-hidden;
+    }
+  }
+
+  &__prev,
+  &__next,
+  &__item:not(.govuk-pagination__item--current) {
+    &:hover {
+      background: lbcamden-colour("govuk-bg-bright1-colour");
+    }
+  }
+
+  &__prev {
+    .govuk-pagination__link {
+      @include govuk-responsive-padding(5, "left");
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        @include lbcamden-chevron(lbcamden-colour("grey"), 180, 1, 3);
+      }
+    }
+  }
+
+  &__next {
+    .govuk-pagination__link {
+      @include govuk-responsive-padding(5, "right");
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        @include lbcamden-chevron(lbcamden-colour("grey"), 0, 1, 3);
+      }
+    }
+  }
+}
