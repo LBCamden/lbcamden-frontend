@@ -1,6 +1,6 @@
 .govuk-back-link {
   &:before {
     left: -(govuk-spacing(1) / 3);
-    @include lbcamden-chevron(lbcamden-colour("black"), 180);
+    @include lbcamden-chevron(lbcamden-colour("grey"), 180);
   }
 }
