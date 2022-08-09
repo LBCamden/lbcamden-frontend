@@ -3,7 +3,7 @@ $lbcamden-colours: (
   "white": #ffffff,
   "dark-red": #a81010,
   "light-red": #d4351c,
-  "dark-yellow": #c87800,
+  "mid-yellow": #c87800,
   "yellow": #ffde02,
   "green": #006135,
   "grey": #4d5051,
@@ -30,7 +30,14 @@ $lbcamden-colours: (
   "govuk-brand-teal-4-colour": #9bdde8,
   "govuk-brand-teal-5-colour": #bce8f0,
   "govuk-brand-teal-6-colour": #cdeef4,
-  "govuk-brand-teal-7-colour": #eef9fb
+  "govuk-brand-teal-7-colour": #eef9fb,
+  "bright-grey": #eeefef,
+  "bright-green": #d6ffef,
+  "bright-red": #fef6f6,
+  "dark-yellow": #754600,
+  "bright-yellow": #fff3a3,
+  "dark-purple": #4c2c92,
+  "bright-purple": #e0d4f2,
 );
 
 // @todo - tidy these colours up, consider better variable names? Use find and replace if changed
