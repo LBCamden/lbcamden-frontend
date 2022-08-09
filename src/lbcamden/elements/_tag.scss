@@ -2,7 +2,6 @@
   border-radius: 3px;
   color: lbcamden-colour("white");
   background: lbcamden-colour("blue");
-  @include govuk-font(14, bold);
 
   &--grey {
     color: lbcamden-colour("black");
