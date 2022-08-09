@@ -69,7 +69,7 @@
     text-align: left;
     text-decoration: none;
     @include govuk-responsive-padding(4, "all");
-    @include govuk-responsive-padding(8, "right");
+    @include govuk-responsive-padding(7, "right");
 
     &:visited,
     &:link {
@@ -86,7 +86,7 @@
       content: "";
       position: absolute;
       top: 50%;
-      right: govuk-spacing(4);
+      right: govuk-spacing(3);
       -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
