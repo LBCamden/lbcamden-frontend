@@ -40,7 +40,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   border-radius: $lbcamden-button-border-radius;
   color: $lbcamden-button-text-colour;
   background-color: $lbcamden-button-colour;
-  //box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
+  box-shadow: none;
   font-weight: $govuk-font-weight-semibold;
   text-align: center;
   text-underline-offset: .1em;
