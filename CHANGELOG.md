@@ -6,6 +6,12 @@
 
 ### Fixes
 
+## 0.1.8
+🔧 Fixes:
+
+- Checkboxes using rounded icons
+- Pagination using rounded icons
+
 ## 0.1.7
 🔧 Fixes:
 
