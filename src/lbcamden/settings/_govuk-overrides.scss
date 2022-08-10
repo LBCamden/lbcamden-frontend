@@ -1,4 +1,5 @@
 // GOVUK Overrides
+$lbcamden-border-colour: lbcamden-colour("light-grey");
 
 $govuk-focus-colour: lbcamden-colour("yellow");
 $button-shadow-size: 2;
@@ -22,7 +23,7 @@ $govuk-link-visited-colour: lbcamden-colour("purple");
 
 $govuk-warning-button-colour: lbcamden-colour("dark-red");
 
-$govuk-border-colour: lbcamden-colour("black");
+$govuk-border-colour: $lbcamden-border-colour; // This is reset in the GOVUK Frontend code and will not apply without a change to that codebase (needs !default value added) - we reapply this across our own system to achieve the same result
 $govuk-input-border-colour: lbcamden-colour("black");
 
 $govuk-brand-colour: lbcamden-colour("govuk-brand1-1-colour");
