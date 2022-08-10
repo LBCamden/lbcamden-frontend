@@ -6,6 +6,22 @@
 
 ### Fixes
 
+## 0.1.11
+🔧 Fixes:
+
+- Pagination 'current' colour updated
+- Phase banner border colour updated
+- Table border colour updated
+- Summary list border colour updated
+- Detail hover states added
+- Accordion hover states added
+
+
+## 0.1.10
+🆕 New features:
+
+- Bumped GOVUK Frontend to latest version 4.3.0
+
 ## 0.1.9
 🔧 Fixes:
 
