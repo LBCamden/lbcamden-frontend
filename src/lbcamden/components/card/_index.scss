@@ -12,9 +12,22 @@
   }
 
   &--clickable {
-    //.js-enabled & {
-    //  cursor: pointer;
-    //}
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      a {
+        // CSS approach to making entire card clickable
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
   }
 
   &--alt-1,
@@ -47,56 +60,12 @@
     background: initial;
   }
 
-  &:not(.LBCamden-Card--naked) > h2,
-  &:not(.LBCamden-Card--naked) > h3,
-  &:not(.LBCamden-Card--naked) > h4,
-  &:not(.LBCamden-Card--naked) > h5 {
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
     a {
-      display: flex;
-      @include govuk-responsive-padding($lbc-default-spacing--small, "right");
-      align-items: center;
-      justify-content: space-between;
-
-      // CSS approach to making entire card clickable
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-
-      &:before {
-        $dimension: 7px;
-        $width: 3px;
-        content: "";
-        position: absolute;
-        top: govuk-spacing(4);
-        right: govuk-spacing(2);
-        width: $dimension;
-        height: $dimension;
-        @include lbcamden-chevron(lbcamden-colour("blue"), 0);
-      }
-
-      //&[rel="external"] {
-      //  &:before {
-      //    $dimension: 7px;
-      //    content: "";
-      //    display: inline-block;
-      //    @include govuk-responsive-padding(1);
-      //    @include govuk-responsive-margin(4, "left");
-      //    @include background-svg('<svg fill="none" height="24" stroke="' + $govuk-link-colour + '" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>');
-      //    width: $dimension;
-      //    height: $dimension;
-      //    transform: none;
-      //    border: none;
-      //    background-repeat: no-repeat;
-      //    background-position: center;
-      //    background-size: contain;
-      //    vertical-align: middle;
-      //  }
-      //}
+      @extend .govuk-link--no-underline;
     }
   }
 

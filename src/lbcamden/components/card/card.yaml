@@ -10,7 +10,7 @@ params:
 - name: clickable
   type: boolean
   required: false
-  description: If set, entire card will be clickable (requires JavaScript)
+  description: If set, entire card will be clickable
 - name: type
   type: string
   required: false
