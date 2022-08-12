@@ -25,7 +25,7 @@ examples:
     description: The standard implementation of a search bar
     data:
 
-  - name: colour variant
+  - name: Colour variant
     description: Allows the search component to be used on a darker background
     data:
       alt: true
@@ -39,7 +39,7 @@ examples:
   - name: classes
     hidden: true
     data:
-      classes: logo-class-test
+      classes: search-class-test
   - name: labelText
     hidden: true
     data:

@@ -7,52 +7,82 @@ const axe = require('../../../../lib/axe-helper')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers')
 
-const examples = getExamples('logo')
+const examples = getExamples('search')
 
-describe('logo', () => {
+describe('search', () => {
   describe('default example', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('logo', examples.default)
+      const $ = render('search', examples.default)
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
+    })
+
+    it('input renders with id', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.LBCamden-Search__input')
+      expect($component.attr('id')).toEqual('LBCamden-Search__box')
+    })
+
+    it('input renders with name', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.LBCamden-Search__input')
+      expect($component.attr('name')).toEqual('search')
+    })
+
+    it('input renders with placeholder="Search" by default', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.LBCamden-Search__input')
+      expect($component.attr('placeholder')).toEqual('Search')
+    })
+
+    it('renders with a form', () => {
+      const $ = render('search', examples.default)
+
+      const $formGroup = $('form')
+      expect($formGroup.length).toBeTruthy()
+    })
+
+    it('renders label with "for" attribute reffering the input "id"', () => {
+      const $ = render('search', examples.default)
+
+      const $label = $('.govuk-label')
+      expect($label.attr('for')).toEqual('LBCamden-Search__box')
     })
   })
 
   describe('custom options', () => {
     it('renders classes correctly', () => {
-      const $ = render('logo', examples.classes)
+      const $ = render('search', examples.classes)
 
-      const $component = $('.LBCamden-Logo')
-      expect($component.hasClass('logo-class-test')).toBeTruthy()
+      const $component = $('.LBCamden-Search')
+      expect($component.hasClass('search-class-test')).toBeTruthy()
     })
 
-    it('renders custom fill colour', () => {
-      const $ = render('logo', examples.fillColour)
+    it('renders alt classname', () => {
+      const $ = render('search', examples['Colour variant'])
 
-      const $component = $('.LBCamden-Logo path')
-      expect($component.attr('fill')).toContain('ae094e')
-    })
-  })
-
-  describe('SVG logo', () => {
-    const $ = render('logo', examples.default)
-    const $svg = $('.LBCamden-Logo')
-
-    it('sets focusable="false" so that IE does not treat it as an interactive element', () => {
-      expect($svg.attr('focusable')).toEqual('false')
+      const $component = $('.LBCamden-Search')
+      expect($component.attr('class')).toContain('LBCamden-Search--alt')
     })
 
-    it('sets aria-hidden="true" so that it is ignored by assistive technologies', () => {
-      expect($svg.attr('aria-hidden')).toEqual('true')
+    it('renders custom label and call to action text', () => {
+      const $ = render('search', examples.labelText)
+
+      const $component1 = $('.LBCamden-Search label')
+      const $component2 = $('.LBCamden-Search__btn')
+      expect($component1.text()).toContain('Search test')
+      expect($component2.text()).toContain('Search test')
     })
 
-    describe('fallback PNG', () => {
-      const $fallbackImage = $('.govuk-header__logotype-crown-fallback-image')
+    it('renders custom placeholder text', () => {
+      const $ = render('search', examples['Placeholder text'])
 
-      it('is invisible to modern browsers', () => {
-        expect($fallbackImage.length).toEqual(0)
-      })
+      const $component = $('.LBCamden-Search__input')
+      expect($component.attr('placeholder')).toBe('Customised placeholder')
     })
   })
 })
