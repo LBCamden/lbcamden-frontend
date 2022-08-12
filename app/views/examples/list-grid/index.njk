@@ -1,0 +1,92 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% extends "layout.njk" %}
+
+{% block beforeContent %}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      "href": "/"
+    }) }}
+  </div>
+{% endblock %}
+
+{% set cardExample %}
+  <div class="LBCamden-Card">
+    <h4>Title</h4>
+    <p>A description goes here</p>
+  </div>
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">List-grid layout</h1>
+      <p>The purpose of the `list-grid` is to control the layout of <strong>content</strong> on a page. It is to be used
+        within the <a
+          href="./grid">grid layout</a> and does not replace this but complements it.</p>
+
+      <h2>Examples</h2>
+
+      <div class="LBCamden-Row">
+        <h3>Cards used with a two column list-grid</h3>
+        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--two-columns">
+          {% set loopCount = [1, 2, 3, 4] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="LBCamden-Row">
+        <h3>Cards used with a three column list-grid</h3>
+        <div class="LBCamden-Card_Wrapper">
+          {% set loopCount = [1, 2, 3, 4, 5, 6] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="LBCamden-Row">
+        <h3>Cards used with a three column list-grid from 'wide' breakpoint</h3>
+        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--three-columns-from-wide">
+          {% set loopCount = [1, 2, 3, 4, 5, 6] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="LBCamden-Row">
+        <h3>Cards used with a four column list-grid</h3>
+        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--four-columns-from-desktop">
+          {% set loopCount = [1, 2, 3, 4, 5, 6, 7, 8] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="LBCamden-Row">
+        <h3>Cards used with a four column list-grid from 'wide' breakpoint</h3>
+        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--four-columns-from-wide">
+          {% set loopCount = [1, 2, 3, 4, 5, 6, 7, 8] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+{#      <div class="LBCamden-Row">#}
+{#        <h3>Cards used with a six column list-grid from 'wide' breakpoint</h3>#}
+{#        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--six-columns-from-wide">#}
+{#          {% set loopCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] %}#}
+{#          {% for item in loopCount %}#}
+{#            {{ cardExample | safe }}#}
+{#          {% endfor %}#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+
+  </div>
+{% endblock %}
