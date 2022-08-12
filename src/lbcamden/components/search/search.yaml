@@ -35,6 +35,11 @@ examples:
     data:
       placeholderText: 'Customised placeholder'
 
+  - name: width modifier
+    description: Input with specified width
+    data:
+      classes: 'govuk-input--width-30'
+
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
     hidden: true
