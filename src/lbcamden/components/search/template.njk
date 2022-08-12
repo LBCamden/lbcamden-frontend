@@ -1,0 +1,13 @@
+{%- if params.classes %}
+  {% set classNames = classNames + " " + params.classes %}
+{% endif %}
+
+<div class="LBCamden-Search {{ classNames }} {% if params.alt %} LBCamden-Search--alt{% endif %}" role="search">
+  <label class="govuk-label govuk-label--l govuk-visually-hidden" for="LBCamden-Search__box">
+    {{ params.text | default('Search Camden.gov.uk') }}
+  </label>
+  <input type="text" name="search"
+         class="LBCamden-Search__input"
+         id="LBCamden-Search__box" placeholder="{{ params.placeholderText | default('Search') }}" />
+  <button type="submit" class="LBCamden-Search__btn" id="LBCamden-Search__btn">Search Camden.gov.uk</button>
+</div>
