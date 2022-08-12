@@ -7,6 +7,11 @@
 ### Fixes
 
 ## 0.1.11
+🆕 New features:
+
+- Added basic row classes and pattern examples
+- Search component
+
 🔧 Fixes:
 
 - Pagination 'current' colour updated
@@ -15,7 +20,6 @@
 - Summary list border colour updated
 - Detail hover states added
 - Accordion hover states added
-
 
 ## 0.1.10
 🆕 New features:
