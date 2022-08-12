@@ -1,0 +1,125 @@
+{% extends "full-page-example.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "../../../../src/lbcamden/components/header/macro.njk" import LBCamdenHeader %}
+{% from "../../../../src/lbcamden/components/search/macro.njk" import LBCamdenSearch %}
+{% from "../../../../src/lbcamden/components/button/macro.njk" import LBCamdenButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+
+{% set pageTitle = "Knowledge Hub example" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({}) }}
+  <div class="LBCamden-Row LBCamden-Row--bg">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <svg height="120" width="90" viewBox="0 0 180 240">
+            <title>HTML5 Logo</title>
+            <desc>The text HTML is in all caps on top of a large orange badge with the number 5.</desc>
+            <defs>
+              <linearGradient id="textgradient" x1="0%" x2="100%" y1="0%" y2="0%">
+                <stop stop-color="#EBEBEB" offset="50%"></stop>
+                <stop stop-color="#FFFFFF" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+
+            <text x="15" y="35" font-family="arial" font-size="50px" font-weight="bold" stroke="black" stroke-width="4"
+                  fill="black">HTML
+            </text>
+            <polygon points="0 50,170 50,153 220,85 240,17 220"
+                     style="fill:#E54D26;stroke:none;stroke-width:0.5"></polygon>
+
+            <polygon points="85 66,151 66,138 204,85 225" style="fill:#F1652A;stroke:none;stroke-width:0.5"></polygon>
+
+            <text x="28" y="200"
+                  style="fill:url(#textgradient); font-weight:bold; font-size:160px; font-family:verdana;">5
+            </text>
+
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          {{ LBCamdenSearch({
+            placeholderText: "Search the Knowledge Hub"
+          }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#/"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+      {% set promoLinks = [
+        {
+          "title": "Registrars",
+          "link": "/supporting-citizens/registrars",
+          "classes": ""
+        },
+        {
+          "title": "Sports",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Electoral Services",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Adult Social Care",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Accessible Transport",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Children, School & Families",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Libraries",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Trees and Parks",
+          "link": "",
+          "classes": ""
+        },
+        {
+          "title": "Family Information Services",
+          "link": "",
+          "classes": ""
+        }
+      ] %}
+
+      <div class="LBCamden-Card_Wrapper govuk-!-margin-bottom-6">
+
+        {% for item in promoLinks %}
+          <a href="{{ item.link }}"
+             class="LBCamden-Link--promo LBCamden-Link--promo-alt govuk-!-display-block">{{ item.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
