@@ -111,7 +111,7 @@ examples:
       title: Example heading
       href: '#'
     content:
-      text: 'This is a description'
+      html: 'This is a description with a <a href="#">link</a> in it'
     clickable: true
     image: ''
 
@@ -142,9 +142,8 @@ examples:
   data:
     heading:
       title: Example heading
-      href: '#'
     content:
-      text: 'This is a description'
+      html: 'This is a description with a <a href="#">link</a> in it'
     clickable: true
     type: 'alt-3'
 
