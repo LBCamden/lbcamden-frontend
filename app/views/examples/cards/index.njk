@@ -1,0 +1,61 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "../../../../src/lbcamden/components/card/macro.njk" import LBCamdenCard %}
+
+{% extends "layout.njk" %}
+
+{% block beforeContent %}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      "href": "/"
+    }) }}
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  {% set variants = {
+    'Default': '',
+    'Promo links': 'promo',
+    'Promo links with copy': 'promo',
+    'Promo links alt': 'promo',
+    'Promo links alt with copy': 'promo',
+    'Style 1': 'alt-1',
+    'Style 2': 'alt-2',
+    'Style 3': 'alt-3',
+    'Naked': 'naked'
+  } %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Cards
+      </h1>
+
+      {% for variant_description, variant_class in variants %}
+
+        <section class="LBCamden-Row">
+          <h2 class="govuk-heading-l">{{ variant_description }}</h2>
+
+          <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--three-columns">
+            {% set loopCount = [1, 2, 3] %}
+            {% for item in loopCount %}
+              {{ LBCamdenCard({
+                heading: {
+                  title: 'Example',
+                  href: '#'
+                },
+                content: {
+                  text: 'Description'
+                },
+                clickable: true,
+                type: variant_class
+              }) }}
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+
+    </div>
+  </div>
+{% endblock %}
