@@ -180,11 +180,4 @@
       grid-template-columns: fractions(4);
     }
   }
-
-  //&--six-columns-from-wide {
-  //  grid-template-columns: fractions(4);
-  //  @include govuk-media-query($from: "wide") {
-  //    grid-template-columns: fractions(6);
-  //  }
-  //}
 }
