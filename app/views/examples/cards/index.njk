@@ -22,6 +22,7 @@
     'Style 1': 'alt-1',
     'Style 2': 'alt-2',
     'Style 3': 'alt-3',
+    'Image': 'image',
     'Naked': 'naked'
   } %}
 
@@ -40,7 +41,23 @@
           <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--three-columns">
             {% set loopCount = [1, 2, 3] %}
             {% for item in loopCount %}
-              {% if variant_description === 'Promo links' or variant_description === 'Promo links alt' %}
+              {% if variant_description === 'Image' %}
+                {{ LBCamdenCard({
+                  heading: {
+                    title: 'Example',
+                    href: '#'
+                  },
+                  image: {
+                    src: 'https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+                    alt: 'Image of Camden market'
+                  },
+                  content: {
+                    text: 'Description'
+                  },
+                  type: 'alt-1',
+                  clickable: true
+                }) }}
+              {% elseif variant_description === 'Promo links' or variant_description === 'Promo links alt' %}
                 {{ LBCamdenCard({
                   heading: {
                     title: 'Example',

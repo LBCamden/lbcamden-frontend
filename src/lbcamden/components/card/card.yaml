@@ -45,6 +45,19 @@ params:
       type: string
       required: false
       description: If present, the value of this attribute will be displayed within the card as HTML
+- name: image
+  type: object
+  required: false
+  description: If a URL referencing an image is supplied, an image will be used in the card
+  params:
+    - name: src
+      type: string
+      required: true
+      description: Provide a relative or absolute URL for the image
+    - name: alt
+      type: string
+      required: true
+      description: Provide a text description of the image
 - name: topBorder
   type: boolean
   required: false
@@ -103,17 +116,6 @@ examples:
     content:
       text: 'This is a description'
     clickable: true
-
-- name: image card
-  description: Version of the card that has a stronger visual presence and hierachy.
-  data:
-    heading:
-      title: Example heading
-      href: '#'
-    content:
-      html: 'This is a description with a <a href="#">link</a> in it'
-    clickable: true
-    image: ''
 
 - name: decorated type 1
   description: Decorated version of the card.
@@ -209,6 +211,21 @@ examples:
       text: 'This is a description'
     clickable: true
     type: 'naked'
+
+- name: with image
+  description: Card with styles and an image.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: alt-1
+    image: {
+       src: 'https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+       alt: 'Image of Camden market'
+    }
 
 # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
 - name: attributes
