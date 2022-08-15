@@ -35,7 +35,7 @@
   &--alt-3 {
     @include govuk-responsive-padding(3, "all");
     border: none;
-    box-shadow: 0 0 4px lbcamden-colour("light-grey");
+    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
   }
 
   &--alt-1 {
@@ -55,7 +55,36 @@
 
     a {
       color: lbcamden-colour("white");
+
+      &:focus {
+        color: lbcamden-colour("black");
+      }
     }
+  }
+
+  &--promo-link,
+  &--promo-link--alt {
+    display: block;
+    border: none;
+  }
+
+  &--promo-link {
+    @extend .LBCamden-Link--promo;
+
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      a {
+        @extend .govuk-link--no-underline;
+        color: lbcamden-colour("white");
+      }
+    }
+  }
+
+  &--promo-link--alt {
+    @extend .LBCamden-Link--promo;
+    @extend .LBCamden-Link--promo-alt;
   }
 
   &--naked {

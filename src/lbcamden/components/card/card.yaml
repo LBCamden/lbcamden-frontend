@@ -159,6 +159,46 @@ examples:
     clickable: true
     type: 'alt-1'
 
+- name: promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link'
+
+- name: promo link type with content
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'promo-link'
+
+- name: alternative promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link--alt'
+
+- name: alternative promo link type with content
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'promo-link--alt'
+
 - name: naked card
   description: Basic stripped back version of the card.
   data:

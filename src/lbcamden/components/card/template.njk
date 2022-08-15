@@ -1,9 +1,20 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
 <div
-  class="LBCamden-Card {{ params.classes if params.classes }}{% if params.type %} LBCamden-Card--{{ params.type }}{% endif %}{% if params.clickable %} LBCamden-Card--clickable{% endif %}{% if params.topBorder %} LBCamden-Card--top-border{% endif %}"
+  class="LBCamden-Card {{ params.classes if params.classes }}
+  {% if params.type %}
+    {% if params.type === "promo-link" and params.content or params.type === "promo-link--alt" and params.content %}
+    LBCamden-Card--naked
+      {% else %} LBCamden-Card--{{ params.type }}
+    {% endif %}
+  {% endif %}
+  {% if params.clickable %} LBCamden-Card--clickable{% endif %}
+  {% if params.topBorder %} LBCamden-Card--top-border{% endif %}"
   data-module="lbcamden-card"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-<h{{ headingLevel }} class="{% if params.popular %}govuk-heading-s{% else %}govuk-heading-m{% endif %}">
+<h{{ headingLevel }}
+  class="{% if params.type === "promo-link" and params.content or params.type === "promo-link--alt" and params.content %}
+  LBCamden-Card--{{ params.type }}
+  {% endif %} govuk-heading-m">
   {% if params.heading.href %}
     <a href="{{ params.heading.href }}">
       {{ params.heading.title }}
