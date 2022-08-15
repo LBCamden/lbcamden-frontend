@@ -90,6 +90,18 @@
 
     .LBCamden-Card__content_wrapper {
       @include govuk-responsive-padding(3, "all");
+
+      > h2,
+      > h3,
+      > h4,
+      > h5 {
+        //@extend .govuk-heading-s;
+        @include govuk-responsive-margin(2, "bottom");
+
+        a {
+          @extend .govuk-link--no-underline;
+        }
+      }
     }
   }
 
@@ -100,6 +112,17 @@
 
     .LBCamden-Card--naked & {
       @include govuk-responsive-margin(2, "bottom");
+    }
+
+    &:hover {
+      > h2,
+      > h3,
+      > h4,
+      > h5 {
+        a {
+          text-decoration: none;
+        }
+      }
     }
   }
 
@@ -113,6 +136,10 @@
       a {
         @extend .govuk-link--no-underline;
         color: lbcamden-colour("white");
+
+        &:focus {
+          color: lbcamden-colour("black");
+        }
       }
     }
   }
@@ -120,6 +147,14 @@
   &--promo-link--alt {
     @extend .LBCamden-Link--promo;
     @extend .LBCamden-Link--promo-alt;
+
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      @extend .govuk-heading-s;
+      font-weight: $govuk-font-weight-semibold;
+    }
   }
 
   &--naked {
