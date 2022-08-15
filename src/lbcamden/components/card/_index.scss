@@ -66,6 +66,10 @@
   &--promo-link--alt {
     display: block;
     border: none;
+
+    .LBCamden-Card--naked & {
+      @include govuk-responsive-margin(2, "bottom");
+    }
   }
 
   &--promo-link {

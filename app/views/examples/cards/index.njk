@@ -40,17 +40,28 @@
           <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--three-columns">
             {% set loopCount = [1, 2, 3] %}
             {% for item in loopCount %}
-              {{ LBCamdenCard({
-                heading: {
-                  title: 'Example',
-                  href: '#'
-                },
-                content: {
-                  text: 'Description'
-                },
-                clickable: true,
-                type: variant_class
-              }) }}
+              {% if variant_description === 'Promo links' or variant_description === 'Promo links alt' %}
+                {{ LBCamdenCard({
+                  heading: {
+                    title: 'Example',
+                    href: '#'
+                  },
+                  clickable: true,
+                  type: variant_class
+                }) }}
+              {% else %}
+                {{ LBCamdenCard({
+                  heading: {
+                    title: 'Example',
+                    href: '#'
+                  },
+                  content: {
+                    text: 'Description'
+                  },
+                  clickable: true,
+                  type: variant_class
+                }) }}
+              {% endif %}
             {% endfor %}
           </ul>
         </section>
