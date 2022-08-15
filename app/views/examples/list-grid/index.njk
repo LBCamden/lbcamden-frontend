@@ -44,6 +44,16 @@
       </div>
 
       <div class="LBCamden-Row">
+        <h3>Cards used with a two column list-grid from tablet</h3>
+        <div class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--two-columns--from-tablet">
+          {% set loopCount = [1, 2, 3, 4] %}
+          {% for item in loopCount %}
+            {{ cardExample | safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="LBCamden-Row">
         <h3>Cards used with a three column list-grid</h3>
         <div class="LBCamden-Card_Wrapper">
           {% set loopCount = [1, 2, 3, 4, 5, 6] %}

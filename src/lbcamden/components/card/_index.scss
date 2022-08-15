@@ -222,13 +222,19 @@
   }
 
   &--two-columns {
+    grid-template-columns: fractions(2);
+  }
+
+  &--two-columns--from-tablet {
     @include govuk-media-query($from: "tablet") {
       grid-template-columns: fractions(2);
     }
   }
 
   &--three-columns {
-    grid-template-columns: fractions(3);
+    @include govuk-media-query($from: "tablet") {
+      grid-template-columns: fractions(3);
+    }
   }
 
   &--three-columns-from-wide {
@@ -246,7 +252,9 @@
   }
 
   &--four-columns-from-wide {
-    grid-template-columns: fractions(3);
+    @include govuk-media-query($from: "tablet") {
+      grid-template-columns: fractions(3);
+    }
     @include govuk-media-query($from: "wide") {
       grid-template-columns: fractions(4);
     }
