@@ -2,11 +2,15 @@ params:
 - name: classes
   type: string
   required: false
-  description: Classes to add to the header container.
+  description: Classes to add to the container.
+- name: element
+  type: string
+  required: false
+  description: HTML element to replace the default 'div' element.
 - name: attributes
   type: object
   required: false
-  description: HTML attributes (for example data attributes) to add to the header container.
+  description: HTML attributes (for example data attributes) to add to the container.
 - name: clickable
   type: boolean
   required: false
@@ -95,6 +99,15 @@ examples:
     heading:
       title: Example heading
       headingLevel: 3
+    content:
+      text: 'This is a description'
+
+- name: as a span
+  description: Container element uses an 'li' rather than a 'div.
+  data:
+    element: span
+    heading:
+      title: Example heading
     content:
       text: 'This is a description'
 

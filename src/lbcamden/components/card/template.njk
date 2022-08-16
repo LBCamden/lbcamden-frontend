@@ -1,5 +1,6 @@
+{% set containerElement = params.element if params.element else 'div' %}
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
-<div
+<{{ containerElement }}
   class="lbcamden-card {{ params.classes if params.classes }}
   {% if params.type %}
   lbcamden-card--{{ params.type }}
@@ -35,4 +36,4 @@
 {% if params.image %}
   </div>
 {% endif %}
-</div>
+</{{ containerElement }}>

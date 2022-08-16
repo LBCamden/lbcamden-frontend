@@ -34,6 +34,20 @@ describe('card', () => {
       const $component = $('.lbcamden-card')
       expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
+
+    it('renders element as a \'div\'', () => {
+      const $ = render('card', examples.default)
+
+      const $component = $('.lbcamden-card')
+      expect($component[0].name).toBe('div')
+    })
+
+    it('renders element as a \'span\'', () => {
+      const $ = render('card', examples['as a span'])
+
+      const $component = $('.lbcamden-card')
+      expect($component[0].name).toBe('span')
+    })
   })
 
   describe('card with images', () => {
