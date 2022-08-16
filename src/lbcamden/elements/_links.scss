@@ -71,6 +71,14 @@
       min-height: 66px;
     }
 
+    h2 &,
+    h3 &,
+    h4 &,
+    h5 &,
+    h6 & {
+      display: flex;
+    }
+
     &:visited,
     &:link {
       color: lbcamden-colour("white");

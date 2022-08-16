@@ -62,7 +62,7 @@ notes:
     ] %}
     <ul class="lbcamden-card-grid lbcamden-card-grid-four-columns-from-desktop govuk-!-margin-bottom-6">
       {% for item in items %}
-        <div class="lbcamden-card lbcamden-card--naked">
+        <li class="lbcamden-card lbcamden-card--naked">
           <h3 class="govuk-heading-m">
             <a href="#"
                class="lbcamden-link--promo">
@@ -72,7 +72,7 @@ notes:
           <div class="lbcamden-card__content">
             <p>{{ item.description }}</p>
           </div>
-        </div>
+        </li>
       {% endfor %}
     </ul>
   </div>
