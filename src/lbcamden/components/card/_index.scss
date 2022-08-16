@@ -107,7 +107,8 @@
 
   &--promo-link,
   &--promo-link--alt {
-    display: block;
+    padding-top: inherit;
+    padding-bottom: inherit;
     border: none;
 
     .lbcamden-card--naked & {
@@ -127,7 +128,7 @@
   }
 
   &--promo-link {
-    @extend .LBCamden-Link--promo !optional;
+    @extend .lbcamden-link--promo !optional;
 
     > h2,
     > h3,
@@ -145,8 +146,8 @@
   }
 
   &--promo-link--alt {
-    @extend .LBCamden-Link--promo !optional;
-    @extend .LBCamden-Link--promo-alt !optional;
+    @extend .lbcamden-link--promo !optional;
+    @extend .lbcamden-link--promo-alt !optional;
 
     > h2,
     > h3,
