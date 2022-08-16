@@ -1,6 +1,6 @@
 {% from "../logo/macro.njk" import LBCamdenLogo %}
 
-<footer class="LBCamden-Footer {{ params.classes if params.classes }}" role="contentinfo"
+<footer class="lbcamden-footer {{ params.classes if params.classes }}" role="contentinfo"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 <div class="{{ params.containerClasses | default('govuk-width-container') }}">
   {% if params.navigation | length %}
@@ -34,8 +34,8 @@
   {% endif %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      <div class="LBCamden-Footer__logo">
-        <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Footer__link">
+      <div class="lbcamden-footer__logo">
+        <a href="{{ params.homepageUrl | default('/') }}" class="lbcamden-footer__link">
           {{ LBCamdenLogo({
           }) }}
           <span class="govuk-visually-hidden">Camden.gov.uk</span>
