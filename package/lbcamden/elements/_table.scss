@@ -1,6 +1,6 @@
 .govuk-table {
   &__header,
   &__cell {
-    border-color: lbcamden-colour("grey");
+    border-color: $lbcamden-border-colour;
   }
 }

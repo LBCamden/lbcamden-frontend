@@ -5,6 +5,10 @@
     }
   }
 
+  .govuk-pagination__item--current {
+    background: lbcamden-colour("grey");
+  }
+
   &__prev,
   &__next,
   &__item:not(.govuk-pagination__item--current) {

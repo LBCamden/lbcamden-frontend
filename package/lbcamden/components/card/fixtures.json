@@ -7,21 +7,39 @@
                 "heading": {
                     "title": "Example heading"
                 },
-                "cardBodyHtml": "This is a description"
+                "content": {
+                    "text": "This is a description"
+                }
             },
-            "html": "<div class=\"LBCamden-Card  \"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      Example heading\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    Example heading\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
             "hidden": false
         },
         {
-            "name": "popular",
+            "name": "with H3 in header",
             "options": {
                 "heading": {
                     "title": "Example heading",
-                    "href": "#"
+                    "headingLevel": 3
                 },
-                "popular": true
+                "content": {
+                    "text": "This is a description"
+                }
             },
-            "html": "<div class=\"LBCamden-Card   LBCamden-Card--popular\"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-s\">\n    \n      <a href=\"#\" >\n        Example heading\n      </a>\n    \n  </h2>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h3\n  class=\"govuk-heading-m\">\n  \n    Example heading\n  \n</h3>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "as a span",
+            "options": {
+                "element": "span",
+                "heading": {
+                    "title": "Example heading"
+                },
+                "content": {
+                    "text": "This is a description"
+                }
+            },
+            "html": "<span\n  class=\"lbcamden-card \n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    Example heading\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</span>",
             "hidden": false
         },
         {
@@ -31,9 +49,11 @@
                     "title": "Example heading",
                     "href": "#"
                 },
-                "cardBodyHtml": "This is a description"
+                "content": {
+                    "text": "This is a description"
+                }
             },
-            "html": "<div class=\"LBCamden-Card  \"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      <a href=\"#\" >\n        Example heading\n      </a>\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
             "hidden": false
         },
         {
@@ -43,38 +63,102 @@
                     "title": "Example heading",
                     "href": "#"
                 },
-                "cardBodyHtml": "This is a description",
-                "clickable": true
-            },
-            "html": "<div class=\"LBCamden-Card   LBCamden-Card--clickable\"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      <a href=\"#\" >\n        Example heading\n      </a>\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
-            "hidden": false
-        },
-        {
-            "name": "external link card",
-            "options": {
-                "heading": {
-                    "title": "Example heading",
-                    "href": "https://google.com",
-                    "externalLink": true
+                "content": {
+                    "text": "This is a description"
                 },
-                "cardBodyHtml": "This is a description",
                 "clickable": true
             },
-            "html": "<div class=\"LBCamden-Card   LBCamden-Card--clickable\"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      <a href=\"https://google.com\" rel=\"external\">\n        Example heading\n      </a>\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
             "hidden": false
         },
         {
-            "name": "feature card",
+            "name": "decorated type 1",
             "options": {
                 "heading": {
                     "title": "Example heading",
                     "href": "#"
                 },
-                "cardBodyHtml": "This is a description",
+                "content": {
+                    "text": "This is a description"
+                },
                 "clickable": true,
-                "featureCard": true
+                "type": "alt-1"
             },
-            "html": "<div class=\"LBCamden-Card  LBCamden-Card--featured LBCamden-Card--clickable\"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      <a href=\"#\" >\n        Example heading\n      </a>\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-1\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "decorated type 2",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "content": {
+                    "text": "This is a description"
+                },
+                "clickable": true,
+                "type": "alt-2"
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-2\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "decorated type 3",
+            "options": {
+                "heading": {
+                    "title": "Example heading"
+                },
+                "content": {
+                    "html": "This is a description with a <a href=\"#\">link</a> in it"
+                },
+                "clickable": true,
+                "type": "alt-3"
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-3\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    Example heading\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description with a <a href=\"#\">link</a> in it</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "decorated type 1 with top border",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "content": {
+                    "text": "This is a description"
+                },
+                "topBorder": true,
+                "clickable": true,
+                "type": "alt-1"
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-1\n  \n   lbcamden-card--clickable\n   lbcamden-card--top-border\n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "promo link type",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "clickable": true,
+                "type": "promo-link"
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--promo-link\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "alternative promo link type",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "clickable": true,
+                "type": "promo-link--alt"
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--promo-link--alt\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n\n</div>",
             "hidden": false
         },
         {
@@ -84,11 +168,33 @@
                     "title": "Example heading",
                     "href": "#"
                 },
-                "cardBodyHtml": "This is a description",
+                "content": {
+                    "text": "This is a description"
+                },
                 "clickable": true,
-                "naked": true
+                "type": "naked"
             },
-            "html": "<div class=\"LBCamden-Card   LBCamden-Card--naked LBCamden-Card--clickable\"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      <a href=\"#\" >\n        Example heading\n      </a>\n    \n  </h2>\n  <div class=\"LBCamden-Card__content\">\n    <p>This is a description</p>\n  </div>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--naked\n  \n   lbcamden-card--clickable\n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "with image",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "content": {
+                    "text": "This is a description"
+                },
+                "clickable": true,
+                "type": "alt-1",
+                "image": {
+                    "src": "https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+                    "alt": "Image of Camden market"
+                }
+            },
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-1\n  \n   lbcamden-card--clickable\n  \n   lbcamden-card--image\"\n  data-module=\"lbcamden-card\">\n\n  <img src=\"https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2340&amp;q=80\" alt=\"Image of Camden market\" />\n  <div class=\"lbcamden-card__content_wrapper\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n  </div>\n\n</div>",
             "hidden": false
         },
         {
@@ -99,7 +205,7 @@
                     "data-test-attribute-2": "value-2"
                 }
             },
-            "html": "<div class=\"LBCamden-Card  \"\ndata-module=\"lbcamden-card\" data-test-attribute=\"value\" data-test-attribute-2=\"value-2\">\n  <h2 class=\"govuk-heading-m\">\n    \n      \n    \n  </h2>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\" data-test-attribute=\"value\" data-test-attribute-2=\"value-2\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    \n  \n</h2>\n\n</div>",
             "hidden": true
         },
         {
@@ -107,7 +213,7 @@
             "options": {
                 "classes": "app-header--custom-modifier"
             },
-            "html": "<div class=\"LBCamden-Card app-header--custom-modifier \"\ndata-module=\"lbcamden-card\">\n  <h2 class=\"govuk-heading-m\">\n    \n      \n    \n  </h2>\n</div>",
+            "html": "<div\n  class=\"lbcamden-card app-header--custom-modifier\n  \n  \n  \n  \"\n  data-module=\"lbcamden-card\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    \n  \n</h2>\n\n</div>",
             "hidden": true
         }
     ]

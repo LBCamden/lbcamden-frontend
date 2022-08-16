@@ -17,7 +17,16 @@
     .govuk-accordion__section-button,
     .govuk-accordion__show-all {
       &:hover {
+        .govuk-accordion__section-toggle {
+          .govuk-accordion__section-toggle-text {
+            color: lbcamden-colour("dark-blue");
+          }
+        }
+
         .govuk-accordion-nav__chevron {
+          border-color: lbcamden-colour("dark-blue");
+          background: lbcamden-colour("dark-blue");
+
           &:after {
             @include lbcamden-chevron(lbcamden-colour("white"), -90);
             left: 4px;
@@ -46,6 +55,12 @@
             left: 4px;
           }
         }
+      }
+    }
+
+    &__section-button {
+      &:hover {
+        background: lbcamden-colour("govuk-bg-bright1-colour");
       }
     }
   }

@@ -1,0 +1,51 @@
+{
+    "component": "search",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": null,
+            "html": "<form class=\"LBCamden-Search  \" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search Camden.gov.uk\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Search\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search Camden.gov.uk</button>\n</form>",
+            "hidden": false
+        },
+        {
+            "name": "Colour variant",
+            "options": {
+                "alt": true
+            },
+            "html": "<form class=\"LBCamden-Search   LBCamden-Search--alt\" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search Camden.gov.uk\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Search\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search Camden.gov.uk</button>\n</form>",
+            "hidden": false
+        },
+        {
+            "name": "Placeholder text",
+            "options": {
+                "placeholderText": "Customised placeholder"
+            },
+            "html": "<form class=\"LBCamden-Search  \" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search Camden.gov.uk\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Customised placeholder\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search Camden.gov.uk</button>\n</form>",
+            "hidden": false
+        },
+        {
+            "name": "width modifier",
+            "options": {
+                "classes": "govuk-input--width-30"
+            },
+            "html": "<form class=\"LBCamden-Search undefined govuk-input--width-30 \" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search Camden.gov.uk\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Search\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search Camden.gov.uk</button>\n</form>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "classes": "search-class-test"
+            },
+            "html": "<form class=\"LBCamden-Search undefined search-class-test \" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search Camden.gov.uk\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Search\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search Camden.gov.uk</button>\n</form>",
+            "hidden": true
+        },
+        {
+            "name": "labelText",
+            "options": {
+                "labelText": "Search test"
+            },
+            "html": "<form class=\"LBCamden-Search  \" action=\"/\"\n      method=\"post\" autocomplete=\"off\" role=\"search\">\n  <label class=\"govuk-label govuk-label--l govuk-visually-hidden\" for=\"LBCamden-Search__box\">\n    Search test\n  </label>\n  <input type=\"text\" name=\"search\"\n         class=\"LBCamden-Search__input\"\n         id=\"LBCamden-Search__box\" placeholder=\"Search\"/>\n  <button type=\"submit\" class=\"LBCamden-Search__btn\"\n          id=\"LBCamden-Search__btn\">Search test</button>\n</form>",
+            "hidden": true
+        }
+    ]
+}

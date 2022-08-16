@@ -1,0 +1,26 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the header container."
+    },
+    {
+        "name": "alt",
+        "type": "boolean",
+        "required": false,
+        "description": "Option to display variant that is optimised for a darker background"
+    },
+    {
+        "name": "labelText",
+        "type": "string",
+        "required": false,
+        "description": "Option to customise the label and button string value"
+    },
+    {
+        "name": "placeholderText",
+        "type": "string",
+        "required": false,
+        "description": "Option to customise the placeholder text value"
+    }
+]
