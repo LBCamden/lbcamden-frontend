@@ -60,16 +60,16 @@ notes:
         description: 'Voting, birth certificates, bins, and more'
       }
     ] %}
-    <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+    <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-6">
       {% for item in items %}
-        <div class="LBCamden-Card LBCamden-Card--naked">
+        <div class="lbcamden-card lbcamden-card--naked">
           <h3 class="govuk-heading-m">
             <a href="#"
                class="LBCamden-Link--promo govuk-!-display-block">
               {{ item.title }}
             </a>
           </h3>
-          <div class="LBCamden-Card__content">
+          <div class="lbcamden-card__content">
             <p>{{ item.description }}</p>
           </div>
         </div>
@@ -84,8 +84,8 @@ notes:
 
       <p>Information and guidance important right now.</p>
 
-      <div class="LBCamden-Card_Wrapper govuk-!-margin-bottom-6">
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+      <div class="lbcamden-card-grid govuk-!-margin-bottom-6">
+        <div class="lbcamden-card lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
@@ -95,7 +95,7 @@ notes:
           <p class="govuk-body-s">Information for Ukrainians arriving in Camden and their hosts</p>
         </div>
 
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+        <div class="lbcamden-card lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
@@ -105,7 +105,7 @@ notes:
           <p class="govuk-body-s">Information and guidance about the corona virus</p>
         </div>
 
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+        <div class="lbcamden-card lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/collection/worried-about-someone" class="govuk-link--no-underline">
@@ -121,7 +121,7 @@ notes:
 
   </section>
 
-  <section class="LBCamden-Row LBCamden-Row--alt-2">
+  <section class="LBCamden-Row LBCamden-Row--bg-2">
     <div class="govuk-width-container">
       <h2>Services near you</h2>
 
@@ -210,7 +210,7 @@ notes:
 
     <p>All services and information grouped by topics</p>
 
-    <div class="LBCamden-Card_Wrapper">
+    <div class="lbcamden-card-grid">
       {% for item in items %}
         {{ LBCamdenCard({
           naked: true,
@@ -219,7 +219,10 @@ notes:
             href: '#',
             headingLevel: 3
           },
-          cardBodyHtml: '<p class="govuk-body-s">' + item.description + '</p>'
+          clickable: true,
+          content: {
+           html: '<p class="govuk-body-s">' + item.description + '</p>'
+          }
         }) }}
       {% endfor %}
     </div>

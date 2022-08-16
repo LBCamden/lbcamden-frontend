@@ -40,8 +40,8 @@ notes:
 
   <h2>Popular</h2>
 
-  <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
-    {% set widthClass = 'LBCamden-Card--popular' %}
+  <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-6">
+    {% set widthClass = 'lbcamden-card--popular' %}
     {% set popularItems = [
       {
         title: "Paying your business rates",
@@ -79,7 +79,7 @@ notes:
     <div class="govuk-grid-column-full">
 
       <h2 class="govuk-heading-l">Contents</h2>
-      {% set widthClass = 'LBCamden-Card LBCamden-Card--naked' %}
+      {% set widthClass = 'lbcamden-card lbcamden-card--naked' %}
 
       {% set items = [
         {
@@ -131,7 +131,7 @@ notes:
         ]
         }
       ] %}
-      <ul class="LBCamden-Card_Wrapper">
+      <ul class="lbcamden-card-grid">
         {% for item in items %}
           <li class="{{ widthClass }}">
             <h3 class="govuk-heading-m">{{ item.title }}</h3>

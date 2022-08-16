@@ -1,4 +1,4 @@
-.LBCamden-Card {
+.lbcamden-card {
   position: relative;
   border-top: 1px solid $lbcamden-border-colour;
   @include govuk-responsive-padding(4, "top");
@@ -29,7 +29,7 @@
       }
     }
 
-    .LBCamden-Card__content_wrapper {
+    .lbcamden-card__content_wrapper {
       > h2,
       > h3,
       > h4,
@@ -88,7 +88,7 @@
       max-width: 100%;
     }
 
-    .LBCamden-Card__content_wrapper {
+    .lbcamden-card__content_wrapper {
       @include govuk-responsive-padding(3, "all");
 
       > h2,
@@ -110,7 +110,7 @@
     display: block;
     border: none;
 
-    .LBCamden-Card--naked & {
+    .lbcamden-card--naked & {
       @include govuk-responsive-margin(2, "bottom");
     }
 
@@ -127,7 +127,7 @@
   }
 
   &--promo-link {
-    @extend .LBCamden-Link--promo;
+    @extend .LBCamden-Link--promo !optional;
 
     > h2,
     > h3,
@@ -145,8 +145,8 @@
   }
 
   &--promo-link--alt {
-    @extend .LBCamden-Link--promo;
-    @extend .LBCamden-Link--promo-alt;
+    @extend .LBCamden-Link--promo !optional;
+    @extend .LBCamden-Link--promo-alt !optional;
 
     > h2,
     > h3,
@@ -182,7 +182,7 @@
 }
 
 // Based on the .homepage-services-and-info__list on GOV.UK
-.LBCamden-Card_Wrapper {
+.lbcamden-card-grid {
   display: grid;
   // Remove the outermost left and right margin from the internal margin of the list items.
   //margin: 0 govuk-spacing(-3); // Use this if used with a grid-row
@@ -221,37 +221,36 @@
     row-gap: govuk-spacing($lbc-default-spacing);
   }
 
-  &--two-columns {
+  &-two-columns {
     grid-template-columns: fractions(2);
   }
 
-  &--two-columns--from-tablet {
+  &-two-columns--from-tablet {
     @include govuk-media-query($from: "tablet") {
       grid-template-columns: fractions(2);
     }
   }
 
-  &--three-columns {
+  &-three-columns {
     @include govuk-media-query($from: "tablet") {
       grid-template-columns: fractions(3);
     }
   }
 
-  &--three-columns-from-wide {
+  &-three-columns-from-wide {
     grid-template-columns: fractions(2);
     @include govuk-media-query($from: "wide") {
       grid-template-columns: fractions(3);
     }
   }
 
-  &--four-columns-from-desktop,
-  &--popular {
+  &-four-columns-from-desktop {
     @include govuk-media-query($from: "desktop") {
       grid-template-columns: fractions(4);
     }
   }
 
-  &--four-columns-from-wide {
+  &-four-columns-from-wide {
     @include govuk-media-query($from: "tablet") {
       grid-template-columns: fractions(3);
     }

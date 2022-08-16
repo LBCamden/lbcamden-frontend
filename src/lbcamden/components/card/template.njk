@@ -1,17 +1,17 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
 <div
-  class="LBCamden-Card {{ params.classes if params.classes }}
+  class="lbcamden-card {{ params.classes if params.classes }}
   {% if params.type %}
-  LBCamden-Card--{{ params.type }}
+  lbcamden-card--{{ params.type }}
   {% endif %}
-  {% if params.clickable %} LBCamden-Card--clickable{% endif %}
-  {% if params.topBorder %} LBCamden-Card--top-border{% endif %}
-  {% if params.image %} LBCamden-Card--image{% endif %}"
+  {% if params.clickable %} lbcamden-card--clickable{% endif %}
+  {% if params.topBorder %} lbcamden-card--top-border{% endif %}
+  {% if params.image %} lbcamden-card--image{% endif %}"
   data-module="lbcamden-card"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 {% if params.image %}
   <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" />
-  <div class="LBCamden-Card__content_wrapper">
+  <div class="lbcamden-card__content_wrapper">
 {% endif %}
 <h{{ headingLevel }}
   class="govuk-heading-m">
@@ -24,7 +24,7 @@
   {% endif %}
 </h{{ headingLevel }}>
 {%- if params.content %}
-  <div class="LBCamden-Card__content">
+  <div class="lbcamden-card__content">
     {% if params.content.text %}
       <p>{{ params.content.text }}</p>
     {% else %}

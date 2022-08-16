@@ -23,7 +23,7 @@ describe('card', () => {
     it('renders attributes correctly', () => {
       const $ = render('card', examples.attributes)
 
-      const $component = $('.LBCamden-Card')
+      const $component = $('.lbcamden-card')
       expect($component.attr('data-test-attribute')).toEqual('value')
       expect($component.attr('data-test-attribute-2')).toEqual('value-2')
     })
@@ -31,7 +31,7 @@ describe('card', () => {
     it('renders classes', () => {
       const $ = render('card', examples.classes)
 
-      const $component = $('.LBCamden-Card')
+      const $component = $('.lbcamden-card')
       expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
   })
@@ -40,14 +40,14 @@ describe('card', () => {
     it('renders classes', () => {
       const $ = render('card', examples['with image'])
 
-      const $component = $('.LBCamden-Card')
-      expect($component.hasClass('LBCamden-Card--image')).toBeTruthy()
+      const $component = $('.lbcamden-card')
+      expect($component.hasClass('lbcamden-card--image')).toBeTruthy()
     })
 
     it('has a content wrapper ', () => {
       const $ = render('card', examples['with image'])
 
-      const $component = $('.LBCamden-Card .LBCamden-Card__content_wrapper')
+      const $component = $('.lbcamden-card .lbcamden-card__content_wrapper')
       expect($component.length).toEqual(1)
     })
   })
@@ -57,8 +57,8 @@ describe('card', () => {
       it('renders classes', () => {
         const $ = render('card', examples['decorated type 1'])
 
-        const $component = $('.LBCamden-Card')
-        expect($component.hasClass('LBCamden-Card--alt-1')).toBeTruthy()
+        const $component = $('.lbcamden-card')
+        expect($component.hasClass('lbcamden-card--alt-1')).toBeTruthy()
       })
     })
 
@@ -66,8 +66,8 @@ describe('card', () => {
       it('renders classes', () => {
         const $ = render('card', examples['decorated type 2'])
 
-        const $component = $('.LBCamden-Card')
-        expect($component.hasClass('LBCamden-Card--alt-2')).toBeTruthy()
+        const $component = $('.lbcamden-card')
+        expect($component.hasClass('lbcamden-card--alt-2')).toBeTruthy()
       })
     })
 
@@ -75,8 +75,8 @@ describe('card', () => {
       it('renders classes', () => {
         const $ = render('card', examples['decorated type 3'])
 
-        const $component = $('.LBCamden-Card')
-        expect($component.hasClass('LBCamden-Card--alt-3')).toBeTruthy()
+        const $component = $('.lbcamden-card')
+        expect($component.hasClass('lbcamden-card--alt-3')).toBeTruthy()
       })
     })
 
@@ -84,8 +84,8 @@ describe('card', () => {
       it('renders classes', () => {
         const $ = render('card', examples['decorated type 1 with top border'])
 
-        const $component = $('.LBCamden-Card')
-        expect($component.hasClass('LBCamden-Card--top-border')).toBeTruthy()
+        const $component = $('.lbcamden-card')
+        expect($component.hasClass('lbcamden-card--top-border')).toBeTruthy()
       })
     })
   })
