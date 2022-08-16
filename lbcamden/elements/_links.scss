@@ -1,4 +1,4 @@
-.LBCamden-Link {
+.lbcamden-link {
   &--action {
     position: relative;
     font-weight: $govuk-font-weight-bold;
@@ -58,8 +58,12 @@
     //@extend .LBCamden-Button;
     @include govuk-font(19);
     box-sizing: border-box;
-    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
     position: relative;
+    min-height: 50px;
     margin-bottom: 0;
     border-radius: 3px;
     border-bottom-right-radius: 1rem;
@@ -68,8 +72,14 @@
     font-weight: $govuk-font-weight-bold;
     text-align: left;
     text-decoration: none;
-    @include govuk-responsive-padding(4, "all");
+    @include govuk-responsive-padding(2, "top");
+    @include govuk-responsive-padding(2, "bottom");
+    @include govuk-responsive-padding(4, "left");
     @include govuk-responsive-padding(7, "right");
+
+    @include govuk-media-query($from: desktop) {
+      min-height: 66px;
+    }
 
     &:visited,
     &:link {
@@ -149,9 +159,12 @@
     }
 
     &--large {
-      @include govuk-responsive-padding(5, "top");
-      @include govuk-responsive-padding(5, "bottom");
       @include govuk-typography-weight-bold;
+      min-height: 60px;
+
+      @include govuk-media-query($from: desktop) {
+        min-height: 80px;
+      }
     }
   }
 }

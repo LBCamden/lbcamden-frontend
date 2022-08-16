@@ -1,6 +1,11 @@
-.LBCamden-Row {
-  @include govuk-responsive-padding(7, "top");
-  @include govuk-responsive-padding(7, "bottom");
+.lbcamden-row {
+  @include govuk-responsive-padding(5, "top");
+  @include govuk-responsive-padding(5, "bottom");
+
+  &--large {
+    @include govuk-responsive-padding(7, "top");
+    @include govuk-responsive-padding(7, "bottom");
+  }
 
   &--related {
     @include govuk-responsive-margin(7, "top");
@@ -8,11 +13,11 @@
     background: lbcamden-colour("govuk-bg-bright1-colour");
   }
 
-  &--alt {
+  &--bg {
     background: lbcamden-colour("govuk-bg-bright1-colour");
   }
 
-  &--alt-2 {
+  &--bg-2 {
     background: lbcamden-colour("govuk-brand1-7-colour");
   }
 }
