@@ -133,17 +133,25 @@ notes:
       ] %}
       <ul class="lbcamden-card-grid">
         {% for item in items %}
-          <li class="{{ widthClass }}">
-            <h3 class="govuk-heading-m">{{ item.title }}</h3>
+          {% set cardHtml %}
             {% if item.links %}
-              <ul class="govuk-list LBCamden-List--dash">
+              <ul class="LBCamden-List--dash">
                 {% for link in item.links %}
                   <li><a href="#">{{ link }}</a></li>
                 {% endfor %}
               </ul>
+              <a href="#" class="lbcamden-link--action">View all</a>
             {% endif %}
-            <a href="#" class="lbcamden-link--action">View all</a>
-          </li>
+          {% endset %}
+          {{ LBCamdenCard({
+            element: 'li',
+            heading: {
+              title: item.title
+            },
+            content: {
+              html: cardHtml
+            }
+          }) }}
         {% endfor %}
       </ul>
     </div>
@@ -154,7 +162,7 @@ notes:
   <section class="lbcamden-row lbcamden-row--related">
     <div class="govuk-width-container">
       <h2 class="govuk-heading-l">Related</h2>
-      <ul class="govuk-list LBCamden-List--dash">
+      <ul class="LBCamden-List--dash">
         <li><a href="#">Business rates</a></li>
         <li><a href="#">Apply for business and trade parking permits</a></li>
         <li><a href="#">Advertisements and signs and planning permission</a></li>
