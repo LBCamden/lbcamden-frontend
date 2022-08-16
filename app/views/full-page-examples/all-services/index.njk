@@ -60,16 +60,16 @@ notes:
         description: 'Voting, birth certificates, bins, and more'
       }
     ] %}
-    <ul class="LBCamden-Card_Wrapper LBCamden-Card_Wrapper--popular govuk-!-margin-bottom-6">
+    <ul class="lbcamden-card-grid lbcamden-card-grid-four-columns-from-desktop govuk-!-margin-bottom-6">
       {% for item in items %}
-        <div class="LBCamden-Card LBCamden-Card--naked">
+        <div class="lbcamden-card lbcamden-card--naked">
           <h3 class="govuk-heading-m">
             <a href="#"
-               class="LBCamden-Link--promo govuk-!-display-block">
+               class="lbcamden-link--promo">
               {{ item.title }}
             </a>
           </h3>
-          <div class="LBCamden-Card__content">
+          <div class="lbcamden-card__content">
             <p>{{ item.description }}</p>
           </div>
         </div>
@@ -77,15 +77,15 @@ notes:
     </ul>
   </div>
 
-  <section class="LBCamden-Row">
+  <section class="lbcamden-row">
     <div class="govuk-width-container">
 
       <h2>Featured links</h2>
 
       <p>Information and guidance important right now.</p>
 
-      <div class="LBCamden-Card_Wrapper govuk-!-margin-bottom-6">
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+      <div class="lbcamden-card-grid govuk-!-margin-bottom-6">
+        <div class="lbcamden-card lbcamden-card--alt-1 lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
@@ -95,7 +95,7 @@ notes:
           <p class="govuk-body-s">Information for Ukrainians arriving in Camden and their hosts</p>
         </div>
 
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+        <div class="lbcamden-card lbcamden-card--alt-1 lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/#" class="govuk-link--no-underline">
@@ -105,7 +105,7 @@ notes:
           <p class="govuk-body-s">Information and guidance about the corona virus</p>
         </div>
 
-        <div class="LBCamden-Card LBCamden-Card--clickable"
+        <div class="lbcamden-card lbcamden-card--alt-1 lbcamden-card--clickable"
              data-module="lbcamden-card">
           <h3 class="govuk-heading-s">
             <a href="/alpha/{{ versionDirectory }}/collection/worried-about-someone" class="govuk-link--no-underline">
@@ -121,14 +121,14 @@ notes:
 
   </section>
 
-  <section class="LBCamden-Row LBCamden-Row--alt-2">
+  <section class="lbcamden-row lbcamden-row--bg-2">
     <div class="govuk-width-container">
       <h2>Services near you</h2>
 
       <p>Libraries, schools and other community services near <strong>St. Pancras & Somerstown</strong> (NW1 OHY)</p>
 
       <div class="govuk-button-group govuk-!-margin-bottom-0">
-        <a href="#" class="LBCamden-Link--promo govuk-!-margin-bottom-0">View map</a>
+        <a href="#" class="lbcamden-link--promo govuk-!-margin-bottom-0 govuk-!-margin-right-4">View map</a>
         <a href="#" class="">Change location</a>
       </div>
     </div>
@@ -204,13 +204,13 @@ notes:
       description: 'Take part in local activities,  put on events, visit green spaces and parks'
     }
   ] %}
-  <section class="LBCamden-Row govuk-width-container">
+  <section class="lbcamden-row govuk-width-container">
 
     <h2>All services</h2>
 
     <p>All services and information grouped by topics</p>
 
-    <div class="LBCamden-Card_Wrapper">
+    <div class="lbcamden-card-grid">
       {% for item in items %}
         {{ LBCamdenCard({
           naked: true,
@@ -219,7 +219,10 @@ notes:
             href: '#',
             headingLevel: 3
           },
-          cardBodyHtml: '<p class="govuk-body-s">' + item.description + '</p>'
+          clickable: true,
+          content: {
+           html: '<p class="govuk-body-s">' + item.description + '</p>'
+          }
         }) }}
       {% endfor %}
     </div>
@@ -230,7 +233,7 @@ notes:
 {% endblock %}
 
 {% block afterContent %}
-  <section class="LBCamden-Row LBCamden-Row--alt">
+  <section class="lbcamden-row lbcamden-row--bg">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">

@@ -1,7 +1,9 @@
-.LBCamden-Card {
+.lbcamden-card {
   position: relative;
-  @include govuk-responsive-padding($lbc-default-spacing--small, "all");
-  background: lbcamden-colour("govuk-bg-bright1-colour");
+  border-top: 1px solid $lbcamden-border-colour;
+  @include govuk-responsive-padding(4, "top");
+  @include govuk-responsive-padding(4, "bottom");
+  //@include govuk-responsive-padding($lbc-default-spacing--small, "all");
 
   * {
     &:last-child {
@@ -10,93 +12,67 @@
   }
 
   &--clickable {
-    .js-enabled & {
-      cursor: pointer;
-    }
-  }
-
-  &--naked {
-    padding: 0;
-    background: initial;
-  }
-
-  &:not(.LBCamden-Card--naked) > h2,
-  &:not(.LBCamden-Card--naked) > h3,
-  &:not(.LBCamden-Card--naked) > h4,
-  &:not(.LBCamden-Card--naked) > h5 {
-    a {
-      display: flex;
-      @include govuk-responsive-padding($lbc-default-spacing--small, "right");
-      align-items: center;
-      justify-content: space-between;
-
-      // CSS approach to making entire card clickable
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-
-      &:before {
-        $dimension: 7px;
-        $width: 3px;
-        content: "";
-        position: absolute;
-        top: govuk-spacing(4);
-        right: govuk-spacing(2);
-        width: $dimension;
-        height: $dimension;
-        transform: rotate(45deg);
-        border-top: $width solid $govuk-link-colour;
-        border-right: $width solid $govuk-link-colour;
-      }
-
-      &[rel="external"] {
-        &:before {
-          $dimension: 7px;
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      a {
+        // CSS approach to making entire card clickable
+        &:after {
           content: "";
-          display: inline-block;
-          @include govuk-responsive-padding(1);
-          @include govuk-responsive-margin(4, "left");
-          @include background-svg('<svg fill="none" height="24" stroke="' + $govuk-link-colour + '" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>');
-          width: $dimension;
-          height: $dimension;
-          transform: none;
-          border: none;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          vertical-align: middle;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    .lbcamden-card__content_wrapper {
+      > h2,
+      > h3,
+      > h4,
+      > h5 {
+        a {
+          // CSS approach to making entire card clickable
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
         }
       }
     }
   }
 
-  &--featured {
-    color: lbcamden-colour("white");
+  &--alt-1,
+  &--alt-2,
+  &--alt-3 {
+    @include govuk-responsive-padding(3, "all");
+    border: none;
+    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
+  }
+
+  &--alt-1 {
+    background: lbcamden-colour("govuk-bg-bright1-colour");
+  }
+
+  &--alt-2 {
+    background: lbcamden-colour("white");
+  }
+
+  &--alt-3 {
     background: lbcamden-colour("govuk-brand1-1-colour");
 
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5 {
-      a:first-child {
-        color: lbcamden-colour("white");
-
-        &:before {
-          border-color: lbcamden-colour("white");
-        }
-
-        &:focus {
-          color: lbcamden-colour("black");
-        }
-      }
+    * {
+      color: lbcamden-colour("white");
     }
 
-    * {
+    a {
       color: lbcamden-colour("white");
 
       &:focus {
@@ -105,13 +81,109 @@
     }
   }
 
+  &--image {
+    padding: 0;
+
+    img {
+      max-width: 100%;
+    }
+
+    .lbcamden-card__content_wrapper {
+      @include govuk-responsive-padding(3, "all");
+
+      > h2,
+      > h3,
+      > h4,
+      > h5 {
+        //@extend .govuk-heading-s;
+        @include govuk-responsive-margin(2, "bottom");
+
+        a {
+          @extend .govuk-link--no-underline;
+        }
+      }
+    }
+  }
+
+  &--promo-link,
+  &--promo-link--alt {
+    padding-top: inherit;
+    padding-bottom: inherit;
+    border: none;
+
+    .lbcamden-card--naked & {
+      @include govuk-responsive-margin(2, "bottom");
+    }
+
+    &:hover {
+      > h2,
+      > h3,
+      > h4,
+      > h5 {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &--promo-link {
+    @extend .lbcamden-link--promo !optional;
+
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      a {
+        @extend .govuk-link--no-underline;
+        color: lbcamden-colour("white");
+
+        &:focus {
+          color: lbcamden-colour("black");
+        }
+      }
+    }
+  }
+
+  &--promo-link--alt {
+    @extend .lbcamden-link--promo !optional;
+    @extend .lbcamden-link--promo-alt !optional;
+
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      @extend .govuk-heading-s;
+      font-weight: $govuk-font-weight-semibold;
+    }
+  }
+
+  &--naked {
+    padding: 0;
+    border: none;
+    background: initial;
+  }
+
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    a {
+      @extend .govuk-link--no-underline;
+    }
+  }
+
+  &--top-border {
+    border-top: 10px solid lbcamden-colour("govuk-brand1-2-colour");
+  }
+
   &--popular {
     @include govuk-font(16);
   }
 }
 
 // Based on the .homepage-services-and-info__list on GOV.UK
-.LBCamden-Card_Wrapper {
+.lbcamden-card-grid {
   display: grid;
   // Remove the outermost left and right margin from the internal margin of the list items.
   //margin: 0 govuk-spacing(-3); // Use this if used with a grid-row
@@ -150,32 +222,39 @@
     row-gap: govuk-spacing($lbc-default-spacing);
   }
 
-  &--two-columns {
+  &-two-columns {
+    grid-template-columns: fractions(2);
+  }
+
+  &-two-columns--from-tablet {
     @include govuk-media-query($from: "tablet") {
       grid-template-columns: fractions(2);
     }
   }
 
-  &--three-columns {
-    grid-template-columns: fractions(3);
+  &-three-columns {
+    @include govuk-media-query($from: "tablet") {
+      grid-template-columns: fractions(3);
+    }
   }
 
-  &--three-columns-from-wide {
+  &-three-columns-from-wide {
     grid-template-columns: fractions(2);
     @include govuk-media-query($from: "wide") {
       grid-template-columns: fractions(3);
     }
   }
 
-  &--four-columns-from-desktop,
-  &--popular {
+  &-four-columns-from-desktop {
     @include govuk-media-query($from: "desktop") {
       grid-template-columns: fractions(4);
     }
   }
 
-  &--four-columns-from-wide {
-    grid-template-columns: fractions(3);
+  &-four-columns-from-wide {
+    @include govuk-media-query($from: "tablet") {
+      grid-template-columns: fractions(3);
+    }
     @include govuk-media-query($from: "wide") {
       grid-template-columns: fractions(4);
     }

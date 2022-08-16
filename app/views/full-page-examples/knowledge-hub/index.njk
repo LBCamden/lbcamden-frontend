@@ -4,6 +4,7 @@
 {% from "../../../../src/lbcamden/components/header/macro.njk" import LBCamdenHeader %}
 {% from "../../../../src/lbcamden/components/search/macro.njk" import LBCamdenSearch %}
 {% from "../../../../src/lbcamden/components/button/macro.njk" import LBCamdenButton %}
+{% from "../../../../src/lbcamden/components/card/macro.njk" import LBCamdenCard %}
 {% from "govuk/components/tabs/macro.njk" import govukTabs %}
 
 {% set pageTitle = "Knowledge Hub example" %}
@@ -11,7 +12,7 @@
 
 {% block header %}
   {{ LBCamdenHeader({}) }}
-  <div class="LBCamden-Row LBCamden-Row--bg">
+  <div class="lbcamden-row lbcamden-row--bg">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -113,13 +114,20 @@
         }
       ] %}
 
-      <div class="LBCamden-Card_Wrapper govuk-!-margin-bottom-6">
+      <ul class="lbcamden-card-grid govuk-!-margin-bottom-6">
 
         {% for item in promoLinks %}
-          <a href="{{ item.link }}"
-             class="LBCamden-Link--promo LBCamden-Link--promo-alt govuk-!-display-block">{{ item.title }}</a>
+          {{ LBCamdenCard({
+            element: 'li',
+            heading: {
+              title: item.title,
+              href: '#'
+            },
+            clickable: true,
+            type: 'promo-link--alt'
+          }) }}
         {% endfor %}
-      </div>
+      </ul>
     </div>
   </div>
 {% endblock %}

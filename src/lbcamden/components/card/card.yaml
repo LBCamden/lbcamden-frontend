@@ -2,23 +2,23 @@ params:
 - name: classes
   type: string
   required: false
-  description: Classes to add to the header container.
+  description: Classes to add to the container.
+- name: element
+  type: string
+  required: false
+  description: HTML element to replace the default 'div' element.
 - name: attributes
   type: object
   required: false
-  description: HTML attributes (for example data attributes) to add to the header container.
+  description: HTML attributes (for example data attributes) to add to the container.
 - name: clickable
   type: boolean
   required: false
-  description: If set, entire card will be clickable (requires JavaScript)
-- name: popular
-  type: boolean
+  description: If set, entire card will be clickable
+- name: type
+  type: string
   required: false
-  description: If set, the 'popular' modifier class will be added (intended for use in collection of popular links)
-- name: naked
-  type: boolean
-  required: false
-  description: If set, will display a very basic version of the 'card'
+  description: If set, this will alter the appearance of the card
 - name: heading
   type: array
   required: true
@@ -36,10 +36,36 @@ params:
       type: int
       required: false
       description: Sets the heading level - if omitted will default to H2
-- name: cardBodyHtml
-  type: string
+- name: content
+  type: object
   required: false
   description: If set, card body will display this value
+  params:
+    - name: text
+      type: string
+      required: false
+      description: If present, the value of this attribute will be displayed in a paragraph tag
+    - name: html
+      type: string
+      required: false
+      description: If present, the value of this attribute will be displayed within the card as HTML
+- name: image
+  type: object
+  required: false
+  description: If a URL referencing an image is supplied, an image will be used in the card
+  params:
+    - name: src
+      type: string
+      required: true
+      description: Provide a relative or absolute URL for the image
+    - name: alt
+      type: string
+      required: true
+      description: Provide a text description of the image
+- name: topBorder
+  type: boolean
+  required: false
+  description: If set, the card will receive a decorative border on the top of the card
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -64,15 +90,26 @@ examples:
   data:
     heading:
       title: Example heading
-    cardBodyHtml: 'This is a description'
+    content:
+      text: 'This is a description'
 
-- name: popular
-  description: Polpular card
+- name: with H3 in header
+  description: Standard application of a card.
   data:
     heading:
       title: Example heading
-      href: '#'
-    popular: true
+      headingLevel: 3
+    content:
+      text: 'This is a description'
+
+- name: as a span
+  description: Container element uses an 'li' rather than a 'div.
+  data:
+    element: span
+    heading:
+      title: Example heading
+    content:
+      text: 'This is a description'
 
 - name: card with link in header
   description: Standard application of a card with a link in the header.
@@ -80,7 +117,8 @@ examples:
     heading:
       title: Example heading
       href: '#'
-    cardBodyHtml: 'This is a description'
+    content:
+      text: 'This is a description'
 
 - name: clickable card
   description: Clickable version of the card.
@@ -88,28 +126,71 @@ examples:
     heading:
       title: Example heading
       href: '#'
-    cardBodyHtml: 'This is a description'
+    content:
+      text: 'This is a description'
     clickable: true
 
-- name: external link card
-  description: Version of the card with an external link.
-  data:
-    heading:
-      title: Example heading
-      href: 'https://google.com'
-      externalLink: true
-    cardBodyHtml: 'This is a description'
-    clickable: true
-
-- name: feature card
-  description: Version of the card that has a stronger visual presence and hierachy.
+- name: decorated type 1
+  description: Decorated version of the card.
   data:
     heading:
       title: Example heading
       href: '#'
-    cardBodyHtml: 'This is a description'
+    content:
+      text: 'This is a description'
     clickable: true
-    featureCard: true
+    type: 'alt-1'
+
+- name: decorated type 2
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'alt-2'
+
+- name: decorated type 3
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+    content:
+      html: 'This is a description with a <a href="#">link</a> in it'
+    clickable: true
+    type: 'alt-3'
+
+- name: decorated type 1 with top border
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    topBorder: true
+    clickable: true
+    type: 'alt-1'
+
+- name: promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link'
+
+- name: alternative promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link--alt'
 
 - name: naked card
   description: Basic stripped back version of the card.
@@ -117,9 +198,26 @@ examples:
     heading:
       title: Example heading
       href: '#'
-    cardBodyHtml: 'This is a description'
+    content:
+      text: 'This is a description'
     clickable: true
-    naked: true
+    type: 'naked'
+
+- name: with image
+  description: Card with styles and an image.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: alt-1
+    image: {
+       src: 'https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+       alt: 'Image of Camden market'
+    }
+
 # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
 - name: attributes
   hidden: true

@@ -15,11 +15,11 @@
 {% block content %}
 
   {% set variants = {
-    'Decorative background': 'LBCamden-Row--bg',
+    'Decorative background': 'lbcamden-row--bg',
     'Default': '',
-    'Decorative background 2': 'LBCamden-Row--bg-2',
-    'Large row': 'LBCamden-Row--large',
-    'Large row with decorative background': 'LBCamden-Row--large LBCamden-Row--bg'
+    'Decorative background 2': 'lbcamden-row--bg-2',
+    'Large row': 'lbcamden-row--large',
+    'Large row with decorative background': 'lbcamden-row--large lbcamden-row--bg'
   } %}
 
   <div class="govuk-width-container">
@@ -34,7 +34,7 @@
   </div>
 
   {% for variant_description, variant_class in variants %}
-    <div class="LBCamden-Row {{ variant_class }}">
+    <div class="lbcamden-row {{ variant_class }}">
       <div class="govuk-width-container">
         <h2>{{ variant_description }}</h2>
       </div>

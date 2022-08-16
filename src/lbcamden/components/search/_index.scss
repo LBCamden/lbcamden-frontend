@@ -6,8 +6,9 @@
     appearance: none;
     height: initial;
     border-right-width: 0;
-    //border-width: 2px;
-    //border-style: solid;
+    @include govuk-media-query($from: desktop) {
+      min-height: 50px;
+    }
 
     .LBCamden-Search--alt & {
       border-color: lbcamden-colour("white");
@@ -36,6 +37,10 @@
     background-position: center;
     background-size: 50%;
     text-indent: -5000px;
+    @include govuk-media-query($from: desktop) {
+      min-width: 50px;
+      min-height: 50px;
+    }
 
     .LBCamden-Search--alt & {
       border-color: lbcamden-colour("white");
