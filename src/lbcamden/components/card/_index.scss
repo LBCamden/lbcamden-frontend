@@ -2,12 +2,29 @@
   position: relative;
   border-top: 1px solid $lbcamden-border-colour;
   @include govuk-responsive-padding(4, "top");
-  @include govuk-responsive-padding(4, "bottom");
-  //@include govuk-responsive-padding($lbc-default-spacing--small, "all");
 
   * {
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    @include govuk-responsive-margin(2, "bottom");
+
+    a {
+      @extend .govuk-link--no-underline;
+    }
+  }
+
+  &__content {
+    @include govuk-font(16);
+
+    * {
+      @include govuk-font(16);
     }
   }
 
@@ -163,15 +180,6 @@
     padding: 0;
     border: none;
     background: initial;
-  }
-
-  > h2,
-  > h3,
-  > h4,
-  > h5 {
-    a {
-      @extend .govuk-link--no-underline;
-    }
   }
 
   &--top-border {
