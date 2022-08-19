@@ -157,6 +157,8 @@
 
       @include govuk-media-query($from: tablet) {
         min-height: 80px;
+        padding-top: 15px;
+        padding-bottom: 15px;
       }
     }
   }
