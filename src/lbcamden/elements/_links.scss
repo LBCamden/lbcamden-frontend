@@ -48,7 +48,7 @@
 
   &--promo {
     //@extend .LBCamden-Button;
-    @include govuk-font(19);
+    @include govuk-font(24);
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -94,8 +94,12 @@
       content: "";
       position: absolute;
       top: 50%;
-      right: govuk-spacing(3);
+      right: 10px;
       transform: translateY(-50%);
+
+      @include govuk-media-query($from: tablet) {
+        right: 15px;
+      }
     }
 
     &:focus {
@@ -113,6 +117,7 @@
       background: lbcamden-colour("govuk-bg-bright1-colour");
       box-shadow: 1px 1px 1px rgba(lbcamden-colour("black"), .25);
       font-weight: $govuk-font-weight-semibold;
+      @include govuk-font(19);
 
       &:link {
         color: $govuk-link-colour;
