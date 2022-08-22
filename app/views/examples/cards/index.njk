@@ -33,6 +33,13 @@
 
       {% for variant_description, variant_class in variants %}
 
+        {% set randomText = [
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+          'Contrary to popular belief, Lorem Ipsum is not simply random text',
+          'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form',
+          'The standard chunk used since the 1500s'
+        ] %}
+
         <section class="lbcamden-row">
           <h2 class="govuk-heading-l">{{ variant_description }}</h2>
 
@@ -71,7 +78,7 @@
                     href: '#'
                   },
                   content: {
-                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                    text: randomText | random
                   },
                   clickable: true,
                   type: variant_class
