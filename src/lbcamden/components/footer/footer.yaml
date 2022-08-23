@@ -201,6 +201,8 @@ examples:
           items:
             - href: '#1'
               text: Navigation item 1
+              attributes:
+                data-icon: facebook
             - href: '#2'
               text: Navigation item 2
             - href: '#3'

@@ -77,7 +77,7 @@
           <ul class="govuk-footer__list LBCamden-Footer__list--social {{ listClasses | trim }}">
             {% for item in nav.items %}
               {% if item.href and item.text %}
-                <li class="govuk-footer__list-item">
+                <li class="LBCamden-Footer__list--social__item">
                   <a class=""
                      href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
                   >
