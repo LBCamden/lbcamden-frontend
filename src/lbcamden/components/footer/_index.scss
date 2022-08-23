@@ -8,8 +8,8 @@
   }
 
   &__logo {
-    @include govuk-responsive-margin(2, "top");
-    @include govuk-responsive-margin(2, "bottom");
+    @include govuk-responsive-margin(6, "top");
+    @include govuk-responsive-margin(6, "bottom");
     display: inline-block;
     width: 30%;
 
@@ -30,6 +30,12 @@
     &:focus {
       color: lbcamden-colour("black");
       background: $govuk-focus-colour;
+    }
+  }
+
+  &__list {
+    &--social {
+      display: inline-flex;
     }
   }
 }
