@@ -190,12 +190,17 @@ examples:
               text: Navigation item 2
             - href: '#3'
               text: Navigation item 3
+      navigationSecondary:
+        - title: Navigation section
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
             - href: '#4'
               text: Navigation item 4
-            - href: '#5'
-              text: Navigation item 5
-            - href: '#6'
-              text: Navigation item 6
       navigationSocial:
         - title: Social navigation section
           items:
@@ -206,7 +211,7 @@ examples:
             - href: '#2'
               text: Navigation item 2
               attributes:
-                data-icon: linkedin
+                data-icon: youtube
             - href: '#3'
               text: Navigation item 3
               attributes:
@@ -214,15 +219,7 @@ examples:
             - href: '#4'
               text: Navigation item 4
               attributes:
-                data-icon: youtube
-            - href: '#5'
-              text: Navigation item 5
-              attributes:
-                data-icon: whatsapp
-            - href: '#6'
-              text: Navigation item 6
-              attributes:
-                data-icon: messenger
+                data-icon: linkedin
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
