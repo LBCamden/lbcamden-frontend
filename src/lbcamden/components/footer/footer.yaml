@@ -132,6 +132,7 @@ accessibilityCriteria: |
     The spec indicates that `contentinfo` is useful for "Examples of information included in this region of the page are copyrights and links to privacy statements.", which may indicate that it might be better placed around the 'meta' section of this component.
     Should be challenged if user research indicates this is an issue.
     See also: http://www.brucelawson.co.uk/2013/why-does-html-take-rolecontentinfo
+
 examples:
   - name: default
     data:
@@ -141,7 +142,6 @@ examples:
     data:
       navigation:
         - title: Single column list
-          width: two-thirds
           items:
             - href: '#1'
               text: Navigation item 1
@@ -234,6 +234,10 @@ examples:
     hidden: true
     data:
       classes: app-footer--custom-modifier
+  - name: with custom width
+    data:
+      navigation:
+        - width: two-thirds
   - name: with empty navigation
     hidden: true
     data:
