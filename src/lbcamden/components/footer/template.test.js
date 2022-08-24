@@ -48,7 +48,7 @@ describe('footer', () => {
     })
 
     it('no items displayed when no item array is provided', () => {
-      const $ = render('footer', examples['default'])
+      const $ = render('footer', examples.default)
 
       expect($('.govuk-footer__navigation').length).toEqual(0)
     })
