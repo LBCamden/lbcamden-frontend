@@ -205,10 +205,24 @@ examples:
                 data-icon: facebook
             - href: '#2'
               text: Navigation item 2
+              attributes:
+                data-icon: linkedin
             - href: '#3'
               text: Navigation item 3
+              attributes:
+                data-icon: twitter
             - href: '#4'
               text: Navigation item 4
+              attributes:
+                data-icon: youtube
+            - href: '#5'
+              text: Navigation item 5
+              attributes:
+                data-icon: whatsapp
+            - href: '#6'
+              text: Navigation item 6
+              attributes:
+                data-icon: messenger
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
