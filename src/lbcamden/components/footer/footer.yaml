@@ -235,6 +235,7 @@ examples:
     data:
       classes: app-footer--custom-modifier
   - name: with custom width
+    hidden: true
     data:
       navigation:
         - width: two-thirds
