@@ -18,6 +18,20 @@
     &:not(:last-child) {
       @include govuk-responsive-margin(6, "bottom");
     }
+
+    a {
+      &[data-highlighted="true"] {
+        margin-left: - govuk-spacing(1);
+        border-radius: 3px;
+        background: lbcamden-colour("govuk-brand1-1-colour");
+        @include govuk-responsive-padding(1);
+
+        &:focus {
+          border-radius: 0;
+          background: $govuk-focus-colour;
+        }
+      }
+    }
   }
 
   .govuk-footer__section {
@@ -27,6 +41,7 @@
   &__lower {
     display: flex;
     flex-direction: column;
+    @include govuk-responsive-margin(6, "top");
     @include govuk-responsive-margin(6, "bottom");
     color: lbcamden-colour("white");
 
@@ -39,6 +54,7 @@
   &__logo {
     display: block;
     width: govuk-spacing(9) * 2;
+    margin-bottom: -3px;
     @include govuk-responsive-margin(7, "right");
 
     @include govuk-media-query($until: tablet) {
@@ -127,6 +143,12 @@
   .LBCamden-Footer__logo {
     &:hover {
       box-shadow: 0 3px lbcamden-colour("white");
+    }
+  }
+
+  .govuk-footer__navigation {
+    & + .LBCamden-Footer__lower {
+      @include govuk-responsive-margin(0, "top");
     }
   }
 }

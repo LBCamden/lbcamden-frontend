@@ -190,6 +190,8 @@ examples:
               text: Navigation item 2
             - href: '#3'
               text: Navigation item 3
+              attributes:
+                data-highlighted: true
       navigationSecondary:
         - title: Navigation section
           items:
