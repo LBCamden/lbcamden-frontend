@@ -6,6 +6,26 @@
 
 ### Fixes
 
+## 0.2.0
+💥 Breaking changes:
+
+- All component class names are now lowercase. This is only a breaking change for manually copied HTML (we are not aware of any usage of this currently)
+
+- 🆕 New features:
+
+- Updated GOVUK Frontend to 4.3.1
+
+## 0.1.12
+🆕 New features:
+
+- New Footer capabilities
+  
+🔧 Fixes:
+
+- Header and footer logo hover interactions
+- Card-grid behaviour
+- Promo link styles
+
 ## 0.1.11
 🆕 New features:
 
