@@ -1,12 +1,12 @@
 {% from "../logo/macro.njk" import LBCamdenLogo %}
 
 <header
-  class="LBCamden-Header {{ params.classes if params.classes }}{% if params.phaseBanner %} LBCamden-Header--with-phase-banner{% endif %}"
+  class="lbcamden-header {{ params.classes if params.classes }}{% if params.phaseBanner %} lbcamden-header--with-phase-banner{% endif %}"
   role="banner" data-module="lbcamden-header"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 <div class="{{ params.containerClasses | default('govuk-width-container') }}">
-  <div class="LBCamden-Header__logo">
-    <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Header__link">
+  <div class="lbcamden-header__logo">
+    <a href="{{ params.homepageUrl | default('/') }}" class="lbcamden-header__link">
       {{ LBCamdenLogo({
       }) }}
       <span class="govuk-visually-hidden">Camden.gov.uk</span>

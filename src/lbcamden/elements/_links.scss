@@ -57,7 +57,7 @@
   }
 
   &--promo {
-    //@extend .LBCamden-Button;
+    //@extend .lbcamden-button;
     @include govuk-font(24);
     box-sizing: border-box;
     display: inline-flex;

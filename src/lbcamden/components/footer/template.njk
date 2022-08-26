@@ -1,6 +1,6 @@
 {% from "../logo/macro.njk" import LBCamdenLogo %}
 
-<footer class="LBCamden-Footer {{ params.classes if params.classes }}" role="contentinfo"
+<footer class="lbcamden-footer {{ params.classes if params.classes }}" role="contentinfo"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 <div class="{{ params.containerClasses | default('govuk-width-container') }}">
   {% if params.navigation | length or params.navigationSecondary | length %}
@@ -74,10 +74,10 @@
                 govuk-footer__list--columns-{{ nav.columns }}
               {% endif %}
             {% endset %}
-            <ul class="govuk-footer__list LBCamden-Footer__list--social {{ listClasses | trim }}">
+            <ul class="govuk-footer__list lbcamden-footer__list--social {{ listClasses | trim }}">
               {% for item in nav.items %}
                 {% if item.href and item.text %}
-                  <li class="LBCamden-Footer__list--social__item">
+                  <li class="lbcamden-footer__list--social__item">
                     <a class=""
                        href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
                     >
@@ -92,9 +92,9 @@
       {% endfor %}
     </div>
   {% endif %}
-  <div class="LBCamden-Footer__lower">
-      <div class="LBCamden-Footer__logo">
-        <a href="{{ params.homepageUrl | default('/') }}" class="LBCamden-Footer__link">
+  <div class="lbcamden-footer__lower">
+      <div class="lbcamden-footer__logo">
+        <a href="{{ params.homepageUrl | default('/') }}" class="lbcamden-footer__link">
           {{ LBCamdenLogo({
           }) }}
           <span class="govuk-visually-hidden">Camden.gov.uk</span>
