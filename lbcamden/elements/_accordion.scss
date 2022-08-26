@@ -1,6 +1,14 @@
 .govuk-accordion {
   .js-enabled & {
     .govuk-accordion-nav__chevron {
+      width: 19px;
+      height: 19px;
+
+      @include govuk-media-query($from: tablet) {
+        width: 21px;
+        height: 21px;
+      }
+
       &:after {
         @include lbcamden-chevron(lbcamden-colour("blue"), -90);
         left: 4px;
