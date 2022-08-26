@@ -1,4 +1,4 @@
-.LBCamden-Footer {
+.lbcamden-footer {
   @include govuk-responsive-padding(6, "top");
   @include govuk-responsive-padding(6, "bottom");
   @include govuk-font(16);
@@ -140,14 +140,14 @@
     }
   }
 
-  .LBCamden-Footer__logo {
+  .lbcamden-footer__logo {
     &:hover {
       box-shadow: 0 3px lbcamden-colour("white");
     }
   }
 
   .govuk-footer__navigation {
-    & + .LBCamden-Footer__lower {
+    & + .lbcamden-footer__lower {
       @include govuk-responsive-margin(0, "top");
     }
   }
