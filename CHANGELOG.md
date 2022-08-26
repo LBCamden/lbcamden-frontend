@@ -6,6 +6,11 @@
 
 ### Fixes
 
+## 0.2.1
+🔧 Fixes:
+
+- Chevron position within accordions
+
 ## 0.2.0
 💥 Breaking changes:
 
