@@ -6,7 +6,7 @@
             "options": {
                 "text": "Save and continue"
             },
-            "html": "<button class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Save and continue\n</button>",
+            "html": "<button class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Save and continue\n</button>",
             "hidden": false
         },
         {
@@ -15,7 +15,7 @@
                 "text": "Save and continue",
                 "largeButton": true
             },
-            "html": "<button class=\"LBCamden-Button LBCamden-Button--large\" data-module=\"lbcamden-button\">\n  Save and continue\n</button>",
+            "html": "<button class=\"lbcamden-button lbcamden-button--large\" data-module=\"lbcamden-button\">\n  Save and continue\n</button>",
             "hidden": false
         },
         {
@@ -24,7 +24,7 @@
                 "text": "Disabled button",
                 "disabled": true
             },
-            "html": "<button disabled=\"disabled\" aria-disabled=\"true\" class=\"LBCamden-Button LBCamden-Button--disabled\" data-module=\"lbcamden-button\">\n  Disabled button\n</button>",
+            "html": "<button disabled=\"disabled\" aria-disabled=\"true\" class=\"lbcamden-button lbcamden-button--disabled\" data-module=\"lbcamden-button\">\n  Disabled button\n</button>",
             "hidden": false
         },
         {
@@ -33,7 +33,7 @@
                 "text": "Link button",
                 "href": "/"
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Link button\n</a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Link button\n</a>",
             "hidden": false
         },
         {
@@ -43,7 +43,7 @@
                 "href": "/",
                 "disabled": true
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button LBCamden-Button--disabled\" data-module=\"lbcamden-button\">\n  Disabled link button\n</a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button lbcamden-button--disabled\" data-module=\"lbcamden-button\">\n  Disabled link button\n</a>",
             "hidden": false
         },
         {
@@ -52,7 +52,7 @@
                 "text": "Start now button",
                 "isStartButton": true
             },
-            "html": "<button class=\"LBCamden-Button LBCamden-Button--start\" data-module=\"lbcamden-button\">\n  Start now button\n  <svg class=\"LBCamden-Button__start-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" aria-hidden=\"true\" focusable=\"false\">\n      <path d=\"M4.48116 7L0.409421 11.3565H0.409258C0.05163 11.7527 -0.0842445 12.3214 0.0519564 12.8525C0.188157 13.3837 0.576033 13.7987 1.07245 13.9444C1.56887 14.0901 2.10045 13.9448 2.47074 13.5621L7.57322 8.10283C7.84641 7.81019 8 7.41361 8 7C8 6.58638 7.8464 6.1898 7.57322 5.89718L2.47074 0.437877C2.10042 0.0552407 1.56887 -0.0901382 1.07245 0.0555872C0.576033 0.201313 0.188161 0.616313 0.0519564 1.14745C-0.0842487 1.67858 0.0516291 2.24733 0.409258 2.64352L4.48116 7Z\" fill=\"currentColor\"/>\n    </svg></button>",
+            "html": "<button class=\"lbcamden-button lbcamden-button--start\" data-module=\"lbcamden-button\">\n  Start now button\n  <svg class=\"lbcamden-button__start-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" aria-hidden=\"true\" focusable=\"false\">\n      <path d=\"M4.48116 7L0.409421 11.3565H0.409258C0.05163 11.7527 -0.0842445 12.3214 0.0519564 12.8525C0.188157 13.3837 0.576033 13.7987 1.07245 13.9444C1.56887 14.0901 2.10045 13.9448 2.47074 13.5621L7.57322 8.10283C7.84641 7.81019 8 7.41361 8 7C8 6.58638 7.8464 6.1898 7.57322 5.89718L2.47074 0.437877C2.10042 0.0552407 1.56887 -0.0901382 1.07245 0.0555872C0.576033 0.201313 0.188161 0.616313 0.0519564 1.14745C-0.0842487 1.67858 0.0516291 2.24733 0.409258 2.64352L4.48116 7Z\" fill=\"currentColor\"/>\n    </svg></button>",
             "hidden": false
         },
         {
@@ -62,7 +62,7 @@
                 "href": "/",
                 "isStartButton": true
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button LBCamden-Button--start\" data-module=\"lbcamden-button\">\n  Start now link button\n  <svg class=\"LBCamden-Button__start-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" aria-hidden=\"true\" focusable=\"false\">\n      <path d=\"M4.48116 7L0.409421 11.3565H0.409258C0.05163 11.7527 -0.0842445 12.3214 0.0519564 12.8525C0.188157 13.3837 0.576033 13.7987 1.07245 13.9444C1.56887 14.0901 2.10045 13.9448 2.47074 13.5621L7.57322 8.10283C7.84641 7.81019 8 7.41361 8 7C8 6.58638 7.8464 6.1898 7.57322 5.89718L2.47074 0.437877C2.10042 0.0552407 1.56887 -0.0901382 1.07245 0.0555872C0.576033 0.201313 0.188161 0.616313 0.0519564 1.14745C-0.0842487 1.67858 0.0516291 2.24733 0.409258 2.64352L4.48116 7Z\" fill=\"currentColor\"/>\n    </svg></a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button lbcamden-button--start\" data-module=\"lbcamden-button\">\n  Start now link button\n  <svg class=\"lbcamden-button__start-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" aria-hidden=\"true\" focusable=\"false\">\n      <path d=\"M4.48116 7L0.409421 11.3565H0.409258C0.05163 11.7527 -0.0842445 12.3214 0.0519564 12.8525C0.188157 13.3837 0.576033 13.7987 1.07245 13.9444C1.56887 14.0901 2.10045 13.9448 2.47074 13.5621L7.57322 8.10283C7.84641 7.81019 8 7.41361 8 7C8 6.58638 7.8464 6.1898 7.57322 5.89718L2.47074 0.437877C2.10042 0.0552407 1.56887 -0.0901382 1.07245 0.0555872C0.576033 0.201313 0.188161 0.616313 0.0519564 1.14745C-0.0842487 1.67858 0.0516291 2.24733 0.409258 2.64352L4.48116 7Z\" fill=\"currentColor\"/>\n    </svg></a>",
             "hidden": false
         },
         {
@@ -72,7 +72,7 @@
                 "name": "start-now",
                 "text": "Start now"
             },
-            "html": "<input value=\"Start now\" type=\"submit\" name=\"start-now\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">",
+            "html": "<input value=\"Start now\" type=\"submit\" name=\"start-now\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">",
             "hidden": false
         },
         {
@@ -82,7 +82,7 @@
                 "text": "Explicit input button disabled",
                 "disabled": true
             },
-            "html": "<input value=\"Explicit input button disabled\" type=\"submit\" disabled=\"disabled\" aria-disabled=\"true\" class=\"LBCamden-Button LBCamden-Button--disabled\" data-module=\"lbcamden-button\">",
+            "html": "<input value=\"Explicit input button disabled\" type=\"submit\" disabled=\"disabled\" aria-disabled=\"true\" class=\"lbcamden-button lbcamden-button--disabled\" data-module=\"lbcamden-button\">",
             "hidden": false
         },
         {
@@ -91,7 +91,7 @@
                 "text": "Submit",
                 "preventDoubleClick": true
             },
-            "html": "<button data-prevent-double-click=\"true\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
+            "html": "<button data-prevent-double-click=\"true\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
             "hidden": false
         },
         {
@@ -101,7 +101,7 @@
                 "text": "Active",
                 "classes": ":active"
             },
-            "html": "<button name=\"active\" class=\"LBCamden-Button :active\" data-module=\"lbcamden-button\">\n  Active\n</button>",
+            "html": "<button name=\"active\" class=\"lbcamden-button :active\" data-module=\"lbcamden-button\">\n  Active\n</button>",
             "hidden": false
         },
         {
@@ -111,7 +111,7 @@
                 "text": "Hovered",
                 "classes": ":hover"
             },
-            "html": "<button name=\"hover\" class=\"LBCamden-Button :hover\" data-module=\"lbcamden-button\">\n  Hovered\n</button>",
+            "html": "<button name=\"hover\" class=\"lbcamden-button :hover\" data-module=\"lbcamden-button\">\n  Hovered\n</button>",
             "hidden": false
         },
         {
@@ -121,7 +121,7 @@
                 "text": "Focussed",
                 "classes": ":focus"
             },
-            "html": "<button name=\"focus\" class=\"LBCamden-Button :focus\" data-module=\"lbcamden-button\">\n  Focussed\n</button>",
+            "html": "<button name=\"focus\" class=\"lbcamden-button :focus\" data-module=\"lbcamden-button\">\n  Focussed\n</button>",
             "hidden": false
         },
         {
@@ -129,9 +129,9 @@
             "options": {
                 "name": "secondary",
                 "text": "Secondary button",
-                "classes": "LBCamden-Button--secondary"
+                "classes": "lbcamden-button--secondary"
             },
-            "html": "<button name=\"secondary\" class=\"LBCamden-Button LBCamden-Button--secondary\" data-module=\"lbcamden-button\">\n  Secondary button\n</button>",
+            "html": "<button name=\"secondary\" class=\"lbcamden-button lbcamden-button--secondary\" data-module=\"lbcamden-button\">\n  Secondary button\n</button>",
             "hidden": false
         },
         {
@@ -139,10 +139,10 @@
             "options": {
                 "name": "secondary",
                 "text": "Secondary button disabled",
-                "classes": "LBCamden-Button--secondary",
+                "classes": "lbcamden-button--secondary",
                 "disabled": true
             },
-            "html": "<button name=\"secondary\" disabled=\"disabled\" aria-disabled=\"true\" class=\"LBCamden-Button LBCamden-Button--secondary LBCamden-Button--disabled\" data-module=\"lbcamden-button\">\n  Secondary button disabled\n</button>",
+            "html": "<button name=\"secondary\" disabled=\"disabled\" aria-disabled=\"true\" class=\"lbcamden-button lbcamden-button--secondary lbcamden-button--disabled\" data-module=\"lbcamden-button\">\n  Secondary button disabled\n</button>",
             "hidden": false
         },
         {
@@ -151,9 +151,9 @@
                 "name": "secondary",
                 "text": "Secondary button",
                 "href": "/",
-                "classes": "LBCamden-Button--secondary"
+                "classes": "lbcamden-button--secondary"
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button LBCamden-Button--secondary\" data-module=\"lbcamden-button\">\n  Secondary button\n</a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button lbcamden-button--secondary\" data-module=\"lbcamden-button\">\n  Secondary button\n</a>",
             "hidden": false
         },
         {
@@ -161,9 +161,9 @@
             "options": {
                 "name": "Warning",
                 "text": "Warning button",
-                "classes": "LBCamden-Button--warning"
+                "classes": "lbcamden-button--warning"
             },
-            "html": "<button name=\"Warning\" class=\"LBCamden-Button LBCamden-Button--warning\" data-module=\"lbcamden-button\">\n  Warning button\n</button>",
+            "html": "<button name=\"Warning\" class=\"lbcamden-button lbcamden-button--warning\" data-module=\"lbcamden-button\">\n  Warning button\n</button>",
             "hidden": false
         },
         {
@@ -171,10 +171,10 @@
             "options": {
                 "name": "warning",
                 "text": "Warning button disabled",
-                "classes": "LBCamden-Button--warning",
+                "classes": "lbcamden-button--warning",
                 "disabled": true
             },
-            "html": "<button name=\"warning\" disabled=\"disabled\" aria-disabled=\"true\" class=\"LBCamden-Button LBCamden-Button--warning LBCamden-Button--disabled\" data-module=\"lbcamden-button\">\n  Warning button disabled\n</button>",
+            "html": "<button name=\"warning\" disabled=\"disabled\" aria-disabled=\"true\" class=\"lbcamden-button lbcamden-button--warning lbcamden-button--disabled\" data-module=\"lbcamden-button\">\n  Warning button disabled\n</button>",
             "hidden": false
         },
         {
@@ -183,9 +183,9 @@
                 "name": "Warning",
                 "text": "Warning button",
                 "href": "/",
-                "classes": "LBCamden-Button--warning"
+                "classes": "lbcamden-button--warning"
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button LBCamden-Button--warning\" data-module=\"lbcamden-button\">\n  Warning button\n</a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button lbcamden-button--warning\" data-module=\"lbcamden-button\">\n  Warning button\n</a>",
             "hidden": false
         },
         {
@@ -198,7 +198,7 @@
                     "data-tracking-dimension": 123
                 }
             },
-            "html": "<button class=\"LBCamden-Button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">\n  Submit\n</button>",
+            "html": "<button class=\"lbcamden-button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">\n  Submit\n</button>",
             "hidden": true
         },
         {
@@ -211,7 +211,7 @@
                     "data-tracking-dimension": 123
                 }
             },
-            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">\n  Submit\n</a>",
+            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"lbcamden-button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">\n  Submit\n</a>",
             "hidden": true
         },
         {
@@ -224,7 +224,7 @@
                     "data-tracking-dimension": 123
                 }
             },
-            "html": "<input value=\"Submit\" type=\"submit\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">",
+            "html": "<input value=\"Submit\" type=\"submit\" class=\"lbcamden-button\" data-module=\"lbcamden-button\" aria-controls=\"example-id\" data-tracking-dimension=\"123\">",
             "hidden": true
         },
         {
@@ -234,7 +234,7 @@
                 "element": "button",
                 "classes": "app-button--custom-modifier"
             },
-            "html": "<button class=\"LBCamden-Button app-button--custom-modifier\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
+            "html": "<button class=\"lbcamden-button app-button--custom-modifier\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
             "hidden": true
         },
         {
@@ -244,7 +244,7 @@
                 "element": "a",
                 "classes": "app-button--custom-modifier"
             },
-            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button app-button--custom-modifier\" data-module=\"lbcamden-button\">\n  Submit\n</a>",
+            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"lbcamden-button app-button--custom-modifier\" data-module=\"lbcamden-button\">\n  Submit\n</a>",
             "hidden": true
         },
         {
@@ -254,7 +254,7 @@
                 "element": "input",
                 "classes": "app-button--custom-modifier"
             },
-            "html": "<input value=\"Submit\" type=\"submit\" class=\"LBCamden-Button app-button--custom-modifier\" data-module=\"lbcamden-button\">",
+            "html": "<input value=\"Submit\" type=\"submit\" class=\"lbcamden-button app-button--custom-modifier\" data-module=\"lbcamden-button\">",
             "hidden": true
         },
         {
@@ -264,7 +264,7 @@
                 "element": "button",
                 "name": "start-now"
             },
-            "html": "<button name=\"start-now\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
+            "html": "<button name=\"start-now\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
             "hidden": true
         },
         {
@@ -274,7 +274,7 @@
                 "element": "button",
                 "type": "button"
             },
-            "html": "<button type=\"button\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
+            "html": "<button type=\"button\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
             "hidden": true
         },
         {
@@ -284,7 +284,7 @@
                 "element": "input",
                 "type": "button"
             },
-            "html": "<input value=\"Submit\" type=\"button\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">",
+            "html": "<input value=\"Submit\" type=\"button\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">",
             "hidden": true
         },
         {
@@ -294,7 +294,7 @@
                 "href": "/",
                 "text": "Continue"
             },
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Continue\n</a>",
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Continue\n</a>",
             "hidden": true
         },
         {
@@ -303,7 +303,7 @@
                 "text": "Submit",
                 "element": "a"
             },
-            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Submit\n</a>",
+            "html": "<a href=\"#\" role=\"button\" draggable=\"false\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Submit\n</a>",
             "hidden": true
         },
         {
@@ -313,7 +313,7 @@
                 "element": "button",
                 "value": "start"
             },
-            "html": "<button value=\"start\" class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
+            "html": "<button value=\"start\" class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Submit\n</button>",
             "hidden": true
         },
         {
@@ -323,13 +323,13 @@
                 "element": "button",
                 "html": "Start <em>now</em>"
             },
-            "html": "<button class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  Start <em>now</em>\n</button>",
+            "html": "<button class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  Start <em>now</em>\n</button>",
             "hidden": true
         },
         {
             "name": "no data",
             "options": {},
-            "html": "<button class=\"LBCamden-Button\" data-module=\"lbcamden-button\">\n  \n</button>",
+            "html": "<button class=\"lbcamden-button\" data-module=\"lbcamden-button\">\n  \n</button>",
             "hidden": true
         }
     ]
