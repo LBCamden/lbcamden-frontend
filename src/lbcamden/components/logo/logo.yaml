@@ -7,6 +7,10 @@ params:
     type: string
     required: false
     description: Hex colour value that will replace the defautl colour.
+  - name: pride
+    type: boolean
+    required: false
+    description: Option to display 'pride gradient' version of the logo
   - name: icon
     type: boolean
     required: false
@@ -52,6 +56,11 @@ examples:
     data:
       icon: true
       fillColour: ae094e
+
+  - name: pride variation
+    description: INCOMPLETE! - (requires assets from designer) Provide an a 'pride gradient' version of the logo
+    data:
+      pride: true
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes

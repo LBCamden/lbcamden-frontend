@@ -19,7 +19,7 @@ $govuk-warning-button-text-colour: govuk-colour("white");
 // increase the bottom margin to include it (s2).
 $button-shadow-size: $govuk-border-width-form-element;
 
-.lbcamden-button,
+.LBCamden-Button,
 .govuk-button {
   @include govuk-font($size: 19, $line-height: 19px);
 
@@ -161,9 +161,9 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 }
 
-.lbcamden-button--disabled,
-.lbcamden-button[disabled="disabled"],
-.lbcamden-button[disabled] {
+.LBCamden-Button--disabled,
+.LBCamden-Button[disabled="disabled"],
+.LBCamden-Button[disabled] {
   opacity: (.5);
 
   &:hover {
@@ -180,7 +180,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 }
 
-.lbcamden-button--secondary {
+.LBCamden-Button--secondary {
   border: 3px solid $lbcamden-button-colour;
   background-color: lbcamden-colour("white");
   //box-shadow: 0 $button-shadow-size 0 $lbcamden-secondary-button-shadow-colour;
@@ -215,7 +215,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 }
 
-.lbcamden-button--warning {
+.LBCamden-Button--warning {
   background-color: $govuk-warning-button-colour;
   //box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
 
@@ -247,7 +247,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 }
 
-.lbcamden-button--start {
+.LBCamden-Button--start {
   @include govuk-typography-weight-bold;
   @include govuk-typography-responsive($size: 19, $override-line-height: 1);
   @include govuk-responsive-padding(4, "top");
@@ -258,7 +258,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   justify-content: center;
 }
 
-.lbcamden-button__start-icon {
+.LBCamden-Button__start-icon {
   margin-left: govuk-spacing(1);
 
   @include govuk-media-query($from: desktop) {
@@ -276,12 +276,12 @@ $button-shadow-size: $govuk-border-width-form-element;
   // Begin adjustments for font baseline offset when using v1 of nta
   $offset: 2;
 
-  .lbcamden-button {
+  .LBCamden-Button {
     padding-top: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
     padding-bottom: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
   }
 
-  .lbcamden-button__start-icon {
+  .LBCamden-Button__start-icon {
     margin-top: -3px;
   }
 }
