@@ -17,7 +17,7 @@ function LBCamdenHeader ($module) {
 //  * missing then there's nothing to do so return early.
 //  */
 LBCamdenHeader.prototype.init = function () {
-  console.log(123)
+
 }
 //
 //   this.syncState(this.$menu.classList.contains('govuk-header__navigation-list--open'))

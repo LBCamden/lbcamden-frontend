@@ -20,14 +20,14 @@ describe('footer', () => {
   it('entire component must have a role of `contentinfo`', () => {
     const $ = render('footer', examples.default)
 
-    const $component = $('.LBCamden-Footer')
+    const $component = $('.lbcamden-footer')
     expect($component.attr('role')).toEqual('contentinfo')
   })
 
   it('renders attributes correctly', () => {
     const $ = render('footer', examples.attributes)
 
-    const $component = $('.LBCamden-Footer')
+    const $component = $('.lbcamden-footer')
     expect($component.attr('data-test-attribute')).toEqual('value')
     expect($component.attr('data-test-attribute-2')).toEqual('value-2')
   })
@@ -35,7 +35,7 @@ describe('footer', () => {
   it('renders classes', () => {
     const $ = render('footer', examples.classes)
 
-    const $component = $('.LBCamden-Footer')
+    const $component = $('.lbcamden-footer')
     expect($component.hasClass('app-footer--custom-modifier')).toBeTruthy()
   })
 
