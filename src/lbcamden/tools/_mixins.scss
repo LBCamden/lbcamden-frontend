@@ -66,9 +66,15 @@
 }
 
 // Chevron helper
-@mixin lbcamden-chevron($colour, $rotation: 0, $stroke: 1, $size: 2) {
-  width: $size * 5 + px;
-  height: $size * 5 + px;
+@mixin lbcamden-chevron($colour, $rotation: 0, $stroke: 1, $size: 3) {
+  width: $size * 3 + px;
+  height: $size * 3 + px;
+
+  @include govuk-media-query($from: tablet) {
+    width: $size * 3.5 + 1 + px;
+    height: $size * 3.5 + 1 + px;
+  }
+
   transform: rotate($rotation + deg);
   border: none;
   background: chevron-stroke-width($stroke, $colour);

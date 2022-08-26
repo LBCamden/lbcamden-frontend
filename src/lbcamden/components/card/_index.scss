@@ -2,12 +2,29 @@
   position: relative;
   border-top: 1px solid $lbcamden-border-colour;
   @include govuk-responsive-padding(4, "top");
-  @include govuk-responsive-padding(4, "bottom");
-  //@include govuk-responsive-padding($lbc-default-spacing--small, "all");
 
   * {
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    @include govuk-responsive-margin(2, "bottom");
+
+    a {
+      @extend .govuk-link--no-underline;
+    }
+  }
+
+  &__content {
+    @include govuk-font(16);
+
+    * {
+      @include govuk-font(16);
     }
   }
 
@@ -108,8 +125,8 @@
   &--promo-link,
   &--promo-link--alt {
     display: flex;
-    padding-top: inherit;
-    padding-bottom: inherit;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: none;
 
     .lbcamden-card--naked & {
@@ -117,14 +134,7 @@
     }
 
     &:hover {
-      > h2,
-      > h3,
-      > h4,
-      > h5 {
-        a {
-          text-decoration: none;
-        }
-      }
+      text-decoration: none;
     }
   }
 
@@ -165,17 +175,8 @@
     background: initial;
   }
 
-  > h2,
-  > h3,
-  > h4,
-  > h5 {
-    a {
-      @extend .govuk-link--no-underline;
-    }
-  }
-
   &--top-border {
-    border-top: 10px solid lbcamden-colour("govuk-brand1-2-colour");
+    border-top: 10px solid lbcamden-colour("govuk-brand1-1-colour");
   }
 
   &--popular {
@@ -194,12 +195,16 @@
 
   grid-auto-flow: row;
   // Use CSS grid to calculate the number of rows
-  grid-template-rows: auto;
+  //grid-template-rows: auto;
   // Use the tallest cell in the grid to set the height for all rows
-  grid-auto-rows: fractions(1);
+  @include govuk-media-query($from: tablet) {
+    grid-auto-rows: fractions(1);
+  }
+  //grid-auto-rows: fractions(1);
+  //grid-auto-rows: auto;
   grid-template-columns: fractions(1);
-  column-gap: govuk-spacing($lbc-default-spacing--small);
-  row-gap: govuk-spacing($lbc-default-spacing--small);
+  column-gap: govuk-spacing(4);
+  row-gap: govuk-spacing(4);
 
   @include govuk-media-query($from: "tablet") {
     grid-template-columns: fractions(2);

@@ -35,4 +35,10 @@
       background: $govuk-focus-colour;
     }
   }
+
+  .LBCamden-Header__logo {
+    &:hover {
+      box-shadow: 0 3px lbcamden-colour("white");
+    }
+  }
 }

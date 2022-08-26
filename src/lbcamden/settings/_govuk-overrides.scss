@@ -31,9 +31,12 @@ $govuk-success-colour: lbcamden-colour("green");
 
 $govuk-error-colour: lbcamden-colour("dark-red");
 
+@include mq-add-breakpoint(mobile-l, 576px);
+
 $govuk-breakpoints: (
   mobile: 320px,
+  mobile-large: 576px,
   tablet: 641px,
-  desktop: 769px,
-  wide: 1024px
+  desktop: 768px,
+  wide: 992px
 );

@@ -6,7 +6,75 @@ params:
   - name: navigation
     type: array
     required: false
-    description: Array of items for use in the navigation section of the footer.
+    description: Array of items for use in the primary navigation section of the footer.
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Title for a section.
+      - name: columns
+        type: integer
+        required: false
+        description: Amount of columns to display items in navigation section of the footer.
+      - name: width
+        type: string
+        required: false
+        description: Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'.
+      - name: items
+        type: array
+        required: false
+        description: Array of items to display in the list in navigation section of the footer.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: List item text in the navigation section of the footer.
+          - name: href
+            type: string
+            required: true
+            description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+          - name: attributes
+            type: object
+            required: false
+            description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationSecondary
+    type: array
+    required: false
+    description: Array of items for use in the secondary navigation section of the footer.
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Title for a section.
+      - name: columns
+        type: integer
+        required: false
+        description: Amount of columns to display items in navigation section of the footer.
+      - name: width
+        type: string
+        required: false
+        description: Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'.
+      - name: items
+        type: array
+        required: false
+        description: Array of items to display in the list in navigation section of the footer.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: List item text in the navigation section of the footer.
+          - name: href
+            type: string
+            required: true
+            description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+          - name: attributes
+            type: object
+            required: false
+            description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationSocial
+    type: array
+    required: false
+    description: Array of items for use in the social navigation section of the footer.
     params:
       - name: title
         type: string
@@ -64,17 +132,39 @@ accessibilityCriteria: |
     The spec indicates that `contentinfo` is useful for "Examples of information included in this region of the page are copyrights and links to privacy statements.", which may indicate that it might be better placed around the 'meta' section of this component.
     Should be challenged if user research indicates this is an issue.
     See also: http://www.brucelawson.co.uk/2013/why-does-html-take-rolecontentinfo
+
 examples:
   - name: default
     data:
       {}
 
-  - name: with navigation
+  - name: with single navigation level
     data:
       navigation:
         - title: Single column list
-          width: two-thirds
-          columns: 2
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+
+  - name: with two navigation levels
+    data:
+      navigation:
+        - title: Navigation section
+          items:
+            - href: '#1'
+              text: Navigation item 1
+            - href: '#2'
+              text: Navigation item 2
+            - href: '#3'
+              text: Navigation item 3
+            - href: '#4'
+              text: Navigation item 4
+      navigationSecondary:
+        - title: Navigation section2
           items:
             - href: '#1'
               text: Navigation item 1
@@ -89,7 +179,7 @@ examples:
             - href: '#6'
               text: Navigation item 6
 
-  - name: with default width navigation (one column)
+  - name: with two navigation levels and social navigation
     data:
       navigation:
         - title: Navigation section
@@ -100,18 +190,10 @@ examples:
               text: Navigation item 2
             - href: '#3'
               text: Navigation item 3
-            - href: '#4'
-              text: Navigation item 4
-            - href: '#5'
-              text: Navigation item 5
-            - href: '#6'
-              text: Navigation item 6
-
-  - name: with default width navigation (two columns)
-    data:
-      navigation:
+              attributes:
+                data-highlighted: true
+      navigationSecondary:
         - title: Navigation section
-          columns: 2
           items:
             - href: '#1'
               text: Navigation item 1
@@ -121,10 +203,25 @@ examples:
               text: Navigation item 3
             - href: '#4'
               text: Navigation item 4
-            - href: '#5'
-              text: Navigation item 5
-            - href: '#6'
-              text: Navigation item 6
+      navigationSocial:
+        - title: Social navigation section
+          items:
+            - href: '#1'
+              text: Navigation item 1
+              attributes:
+                data-icon: facebook
+            - href: '#2'
+              text: Navigation item 2
+              attributes:
+                data-icon: youtube
+            - href: '#3'
+              text: Navigation item 3
+              attributes:
+                data-icon: twitter
+            - href: '#4'
+              text: Navigation item 4
+              attributes:
+                data-icon: linkedin
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
@@ -137,6 +234,11 @@ examples:
     hidden: true
     data:
       classes: app-footer--custom-modifier
+  - name: with custom width
+    hidden: true
+    data:
+      navigation:
+        - width: two-thirds
   - name: with empty navigation
     hidden: true
     data:

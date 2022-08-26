@@ -41,20 +41,20 @@ describe('footer', () => {
 
   describe('navigation', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('footer', examples['with navigation'])
+      const $ = render('footer', examples['with two navigation levels and social navigation'])
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
 
     it('no items displayed when no item array is provided', () => {
-      const $ = render('footer', examples['with empty navigation'])
+      const $ = render('footer', examples.default)
 
       expect($('.govuk-footer__navigation').length).toEqual(0)
     })
 
     it('renders headings', () => {
-      const $ = render('footer', examples['with navigation'])
+      const $ = render('footer', examples['with single navigation level'])
 
       const $firstSection = $('.govuk-footer__section:first-child')
       const $firstHeading = $firstSection.find('h2.govuk-visually-hidden')
@@ -62,12 +62,12 @@ describe('footer', () => {
     })
 
     it('renders lists of links', () => {
-      const $ = render('footer', examples['with navigation'])
+      const $ = render('footer', examples['with single navigation level'])
 
       const $list = $('ul.govuk-footer__list')
       const $items = $list.find('li.govuk-footer__list-item')
       const $firstItem = $items.find('a:first-child')
-      expect($items.length).toEqual(6)
+      expect($items.length).toEqual(3)
       expect($firstItem.attr('href')).toEqual('#1')
       expect($firstItem.text()).toContain('Navigation item 1')
     })
@@ -80,29 +80,22 @@ describe('footer', () => {
       expect($navigationLink.attr('data-attribute-2')).toEqual('my-attribute-2')
     })
 
-    it('renders lists in columns', () => {
-      const $ = render('footer', examples['with navigation'])
-
-      const $list = $('ul.govuk-footer__list')
-      expect($list.hasClass('govuk-footer__list--columns-2')).toBeTruthy()
-    })
-
     it('renders one-column section full width by default', () => {
-      const $ = render('footer', examples['with default width navigation (one column)'])
+      const $ = render('footer', examples['with single navigation level'])
 
       const $section = $('.govuk-footer__section')
-      expect($section.hasClass('govuk-grid-column-full')).toBeTruthy()
+      expect($section.hasClass('govuk-grid-column-one-half')).toBeTruthy()
     })
 
     it('renders two-column section full width by default', () => {
-      const $ = render('footer', examples['with default width navigation (two columns)'])
+      const $ = render('footer', examples['with two navigation levels'])
 
       const $section = $('.govuk-footer__section')
-      expect($section.hasClass('govuk-grid-column-full')).toBeTruthy()
+      expect($section.hasClass('govuk-grid-column-one-half')).toBeTruthy()
     })
 
     it('renders section custom width when width specified', () => {
-      const $ = render('footer', examples['with navigation'])
+      const $ = render('footer', examples['with custom width'])
 
       const $section = $('.govuk-footer__section')
       expect($section.hasClass('govuk-grid-column-two-thirds')).toBeTruthy()
