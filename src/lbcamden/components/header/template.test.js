@@ -21,7 +21,7 @@ describe('header', () => {
     it('has a role of `banner`', () => {
       const $ = render('header', examples.default)
 
-      const $component = $('.lbcamden-header')
+      const $component = $('.LBCamden-Header')
       expect($component.attr('role')).toEqual('banner')
     })
   })
@@ -30,7 +30,7 @@ describe('header', () => {
     it('renders attributes correctly', () => {
       const $ = render('header', examples.attributes)
 
-      const $component = $('.lbcamden-header')
+      const $component = $('.LBCamden-Header')
       expect($component.attr('data-test-attribute')).toEqual('value')
       expect($component.attr('data-test-attribute-2')).toEqual('value-2')
     })
@@ -38,15 +38,15 @@ describe('header', () => {
     it('renders classes', () => {
       const $ = render('header', examples.classes)
 
-      const $component = $('.lbcamden-header')
+      const $component = $('.LBCamden-Header')
       expect($component.hasClass('app-header--custom-modifier')).toBeTruthy()
     })
 
     it('adds phase banner modifier', () => {
       const $ = render('header', examples.phasebanner)
 
-      const $component = $('.lbcamden-header')
-      expect($component.hasClass('lbcamden-header--with-phase-banner')).toBeTruthy()
+      const $component = $('.LBCamden-Header')
+      expect($component.hasClass('LBCamden-Header--with-phase-banner')).toBeTruthy()
     })
   })
 })

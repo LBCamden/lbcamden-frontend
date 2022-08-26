@@ -119,12 +119,12 @@ examples:
   data:
     name: secondary
     text: Secondary button
-    classes: lbcamden-button--secondary
+    classes: LBCamden-Button--secondary
 - name: Secondary disabled
   data:
     name: secondary
     text: Secondary button disabled
-    classes: lbcamden-button--secondary
+    classes: LBCamden-Button--secondary
     disabled: true
 - name: Secondary link
   description: A link button for secondary actions
@@ -132,18 +132,18 @@ examples:
     name: secondary
     text: Secondary button
     href: '/'
-    classes: lbcamden-button--secondary
+    classes: LBCamden-Button--secondary
 - name: Warning
   description: A button for actions that need a warning
   data:
     name: Warning
     text: Warning button
-    classes: lbcamden-button--warning
+    classes: LBCamden-Button--warning
 - name: Warning disabled
   data:
     name: warning
     text: Warning button disabled
-    classes: lbcamden-button--warning
+    classes: LBCamden-Button--warning
     disabled: true
 - name: Warning link
   description: A link button for actions that need a warning
@@ -151,7 +151,7 @@ examples:
     name: Warning
     text: Warning button
     href: '/'
-    classes: lbcamden-button--warning
+    classes: LBCamden-Button--warning
 
 # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
 - name: attributes
