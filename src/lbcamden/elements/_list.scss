@@ -19,6 +19,7 @@ ul {
 
     li {
       @include govuk-responsive-padding(5, "left");
+      @include govuk-responsive-margin(5, "bottom");
       @include govuk-font(16);
       position: relative;
 
