@@ -14,6 +14,7 @@ ul {
 .lbcamden-list {
   &--dash {
     @extend .govuk-list--spaced;
+    @include govuk-responsive-margin(5, "bottom");
     padding: 0;
     list-style: none outside;
 

@@ -182,7 +182,8 @@ examples:
   - name: with two navigation levels and social navigation
     data:
       navigation:
-        - title: Navigation section
+        - width: one-half-from-mobile-large
+          title: Navigation section
           items:
             - href: '#1'
               text: Navigation item 1
@@ -194,6 +195,7 @@ examples:
                 data-highlighted: true
       navigationSecondary:
         - title: Navigation section
+          width: one-half-from-mobile-large
           items:
             - href: '#1'
               text: Navigation item 1
