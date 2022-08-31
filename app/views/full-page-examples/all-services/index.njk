@@ -256,11 +256,10 @@ notes:
 
 {% block footer %}
   {{ LBCamdenFooter({
-    navigation: [
+    "navigation": [
       {
-        "title": "Single column list",
-        "width": "two-thirds",
-        "columns": 2,
+        "width": "one-half-from-mobile-large",
+        "title": "Navigation section",
         "items": [
         {
           "href": "#1",
@@ -268,31 +267,76 @@ notes:
         },
         {
           "href": "#2",
-          "text": "Search"
+          "text": "Site map"
         },
         {
           "href": "#3",
-          "text": "Sitemap"
-        },
-        {
-          "href": "#4",
           "text": "Contact Camden Council"
-        },
+        },        {
+          "href": "#4",
+          "text": "Subscribe to our e-newsletter",
+          "attributes": {
+          "data-highlighted": true
+        }
+        }
+      ]
+      }
+    ],
+    "navigationSecondary": [
+      {
+        "title": "Navigation section",
+        "width": "one-half-from-mobile-large",
+        "items": [
         {
-          "href": "#5",
+          "href": "#1",
           "text": "Accessibility statement"
         },
         {
-          "href": "#6",
-          "text": "Freedom of Information Disclaimer"
+          "href": "#2",
+          "text": "Freedom of information disclaimer"
         },
         {
-          "href": "#7",
-          "text": "Privacy Statement & Cookies"
+          "href": "#3",
+          "text": "Privacy statement & cookies"
         },
         {
-          "href": "#8",
-          "text": "Modern Slavery Statement"
+          "href": "#4",
+          "text": "Modern slavery statement"
+        }
+      ]
+      }
+    ],
+    "navigationSocial": [
+      {
+        "title": "Social navigation section",
+        "items": [
+        {
+          "href": "#1",
+          "text": "Navigation item 1",
+          "attributes": {
+          "data-icon": "facebook"
+        }
+        },
+        {
+          "href": "#2",
+          "text": "Navigation item 2",
+          "attributes": {
+          "data-icon": "youtube"
+        }
+        },
+        {
+          "href": "#3",
+          "text": "Navigation item 3",
+          "attributes": {
+          "data-icon": "twitter"
+        }
+        },
+        {
+          "href": "#4",
+          "text": "Navigation item 4",
+          "attributes": {
+          "data-icon": "linkedin"
+        }
         }
       ]
       }
