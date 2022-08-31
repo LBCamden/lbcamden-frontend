@@ -12,7 +12,7 @@
       top: 50%;
       right: 1px;
       @include govuk-media-query($from: tablet) {
-        right: -1px;
+        right: 1px;
       }
       -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
