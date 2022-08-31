@@ -10,9 +10,14 @@
     @include govuk-responsive-margin(2, "bottom");
     display: inline-block;
     width: 50%;
+    max-width: 140px;
 
     @include govuk-media-query($from: tablet) {
-      width: 15%;
+      width: 140px;
+    }
+
+    &:hover {
+      box-shadow: 0 3px lbcamden-colour("white");
     }
   }
 
@@ -23,6 +28,7 @@
   &__link {
     display: block;
     max-width: 100%;
+    margin-top: 2px;
     color: lbcamden-colour("white");
 
     &:visited,
@@ -33,12 +39,6 @@
     &:focus {
       color: lbcamden-colour("black");
       background: $govuk-focus-colour;
-    }
-  }
-
-  .lbcamden-header__logo {
-    &:hover {
-      box-shadow: 0 3px lbcamden-colour("white");
     }
   }
 }
