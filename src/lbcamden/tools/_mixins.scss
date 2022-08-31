@@ -71,8 +71,8 @@
   height: $size * 3 + px;
 
   @include govuk-media-query($from: tablet) {
-    width: $size * 3.5 + 1 + px;
-    height: $size * 3.5 + 1 + px;
+    width: $size * 4 + px;
+    height: $size * 4 + px;
   }
 
   transform: rotate($rotation + deg);
