@@ -4,7 +4,7 @@
   @include govuk-responsive-padding(4, "top");
 
   * {
-    &:last-child {
+    &:last-child:not(.lbcamden-list--dash) {
       margin-bottom: 0;
     }
   }
