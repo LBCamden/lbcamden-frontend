@@ -127,6 +127,8 @@
     &.\:focus {
       color: lbcamden-colour("black");
       box-shadow: 0 0 0 2px lbcamden-colour("black");
+      text-decoration: underline;
+      @include govuk-link-hover-decoration;
 
       &:after {
         @include lbcamden-chevron(lbcamden-colour("black"), 0, 2, 4);

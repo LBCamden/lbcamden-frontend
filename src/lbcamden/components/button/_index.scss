@@ -267,6 +267,9 @@ $button-shadow-size: $govuk-border-width-form-element;
     border-color: $govuk-focus-colour;
     color: $govuk-focus-text-colour;
     background: $govuk-focus-colour;
+    box-shadow: 0 0 0 2px lbcamden-colour("black");
+    text-decoration: underline;
+    @include govuk-link-hover-decoration;
     // When colours are overridden, for example when users have a dark mode,
     // backgrounds and box-shadows disappear, so we need to ensure there's a
     // transparent outline which will be set to a visible colour.
@@ -279,7 +282,6 @@ $button-shadow-size: $govuk-border-width-form-element;
       color: $govuk-focus-text-colour;
       background-color: $govuk-focus-colour;
     }
-    box-shadow: 0 0 0 2px lbcamden-colour("black");
 
     &:active,
     &.\:active {
