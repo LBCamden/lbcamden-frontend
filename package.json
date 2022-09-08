@@ -2,7 +2,7 @@
   "private": true,
   "name": "lbcamden-frontend",
   "description": "Used only for the development of CAMDEN.GOV.UK Frontend, see `package/package.json` for the published `package.json`",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "engines": {
     "node": "~16.14.2"
   },
@@ -58,6 +58,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
     "html5shiv": "^3.7.3",
