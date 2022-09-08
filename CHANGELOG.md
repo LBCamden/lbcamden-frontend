@@ -6,6 +6,18 @@
 
 ### Fixes
 
+## 0.2.3
+🔧 Fixes:
+
+- Related Cards received some style corrections
+- Button focus states revisted - improving contrast 
+
+## 0.2.2
+🔧 Fixes:
+
+- Cards received some style corrections
+- Chevrons addressed for accordions (no more half pixel sizes)
+
 ## 0.2.1
 🔧 Fixes:
 
