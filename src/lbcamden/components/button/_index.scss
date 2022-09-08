@@ -58,9 +58,13 @@ $button-shadow-size: $govuk-border-width-form-element;
 
   // Ensure that any global link styles are overridden
   &:link,
+  &.\:link,
   &:visited,
+  &.\:visited,
   &:active,
-  &:hover {
+  &.\:active,
+  &:hover,
+  &.\:hover {
     color: $lbcamden-button-text-colour;
     text-decoration: none;
   }
@@ -71,13 +75,15 @@ $button-shadow-size: $govuk-border-width-form-element;
     border: 0;
   }
 
-  &:hover {
+  &:hover,
+  &.\:hover {
     background-color: $lbcamden-button-hover-colour;
     text-decoration: underline;
     @include govuk-link-hover-decoration;
   }
 
-  &:active {
+  &:active,
+  &.\:active {
     // Bump the button down so it looks like its being pressed in
     top: $button-shadow-size;
 
@@ -86,7 +92,8 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
   }
 
-  &:focus {
+  &:focus,
+  &.\:focus {
     border-color: $govuk-focus-colour;
     // When colours are overridden, for example when users have a dark mode,
     // backgrounds and box-shadows disappear, so we need to ensure there's a
@@ -166,12 +173,14 @@ $button-shadow-size: $govuk-border-width-form-element;
 .lbcamden-button[disabled] {
   opacity: (.5);
 
-  &:hover {
+  &:hover,
+  &.\:hover {
     background-color: $lbcamden-button-colour;
     cursor: default;
   }
 
-  &:active {
+  &:active,
+  &.\:active {
     top: 0;
     box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
     @include govuk-if-ie8 {
@@ -185,11 +194,14 @@ $button-shadow-size: $govuk-border-width-form-element;
   background-color: lbcamden-colour("white");
   //box-shadow: 0 $button-shadow-size 0 $lbcamden-secondary-button-shadow-colour;
 
-  &,
   &:link,
+  &.\:link,
   &:visited,
+  &.\:visited,
   &:active,
-  &:hover {
+  &.\:active,
+  &:hover,
+  &.\:hover {
     color: $lbcamden-secondary-button-text-colour;
   }
 
@@ -204,7 +216,8 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
   }
 
-  &:hover {
+  &:hover,
+  &.\:hover {
     border-color: $lbcamden-secondary-button-hover-colour;
     color: $lbcamden-secondary-button-hover-colour;
     background: $lbcamden-secondary-button-colour;
@@ -219,11 +232,14 @@ $button-shadow-size: $govuk-border-width-form-element;
   background-color: $govuk-warning-button-colour;
   //box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
 
-  &,
   &:link,
+  &.\:link,
   &:visited,
+  &.\:visited,
   &:active,
-  &:hover {
+  &.\:active,
+  &:hover,
+  &.\:hover {
     color: $govuk-warning-button-text-colour;
   }
 
@@ -238,7 +254,8 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
   }
 
-  &:hover {
+  &:hover,
+  &.\:hover {
     background-color: $govuk-warning-button-colour;
 
     &[disabled] {
