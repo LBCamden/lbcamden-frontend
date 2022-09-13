@@ -188,6 +188,19 @@
   &--popular {
     @include govuk-font(16);
   }
+
+  &--related {
+    @extend .lbcamden-card--top-border;
+    @extend .lbcamden-card--alt-1;
+
+    &.lbcamden-card {
+      > h2,
+      > h3 {
+        @extend .govuk-heading-l;
+        @include govuk-responsive-margin(3, "bottom");
+      }
+    }
+  }
 }
 
 // Based on the .homepage-services-and-info__list on GOV.UK
