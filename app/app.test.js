@@ -11,7 +11,6 @@ const PORT = configPaths.ports.test
 const expectedPages = [
   '/',
   '/components/all',
-  '/examples/form-alignment',
   '/examples/form-elements',
   '/examples/grid',
   '/examples/links',
