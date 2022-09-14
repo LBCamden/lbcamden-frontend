@@ -7,6 +7,11 @@
   </h1>
 
   <div class="govuk-grid-row">
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+    {{ govukNotificationBanner({
+      html: 'These examples are intended to provide developers with an interface to run tests and scenarios. <strong>It is not intended to act as design system documentation</strong>.'
+    }) }}
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Bespoke Components</h2>

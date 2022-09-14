@@ -3,6 +3,7 @@ $lbcamden-button-hover-colour: $govuk-link-hover-colour;
 $lbcamden-button-shadow-colour: govuk-shade($lbcamden-button-colour, 60%);
 $lbcamden-button-text-colour: lbcamden-colour("white");
 $lbcamden-button-border-radius: 3px;
+$lbcamden-focus-box-shadow: 0 0 0 2px lbcamden-colour("black");
 
 // Secondary button variables
 $lbcamden-secondary-button-colour: lbcamden-colour("white");
@@ -91,6 +92,41 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
   }
 
+  &:focus,
+  &.\:focus {
+    border-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    background: $govuk-focus-colour;
+    box-shadow: 0 0 0 2px lbcamden-colour("black");
+    text-decoration: underline;
+    @include govuk-link-hover-decoration;
+    // When colours are overridden, for example when users have a dark mode,
+    // backgrounds and box-shadows disappear, so we need to ensure there's a
+    // transparent outline which will be set to a visible colour.
+    // Since Internet Explorer 8 does not support box-shadow, we want to force the user-agent outlines
+    @include govuk-not-ie8 {
+      outline: $govuk-focus-width solid transparent;
+    }
+    // Since Internet Explorer does not support `:not()` we set a clearer focus style to match user-agent outlines.
+    @include govuk-if-ie8 {
+      color: $govuk-focus-text-colour;
+      background-color: $govuk-focus-colour;
+    }
+
+    //&:active,
+    //&.\:active {
+    //  &:not(:hover):not(.\:hover) {
+    //    color: $govuk-focus-text-colour;
+    //  }
+    //}
+
+    &:hover,
+    &.\:hover {
+      color: lbcamden-colour("white");
+      background-color: $lbcamden-button-hover-colour;
+    }
+  }
+
   // alphagov/govuk_template includes a specific a:link:focus selector
   // designed to make unvisited links a slightly darker blue when focussed, so
   // we need to override the text colour for that combination of selectors so
@@ -149,16 +185,14 @@ $button-shadow-size: $govuk-border-width-form-element;
     &:hover,
     &.\:hover {
       background-color: $lbcamden-button-colour;
+      text-decoration: none;
       cursor: default;
     }
 
     &:active,
     &.\:active {
       top: 0;
-      box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
-      @include govuk-if-ie8 {
-        border-bottom: $button-shadow-size solid $lbcamden-button-shadow-colour; // s0
-      }
+      box-shadow: none;
     }
   }
 
@@ -200,6 +234,19 @@ $button-shadow-size: $govuk-border-width-form-element;
         background-color: $lbcamden-secondary-button-colour;
       }
     }
+
+    &:focus,
+    &.\:focus {
+      color: $govuk-focus-text-colour;
+
+      &:hover,
+      &.\:hover {
+        border-color: $govuk-focus-colour;
+        color: $lbcamden-secondary-button-hover-colour;
+        background: $lbcamden-secondary-button-colour;
+        box-shadow: $lbcamden-focus-box-shadow;
+      }
+    }
   }
 
   &--warning {
@@ -235,6 +282,19 @@ $button-shadow-size: $govuk-border-width-form-element;
         background-color: $govuk-warning-button-colour;
       }
     }
+
+    &:focus,
+    &.\:focus {
+      color: $govuk-focus-text-colour;
+
+      &:hover,
+      &.\:hover {
+        border-color: $govuk-focus-colour;
+        color: lbcamden-colour("white");
+        background-color: $govuk-warning-button-colour;
+        box-shadow: $lbcamden-focus-box-shadow;
+      }
+    }
   }
 
   &--start {
@@ -262,40 +322,9 @@ $button-shadow-size: $govuk-border-width-form-element;
     forced-color-adjust: auto;
   }
 
-  &:focus,
-  &.\:focus {
-    border-color: $govuk-focus-colour;
-    color: $govuk-focus-text-colour;
-    background: $govuk-focus-colour;
-    box-shadow: 0 0 0 2px lbcamden-colour("black");
-    text-decoration: underline;
-    @include govuk-link-hover-decoration;
-    // When colours are overridden, for example when users have a dark mode,
-    // backgrounds and box-shadows disappear, so we need to ensure there's a
-    // transparent outline which will be set to a visible colour.
-    // Since Internet Explorer 8 does not support box-shadow, we want to force the user-agent outlines
-    @include govuk-not-ie8 {
-      outline: $govuk-focus-width solid transparent;
-    }
-    // Since Internet Explorer does not support `:not()` we set a clearer focus style to match user-agent outlines.
-    @include govuk-if-ie8 {
-      color: $govuk-focus-text-colour;
-      background-color: $govuk-focus-colour;
-    }
-
-    &:active,
-    &.\:active {
-      &:not(:hover):not(.\:hover) {
-        color: $govuk-focus-text-colour;
-      }
-    }
-
-    &:not(:active):not(:hover) {
-      border-color: $govuk-focus-colour;
-      color: $govuk-focus-text-colour;
-      background-color: $govuk-focus-colour;
-      //box-shadow: none;
-    }
+  .govuk-button-group &,
+  .lbcamden-button-group & {
+    @include govuk-responsive-margin(3, "right");
   }
 }
 
