@@ -2,6 +2,7 @@
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "../../../../src/lbcamden/components/button/macro.njk" import LBCamdenButton %}
 
 {% block beforeContent %}
   <div class="govuk-width-container">
@@ -17,11 +18,11 @@
   <div class="govuk-grid-column-two-thirds">
 
   <div class="govuk-button-group">
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Accept analytics cookies"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Reject analytics cookies"
     }) }}
 
@@ -29,11 +30,11 @@
   </div>
 
   <div class="govuk-button-group">
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Derbyn cwcis dadansoddeg"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Gwrthod cwcis dadansoddeg"
     }) }}
 
@@ -41,11 +42,11 @@
   </div>
 
   <div class="govuk-button-group">
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Accept really important analytics cookies"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Reject really important analytics cookies but not essential cookies"
     }) }}
 
@@ -53,7 +54,7 @@
   </div>
 
   <div class="govuk-button-group">
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Delete account",
       "classes": "govuk-button--warning"
     }) }}
@@ -65,11 +66,11 @@
   <div class="govuk-button-group">
     <a href="#" class="govuk-link">Buy it</a>
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Use it"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Break it"
     }) }}
 
@@ -77,7 +78,7 @@
     <a href="#" class="govuk-link">Trash it</a>
     <a href="#" class="govuk-link">Change it</a>
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Mail it"
     }) }}
 
@@ -85,21 +86,21 @@
 
     <a href="#" class="govuk-link">Charge it</a>
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Point it"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Zoom it"
     }) }}
 
-    {{ govukButton({
+    {{ LBCamdenButton({
       "text": "Press it"
     }) }}
   </div>
 
   <div class="govuk-button-group">
-    {{ govukButton({
+    {{ LBCamdenButton({
       text: "Start now",
       href: "#",
       isStartButton: true

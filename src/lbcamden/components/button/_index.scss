@@ -321,6 +321,11 @@ $button-shadow-size: $govuk-border-width-form-element;
     // (https://github.com/w3c/csswg-drafts/issues/6310)
     forced-color-adjust: auto;
   }
+
+  .govuk-button-group &,
+  .lbcamden-button-group & {
+    @include govuk-responsive-margin(3, "right");
+  }
 }
 
 @if $govuk-use-legacy-font {
