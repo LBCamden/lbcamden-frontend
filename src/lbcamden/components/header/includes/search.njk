@@ -1,0 +1,61 @@
+{% if params.search !== false %}
+  <button aria-controls="super-search-menu" aria-expanded="true" aria-label="Hide search menu"
+          class="lbcamden-header__search-toggle-button" data-text-for-hide="Hide search menu"
+          data-text-for-show="Show search menu" data-toggle-mobile-group="top" data-toggle-desktop-group="top"
+          data-tracking-key="search" hidden id="super-search-menu-toggle" type="button">
+        <span class="govuk-visually-hidden">
+          Search Camden.gov.uk
+        </span>
+
+    <svg class="lbcamden-header__search-toggle-button-link-icon" width="27" height="27"
+         viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+    </svg>
+    <span aria-hidden="true" class="lbcamden-header__navigation-top-toggle-close-icon"
+          focusable="false">
+          ×
+        </span>
+  </button>
+
+  <div id="super-search-menu" class="lbcamden-header__search-items">
+    <h3 class="govuk-visually-hidden">
+      Search
+    </h3>
+    <div class="lbcamden-header__search-item">
+      <a class="lbcamden-header__search-item-link" href="/search">
+            <span class="lbcamden-header__search-item-link-text">
+              Search
+            </span>
+        <svg class="lbcamden-header__search-item-link-icon" width="27" height="27"
+             viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="10.0161" cy="10.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+          <line x1="15.8668" y1="16.3587" x2="25.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+        </svg>
+      </a>
+    </div>
+
+    <div class="govuk-width-container lbcamden-header__search-and-popular" hidden>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ LBCamdenSearch({
+            fullWidth: true
+          }) }}
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h3 class="govuk-heading-m">Popular on Camden.gov.uk</h3>
+          <ul class="govuk-list">
+            {% for item in params.searchItems %}
+              <li class="lbcamden-header__popular-item">
+                <a class="govuk-link lbcamden-header__popular-link"
+                   href="{{ item.href }}">{{ item.text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

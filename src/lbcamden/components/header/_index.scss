@@ -13,7 +13,9 @@
     max-width: 140px;
 
     @include govuk-media-query($from: tablet) {
+      display: block;
       width: 140px;
+      float: left;
     }
 
     &:hover {
@@ -41,4 +43,6 @@
       background: $govuk-focus-colour;
     }
   }
+
+  @import "./includes/navigation";
 }

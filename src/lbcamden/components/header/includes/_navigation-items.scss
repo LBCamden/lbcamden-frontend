@@ -1,0 +1,143 @@
+&__navigation-items,
+&__search-items {
+  display: block;
+  margin: 0 -15px;
+  padding: 0;
+  background: $menu-main-bg-colour;
+  list-style: none;
+  @include govuk-media-query($from: tablet) {
+    margin: 0 -30px;
+  }
+  @include govuk-media-query($from: desktop) {
+    margin: 0;
+    padding: 0;
+    float: left;
+    background: none;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+&__navigation-items {
+  @include govuk-media-query($from: desktop) {
+    display: inline-block;
+  }
+}
+
+&__navigation-item,
+&__search-item {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  @include govuk-media-query($from: tablet) {
+    margin: 0 30px;
+    padding: 10px 0;
+  }
+  @include govuk-media-query($from: desktop) {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    float: left;
+    font-size: 1rem;
+  }
+}
+
+&__navigation-item {
+  border-bottom: 1px solid #b1b4b6;
+  @include govuk-media-query($from: desktop) {
+    padding: 0;
+    border-bottom: 0;
+  }
+  //&:last-child {
+  //border-bottom: none;
+  //}
+}
+
+&__navigation-item-link,
+&__search-item-link {
+  @include govuk-responsive-padding(2, "left");
+}
+
+&__navigation-item-link,
+&__search-item-link,
+&__navigation-second-toggle-button {
+  display: inline-block;
+  margin: 15px 0;
+  @include govuk-media-query($until: desktop) {
+    width: 100%;
+    text-align: left;
+  }
+
+  &:hover {
+    text-decoration-skip-ink: none;
+    text-decoration-skip: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 30px;
+      bottom: 0;
+      left: 25px;
+      height: 3px;
+      background: lbcamden-colour("black");
+    }
+  }
+
+  &:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: $govuk-focus-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px lbcamden-colour("black");
+    text-decoration: none;
+  }
+
+  @include govuk-media-query($from: desktop) {
+    display: block;
+    position: relative;
+    height: 20px;
+    margin: 0;
+    padding: 15px;
+    float: left;
+    text-decoration: none;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: none;
+  }
+}
+
+&__navigation-second-items {
+  @include govuk-responsive-margin(2, "left");
+  font-size: inherit;
+  @include govuk-media-query($from: desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include govuk-responsive-padding(2, "top");
+
+    li {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__dropdown-list-item {
+    p {
+      font-size: inherit;
+    }
+  }
+}

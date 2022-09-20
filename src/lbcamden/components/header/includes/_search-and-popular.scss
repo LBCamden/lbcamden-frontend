@@ -1,0 +1,116 @@
+&__search-and-popular {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  align-items: stretch;
+
+  //.lbcamden-search {
+  //  @include govuk-responsive-margin(2, "top");
+  //  @include govuk-responsive-margin(4, "bottom");
+  //}
+}
+
+&__search-items {
+  margin: 0 -15px;
+
+  &[hidden] {
+    display: none;
+  }
+
+  .js-module-initialised & {
+    background: $menu-main-bg-colour;
+
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+&__search-item-link-icon {
+  //width: 36px;
+  //height: 36px;
+  pointer-events: none;
+  @include govuk-media-query($until: desktop) {
+    @include govuk-visually-hidden;
+  }
+}
+
+&__search-item-link {
+  &:link {
+    //@include govuk-media-query($from: desktop) {
+    //
+    //}
+
+    &:hover {
+      &:after {
+        background: $govuk-brand-colour;
+        @include govuk-media-query($from: desktop) {
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &:focus {
+      color: $govuk-focus-text-colour;
+      background: $govuk-focus-colour;
+    }
+  }
+}
+
+@include govuk-media-query($from: tablet) {
+  &__search-items {
+    margin: 0 -30px;
+  }
+}
+
+@include govuk-media-query($from: desktop) {
+  &__search-items {
+    margin: 0;
+
+    .js-module-initialised & {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+&__search-form {
+  padding: 15px 0 30px;
+}
+
+&__popular-item {
+  position: relative;
+  padding: 5px 0;
+}
+
+&__popular-link {
+  display: inline-block;
+  padding: 0;
+}
+
+&__popular-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: none;
+}
+
+&__search-item-link-text {
+  @include govuk-media-query($from: desktop) {
+    @include govuk-visually-hidden;
+  }
+}
+
+@include govuk-media-query($from: desktop) {
+  &__popular-link:after {
+    content: none;
+  }
+}
