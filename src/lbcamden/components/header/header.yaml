@@ -83,6 +83,10 @@ examples:
               text: 'Sub Item 4'
               description: 'Description of service'
 
+        - href: '#3'
+          text: 'Sign in / register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+
   - name: with no search
     description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
     data:

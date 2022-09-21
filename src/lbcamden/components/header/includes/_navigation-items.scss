@@ -3,10 +3,11 @@
   display: block;
   margin: 0 -15px;
   padding: 0;
-  background: $menu-main-bg-colour;
+  background: lbcamden-colour("govuk-bg-bright2-colour");
   list-style: none;
   @include govuk-media-query($from: tablet) {
     margin: 0 -30px;
+    background: $menu-main-bg-colour;
   }
   @include govuk-media-query($from: desktop) {
     margin: 0;
@@ -47,7 +48,6 @@
 }
 
 &__navigation-item {
-  border-bottom: 1px solid #b1b4b6;
   @include govuk-media-query($from: desktop) {
     padding: 0;
     border-bottom: 0;
@@ -60,6 +60,18 @@
 &__navigation-item-link,
 &__search-item-link {
   @include govuk-responsive-padding(2, "left");
+  @include govuk-link-style-no-underline;
+  @include govuk-typography-weight-bold;
+
+  @include govuk-media-query($from: tablet) {
+    &:visited {
+      color: lbcamden-colour("white");
+    }
+  }
+
+  &--sign-in {
+    @include govuk-typography-weight-regular;
+  }
 }
 
 &__navigation-item-link,
@@ -67,14 +79,14 @@
 &__navigation-second-toggle-button {
   display: inline-block;
   margin: 15px 0;
+  color: lbcamden-colour("white");
   @include govuk-media-query($until: desktop) {
     width: 100%;
     text-align: left;
   }
 
   &:hover {
-    text-decoration-skip-ink: none;
-    text-decoration-skip: none;
+    color: lbcamden-colour("light-grey-2");
 
     &:after {
       content: "";
@@ -84,7 +96,7 @@
       bottom: 0;
       left: 25px;
       height: 3px;
-      background: lbcamden-colour("black");
+      background: lbcamden-colour("light-grey-2");
     }
   }
 

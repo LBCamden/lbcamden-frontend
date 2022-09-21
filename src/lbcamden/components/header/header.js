@@ -7,10 +7,10 @@ function LBCamdenHeader ($module) {
   this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle')
   this.$searchMenu = this.$module.querySelector('#super-search-menu')
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
-  this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item')
-  this.$phaseBanner = document.querySelector('.lbs-row--phase-banner')
-  this.$header = document.querySelector('.lbs-header')
-  // this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button')
+  this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item')
+  this.$phaseBanner = document.querySelector('.govuk-phase-banner')
+  this.$header = document.querySelector('.lbcamden-header')
+  // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]')
   this.menuOpen = false
   this.searchOpen = false
@@ -85,10 +85,10 @@ LBCamdenHeader.prototype.teardownDesktopMenu = function () {
 
 LBCamdenHeader.prototype.menuItemClick = function (e) {
   const theTargetID = e.target.getAttribute('aria-controls')
-  e.target.classList.toggle('gem-c-layout-super-navigation-header__open-button')
-  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('gem-c-layout-super-navigation-header__open-button'))
+  e.target.classList.toggle('lbcamden-header__open-button')
+  this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('lbcamden-header__open-button'))
   const theTarget = document.getElementById(theTargetID)
-  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
+  this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true')
   if (this.mql.matches === true) {
     this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
@@ -110,13 +110,13 @@ LBCamdenHeader.prototype.setAttributes = function ($type) {
     this.$searchMenu.setAttribute('hidden', true)
     this.$searchToggle.setAttribute('aria-expanded', false)
     this.$searchToggle.setAttribute('aria-label', 'Show search menu')
-    this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
-    this.$module.querySelector('.gem-c-layout-super-navigation-header__search-and-popular').removeAttribute('hidden')
+    this.$module.querySelector('.lbcamden-header__search-item-link').setAttribute('hidden', true)
+    this.$module.querySelector('.lbcamden-header__search-and-popular').removeAttribute('hidden')
     this.$searchToggle.removeAttribute('hidden')
   }
   nodeListForEach(this.$menuButtons, function ($button) {
-    $button.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
-    $button.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
+    $button.querySelector('.lbcamden-header__navigation-item-link').setAttribute('hidden', true)
+    $button.querySelector('.lbcamden-header__navigation-second-toggle-button').removeAttribute('hidden')
     // Save bounded functions to use when removing event listeners during teardown
     $button.boundMenuItemClick = this.menuItemClick.bind(this)
     // Handle events
@@ -142,7 +142,7 @@ LBCamdenHeader.prototype.unsetAttributes = function ($type) {
     this.closeDesktopMenus()
   }
   if (this.$searchMenu != null) {
-    this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
+    this.$searchToggle.classList.remove('lbcamden-header__open-button')
   }
   nodeListForEach(this.$menuButtons, function ($button) {
     $button.querySelector('button').removeEventListener('click', $button.boundMenuItemClick, true)
@@ -178,10 +178,10 @@ LBCamdenHeader.prototype.handleSearchButtonClick = function () {
 
 LBCamdenHeader.prototype.openMenu = function ($button, $target) {
   this.menuOpen = true
-  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
+  $button.classList.add('lbcamden-header__open-button')
   $button.setAttribute('aria-expanded', !0)
   $button.setAttribute('aria-label', 'Hide navigation menu')
-  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
+  $button.classList.add('lbcamden-header__open-button')
   $target.removeAttribute('hidden')
   if (this.$searchMenu != null) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
@@ -192,24 +192,24 @@ LBCamdenHeader.prototype.closeMenu = function ($button, $target) {
   this.menuOpen = false
   this.$module.style.marginBottom = '0px'
   if (this.$navigationMenu != null) {
-    $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+    $button.classList.remove('lbcamden-header__open-button')
     $button.setAttribute('aria-expanded', !1)
     $button.setAttribute('aria-label', 'Show navigation menu')
-    $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+    $button.classList.remove('lbcamden-header__open-button')
     $target.setAttribute('hidden', !0)
   }
 }
 
 LBCamdenHeader.prototype.closeDesktopMenus = function () {
-  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu').forEach(x => x.setAttribute('hidden', true))
+  this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu').forEach(x => x.setAttribute('hidden', true))
 }
 
 LBCamdenHeader.prototype.openSearch = function ($button, $target) {
   this.searchOpen = true
   $button.setAttribute('aria-expanded', !0)
   $button.setAttribute('aria-label', 'Hide navigation menu')
-  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__open-button').forEach(x => x.classList.remove('gem-c-layout-super-navigation-header__open-button'))
-  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
+  this.$module.querySelectorAll('.lbcamden-header__open-button').forEach(x => x.classList.remove('lbcamden-header__open-button'))
+  $button.classList.add('lbcamden-header__open-button')
   $target.removeAttribute('hidden')
   document.getElementById('lbs-search__box').focus()
   if (this.mql.matches !== true) {
@@ -223,7 +223,7 @@ LBCamdenHeader.prototype.closeSearch = function ($button, $target) {
   this.searchOpen = false
   $button.setAttribute('aria-expanded', !1)
   $button.setAttribute('aria-label', 'Show navigation menu')
-  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+  $button.classList.remove('lbcamden-header__open-button')
   $target.setAttribute('hidden', !0)
 }
 

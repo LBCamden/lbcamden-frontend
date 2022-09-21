@@ -19,7 +19,7 @@
         <li
           class="lbcamden-header__navigation-item lbcamden-header__navigation-item--with-children">
           <div class="lbcamden-header__navigation-toggle-wrapper govuk-clearfix">
-            <a class="lbcamden-header__navigation-item-link"
+            <a class="lbcamden-header__navigation-item-link{% if menuItem.classes %} {{ menuItem.classes }}{% endif %}"
                href="/{{ menuItem.href }}">{{ menuItem.text }}</a>
             <button aria-controls="super-navigation-menu__section-{{ loop.index }}"
                     aria-expanded="false"

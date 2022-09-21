@@ -1,9 +1,13 @@
+$lbcamden-header-height: 50px;
+
 .lbcamden-header {
+  //background: lbcamden-colour("govuk-brand1-1-colour");
+  border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
   color: lbcamden-colour("white");
-  background: lbcamden-colour("govuk-brand1-1-colour");
+  background: lbcamden-colour("black");
   //@include govuk-responsive-margin($lbc-default-spacing, "bottom");
-  @include govuk-responsive-padding($lbc-default-spacing--small, "top");
-  @include govuk-responsive-padding($lbc-default-spacing--small, "bottom");
+  //@include govuk-responsive-padding($lbc-default-spacing--small, "top");
+  //@include govuk-responsive-padding($lbc-default-spacing--small, "bottom");
 
   &__logo {
     @include govuk-responsive-margin(2, "top");
@@ -11,6 +15,7 @@
     display: inline-block;
     width: 50%;
     max-width: 140px;
+    height: 30px;
 
     @include govuk-media-query($from: tablet) {
       display: block;

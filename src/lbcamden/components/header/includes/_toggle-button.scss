@@ -1,13 +1,11 @@
-$headerheight: 66px;
-
 &__navigation-top-toggle-button {
   box-sizing: border-box;
   position: absolute;
   z-index: 10;
   top: 0;
-  right: $headerheight;
+  right: $lbcamden-header-height;
   //height: 50px;
-  height: $headerheight;
+  height: $lbcamden-header-height;
   margin: 0;
   padding: 0;
   border: 0;
@@ -54,7 +52,7 @@ $headerheight: 66px;
     text-decoration: none;
   }
 
-  &&__open-button {
+  &__open-button {
     color: lbcamden-colour("white");
     background: $menu-main-bg-colour;
 
@@ -63,7 +61,7 @@ $headerheight: 66px;
     }
 
     &__navigation-top-toggle-button-inner,
-    &&__navigation-second-toggle-button {
+    &__navigation-second-toggle-button {
       &:before {
         transform: translateY(5%) rotate(225deg) scale(1);
       }
@@ -101,7 +99,7 @@ $headerheight: 66px;
   border: 0;
   background: none;
   @include govuk-media-query($from: desktop) {
-    min-height: $headerheight;
+    min-height: $lbcamden-header-height;
     color: $govuk-brand-colour;
   }
 
@@ -154,7 +152,7 @@ $headerheight: 66px;
     }
 
     &:focus-visible {
-      background:$govuk-focus-colour;
+      background: $govuk-focus-colour;
     }
 
     &:before {
@@ -167,8 +165,8 @@ $headerheight: 66px;
   position: absolute;
   top: 0;
   right: 0;
-  width: $headerheight;
-  height: $headerheight;
+  width: $lbcamden-header-height;
+  height: $lbcamden-header-height;
   padding: 15px;
   border: 0;
   color: $govuk-brand-colour;
@@ -195,14 +193,13 @@ $headerheight: 66px;
     background: $govuk-focus-colour;
   }
 
-  &&__open-button {
+  &__open-button {
     color: $menu-main-text-colour;
     background: $menu-main-bg-colour;
 
     &:focus {
       outline: 3px solid transparent;
       color: $govuk-focus-text-colour;
-
 
       svg {
         fill: $govuk-focus-text-colour;
@@ -233,9 +230,6 @@ $headerheight: 66px;
   left: 0;
   padding: 24px 0;
   color: $govuk-focus-text-colour;
-  font-size: 36px;
-  font-weight: normal;
-  line-height: 22px;
   pointer-events: none;
   text-align: center;
 }
