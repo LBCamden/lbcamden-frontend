@@ -2,12 +2,10 @@ $menu-main-bg-colour: lbcamden-colour("black");
 $menu-main-text-colour: lbcamden-colour("white");
 
 &__content {
-  @extend .govuk-grid-row;
+  //@extend .govuk-grid-row;
   flex: 1 0 100%;
   background: lbcamden-colour("govuk-bg-bright2-colour");
-  @include govuk-media-query($from: tablet) {
-    margin: 0 -30px;
-  }
+  //margin: 0 -15px;
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex: 0 0 70%;

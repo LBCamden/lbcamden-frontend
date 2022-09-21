@@ -1,5 +1,5 @@
 &__search-and-popular {
-  @extend .govuk-width-container;
+  //@extend .govuk-width-container;
   padding-top: 20px;
   padding-bottom: 20px;
   flex-direction: column;
@@ -9,11 +9,11 @@
   //  @include govuk-responsive-margin(4, "bottom");
   //}
 
-  &__container {
-    //@include govuk-media-query($from: desktop) {
-    @extend .govuk-grid-row;
-    //}
-  }
+  //&__container {
+  //  //@include govuk-media-query($from: desktop) {
+  //  @extend .govuk-grid-row;
+  //  //}
+  //}
 }
 
 &__search-items {
