@@ -13,13 +13,12 @@ $lbcamden-header-height: 50px;
     @include govuk-responsive-margin(2, "top");
     @include govuk-responsive-margin(2, "bottom");
     display: inline-block;
-    width: 50%;
+    width: 140px;
     max-width: 140px;
     height: 30px;
 
-    @include govuk-media-query($from: tablet) {
+    @include govuk-media-query($from: desktop) {
       display: block;
-      width: 140px;
       float: left;
     }
 

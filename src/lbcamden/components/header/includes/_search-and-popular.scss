@@ -11,8 +11,6 @@
 }
 
 &__search-items {
-  margin: 0 -15px;
-
   &[hidden] {
     display: none;
   }
@@ -65,12 +63,6 @@
     @include govuk-media-query($from: desktop) {
       display: block;
     }
-  }
-}
-
-@include govuk-media-query($from: tablet) {
-  &__search-items {
-    margin: 0 -30px;
   }
 }
 
