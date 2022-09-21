@@ -84,7 +84,7 @@ examples:
               description: 'Description of service'
 
         - href: '#3'
-          text: 'Sign in / register'
+          text: 'Sign in / Register'
           classes: 'lbcamden-header__navigation-item-link--sign-in'
 
   - name: with no search

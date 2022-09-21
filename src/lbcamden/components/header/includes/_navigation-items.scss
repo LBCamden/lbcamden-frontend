@@ -64,6 +64,9 @@
   @include govuk-typography-weight-bold;
 
   @include govuk-media-query($from: tablet) {
+    color: lbcamden-colour("white");
+
+    &:link,
     &:visited {
       color: lbcamden-colour("white");
     }
@@ -130,6 +133,23 @@
     bottom: 0;
     left: 0;
     background: none;
+  }
+}
+
+&__navigation-item-link {
+  @include govuk-media-query($from: desktop) {
+    &:not(:focus) {
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        width: 1px;
+        height: 60%;
+        background: lbcamden-colour("light-grey");
+      }
+    }
   }
 }
 

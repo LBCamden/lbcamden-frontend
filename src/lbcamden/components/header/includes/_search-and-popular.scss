@@ -46,7 +46,6 @@
 
     &:hover {
       &:after {
-        background: $govuk-brand-colour;
         @include govuk-media-query($from: desktop) {
           right: 0;
           left: 0;
@@ -57,6 +56,14 @@
     &:focus {
       color: $govuk-focus-text-colour;
       background: $govuk-focus-colour;
+    }
+  }
+
+  svg {
+    display: none;
+
+    @include govuk-media-query($from: desktop) {
+      display: block;
     }
   }
 }
