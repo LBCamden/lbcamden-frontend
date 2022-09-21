@@ -2,15 +2,18 @@
 &__search-items {
   @extend .govuk-width-container;
   display: block;
+  max-width: 100%;
   margin-bottom: 0;
   padding: 0;
-  list-style: none;
+  float: left;
+  background: none;
+
+  @include govuk-media-query($until: desktop) {
+    width: 100%;
+  }
+
   @include govuk-media-query($from: desktop) {
-    max-width: 100%;
     margin: 0;
-    padding: 0;
-    float: left;
-    background: none;
   }
 
   &[hidden] {
@@ -54,6 +57,7 @@
 &__search-item-link {
   @include govuk-link-style-no-underline;
   @include govuk-typography-weight-bold;
+  @include govuk-typography-responsive(16);
 
   @include govuk-media-query($from: desktop) {
     color: lbcamden-colour("white");
