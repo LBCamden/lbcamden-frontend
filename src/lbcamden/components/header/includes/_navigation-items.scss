@@ -6,6 +6,7 @@
   padding: 0;
   list-style: none;
   @include govuk-media-query($from: desktop) {
+    max-width: 100%;
     margin: 0;
     padding: 0;
     float: left;

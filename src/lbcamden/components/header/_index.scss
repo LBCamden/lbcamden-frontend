@@ -2,6 +2,7 @@ $lbcamden-header-height: 50px;
 
 .lbcamden-header {
   //background: lbcamden-colour("govuk-brand1-1-colour");
+  position: relative;
   border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
   color: lbcamden-colour("white");
   background: lbcamden-colour("black");

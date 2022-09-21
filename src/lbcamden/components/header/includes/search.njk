@@ -25,8 +25,8 @@
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M17.071 4.34285C17.4615 3.95232 17.4615 3.31916 17.071 2.92864C16.6805 2.53811 16.0473 2.53811 15.6568 2.92864L9.99989 8.58554L4.34314 2.92879C3.95261 2.53826 3.31945 2.53826 2.92893 2.92879C2.5384 3.31931 2.5384 3.95248 2.92893 4.343L8.58568 9.99976L2.92888 15.6566C2.53836 16.0471 2.53836 16.6802 2.92888 17.0708C3.3194 17.4613 3.95257 17.4613 4.34309 17.0708L9.99989 11.414L15.6568 17.0709C16.0474 17.4614 16.6805 17.4614 17.0711 17.0709C17.4616 16.6804 17.4616 16.0472 17.0711 15.6567L11.4141 9.99976L17.071 4.34285Z"
-            fill="currentColor"/>
+              d="M17.071 4.34285C17.4615 3.95232 17.4615 3.31916 17.071 2.92864C16.6805 2.53811 16.0473 2.53811 15.6568 2.92864L9.99989 8.58554L4.34314 2.92879C3.95261 2.53826 3.31945 2.53826 2.92893 2.92879C2.5384 3.31931 2.5384 3.95248 2.92893 4.343L8.58568 9.99976L2.92888 15.6566C2.53836 16.0471 2.53836 16.6802 2.92888 17.0708C3.3194 17.4613 3.95257 17.4613 4.34309 17.0708L9.99989 11.414L15.6568 17.0709C16.0474 17.4614 16.6805 17.4614 17.0711 17.0709C17.4616 16.6804 17.4616 16.0472 17.0711 15.6567L11.4141 9.99976L17.071 4.34285Z"
+              fill="currentColor"/>
       </svg>
 
         </span>
@@ -52,25 +52,27 @@
       </a>
     </div>
 
-    <div class="govuk-width-container lbcamden-header__search-and-popular" hidden>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          {{ LBCamdenSearch({
-            fullWidth: true
-          }) }}
+    <div class="lbcamden-header__search-and-popular" hidden>
+      <div class="lbcamden-header__search-and-popular__container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            {{ LBCamdenSearch({
+              fullWidth: true
+            }) }}
+          </div>
         </div>
-      </div>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <h3 class="govuk-heading-m">Popular on Camden.gov.uk</h3>
-          <ul class="govuk-list">
-            {% for item in params.searchItems %}
-              <li class="lbcamden-header__popular-item">
-                <a class="govuk-link lbcamden-header__popular-link"
-                   href="{{ item.href }}">{{ item.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m">Popular on Camden.gov.uk</h3>
+            <ul class="govuk-list">
+              {% for item in params.searchItems %}
+                <li class="lbcamden-header__popular-item">
+                  <a class="govuk-link lbcamden-header__popular-link"
+                     href="{{ item.href }}">{{ item.text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

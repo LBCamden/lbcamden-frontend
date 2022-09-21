@@ -169,19 +169,28 @@
   height: $lbcamden-header-height;
   padding: 15px;
   border: 0;
-  color: $govuk-brand-colour;
-  background: lbcamden-colour("white");
+  color: lbcamden-colour("white");
+  background: transparent;
   cursor: pointer;
 
   @include govuk-media-query($from: desktop) {
     position: relative;
-    //border-bottom: 1px solid #003078;
     border-left: none;
-    //background: rgba($lbs-green-2, .1);
   }
 
   &:hover {
-    background: $menu-main-bg-colour;
+    color: lbcamden-colour("light-grey-2");
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 10%;
+      bottom: 0;
+      left: 10%;
+      height: 3px;
+      background: lbcamden-colour("light-grey-2");
+    }
   }
 
   &:focus {
@@ -192,33 +201,39 @@
     color: $govuk-focus-text-colour;
     background: $govuk-focus-colour;
   }
+}
 
-  &__open-button {
-    color: $menu-main-text-colour;
-    background: $menu-main-bg-colour;
+&__open-button {
+  color: $menu-main-text-colour;
+  background: lbcamden-colour("govuk-bg-bright2-colour");
 
-    &:focus {
-      outline: 3px solid transparent;
-      color: $govuk-focus-text-colour;
-
-      svg {
-        fill: $govuk-focus-text-colour;
-      }
-    }
-
-    &:focus-visible {
-      color: $govuk-focus-text-colour;
-      background: $govuk-focus-colour;
-    }
-
-    &__navigation-top-toggle-close-icon {
-      display: block;
-      color: $govuk-brand-colour;
-    }
-
-    &__search-toggle-button-link-icon {
+  &:hover {
+    &:after {
       display: none;
     }
+  }
+
+  &:focus {
+    outline: 3px solid transparent;
+    color: $govuk-focus-text-colour;
+
+    svg {
+      fill: $govuk-focus-text-colour;
+    }
+  }
+
+  &:focus-visible {
+    color: $govuk-focus-text-colour;
+    background: $govuk-focus-colour;
+  }
+
+  &__navigation-top-toggle-close-icon {
+    display: block;
+    color: $govuk-brand-colour;
+  }
+
+  &__search-toggle-button-link-icon {
+    display: none;
   }
 }
 
@@ -233,6 +248,7 @@
   pointer-events: none;
   text-align: center;
 }
+
 //
 //&__navigation-item-link {
 //  @include govuk-media-query($from: desktop) {
