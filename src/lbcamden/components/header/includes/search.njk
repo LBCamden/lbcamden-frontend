@@ -54,8 +54,9 @@
 
     <div class="lbcamden-header__search-and-popular" hidden>
       <div class="lbcamden-header__search-and-popular__container">
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row govuk-!-margin-bottom-6">
           <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-m">Search</h2>
             {{ LBCamdenSearch({
               fullWidth: true
             }) }}
@@ -63,8 +64,8 @@
         </div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-            <h3 class="govuk-heading-m">Popular on Camden.gov.uk</h3>
-            <ul class="govuk-list">
+            <h2 class="govuk-heading-m">Popular on Camden.gov.uk</h2>
+            <ul class="lbcamden-list lbcamden-list--dash">
               {% for item in params.searchItems %}
                 <li class="lbcamden-header__popular-item">
                   <a class="govuk-link lbcamden-header__popular-link"

@@ -211,7 +211,7 @@ LBCamdenHeader.prototype.openSearch = function ($button, $target) {
   this.$module.querySelectorAll('.lbcamden-header__open-button').forEach(x => x.classList.remove('lbcamden-header__open-button'))
   $button.classList.add('lbcamden-header__open-button')
   $target.removeAttribute('hidden')
-  document.getElementById('lbs-search__box').focus()
+  // document.getElementById('lbs-search__box').focus()
   if (this.mql.matches !== true) {
     this.closeMenu(this.$navigationToggle, this.$navigationMenu)
   } else {
