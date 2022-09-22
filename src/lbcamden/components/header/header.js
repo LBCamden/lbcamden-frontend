@@ -158,6 +158,7 @@ LBCamdenHeader.prototype.handleMenuButtonClick = function () {
 }
 
 LBCamdenHeader.prototype.handleSearchButtonClick = function () {
+  console.log('click')
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
@@ -167,11 +168,8 @@ LBCamdenHeader.prototype.handleSearchButtonClick = function () {
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
-      this.$module.style.marginBottom = this.$searchMenu.offsetHeight + 'px'
-      // this.$searchMenu.style.top = this.$navigationMenu.offsetHeight + 'px'
-      if (this.$phaseBanner) {
-        this.$searchMenu.style.bottom = this.$phaseBanner.offsetHeight + 'px'
-      }
+      console.log(this.$searchMenu.offsetHeight)
+      this.$module.style.marginBottom = (this.$searchMenu.offsetHeight - 10) + 'px'
     }
   }
 }
