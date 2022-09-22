@@ -10,7 +10,9 @@
 🔧 Fixes:
 
 - Related Cards received some style corrections
-- Button focus states revisted - improving contrast 
+- Card box shadows removed
+- Button focus states revisited - improving contrast 
+- Promo link hover state added and borders updated
 
 ## 0.2.2
 🔧 Fixes:
