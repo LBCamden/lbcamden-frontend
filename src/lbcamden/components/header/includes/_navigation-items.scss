@@ -172,8 +172,9 @@
 }
 
 &__navigation-second-items {
-  @include govuk-responsive-margin(2, "left");
+  padding-left: 0;
   font-size: inherit;
+  list-style: none;
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex-direction: row;
@@ -189,5 +190,12 @@
     p {
       font-size: inherit;
     }
+  }
+}
+
+&__navigation-second-item {
+  &-description {
+    @include govuk-font(16);
+    margin: 0;
   }
 }
