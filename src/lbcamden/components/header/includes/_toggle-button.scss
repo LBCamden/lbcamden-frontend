@@ -98,6 +98,7 @@
 &__navigation-second-toggle-button {
   border: 0;
   background: none;
+  @include govuk-font(16, bold);
   @include govuk-media-query($from: desktop) {
     min-height: $lbcamden-header-height;
     color: lbcamden-colour("white");
@@ -113,6 +114,21 @@
     outline: 3px solid transparent;
     //background: none;
     box-shadow: none;
+
+    &:before {
+      @include lbcamden-chevron($govuk-focus-text-colour, 90);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      height: 3px;
+      background: $govuk-focus-text-colour;
+    }
   }
 
   &:focus-visible {
@@ -121,11 +137,24 @@
   }
 
   &:hover {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("light-grey-2");
     cursor: pointer;
 
     &:after {
-      background: transparent;
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      height: 3px;
+      background: lbcamden-colour("light-grey-2");
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
     }
 
     @include govuk-media-query($from: desktop) {
@@ -138,21 +167,31 @@
     }
   }
 
-  &__open-button {
-    color: lbcamden-colour("black");
-
-    @include govuk-media-query($from: desktop) {
-      background: $menu-main-bg-colour;
-    }
+  /* stylelint-disable */
+  &.lbcamden-header__open-button {
+    color: $govuk-link-colour;
+    background: lbcamden-colour("govuk-bg-bright2-colour");
 
     &:focus-visible {
       background: $govuk-focus-colour;
     }
 
     &:before {
-      transform: translateY(5%) rotate(225deg) scale(1);
+      @include lbcamden-chevron($govuk-link-colour, -90);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      height: 3px;
+      background: $govuk-link-colour;
     }
   }
+  /* stylelint-enable */
 }
 
 &__search-toggle-button {
@@ -209,7 +248,7 @@
 
   &:focus {
     outline: 3px solid transparent;
-    color: $govuk-focus-text-colour;
+    //color: $govuk-focus-text-colour;
 
     svg {
       fill: $govuk-focus-text-colour;

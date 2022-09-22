@@ -38,7 +38,8 @@ $menu-main-text-colour: lbcamden-colour("white");
     position: absolute;
     right: 0;
     left: 0;
-    background: $menu-main-bg-colour;
+    border-bottom: 10px solid $govuk-brand-colour;
+    background: lbcamden-colour("govuk-bg-bright2-colour");
   }
 }
 
