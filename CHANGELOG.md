@@ -13,6 +13,7 @@
 - Card box shadows removed
 - Button focus states revisited - improving contrast 
 - Promo link hover state added and borders updated
+- Search bar styles updated
 
 ## 0.2.2
 🔧 Fixes:
