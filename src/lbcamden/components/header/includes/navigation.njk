@@ -17,10 +17,11 @@
     <ul id="super-navigation-menu" class="lbcamden-header__navigation-items">
       {% for menuItem in params.navigation %}
         <li
-          class="lbcamden-header__navigation-item lbcamden-header__navigation-item--with-children">
+          class="lbcamden-header__navigation-item{% if menuItem.subItems %} lbcamden-header__navigation-item--with-children{% endif %}">
           <div class="lbcamden-header__navigation-toggle-wrapper govuk-clearfix">
             <a class="lbcamden-header__navigation-item-link{% if menuItem.classes %} {{ menuItem.classes }}{% endif %}"
                href="/{{ menuItem.href }}">{{ menuItem.text }}</a>
+            {% if menuItem.subItems %}
             <button aria-controls="super-navigation-menu__section-{{ loop.index }}"
                     aria-expanded="false"
                     aria-label="Show {{ menuItem.text }} menu"
@@ -32,7 +33,9 @@
                     hidden="hidden"
                     type="button">
               {{ menuItem.text }}</button>
+            {% endif %}
           </div>
+          {% if menuItem.subItems %}
           <div hidden class="lbcamden-header__navigation-dropdown-menu"
                id="super-navigation-menu__section-{{ loop.index }}">
             <div class="govuk-width-container lbcamden-header__width-container">
@@ -60,6 +63,7 @@
               </div>
             </div>
           </div>
+          {% endif %}
         </li>
       {% endfor %}
     </ul>

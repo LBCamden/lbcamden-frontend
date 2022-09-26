@@ -7,7 +7,7 @@ function LBCamdenHeader ($module) {
   this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle')
   this.$searchMenu = this.$module.querySelector('#super-search-menu')
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
-  this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item')
+  this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item--with-children')
   this.$phaseBanner = document.querySelector('.govuk-phase-banner')
   this.$header = document.querySelector('.lbcamden-header')
   // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
@@ -158,17 +158,14 @@ LBCamdenHeader.prototype.handleMenuButtonClick = function () {
 }
 
 LBCamdenHeader.prototype.handleSearchButtonClick = function () {
-  console.log('click')
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = '0'
-      // this.$searchMenu.style.top = '0'
     }
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
-      console.log(this.$searchMenu.offsetHeight)
       this.$module.style.marginBottom = (this.$searchMenu.offsetHeight - 10) + 'px'
     }
   }

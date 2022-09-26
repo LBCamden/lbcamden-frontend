@@ -155,6 +155,10 @@
 }
 
 &__navigation-item-link {
+  @include govuk-media-query($until: desktop) {
+    @include govuk-responsive-padding(2, "left");
+  }
+
   @include govuk-media-query($from: desktop) {
     &:not(:focus) {
       &:before {
