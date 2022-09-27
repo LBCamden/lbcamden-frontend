@@ -26,6 +26,10 @@
 
   &:focus {
     background: $menu-main-bg-colour;
+
+    &:before {
+      @include lbcamden-chevron(lbcamden-colour("black"), 90);
+    }
   }
 
   &:before {
@@ -54,6 +58,10 @@
 
     &__navigation-top-toggle-button-inner {
       color: $govuk-focus-text-colour;
+
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("black"), 90);
+      }
     }
   }
 
@@ -76,6 +84,12 @@
 
     &:before {
       @include lbcamden-chevron($govuk-link-colour, -90);
+    }
+
+    &:hover {
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("black"), -90);
+      }
     }
 
     &__navigation-top-toggle-button-inner,
@@ -127,6 +141,18 @@
   //  display: inline-block;
   //  @include lbcamden-chevron($govuk-link-colour, 90);
   //}
+
+  &-inner {
+    @include govuk-responsive-padding(1, "all");
+    @include govuk-responsive-padding(2, "left");
+
+    &:before {
+      content: "";
+      display: inline-block;
+      @include govuk-responsive-margin(1, "right");
+      @include lbcamden-chevron($govuk-link-colour, 90);
+    }
+  }
 
   @include govuk-media-query($from: desktop) {
     min-height: $lbcamden-header-height;
@@ -197,11 +223,11 @@
         height: 3px;
         background: lbcamden-colour("light-grey-2");
       }
+    }
 
-      .lbcamden-header__navigation-second-toggle-button-inner {
-        &:before {
-          @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
-        }
+    .lbcamden-header__navigation-second-toggle-button-inner {
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
       }
     }
 
@@ -266,7 +292,7 @@
     border-left: none;
   }
 
-  &:hover {
+  &:hover:not(:focus) {
     color: lbcamden-colour("light-grey-2");
 
     &:after {
