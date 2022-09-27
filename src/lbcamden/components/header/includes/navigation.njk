@@ -20,7 +20,11 @@
           class="lbcamden-header__navigation-item{% if menuItem.subItems %} lbcamden-header__navigation-item--with-children{% endif %}">
           <div class="lbcamden-header__navigation-toggle-wrapper govuk-clearfix">
             <a class="lbcamden-header__navigation-item-link{% if menuItem.classes %} {{ menuItem.classes }}{% endif %}"
-               href="/{{ menuItem.href }}">{{ menuItem.text }}</a>
+               href="/{{ menuItem.href }}">
+              <span class="lbcamden-header__navigation-item-link-inner">
+                {{ menuItem.text }}
+              </span>
+            </a>
             {% if menuItem.subItems %}
             <button aria-controls="super-navigation-menu__section-{{ loop.index }}"
                     aria-expanded="false"
@@ -32,7 +36,7 @@
                     data-toggle-mobile-group="second"
                     hidden="hidden"
                     type="button">
-              {{ menuItem.text }}</button>
+              <span class="lbcamden-header__navigation-second-toggle-button-inner">{{ menuItem.text }}</span></button>
             {% endif %}
           </div>
           {% if menuItem.subItems %}
