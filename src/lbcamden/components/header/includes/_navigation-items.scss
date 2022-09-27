@@ -108,7 +108,7 @@
   }
 
   @include govuk-media-query($from: desktop) {
-    &:hover {
+    &:hover:not(:focus) {
       color: lbcamden-colour("light-grey-2");
 
       &:after {

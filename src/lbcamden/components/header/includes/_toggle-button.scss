@@ -24,14 +24,6 @@
     cursor: pointer;
   }
 
-  &:focus {
-    background: $menu-main-bg-colour;
-
-    &:before {
-      @include lbcamden-chevron(lbcamden-colour("black"), 90);
-    }
-  }
-
   &:before {
     content: "";
     display: inline-block;
@@ -63,6 +55,10 @@
         @include lbcamden-chevron(lbcamden-colour("black"), 90);
       }
     }
+
+    &:before {
+      @include lbcamden-chevron(lbcamden-colour("black"), 90);
+    }
   }
 
   &:active {
@@ -80,6 +76,9 @@
 
     &:focus-visible {
       //background: $lbs-yellow;
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("black"), -90);
+      }
     }
 
     &:before {
@@ -88,7 +87,7 @@
 
     &:hover {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("black"), -90);
+        @include lbcamden-chevron($govuk-link-colour, -90);
       }
     }
 
@@ -188,19 +187,19 @@
         @include lbcamden-chevron($govuk-focus-text-colour, 90);
       }
     }
-
-    @include govuk-media-query($from: desktop) {
-      &:after {
-        content: "";
-        position: absolute;
-        top: auto;
-        right: 15px;
-        bottom: 0;
-        left: 15px;
-        height: 3px;
-        background: $govuk-focus-text-colour;
-      }
-    }
+    //
+    //@include govuk-media-query($from: desktop) {
+    //  &:after {
+    //    content: "";
+    //    position: absolute;
+    //    top: auto;
+    //    right: 15px;
+    //    bottom: 0;
+    //    left: 15px;
+    //    height: 3px;
+    //    background: $govuk-focus-text-colour;
+    //  }
+    //}
   }
 
   &:focus-visible {
@@ -209,9 +208,12 @@
   }
 
   @include govuk-media-query($from: desktop) {
+    &:hover {
+      cursor: pointer;
+    }
+
     &:hover:not(:focus) {
       color: lbcamden-colour("light-grey-2");
-      cursor: pointer;
 
       &:after {
         content: "";
@@ -256,19 +258,10 @@
       background: $govuk-focus-colour;
     }
 
-    &:before {
-      @include lbcamden-chevron($govuk-link-colour, -90);
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: auto;
-      right: 15px;
-      bottom: 0;
-      left: 15px;
-      height: 3px;
-      background: $govuk-link-colour;
+    .lbcamden-header__navigation-second-toggle-button-inner {
+      &:before {
+        @include lbcamden-chevron($govuk-link-colour, -90);
+      }
     }
   }
 
