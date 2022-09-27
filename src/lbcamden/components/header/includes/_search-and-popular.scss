@@ -1,19 +1,8 @@
 &__search-and-popular {
-  //@extend .govuk-width-container;
   padding-top: 20px;
   padding-bottom: 20px;
   flex-direction: column;
   align-items: stretch;
-  //.lbcamden-search {
-  //  @include govuk-responsive-margin(2, "top");
-  //  @include govuk-responsive-margin(4, "bottom");
-  //}
-
-  //&__container {
-  //  //@include govuk-media-query($from: desktop) {
-  //  @extend .govuk-grid-row;
-  //  //}
-  //}
 }
 
 &__search-items {
@@ -35,8 +24,6 @@
 }
 
 &__search-item-link-icon {
-  //width: 36px;
-  //height: 36px;
   pointer-events: none;
   @include govuk-media-query($until: desktop) {
     @include govuk-visually-hidden;
@@ -45,10 +32,6 @@
 
 &__search-item-link {
   &:link {
-    //@include govuk-media-query($from: desktop) {
-    //
-    //}
-
     &:hover {
       &:after {
         @include govuk-media-query($from: desktop) {

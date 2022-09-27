@@ -2,12 +2,6 @@
 &__search-items {
   @extend .govuk-grid-row;
   margin-bottom: 0;
-  //@extend .govuk-width-container;
-  //display: block;
-  //max-width: 100%;
-  //padding: 0;
-  //float: left;
-  //background: none;
 
   @include govuk-media-query($until: desktop) {
     margin: 0 -30px;

@@ -4,7 +4,6 @@
   z-index: 10;
   top: 0;
   right: $lbcamden-header-height;
-  //height: 50px;
   height: $lbcamden-header-height;
   margin: 0;
   padding: 0;
@@ -75,7 +74,6 @@
     background: lbcamden-colour("govuk-bg-bright2-colour");
 
     &:focus-visible {
-      //background: $lbs-yellow;
       &:before {
         @include lbcamden-chevron(lbcamden-colour("black"), -90);
       }
@@ -109,9 +107,6 @@
     display: inline-block;
     margin: 0;
     padding: 10px 20px;
-    //border-right: 1px solid lbcamden-colour("white");
-    //border-left: 1px solid lbcamden-colour("white");
-    //border-color: $lbs-green-2;
     color: $govuk-brand-colour;
 
     &:before {
@@ -134,12 +129,6 @@
   color: $govuk-link-colour;
   background: none;
   @include govuk-font(16, bold);
-  //
-  //&:before {
-  //  content: "";
-  //  display: inline-block;
-  //  @include lbcamden-chevron($govuk-link-colour, 90);
-  //}
 
   &-inner {
     @include govuk-responsive-padding(1, "all");
@@ -157,15 +146,10 @@
     min-height: $lbcamden-header-height;
     color: lbcamden-colour("white");
 
-    //&:before {
-    //  @include lbcamden-chevron(lbcamden-colour("white"), 90);
-    //}
-
     &-inner {
       @include govuk-responsive-padding(1, "all");
       @include govuk-responsive-padding(3, "left");
       @include govuk-responsive-padding(3, "right");
-      //border-right: 1px solid lbcamden-colour("light-grey-2");
       border-left: 1px solid lbcamden-colour("light-grey-2");
 
       &:before {
@@ -179,7 +163,6 @@
 
   &:focus {
     outline: 3px solid transparent;
-    //background: none;
     box-shadow: none;
 
     .lbcamden-header__navigation-second-toggle-button-inner {
@@ -187,19 +170,6 @@
         @include lbcamden-chevron($govuk-focus-text-colour, 90);
       }
     }
-    //
-    //@include govuk-media-query($from: desktop) {
-    //  &:after {
-    //    content: "";
-    //    position: absolute;
-    //    top: auto;
-    //    right: 15px;
-    //    bottom: 0;
-    //    left: 15px;
-    //    height: 3px;
-    //    background: $govuk-focus-text-colour;
-    //  }
-    //}
   }
 
   &:focus-visible {
@@ -232,12 +202,6 @@
         @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
       }
     }
-
-    //&:before {
-    //  content: "";
-    //  display: inline-block;
-    //  @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
-    //}
   }
 
   /* stylelint-disable */
@@ -313,7 +277,6 @@
 
   &:focus {
     outline: 3px solid transparent;
-    //color: $govuk-focus-text-colour;
 
     svg {
       fill: $govuk-focus-text-colour;

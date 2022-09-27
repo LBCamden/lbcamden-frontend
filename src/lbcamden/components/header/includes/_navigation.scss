@@ -2,17 +2,13 @@ $menu-main-bg-colour: lbcamden-colour("black");
 $menu-main-text-colour: lbcamden-colour("white");
 
 &__content {
-  //@extend .govuk-grid-row;
   flex: 1 0 100%;
   background: lbcamden-colour("govuk-bg-bright2-colour");
-  //margin: 0 -15px;
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex: 0 0 70%;
     justify-content: flex-end;
     background: none;
-    //display: block;
-    //float: right;
   }
 
   *[hidden] {
