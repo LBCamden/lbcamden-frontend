@@ -238,15 +238,6 @@
     //  display: inline-block;
     //  @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
     //}
-
-    @include govuk-media-query($from: desktop) {
-      //background: $menu-main-bg-colour;
-      background: rgba($menu-main-bg-colour, .05);
-
-      //&:after {
-      //  background: lbcamden-colour("white");
-      //}
-    }
   }
 
   /* stylelint-disable */
