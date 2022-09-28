@@ -37,6 +37,41 @@
   {% block styles %}{% endblock %}
 {% endblock %}
 
+{% block header %}
+  {{ LBCamdenHeader({
+    "phaseBanner": true,
+    "searchItems": [
+      {
+        "href": "#1",
+        "text": "Popular search 1"
+      },
+      {
+        "href": "#2",
+        "text": "Popular search 2"
+      },
+      {
+        "href": "#3",
+        "text": "Popular search 3"
+      }
+    ],
+    "navigation": [
+      {
+        "href": "#1",
+        "text": "Navigation item 1"
+      },
+      {
+        "href": "#1",
+        "text": "Navigation item 2"
+      },
+      {
+        "href": "#1",
+        "text": "Sign in / Register",
+        "classes": "lbcamden-header__navigation-item-link--sign-in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block bodyStart %}
   {% block banner %}
     {% include "../partials/banner.njk" %}
