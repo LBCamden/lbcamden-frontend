@@ -7,6 +7,10 @@
 ### Fixes
 
 ## 0.2.3
+- 🆕 New features:
+
+- Header component that allows for navigation and search
+
 🔧 Fixes:
 
 - Related Cards received some style corrections
