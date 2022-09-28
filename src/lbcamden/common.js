@@ -29,5 +29,5 @@ export function generateUniqueID () {
 
 export const settings = {
   minWidth: '40.0625em',
-  desktop: '48.0625em'
+  desktop: '48em'
 }

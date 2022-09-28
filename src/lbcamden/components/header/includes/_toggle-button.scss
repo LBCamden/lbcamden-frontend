@@ -9,10 +9,10 @@
   padding: 0;
   @include govuk-responsive-padding(3, "left");
   @include govuk-responsive-padding(3, "right");
-  @include govuk-font(16, bold);
   border: 0;
   color: lbcamden-colour("white");
   background: transparent;
+  font-size: 16px;
   cursor: pointer;
 
   &--no-search {
@@ -128,7 +128,9 @@
   border: 0;
   color: $govuk-link-colour;
   background: none;
-  @include govuk-font(16, bold);
+  font-size: 16px;
+  font-weight: $govuk-font-weight-bold;
+  //@include govuk-font(16, bold);
 
   &-inner {
     @include govuk-responsive-padding(1, "all");
