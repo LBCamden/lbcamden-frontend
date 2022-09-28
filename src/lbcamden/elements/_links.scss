@@ -108,7 +108,7 @@
       text-decoration: underline;
       @include govuk-link-hover-decoration;
 
-      &:not(.lbcamden-link--promo-alt) {
+      &:not(.lbcamden-link--promo-alt):not(:focus) {
         background: darken($govuk-brand-colour, 5%);
       }
     }
