@@ -199,7 +199,13 @@
 
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+        @include lbcamden-chevron(lbcamden-colour("white"), 90);
+      }
+
+      &:hover {
+        &:before {
+          @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+        }
       }
     }
   }
