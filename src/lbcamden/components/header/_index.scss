@@ -21,6 +21,7 @@ $lbcamden-header-height: 50px;
 
     @include govuk-media-query($from: desktop) {
       display: block;
+      padding-bottom: 5px;
       float: left;
     }
 
