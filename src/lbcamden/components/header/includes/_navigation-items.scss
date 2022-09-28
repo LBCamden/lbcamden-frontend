@@ -81,7 +81,7 @@
 &__search-item-link {
   @include govuk-link-style-no-underline;
   @include govuk-typography-weight-bold;
-  @include govuk-typography-responsive(16);
+  //@include govuk-font(16);
 
   @include govuk-media-query($from: desktop) {
     color: lbcamden-colour("white");
