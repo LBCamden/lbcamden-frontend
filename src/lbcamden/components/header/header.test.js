@@ -7,122 +7,149 @@ const PORT = configPaths.ports.test
 
 const baseUrl = 'http://localhost:' + PORT
 
-describe('Header navigation', () => {
-  beforeAll(async () => {
-    await page.emulate(iPhone)
-  })
+describe('/components/header', () => {
+  describe('/components/header/preview', () => {
+    describe('when JavaScript is available', () => {
+      afterEach(async () => {
+        await page.evaluate(() => window.sessionStorage.clear())
+      })
 
-  // describe('when JavaScript is unavailable or fails', () => {
-  //   beforeAll(async () => {
-  //     await page.setJavaScriptEnabled(false)
-  //     await page.goto(`${baseUrl}/components/header/with-navigation/preview`, {
-  //       waitUntil: 'load'
-  //     })
-  //   })
-  //
-  //   afterAll(async () => {
-  //     await page.setJavaScriptEnabled(true)
-  //   })
-  //
-  //   // it('shows the navigation', async () => {
-  //   //   await expect(page).toMatchElement('.govuk-header__navigation', {
-  //   //     visible: true,
-  //   //     timeout: 1000
-  //   //   })
-  //   // })
-  // })
+      describe('on desktop devices', () => {
+        describe('the navigation function', () => {
+          it('the menu toggle button should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+        })
+      })
+      describe('on all devices', () => {
+        describe('the search function', () => {
+          it('clicking search button should give self \'open\' class', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('lbcamden-header__open-button'))
+            await page.click('button[aria-controls="super-search-menu"]')
+            const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('lbcamden-header__open-button'))
+            expect(initialState).toBe(false)
+            expect(newState).toBe(true)
+          })
+          //
+          // it('clicking search button should move focus to search input', async () => {
+          //   await page.emulate(iPhone)
+          //   await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+          //
+          //   const initialState = await page.evaluateHandle(() => document.activeElement)
+          //   await page.click('button[aria-controls="super-search-menu"]')
+          //   const newState = await page.evaluateHandle(() => document.activeElement)
+          //   expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
+          //   expect(newState._remoteObject.className).toBe('HTMLInputElement')
+          // })
 
-  describe('when JavaScript is available', () => {
-    describe('when no navigation is present', () => {
-      it('exits gracefully with no errors', async () => {
-        // Errors logged to the console will cause this test to fail
-        await page.goto(`${baseUrl}/components/header/preview`, {
-          waitUntil: 'load'
+          it('the search container should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+        })
+        //
+        // describe('the navigation function', () => {
+        //
+        // })
+      })
+
+      describe('on mobile devices', () => {
+        // describe('the search function', () => {
+        //
+        // })
+        describe('the mobile nav function', () => {
+          it('the menu container should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+
+          it('the menu toggle button should not be hidden', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
+            expect(target).toEqual(false)
+          })
+
+          it('the menu toggle button should have aria-expanded value of false', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').getAttribute('aria-expanded'))
+            expect(target).toBe('false')
+          })
+
+          it('the menu toggle button should expose navigation options when clicked', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            await page.click('button[aria-controls="super-navigation-menu"]')
+            const newState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            expect(initialState).toBe('true')
+            expect(newState).not.toBe('true')
+          })
         })
       })
     })
+    describe('when JavaScript is not available', () => {
+      beforeAll(async () => {
+        await page.setJavaScriptEnabled(false)
+      })
 
-    // describe('on page load', () => {
-    //   beforeAll(async () => {
-    //     await page.goto(`${baseUrl}/components/header/with-navigation/preview`, {
-    //       waitUntil: 'load'
-    //     })
-    //   })
-    //
-    //   it('exposes the collapsed state of the menu button using aria-expanded', async () => {
-    //     const ariaExpanded = await page.$eval('.govuk-header__menu-button',
-    //       el => el.getAttribute('aria-expanded')
-    //     )
-    //
-    //     expect(ariaExpanded).toBe('false')
-    //   })
-    // })
+      afterEach(async () => {
+        await page.evaluate(() => window.sessionStorage.clear())
+      })
 
-    // describe('when menu button is pressed', () => {
-    //   beforeAll(async () => {
-    //     await page.goto(`${baseUrl}/components/header/with-navigation/preview`, {
-    //       waitUntil: 'load'
-    //     })
-    //     await page.click('.govuk-js-header-toggle')
-    //   })
-    //
-    //   it('adds the --open modifier class to the menu, making it visible', async () => {
-    //     const hasOpenClass = await page.$eval('.govuk-header__navigation-list',
-    //       el => el.classList.contains('govuk-header__navigation-list--open')
-    //     )
-    //
-    //     expect(hasOpenClass).toBeTruthy()
-    //   })
-    //
-    //   it('adds the --open modifier class to the menu button', async () => {
-    //     const hasOpenClass = await page.$eval('.govuk-header__menu-button',
-    //       el => el.classList.contains('govuk-header__menu-button--open')
-    //     )
-    //
-    //     expect(hasOpenClass).toBeTruthy()
-    //   })
-    //
-    //   it('exposes the expanded state of the menu button using aria-expanded', async () => {
-    //     const ariaExpanded = await page.$eval('.govuk-header__menu-button',
-    //       el => el.getAttribute('aria-expanded')
-    //     )
-    //
-    //     expect(ariaExpanded).toBe('true')
-    //   })
-    // })
+      describe('the menu items', () => {
+        it('clicking menu link should change the window location (mobile)', async () => {
+          await page.emulate(iPhone)
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
 
-    // describe('when menu button is pressed twice', () => {
-    //   beforeAll(async () => {
-    //     await page.goto(`${baseUrl}/components/header/with-navigation/preview`, {
-    //       waitUntil: 'load'
-    //     })
-    //     await page.click('.govuk-js-header-toggle')
-    //     await page.click('.govuk-js-header-toggle')
-    //   })
-    //
-    //   it('removes the --open modifier class from the menu, hiding it', async () => {
-    //     const hasOpenClass = await page.$eval('.govuk-header__navigation-list',
-    //       el => el.classList.contains('govuk-header__navigation-list--open')
-    //     )
-    //
-    //     expect(hasOpenClass).toBeFalsy()
-    //   })
-    //
-    //   it('removes the --open modifier class from the menu button', async () => {
-    //     const hasOpenClass = await page.$eval('.govuk-header__menu-button',
-    //       el => el.classList.contains('govuk-header__menu-button--open')
-    //     )
-    //
-    //     expect(hasOpenClass).toBeFalsy()
-    //   })
-    //
-    //   it('exposes the collapsed state of the menu button using aria-expanded', async () => {
-    //     const ariaExpanded = await page.$eval('.govuk-header__menu-button',
-    //       el => el.getAttribute('aria-expanded')
-    //     )
-    //
-    //     expect(ariaExpanded).toBe('false')
-    //   })
-    // })
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.lbcamden-header__navigation-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('clicking menu link should change the window location (desktop)', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.lbcamden-header__navigation-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+      })
+
+      describe('the search function', () => {
+        it('clicking search link should change the window location (mobile)', async () => {
+          await page.emulate(iPhone)
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.lbcamden-header__search-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('clicking search link should change the window location (desktop)', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.lbcamden-header__search-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('the search container should not be hidden', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+          const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+          expect(target).toEqual(false)
+        })
+      })
+    })
   })
 })

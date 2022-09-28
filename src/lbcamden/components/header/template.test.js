@@ -43,7 +43,7 @@ describe('header', () => {
     })
 
     it('adds phase banner modifier', () => {
-      const $ = render('header', examples.phasebanner)
+      const $ = render('header', examples['with phasebanner'])
 
       const $component = $('.lbcamden-header')
       expect($component.hasClass('lbcamden-header--with-phase-banner')).toBeTruthy()
