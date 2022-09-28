@@ -213,6 +213,10 @@
       background: $govuk-focus-colour;
     }
 
+    &:hover {
+      color: $govuk-link-colour;
+    }
+
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
         @include lbcamden-chevron($govuk-link-colour, -90);
