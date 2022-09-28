@@ -142,6 +142,16 @@
     }
   }
 
+  &:hover {
+    cursor: pointer;
+
+    .lbcamden-header__navigation-second-toggle-button-inner {
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+      }
+    }
+  }
+
   @include govuk-media-query($from: desktop) {
     min-height: $lbcamden-header-height;
     color: lbcamden-colour("white");
