@@ -24,13 +24,27 @@ LBCamdenHeader.prototype.init = function () {
   this.$module.classList.add('js-module-initialised')
   if (typeof window.matchMedia === 'function') {
     this.setupResponsiveChecks()
+    window.addEventListener('resize', this.observeMenuWidth.bind(this))
   }
 }
 
 LBCamdenHeader.prototype.setupResponsiveChecks = function () {
   this.mql = window.matchMedia('(min-width: ' + settings.desktop + ')')
   this.mql.addListener(this.checkMode.bind(this))
+  this.mql.addListener(this.observeMenuWidth.bind(this))
   this.checkMode()
+}
+
+LBCamdenHeader.prototype.observeMenuWidth = function () {
+  if (this.mql.matches && !this.menuWidthCheck()) {
+    console.log('Do something')
+    this.teardownMobileMenu()
+    this.setupDesktopMenu()
+  } else {
+    console.log('Do nothing')
+    this.teardownDesktopMenu()
+    this.setupMobileMenu()
+  }
 }
 
 LBCamdenHeader.prototype.checkMode = function () {
@@ -174,6 +188,23 @@ LBCamdenHeader.prototype.handleSearchButtonClick = function () {
       this.$module.style.marginBottom = (this.$searchMenu.offsetHeight - 10) + 'px'
     }
   }
+}
+
+LBCamdenHeader.prototype.menuWidthCheck = function ($button, $target) {
+  console.log('Checking menu width')
+  const menuWidth = this.$navigationMenu.clientWidth
+  let menuItemsWidth = 0
+  console.log(this.$navigationMenu.clientWidth)
+  // this.$navigationMenu.children.forEach(item => {
+  //   console.log(item)
+  // })
+  for (const item of this.$navigationMenu.children) {
+    console.log(item.offsetWidth)
+    menuItemsWidth = menuItemsWidth + item.offsetWidth
+  }
+  console.log('MW: ' + menuWidth)
+  console.log('MItems: ' + menuItemsWidth)
+  return menuWidth < menuItemsWidth
 }
 
 LBCamdenHeader.prototype.openMenu = function ($button, $target) {
