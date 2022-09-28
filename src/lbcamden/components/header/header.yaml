@@ -186,4 +186,11 @@ examples:
   - name: classes
     hidden: true
     data:
-      href: '/'
+      classes: 'app-header--custom-modifier'
+
+  - name: attributes
+    hidden: true
+    data:
+      attributes:
+        data-test-attribute: 'value'
+        data-test-attribute-2: 'value-2'
