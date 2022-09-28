@@ -98,13 +98,8 @@ LBCamdenHeader.prototype.teardownDesktopMenu = function () {
 }
 
 LBCamdenHeader.prototype.menuItemClick = function (e) {
-  let theTargetID = e.target.getAttribute('aria-controls')
-  if (theTargetID == null) {
-    theTargetID = e.target.parentNode.getAttribute('aria-controls')
-    e.target.parentNode.classList.toggle('lbcamden-header__open-button')
-  } else {
-    e.target.classList.toggle('lbcamden-header__open-button')
-  }
+  const theTargetID = e.target.getAttribute('aria-controls')
+  e.target.classList.toggle('lbcamden-header__open-button')
   this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('lbcamden-header__open-button'))
   const theTarget = document.getElementById(theTargetID)
   this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
