@@ -33,7 +33,13 @@ function generateUniqueID () {
   })
 }
 
+const settings = {
+  minWidth: '40.0625em',
+  desktop: '48em'
+};
+
 exports.nodeListForEach = nodeListForEach;
 exports.generateUniqueID = generateUniqueID;
+exports.settings = settings;
 
 })));

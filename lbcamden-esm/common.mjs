@@ -26,3 +26,8 @@ export function generateUniqueID () {
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
   })
 }
+
+export const settings = {
+  minWidth: '40.0625em',
+  desktop: '48em'
+}
