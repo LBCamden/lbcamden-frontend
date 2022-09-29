@@ -1,19 +1,24 @@
+$lbcamden-header-height: 50px;
+
 .lbcamden-header {
+  position: relative;
+  min-height: $lbcamden-header-height;
+  border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
   color: lbcamden-colour("white");
-  background: lbcamden-colour("govuk-brand1-1-colour");
-  //@include govuk-responsive-margin($lbc-default-spacing, "bottom");
-  @include govuk-responsive-padding($lbc-default-spacing--small, "top");
-  @include govuk-responsive-padding($lbc-default-spacing--small, "bottom");
+  background: lbcamden-colour("black");
 
   &__logo {
     @include govuk-responsive-margin(2, "top");
     @include govuk-responsive-margin(2, "bottom");
     display: inline-block;
-    width: 50%;
+    width: 140px;
     max-width: 140px;
+    height: 30px;
 
-    @include govuk-media-query($from: tablet) {
-      width: 140px;
+    @include govuk-media-query($from: desktop) {
+      display: block;
+      padding-bottom: 5px;
+      float: left;
     }
 
     &:hover {
@@ -41,4 +46,6 @@
       background: $govuk-focus-colour;
     }
   }
+
+  @import "./includes/navigation";
 }

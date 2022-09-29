@@ -3,6 +3,7 @@ $lbcamden-button-hover-colour: $govuk-link-hover-colour;
 $lbcamden-button-shadow-colour: govuk-shade($lbcamden-button-colour, 60%);
 $lbcamden-button-text-colour: lbcamden-colour("white");
 $lbcamden-button-border-radius: 3px;
+$lbcamden-focus-box-shadow: 0 0 0 2px lbcamden-colour("black");
 
 // Secondary button variables
 $lbcamden-secondary-button-colour: lbcamden-colour("white");
@@ -31,7 +32,6 @@ $button-shadow-size: $govuk-border-width-form-element;
   margin-right: 0;
   margin-left: 0;
   @include govuk-responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
-  //padding: (govuk-spacing(3) - $govuk-border-width-form-element) govuk-spacing(3) (govuk-spacing(3) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
   padding: govuk-spacing(2) govuk-spacing(3); // s1
   @include govuk-media-query($from: desktop) {
     padding: govuk-spacing(3);
@@ -58,9 +58,13 @@ $button-shadow-size: $govuk-border-width-form-element;
 
   // Ensure that any global link styles are overridden
   &:link,
+  &.\:link,
   &:visited,
+  &.\:visited,
   &:active,
-  &:hover {
+  &.\:active,
+  &:hover,
+  &.\:hover {
     color: $lbcamden-button-text-colour;
     text-decoration: none;
   }
@@ -71,13 +75,15 @@ $button-shadow-size: $govuk-border-width-form-element;
     border: 0;
   }
 
-  &:hover {
+  &:hover,
+  &.\:hover {
     background-color: $lbcamden-button-hover-colour;
     text-decoration: underline;
     @include govuk-link-hover-decoration;
   }
 
-  &:active {
+  &:active,
+  &.\:active {
     // Bump the button down so it looks like its being pressed in
     top: $button-shadow-size;
 
@@ -86,8 +92,14 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
   }
 
-  &:focus {
+  &:focus,
+  &.\:focus {
     border-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    background: $govuk-focus-colour;
+    box-shadow: 0 0 0 2px lbcamden-colour("black");
+    text-decoration: underline;
+    @include govuk-link-hover-decoration;
     // When colours are overridden, for example when users have a dark mode,
     // backgrounds and box-shadows disappear, so we need to ensure there's a
     // transparent outline which will be set to a visible colour.
@@ -100,7 +112,19 @@ $button-shadow-size: $govuk-border-width-form-element;
       color: $govuk-focus-text-colour;
       background-color: $govuk-focus-colour;
     }
-    box-shadow: none;
+
+    //&:active,
+    //&.\:active {
+    //  &:not(:hover):not(.\:hover) {
+    //    color: $govuk-focus-text-colour;
+    //  }
+    //}
+
+    &:hover,
+    &.\:hover {
+      color: lbcamden-colour("white");
+      background-color: $lbcamden-button-hover-colour;
+    }
   }
 
   // alphagov/govuk_template includes a specific a:link:focus selector
@@ -112,13 +136,6 @@ $button-shadow-size: $govuk-border-width-form-element;
     &:link:focus {
       color: $lbcamden-button-text-colour;
     }
-  }
-
-  &:focus:not(:active):not(:hover) {
-    border-color: $govuk-focus-colour;
-    color: $govuk-focus-text-colour;
-    background-color: $govuk-focus-colour;
-    box-shadow: none;
   }
 
   // The following adjustments do not work for <input type="button"> as
@@ -159,122 +176,161 @@ $button-shadow-size: $govuk-border-width-form-element;
     @include govuk-responsive-padding(4, "bottom");
     @include govuk-typography-weight-bold;
   }
-}
 
-.lbcamden-button--disabled,
-.lbcamden-button[disabled="disabled"],
-.lbcamden-button[disabled] {
-  opacity: (.5);
+  &--disabled,
+  &[disabled="disabled"],
+  &[disabled] {
+    opacity: (.5);
 
-  &:hover {
-    background-color: $lbcamden-button-colour;
-    cursor: default;
-  }
+    &:hover,
+    &.\:hover {
+      background-color: $lbcamden-button-colour;
+      text-decoration: none;
+      cursor: default;
+    }
 
-  &:active {
-    top: 0;
-    box-shadow: 0 $button-shadow-size 0 $lbcamden-button-shadow-colour; // s0
-    @include govuk-if-ie8 {
-      border-bottom: $button-shadow-size solid $lbcamden-button-shadow-colour; // s0
+    &:active,
+    &.\:active {
+      top: 0;
+      box-shadow: none;
     }
   }
-}
 
-.lbcamden-button--secondary {
-  border: 3px solid $lbcamden-button-colour;
-  background-color: lbcamden-colour("white");
-  //box-shadow: 0 $button-shadow-size 0 $lbcamden-secondary-button-shadow-colour;
+  &--secondary {
+    border: 3px solid $lbcamden-button-colour;
+    color: $lbcamden-button-colour;
+    background-color: lbcamden-colour("white");
+    //box-shadow: 0 $button-shadow-size 0 $lbcamden-secondary-button-shadow-colour;
 
-  &,
-  &:link,
-  &:visited,
-  &:active,
-  &:hover {
-    color: $lbcamden-secondary-button-text-colour;
-  }
-
-  // alphagov/govuk_template includes a specific a:link:focus selector
-  // designed to make unvisited links a slightly darker blue when focussed, so
-  // we need to override the text colour for that combination of selectors so
-  // so that unvisited links styled as buttons do not end up with dark blue
-  // text when focussed.
-  @include govuk-compatibility(govuk_template) {
-    &:link:focus {
+    &:link,
+    &.\:link,
+    &:visited,
+    &.\:visited,
+    &:active,
+    &.\:active,
+    &:hover,
+    &.\:hover {
       color: $lbcamden-secondary-button-text-colour;
     }
-  }
 
-  &:hover {
-    border-color: $lbcamden-secondary-button-hover-colour;
-    color: $lbcamden-secondary-button-hover-colour;
-    background: $lbcamden-secondary-button-colour;
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker blue when focussed, so
+    // we need to override the text colour for that combination of selectors so
+    // so that unvisited links styled as buttons do not end up with dark blue
+    // text when focussed.
+    @include govuk-compatibility(govuk_template) {
+      &:link:focus {
+        color: $lbcamden-secondary-button-text-colour;
+      }
+    }
 
-    &[disabled] {
-      background-color: $lbcamden-secondary-button-colour;
+    &:hover,
+    &.\:hover {
+      border-color: $lbcamden-secondary-button-hover-colour;
+      color: $lbcamden-secondary-button-hover-colour;
+      background: $lbcamden-secondary-button-colour;
+
+      &[disabled] {
+        background-color: $lbcamden-secondary-button-colour;
+      }
+    }
+
+    &:focus,
+    &.\:focus {
+      color: $govuk-focus-text-colour;
+
+      &:hover,
+      &.\:hover {
+        border-color: $govuk-focus-colour;
+        color: $lbcamden-secondary-button-hover-colour;
+        background: $lbcamden-secondary-button-colour;
+        box-shadow: $lbcamden-focus-box-shadow;
+      }
     }
   }
-}
 
-.lbcamden-button--warning {
-  background-color: $govuk-warning-button-colour;
-  //box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
-
-  &,
-  &:link,
-  &:visited,
-  &:active,
-  &:hover {
-    color: $govuk-warning-button-text-colour;
-  }
-
-  // alphagov/govuk_template includes a specific a:link:focus selector
-  // designed to make unvisited links a slightly darker blue when focussed, so
-  // we need to override the text colour for that combination of selectors so
-  // so that unvisited links styled as buttons do not end up with dark blue
-  // text when focussed.
-  @include govuk-compatibility(govuk_template) {
-    &:link:focus {
-      color: $govuk-warning-button-text-colour;
-    }
-  }
-
-  &:hover {
+  &--warning {
     background-color: $govuk-warning-button-colour;
 
-    &[disabled] {
+    &:link,
+    &.\:link,
+    &:visited,
+    &.\:visited,
+    &:active,
+    &.\:active,
+    &:hover,
+    &.\:hover {
+      color: $govuk-warning-button-text-colour;
+    }
+
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker blue when focussed, so
+    // we need to override the text colour for that combination of selectors so
+    // so that unvisited links styled as buttons do not end up with dark blue
+    // text when focussed.
+    @include govuk-compatibility(govuk_template) {
+      &:link:focus {
+        color: $govuk-warning-button-text-colour;
+      }
+    }
+
+    &:hover,
+    &.\:hover {
       background-color: $govuk-warning-button-colour;
+
+      &[disabled] {
+        background-color: $govuk-warning-button-colour;
+      }
+    }
+
+    &:focus,
+    &.\:focus {
+      color: $govuk-focus-text-colour;
+
+      &:hover,
+      &.\:hover {
+        border-color: $govuk-focus-colour;
+        color: lbcamden-colour("white");
+        background-color: $govuk-warning-button-colour;
+        box-shadow: $lbcamden-focus-box-shadow;
+      }
     }
   }
-}
 
-.lbcamden-button--start {
-  @include govuk-typography-weight-bold;
-  @include govuk-typography-responsive($size: 19, $override-line-height: 1);
-  @include govuk-responsive-padding(4, "top");
-  @include govuk-responsive-padding(4, "bottom");
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  min-height: auto;
+  &--start {
+    @include govuk-typography-weight-bold;
+    @include govuk-typography-responsive($size: 19, $override-line-height: 1);
+    @include govuk-responsive-padding(4, "top");
+    @include govuk-responsive-padding(4, "bottom");
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-height: auto;
 
-  -ms-flex-pack: center;
+    -ms-flex-pack: center;
 
-      justify-content: center;
-}
-
-.lbcamden-button__start-icon {
-  margin-left: govuk-spacing(1);
-
-  @include govuk-media-query($from: desktop) {
-    margin-left: govuk-spacing(2);
+        justify-content: center;
   }
-  vertical-align: middle;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-item-align: center;
-      align-self: center;
-  // Work around SVGs not inheriting color from parent in forced color mode
-  // (https://github.com/w3c/csswg-drafts/issues/6310)
-  forced-color-adjust: auto;
+
+  &__start-icon {
+    margin-left: govuk-spacing(1);
+
+    @include govuk-media-query($from: desktop) {
+      margin-left: govuk-spacing(2);
+    }
+    vertical-align: middle;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+    // Work around SVGs not inheriting color from parent in forced color mode
+    // (https://github.com/w3c/csswg-drafts/issues/6310)
+    forced-color-adjust: auto;
+  }
+
+  .govuk-button-group &,
+  .lbcamden-button-group & {
+    @include govuk-responsive-margin(3, "right");
+  }
 }
 
 @if $govuk-use-legacy-font {

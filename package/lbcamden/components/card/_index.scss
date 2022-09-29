@@ -4,7 +4,7 @@
   @include govuk-responsive-padding(4, "top");
 
   * {
-    &:last-child {
+    &:last-child:not(.lbcamden-list--dash) {
       margin-bottom: 0;
     }
   }
@@ -14,10 +14,16 @@
   > h4,
   > h5 {
     @include govuk-responsive-margin(2, "bottom");
+    @include govuk-font(24, bold);
 
     a {
       @extend .govuk-link--no-underline;
     }
+  }
+
+  p,
+  &__description {
+    @include govuk-font(16);
   }
 
   &__content {
@@ -71,7 +77,7 @@
   &--alt-3 {
     @include govuk-responsive-padding(3, "all");
     border: none;
-    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
+    //box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
   }
 
   &--alt-1 {
@@ -80,6 +86,7 @@
 
   &--alt-2 {
     background: lbcamden-colour("white");
+    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
   }
 
   &--alt-3 {
@@ -182,6 +189,19 @@
 
   &--popular {
     @include govuk-font(16);
+  }
+
+  &--related {
+    @extend .lbcamden-card--top-border;
+    @extend .lbcamden-card--alt-1;
+
+    &.lbcamden-card {
+      > h2,
+      > h3 {
+        @extend .govuk-heading-l;
+        @include govuk-responsive-margin(3, "bottom");
+      }
+    }
   }
 }
 
