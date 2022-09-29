@@ -9,10 +9,10 @@
   padding: 0;
   @include govuk-responsive-padding(3, "left");
   @include govuk-responsive-padding(3, "right");
-  @include govuk-font(16, bold);
   border: 0;
   color: lbcamden-colour("white");
   background: transparent;
+  font-size: 16px;
   cursor: pointer;
 
   &--no-search {
@@ -89,6 +89,10 @@
       }
     }
 
+    &:after {
+      display: none;
+    }
+
     &__navigation-top-toggle-button-inner,
     &__navigation-second-toggle-button {
       &:before {
@@ -128,17 +132,31 @@
   border: 0;
   color: $govuk-link-colour;
   background: none;
-  @include govuk-font(16, bold);
+  font-size: 16px;
+  font-weight: $govuk-font-weight-bold;
+  //@include govuk-font(16, bold);
 
   &-inner {
-    @include govuk-responsive-padding(1, "all");
-    @include govuk-responsive-padding(2, "left");
+    @include govuk-responsive-padding(1, "top");
+    @include govuk-responsive-padding(1, "bottom");
+    padding-left: 0;
+    //@include govuk-responsive-padding(2, "left");
 
     &:before {
       content: "";
       display: inline-block;
       @include govuk-responsive-margin(1, "right");
       @include lbcamden-chevron($govuk-link-colour, 90);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .lbcamden-header__navigation-second-toggle-button-inner {
+      &:before {
+        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+      }
     }
   }
 
@@ -199,7 +217,13 @@
 
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+        @include lbcamden-chevron(lbcamden-colour("white"), 90);
+      }
+
+      &:hover {
+        &:before {
+          @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+        }
       }
     }
   }
@@ -218,6 +242,8 @@
     }
 
     .lbcamden-header__navigation-second-toggle-button-inner {
+      border-color: transparent;
+
       &:before {
         @include lbcamden-chevron($govuk-link-colour, -90);
       }

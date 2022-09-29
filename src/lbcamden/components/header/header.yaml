@@ -47,6 +47,28 @@ examples:
       navigation:
         - href: '#1'
           text: Navigation item 1
+
+        - href: '#2'
+          text: Navigation item 2
+
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+
+  - name: Nested navigation
+    description: Standard application of the header element with nested nav items.
+    data:
+      phaseBanner: true
+      searchItems:
+        - href: '#1'
+          text: 'Popular search 1'
+        - href: '#2'
+          text: 'Popular search 2'
+        - href: '#3'
+          text: 'Popular search 3'
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
           description: Find information and services
           subItems:
             - href: '#1-1'
@@ -90,7 +112,6 @@ examples:
   - name: with mixed levels of navigation
     description: Header with with single and nested navigation items
     data:
-      search: false
       navigation:
         - href: '#1'
           text: Navigation item 1

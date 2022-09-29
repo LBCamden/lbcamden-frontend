@@ -1,8 +1,11 @@
 &__search-and-popular {
-  padding-top: 20px;
-  padding-bottom: 20px;
   flex-direction: column;
   align-items: stretch;
+
+  @include govuk-media-query($from: desktop) {
+    padding-bottom: 20px;
+    @include govuk-responsive-padding(6, "top");
+  }
 }
 
 &__search-items {
