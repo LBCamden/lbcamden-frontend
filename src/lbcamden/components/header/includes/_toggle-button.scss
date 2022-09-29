@@ -89,6 +89,10 @@
       }
     }
 
+    &:after {
+      display: none;
+    }
+
     &__navigation-top-toggle-button-inner,
     &__navigation-second-toggle-button {
       &:before {
@@ -236,6 +240,8 @@
     }
 
     .lbcamden-header__navigation-second-toggle-button-inner {
+      border-color: transparent;
+
       &:before {
         @include lbcamden-chevron($govuk-link-colour, -90);
       }
