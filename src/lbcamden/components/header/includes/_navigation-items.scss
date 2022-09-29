@@ -31,6 +31,8 @@
   .js-module-initialised & {
     @include govuk-media-query($until: desktop) {
       padding: 0;
+      @include govuk-responsive-padding(6, "top");
+      @include govuk-responsive-padding(6, "bottom");
     }
   }
 }
@@ -38,6 +40,14 @@
 &__navigation-items {
   @include govuk-media-query($from: desktop) {
     display: inline-block;
+  }
+
+  .js-module-initialised & {
+    @include govuk-media-query($until: desktop) {
+      padding: 0;
+      @include govuk-responsive-padding(4, "top");
+      @include govuk-responsive-padding(4, "bottom");
+    }
   }
 }
 
@@ -47,6 +57,16 @@
   position: relative;
   margin: 0;
   padding: 0;
+
+  .js-module-initialised & {
+    @include govuk-media-query($until: desktop) {
+      padding: 0 30px;
+    }
+    @include govuk-media-query($until: tablet) {
+      padding: 0 15px;
+    }
+  }
+
   @include govuk-media-query($from: desktop) {
     display: block;
     position: static;
@@ -161,7 +181,7 @@
 
 &__navigation-item-link {
   @include govuk-media-query($until: desktop) {
-    @include govuk-responsive-padding(2, "left");
+    //@include govuk-responsive-padding(2, "left");
   }
 
   @include govuk-media-query($from: desktop) {
@@ -182,7 +202,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    @include govuk-responsive-padding(2, "top");
+    @include govuk-responsive-padding(6, "top");
 
     li {
       flex: 0 0 50%;

@@ -137,8 +137,10 @@
   //@include govuk-font(16, bold);
 
   &-inner {
-    @include govuk-responsive-padding(1, "all");
-    @include govuk-responsive-padding(2, "left");
+    @include govuk-responsive-padding(1, "top");
+    @include govuk-responsive-padding(1, "bottom");
+    padding-left: 0;
+    //@include govuk-responsive-padding(2, "left");
 
     &:before {
       content: "";
