@@ -136,7 +136,7 @@ describe(`http://localhost:${PORT}`, () => {
         const $ = cheerio.load(res.body)
         const $title = $('title')
 
-        expect($title.html()).toBe('GOV.UK - Le meilleur endroit pour trouver des services gouvernementaux et de l&apos;information')
+        expect($title.html()).toBe('GOV.UK - Le meilleur endroit pour trouver des services gouvernementaux et de l\'information')
         done(err)
       })
     })
@@ -155,16 +155,6 @@ describe(`http://localhost:${PORT}`, () => {
         const $ = cheerio.load(res.body)
         const $skipLink = $('.govuk-skip-link')
         expect($skipLink.html()).toBe('Passer au contenu principal')
-        done(err)
-      })
-    })
-
-    it('should have a Phase banner component', done => {
-      requestPath.get(templatePath, (err, res) => {
-        const $ = cheerio.load(res.body)
-        const $phaseBanner = $('.govuk-phase-banner')
-        const $text = $phaseBanner.find('.govuk-phase-banner__text')
-        expect($text.html()).toContain('C&apos;est un nouveau service - vos <a class="govuk-link" href="#">commentaires</a> nous aideront &#xE0; l&apos;am&#xE9;liorer.')
         done(err)
       })
     })
