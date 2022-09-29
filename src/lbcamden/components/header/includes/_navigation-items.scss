@@ -103,6 +103,11 @@
   @include govuk-typography-weight-bold;
   font-size: 16px;
 
+  &:link,
+  &:visited {
+    color: $govuk-link-colour;
+  }
+
   @include govuk-media-query($from: desktop) {
     color: lbcamden-colour("white");
 
