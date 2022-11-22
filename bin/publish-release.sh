@@ -40,7 +40,7 @@ fi
 # ! npm team ls developers | grep -q $NPM_USER
 
 NPM_USER=$(npm whoami)
-if ! [ "benwatsonuk" == "$NPM_USER" ]; then
+if ! [ "alexwybraniec" == "$NPM_USER" ]; then
     echo "⚠️ FAILURE: You are not logged in with the correct user."
     exit 1
 fi
