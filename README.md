@@ -9,8 +9,6 @@ for government platforms and services.
 It is built on top of the amazing [GOV.UK Frontend
 System](https://frontend.design-system.service.gov.uk/). The aim of the project is to follow conventions set out in GOV.UK Frontend and incorporate updates and releases in that project.
 
-This documentation should be updated soon - at time of writing (v0.0.1) only basic files are present and are being used to validate a number of assumptions. 
-
 See live examples of GOV.UK Frontend components, and guidance on when to use
 them in your service, in the [GOV.UK Design
 System](https://design-system.service.gov.uk/).
@@ -29,13 +27,36 @@ in your service.
 
 ### 1. Install with npm (recommended)
 
-We recommend [installing GOV.UK Frontend using node package manager
-(npm)](https://frontend.design-system.service.gov.uk/installing-with-npm/).
+We recommend installing the LBCamden Frontend using node package manager and integrating the scss files into your build setup.
+
+Install the frontend library by running:
+
+```bash
+npm install -S lbcamden-frontend
+```
+
+Add the scss files:
+
+```scss
+//  Override any sass variables here.
+
+@import "lbcamden-frontend/lbcamden/all.scss";
+```
+
+Add the js files:
+
+```javascript
+import "lbcamden-frontend";
+```
+
+This library is downstream of the gov.uk frontend, so you do not need to additionally import the gov.uk css and js files.
 
 ### 2. Install using compiled files
 
-You can also install GOV.UK Frontend by [copying our CSS, JavaScript and asset
-files into your project](https://frontend.design-system.service.gov.uk/install-using-precompiled-files/).
+Compiled css and js files are not currently distributed as part of the npm repository.
+
+To include the built js and css files, clone this repository, build it using the instructions below and copy the `dist`
+directory into your project's repository.
 
 ## Browser and assistive technology support
 
@@ -89,4 +110,17 @@ Open Government 3.0 licence.
 
 ## Contributing
 
-TBC
+TODO
+
+## Releasing a new version
+
+Ensure that you have been added as a member to the lbcamden-frontend npm package.
+
+Releases should be published from the `main` branch of the repository.
+
+1. Clone the repository]
+2. Update the version in `package.json` and `package/package.json`
+3. Run `npm build-release` and follow the instructions in the terminal.
+4. Run `npm publish-release` and follow the instructions in the terminal.
+
+The documentation app is build and deployed on push to the main branch.
