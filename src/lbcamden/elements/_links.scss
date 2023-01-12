@@ -62,6 +62,14 @@
         transform: translateY(-50%);
       }
     }
+
+    &--large {
+      font-size: 16px;
+
+      @include govuk-media-query($from: tablet) {
+        font-size: 19px;
+      }
+    }
   }
 
   &--promo {
