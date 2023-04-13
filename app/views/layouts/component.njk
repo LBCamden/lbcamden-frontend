@@ -15,12 +15,14 @@
 {% endset %}
 
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    "items": [
-    { text: 'CAMDEN.GOV.UK Frontend', href: '/' + legacyQuery },
-    { text: componentNameHuman | capitalize }
-    ]
-  }) }}
+  <div class="govuk-!-margin-top-3">
+    {{ govukBreadcrumbs({
+      "items": [
+      { text: 'CAMDEN.GOV.UK Frontend', href: '/' + legacyQuery },
+      { text: componentNameHuman | capitalize }
+      ]
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}
