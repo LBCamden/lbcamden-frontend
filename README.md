@@ -1,4 +1,4 @@
-LBCamden Frontend
+LBCamden Frontend Library
 =====================
 
 LBCamden Frontend contains the code you need to start building a user interface
@@ -6,8 +6,6 @@ for government platforms and services.
 
 It is built on top of the amazing [GOV.UK Frontend
 System](https://frontend.design-system.service.gov.uk/). The aim of the project is to follow conventions set out in GOV.UK Frontend and incorporate updates and releases in that project.
-
-This documentation should be updated soon - at time of writing (v0.0.1) only basic files are present and are being used to validate a number of assumptions. 
 
 See live examples of GOV.UK Frontend components, and guidance on when to use
 them in your service, in the [GOV.UK Design
