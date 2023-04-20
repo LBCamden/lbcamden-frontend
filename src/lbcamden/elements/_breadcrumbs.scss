@@ -13,6 +13,10 @@
     &:focus {
       color: lbcamden-colour("black");
     }
+
+    &:hover {
+      color: lbcamden-colour(dark-blue);
+    }
   }
 
   .govuk-breadcrumbs__list-item {
