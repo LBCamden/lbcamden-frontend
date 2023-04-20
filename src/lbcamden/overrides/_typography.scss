@@ -45,3 +45,7 @@ hr {
   @extend %govuk-section-break--visible;
   @extend %govuk-section-break--xl;
 }
+
+address {
+  font-style: normal;
+}
