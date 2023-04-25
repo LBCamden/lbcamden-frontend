@@ -1,0 +1,18 @@
+.lbcamden-prose {
+  .govuk-details,
+  .lbcamden-button {
+      @include govuk-responsive-margin(2, "top");
+      @include govuk-responsive-margin(6, "bottom");
+
+      text-underline-offset: 0.25em;
+  }
+
+  .govuk-details + h2,
+  .lbcamden-button + h2 {
+      margin-top: govuk-spacing(2);
+
+      @include govuk-media-query("tablet") {
+          margin-top: govuk-spacing(4);
+      }
+  }
+}
