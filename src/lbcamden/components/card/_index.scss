@@ -34,6 +34,12 @@
     }
   }
 
+  &--dash {
+    a:not(:hover) {
+        text-decoration: none;
+    }
+  }
+
   &--clickable {
     > h2,
     > h3,
@@ -86,7 +92,7 @@
 
   &--alt-2 {
     background: lbcamden-colour("white");
-    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), .5);
+    box-shadow: 0 1px 4px rgba(lbcamden-colour("light-grey"), 0.5);
   }
 
   &--alt-3 {
@@ -135,6 +141,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border: none;
+    font-weight: 500;
 
     .lbcamden-card--naked & {
       @include govuk-responsive-margin(2, "bottom");
@@ -223,8 +230,12 @@
   //grid-auto-rows: fractions(1);
   //grid-auto-rows: auto;
   grid-template-columns: fractions(1);
-  column-gap: govuk-spacing(4);
-  row-gap: govuk-spacing(4);
+
+  // Grid padding should follow the page gutters
+  gap: govuk-spacing(5);
+  @include govuk-media-query(tablet) {
+    gap: govuk-spacing(6);
+  }
 
   @include govuk-media-query($from: "tablet") {
     grid-template-columns: fractions(2);
@@ -285,4 +296,40 @@
       grid-template-columns: fractions(4);
     }
   }
+
+  &--popular {
+    > * {
+      min-height: 50px;
+
+      @include govuk-media-query(tablet) {
+        min-height: 66px;
+      }
+
+      .lbcamden-link--promo {
+        @include govuk-media-query(tablet) {
+          padding-top: govuk-spacing(1);
+          padding-bottom: govuk-spacing(1);
+        }
+      }
+    }
+  }
+}
+
+/// Helper for displaying lbcamden-card elements in a <ul>
+///
+/// If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
+/// card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
+.lbcamden-card-grid--link-wrapper {
+  position: relative;
+
+  .lbcamden-card {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+// When cards are used in a li, they shouldn't pick up the li's default spacing
+li.lbcamden-card,
+li.lbcamden-card-grid--link-wrapper {
+    margin-bottom: 0;
 }
