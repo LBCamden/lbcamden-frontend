@@ -11,6 +11,14 @@ params:
   type: boolean
   required: false
   description: If present, adds a phasebanner to the header
+- name: phaseBannerPhase
+  type: string
+  required: false
+  description: If present, override phasebanner phrase from BETA to param
+- name: phaseBannerMessage
+  type: string
+  required: false
+  description: If present, override phasebannerMessage from default
 
 previewLayout: full-width
 accessibilityCriteria: |
