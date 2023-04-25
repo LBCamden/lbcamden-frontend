@@ -264,7 +264,7 @@ module.exports = (options) => {
     const componentName = req.params.govukComponent
     const requestedExampleName = req.params.example || 'default'
 
-    const previewLayout = res.locals.componentData.previewLayout || 'layout'
+    const previewLayout = res.locals.componentData.previewLayout || 'preview'
 
     const exampleConfig = res.locals.componentData.examples.find(
       example => example.name.replace(/ /g, '-') === requestedExampleName
