@@ -1,6 +1,9 @@
 /** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  features: {
+    storyStoreV7: false,
+  },
+  stories: ["./stories.js"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -22,15 +25,42 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: [
+    {
+      from: '../dist/assets',
+      to: '/assets'
+    },
+    {
+      from: '../dist',
+      to: '/dist'
+    }
+  ],
   "webpackFinal": (config) => {
     config.module.rules.push({
         test: /\.njk$/,
         use: [
             {
-                loader: 'simple-nunjucks-loader',
+                loader: require.resolve('./njk-loader.js'),
             }
         ]
     });
+
+
+
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...config.resolve?.alias,
+        path: 'path-webpack'
+      }
+    }
+
+    config.module.rules.push(
+      {
+        test: /\.ya?ml$/,
+        use: 'yaml-loader',
+      }
+    )
 
     // Return the altered config
     return config;

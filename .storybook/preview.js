@@ -10,6 +10,5 @@ const preview = {
     },
   },
 };
-// import '../dist/lbcamden-frontend-0.2.6.min.css';
 
 export default preview;
