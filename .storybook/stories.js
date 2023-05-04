@@ -8,7 +8,7 @@ requireAll(require.context("../src/lbcamden", true, /\.njk$/));
 // force _all_ nunjucks templates to load so that client-side template imports work
 requireAll(require.context("./govuk", true, /\.njk$/));
 
-buildComponentStories({
+const camdenComponents = buildComponentStories({
   // Build up a collection of all our component template files
   componentsContext: require.context(
     "../src/lbcamden/components",
@@ -27,6 +27,7 @@ buildComponentStories({
   // Build up a collection of all our yaml files specifying examples
   fixturesContext: require.context("./govuk/components", true, /fixtures\.json$/),
   optionsContext: require.context("./govuk/components", true, /macro-options\.json$/),
+  exclude: camdenComponents
 });
 
 function requireAll(context) {
@@ -38,6 +39,7 @@ function buildComponentStories({
   yamlContext,
   fixturesContext,
   optionsContext,
+  exclude = []
 }) {
   const components = buildSlugMap(componentsContext);
   const fixtures = fixturesContext && buildSlugMap(fixturesContext);
@@ -55,7 +57,9 @@ function buildComponentStories({
   //
   // TODO: add a flag to the examples to specify if they should show up here?
   for (const slug of Object.keys(components)) {
-    console.log(slug)
+    if (exclude.includes(slug)) {
+      continue
+    }
 
     if (!components[slug]) {
       continue;
@@ -92,6 +96,8 @@ function buildComponentStories({
       });
     }
   }
+
+  return Object.keys(components)
 }
 
 // map from component slugs to full paths
