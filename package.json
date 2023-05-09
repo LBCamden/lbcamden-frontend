@@ -98,7 +98,6 @@
     "sass-color-helpers": "^2.1.1",
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
-    "simple-nunjucks-loader": "^2.0.3",
     "standard": "^14.3.4",
     "storybook": "^7.0.7",
     "stylelint": "^14.6.1",
