@@ -9,6 +9,19 @@ const preview = {
       },
     },
   },
+
+  decorators: [
+    (story) => {
+      document.body.classList.add('js-enabled')
+
+      setTimeout(() => {
+        GOVUKFrontend.initAll()
+        LBCamdenFrontend.initAll()
+      })
+
+      return story()
+    }
+  ]
 };
 
 export default preview;
