@@ -26,7 +26,7 @@
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=c73762ed4204 --exit-once-uploaded"
+    "chromatic": "npx chromatic --project-token=c73762ed4204 --diagnostics"
   },
   "dependencies": {
     "govuk-frontend": "^4.4.1",
@@ -102,6 +102,7 @@
     "sass-color-helpers": "^2.1.1",
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
+    "simple-nunjucks-loader": "^2.0.3",
     "standard": "^14.3.4",
     "storybook": "^7.0.7",
     "stylelint": "^14.6.1",
