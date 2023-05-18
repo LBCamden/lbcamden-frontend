@@ -1,3 +1,5 @@
+import 'iframe-resizer/js/iframeResizer.contentWindow'
+
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {

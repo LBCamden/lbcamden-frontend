@@ -3,7 +3,7 @@ const njkSlim = require.resolve('nunjucks/browser/nunjucks-slim')
 
 const env = new njk.Environment(new njk.NodeResolveLoader());
 
-module.exports = function () {
+module.exports = function (src) {
   const path = require.resolve('path-webpack')
   this.addDependency(njkSlim);
   this.addDependency(path);
