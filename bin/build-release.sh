@@ -30,6 +30,9 @@ npm run test
 npm run build:package
 npm run build:dist
 
+rm -rf package/dist
+cp -r dist package/dist
+
 ALL_PACKAGE_VERSION=$(node -p "require('./package/package.json').version")
 TAG="v$ALL_PACKAGE_VERSION"
 CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)

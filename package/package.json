@@ -11,7 +11,8 @@
       "require": "./lbcamden/all.js"
     },
     "./lbcamden/": "./lbcamden/",
-    "./lbcamden-esm/": "./lbcamden-esm/"
+    "./lbcamden-esm/": "./lbcamden-esm/",
+    "./dist/": "./dist/"
   },
   "sideEffects": [
     "lbcamden-esm/vendor/**"
