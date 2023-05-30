@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import 'iframe-resizer/js/iframeResizer.contentWindow'
 
+=======
+>>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {

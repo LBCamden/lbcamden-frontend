@@ -3,7 +3,11 @@ const njkSlim = require.resolve('nunjucks/browser/nunjucks-slim')
 
 const env = new njk.Environment(new njk.NodeResolveLoader());
 
+<<<<<<< HEAD
 module.exports = function (src) {
+=======
+module.exports = function () {
+>>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
   const path = require.resolve('path-webpack')
   this.addDependency(njkSlim);
   this.addDependency(path);
