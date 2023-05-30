@@ -1,11 +1,9 @@
 // TODO: we're using a deprecated API as it allows us to programatically create stories
 // this could also be accomplished using the modern API via code-generation using webpack, but this is easier for now
-const { storiesOf } = require("@storybook/html");
-<<<<<<< HEAD
-import {escape} from 'html-escaper';
-=======
+import { storiesOf } from "@storybook/html";
 
->>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
+import {escape} from 'html-escaper';
+
 // force _all_ nunjucks templates to load so that client-side template imports work
 requireAll(require.context("../src/lbcamden", true, /\.njk$/));
 
@@ -50,24 +48,10 @@ function buildComponentStories({
   const schemas = optionsContext && buildSlugMap(optionsContext);
   const fixturesWithSchemas = yamlContext && buildSlugMap(yamlContext);
 
-<<<<<<< HEAD
-=======
-  console.log({
-    components,
-    fixtures,
-    schemas,
-    fixturesWithSchemas
-  })
-
->>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
   // iterate over yaml component schemas and generate stories from examples
   //
   // TODO: add a flag to the examples to specify if they should show up here?
   for (const slug of Object.keys(components)) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
     if (exclude.includes(slug)) {
       continue
     }
@@ -100,7 +84,6 @@ function buildComponentStories({
         continue
       }
 
-<<<<<<< HEAD
       story.add(example.name, (params) => {
         const html = component({ params }).trim()
         const nunjucks = escape(`
@@ -120,9 +103,6 @@ ${slug}(${JSON.stringify(params, null, 4)})
 
         return html.trim()
       }, {
-=======
-      story.add(example.name, (params) => component({ params }), {
->>>>>>> 9f6162f3 (Implement storybook, generating stories from yaml files (#54))
         component,
         argTypes,
         args: example.options ?? example.data,
