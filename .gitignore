@@ -11,3 +11,5 @@ examples/**/package-lock.json
 sassdoc/
 .idea
 .sass-cache
+build-storybook.log
+chromatic-diagnostics.json

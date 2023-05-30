@@ -1,6 +1,7 @@
 // TODO: we're using a deprecated API as it allows us to programatically create stories
 // this could also be accomplished using the modern API via code-generation using webpack, but this is easier for now
-const { storiesOf } = require("@storybook/html");
+//const { storiesOf } = require("@storybook/html");
+import { storiesOf } from "@storybook/html";
 
 // force _all_ nunjucks templates to load so that client-side template imports work
 requireAll(require.context("../src/lbcamden", true, /\.njk$/));
