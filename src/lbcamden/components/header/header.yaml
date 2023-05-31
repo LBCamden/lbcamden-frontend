@@ -211,13 +211,13 @@ examples:
     description: Header with emergency banner for death of a notable person
     data:
       emergencyBanner: |
-        <section class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death">
+        <section class="lbcamden-emergency lbcamden-emergency--notable-death">
           <div class="govuk-width-container">
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
-                <h2 class="lbcamden-emergency-banner__heading">His Royal Highness Henry VIII</h2>
+                <h2 class="lbcamden-emergency__heading">His Royal Highness Henry VIII</h2>
                 
-                <p class="lbcamden-emergency-banner__description ">
+                <p class="lbcamden-emergency__description ">
                   1491–1547
                 </p>
               </div>

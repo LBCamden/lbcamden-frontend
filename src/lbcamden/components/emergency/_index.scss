@@ -1,4 +1,4 @@
-.lbcamden-emergency-banner {
+.lbcamden-emergency {
   @include govuk-font(19);
   margin-top: 2px;
   padding: govuk-spacing(3) 0;
@@ -67,7 +67,7 @@
     border-top: govuk-spacing(1) solid govuk-colour("white");
     border-bottom: govuk-spacing(1) solid govuk-colour("white");
 
-    .lbcamden-emergency-banner {
+    .lbcamden-emergency {
       &__heading {
         @include govuk-font(48, $weight: "bold");
 

@@ -1,40 +1,40 @@
 params:
-- name: classes
-  type: string
-  required: false
-  description: Classes to add to the header container.
-- name: campaignClass
-  type: string
-  required: true
-  description: Type of emergency.
-- name: homepage
-  type: boolean
-  required: false
-  description: Modify styling when placed on homepage.
-- name: headingClasses
-  type: string
-  required: false
-  description: Classes to add to the heading.
-- name: descriptionClasses
-  type: string
-  required: false
-  description: Classes to add to the description.
-- name: heading
-  type: string
-  required: true
-  description: Heading content of banner.
-- name: shortDescription
-  type: boolean
-  required: false
-  description: Short description of the emergency
-- name: link
-  type: string
-  required: false
-  description: URL of page with more information on the emergency
-- name: linkText
-  type: string
-  required: false
-  description: Text content of the link to emergency page
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: campaignClass
+    type: string
+    required: true
+    description: Type of emergency.
+  - name: homepage
+    type: boolean
+    required: false
+    description: Modify styling when placed on homepage.
+  - name: headingClasses
+    type: string
+    required: false
+    description: Classes to add to the heading.
+  - name: descriptionClasses
+    type: string
+    required: false
+    description: Classes to add to the description.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of banner.
+  - name: shortDescription
+    type: boolean
+    required: false
+    description: Short description of the emergency
+  - name: link
+    type: string
+    required: false
+    description: URL of page with more information on the emergency
+  - name: linkText
+    type: string
+    required: false
+    description: Text content of the link to emergency page
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -52,6 +52,7 @@ accessibilityCriteria: |
 
 examples:
   - name: notable death
+    isDefault: true
     description: Standard application of the header element.
     data:
       campaignClass: notable-death
@@ -84,3 +85,7 @@ examples:
       shortDescription:  This is a level 2 incident 
       link: https://www.gov.uk/
       linkText: Override Link Text
+  - name: classes
+    hidden: true
+    data:
+      classes: app-emergency--custom-modifier
