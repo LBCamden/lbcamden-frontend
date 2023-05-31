@@ -1,9 +1,9 @@
 .lbcamden-emergency-banner {
   @include govuk-font(19);
-  background-color: govuk-colour("mid-grey");
-  color: govuk-colour("white");
   margin-top: 2px;
   padding: govuk-spacing(3) 0;
+  color: govuk-colour("white");
+  background-color: govuk-colour("mid-grey");
 
   @include govuk-media-query($from: "tablet") {
     padding: govuk-spacing(6) 0;
@@ -11,15 +11,15 @@
 
   &__heading {
     @include govuk-font(24, $weight: "bold");
-    color: govuk-colour("white");
     margin: 0;
+    color: govuk-colour("white");
   }
 
   &__description {
     @include govuk-font(19);
-    color: govuk-colour("white");
     margin-top: 0;
     margin-bottom: govuk-spacing(4);
+    color: govuk-colour("white");
 
     &:last-child {
       margin-bottom: 0;
@@ -60,12 +60,12 @@
   }
 
   &--homepage {
-    border-bottom: govuk-spacing(1) solid govuk-colour("white");
-    border-top: govuk-spacing(1) solid govuk-colour("white");
-    margin-bottom: govuk-spacing(-2);
-    margin-top: 0;
     position: relative;
     z-index: 10;
+    margin-top: 0;
+    margin-bottom: govuk-spacing(-2);
+    border-top: govuk-spacing(1) solid govuk-colour("white");
+    border-bottom: govuk-spacing(1) solid govuk-colour("white");
 
     .lbcamden-emergency-banner {
       &__heading {
