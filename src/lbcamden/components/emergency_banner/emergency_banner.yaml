@@ -3,6 +3,14 @@ params:
   type: string
   required: false
   description: Classes to add to the header container.
+- name: campaignClass
+  type: string
+  required: true
+  description: Type of emergency.
+- name: homepage
+  type: boolean
+  required: false
+  description: Modify styling when placed on homepage.
 - name: headingClasses
   type: string
   required: false
@@ -29,11 +37,50 @@ params:
   description: Text content of the link to emergency page
 
 previewLayout: full-width
+accessibilityCriteria: |
+  Links in the component must:
+    - accept focus
+    - be focusable with a keyboard
+    - be usable with a keyboard
+    - indicate when they have focus
+    - change in appearance when touched (in the touch-down state)
+    - change in appearance when hovered
+    - be usable with touch
+    - be usable with voice commands
+    - have visible text
+    - have meaningful text
+
 examples:
-  - name: default
+  - name: notable death
     description: Standard application of the header element.
     data:
+      campaignClass: notable-death
       heading:  His Royal Highness Henry VIII
       shortDescription:  1491–1547
+      link: https://www.gov.uk/
+      linkText: Override Link Text
+  - name: notable death homepage
+    description: Standard application of the header element.
+    data:
+      homepage: true
+      campaignClass: notable-death
+      heading:  His Royal Highness Henry VIII
+      shortDescription:  1491–1547
+      link: https://www.gov.uk/
+      linkText: Override Link Text
+  - name: national emergency
+    description: Standard application of the header element.
+    data:
+      campaignClass: national-emergency
+      heading:   National emergency
+      shortDescription: This is a level 1 incident 
+      link: https://www.gov.uk/
+      linkText: Override Link Text
+  - name: local emergency
+    description: Standard application of the header element.
+    data:
+      campaignClass: local-emergency
+      heading:  Local emergency
+      shortDescription:  This is a level 2 incident 
       link: https://www.gov.uk/
       linkText: Override Link Text

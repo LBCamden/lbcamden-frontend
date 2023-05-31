@@ -1,51 +1,84 @@
-$lbcamden-header-height: 50px;
+.lbcamden-emergency-banner {
+  @include govuk-font(19);
+  background-color: govuk-colour("mid-grey");
+  color: govuk-colour("white");
+  margin-top: 2px;
+  padding: govuk-spacing(3) 0;
 
-.lbcamden-header {
-  position: relative;
-  min-height: $lbcamden-header-height;
-  border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
-  color: lbcamden-colour("white");
-  background: lbcamden-colour("black");
-
-  &__logo {
-    @include govuk-responsive-margin(2, "top");
-    @include govuk-responsive-margin(2, "bottom");
-    display: inline-block;
-    width: 140px;
-    max-width: 140px;
-    height: 30px;
-
-    @include govuk-media-query($from: desktop) {
-      display: block;
-      padding-bottom: 5px;
-      float: left;
-    }
-
-    &:hover {
-      box-shadow: 0 3px lbcamden-colour("white");
-    }
+  @include govuk-media-query($from: tablet) {
+    padding: govuk-spacing(6) 0;
   }
 
-  &--with-phase-banner {
-    margin-bottom: 0;
+  &__heading {
+    @include govuk-font(24, $weight: bold);
+    color: govuk-colour("white");
+    margin: 0;
+  }
+
+  &__description {
+    @include govuk-font(19);
+    color: govuk-colour("white");
+    margin-top: 0;
+    margin-bottom: govuk-spacing(4);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
-    display: block;
-    max-width: 100%;
-    margin-top: 2px;
-    color: lbcamden-colour("white");
+    @include govuk-font(19);
+    color: govuk-colour("white");
 
-    &:visited,
-    &:link {
-      color: lbcamden-colour("white");
+    &:link,
+    &:visited {
+      color: govuk-colour("white");
     }
 
     &:focus {
-      color: lbcamden-colour("black");
-      background: $govuk-focus-colour;
+      @include govuk-focused-text;
     }
   }
 
-  @import "./includes/navigation";
+  &--notable-death {
+    background-color: govuk-colour(black);
+  }
+
+  &--national-emergency {
+    // Not using govuk-colour("red") aka #d4351c as that's a slightly different red.
+    background-color: #b10e1e;
+  }
+
+  &--local-emergency {
+    // Not using govuk-colour("turquoise") for background colour as
+    // the contrast was too low with white text
+    background-color: #00847d;
+  }
+
+  @include govuk-media-query($media-type: print) {
+    display: none;
+  }
+
+  &--homepage {
+    border-bottom: govuk-spacing(1) solid govuk-colour("white");
+    border-top: govuk-spacing(1) solid govuk-colour("white");
+    margin-bottom: govuk-spacing(-2);
+    margin-top: 0;
+    position: relative;
+    z-index: 10;
+
+    .lbcamden-emergency-banner {
+      &__heading {
+        @include govuk-font(48, $weight: bold);
+
+        @include govuk-media-query($from: tablet) {
+          margin-bottom: govuk-spacing(4);
+        }
+      }
+
+      &__description {
+        margin: govuk-spacing(4) 0;
+      }
+    }
+  }
 }
