@@ -8,15 +8,6 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        sass: {
-          // Require your Sass preprocessor here
-          implementation: require('node-sass'),
-        },
-      },
-    },
   ],
   framework: {
     name: "@storybook/html-webpack5",
@@ -45,7 +36,10 @@ const config = {
         ]
     });
 
-
+    config.module.rules.push({
+      test: /\.scss/,
+      use: ["style-loader", { loader: "css-loader", options: { url: false } }, "sass-loader"],
+    })
 
     config.resolve = {
       ...config.resolve,
