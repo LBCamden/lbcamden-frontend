@@ -5,12 +5,12 @@
   margin-top: 2px;
   padding: govuk-spacing(3) 0;
 
-  @include govuk-media-query($from: tablet) {
+  @include govuk-media-query($from: "tablet") {
     padding: govuk-spacing(6) 0;
   }
 
   &__heading {
-    @include govuk-font(24, $weight: bold);
+    @include govuk-font(24, $weight: "bold");
     color: govuk-colour("white");
     margin: 0;
   }
@@ -41,7 +41,7 @@
   }
 
   &--notable-death {
-    background-color: govuk-colour(black);
+    background-color: govuk-colour("black");
   }
 
   &--national-emergency {
@@ -55,7 +55,7 @@
     background-color: #00847d;
   }
 
-  @include govuk-media-query($media-type: print) {
+  @include govuk-media-query($media-type: "print") {
     display: none;
   }
 
@@ -69,9 +69,9 @@
 
     .lbcamden-emergency-banner {
       &__heading {
-        @include govuk-font(48, $weight: bold);
+        @include govuk-font(48, $weight: "bold");
 
-        @include govuk-media-query($from: tablet) {
+        @include govuk-media-query($from: "tablet") {
           margin-bottom: govuk-spacing(4);
         }
       }
