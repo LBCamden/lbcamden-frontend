@@ -1,0 +1,51 @@
+$lbcamden-header-height: 50px;
+
+.lbcamden-header {
+  position: relative;
+  min-height: $lbcamden-header-height;
+  border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
+  color: lbcamden-colour("white");
+  background: lbcamden-colour("black");
+
+  &__logo {
+    @include govuk-responsive-margin(2, "top");
+    @include govuk-responsive-margin(2, "bottom");
+    display: inline-block;
+    width: 140px;
+    max-width: 140px;
+    height: 30px;
+
+    @include govuk-media-query($from: desktop) {
+      display: block;
+      padding-bottom: 5px;
+      float: left;
+    }
+
+    &:hover {
+      box-shadow: 0 3px lbcamden-colour("white");
+    }
+  }
+
+  &--with-phase-banner {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    display: block;
+    max-width: 100%;
+    margin-top: 2px;
+    color: lbcamden-colour("white");
+
+    &:visited,
+    &:link {
+      color: lbcamden-colour("white");
+    }
+
+    &:focus {
+      color: lbcamden-colour("black");
+      background: $govuk-focus-colour;
+    }
+  }
+
+  @import "./includes/navigation";
+}

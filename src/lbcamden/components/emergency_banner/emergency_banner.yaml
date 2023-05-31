@@ -1,0 +1,39 @@
+params:
+- name: classes
+  type: string
+  required: false
+  description: Classes to add to the header container.
+- name: headingClasses
+  type: string
+  required: false
+  description: Classes to add to the heading.
+- name: descriptionClasses
+  type: string
+  required: false
+  description: Classes to add to the description.
+- name: heading
+  type: string
+  required: true
+  description: Heading content of banner.
+- name: shortDescription
+  type: boolean
+  required: false
+  description: Short description of the emergency
+- name: link
+  type: string
+  required: false
+  description: URL of page with more information on the emergency
+- name: linkText
+  type: string
+  required: false
+  description: Text content of the link to emergency page
+
+previewLayout: full-width
+examples:
+  - name: default
+    description: Standard application of the header element.
+    data:
+      heading:  His Royal Highness Henry VIII
+      shortDescription:  1491–1547
+      link: https://www.gov.uk/
+      linkText: Override Link Text

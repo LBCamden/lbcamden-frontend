@@ -1,0 +1,129 @@
+$lbcamden-hero-height: 350px;
+
+.lbcamden-hero {
+  position: relative;
+
+  width: 100%;
+  height: $lbcamden-hero-height;
+
+  @include govuk-media-query ($until: tablet) {
+    background-color:  govuk-colour("light-grey");
+    height: auto;
+    z-index: -1;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include govuk-media-query ($until: tablet) {
+      height: 100px;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    @include govuk-media-query ($until: tablet) {
+      position: relative;
+      padding-top: govuk-spacing(9);
+      flex-direction: column-reverse;
+      padding-bottom: govuk-spacing(5);
+      align-items: stretch;
+    }
+  }
+
+  &__spacer {
+    flex-grow: 1;
+    min-width: govuk-spacing(4);
+  }
+
+  &__engagement,
+  &__links {
+    display: inline-block;
+    background-color: govuk-colour("white");
+    flex-shrink: 1;
+    text-decoration: none;
+    color: inherit;
+
+    &:visited {
+      color: inherit;
+    }
+
+    padding: govuk-spacing(3);
+    margin-bottom: govuk-spacing(6);
+    max-width: 450px;
+    width: auto;
+
+    @include govuk-media-query ($until: tablet) {
+      width: auto;
+      max-width: initial;
+      margin-bottom: 0;
+    }
+
+    > h2 {
+      margin-bottom: govuk-spacing(3);
+    }
+
+    > a {
+      display: block;
+      margin-bottom: govuk-spacing(2);
+      font-weight: 600;
+
+      &::after {
+        content: ' >'
+      }
+    }https://645a25e00de84a612195c9a5-ebjyshjvjf.chromatic.com
+  }
+
+  &__links {
+    > h2 {
+      @include govuk-font($size: 24, $weight: bold);
+    }
+
+    flex-shrink: 0.3;
+  }
+
+  &__engagement {
+    padding-bottom: govuk-spacing(5);
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    @at-root #{selector-unify("a", &)} {
+      color: govuk-colour("black");
+
+      &:visited {
+        color: govuk-colour("black");
+      }
+    }
+
+    > h2 {
+      @include govuk-font($size: 19, $weight: bold);
+      color:  $govuk-link-colour ;
+      margin-bottom: govuk-spacing(1);
+    }
+
+    &:hover > h2 {
+      text-decoration: underline;
+      color: $govuk-link-hover-colour;
+    }
+
+    @include govuk-media-query ($until: tablet) {
+      margin-bottom: govuk-spacing(5);
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+  }
+}
