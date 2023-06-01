@@ -29,6 +29,7 @@
     "chromatic": "npx chromatic --project-token=c73762ed4204"
   },
   "dependencies": {
+    "chromatic": "^6.18.0",
     "govuk-frontend": "^4.4.1",
     "html-escaper": "^3.0.3",
     "iframe-resizer": "^4.3.6"
@@ -50,7 +51,6 @@
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.3",
-    "chromatic": "^6.17.4",
     "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.11",
@@ -102,7 +102,6 @@
     "sass-color-helpers": "^2.1.1",
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
-    "simple-nunjucks-loader": "^2.0.3",
     "standard": "^14.3.4",
     "storybook": "^7.0.7",
     "stylelint": "^14.6.1",
