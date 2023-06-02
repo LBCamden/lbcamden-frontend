@@ -13,3 +13,4 @@ sassdoc/
 .sass-cache
 build-storybook.log
 chromatic-diagnostics.json
+storybook-static

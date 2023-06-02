@@ -1,7 +1,9 @@
 // TODO: we're using a deprecated API as it allows us to programatically create stories
 // this could also be accomplished using the modern API via code-generation using webpack, but this is easier for now
-//const { storiesOf } = require("@storybook/html");
 import { storiesOf } from "@storybook/html";
+
+import {escape} from 'html-escaper';
+
 
 // force _all_ nunjucks templates to load so that client-side template imports work
 requireAll(require.context("../src/lbcamden", true, /\.njk$/));
@@ -47,13 +49,6 @@ function buildComponentStories({
   const schemas = optionsContext && buildSlugMap(optionsContext);
   const fixturesWithSchemas = yamlContext && buildSlugMap(yamlContext);
 
-  console.log({
-    components,
-    fixtures,
-    schemas,
-    fixturesWithSchemas
-  })
-
   // iterate over yaml component schemas and generate stories from examples
   //
   // TODO: add a flag to the examples to specify if they should show up here?
@@ -90,7 +85,25 @@ function buildComponentStories({
         continue
       }
 
-      story.add(example.name, (params) => component({ params }), {
+      story.add(example.name, (params) => {
+        const html = component({ params }).trim()
+        const nunjucks = escape(`
+{% from "lbcamden/components/${slug}/macro.njk" import ${slug} %}
+
+${slug}(${JSON.stringify(params, null, 4)})
+`.trim())
+
+        if (window.parent) {
+          window.parent.postMessage({
+            type: 'lbbcamden.story-source',
+            nunjucks,
+            html: escape(html),
+            href: window.location.href
+          }, '*')
+        }
+
+        return html.trim()
+      }, {
         component,
         argTypes,
         args: example.options ?? example.data,
