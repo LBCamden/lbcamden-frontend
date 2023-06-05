@@ -32,10 +32,9 @@ $menu-main-text-colour: lbcamden-colour("white");
 &__navigation-dropdown-menu {
   @include govuk-media-query($from: desktop) {
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     right: 0;
     left: 0;
-    border-bottom: 10px solid $govuk-brand-colour;
     background: lbcamden-colour("govuk-bg-bright2-colour");
   }
 }
