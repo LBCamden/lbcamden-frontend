@@ -1,4 +1,5 @@
 import 'iframe-resizer/js/iframeResizer.contentWindow'
+import "../src/lbcamden/all.scss"
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
