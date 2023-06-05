@@ -1,13 +1,12 @@
 .lbcamden-emergency {
   @include govuk-font(19);
+  @include govuk-responsive-padding(4, "top", $adjustment: -3px);
+  @include govuk-responsive-padding(4, "bottom");
+
   margin-top: 2px;
-  padding: govuk-spacing(3) 0;
+  border-top: 3px solid govuk-colour("white");
   color: govuk-colour("white");
   background-color: govuk-colour("mid-grey");
-
-  @include govuk-media-query($from: "tablet") {
-    padding: govuk-spacing(6) 0;
-  }
 
   &__heading {
     @include govuk-font(24, $weight: "bold");
@@ -16,7 +15,7 @@
   }
 
   &__description {
-    @include govuk-font(19);
+    @include govuk-font(16);
     margin-top: 0;
     margin-bottom: govuk-spacing(4);
     color: govuk-colour("white");
@@ -27,7 +26,7 @@
   }
 
   &__link {
-    @include govuk-font(19);
+    @include govuk-font(16);
     color: govuk-colour("white");
 
     &:link,
@@ -69,7 +68,7 @@
 
     .lbcamden-emergency {
       &__heading {
-        @include govuk-font(48, $weight: "bold");
+        @include govuk-font(36, $weight: "bold");
 
         @include govuk-media-query($from: "tablet") {
           margin-bottom: govuk-spacing(4);
