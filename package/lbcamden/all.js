@@ -1,6 +1,6 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('govuk-frontend/govuk/vendor/polyfills/Event.mjs'), require('govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind.mjs')) :
-	typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports', 'govuk-frontend/govuk/vendor/polyfills/Event.mjs', 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind.mjs'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('node_modules/govuk-frontend/govuk/vendor/polyfills/Event.mjs'), require('node_modules/govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind.mjs')) :
+	typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports', 'node_modules/govuk-frontend/govuk/vendor/polyfills/Event.mjs', 'node_modules/govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind.mjs'], factory) :
 	(factory((global.LBCamdenFrontend = {})));
 }(this, (function (exports) { 'use strict';
 
