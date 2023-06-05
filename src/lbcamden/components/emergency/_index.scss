@@ -62,9 +62,6 @@
     position: relative;
     z-index: 10;
     margin-top: 0;
-    margin-bottom: govuk-spacing(-2);
-    border-top: govuk-spacing(1) solid govuk-colour("white");
-    border-bottom: govuk-spacing(1) solid govuk-colour("white");
 
     .lbcamden-emergency {
       &__heading {

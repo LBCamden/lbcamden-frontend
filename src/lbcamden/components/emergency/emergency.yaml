@@ -24,7 +24,7 @@ params:
     required: true
     description: Heading content of banner.
   - name: shortDescription
-    type: boolean
+    type: string
     required: false
     description: Short description of the emergency
   - name: link
