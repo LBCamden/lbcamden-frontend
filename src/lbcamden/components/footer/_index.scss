@@ -47,7 +47,6 @@
 
     a {
       &[data-highlighted="true"] {
-        margin-left: -govuk-spacing(1);
         border-radius: 3px;
         background: lbcamden-colour("govuk-brand1-1-colour");
         @include govuk-responsive-padding(1);

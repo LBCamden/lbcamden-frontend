@@ -224,7 +224,6 @@ examples:
     data:
       navigation:
         - title: Navigation section
-          width: two-thirds
           items:
             - href: '#1'
               text: Navigation item 1
