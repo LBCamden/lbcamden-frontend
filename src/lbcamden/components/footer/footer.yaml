@@ -8,35 +8,18 @@ params:
     required: false
     description: Array of items for use in the primary navigation section of the footer.
     params:
-      - name: title
+      - name: text
         type: string
         required: true
-        description: Title for a section.
-      - name: columns
-        type: integer
-        required: false
-        description: Amount of columns to display items in navigation section of the footer.
-      - name: width
+        description: List item text in the navigation section of the footer.
+      - name: href
         type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
         required: false
-        description: Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'.
-      - name: items
-        type: array
-        required: false
-        description: Array of items to display in the list in navigation section of the footer.
-        params:
-          - name: text
-            type: string
-            required: true
-            description: List item text in the navigation section of the footer.
-          - name: href
-            type: string
-            required: true
-            description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
-          - name: attributes
-            type: object
-            required: false
-            description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
   - name: navigationSecondary
     type: array
     required: false
@@ -121,78 +104,35 @@ examples:
     data:
       {}
 
-  - name: with single navigation level
+  - name: with primary navigation
     data:
       navigation:
-        - title: Single column list
-          items:
-            - href: '#1'
-              text: Navigation item 1
-            - href: '#2'
-              text: Navigation item 2
-            - href: '#3'
-              text: Navigation item 3
-
-  - name: with two navigation levels
-    data:
-      navigation:
-        - title: Navigation section
-          items:
-            - href: '#1'
-              text: Navigation item 1
-            - href: '#2'
-              text: Navigation item 2
-            - href: '#3'
-              text: Navigation item 3
-            - href: '#4'
-              text: Navigation item 4
-        - title: Navigation section 2
-          items:
-            - href: '#1'
-              text: Navigation item 2.1
-            - href: '#2'
-              text: Navigation item 2.2
-            - href: '#3'
-              text: Navigation item 2.3
-            - href: '#4'
-              text: Navigation item 2.4
-      navigationSecondary:
         - href: '#1'
           text: Navigation item 1
         - href: '#2'
           text: Navigation item 2
         - href: '#3'
           text: Navigation item 3
-        - href: '#4'
-          text: Navigation item 4
-        - href: '#5'
-          text: Navigation item 5
-        - href: '#6'
-          text: Navigation item 6
 
-  - name: with two navigation levels and social navigation
+  - name: with primary and secondary navigation and social navigation
     data:
       navigation:
-        - title: Navigation section
-          items:
-            - href: '#1'
-              text: Navigation item 1
-            - href: '#2'
-              text: Navigation item 2
-            - href: '#3'
-              text: Navigation item 3
-              attributes:
-                data-highlighted: true
-        - title: Navigation section 2
-          items:
-            - href: '#1'
-              text: Navigation item 2.1
-            - href: '#2'
-              text: Navigation item 2.2
-            - href: '#3'
-              text: Navigation item 2.3
-            - href: '#4'
-              text: Navigation item 2.4
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-highlighted: true
+        - href: '#1'
+          text: Navigation item 4
+        - href: '#2'
+          text: Navigation item 5
+        - href: '#3'
+          text: Navigation item 6
+        - href: '#4'
+          text: Navigation item 7
       navigationSecondary:
         - href: '#1'
           text: Navigation item 1
@@ -220,19 +160,57 @@ examples:
           attributes:
             data-icon: linkedin
 
-  - name: with one navigation level, sponsor image and social navigation
+  - name: with primary and secondary navigation, sponsor image and social navigation
     data:
       navigation:
-        - title: Navigation section
-          items:
-            - href: '#1'
-              text: Navigation item 1
-            - href: '#2'
-              text: Navigation item 2
-            - href: '#3'
-              text: Navigation item 3
-              attributes:
-                data-highlighted: true
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-highlighted: true
+      navigationSecondary:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+        - href: '#4'
+          text: Navigation item 4
+      sponsorLogo: |
+        <img src="/assets/images/funded-by-uk-government.png" style="width: 249px" />
+      navigationSocial:
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-icon: facebook
+        - href: '#2'
+          text: Navigation item 2
+          attributes:
+            data-icon: youtube
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-icon: twitter
+        - href: '#4'
+          text: Navigation item 4
+          attributes:
+            data-icon: linkedin
+
+  - name: with primary and secondary navigation, sponsor image and social navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-highlighted: true
       navigationSecondary:
         - href: '#1'
           text: Navigation item 1
@@ -283,13 +261,11 @@ examples:
     data:
       navigation: [ ]
   - name: with navigation item attributes
-    hidden: true
+    # hidden: true
     data:
       navigation:
-        - title: Single column list 1
-          items:
-            - href: '#1'
-              text: Navigation item 1
-              attributes:
-                data-attribute: my-attribute
-                data-attribute-2: my-attribute-2
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-attribute: my-attribute
+            data-attribute-2: my-attribute-2

@@ -41,9 +41,7 @@
   }
 
   &__list-item {
-    &:not(:last-child) {
-      @include govuk-responsive-margin(6, "bottom");
-    }
+    @include govuk-responsive-margin(6, "bottom");
 
     a {
       &[data-highlighted="true"] {
@@ -152,6 +150,18 @@
 
   &__list {
     @extend .govuk-footer__list;
+
+    &--primary {
+      @include govuk-media-query($from: desktop) {
+        > * {
+          display: inline-block;
+
+          &:nth-child(odd) {
+            width: calc(50% + 30px);
+          }
+        }
+      }
+    }
 
     &--social {
       //display: inline-flex;

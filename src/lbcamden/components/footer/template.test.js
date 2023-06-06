@@ -41,7 +41,7 @@ describe('footer', () => {
 
   describe('navigation', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('footer', examples['with two navigation levels and social navigation'])
+      const $ = render('footer', examples['with primary and secondary navigation and social navigation'])
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
@@ -53,16 +53,8 @@ describe('footer', () => {
       expect($('.lbcamden-footer__navigation').length).toEqual(0)
     })
 
-    it('renders headings', () => {
-      const $ = render('footer', examples['with single navigation level'])
-
-      const $firstSection = $('.lbcamden-footer__section:first-child')
-      const $firstHeading = $firstSection.find('h2.govuk-visually-hidden')
-      expect($firstHeading.text()).toEqual('Single column list')
-    })
-
     it('renders lists of links', () => {
-      const $ = render('footer', examples['with single navigation level'])
+      const $ = render('footer', examples['with primary navigation'])
 
       const $list = $('ul.lbcamden-footer__list')
       const $items = $list.find('li.lbcamden-footer__list-item')
@@ -78,27 +70,6 @@ describe('footer', () => {
       const $navigationLink = $('.lbcamden-footer__list a')
       expect($navigationLink.attr('data-attribute')).toEqual('my-attribute')
       expect($navigationLink.attr('data-attribute-2')).toEqual('my-attribute-2')
-    })
-
-    it('renders one-column section full width by default', () => {
-      const $ = render('footer', examples['with single navigation level'])
-
-      const $section = $('.lbcamden-footer__section')
-      expect($section.hasClass('govuk-grid-column-two-thirds-from-desktop')).toBeTruthy()
-    })
-
-    it('renders two-column section full width by default', () => {
-      const $ = render('footer', examples['with two navigation levels'])
-
-      const $section = $('.lbcamden-footer__section')
-      expect($section.hasClass('govuk-grid-column-one-third-from-desktop')).toBeTruthy()
-    })
-
-    it('renders section custom width when width specified', () => {
-      const $ = render('footer', examples['with custom width'])
-
-      const $section = $('.lbcamden-footer__section')
-      expect($section.hasClass('govuk-grid-column-two-thirds-from-desktop')).toBeTruthy()
     })
   })
 })

@@ -4,18 +4,13 @@
     {% if params.navigation | length or params.navigationSocial.length or params.navigationSocial %}
 
     <div class="govuk-row lbcamden-footer__navigation">
-      {% for section in params.navigation %}
-        <div class="lbcamden-footer__section govuk-grid-column-full govuk-grid-column-{{ section.width | default("one-third" if params.navigation | length > 1 else "two-thirds") }}-from-desktop">
-          <h2 class="govuk-visually-hidden">{{ section.title }}</h2>
-          <ul class="lbcamden-footer__list ">
-            {% for item in section.items %}
-              <li class="lbcamden-footer__list-item">
-                <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
+      <ul class="lbcamden-footer__list lbcamden-footer__list--primary govuk-grid-column-two-thirds-from-desktop">
+        {% for item in params.navigation %}
+          <li class="lbcamden-footer__list-item">
+            <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
       <div class="lbcamden-footer__section lbcamden-footer__socials govuk-grid-column-full govuk-grid-column-one-third-from-desktop">
         <div>
           {% if params.navigationSocial | length %}
