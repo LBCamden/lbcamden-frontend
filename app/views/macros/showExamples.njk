@@ -1,7 +1,6 @@
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% macro showExamples(componentSlug, componentName, data, legacyQuery, govukComponent) %}
-
   {% for example in data.examples | rejectattr('hidden') %}
 
     {% set exampleSlug = (example.name | replace(" ", "-")) %}

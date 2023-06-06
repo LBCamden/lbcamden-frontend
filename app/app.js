@@ -148,7 +148,7 @@ module.exports = (options) => {
     res.locals.componentData = components.map(componentName => {
       const componentData = fileHelper.getComponentData(componentName)
       const defaultExample = componentData.examples.find(
-        example => example.name === 'default'
+        example => example.name === 'default' || example.isDefault
       )
       return {
         componentName,
