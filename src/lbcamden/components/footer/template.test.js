@@ -64,6 +64,17 @@ describe('footer', () => {
       expect($firstItem.text()).toContain('Navigation item 1')
     })
 
+    it('renders utility links', () => {
+      const $ = render('footer', examples['with primary, secondary and utility navigation, sponsor image and social navigation'])
+
+      const $list = $('ul.lbcamden-footer__list--utility')
+      const $items = $list.find('li.lbcamden-footer__list-item')
+      const $firstItem = $items.find('a:first-child')
+      expect($items.length).toEqual(2)
+      expect($firstItem.attr('href')).toEqual('#1')
+      expect($firstItem.text()).toContain('Utility item 1')
+    })
+
     it('renders attributes on links', () => {
       const $ = render('footer', examples['with navigation item attributes'])
 

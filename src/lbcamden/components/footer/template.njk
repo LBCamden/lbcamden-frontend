@@ -13,6 +13,16 @@
       </ul>
       <div class="lbcamden-footer__section lbcamden-footer__socials govuk-grid-column-full govuk-grid-column-one-third-from-desktop">
         <div>
+          {% if params.navigationUtility | length %}
+            <ul class="lbcamden-footer__list lbcamden-footer__list--utility">
+              {% for item in params.navigationUtility %}
+                <li class="lbcamden-footer__list-item">
+                  <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
           {% if params.navigationSocial | length %}
           <h3>Follow us on social media</h3>
           <ul class="lbcamden-footer__list lbcamden-footer__list--social">

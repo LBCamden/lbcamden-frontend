@@ -37,6 +37,40 @@ params:
         type: object
         required: false
         description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationSecondary
+    type: array
+    required: false
+    description: Array of items for use in the secondary navigation section of the footer.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: List item text in the navigation section of the footer.
+      - name: href
+        type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationUtility
+    type: array
+    required: false
+    description: Array of items for use in the secondary navigation section of the footer.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: List item text in the navigation section of the footer.
+      - name: href
+        type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
   - name: navigationSocial
     type: array
     required: false
@@ -200,7 +234,7 @@ examples:
           attributes:
             data-icon: linkedin
 
-  - name: with primary and secondary navigation, sponsor image and social navigation
+  - name: with primary, secondary and utility navigation, sponsor image and social navigation
     data:
       navigation:
         - href: '#1'
@@ -209,8 +243,6 @@ examples:
           text: Navigation item 2
         - href: '#3'
           text: Navigation item 3
-          attributes:
-            data-highlighted: true
       navigationSecondary:
         - href: '#1'
           text: Navigation item 1
@@ -220,6 +252,15 @@ examples:
           text: Navigation item 3
         - href: '#4'
           text: Navigation item 4
+      navigationUtility:
+        - href: '#1'
+          text: Utility item 1
+          attributes:
+            data-highlighted: true
+        - href: '#2'
+          text: Utility item 2
+          attributes:
+            data-highlighted: true
       sponsorLogo: |
         <img src="/assets/images/funded-by-uk-government.png" style="width: 249px" />
       navigationSocial:
@@ -261,7 +302,7 @@ examples:
     data:
       navigation: [ ]
   - name: with navigation item attributes
-    # hidden: true
+    hidden: true
     data:
       navigation:
         - href: '#1'
