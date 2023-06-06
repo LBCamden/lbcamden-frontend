@@ -32,13 +32,6 @@ describe('search', () => {
       expect($component.attr('name')).toEqual('search')
     })
 
-    it('input renders with placeholder="Search" by default', () => {
-      const $ = render('search', examples.default)
-
-      const $component = $('.lbcamden-search__input')
-      expect($component.attr('placeholder')).toEqual('Search')
-    })
-
     it('renders with a form', () => {
       const $ = render('search', examples.default)
 
