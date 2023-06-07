@@ -39,7 +39,7 @@
 
 {% block header %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
-{% from "status/macro.njk" import LBCamdenStatus %}
+{% from "service-banner/macro.njk" import LBCamdenServiceBanner %}
 
   {{ govukCookieBanner({
     "messages": [
@@ -84,23 +84,19 @@
         "text": "Popular search 3"
       }
     ],
-    emergencyBanner: '<section role="banner" class="lbcamden-emergency lbcamden-emergency--notable-death lbcamden-emergency--homepage ">
+    emergencyBanner: '<section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death  ">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="lbcamden-emergency__heading ">His Royal Highness Henry VIII</h2>
+        <h2 class="lbcamden-emergency-banner__heading ">His Royal Highness Henry VIII</h2>
 
-        
-        <p class="lbcamden-emergency__description ">
+        <p class="lbcamden-emergency-banner__description ">
           1491–1547
         </p>
-        
 
-        
-        <a href="https://www.gov.uk/" class="lbcamden-emergency__link">
+        <a href="https://www.gov.uk/" class="lbcamden-emergency-banner__link">
           Override Link Text
         </a>
-        
       </div>
     </div>
   </div>
@@ -235,11 +231,11 @@
       }
     ]
   }) }}
-  {{ LBCamdenStatus({
+  {{ LBCamdenServiceBanner({
       'heading': 'Council Tax and benefit forms unavailable',
       'shortDescription': 'Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.'
   }) }}
-    {{ LBCamdenStatus({
+    {{ LBCamdenServiceBanner({
       'heading': 'Parking Suspension is not available',
       'shortDescription': 'Application forms are unavailable this evening between 6pm and 9pm. Find out more here'
   }) }}
