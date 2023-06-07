@@ -7,6 +7,8 @@
   language-markup
 {% endset %}
 
+{% set componentPage = true %}
+
 {% block beforeContent %}
   <div class="govuk-width-container">
   {{ govukBackLink({
@@ -34,4 +36,8 @@
       {{ showExamples(componentName, componentNameHuman, data, legacyQuery, false) }}
     {% endfor %}
   {% endif %}
+{% endblock %}
+
+{% block footer %}
+  {{ LBCamdenFooter() }}
 {% endblock %}

@@ -1,0 +1,173 @@
+---
+scenario: The top level page for a topic, service or category.
+notes:
+---
+{% extends "full-page-example.njk" %}
+
+{% from "card/macro.njk" import LBCamdenCard %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageTitle = "Business" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/"
+      }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-!-margin-bottom-5">Housing</h1>
+
+      <p class="govuk-body-lead">Housing advice and support in Camden</p>
+
+    </div>
+  </div>
+
+  <h2>Popular</h2>
+
+  <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-6">
+    {% set widthClass = 'lbcamden-card--popular' %}
+    {% set popularItems = [
+      {
+        title: "Housing Repairs",
+        href: "#"
+      },
+      {
+        title: "Leaseholder and Freeholders",
+        href: "#"
+      },
+      {
+        title: "Bid for a property",
+        href: "#"
+      },
+      {
+        title: "Apply for council Housing",
+        href: "#"
+      }
+    ] %}
+
+    {% for item in popularItems %}
+        <a href="#" class="lbcamden-link--promo lbcamden-link--promo-alt">{{ item.title }}</a>
+    {% endfor %}
+
+  </ul>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l">Contents</h2>
+      {% set widthClass = 'lbcamden-card lbcamden-card--naked' %}
+
+      {% set items = [
+        {
+  title: 'Council tenants',
+  links: [
+    'Council tenant rights and responsibilities',
+	'Home swap',
+	'Paying rent for your council home',
+	'Ordering keys or fobs',
+	'Your Neighbourhood Housing Officer',
+	'Downsizing'
+  ]
+},
+{
+  title: 'Finding a home',
+  links: [
+    'Apply for council housing',
+	'Intermediate housing',
+	'Update a council housing application'
+  ]
+},
+{
+  title: 'Fire and building safety',
+  links: [
+    'Fire safety advice',
+	'Fire risk assessments for Camden housing',
+	'Asbestos Advice',
+	'Safety cases for high rise buildings'
+  ]
+},
+{
+  title: 'Homelessness in Camden',
+  links: [
+    'Hostels and support for homeless people in Camden',
+	'Find my nearest soup kitchen',
+	'Tackling homelessness',
+	'Help for rough sleepers'
+  ]
+},
+
+{
+  title: 'Landlords, home owners and private tenants',
+  links: [
+    'Housing adaptations, grants and assistance',
+    'Houses in multiple occupation (HMO)',
+	'Private sector housing standards and enforcement',
+	'Landlord accreditation scheme',
+	'Requirements for agents and landlords',
+	'Empty homes',
+	'Camden Lettings',
+	'Camden Private Renters website'
+  ]
+},
+
+{
+  title: 'Leaseholders and freeholders',
+  links: [
+    'Selling or remortgaging your leasehold property',
+	'Consultation with leaseholders on building works and services',
+	'Service Charge, Insurance and Freeholders',
+	'Making alterations or improvements to your property'
+  ]
+}
+      ] %}
+      <ul class="lbcamden-card-grid">
+        {% for item in items %}
+          {% set cardHtml %}
+            {% if item.links %}
+              <ul class="lbcamden-list--dash">
+                {% for link in item.links %}
+                  <li><a href="#">{{ link }}</a></li>
+                {% endfor %}
+              </ul>
+              <a href="#" class="lbcamden-link--action">View all</a>
+            {% endif %}
+          {% endset %}
+          {{ LBCamdenCard({
+            element: 'li',
+            heading: {
+              title: item.title
+            },
+            content: {
+              html: cardHtml
+            }
+          }) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block afterContent %}
+  <section class="lbcamden-row lbcamden-row--related">
+    <div class="govuk-width-container">
+      <h2 class="govuk-heading-l">More in Housing</h2>
+      <ul class="lbcamden-list--dash">
+        <li><a href="#">Tenant and Resident Associations (TRAs) in Camden</a></li>
+        <li><a href="#">Apply for a garage, parking space, or a shed</a></li>
+        <li><a href="#">Building Safety Fund</a></li>
+        <li><a href="#">Estate walkabouts</a></li>
+        <li><a href="#">Camden housing and property residents panel</a></li>
+        <li><a href="#">Electricity meters in locked communal areas</a></li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}

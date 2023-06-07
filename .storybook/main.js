@@ -18,7 +18,7 @@ const config = {
   },
   staticDirs: [
     {
-      from: '../dist/assets',
+      from: '../src/lbcamden/assets',
       to: '/assets'
     },
     {

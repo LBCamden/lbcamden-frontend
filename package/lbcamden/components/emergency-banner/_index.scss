@@ -1,0 +1,80 @@
+.lbcamden-emergency-banner {
+  @include govuk-font(19);
+  @include govuk-responsive-padding(4, "top", $adjustment: -3px);
+  @include govuk-responsive-padding(4, "bottom");
+
+  margin-top: 2px;
+  border-top: 3px solid govuk-colour("white");
+  color: govuk-colour("white");
+  background-color: govuk-colour("mid-grey");
+
+  &__heading {
+    @include govuk-font(24, $weight: "bold");
+    margin: 0;
+    color: govuk-colour("white");
+  }
+
+  &__description {
+    @include govuk-font(16);
+    margin-top: 0;
+    margin-bottom: govuk-spacing(4);
+    color: govuk-colour("white");
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include govuk-font(16);
+    color: govuk-colour("white");
+
+    &:link,
+    &:visited {
+      color: govuk-colour("white");
+    }
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  &--notable-death {
+    background-color: govuk-colour("black");
+  }
+
+  &--national-emergency-banner {
+    // Not using govuk-colour("red") aka #d4351c as that's a slightly different red.
+    background-color: #b10e1e;
+  }
+
+  &--local-emergency-banner {
+    // Not using govuk-colour("turquoise") for background colour as
+    // the contrast was too low with white text
+    background-color: #00847d;
+  }
+
+  @include govuk-media-query($media-type: "print") {
+    display: none;
+  }
+
+  &--homepage {
+    position: relative;
+    z-index: 10;
+    margin-top: 0;
+
+    .lbcamden-emergency-banner {
+      &__heading {
+        @include govuk-font(36, $weight: "bold");
+
+        @include govuk-media-query($from: "tablet") {
+          margin-bottom: govuk-spacing(4);
+        }
+      }
+
+      &__description {
+        margin: govuk-spacing(4) 0;
+      }
+    }
+  }
+}
