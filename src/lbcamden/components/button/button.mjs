@@ -1,5 +1,5 @@
-import 'node_modules/govuk-frontend/govuk/vendor/polyfills/Event.mjs' // addEventListener and event.target normaliziation
-import 'node_modules/govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind.mjs'
+import '../../vendor/polyfills/Event' // addEventListener and event.target normaliziation
+import '../../vendor/polyfills/Function/prototype/bind'
 
 var KEY_SPACE = 32
 var DEBOUNCE_TIMEOUT_IN_SECONDS = 1

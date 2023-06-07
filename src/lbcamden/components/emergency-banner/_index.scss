@@ -1,4 +1,4 @@
-.lbcamden-emergency {
+.lbcamden-emergency-banner {
   @include govuk-font(19);
   @include govuk-responsive-padding(4, "top", $adjustment: -3px);
   @include govuk-responsive-padding(4, "bottom");
@@ -43,12 +43,12 @@
     background-color: govuk-colour("black");
   }
 
-  &--national-emergency {
+  &--national-emergency-banner {
     // Not using govuk-colour("red") aka #d4351c as that's a slightly different red.
     background-color: #b10e1e;
   }
 
-  &--local-emergency {
+  &--local-emergency-banner {
     // Not using govuk-colour("turquoise") for background colour as
     // the contrast was too low with white text
     background-color: #00847d;
@@ -63,7 +63,7 @@
     z-index: 10;
     margin-top: 0;
 
-    .lbcamden-emergency {
+    .lbcamden-emergency-banner {
       &__heading {
         @include govuk-font(36, $weight: "bold");
 
