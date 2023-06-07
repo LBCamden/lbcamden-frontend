@@ -175,10 +175,6 @@ notes:
 {% block footer %}
   {{ LBCamdenFooter({
     "navigation": [
-      {
-        "width": "one-half-from-mobile-large",
-        "title": "Navigation section",
-        "items": [
         {
           "href": "#1",
           "text": "Home"
@@ -190,21 +186,19 @@ notes:
         {
           "href": "#3",
           "text": "Contact Camden Council"
-        },        {
+        }
+    ],
+    "navigationSecondary": [        
+        {
           "href": "#4",
           "text": "Subscribe to our e-newsletter",
           "attributes": {
             "data-highlighted": true
           }
         }
-      ]
-      }
     ],
-    "navigationSecondary": [
-      {
-        "title": "Navigation section",
-        "width": "one-half-from-mobile-large",
-        "items": [
+    "navigationUtility": [
+
         {
           "href": "#1",
           "text": "Accessibility statement"
@@ -221,42 +215,36 @@ notes:
           "href": "#4",
           "text": "Modern slavery statement"
         }
-      ]
-      }
     ],
+    
     "navigationSocial": [
-      {
-        "title": "Social navigation section",
-        "items": [
         {
           "href": "#1",
           "text": "Navigation item 1",
           "attributes": {
-          "data-icon": "facebook"
-        }
+            "data-icon": "facebook"
+          }
         },
         {
           "href": "#2",
           "text": "Navigation item 2",
           "attributes": {
-          "data-icon": "youtube"
-        }
+            "data-icon": "youtube"
+          }
         },
         {
           "href": "#3",
           "text": "Navigation item 3",
           "attributes": {
-          "data-icon": "twitter"
-        }
+            "data-icon": "twitter"
+          }
         },
         {
           "href": "#4",
           "text": "Navigation item 4",
           "attributes": {
-          "data-icon": "linkedin"
-        }
-        }
-      ]
+            "data-icon": "linkedin"
+          }
       }
     ]
   }) }}

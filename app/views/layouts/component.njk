@@ -14,6 +14,8 @@
   {% include componentName +"/"+ componentName +".njk" ignore missing %}
 {% endset %}
 
+{% set componentPage = true %}
+
 {% block beforeContent %}
   <div class="govuk-!-margin-top-3">
     {{ govukBreadcrumbs({
@@ -37,4 +39,8 @@
   {% block examples %}
     {{ showExamples(componentName, componentNameHuman, componentData, legacyQuery, govukComponent) }}
   {% endblock %}
+{% endblock %}
+
+{% block footer %}
+  {{ LBCamdenFooter() }}
 {% endblock %}
