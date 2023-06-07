@@ -6,10 +6,12 @@ function LBCamdenHeader ($module) {
   this.$navigationMenu = this.$module.querySelector('#super-navigation-menu')
   this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle')
   this.$searchMenu = this.$module.querySelector('#super-search-menu')
+  this.$emergencyBanner = this.$module.querySelector('#lbcamden-emergency-banner')
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
   this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item--with-children')
   this.$phaseBanner = document.querySelector('.govuk-phase-banner')
   this.$header = document.querySelector('.lbcamden-header')
+  this.$navContainer = this.$header.children[0]
   // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]')
   this.menuOpen = false
@@ -96,10 +98,16 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
   this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true')
   if (this.mql.matches === true) {
-    this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
+    this.menuContentShift(theTarget.offsetHeight)
   }
   if (this.$searchMenu != null) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
+  }
+}
+
+LBCamdenHeader.prototype.menuContentShift = function (offsetPixels) {
+  if (this.$emergencyBanner) {
+    this.$emergencyBanner.style.marginTop = offsetPixels + 'px'
   }
 }
 
@@ -165,13 +173,16 @@ LBCamdenHeader.prototype.handleMenuButtonClick = function () {
 LBCamdenHeader.prototype.handleSearchButtonClick = function () {
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
+
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = '0'
+      this.menuContentShift(0)
     }
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
+
     if (this.mql.matches === true) {
-      this.$module.style.marginBottom = (this.$searchMenu.offsetHeight - 10) + 'px'
+      this.menuContentShift(this.$searchMenu.offsetHeight - 10)
     }
   }
 }
@@ -190,7 +201,7 @@ LBCamdenHeader.prototype.openMenu = function ($button, $target) {
 
 LBCamdenHeader.prototype.closeMenu = function ($button, $target) {
   this.menuOpen = false
-  this.$module.style.marginBottom = '0px'
+  this.menuContentShift(0)
   if (this.$navigationMenu != null) {
     $button.classList.remove('lbcamden-header__open-button')
     $button.setAttribute('aria-expanded', !1)
@@ -210,6 +221,7 @@ LBCamdenHeader.prototype.openSearch = function ($button, $target) {
   $button.setAttribute('aria-label', 'Hide navigation menu')
   this.$module.querySelectorAll('.lbcamden-header__open-button').forEach(x => x.classList.remove('lbcamden-header__open-button'))
   $button.classList.add('lbcamden-header__open-button')
+  $target.style.top = this.$navContainer.offsetHeight + 'px'
   $target.removeAttribute('hidden')
   // document.getElementById('lbs-search__box').focus()
   if (this.mql.matches !== true) {

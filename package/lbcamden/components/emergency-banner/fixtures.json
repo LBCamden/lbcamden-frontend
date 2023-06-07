@@ -1,0 +1,62 @@
+{
+    "component": "emergency-banner",
+    "fixtures": [
+        {
+            "name": "notable death",
+            "options": {
+                "campaignClass": "notable-death",
+                "heading": "His Royal Highness Henry VIII",
+                "shortDescription": "1491–1547",
+                "link": "https://www.gov.uk/",
+                "linkText": "Override Link Text"
+            },
+            "html": "<section role=\"banner\" class=\"lbcamden-emergency-banner lbcamden-emergency-banner--notable-death  \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"lbcamden-emergency-banner__heading \">His Royal Highness Henry VIII</h2>\n\n        \n        <p class=\"lbcamden-emergency-banner__description \">\n          1491–1547\n        </p>\n        \n\n        \n        <a href=\"https://www.gov.uk/\" class=\"lbcamden-emergency-banner__link\">\n          Override Link Text\n        </a>\n        \n      </div>\n    </div>\n  </div>\n</section>",
+            "hidden": false
+        },
+        {
+            "name": "notable death homepage",
+            "options": {
+                "homepage": true,
+                "campaignClass": "notable-death",
+                "heading": "His Royal Highness Henry VIII",
+                "shortDescription": "1491–1547",
+                "link": "https://www.gov.uk/",
+                "linkText": "Override Link Text"
+            },
+            "html": "<section role=\"banner\" class=\"lbcamden-emergency-banner lbcamden-emergency-banner--notable-death lbcamden-emergency-banner--homepage \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"lbcamden-emergency-banner__heading \">His Royal Highness Henry VIII</h2>\n\n        \n        <p class=\"lbcamden-emergency-banner__description \">\n          1491–1547\n        </p>\n        \n\n        \n        <a href=\"https://www.gov.uk/\" class=\"lbcamden-emergency-banner__link\">\n          Override Link Text\n        </a>\n        \n      </div>\n    </div>\n  </div>\n</section>",
+            "hidden": false
+        },
+        {
+            "name": "national emergency-banner",
+            "options": {
+                "campaignClass": "national-emergency-banner",
+                "heading": "National emergency-banner",
+                "shortDescription": "This is a level 1 incident",
+                "link": "https://www.gov.uk/",
+                "linkText": "Override Link Text"
+            },
+            "html": "<section role=\"banner\" class=\"lbcamden-emergency-banner lbcamden-emergency-banner--national-emergency-banner  \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"lbcamden-emergency-banner__heading \">National emergency-banner</h2>\n\n        \n        <p class=\"lbcamden-emergency-banner__description \">\n          This is a level 1 incident\n        </p>\n        \n\n        \n        <a href=\"https://www.gov.uk/\" class=\"lbcamden-emergency-banner__link\">\n          Override Link Text\n        </a>\n        \n      </div>\n    </div>\n  </div>\n</section>",
+            "hidden": false
+        },
+        {
+            "name": "local emergency-banner",
+            "options": {
+                "campaignClass": "local-emergency-banner",
+                "heading": "Local emergency-banner",
+                "shortDescription": "This is a level 2 incident",
+                "link": "https://www.gov.uk/",
+                "linkText": "Override Link Text"
+            },
+            "html": "<section role=\"banner\" class=\"lbcamden-emergency-banner lbcamden-emergency-banner--local-emergency-banner  \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"lbcamden-emergency-banner__heading \">Local emergency-banner</h2>\n\n        \n        <p class=\"lbcamden-emergency-banner__description \">\n          This is a level 2 incident\n        </p>\n        \n\n        \n        <a href=\"https://www.gov.uk/\" class=\"lbcamden-emergency-banner__link\">\n          Override Link Text\n        </a>\n        \n      </div>\n    </div>\n  </div>\n</section>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "classes": "app-emergency-banner--custom-modifier"
+            },
+            "html": "<section role=\"banner\" class=\"lbcamden-emergency-banner lbcamden-emergency-banner--  app-emergency-banner--custom-modifier\">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"lbcamden-emergency-banner__heading \"></h2>\n\n        \n\n        \n      </div>\n    </div>\n  </div>\n</section>",
+            "hidden": true
+        }
+    ]
+}
