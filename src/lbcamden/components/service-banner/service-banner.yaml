@@ -10,7 +10,7 @@ params:
   - name: shortDescription
     type: string
     required: false
-    description: Short description of the emergency
+    description: Short description of the emergency-banner
 
 previewLayout: full-width
 
