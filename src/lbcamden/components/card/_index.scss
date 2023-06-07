@@ -297,6 +297,19 @@
     }
   }
 
+  /// Helper for displaying lbcamden-card elements in a <ul>
+  ///
+  /// If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
+  /// card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
+  &__link-wrapper {
+    position: relative;
+
+    .lbcamden-card {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &--popular {
     > * {
       min-height: 50px;
@@ -315,23 +328,10 @@
   }
 }
 
-/// Helper for displaying lbcamden-card elements in a <ul>
-///
-/// If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
-/// card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
-.lbcamden-card-grid--link-wrapper {
-  position: relative;
-
-  .lbcamden-card {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 // When cards are used in a ul, they shouldn't pick up the li's default spacing
 ul {
   > .lbcamden-card,
-  > .lbcamden-card-grid--link-wrapper {
+  > .lbcamden-card-grid__link-wrapper {
     margin-bottom: 0;
   }
 }
