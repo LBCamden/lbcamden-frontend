@@ -36,8 +36,10 @@ b {
   @include govuk-typography-weight-bold;
 }
 
+.govuk-link,
 a {
   @extend %govuk-link;
+  text-underline-offset: $text-underline-offset;
 }
 
 hr {
@@ -48,4 +50,16 @@ hr {
 
 address {
   font-style: normal;
+}
+
+.govuk-body-lead {
+  line-height: 24px;
+
+  @include govuk-media-query(tablet) {
+    line-height: 32px;
+  }
+}
+
+body {
+  text-underline-offset: $text-underline-offset;
 }
