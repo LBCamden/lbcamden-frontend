@@ -16,5 +16,11 @@
         "type": "boolean",
         "required": false,
         "description": "If present, adds a phasebanner to the header"
+    },
+    {
+        "name": "emergencyBanner",
+        "type": "string",
+        "required": false,
+        "description": "If present, adds html banner content before the brand bar"
     }
 ]

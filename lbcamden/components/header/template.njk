@@ -18,6 +18,11 @@
   {% endif %}
 
 </div>
+{% if params.emergencyBanner %}
+  <div id="lbcamden-emergency-banner">
+    {{ params.emergencyBanner | safe }}
+  </div>
+{% endif %}
 </header>
 {% if params.phaseBanner %}
   <div class="govuk-width-container">
