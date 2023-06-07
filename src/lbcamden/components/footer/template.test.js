@@ -41,7 +41,7 @@ describe('footer', () => {
 
   describe('navigation', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('footer', examples['with primary and secondary navigation and social navigation'])
+      const $ = render('footer', examples['with primary and utility navigation and social navigation'])
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()

@@ -13,9 +13,9 @@
       </ul>
       <div class="lbcamden-footer__section lbcamden-footer__socials govuk-grid-column-full govuk-grid-column-one-third-from-desktop">
         <div>
-          {% if params.navigationUtility | length %}
+          {% if params.navigationSecondary | length %}
             <ul class="lbcamden-footer__list lbcamden-footer__list--utility">
-              {% for item in params.navigationUtility %}
+              {% for item in params.navigationSecondary %}
                 <li class="lbcamden-footer__list-item">
                   <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
                 </li>
@@ -38,13 +38,13 @@
       </div>
     </div>
     {% endif %}
-    {% if (params.navigation | length or params.navigationSocial.length) and params.navigationSecondary | length %}
+    {% if (params.navigation | length or params.navigationSocial.length) and params.navigationUtility | length %}
       <hr />
     {% endif %}
     <div class="lbcamden-footer__estate">
       <div class="lbcamden-footer__section govuk-grid-column-full">
         <ul class="lbcamden-footer__list">
-          {% for item in params.navigationSecondary %}
+          {% for item in params.navigationUtility %}
           <li class="lbcamden-footer__list-item">
             <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
           </li>
