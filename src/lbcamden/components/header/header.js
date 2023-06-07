@@ -6,7 +6,7 @@ function LBCamdenHeader ($module) {
   this.$navigationMenu = this.$module.querySelector('#super-navigation-menu')
   this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle')
   this.$searchMenu = this.$module.querySelector('#super-search-menu')
-  this.$emergencyBanner = this.$module.querySelector('#lbcamden-emergency')
+  this.$emergencyBanner = this.$module.querySelector('#lbcamden-emergency-banner')
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
   this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item--with-children')
   this.$phaseBanner = document.querySelector('.govuk-phase-banner')

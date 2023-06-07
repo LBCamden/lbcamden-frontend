@@ -6,7 +6,7 @@ params:
   - name: campaignClass
     type: string
     required: true
-    description: Type of emergency.
+    description: Type of emergency-banner.
   - name: homepage
     type: boolean
     required: false
@@ -26,15 +26,15 @@ params:
   - name: shortDescription
     type: string
     required: false
-    description: Short description of the emergency
+    description: Short description of the emergency-banner
   - name: link
     type: string
     required: false
-    description: URL of page with more information on the emergency
+    description: URL of page with more information on the emergency-banner
   - name: linkText
     type: string
     required: false
-    description: Text content of the link to emergency page
+    description: Text content of the link to emergency-banner page
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -69,23 +69,23 @@ examples:
       shortDescription:  1491–1547
       link: https://www.gov.uk/
       linkText: Override Link Text
-  - name: national emergency
+  - name: national emergency-banner
     description: Standard application of the header element.
     data:
-      campaignClass: national-emergency
-      heading:   National emergency
+      campaignClass: national-emergency-banner
+      heading:   National emergency-banner
       shortDescription: This is a level 1 incident 
       link: https://www.gov.uk/
       linkText: Override Link Text
-  - name: local emergency
+  - name: local emergency-banner
     description: Standard application of the header element.
     data:
-      campaignClass: local-emergency
-      heading:  Local emergency
+      campaignClass: local-emergency-banner
+      heading:  Local emergency-banner
       shortDescription:  This is a level 2 incident 
       link: https://www.gov.uk/
       linkText: Override Link Text
   - name: classes
     hidden: true
     data:
-      classes: app-emergency--custom-modifier
+      classes: app-emergency-banner--custom-modifier
