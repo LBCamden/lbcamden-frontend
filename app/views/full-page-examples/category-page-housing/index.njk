@@ -15,7 +15,7 @@ notes:
     items: [
       {
         text: "Home",
-        href: "#/"
+        href: "/"
       }
     ]
   }) }}
@@ -24,10 +24,9 @@ notes:
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-!-margin-bottom-5">Business</h1>
+      <h1 class="govuk-!-margin-bottom-5">Housing</h1>
 
-      <p class="govuk-body-lead">Advice and support for businesses in Camden. Licensing information, guidance on paying
-        your business rates and more.</p>
+      <p class="govuk-body-lead">Housing advice and support in Camden</p>
 
     </div>
   </div>
@@ -38,27 +37,19 @@ notes:
     {% set widthClass = 'lbcamden-card--popular' %}
     {% set popularItems = [
       {
-        title: "Paying your business rates",
+        title: "Housing Repairs",
         href: "#"
       },
       {
-        title: "Camden's new e-invoicing service",
+        title: "Leaseholder and Freeholders",
         href: "#"
       },
       {
-        title: "Search the licensing public register",
+        title: "Bid for a property",
         href: "#"
       },
       {
-        title: "Discounts and exemptions for business rates",
-        href: "#"
-      },
-      {
-        title: "Pavement licensing",
-        href: "#"
-      },
-      {
-        title: "Alcohol premises licensing",
+        title: "Apply for council Housing",
         href: "#"
       }
     ] %}
@@ -77,53 +68,66 @@ notes:
 
       {% set items = [
         {
-          title: 'Business rates',
-          links: [
-          'Business rates explained',
-          'Discounts and exemptions for business rates',
-          'Paying your business rates'
-        ]
-        },
-        {
-          title: 'Markets',
-          links: [
-          'Visit Camden’s markets',
-          'Apply to trade in Camden',
-          'Market news'
-        ]
-        },
-        {
-          title: 'Licensing',
-          links: [
-          'Alcohol and entertainment',
-          'Other licenses and permits',
-          'Search the licensing public register'
-        ]
-        },
-        {
-          title: 'Doing business in Camden',
-          links: [
-          'Starting or growing your business',
-          'Business rates, licensing and permits',
-          'Trading standards'
-        ]
-        },
-        {
-          title: 'Food business',
-          links: [
-          'Registering a food business',
-          'Food and hygiene information',
-          'Food safety training'
-        ]
-        },
-        {
-          title: 'Getting paid by Camden',
-          links: [
-          'Camden\'s Accounts Payable Policy',
-          'Camden\'s new e-invoicing service',
-          'e-invoicing Support'
-        ]
-        }
+  title: 'Council tenants',
+  links: [
+    'Council tenant rights and responsibilities',
+	'Home swap',
+	'Paying rent for your council home',
+	'Ordering keys or fobs',
+	'Your Neighbourhood Housing Officer',
+	'Downsizing'
+  ]
+},
+{
+  title: 'Finding a home',
+  links: [
+    'Apply for council housing',
+	'Intermediate housing',
+	'Update a council housing application'
+  ]
+},
+{
+  title: 'Fire and building safety',
+  links: [
+    'Fire safety advice',
+	'Fire risk assessments for Camden housing',
+	'Asbestos Advice',
+	'Safety cases for high rise buildings'
+  ]
+},
+{
+  title: 'Homelessness in Camden',
+  links: [
+    'Hostels and support for homeless people in Camden',
+	'Find my nearest soup kitchen',
+	'Tackling homelessness',
+	'Help for rough sleepers'
+  ]
+},
+
+{
+  title: 'Landlords, home owners and private tenants',
+  links: [
+    'Housing adaptations, grants and assistance',
+    'Houses in multiple occupation (HMO)',
+	'Private sector housing standards and enforcement',
+	'Landlord accreditation scheme',
+	'Requirements for agents and landlords',
+	'Empty homes',
+	'Camden Lettings',
+	'Camden Private Renters website'
+  ]
+},
+
+{
+  title: 'Leaseholders and freeholders',
+  links: [
+    'Selling or remortgaging your leasehold property',
+	'Consultation with leaseholders on building works and services',
+	'Service Charge, Insurance and Freeholders',
+	'Making alterations or improvements to your property'
+  ]
+}
       ] %}
       <ul class="lbcamden-card-grid">
         {% for item in items %}
@@ -155,12 +159,14 @@ notes:
 {% block afterContent %}
   <section class="lbcamden-row lbcamden-row--related">
     <div class="govuk-width-container">
-      <h2 class="govuk-heading-l">Related</h2>
+      <h2 class="govuk-heading-l">More in Housing</h2>
       <ul class="lbcamden-list--dash">
-        <li><a href="#">Business rates</a></li>
-        <li><a href="#">Apply for business and trade parking permits</a></li>
-        <li><a href="#">Advertisements and signs and planning permission</a></li>
-        <li><a href="#">Estate agent boards and planning permission</a></li>
+        <li><a href="#">Tenant and Resident Associations (TRAs) in Camden</a></li>
+        <li><a href="#">Apply for a garage, parking space, or a shed</a></li>
+        <li><a href="#">Building Safety Fund</a></li>
+        <li><a href="#">Estate walkabouts</a></li>
+        <li><a href="#">Camden housing and property residents panel</a></li>
+        <li><a href="#">Electricity meters in locked communal areas</a></li>
       </ul>
     </div>
   </section>

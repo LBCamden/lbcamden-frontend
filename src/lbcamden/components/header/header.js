@@ -106,8 +106,6 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
 }
 
 LBCamdenHeader.prototype.menuContentShift = function (offsetPixels) {
-  this.$module.style.marginBottom = offsetPixels + 'px'
-
   if (this.$emergencyBanner) {
     this.$emergencyBanner.style.marginTop = offsetPixels + 'px'
   }
