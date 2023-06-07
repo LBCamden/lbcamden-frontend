@@ -41,7 +41,7 @@ describe('footer', () => {
 
   describe('navigation', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('footer', examples['with two navigation levels and social navigation'])
+      const $ = render('footer', examples['with primary and utility navigation and social navigation'])
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
@@ -50,55 +50,37 @@ describe('footer', () => {
     it('no items displayed when no item array is provided', () => {
       const $ = render('footer', examples.default)
 
-      expect($('.govuk-footer__navigation').length).toEqual(0)
-    })
-
-    it('renders headings', () => {
-      const $ = render('footer', examples['with single navigation level'])
-
-      const $firstSection = $('.govuk-footer__section:first-child')
-      const $firstHeading = $firstSection.find('h2.govuk-visually-hidden')
-      expect($firstHeading.text()).toEqual('Single column list')
+      expect($('.lbcamden-footer__navigation').length).toEqual(0)
     })
 
     it('renders lists of links', () => {
-      const $ = render('footer', examples['with single navigation level'])
+      const $ = render('footer', examples['with primary navigation'])
 
-      const $list = $('ul.govuk-footer__list')
-      const $items = $list.find('li.govuk-footer__list-item')
+      const $list = $('ul.lbcamden-footer__list')
+      const $items = $list.find('li.lbcamden-footer__list-item')
       const $firstItem = $items.find('a:first-child')
       expect($items.length).toEqual(3)
       expect($firstItem.attr('href')).toEqual('#1')
       expect($firstItem.text()).toContain('Navigation item 1')
     })
 
+    it('renders utility links', () => {
+      const $ = render('footer', examples['with primary, secondary and utility navigation, sponsor image and social navigation'])
+
+      const $list = $('ul.lbcamden-footer__list--utility')
+      const $items = $list.find('li.lbcamden-footer__list-item')
+      const $firstItem = $items.find('a:first-child')
+      expect($items.length).toEqual(2)
+      expect($firstItem.attr('href')).toEqual('#1')
+      expect($firstItem.text()).toContain('Secondary item 1')
+    })
+
     it('renders attributes on links', () => {
       const $ = render('footer', examples['with navigation item attributes'])
 
-      const $navigationLink = $('.govuk-footer__list a')
+      const $navigationLink = $('.lbcamden-footer__list a')
       expect($navigationLink.attr('data-attribute')).toEqual('my-attribute')
       expect($navigationLink.attr('data-attribute-2')).toEqual('my-attribute-2')
-    })
-
-    it('renders one-column section full width by default', () => {
-      const $ = render('footer', examples['with single navigation level'])
-
-      const $section = $('.govuk-footer__section')
-      expect($section.hasClass('govuk-grid-column-one-half')).toBeTruthy()
-    })
-
-    it('renders two-column section full width by default', () => {
-      const $ = render('footer', examples['with two navigation levels'])
-
-      const $section = $('.govuk-footer__section')
-      expect($section.hasClass('govuk-grid-column-one-half')).toBeTruthy()
-    })
-
-    it('renders section custom width when width specified', () => {
-      const $ = render('footer', examples['with custom width'])
-
-      const $section = $('.govuk-footer__section')
-      expect($section.hasClass('govuk-grid-column-two-thirds')).toBeTruthy()
     })
   })
 })
