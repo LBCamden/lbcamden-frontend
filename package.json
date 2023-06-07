@@ -135,7 +135,7 @@
       "/dist/**/*.js",
       "/package/**/*.js",
       "/package/**/*.mjs",
-      "/src/govuk/vendor/polyfills/**/*.js"
+      "/src/lbcamden/vendor/polyfills/**/*.js"
     ]
   },
   "jest": {
