@@ -152,13 +152,13 @@ examples:
           text: Navigation item 7
       navigationUtility:
         - href: '#1'
-          text: Navigation item 1
+          text: Utility item 1
         - href: '#2'
-          text: Navigation item 2
+          text: Utility item 2
         - href: '#3'
-          text: Navigation item 3
+          text: Utility item 3
         - href: '#4'
-          text: Navigation item 4
+          text: Utility item 4
       navigationSocial:
         - href: '#1'
           text: Navigation item 1
@@ -190,13 +190,13 @@ examples:
             data-highlighted: true
       navigationUtility:
         - href: '#1'
-          text: Navigation item 1
+          text: Utility item 1
         - href: '#2'
-          text: Navigation item 2
+          text: Utility item 2
         - href: '#3'
-          text: Navigation item 3
+          text: Utility item 3
         - href: '#4'
-          text: Navigation item 4
+          text: Utility item 4
       sponsorLogo: |
         <img src="/assets/images/funded-by-uk-government.png" style="width: 249px" />
       navigationSocial:
@@ -228,20 +228,20 @@ examples:
           text: Navigation item 3
       navigationUtility:
         - href: '#1'
-          text: Navigation item 1
+          text: Utility item 1
         - href: '#2'
-          text: Navigation item 2
+          text: Utility item 2
         - href: '#3'
-          text: Navigation item 3
+          text: Utility item 3
         - href: '#4'
-          text: Navigation item 4
+          text: Utility item 4
       navigationSecondary:
         - href: '#1'
-          text: Utility item 1
+          text: Secondary item 1
           attributes:
             data-highlighted: true
         - href: '#2'
-          text: Utility item 2
+          text: Secondary item 2
           attributes:
             data-highlighted: true
       sponsorLogo: |

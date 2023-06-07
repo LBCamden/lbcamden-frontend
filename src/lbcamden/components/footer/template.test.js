@@ -72,7 +72,7 @@ describe('footer', () => {
       const $firstItem = $items.find('a:first-child')
       expect($items.length).toEqual(2)
       expect($firstItem.attr('href')).toEqual('#1')
-      expect($firstItem.text()).toContain('Utility item 1')
+      expect($firstItem.text()).toContain('Secondary item 1')
     })
 
     it('renders attributes on links', () => {
