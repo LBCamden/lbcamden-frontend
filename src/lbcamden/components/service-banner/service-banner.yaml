@@ -16,11 +16,11 @@ previewLayout: full-width
 
 examples:
   - name: default
-    description: Standard application of the status element.
+    description: Standard application of the service-banner element.
     data:
       heading: Council Tax and benefit forms unavailable
       shortDescription: Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.
   - name: classes
     hidden: true
     data:
-      classes: app-status--custom-modifier
+      classes: app-service-banner--custom-modifier
