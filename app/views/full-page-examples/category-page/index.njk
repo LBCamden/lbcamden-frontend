@@ -34,7 +34,7 @@ notes:
 
   <h2>Popular</h2>
 
-  <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-6">
+  <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-9">
     {% set widthClass = 'lbcamden-card--popular' %}
     {% set popularItems = [
       {
@@ -64,7 +64,9 @@ notes:
     ] %}
 
     {% for item in popularItems %}
-        <a href="#" class="lbcamden-link--promo lbcamden-link--promo-alt">{{ item.title }}</a>
+        <li>
+          <a class="lbcamden-link--promo lbcamden-link--promo-alt" href="#">{{ item.title }}</a>
+        </li>
     {% endfor %}
 
   </ul>

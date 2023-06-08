@@ -92,8 +92,9 @@ describe('CAMDEN.GOV.UK Frontend', () => {
         @import "all";
       `
       const results = await renderSass({ data: sass })
-      expect(results.css.toString()).toContain(', a {')
-      expect(results.css.toString()).toContain(', p {')
+
+      expect(results.css.toString()).toMatch(/ a[, ][,:. a-zA-Z0-9-_]* {/)
+      expect(results.css.toString()).toMatch(/ p[, ][,:. a-zA-Z0-9-_]* {/)
     })
   })
 

@@ -34,7 +34,7 @@
     }
   }
 
-  &--dash {
+  .lbcamden-list--dash {
     a:not(:hover) {
       text-decoration: none;
     }
@@ -225,7 +225,7 @@
   //grid-template-rows: auto;
   // Use the tallest cell in the grid to set the height for all rows
   @include govuk-media-query($from: tablet) {
-    grid-auto-rows: fractions(1);
+    grid-auto-rows: flex;
   }
   //grid-auto-rows: fractions(1);
   //grid-auto-rows: auto;
@@ -233,12 +233,17 @@
 
   // Grid padding should follow the page gutters
   gap: govuk-spacing(5);
-  @include govuk-media-query(tablet) {
-    gap: govuk-spacing(6);
-  }
 
   @include govuk-media-query($from: "tablet") {
     grid-template-columns: fractions(2);
+    gap: govuk-spacing(6);
+
+    &--link-description {
+      @extend .govuk-body-s;
+
+      margin-bottom: 0;
+      @include govuk-responsive-margin(2, "top");
+    }
   }
 
   @include govuk-media-query($from: "desktop") {
@@ -297,17 +302,19 @@
     }
   }
 
-  /// Helper for displaying lbcamden-card elements in a <ul>
-  ///
-  /// If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
-  /// card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
-  &__link-wrapper {
+  // Helpers for displaying lbcamden-card elements in a `<ul>`
+  //
+  // If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
+  // card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
+  > * {
     position: relative;
+  }
 
-    .lbcamden-card {
-      width: 100%;
-      height: 100%;
-    }
+  > li > .lbcamden-card,
+  > li > .lbcamden-link,
+  > li > .lbcamden-link--promo {
+    width: 100%;
+    height: 100%;
   }
 
   &--popular {
