@@ -1,5 +1,6 @@
 {% extends "layout.njk" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">
@@ -13,28 +14,55 @@
       html: 'These examples are intended to provide developers with an interface to run tests and scenarios. <strong>It is not intended to act as design system documentation</strong>.'
     }) }}
 
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-m">Bespoke Components</h2>
+    <h2 class="govuk-heading-m">Bespoke Components - <a href="/components/all{{ legacyQuery }}" class="govuk-link">View all</a></h2>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Added</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Updated</th>
+              </tr>
+            </thead>
+            {% for componentName in componentsDirectory | sort %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/components/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">{{ govukTag({"text": "stable", "classes": "govuk-tag--green"}) }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">0.2.6</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">0.2.9</td>
+            </tr>     
+            {% endfor %}
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Base Components - <a href="/govukComponents/all{{ legacyQuery }}" class="govuk-link">View all</a></h2>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+            {% for componentName in govukComponentsDirectory | sort %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/govukComponents/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£75</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£55</td>
+            </tr>     
+            {% endfor %}
+      </tbody>
+    </table>    
+    
+    
+    {# <div class="govuk-grid-column-one-third">
+      
 
       <ul class="govuk-list">
-        <li><a href="/components/all{{ legacyQuery }}" class="govuk-link">All</a></li>
-        {% for componentName in componentsDirectory | sort %}
-          <li><a href="/components/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-m">Base Components</h2>
-
-      <ul class="govuk-list">
-        <li><a href="/govukComponents/all{{ legacyQuery }}" class="govuk-link">All</a></li>
+        <li></li>
         {% for componentName in govukComponentsDirectory | sort %}
           <li><a href="/govukComponents/{{ componentName }}{{ legacyQuery }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
         {% endfor %}
       </ul>
-    </div>
-
+    </div> #}
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Examples</h2>
 

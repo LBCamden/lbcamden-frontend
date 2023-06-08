@@ -1,3 +1,8 @@
+metadata:
+  status: stable
+  added: 0.2.3
+  updated: 0.2.3
+
 params:
 - name: element
   type: string
