@@ -1,6 +1,8 @@
 // TODO: we're using a deprecated API as it allows us to programatically create stories
 // this could also be accomplished using the modern API via code-generation using webpack, but this is easier for now
+
 import { storiesOf } from "@storybook/html";
+import _ from "lodash";
 
 import {escape} from 'html-escaper';
 
@@ -20,16 +22,20 @@ const camdenComponents = buildComponentStories({
   ),
 
   // Build up a collection of all our yaml files specifying examples
-  yamlContext: require.context("../src/lbcamden/components", true, /\.yaml$/),
+  schemaContext: require.context("../src/lbcamden/components", true, /\.yaml$/),
+  examples: [
+    require.context("../src/lbcamden/components", true, /\.yaml$/)
+  ]
 });
 
 buildComponentStories({
-  // Build up a collection of all our component template files
   componentsContext: require.context("./govuk/components", true, /template\.njk$/),
+  schemaContext: require.context("./govuk/components", true, /macro-options\.json$/),
 
-  // Build up a collection of all our yaml files specifying examples
-  fixturesContext: require.context("./govuk/components", true, /fixtures\.json$/),
-  optionsContext: require.context("./govuk/components", true, /macro-options\.json$/),
+  examples: [
+    require.context("./govuk/components", true, /fixtures\.json$/),
+    require.context("../src/govuk/examples", true, /examples\.yaml$/)
+  ],
   exclude: camdenComponents
 });
 
@@ -39,15 +45,43 @@ function requireAll(context) {
 
 function buildComponentStories({
   componentsContext,
-  yamlContext,
-  fixturesContext,
-  optionsContext,
+  schemaContext,
+  examples,
   exclude = []
 }) {
   const components = buildSlugMap(componentsContext);
-  const fixtures = fixturesContext && buildSlugMap(fixturesContext);
-  const schemas = optionsContext && buildSlugMap(optionsContext);
-  const fixturesWithSchemas = yamlContext && buildSlugMap(yamlContext);
+  const schemaMap = buildSlugMap(schemaContext);
+  const examplesMap = {}
+
+  for (const examplesContext of examples) {
+    const mappedExamples = buildSlugMap(examplesContext);
+
+    for (const [slug, modPath] of Object.entries(mappedExamples)) {
+      const componentExamples = examplesMap[slug] ||= []
+      let exampleDefs
+
+      if (modPath.endsWith('.yaml')) {
+        exampleDefs = examplesContext(modPath).default.examples
+      } else {
+        exampleDefs = examplesContext(modPath).fixtures
+      }
+
+      for (const ex of exampleDefs) {
+        if (!ex.hidden) {
+          componentExamples.push(ex)
+        }
+      }
+    }
+  }
+
+  function getSchema(slug) {
+    const schemaPath = schemaMap[slug]
+    if (schemaPath.endsWith('.yaml')) {
+      return schemaContext(schemaPath).default.params
+    } else {
+      return schemaContext(schemaPath)
+    }
+  }
 
   // iterate over yaml component schemas and generate stories from examples
   //
@@ -62,16 +96,8 @@ function buildComponentStories({
     }
 
     const component = componentsContext(components[slug]).default;
-    let examples, params;
-
-    if (fixturesWithSchemas) {
-      const yaml = yamlContext(fixturesWithSchemas[slug]).default;
-      params = yaml.params;
-      examples = yaml.examples;
-    } else {
-      params = optionsContext(schemas[slug]);
-      examples = fixturesContext(fixtures[slug]).fixtures;
-    }
+    const examples = examplesMap[slug]
+    const params = getSchema(slug)
 
     const story = storiesOf("Components / " + slug, module);
     const argTypes = {};
