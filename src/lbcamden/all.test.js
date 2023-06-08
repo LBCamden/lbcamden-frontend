@@ -93,8 +93,13 @@ describe('CAMDEN.GOV.UK Frontend', () => {
       `
       const results = await renderSass({ data: sass })
 
-      expect(results.css.toString()).toMatch(/ a[, ][,:. a-zA-Z0-9-_]* {/)
-      expect(results.css.toString()).toMatch(/ p[, ][,:. a-zA-Z0-9-_]* {/)
+      // Assert that there is at least a global anchor and paragraph style applied.
+      // This was originally using the (easier to read, but fragile) string comparisons:
+      //
+      // expect(results.css.toString()).toContain(', a {')
+      // expect(results.css.toString()).toContain(', p {')
+      expect(results.css.toString()).toMatch(/(^| )a[, ][,:. a-zA-Z0-9-_]* {/)
+      expect(results.css.toString()).toMatch(/(^| )p[, ][,:. a-zA-Z0-9-_]* {/)
     })
   })
 

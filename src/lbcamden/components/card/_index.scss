@@ -223,7 +223,7 @@
   grid-auto-flow: row;
   // Use CSS grid to calculate the number of rows
   //grid-template-rows: auto;
-  // Use the tallest cell in the grid to set the height for all rows
+  // Use the tallest cell in the row to set the height for each row
   @include govuk-media-query($from: tablet) {
     grid-auto-rows: flex;
   }
