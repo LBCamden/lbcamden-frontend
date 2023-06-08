@@ -156,12 +156,15 @@
       }
     }
 
+    &,
     &-alt {
-      color: $govuk-link-colour;
+      font-weight: 500;
+    }
+
+    &-alt {
       background: lbcamden-colour("govuk-bg-bright1-colour");
       box-shadow: 1px 1px 1px rgba(lbcamden-colour("black"), .25);
-      font-weight: $govuk-font-weight-semibold;
-      @include govuk-font(19);
+      @include govuk-font(19, "semibold");
 
       &:link,
       &.\:link {

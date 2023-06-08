@@ -34,6 +34,12 @@
     }
   }
 
+  .lbcamden-list--dash {
+    a:not(:hover) {
+      text-decoration: none;
+    }
+  }
+
   &--clickable {
     > h2,
     > h3,
@@ -136,6 +142,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border: none;
+    font-weight: 500;
 
     .lbcamden-card--naked & {
       @include govuk-responsive-margin(2, "bottom");
@@ -217,19 +224,26 @@
   grid-auto-flow: row;
   // Use CSS grid to calculate the number of rows
   //grid-template-rows: auto;
-  // Use the tallest cell in the grid to set the height for all rows
+  // Use the tallest cell in the row to set the height for each row
   @include govuk-media-query($from: tablet) {
-    grid-auto-rows: fractions(1);
+    grid-auto-rows: flex;
   }
   //grid-auto-rows: fractions(1);
   //grid-auto-rows: auto;
   grid-template-columns: fractions(1);
-  -webkit-column-gap: govuk-spacing(4);
-          column-gap: govuk-spacing(4);
-  row-gap: govuk-spacing(4);
+
+  // Grid padding should follow the page gutters
+  gap: govuk-spacing(5);
 
   @include govuk-media-query($from: "tablet") {
     grid-template-columns: fractions(2);
+    gap: govuk-spacing(6);
+
+    &--link-description {
+      margin-bottom: 0;
+      @include govuk-responsive-margin(2, "top");
+      @include govuk-font(16);
+    }
   }
 
   @include govuk-media-query($from: "desktop") {
@@ -288,5 +302,45 @@
     @include govuk-media-query($from: "wide") {
       grid-template-columns: fractions(4);
     }
+  }
+
+  // Helpers for displaying lbcamden-card elements in a `<ul>`
+  //
+  // If there are intermediate elements between a `.lbcamden-card-grid` and a `.lbcamden-card--clickable`, apply the
+  // card styles to the `.lbcamden-card--clickable` and this to the intermediate element.
+  > * {
+    position: relative;
+  }
+
+  > li > .lbcamden-card,
+  > li > .lbcamden-link,
+  > li > .lbcamden-link--promo {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--popular {
+    > * {
+      min-height: 50px;
+
+      @include govuk-media-query(tablet) {
+        min-height: 66px;
+      }
+
+      .lbcamden-link--promo {
+        @include govuk-media-query(tablet) {
+          padding-top: govuk-spacing(1);
+          padding-bottom: govuk-spacing(1);
+        }
+      }
+    }
+  }
+}
+
+// When cards are used in a ul, they shouldn't pick up the li's default spacing
+ul {
+  > .lbcamden-card,
+  > .lbcamden-card-grid__link-wrapper {
+    margin-bottom: 0;
   }
 }
