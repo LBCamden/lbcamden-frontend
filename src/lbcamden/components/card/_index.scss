@@ -239,10 +239,9 @@
     gap: govuk-spacing(6);
 
     &--link-description {
-      @extend .govuk-body-s;
-
       margin-bottom: 0;
       @include govuk-responsive-margin(2, "top");
+      @include govuk-font(16);
     }
   }
 
