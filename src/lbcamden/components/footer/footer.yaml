@@ -176,6 +176,10 @@ examples:
           text: Navigation item 4
           attributes:
             data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
 
   - name: with primary and utility navigation, sponsor image and social navigation
     data:
@@ -216,6 +220,10 @@ examples:
           text: Navigation item 4
           attributes:
             data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
 
   - name: with primary, secondary and utility navigation, sponsor image and social navigation
     data:
@@ -263,6 +271,10 @@ examples:
           text: Navigation item 4
           attributes:
             data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
