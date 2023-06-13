@@ -1,0 +1,14 @@
+<aside class="lbcamden-card lbcamden-card--alt-1">
+  <h2>{{ params.heading }}</h2>
+  <div class="lbcamden-card__content">
+    {% if params.shortDescription %}
+    <p>{{ params.shortDescription }}</p>
+    {% endif %}
+    <ul class="lbcamden-list lbcamden-list--dash">
+      {% for item in params.relatedContent %}
+        <li><a href="{{ item.href }}">{{ item.text }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</aside>
+
