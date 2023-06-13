@@ -116,10 +116,6 @@
       color: lbcamden-colour("white");
     }
   }
-
-  &--sign-in {
-    @include govuk-typography-weight-regular;
-  }
 }
 
 &__navigation-item-link,
