@@ -40,7 +40,6 @@ examples:
   - name: default
     description: Standard application of the header element.
     data:
-      phaseBanner: true
       searchItems:
         - href: '#1'
           text: 'Popular search 1'
@@ -62,7 +61,6 @@ examples:
   - name: Nested navigation
     description: Standard application of the header element with nested nav items.
     data:
-      phaseBanner: true
       searchItems:
         - href: '#1'
           text: 'Popular search 1'
