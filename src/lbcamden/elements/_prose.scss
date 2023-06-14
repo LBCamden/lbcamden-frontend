@@ -97,7 +97,9 @@
   }
 
   ul {
-    @extend %govuk-list--bullet;
+    &:not(.lbcamden-list--dash) {
+      @extend %govuk-list--bullet;
+    }
   }
 
   ol {
