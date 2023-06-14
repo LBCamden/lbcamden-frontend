@@ -5,6 +5,7 @@ notes:
 {% extends "full-page-example.njk" %}
 
 {% from "card/macro.njk" import LBCamdenCard %}
+{% from "link-list-gallery/macro.njk" import LBCamdenLinkListGallery %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% set pageTitle = "Business" %}
@@ -64,96 +65,164 @@ notes:
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+      {{ LBCamdenLinkListGallery({
+        "heading": "Contents",
+        "items": [
+          {
+            title: "Council tenants",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Council tenant rights and responsibilities",
+                href: "#"
+              },
+              {
+                title: "Home swap",
+                href: "#"
+              },
+              {
+                title: "Paying rent for your council home",
+                href: "#"
+              },
+              {
+                title: "Ordering keys or fobs",
+                href: "#"
+              },
+              {
+                title: "Your Neighbourhood Housing Officer",
+                href: "#"
+              },
+              {
+                title: "Downsizing",
+                href: "#"
+              }
+            ]
+          },
+          {
+            title: "Finding a home",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Apply for council housing",
+                href: "#"
+              },
+              {
+                title: "Intermediate housing",
+                href: "#"
+              },
+              {
+                title: "Update a council housing application",
+                href: "#"
+              }
+            ]
+          },
+          {
+            title: "Fire and building safety",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Fire safety advice",
+                href: "#"
+              },
+              {
+                title: "Fire risk assessments for Camden housing",
+                href: "#"
+              },
+              {
+                title: "Asbestos Advice",
+                href: "#"
+              },
+              {
+                title: "Safety cases for high rise buildings",
+                href: "#"
+              }
+            ]
+          },
+          {
+            title: "Homelessness in Camden",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Hostels and support for homeless people in Camden",
+                href: "#"
+              },
+              {
+                title: "Find my nearest soup kitchen",
+                href: "#"
+              },
+              {
+                title: "Tackling homelessness",
+                href: "#"
+              },
+              {
+                title: "Help for rough sleepers",
+                href: "#"
+              }
+            ]
+          },
 
-      <h2 class="govuk-heading-l">Contents</h2>
-      {% set widthClass = 'lbcamden-card lbcamden-card--naked' %}
-
-      {% set items = [
-        {
-  title: 'Council tenants',
-  links: [
-    'Council tenant rights and responsibilities',
-	'Home swap',
-	'Paying rent for your council home',
-	'Ordering keys or fobs',
-	'Your Neighbourhood Housing Officer',
-	'Downsizing'
-  ]
-},
-{
-  title: 'Finding a home',
-  links: [
-    'Apply for council housing',
-	'Intermediate housing',
-	'Update a council housing application'
-  ]
-},
-{
-  title: 'Fire and building safety',
-  links: [
-    'Fire safety advice',
-	'Fire risk assessments for Camden housing',
-	'Asbestos Advice',
-	'Safety cases for high rise buildings'
-  ]
-},
-{
-  title: 'Homelessness in Camden',
-  links: [
-    'Hostels and support for homeless people in Camden',
-	'Find my nearest soup kitchen',
-	'Tackling homelessness',
-	'Help for rough sleepers'
-  ]
-},
-
-{
-  title: 'Landlords, home owners and private tenants',
-  links: [
-    'Housing adaptations, grants and assistance',
-    'Houses in multiple occupation (HMO)',
-	'Private sector housing standards and enforcement',
-	'Landlord accreditation scheme',
-	'Requirements for agents and landlords',
-	'Empty homes',
-	'Camden Lettings',
-	'Camden Private Renters website'
-  ]
-},
-
-{
-  title: 'Leaseholders and freeholders',
-  links: [
-    'Selling or remortgaging your leasehold property',
-	'Consultation with leaseholders on building works and services',
-	'Service Charge, Insurance and Freeholders',
-	'Making alterations or improvements to your property'
-  ]
-}
-      ] %}
-      <ul class="lbcamden-card-grid">
-        {% for item in items %}
-          {% set cardHtml %}
-            {% if item.links %}
-              <ul class="lbcamden-list--dash">
-                {% for link in item.links %}
-                  <li><a href="#">{{ link }}</a></li>
-                {% endfor %}
-              </ul>
-              <a href="#" class="lbcamden-link--action">View all</a>
-            {% endif %}
-          {% endset %}
-          {{ LBCamdenCard({
-            element: 'li',
-            heading: {
-              title: item.title
-            },
-            content: {
-              html: cardHtml
-            }
-          }) }}
-        {% endfor %}
-      </ul>
+          {
+            title: "Landlords, home owners and private tenants",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Housing adaptations, grants and assistance",
+                href: "#"
+              },
+              {
+                title: "Houses in multiple occupation (HMO)",
+                href: "#"
+              },
+              {
+                title: "Private sector housing standards and enforcement",
+                href: "#"
+              },
+              {
+                title: "Landlord accreditation scheme",
+                href: "#"
+              },
+              {
+                title: "Requirements for agents and landlords",
+                href: "#"
+              },
+              {
+                title: "Empty homes",
+                href: "#"
+              },
+              {
+                title: "Camden Lettings",
+                href: "#"
+              },
+              {
+                title: "Camden Private Renters website",
+                href: "#"
+              }
+            ]
+          },
+          {
+            title: "Leaseholders and freeholders",
+            viewAllHref: "#",
+            links: [
+              {
+                title: "Selling or remortgaging your leasehold property",
+                href: "#"
+              },
+              {
+                title: "Consultation with leaseholders on building works and services",
+                href: "#"
+              },
+              {
+                title: "Service Charge, Insurance and Freeholders",
+                href: "#"
+              },
+              {
+                title: "Making alterations or improvements to your property",
+                href: "#"
+              }
+            ]
+          }
+        ]
+      }) }}
     </div>
   </div>
 {% endblock %}
