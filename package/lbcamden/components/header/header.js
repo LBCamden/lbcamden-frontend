@@ -131,6 +131,8 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
 LBCamdenHeader.prototype.menuContentShift = function (offsetPixels) {
   if (this.$emergencyBanner) {
     this.$emergencyBanner.style.marginTop = offsetPixels + 'px';
+  } else {
+    this.$module.style.marginBottom = offsetPixels + 'px';
   }
 };
 

@@ -116,10 +116,6 @@
       color: lbcamden-colour("white");
     }
   }
-
-  &--sign-in {
-    @include govuk-typography-weight-regular;
-  }
 }
 
 &__navigation-item-link,
@@ -196,6 +192,8 @@
       @include govuk-responsive-padding(3, "right");
       border-left: 1px solid lbcamden-colour("light-grey-2");
     }
+
+    line-height: normal;
   }
 }
 

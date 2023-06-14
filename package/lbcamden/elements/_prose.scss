@@ -98,7 +98,9 @@
   }
 
   ul {
-    @extend %govuk-list--bullet;
+    &:not(.lbcamden-list--dash) {
+      @extend %govuk-list--bullet;
+    }
   }
 
   ol {
@@ -123,5 +125,33 @@
   pre + h3,
   pre + h4 {
     padding-top: govuk-spacing(2);
+  }
+
+  table {
+    @extend .govuk-table;
+  }
+
+  thead {
+    @extend .govuk-table__head !optional;
+  }
+
+  tbody {
+    @extend .govuk-table__body  !optional;
+  }
+
+  tr {
+    @extend .govuk-table__row  !optional;
+  }
+
+  th {
+    @extend .govuk-table__header;
+  }
+
+  td {
+    @extend .govuk-table__cell;
+  }
+
+  .lbcamden-link--action {
+    text-decoration: none;
   }
 }
