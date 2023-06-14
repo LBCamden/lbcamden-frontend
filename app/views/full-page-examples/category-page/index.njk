@@ -5,6 +5,7 @@ notes:
 {% extends "full-page-example.njk" %}
 
 {% from "card/macro.njk" import LBCamdenCard %}
+{% from "promo-gallery/macro.njk" import LBCamdenPromoGallery %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% set pageTitle = "Business" %}
@@ -32,11 +33,10 @@ notes:
     </div>
   </div>
 
-  <h2>Popular</h2>
-
-  <ul class="lbcamden-card-grid lbcamden-card-grid--popular govuk-!-margin-bottom-9">
-    {% set widthClass = 'lbcamden-card--popular' %}
-    {% set popularItems = [
+  {{ LBCamdenPromoGallery({
+    "heading": "Popular",
+    "classes": "govuk-!-margin-bottom-9",
+    "items": [
       {
         title: "Paying your business rates",
         href: "#"
@@ -61,15 +61,8 @@ notes:
         title: "Alcohol premises licensing",
         href: "#"
       }
-    ] %}
-
-    {% for item in popularItems %}
-        <li>
-          <a class="lbcamden-link--promo lbcamden-link--promo-alt" href="#">{{ item.title }}</a>
-        </li>
-    {% endfor %}
-
-  </ul>
+    ]
+  }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">

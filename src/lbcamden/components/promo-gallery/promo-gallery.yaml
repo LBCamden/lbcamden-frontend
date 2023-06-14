@@ -1,0 +1,54 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the gallery.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of gallery.
+  - name: items
+    type: array
+    required: true
+    description: Cards displayed in the promo gallery
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the card heading
+      - name: href
+        type: string
+        required: false
+        description: If set, the heading will contain a link
+previewLayout: full-width
+examples:
+  - name: default
+    description: Standard application of a promo gallery.
+    data:
+      items:
+        - title: Housing Repairs
+          href: "#1"
+        - title: Leaseholder and Freeholders
+          href: "#2"
+        - title: Bid for a property
+          href: "#3"
+        - title: Apply for council housing
+          href: "#4"
+  - name: with heading
+    description: Standard application of a promo gallery.
+    data:
+      heading: Popular
+      items:
+        - title: Housing Repairs
+          href: "#1"
+        - title: Leaseholder and Freeholders
+          href: "#2"
+        - title: Bid for a property
+          href: "#3"
+        - title: Apply for council housing
+          href: "#4"
+  - name: classes
+    hidden: true
+    data:
+      items: []
+      classes: app-promo-gallery--custom-modifier
