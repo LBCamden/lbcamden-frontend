@@ -147,4 +147,9 @@
   td {
     @extend .govuk-table__cell;
   }
+  
+  .lbcamden-link--action {
+    text-decoration: none;
+  }
+
 }
