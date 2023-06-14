@@ -5,6 +5,7 @@ notes:
 {% extends "full-page-example.njk" %}
 
 {% from "card/macro.njk" import LBCamdenCard %}
+{% from "more-in/macro.njk" import LBCamdenMoreIn %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% set pageTitle = "Business" %}
@@ -155,15 +156,13 @@ notes:
 {% endblock %}
 
 {% block afterContent %}
-  <section class="lbcamden-row lbcamden-row--related">
-    <div class="govuk-width-container">
-      <h2 class="govuk-heading-l">Related</h2>
-      <ul class="lbcamden-list--dash">
-        <li><a href="#">Business rates</a></li>
-        <li><a href="#">Apply for business and trade parking permits</a></li>
-        <li><a href="#">Advertisements and signs and planning permission</a></li>
-        <li><a href="#">Estate agent boards and planning permission</a></li>
-      </ul>
-    </div>
-  </section>
+  {{ LBCamdenMoreIn({
+    heading: 'Related',
+    relatedContent: [
+      { href: "#", text: "Business rates" },
+      { href: "#", text: "Apply for business and trade parking permits" },
+      { href: "#", text: "Advertisements and signs and planning permission" },
+      { href: "#", text: "Estate agent boards and planning permission" }
+    ]
+  }) }}
 {% endblock %}
