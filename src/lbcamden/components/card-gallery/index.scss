@@ -1,0 +1,10 @@
+.lbcamden-card-gallery {
+  h2 {
+    @include govuk-responsive-margin(7, "bottom");
+  }
+
+  &__description {
+    @include govuk-responsive-padding(7, "bottom");
+    margin-bottom: 0;
+  }
+}
