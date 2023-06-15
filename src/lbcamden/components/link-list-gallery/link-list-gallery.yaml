@@ -1,0 +1,146 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the gallery.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of gallery.
+  - name: items
+    type: array
+    required: true
+    description: Cards displayed in the link list gallery
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the card heading
+      - name: links
+        type: array
+        required: true
+        description: Items displayed under the heading
+        params:
+          - name: title
+            type: string
+            required: true
+            description: The title of the link
+          - name: href
+            type: string
+            required: true
+            description: URL target of the link
+previewLayout: full-width
+examples:
+  - name: default
+    description: Default application of a link list gallery.
+    data:
+      items:
+        - title: Business rates
+          viewAllHref: '#'
+          links:
+            - title: Business rates explained
+              href: "#"
+            - title: Discounts and exemptions for business rates
+              href: "#"
+            - title: Paying your business rates
+              href: "#"
+        - title: Markets
+          links:
+            - title: Visit Camden's markets
+              href: "#"
+            - title: Apply to trade in Camden
+              href: "#"
+            - title: Market news
+              href: "#"
+        - title: Licensing
+          links:
+            - title: Alcohol and entertainment
+              href: "#"
+            - title: Other licenses and permits
+              href: "#"
+            - title: Search the licensing public register
+              href: "#"
+        - title: Doing business in Camden
+          links:
+            - title: Starting or growing your business
+              href: "#"
+            - title: Business rates, licensing and permits
+              href: "#"
+            - title: Trading standards
+              href: "#"
+        - title: Food business
+          links:
+            - title: Registering a food business
+              href: "#"
+            - title: Food and hygiene information
+              href: "#"
+            - title: Food safety training
+              href: "#"
+        - title: Getting paid by Camden
+          links:
+            - title: Camden's Accounts Payable Policy
+              href: "#"
+            - title: Camden's new e-invoicing service
+              href: "#"
+            - title: e-invoicing Support
+              href: "#"
+
+  - name: with heading
+    description: Standard application of a link list gallery.
+    data:
+      heading: Contents
+      items:
+        - title: Business rates
+          viewAllHref: '#'
+          links:
+            - title: Business rates explained
+              href: "#"
+            - title: Discounts and exemptions for business rates
+              href: "#"
+            - title: Paying your business rates
+              href: "#"
+        - title: Markets
+          links:
+            - title: Visit Camden's markets
+              href: "#"
+            - title: Apply to trade in Camden
+              href: "#"
+            - title: Market news
+              href: "#"
+        - title: Licensing
+          links:
+            - title: Alcohol and entertainment
+              href: "#"
+            - title: Other licenses and permits
+              href: "#"
+            - title: Search the licensing public register
+              href: "#"
+        - title: Doing business in Camden
+          links:
+            - title: Starting or growing your business
+              href: "#"
+            - title: Business rates, licensing and permits
+              href: "#"
+            - title: Trading standards
+              href: "#"
+        - title: Food business
+          links:
+            - title: Registering a food business
+              href: "#"
+            - title: Food and hygiene information
+              href: "#"
+            - title: Food safety training
+              href: "#"
+        - title: Getting paid by Camden
+          links:
+            - title: Camden's Accounts Payable Policy
+              href: "#"
+            - title: Camden's new e-invoicing service
+              href: "#"
+            - title: e-invoicing Support
+              href: "#"
+  - name: classes
+    hidden: true
+    data:
+      items: []
+      classes: app-link-list-gallery--custom-modifier

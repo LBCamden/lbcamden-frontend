@@ -1,0 +1,24 @@
+params:
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of section.
+  - name: relatedContent
+    type: array
+    required: true
+    description: XXX
+
+previewLayout: full-width
+
+examples:
+  - name: default
+    description: Example of 'more in' section that appears on category page.
+    data:
+      heading: Related content
+      relatedContent:
+        - href: '#1'
+          text: Related item 1
+        - href: '#2'
+          text: Related item 2
+        - href: '#3'
+          text: Related item 3
