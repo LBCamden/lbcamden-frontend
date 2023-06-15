@@ -5,6 +5,7 @@ notes:
 {% extends "full-page-example.njk" %}
 
 {% from "card/macro.njk" import LBCamdenCard %}
+{% from "link-list-gallery/macro.njk" import LBCamdenLinkListGallery %}
 {% from "promo-gallery/macro.njk" import LBCamdenPromoGallery %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -67,82 +68,115 @@ notes:
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h2 class="govuk-heading-l">Contents</h2>
-      {% set widthClass = 'lbcamden-card lbcamden-card--naked' %}
-
-      {% set items = [
-        {
-          title: 'Business rates',
-          links: [
-          'Business rates explained',
-          'Discounts and exemptions for business rates',
-          'Paying your business rates'
+      {{ LBCamdenLinkListGallery({
+        "heading": "Contents",
+        "items": [
+          {
+            "title": "Business rates",
+            "viewAllHref": "#",
+            "links": [
+              {
+                "title": "Business rates explained",
+                "href": "#"
+              },
+              {
+                "title": "Discounts and exemptions for business rates",
+                "href": "#"
+              },
+              {
+                "title": "Paying your business rates",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Markets",
+            "viewAllHref": "#",
+            "links": [
+              {
+                "title": "Visit Camden's markets",
+                "href": "#"
+              },
+              {
+                "title": "Apply to trade in Camden",
+                "href": "#"
+              },
+              {
+                "title": "Market news",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Licensing",
+            "links": [
+              {
+                "title": "Alcohol and entertainment",
+                "href": "#"
+              },
+              {
+                "title": "Other licenses and permits",
+                "href": "#"
+              },
+              {
+                "title": "Search the licensing public register",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Doing business in Camden",
+            "links": [
+              {
+                "title": "Starting or growing your business",
+                "href": "#"
+              },
+              {
+                "title": "Business rates, licensing and permits",
+                "href": "#"
+              },
+              {
+                "title": "Trading standards",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Food business",
+            "links": [
+              {
+                "title": "Registering a food business",
+                "href": "#"
+              },
+              {
+                "title": "Food and hygiene information",
+                "href": "#"
+              },
+              {
+                "title": "Food safety training",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Getting paid by Camden",
+            "links": [
+              {
+                "title": "Camden's Accounts Payable Policy",
+                "href": "#"
+              },
+              {
+                "title": "Camden's new e-invoicing service",
+                "href": "#"
+              },
+              {
+                "title": "e-invoicing Support",
+                "href": "#"
+              }
+            ]
+          }
         ]
-        },
-        {
-          title: 'Markets',
-          links: [
-          'Visit Camden’s markets',
-          'Apply to trade in Camden',
-          'Market news'
-        ]
-        },
-        {
-          title: 'Licensing',
-          links: [
-          'Alcohol and entertainment',
-          'Other licenses and permits',
-          'Search the licensing public register'
-        ]
-        },
-        {
-          title: 'Doing business in Camden',
-          links: [
-          'Starting or growing your business',
-          'Business rates, licensing and permits',
-          'Trading standards'
-        ]
-        },
-        {
-          title: 'Food business',
-          links: [
-          'Registering a food business',
-          'Food and hygiene information',
-          'Food safety training'
-        ]
-        },
-        {
-          title: 'Getting paid by Camden',
-          links: [
-          'Camden\'s Accounts Payable Policy',
-          'Camden\'s new e-invoicing service',
-          'e-invoicing Support'
-        ]
-        }
-      ] %}
-      <ul class="lbcamden-card-grid">
-        {% for item in items %}
-          {% set cardHtml %}
-            {% if item.links %}
-              <ul class="lbcamden-list--dash">
-                {% for link in item.links %}
-                  <li><a href="#">{{ link }}</a></li>
-                {% endfor %}
-              </ul>
-              <a href="#" class="lbcamden-link--action">View all</a>
-            {% endif %}
-          {% endset %}
-          {{ LBCamdenCard({
-            element: 'li',
-            heading: {
-              title: item.title
-            },
-            content: {
-              html: cardHtml
-            }
-          }) }}
-        {% endfor %}
-      </ul>
+      }) }}
     </div>
   </div>
 {% endblock %}
