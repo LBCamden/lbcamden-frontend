@@ -1,4 +1,4 @@
-<div class="lbcamden-promo-gallery {{ params.classes }}">
+<div class="lbcamden-promo-gallery {% if params.panel %}lbcamden-promo-gallery--panel{% endif %} {{ params.classes }}">
     {% if params.heading %}
       <h2>{{ params.heading }}</h2>
     {% endif %}
@@ -10,4 +10,10 @@
             </li>
         {% endfor %}
     </ul>
+
+    {% if params.showAllHref %}
+      <a href="{{ params.showAllHref }}" class="lbcamden-link--promo lbcamden-link--promo--large lbcamden-promo-gallery--panel__all">
+        {{ params.showAllLabel | default("Show all") }}
+      </a>
+    {% endif %}
 </div>

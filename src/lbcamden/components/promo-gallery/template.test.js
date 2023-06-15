@@ -43,4 +43,21 @@ describe('promo-gallery', () => {
       expect($component.text()).toContain('Popular')
     })
   })
+
+  describe('with show all button in panel', () => {
+    it('renders heading', () => {
+      const $ = render('promo-gallery', examples['with show all button in panel'])
+
+      const $component = $('.lbcamden-link--promo--large')
+      expect($component.text()).toContain('All services')
+      expect($component.attr('href')).toEqual('#')
+    })
+
+    it('renders in panel', () => {
+      const $ = render('promo-gallery', examples['with show all button in panel'])
+
+      const $component = $('.lbcamden-promo-gallery--panel')
+      expect($component).toBeTruthy()
+    })
+  })
 })
