@@ -55,12 +55,13 @@ examples:
           href: "#3"
         - title: Apply for council housing
           href: "#4"
-  - name: with show all button
+  - name: with show all button in panel
     description: Standard application of a promo gallery.
     data:
       heading: Popular
       showAllHref: '#'
       showAllLabel: 'All services'
+      panel: true
       items:
         - title: Housing Repairs
           href: "#1"
