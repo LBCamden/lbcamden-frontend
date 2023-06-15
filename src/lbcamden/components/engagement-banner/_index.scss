@@ -22,7 +22,7 @@
     }
   }
 
-  &__heading:not(&__heading--mobile) {
+  &__heading:not(.lbcamden-engagement-banner__heading--mobile) {
     @include govuk-responsive-margin(2, "bottom");
 
     @include govuk-media-query($until: "desktop") {
