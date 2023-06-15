@@ -8,6 +8,12 @@
     flex-direction: row;
   }
 
+  @include govuk-media-query($until: "desktop") {
+    margin: 0 #{-$govuk-gutter-half};
+    padding: govuk-spacing(6) $govuk-gutter-half;
+    padding-bottom: govuk-spacing(7);
+  }
+
   &__heading--mobile {
     @include govuk-responsive-margin(5, "bottom");
 
