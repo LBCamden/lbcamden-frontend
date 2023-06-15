@@ -23,31 +23,35 @@ notes:
 
 {% block content %}
 
-{{ LBCamdenPromoGallery({
-  "heading": "Popular",
-  "showAllHref": "#",
-  "showAllLabel": "All services",
-  "classes": "govuk-!-margin-bottom-9",
-  "panel": true,
-  "items": [
-    {
-      "title": "Housing Repairs",
-      "href": "#1"
-    },
-    {
-      "title": "Leaseholder and Freeholders",
-      "href": "#2"
-    },
-    {
-      "title": "Bid for a property",
-      "href": "#3"
-    },
-    {
-      "title": "Apply for council housing",
-      "href": "#4"
-    }
-  ]
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {{ LBCamdenPromoGallery({
+      "heading": "Popular",
+      "showAllHref": "#",
+      "showAllLabel": "All services",
+      "classes": "govuk-!-margin-bottom-9",
+      "panel": true,
+      "items": [
+        {
+          "title": "Housing Repairs",
+          "href": "#1"
+        },
+        {
+          "title": "Leaseholder and Freeholders",
+          "href": "#2"
+        },
+        {
+          "title": "Bid for a property",
+          "href": "#3"
+        },
+        {
+          "title": "Apply for council housing",
+          "href": "#4"
+        }
+      ]
+    }) }}
+  </div>
+</div>
 
 
 {{ LBCamdenCardGallery({
