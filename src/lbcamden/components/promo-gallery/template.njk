@@ -10,4 +10,10 @@
             </li>
         {% endfor %}
     </ul>
+
+    {% if params.showAllHref %}
+      <a href="{{ params.showAllHref }}" class="lbcamden-link--promo lbcamden-link--promo--large govuk-!-margin-top-5">
+        {{ params.showAllLabel | default("Show all") }}
+      </a>
+    {% endif %}
 </div>

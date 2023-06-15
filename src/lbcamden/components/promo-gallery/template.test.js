@@ -43,4 +43,14 @@ describe('promo-gallery', () => {
       expect($component.text()).toContain('Popular')
     })
   })
+
+  describe('with show all button', () => {
+    it('renders heading', () => {
+      const $ = render('promo-gallery', examples['with show all button'])
+
+      const $component = $('.lbcamden-link--promo--large')
+      expect($component.text()).toContain('All services')
+      expect($component.attr('href')).toEqual('#')
+    })
+  })
 })
