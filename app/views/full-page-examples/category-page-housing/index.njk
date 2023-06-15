@@ -5,6 +5,7 @@ notes:
 {% extends "full-page-example.njk" %}
 
 {% from "card/macro.njk" import LBCamdenCard %}
+{% from "more-in/macro.njk" import LBCamdenMoreIn %}
 {% from "link-list-gallery/macro.njk" import LBCamdenLinkListGallery %}
 {% from "promo-gallery/macro.njk" import LBCamdenPromoGallery %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
@@ -221,17 +222,17 @@ notes:
 {% endblock %}
 
 {% block afterContent %}
-  <section class="lbcamden-row lbcamden-row--related">
-    <div class="govuk-width-container">
-      <h2 class="govuk-heading-l">More in Housing</h2>
-      <ul class="lbcamden-list--dash">
-        <li><a href="#">Tenant and Resident Associations (TRAs) in Camden</a></li>
-        <li><a href="#">Apply for a garage, parking space, or a shed</a></li>
-        <li><a href="#">Building Safety Fund</a></li>
-        <li><a href="#">Estate walkabouts</a></li>
-        <li><a href="#">Camden housing and property residents panel</a></li>
-        <li><a href="#">Electricity meters in locked communal areas</a></li>
-      </ul>
-    </div>
-  </section>
+
+  {{ LBCamdenMoreIn({
+    heading: 'More in Housing',
+    relatedContent: [
+      { href: "#", text: "Tenant and Resident Associations (TRAs) in Camden" },
+      { href: "#", text: "Apply for a garage, parking space, or a shed" },
+      { href: "#", text: "Building Safety Fund" },
+      { href: "#", text: "Estate walkabouts" },
+      { href: "#", text: "Camden housing and property residents panel" },
+      { href: "#", text: "Electricity meters in locked communal areas" }
+    ]
+  }) }}
+
 {% endblock %}
