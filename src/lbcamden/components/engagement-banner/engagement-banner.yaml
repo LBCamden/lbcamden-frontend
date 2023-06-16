@@ -1,0 +1,58 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: image
+    type: string
+    required: true
+    description: Image displayed in engagement banner.
+  - name: imageAlt
+    type: string
+    required: true
+    description: Alt text for engagement banner image.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of banner.
+  - name: shortDescription
+    type: string
+    required: false
+    description: Short description of the linked content
+  - name: link
+    type: string
+    required: true
+    description: URL of linked content
+  - name: linkText
+    type: string
+    required: true
+    description: Text of action link to engagement content
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Links in the component must:
+    - accept focus
+    - be focusable with a keyboard
+    - be usable with a keyboard
+    - indicate when they have focus
+    - change in appearance when touched (in the touch-down state)
+    - change in appearance when hovered
+    - be usable with touch
+    - be usable with voice commands
+    - have visible text
+    - have meaningful text
+
+examples:
+  - name: default
+    description: Standard application of the engagement banner.
+    data:
+      image: https://picsum.photos/id/639/800/600
+      heading:  News
+      shortDescription: Find out what’s going on in our community with all the latest news stories, announcements, and events.
+      imageAlt: Image alt text
+      link: '#'
+      linkText: All news
+  - name: classes
+    hidden: true
+    data:
+      classes: app-engagement-banner--custom-modifier
