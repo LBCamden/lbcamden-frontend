@@ -1,0 +1,50 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the gallery.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of gallery.
+  - name: items
+    type: array
+    required: true
+    description: Cards displayed in the promo gallery
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the card heading
+      - name: href
+        type: string
+        required: false
+        description: If set, the heading will contain a link
+previewLayout: full-width
+examples:
+  - name: default
+    description: Standard application of a card gallery.
+    data:
+      heading: Get more from Camden
+      shortDescription: Find relevant services, support and things to do.
+      items:
+        - title: Starting school
+          image: https://picsum.photos/id/320/800/600
+          href: "#1"
+          alt: Image alt text
+          shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
+        - title: Moving into Camden
+          href: "#2"
+          image: https://picsum.photos/id/348/800/600
+          alt: Image alt text
+          shortDescription: Check off what you need to do when you move into Camden, and what to do if you need support.
+        - title: Making the most of Summer
+          href: "#3"
+          image: https://picsum.photos/id/320/800/600
+          alt: Image alt text
+          shortDescription: Find out what’s happening in Camden, host a street party, or get support over the summer holidays.
+        - title: Starting school
+          href: "#4"
+          image: https://picsum.photos/id/320/800/600
+          alt: Image alt text
+          shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
