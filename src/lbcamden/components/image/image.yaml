@@ -7,10 +7,10 @@ params:
     type: object
     required: false
     description: HTML attributes (for example data attributes) to add to the image.
-  - name: fallback
+  - name: src
     type: string
     required: true
-    description: Fallback image source
+    description: Image source used when sources array not provided, or none of the sources match
   - name: alt
     type: string
     required: false
@@ -82,13 +82,11 @@ examples:
   - name: default
     description: The standard header as used on information pages on GOV.UK
     data:
-      fallback: /example-assets/images/300x200.jpg
+      src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
       lazy: true
       widths:
         mobile: 100vw
-        desktop: 50vw
-        wide: 25vw
       sources:
         - type: image/webp
           sources:
@@ -113,13 +111,44 @@ examples:
   - name: single source
     description: The single-source variant of the image
     data:
-      fallback: /example-assets/images/300x200.jpg
+      src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
       lazy: true
       width: 300
       height: 200
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: with multiple viewports
+    description: The standard header as used on information pages on GOV.UK
+    data:
+      src: /example-assets/images/300x200.jpg
+      alt: Placeholder image showing its intrinsic dimensions
+      lazy: true
+      widths:
+        mobile: 100vw
+        desktop: 50vw
+        large: 25vw
+      sources:
+        - type: image/webp
+          sources:
+            - src: /example-assets/images/300x200.webp
+              width: 300
+            - src: /example-assets/images/600x400.webp
+              width: 600
+            - src: /example-assets/images/1200x800.webp
+              width: 1200
+            - src: /example-assets/images/1800x1200.webp
+              width: 1800
+        - type: image/jpeg
+          sources:
+            - src: /example-assets/images/300x200.jpg
+              width: 300
+            - src: /example-assets/images/600x400.jpg
+              width: 600
+            - src: /example-assets/images/1200x800.jpg
+              width: 1200
+            - src: /example-assets/images/1800x1200.jpg
+              width: 1800
   - name: attributes multiple source
     hidden: true
     data:
