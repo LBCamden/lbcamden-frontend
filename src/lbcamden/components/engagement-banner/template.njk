@@ -1,6 +1,15 @@
+{% from "../image/macro.njk" import LBCamdenImage %}
+
 <section role="banner" class="lbcamden-engagement-banner {{ params.classes }}">
   <h2 class="lbcamden-engagement-banner__heading lbcamden-engagement-banner__heading--mobile">{{ params.heading }}</h2>
-  <img class="lbcamden-engagement-banner__image" src="{{ params.image }}" alt="{{ params.imageAlt }}" />
+  {{ LBCamdenImage({
+    classes: "lbcamden-engagement-banner__image",
+    sources: params.image.sources,
+    alt: params.image.alt,
+    lazy: params.image.lazy,
+    fallback: params.image.fallback,
+    widths: params.image.widths
+  }) }}
 
   <div class="lbcamden-engagement-banner__content">
     <h2 class="lbcamden-engagement-banner__heading">{{ params.heading }}</h2>
