@@ -47,7 +47,7 @@ examples:
     description: Standard application of the engagement banner.
     data:
       image:
-        fallback: /example-assets/images/300x200.jpg
+        src: /example-assets/images/300x200.jpg
         alt: Placeholder image showing its intrinsic dimensions
         lazy: true
         widths:
