@@ -19,7 +19,18 @@ params:
     type: boolean
     required: false
     description: If true, lazy-load the image
-  - widths:
+  - name: width
+    type: integer
+    required: false
+    description: If provided, set the intrinsic width of the image
+  - name: height
+    type: integer
+    required: false
+    description: If provided, set the intrinsic height of the image
+  - name: widths
+    type: object
+    required: false
+    params:
     - name: mobile
       type: string
       required: false
@@ -73,6 +84,7 @@ examples:
     data:
       fallback: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
+      lazy: true
       widths:
         mobile: 100vw
         desktop: 50vw
@@ -98,4 +110,43 @@ examples:
               width: 1200
             - src: /example-assets/images/1800x1200.jpg
               width: 1800
+  - name: single source
+    description: The single-source variant of the image
+    data:
+      fallback: /example-assets/images/300x200.jpg
+      alt: Placeholder image showing its intrinsic dimensions
+      lazy: true
+      width: 300
+      height: 200
 
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: attributes multiple source
+    hidden: true
+    data:
+      sources:
+        - type: image/webp
+          sources:
+            - src: /example-assets/images/300x200.webp
+              width: 300
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+  - name: classes multiple source
+    hidden: true
+    data:
+      sources:
+        - type: image/webp
+          sources:
+            - src: /example-assets/images/300x200.webp
+              width: 300
+      classes: app-image--custom-modifier
+  - name: attributes single source
+    hidden: true
+    data:
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+  - name: classes single source
+    hidden: true
+    data:
+      classes: app-image--custom-modifier

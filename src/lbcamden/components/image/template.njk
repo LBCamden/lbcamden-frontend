@@ -1,5 +1,5 @@
-
-<picture {% if params.classes %} class="lbcamden-image {{ params.classes }}"{% endif %}>
+{% if params.sources | length %}
+<picture class="lbcamden-image lbcamden-image--picture">
   {% set sizes = [{ mq: "min-width(320px)", w: params.widths.mobile }, { mq: "min-width(576px)", w: params.widths.mobileLarge }, { mq: "min-width(641px)", w: params.widths.tablet }, { mq: "min-width(768px)", w: params.widths.desktop }, { mq: "min-width(992px)", w: params.widths.wide }] %}
 
   {% for source in params.sources %}
@@ -12,5 +12,8 @@
       sizes="{% for size in sizes %}{% if size.w %}{{ sizesComma() }}{{ size.mq }} {{ size.w }}{% endif %}{% endfor %}"
     />
   {% endfor %}
-  <img src="{{ params.fallback }}" alt="{{ params.alt }}"{% if img.lazy %} loading="lazy"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} />
+  <img class="{{ params.classes }}" src="{{ params.fallback }}" alt="{{ params.alt }}"{% if params.lazy %} loading="lazy"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} {% if params.width %}width="{{ params.width }}"{% endif %} {% if params.height %}height="{{ params.height }}"{% endif %} />
 </picture>
+{% else %}
+  <img class="lbcamden-image {{ params.classes }}" src="{{ params.fallback }}" alt="{{ params.alt }}"{% if params.lazy %} loading="lazy"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} {% if params.width %}width="{{ params.width }}"{% endif %} {% if params.height %}height="{{ params.height }}"{% endif %} />
+{% endif %}
