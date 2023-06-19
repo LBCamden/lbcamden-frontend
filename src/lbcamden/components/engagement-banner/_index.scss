@@ -55,5 +55,9 @@
 
   a {
     display: inline-block;
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
   }
 }
