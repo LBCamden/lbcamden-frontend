@@ -7,6 +7,10 @@ params:
     type: string
     required: true
     description: Heading content of gallery.
+  - name: surround
+    type: boolean
+    required: false
+    description: If true, render with a surrounding background color.
   - name: items
     type: array
     required: true
@@ -31,7 +35,7 @@ examples:
     data:
       heading: Get more from Camden
       shortDescription: Find relevant services, support and things to do.
-      items:
+      items:  &card_items
         - title: Starting school
           image: &card_image
             src: /example-assets/images/300x200.jpg
@@ -80,3 +84,10 @@ examples:
           image: *card_image
           alt: Image alt text
           shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
+  - name: with surround
+    description: Card gallery with a surround background colour.
+    data:
+      heading: Get more from Camden
+      shortDescription: Find relevant services, support and things to do.
+      items: *card_items
+      surround: true

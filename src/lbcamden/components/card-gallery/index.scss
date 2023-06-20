@@ -7,4 +7,23 @@
     @include govuk-responsive-padding(7, "bottom");
     margin-bottom: 0;
   }
+
+  &--surround {
+    margin: 0 #{-$govuk-gutter-half};
+    padding: $govuk-gutter-half;
+    padding-top: govuk-spacing(6);
+    padding-bottom: govuk-spacing(6);
+    background-color: govuk-colour("white");
+
+    @include govuk-media-query($from: "desktop") {
+      margin: 0 govuk-spacing(-4);
+      padding: govuk-spacing(4);
+      padding-top: govuk-spacing(6);
+      padding-bottom: govuk-spacing(8);
+    }
+
+    .lbcamden-promo-gallery--panel__all {
+      @include govuk-responsive-margin(5, "top");
+    }
+  }
 }
