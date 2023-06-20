@@ -80,7 +80,7 @@ params:
 
 examples:
   - name: default
-    description: The standard header as used on information pages on GOV.UK
+    description: Application of the Image component with multiple sources and a single viewport
     data:
       src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
@@ -109,7 +109,7 @@ examples:
             - src: /example-assets/images/1800x1200.jpg
               width: 1800
   - name: single source
-    description: The single-source variant of the image
+    description: Application of the Image component with a single source
     data:
       src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
@@ -119,7 +119,7 @@ examples:
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: with multiple viewports
-    description: The standard header as used on information pages on GOV.UK
+    description: Application of the Image component with multiple sources and multiple viewports
     data:
       src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
