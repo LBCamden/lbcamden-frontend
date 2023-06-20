@@ -31,6 +31,10 @@ params:
     type: integer
     required: false
     description: If provided, set the intrinsic height of the image
+  - name: resizeToAspectRatio
+    type: boolean
+    required: false
+    description: If provided along with width and height attributes, fix the aspect ratio of the image rather than intrinsic width and height values
   - name: widths
     type: object
     required: false
@@ -112,14 +116,27 @@ examples:
               width: 1200
             - src: /example-assets/images/1800x1200.jpg
               width: 1800
+
   - name: single source
-    description: Application of the Image component with a single source
+    description: Application of the Image component with a single source and fixed width and height values
     data:
       src: /example-assets/images/300x200.jpg
       alt: Placeholder image showing its intrinsic dimensions
       lazy: true
       width: 300
       height: 200
+
+  - name: size to aspect ratio
+    description: Application of the Image component with a single source, sized to aspect ratio
+    data:
+      src: /example-assets/images/1200x800.jpg
+      alt: Placeholder image showing its intrinsic dimensions
+      lazy: true
+      width: 1200
+      height: 800
+      resizeToAspectRatio: true
+      attributes:
+        style: "width: 30em;"
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: with multiple viewports
