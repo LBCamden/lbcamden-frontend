@@ -11,6 +11,10 @@ params:
     type: string
     required: true
     description: Image source used when sources array not provided, or none of the sources match
+  - name: fill
+    type: boolean
+    required: false
+    description: If true, fill the image
   - name: alt
     type: string
     required: false
@@ -149,7 +153,7 @@ examples:
               width: 1200
             - src: /example-assets/images/1800x1200.jpg
               width: 1800
-  - name: attributes multiple source
+  - name: attributes
     hidden: true
     data:
       sources:
@@ -160,7 +164,7 @@ examples:
       attributes:
         data-test-attribute: value
         data-test-attribute-2: value-2
-  - name: classes multiple source
+  - name: classes
     hidden: true
     data:
       sources:
@@ -168,14 +172,4 @@ examples:
           sources:
             - src: /example-assets/images/300x200.webp
               width: 300
-      classes: app-image--custom-modifier
-  - name: attributes single source
-    hidden: true
-    data:
-      attributes:
-        data-test-attribute: value
-        data-test-attribute-2: value-2
-  - name: classes single source
-    hidden: true
-    data:
       classes: app-image--custom-modifier

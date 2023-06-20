@@ -1,7 +1,5 @@
-.lbcamden-image--picture {
-  position: relative;
-
-  img {
-    width: 100%;
+.lbcamden-image {
+  &__wrapper {
+    display: contents;
   }
 }
