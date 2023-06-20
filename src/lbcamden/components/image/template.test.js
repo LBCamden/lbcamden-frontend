@@ -28,7 +28,7 @@ describe('image', () => {
 
     it('renders attributes on the img element', async () => {
       const $ = render('image', examples.default)
-      const $img = $('.lbcamden-image')
+      const $img = $('img')
 
       expect($img.attr('src')).toEqual(examples.default.src)
       expect($img.attr('alt')).toEqual(examples.default.alt)
@@ -56,7 +56,7 @@ describe('image', () => {
 
     it('renders attributes on the img element', async () => {
       const $ = render('image', examples['single source'])
-      const $img = $('.lbcamden-image')
+      const $img = $('img')
 
       expect($img.attr('src')).toEqual(examples['single source'].src)
       expect($img.attr('alt')).toEqual(examples['single source'].alt)
@@ -70,7 +70,7 @@ describe('image', () => {
     it('renders classes correctly', () => {
       const $ = render('image', examples.classes)
 
-      const $component = $('.lbcamden-image')
+      const $component = $('img')
       expect($component.hasClass('app-image--custom-modifier')).toBeTruthy()
     })
 
