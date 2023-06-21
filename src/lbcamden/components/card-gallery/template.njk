@@ -1,0 +1,30 @@
+{% from "../card/macro.njk" import LBCamdenCard %}
+
+<div class="lbcamden-card-gallery {% if params.surround %}lbcamden-card-gallery--surround {% endif %}{{ params.classes }}">
+    {% if params.heading %}
+      <h2>{{ params.heading }}</h2>
+    {% endif %}
+
+    <p class="lbcamden-card-gallery__description">
+      {{ params.shortDescription }}
+    </p>
+
+    <ul class="lbcamden-card-grid">
+        {% for item in params.items %}
+            <li class="lbcamden-card-grid--link-wrapper">
+              {{ LBCamdenCard({
+              "heading": {
+                  "title": item.title,
+                  "href": item.href
+                },
+                "content": {
+                  "text": item.shortDescription
+                },
+                "type": "naked",
+                "classes": "lbcamden-card--image-3x2",
+                "image": item.image
+              }) }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

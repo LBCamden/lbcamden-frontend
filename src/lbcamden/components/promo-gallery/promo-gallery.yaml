@@ -7,6 +7,14 @@ params:
     type: string
     required: true
     description: Heading content of gallery.
+  - name: showAllHref
+    type: string
+    required: false
+    description: Url for 'show all' button to link to.
+  - name: showAllLabel
+    type: string
+    required: false
+    description: Text to display in 'show all button'.
   - name: items
     type: array
     required: true
@@ -38,6 +46,22 @@ examples:
     description: Standard application of a promo gallery.
     data:
       heading: Popular
+      items:
+        - title: Housing Repairs
+          href: "#1"
+        - title: Leaseholder and Freeholders
+          href: "#2"
+        - title: Bid for a property
+          href: "#3"
+        - title: Apply for council housing
+          href: "#4"
+  - name: with show all button in panel
+    description: Standard application of a promo gallery.
+    data:
+      heading: Popular
+      showAllHref: '#'
+      showAllLabel: 'All services'
+      panel: true
       items:
         - title: Housing Repairs
           href: "#1"
