@@ -34,6 +34,7 @@ $lbcamden-hero-max-width: 1440px;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-end;
+    padding: 0 govuk-spacing(1);
 
     h1 {
       @extend %govuk-heading-m;
@@ -53,6 +54,10 @@ $lbcamden-hero-max-width: 1440px;
       justify-content: flex-start;
     }
 
+    @include govuk-media-query($from: tablet) {
+      margin: 0 govuk-spacing(-3);
+    }
+
     @include govuk-media-query($from: wide) {
       margin: 0 govuk-spacing(-4);
     }
@@ -65,7 +70,6 @@ $lbcamden-hero-max-width: 1440px;
 
   &__engagement,
   &__links {
-
     display: inline-block;
     width: auto;
     padding: govuk-spacing(5);
@@ -74,6 +78,10 @@ $lbcamden-hero-max-width: 1440px;
     background-color: govuk-colour("white");
     text-decoration: none;
     flex-shrink: 1;
+
+    @include govuk-media-query($from: tablet) {
+      padding: govuk-spacing(5) govuk-spacing(4);
+    }
 
     &:visited {
       color: inherit;
