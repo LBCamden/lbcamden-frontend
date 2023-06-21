@@ -26,8 +26,8 @@ describe('card-gallery', () => {
 
       expect($('li a').first().text()).toContain('Starting school')
       expect($('li a').attr('href')).toEqual('#1')
-      expect($('li img').attr('src')).toEqual(examples.default.items[0].image)
-      expect($('li img').attr('alt')).toEqual('Image alt text')
+      expect($('li img').attr('src')).toEqual(examples.default.items[0].image.src)
+      expect($('li img').attr('alt')).toEqual(examples.default.items[0].image.alt)
     })
   })
 })

@@ -4,13 +4,9 @@ params:
     required: false
     description: Classes to add to the header container.
   - name: image
-    type: string
+    type: object
     required: true
-    description: Image displayed in engagement banner.
-  - name: imageAlt
-    type: string
-    required: true
-    description: Alt text for engagement banner image.
+    description: Image configuration as per LBCamden image component
   - name: heading
     type: string
     required: true
@@ -27,6 +23,10 @@ params:
     type: string
     required: true
     description: Text of action link to engagement content
+  - name: lazyImages
+    type: boolean
+    required: false
+    description: If true, lazy-load images
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -46,10 +46,37 @@ examples:
   - name: default
     description: Standard application of the engagement banner.
     data:
-      image: https://picsum.photos/id/639/800/600
+      image:
+        src: /example-assets/images/300x200.jpg
+        alt: Placeholder image showing its intrinsic dimensions
+        lazy: true
+        widths:
+          mobile: 100vw
+          desktop: 50vw
+          wide: 25vw
+        sources:
+          - type: image/webp
+            sources:
+              - src: /example-assets/images/300x200.webp
+                width: 300
+              - src: /example-assets/images/600x400.webp
+                width: 600
+              - src: /example-assets/images/1200x800.webp
+                width: 1200
+              - src: /example-assets/images/1800x1200.webp
+                width: 1800
+          - type: image/jpeg
+            sources:
+              - src: /example-assets/images/300x200.jpg
+                width: 300
+              - src: /example-assets/images/600x400.jpg
+                width: 600
+              - src: /example-assets/images/1200x800.jpg
+                width: 1200
+              - src: /example-assets/images/1800x1200.jpg
+                width: 1800
       heading:  News
       shortDescription: Find out what’s going on in our community with all the latest news stories, announcements, and events.
-      imageAlt: Image alt text
       link: '#'
       linkText: All news
   - name: classes
