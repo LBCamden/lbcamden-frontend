@@ -57,6 +57,7 @@
         "name": "widths",
         "type": "object",
         "required": false,
+        "description": "Assumed widths (in css units, such as px or vw) of the image onscreen. Used when selecting an image to display on the given viewport.",
         "params": [
             {
                 "name": "mobile",
