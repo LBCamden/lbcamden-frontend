@@ -188,6 +188,11 @@
     padding: 0;
     border: none;
     background: initial;
+
+    &.lbcamden-card--image .lbcamden-card__content_wrapper {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
   &--top-border {
@@ -209,6 +214,13 @@
         @include govuk-responsive-margin(3, "bottom");
       }
     }
+  }
+
+  &--image-3x2 img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    aspect-ratio: 3 / 2;
   }
 }
 

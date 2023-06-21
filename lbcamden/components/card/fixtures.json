@@ -190,11 +190,11 @@
                 "clickable": true,
                 "type": "alt-1",
                 "image": {
-                    "src": "https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+                    "src": "/example-assets/images/1800x1200.jpg",
                     "alt": "Image of Camden market"
                 }
             },
-            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-1\n  \n   lbcamden-card--clickable\n  \n   lbcamden-card--image\"\n  data-module=\"lbcamden-card\">\n\n  <img src=\"https://images.unsplash.com/photo-1561566302-67abce51c2c3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2340&amp;q=80\" alt=\"Image of Camden market\" />\n  <div class=\"lbcamden-card__content_wrapper\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n  </div>\n\n</div>",
+            "html": "<div\n  class=\"lbcamden-card \n  \n  lbcamden-card--alt-1\n  \n   lbcamden-card--clickable\n  \n   lbcamden-card--image\"\n  data-module=\"lbcamden-card\">\n\n  <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/1800x1200.jpg\"\n    alt=\"Image of Camden market\"\n    \n    \n     \n    \n  />\n</picture>\n\n  <div class=\"lbcamden-card__content_wrapper\">\n\n<h2\n  class=\"govuk-heading-m\">\n  \n    <a href=\"#\">\n      Example heading\n    </a>\n  \n</h2>\n  <div class=\"lbcamden-card__content\">\n    \n      <p>This is a description</p>\n    \n  </div>\n\n  </div>\n\n</div>",
             "hidden": false
         },
         {
