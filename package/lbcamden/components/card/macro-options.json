@@ -78,22 +78,8 @@
     {
         "name": "image",
         "type": "object",
-        "required": false,
-        "description": "If a URL referencing an image is supplied, an image will be used in the card",
-        "params": [
-            {
-                "name": "src",
-                "type": "string",
-                "required": true,
-                "description": "Provide a relative or absolute URL for the image"
-            },
-            {
-                "name": "alt",
-                "type": "string",
-                "required": true,
-                "description": "Provide a text description of the image"
-            }
-        ]
+        "required": true,
+        "description": "Image configuration as per LBCamden image component"
     },
     {
         "name": "topBorder",
