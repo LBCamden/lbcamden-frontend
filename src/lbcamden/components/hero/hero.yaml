@@ -1,0 +1,79 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: welcomeMessage
+    type: string
+    required: true
+    description: h1 welcome message displayed at top of hero
+  - name: attributes
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the header container.
+  - name: image
+    type: object
+    required: true
+    description: Image configuration as per LBCamden image component
+  - name: linkHeading
+    type: string
+    required: true
+    description: Heading displayed above suggested links in hero
+  - name: links
+    type: list
+    required: true
+    description: Suggested links
+    items:
+      - name: label
+        type: string
+        required: true
+        description: Label displayed on the link
+      - name: href
+        type: string
+        required: true
+        description: Link displayed on the list
+  - name: showEngagement
+    type: boolean
+    required: false
+    description: If true, switch to layout for presenting engagement content
+  - name: engagementHeading
+    type: string
+    required: false
+    description: Heading displayed above engagement message
+  - name: engagementContent
+    type: string
+    required: false
+    description: HTML content of engagement message
+  - name: engagementLink
+    type: string
+    required: false
+    description: URL for engagement block to link to
+examples:
+  - name: default
+    description: Standard application of hero image
+    data:
+      image: /story-assets/example-hero-illustration.png
+      linkHeading: Quick links
+      links: |
+        <a href="#">Get a resident permit parking</a>
+        <a href="#">Search for a planning application</a>
+        <a href="#">Book a housing repair</a>
+        <a href="#">Search for a business license</a>
+        <a href="#">Get Council Tax support</a>
+        <a href="#">Find a job at Camden</a>
+  - name: engagement
+    description: Application of hero image with engagement content
+    data:
+      image: /story-assets/example-hero-windrush.jpg
+      linkHeading: Quick links
+      links: |
+        <a href="#">Get a resident permit parking</a>
+        <a href="#">Search for a planning application</a>
+        <a href="#">Book a housing repair</a>
+        <a href="#">Search for a business license</a>
+        <a href="#">Get Council Tax support</a>
+        <a href="#">Find a job at Camden</a>
+      showEngagement: true
+      engagementHeading: Windrush 75 in Camden
+      engagementContent: |
+        We pay tribute to the remarkable contributions of the Windrush generation with arts, events and stories.

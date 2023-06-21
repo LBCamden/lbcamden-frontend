@@ -22,6 +22,10 @@ const config = {
       to: '/assets'
     },
     {
+      from: './story-assets',
+      to: '/story-assets'
+    },
+    {
       from: '../dist',
       to: '/dist'
     }
