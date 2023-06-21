@@ -46,6 +46,18 @@ describe('image', () => {
     })
   })
 
+  describe('preserve aspect ratio example', () => {
+    it('passes aspect ratio', async () => {
+      const $ = render('image', examples['size to aspect ratio'])
+      const $img = $('img')
+
+      expect($img.attr('style')).toContain('--aspect-ratio: 1200 / 800')
+      expect($img.attr('style')).toContain('width: 30em')
+      expect($img.attr('width')).toBeUndefined()
+      expect($img.attr('height')).toBeUndefined()
+    })
+  })
+
   describe('single source example', () => {
     it('passes accessibility tests', async () => {
       const $ = render('image', examples.default)
