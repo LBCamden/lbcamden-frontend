@@ -1,0 +1,20 @@
+<ul class="lbcamden-search-results">
+  {% for item in params.items %}
+  <li class="lbcamden-search-results__item">
+    <h2>
+      <a href="{{ item.href }}">
+        {{ item.title }}
+      </a>
+    </h2>
+
+    <div class="lbcamden-search-results__breadcrumbs">
+      {% set comma = joiner(' > ') %}
+      {% for crumb in item.breadcrumbs %}{{ comma() }}{{ crumb.title }}{% endfor %}
+    </div>
+
+    <div class="lbcamden-search-results__description">
+      {{ item.summary }}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

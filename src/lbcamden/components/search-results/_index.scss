@@ -1,0 +1,22 @@
+.lbcamden-search-results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+
+  h2,
+  &__breadcrumbs {
+    @include govuk-responsive-margin(2, "bottom");
+  }
+
+  &__item {
+    @include govuk-responsive-padding(2, "top");
+    @include govuk-responsive-padding(6, "bottom");
+
+    margin: 0;
+    border-bottom: 1px solid lbcamden-colour("light-grey-3");
+  }
+}

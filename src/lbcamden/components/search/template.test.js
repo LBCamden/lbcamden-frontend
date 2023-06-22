@@ -32,6 +32,13 @@ describe('search', () => {
       expect($component.attr('name')).toEqual('search')
     })
 
+    it('input renders with value', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('value')).toEqual('Housing Repairs')
+    })
+
     it('renders with a form', () => {
       const $ = render('search', examples.default)
 

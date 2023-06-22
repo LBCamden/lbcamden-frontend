@@ -1,0 +1,72 @@
+params:
+- name: classes
+  type: string
+  required: false
+  description: Classes to add to the container.
+- name: items
+  type: array
+  required: true
+  description: Search result items.
+  items:
+  - name: title
+    type: string
+    required: true
+    description: Title of the search result
+  - name: href
+    type: string
+    required: true
+    description: Page linked by the result
+  - name: summary
+    type: string
+    required: true
+    description: Text summary of the returned result
+  - name: breadcrumbs
+    type: array
+    required: true
+    description: Breadcrumbs indicating the search result
+    items:
+    - name: title
+      type: array
+      required: true
+      description: Title of the breadcrumb category
+
+examples:
+- name: default
+  description: Standard application of seach results.
+  data:
+    items: [
+      {
+        "title": "Income tax",
+        "href": "/income-tax-rates",
+        "summary": "Income tax is a tax you pay on your earnings - find out about what it is, how you pay and how to check you're paying the right amount using HMRC's tax calculator",
+        "breadcrumbs": [
+          { "title": "Housing", "href": "#" },
+          { "title": "Housing Repairs", "href": "#" }
+        ]
+      },
+      {
+        "title": "Update 4: AAIB investigation into the loss of aircraft N264DB",
+        "href": "/government/news/aaib-investigation-into-the-loss-of-aircraft-n264db",
+        "summary": "The AAIB is investigating the loss of an aircraft north of Guernsey.",
+        "breadcrumbs": [
+          { "title": "Housing", "href": "#" },
+          { "title": "Housing Repairs", "href": "#" }
+        ]
+      },
+      {
+        "title": "Proposed new timetable for State Pension age increases",
+        "href": "/government/news/proposed-new-timetable-for-state-pension-age-increases",
+        "summary": "The government’s review proposes a new timetable for the rise to 68, in line with continuing increases in life expectancy.",
+        "breadcrumbs": [
+          { "title": "Housing", "href": "#" },
+          { "title": "Housing Repairs", "href": "#" }
+        ]
+      }
+    ]
+
+# Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+- name: classes
+  hidden: true
+  data:
+    classes: app-header--custom-modifier
+    items: []
