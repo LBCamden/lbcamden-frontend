@@ -11,10 +11,6 @@ params:
     type: string
     required: true
     description: Image source used when sources array not provided, or none of the sources match
-  - name: fill
-    type: boolean
-    required: false
-    description: If true, fill the image
   - name: alt
     type: string
     required: false
@@ -31,10 +27,6 @@ params:
     type: integer
     required: false
     description: If provided, set the intrinsic height of the image
-  - name: resizeToAspectRatio
-    type: boolean
-    required: false
-    description: If provided along with width and height attributes, fix the aspect ratio of the image rather than intrinsic width and height values
   - name: widths
     type: object
     required: false

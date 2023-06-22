@@ -13,7 +13,7 @@ requireAll(require.context("../src/lbcamden", true, /\.njk$/));
 // force _all_ nunjucks templates to load so that client-side template imports work
 requireAll(require.context("./govuk", true, /\.njk$/));
 
-const camdenComponents = buildComponentStories({
+const camdenComponents =  buildComponentStories({
   // Build up a collection of all our component template files
   componentsContext: require.context(
     "../src/lbcamden/components",
@@ -43,7 +43,7 @@ function requireAll(context) {
   context.keys().forEach((key) => context(key));
 }
 
-function buildComponentStories({
+ function buildComponentStories({
   componentsContext,
   schemaContext,
   examples,
@@ -103,7 +103,17 @@ function buildComponentStories({
     const argTypes = {};
 
     for (const param of params) {
-      argTypes[param.name] = { type: param.type };
+      if (param.control === 'image') {
+        argTypes[param.name] = {
+          control: {
+            type: 'file',
+            accept: ['.png', '.jpg', '.jpeg', '.webp']
+          }
+        };
+
+      } else {
+        argTypes[param.name] = { type: param.type };
+      }
     }
 
     for (const example of examples) {
@@ -112,6 +122,12 @@ function buildComponentStories({
       }
 
       story.add(example.name, (params) => {
+        for (const key of Object.keys(params)) {
+          if (params[key] instanceof Blob) {
+            params[key] = URL.createObjectURL(params[key])
+          }
+        }
+
         const html = component({ params }).trim()
         const nunjucks = escape(`
 {% from "lbcamden/components/${slug}/macro.njk" import ${slug} %}
