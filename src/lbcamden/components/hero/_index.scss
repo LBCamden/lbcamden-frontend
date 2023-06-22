@@ -47,18 +47,18 @@ $lbcamden-hero-max-width: 1440px;
       @include govuk-responsive-margin(4, "bottom");
     }
 
-    @include govuk-media-query($from: mobile-large) {
+    @include govuk-media-query($from: "mobile-large") {
       flex-direction: row;
       align-items: flex-end;
       justify-content: flex-start;
     }
 
-    @include govuk-media-query($from: tablet) {
+    @include govuk-media-query($from: "tablet") {
       min-height: $lbcamden-hero-height;
       margin: 0 govuk-spacing(-3);
     }
 
-    @include govuk-media-query($from: wide) {
+    @include govuk-media-query($from: "wide") {
       margin: 0 govuk-spacing(-4);
     }
   }
@@ -81,15 +81,15 @@ $lbcamden-hero-max-width: 1440px;
     background-color: govuk-colour("white");
     text-decoration: none;
 
-    @include govuk-media-query ($from: mobile-large) {
+    @include govuk-media-query ($from: "mobile-large") {
       width: 290px;
     }
 
-    @include govuk-media-query($from: tablet) {
+    @include govuk-media-query($from: "tablet") {
       padding: govuk-spacing(5) govuk-spacing(4);
     }
 
-    @include govuk-media-query ($from: desktop) {
+    @include govuk-media-query ($from: "desktop") {
       width: 390px;
     }
 
@@ -126,7 +126,7 @@ $lbcamden-hero-max-width: 1440px;
     flex-grow: 1;
     flex-shrink: 1;
 
-    @include govuk-media-query ($until: mobile-large) {
+    @include govuk-media-query ($until: "mobile-large") {
       margin-top: govuk-spacing(-4);
     }
   }
