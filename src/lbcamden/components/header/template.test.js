@@ -48,5 +48,12 @@ describe('header', () => {
       const $component = $('.lbcamden-header')
       expect($component.hasClass('lbcamden-header--with-phase-banner')).toBeTruthy()
     })
+
+    it('switches to three column layout when no description provided', () => {
+      const $ = render('header', examples['Nested navigation (with three columns)'])
+
+      const $threeColumnLayout = $('.lbcamden-header__navigation-second-items--full li')
+      expect($threeColumnLayout).toBeTruthy()
+    })
   })
 })

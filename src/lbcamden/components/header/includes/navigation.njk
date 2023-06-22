@@ -44,6 +44,7 @@
                id="super-navigation-menu__section-{{ loop.index }}">
             <div class="govuk-width-container lbcamden-header__width-container">
               <div class="govuk-grid-row">
+                {% if menuItem.description %}
                 <div class="govuk-grid-column-one-third-from-desktop">
                   <p class="govuk-body-l lbcamden-header__menu-description">
                     {{ menuItem.description }}
@@ -52,6 +53,11 @@
                 <div class="govuk-grid-column-two-thirds-from-desktop">
                   <ul
                     class="lbcamden-header__navigation-second-items lbcamden-header__navigation-second-items--topics">
+                {% else %}
+                <div class="govuk-grid-column-full">
+                  <ul
+                    class="lbcamden-header__navigation-second-items lbcamden-header__navigation-second-items--full lbcamden-header__navigation-second-items--topics">
+                {% endif %}
                     {% for item in menuItem.subItems %}
                       <li class="lbcamden-header__dropdown-list-item">
                         <a class="govuk-link lbcamden-header__navigation-second-item-link"

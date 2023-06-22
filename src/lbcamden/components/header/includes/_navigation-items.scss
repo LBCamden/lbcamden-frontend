@@ -201,10 +201,12 @@
   padding-left: 0;
   font-size: inherit;
   list-style: none;
+
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
     @include govuk-responsive-padding(6, "top");
 
     li {
@@ -215,6 +217,12 @@
   &__dropdown-list-item {
     p {
       font-size: inherit;
+    }
+  }
+
+  &.lbcamden-header__navigation-second-items--full {
+    li {
+      flex: 0 0 33%;
     }
   }
 }
