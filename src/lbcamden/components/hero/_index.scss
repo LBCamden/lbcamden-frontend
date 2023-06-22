@@ -30,7 +30,6 @@ $lbcamden-hero-max-width: 1440px;
 
   &__content {
     display: flex;
-    min-height: $lbcamden-hero-height;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-end;
@@ -55,6 +54,7 @@ $lbcamden-hero-max-width: 1440px;
     }
 
     @include govuk-media-query($from: tablet) {
+      min-height: $lbcamden-hero-height;
       margin: 0 govuk-spacing(-3);
     }
 
