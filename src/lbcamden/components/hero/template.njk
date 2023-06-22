@@ -2,8 +2,15 @@
 
 <div class="lbcamden-hero {{ params.classes }}">
   {{ LBCamdenImage({
-    "src": "/example-assets/images/hero.jpg",
-    "classes": "lbcamden-hero__bg"
+    "classes": "lbcamden-hero__bg " + params.image.classes,
+    "src": params.image.src,
+    "attributes": params.image.attributes,
+    "alt": params.image.alt,
+    "lazy": params.image.lazy,
+    "width": params.image.width,
+    "height": params.image.height,
+    "widths": params.image.widths,
+    "sources": params.image.sources
   }) }}
 
   <div class="govuk-width-container">
@@ -19,13 +26,13 @@
         </ul>
       </div>
 
-      {% if params.showEngagement %}
-      <span class="lbcamden-hero__spacer"></span>
+      {% if params.engagement %}
+        <span class="lbcamden-hero__spacer"></span>
 
-      <a href="{{ params.engagementLink }}" class="lbcamden-hero__engagement govuk-body-s">
-        <h2>{{ params.engagementHeading }}</h2>
-        {{ params.engagementContent | safe }}
-      </a>
+        <div class="lbcamden-hero__engagement govuk-body-s">
+          <h2>{{ params.engagement.heading }}</h2>
+          {{ params.engagement.content | safe }}
+        </div>
       {% endif %}
     </div>
   </div>

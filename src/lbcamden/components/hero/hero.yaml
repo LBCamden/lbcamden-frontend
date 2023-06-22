@@ -32,48 +32,66 @@ params:
         type: string
         required: true
         description: Link displayed on the list
-  - name: showEngagement
-    type: boolean
+  - name: engagement
+    type: object
     required: false
     description: If true, switch to layout for presenting engagement content
-  - name: engagementHeading
-    type: string
-    required: false
-    description: Heading displayed above engagement message
-  - name: engagementContent
-    type: string
-    required: false
-    description: HTML content of engagement message
-  - name: engagementLink
-    type: string
-    required: false
-    description: URL for engagement block to link to
+    params:
+    - name: heading
+      type: string
+      required: false
+      description: Heading displayed above engagement message
+    - name: content
+      type: string
+      required: false
+      description: HTML content of engagement message
+    - name: link
+      type: string
+      required: false
+      description: URL for engagement block to link to
 examples:
   - name: default
     description: Standard application of hero image
     data:
-      image: /story-assets/example-hero-illustration.png
-      linkHeading: Quick links
-      links: |
-        <a href="#">Get a resident permit parking</a>
-        <a href="#">Search for a planning application</a>
-        <a href="#">Book a housing repair</a>
-        <a href="#">Search for a business license</a>
-        <a href="#">Get Council Tax support</a>
-        <a href="#">Find a job at Camden</a>
+      image:
+        src: /example-assets/images/hero.jpg
+      linkHeading: Popular tasks
+      links:
+        - label: Get a resident permit parking
+          href: "#"
+        - label: Search for a planning application
+          href: "#"
+        - label: Book a housing repair
+          href: "#"
+        - label: Search for a business license
+          href: "#"
+        - label: Get Council Tax support
+          href: "#"
+        - label: Find a job at Camden
+          href: "#"
+
   - name: engagement
     description: Application of hero image with engagement content
     data:
-      image: /story-assets/example-hero-windrush.jpg
-      linkHeading: Quick links
-      links: |
-        <a href="#">Get a resident permit parking</a>
-        <a href="#">Search for a planning application</a>
-        <a href="#">Book a housing repair</a>
-        <a href="#">Search for a business license</a>
-        <a href="#">Get Council Tax support</a>
-        <a href="#">Find a job at Camden</a>
-      showEngagement: true
-      engagementHeading: Windrush 75 in Camden
-      engagementContent: |
-        We pay tribute to the remarkable contributions of the Windrush generation with arts, events and stories.
+      image:
+        src: /example-assets/images/hero-pride.png
+      linkHeading: Popular tasks
+      links:
+        - label: Get a resident permit parking
+          href: "#"
+        - label: Search for a planning application
+          href: "#"
+        - label: Book a housing repair
+          href: "#"
+        - label: Search for a business license
+          href: "#"
+        - label: Get Council Tax support
+          href: "#"
+        - label: Find a job at Camden
+          href: "#"
+      engagement:
+        heading: Celebrate Camden culture
+        content: |
+          <p>
+            We're making the most of Culture Week in Camden, with lots of free events and things to do.
+          </p>

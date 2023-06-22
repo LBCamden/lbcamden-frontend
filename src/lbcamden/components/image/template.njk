@@ -12,20 +12,14 @@
     />
   {% endfor %}
 
-  {% if params.width and params.height and params.resizeToAspectRatio %}
-    {% set aspectRatio = "{{ params.width }} / {{ params.height }}" %}
-  {% endif %}
+  {% set style = params.attributes.style %}
 
   <img
     class="lbcamden-image {{ params.classes }}"
     src="{{ params.src }}"
     alt="{{ params.alt }}"
     {% if params.lazy %}loading="lazy"{% endif %}
-    {%- for attribute, value in params.attributes %}{% if not aspectRatio or attribute != "style" %} {{ attribute }}="{{ value }}"{% endif %}{% endfor %}
-    {% if aspectRatio %}
-    style="--aspect-ratio: {{ params.width }} / {{ params.height }};{{params.attributes.style}}"
-    {% else %}
-    {% if params.width %}width="{{ params.width }}"{% endif %} {% if params.height %}height="{{ params.height }}"{% endif %}
-    {% endif %}
+    {%- for attribute, value in params.attributes %}{% if attribute != "style" %} {{ attribute }}="{{ value }}"{% endif %}{% endfor %}
+    style="{{ style }}"
   />
 </picture>
