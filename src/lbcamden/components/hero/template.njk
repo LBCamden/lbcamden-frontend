@@ -1,0 +1,39 @@
+{% from "../image/macro.njk" import LBCamdenImage %}
+
+<div class="lbcamden-hero {{ params.classes }}">
+  {{ LBCamdenImage({
+    "classes": "lbcamden-hero__bg " + params.image.classes,
+    "src": params.image.src,
+    "attributes": params.image.attributes,
+    "alt": params.image.alt,
+    "lazy": params.image.lazy,
+    "width": params.image.width,
+    "height": params.image.height,
+    "widths": params.image.widths,
+    "sources": params.image.sources
+  }) }}
+
+  <div class="govuk-width-container">
+    <div class="lbcamden-hero__content">
+      <div class="lbcamden-hero__links govuk-body-s">
+        <h1>{{ params.welcomeMessage }}</h1>
+        <h2>{{ params.linkHeading }}</h2>
+
+        <ul class="lbcamden-list--dash">
+        {% for link in params.links %}
+          <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      {% if params.engagement %}
+        <span class="lbcamden-hero__spacer"></span>
+
+        <div class="lbcamden-hero__engagement govuk-body-s">
+          <h2>{{ params.engagement.heading }}</h2>
+          {{ params.engagement.content | safe }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
