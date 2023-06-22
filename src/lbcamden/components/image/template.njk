@@ -18,6 +18,8 @@
     class="lbcamden-image {{ params.classes }}"
     src="{{ params.src }}"
     alt="{{ params.alt }}"
+    {% if params.width %}width="{{ params.width }}"{% endif %}
+    {% if params.height %}height="{{ params.height }}"{% endif %}
     {% if params.lazy %}loading="lazy"{% endif %}
     {%- for attribute, value in params.attributes %}{% if attribute != "style" %} {{ attribute }}="{{ value }}"{% endif %}{% endfor %}
     style="{{ style }}"
