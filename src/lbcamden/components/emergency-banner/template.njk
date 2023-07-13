@@ -6,7 +6,7 @@
 
         {% if params.shortDescription %}
         <p class="lbcamden-emergency-banner__description {{ params.descriptionClasses }}">
-          {{ params.shortDescription }}
+          {{ params.shortDescription | safe }}
         </p>
         {% endif %}
 
