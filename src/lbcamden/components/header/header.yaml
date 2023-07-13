@@ -236,14 +236,8 @@ examples:
   - name: with no navigation
     description: Header with no main navigation.
     data:
-      navigation: false
-      searchItems:
-        - href: '#1'
-          text: 'Popular search 1'
-        - href: '#2'
-          text: 'Popular search 2'
-        - href: '#3'
-          text: 'Popular search 3'
+      navigation: []
+      searchItems: []
 
   - name: with phasebanner
     description: Default but with a phasebanner
@@ -253,7 +247,7 @@ examples:
   - name: with no navigation or search
     description: Header with no main navigation or search function.
     data:
-      navigation: false
+      navigation: []
       search: false
 
   - name: with death of a notable person
@@ -322,7 +316,35 @@ examples:
 
         - href: '#3'
           text: 'Sign in / Register'
-          classes: 'lbcamden-header__navigation-item-link--sign-in'      
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+
+  - name: with death of a notable person and no navigation
+    description: Header with emergency-banner banner for death of a notable person
+    data:
+      emergencyBanner: |
+        <section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death lbcamden-emergency-banner--homepage ">
+          <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h2 class="lbcamden-emergency-banner__heading ">His Royal Highness Henry VIII</h2>
+
+                
+                <p class="lbcamden-emergency-banner__description ">
+                  1491–1547
+                </p>
+                
+
+                
+                <a href="https://www.gov.uk/" class="lbcamden-emergency-banner__link">
+                  Override Link Text
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+      navigation: []
+      search: false  
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes

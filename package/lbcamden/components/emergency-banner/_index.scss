@@ -8,6 +8,10 @@
   color: govuk-colour("white");
   background-color: govuk-colour("mid-grey");
 
+  p {
+    color: inherit;
+  }
+
   &__heading {
     @include govuk-font(24, $weight: "bold");
     margin: 0;

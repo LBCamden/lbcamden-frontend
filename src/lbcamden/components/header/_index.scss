@@ -1,12 +1,16 @@
 $lbcamden-header-height: 50px;
 $lbcamden-header-colour: lbcamden-colour("black");
+$lbcamden-header-bar-colour: lbcamden-colour("govuk-brand1-1-colour");
 
 .lbcamden-header {
   position: relative;
-  min-height: $lbcamden-header-height;
-  border-bottom: 10px solid lbcamden-colour("govuk-brand1-1-colour");
+  border-bottom: 10px solid $lbcamden-header-bar-colour;
   color: lbcamden-colour("white");
   background: $lbcamden-header-colour;
+
+  &__bar {
+    min-height: $lbcamden-header-height;
+  }
 
   &__logo {
     @include govuk-responsive-margin(2, "top");
