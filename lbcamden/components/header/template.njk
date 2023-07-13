@@ -5,7 +5,7 @@
   class="lbcamden-header {{ params.classes if params.classes }}{% if params.phaseBanner %} lbcamden-header--with-phase-banner{% endif %}"
   role="banner" data-module="lbcamden-header"
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-<div class="{{ params.containerClasses | default('govuk-width-container') }}">
+<div class="lbcamden-header__bar {{ params.containerClasses | default('govuk-width-container') }}">
   <div class="lbcamden-header__logo">
     <a href="{{ params.homepageUrl | default('/') }}" class="lbcamden-header__link">
       {{ LBCamdenLogo({

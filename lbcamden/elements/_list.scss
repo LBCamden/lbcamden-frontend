@@ -32,5 +32,9 @@ ul {
         overflow: hidden;
       }
     }
+
+    a:not(:hover) {
+      text-decoration: none;
+    }
   }
 }
