@@ -22,8 +22,8 @@ const config = {
       to: '/assets'
     },
     {
-      from: './story-assets',
-      to: '/story-assets'
+      from: '../src/lbcamden/example-assets',
+      to: '/example-assets'
     },
     {
       from: '../dist',
