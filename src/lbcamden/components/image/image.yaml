@@ -127,9 +127,8 @@ examples:
       lazy: true
       width: 1200
       height: 800
-      resizeToAspectRatio: true
       attributes:
-        style: "width: 30em;"
+        style: "width: 10em; height: auto"
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: with multiple viewports
