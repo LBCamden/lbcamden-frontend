@@ -78,12 +78,11 @@
                 "lazy": true,
                 "width": 1200,
                 "height": 800,
-                "resizeToAspectRatio": true,
                 "attributes": {
-                    "style": "width: 30em;"
+                    "style": "width: 10em; height: auto"
                 }
             },
-            "html": "<picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/1200x800.jpg\"\n    alt=\"Placeholder image showing its intrinsic dimensions\"\n    width=\"1200\"\n    height=\"800\"\n    loading=\"lazy\"\n    style=\"width: 30em;\"\n  />\n</picture>",
+            "html": "<picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/1200x800.jpg\"\n    alt=\"Placeholder image showing its intrinsic dimensions\"\n    width=\"1200\"\n    height=\"800\"\n    loading=\"lazy\"\n    style=\"width: 10em; height: auto\"\n  />\n</picture>",
             "hidden": false
         },
         {
