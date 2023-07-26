@@ -13,8 +13,4 @@ $lbcamden-surround-color: govuk-colour("white") !default;
     padding-top: govuk-spacing(6);
     padding-bottom: govuk-spacing(8);
   }
-
-  &__all {
-    @include govuk-responsive-margin(5, "top");
-  }
 }

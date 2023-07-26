@@ -3,6 +3,12 @@
       <h2>{{ params.heading }}</h2>
     {% endif %}
 
+    {% if params.shortDescription %}
+      <p class="lbcamden-promo-gallery__description">
+        {{ params.shortDescription }}
+      </p>
+    {% endif %}
+
     <ul class="lbcamden-card-grid lbcamden-card-grid--popular">
         {% for item in params.items %}
             <li class="lbcamden-card-grid--link-wrapper">
@@ -12,7 +18,7 @@
     </ul>
 
     {% if params.showAllHref %}
-      <a href="{{ params.showAllHref }}" class="lbcamden-link--promo lbcamden-link--promo--large lbcamden-promo-gallery--panel__all">
+      <a href="{{ params.showAllHref }}" class="lbcamden-link--promo lbcamden-link--promo--large lbcamden-promo-gallery__all">
         {{ params.showAllLabel | default("Show all") }}
       </a>
     {% endif %}
