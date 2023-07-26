@@ -11,6 +11,10 @@ params:
     type: boolean
     required: false
     description: If true, render with a surrounding background color.
+  - name: description
+    type: string
+    required: false
+    description: Description of the gallery.
   - name: items
     type: array
     required: true
@@ -24,6 +28,10 @@ params:
         type: string
         required: false
         description: If set, the heading will contain a link
+      - name: shortDescription
+        type: string
+        required: false
+        description: Short description of the card
       - name: image
         type: object
         required: true
@@ -35,6 +43,59 @@ examples:
     data:
       heading: Get more from Camden
       shortDescription: Find relevant services, support and things to do.
+      items:  &card_items
+        - title: Starting school
+          image: &card_image
+            src: /example-assets/images/300x200.jpg
+            alt: Placeholder image showing its intrinsic dimensions
+            lazy: true
+            widths:
+              mobile: 100vw
+              tablet: 50vw
+              desktop: 370px
+            sources:
+              - type: image/webp
+                sources:
+                  - src: /example-assets/images/300x200.webp
+                    width: 300
+                  - src: /example-assets/images/600x400.webp
+                    width: 600
+                  - src: /example-assets/images/1200x800.webp
+                    width: 1200
+                  - src: /example-assets/images/1800x1200.webp
+                    width: 1800
+              - type: image/jpeg
+                sources:
+                  - src: /example-assets/images/300x200.jpg
+                    width: 300
+                  - src: /example-assets/images/600x400.jpg
+                    width: 600
+                  - src: /example-assets/images/1200x800.jpg
+                    width: 1200
+                  - src: /example-assets/images/1800x1200.jpg
+                    width: 1800
+          href: "#1"
+          alt: Image alt text
+          shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
+        - title: Moving into Camden
+          href: "#2"
+          image: *card_image
+          alt: Image alt text
+          shortDescription: Check off what you need to do when you move into Camden, and what to do if you need support.
+        - title: Making the most of Summer
+          href: "#3"
+          image: *card_image
+          alt: Image alt text
+          shortDescription: Find out what’s happening in Camden, host a street party, or get support over the summer holidays.
+        - title: Starting school
+          href: "#4"
+          image: *card_image
+          alt: Image alt text
+          shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
+  - name: without-description
+    description: Application of a card gallery without description.
+    data:
+      heading: Get more from Camden
       items:  &card_items
         - title: Starting school
           image: &card_image

@@ -5,9 +5,11 @@
       <h2>{{ params.heading }}</h2>
     {% endif %}
 
-    <p class="lbcamden-card-gallery__description">
-      {{ params.shortDescription }}
-    </p>
+    {% if params.shortDescription %}
+      <p class="lbcamden-card-gallery__description">
+        {{ params.shortDescription }}
+      </p>
+    {% endif %}
 
     <ul class="lbcamden-card-grid">
         {% for item in params.items %}
@@ -19,7 +21,7 @@
                 },
                 "content": {
                   "text": item.shortDescription
-                },
+                } if item.shortDescription else null,
                 "type": "naked",
                 "classes": "lbcamden-card--image-3x2",
                 "image": item.image
