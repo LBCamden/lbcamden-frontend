@@ -108,7 +108,6 @@ examples:
     data:
       items: *card_items
       surround: true
-
   - name: classes
     hidden: true
     data:
