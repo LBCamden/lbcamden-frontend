@@ -17,13 +17,16 @@
     <div class="lbcamden-hero__content">
       <div class="lbcamden-hero__links govuk-body-s">
         <h1>{{ params.welcomeMessage }}</h1>
-        <h2>{{ params.linkHeading }}</h2>
 
-        <ul class="lbcamden-list--dash">
-        {% for link in params.links %}
-          <li><a href="{{ link.href }}">{{ link.label }}</a></li>
-        {% endfor %}
-        </ul>
+        {% if params.links | length %}
+          <h2>{{ params.linkHeading }}</h2>
+
+          <ul class="lbcamden-list--dash">
+          {% for link in params.links %}
+            <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       {% if params.engagement %}

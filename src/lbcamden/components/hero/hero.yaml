@@ -17,11 +17,11 @@ params:
     description: Image configuration as per LBCamden image component
   - name: linkHeading
     type: string
-    required: true
+    required: false
     description: Heading displayed above suggested links in hero
   - name: links
     type: list
-    required: true
+    required: false
     description: Suggested links
     items:
       - name: label
@@ -70,6 +70,13 @@ examples:
           href: "#"
         - label: Find a job at Camden
           href: "#"
+
+  - name: without-links
+    description: Application of hero image without links
+    data:
+      welcomeMessage: Welcome to Camden.gov.uk
+      image:
+        src: /example-assets/images/hero.jpg
 
   - name: engagement
     description: Application of hero image with engagement content
