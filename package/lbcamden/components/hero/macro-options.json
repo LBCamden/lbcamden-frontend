@@ -8,7 +8,7 @@
     {
         "name": "welcomeMessage",
         "type": "string",
-        "required": true,
+        "required": false,
         "description": "h1 welcome message displayed at top of hero"
     },
     {
@@ -26,13 +26,13 @@
     {
         "name": "linkHeading",
         "type": "string",
-        "required": true,
+        "required": false,
         "description": "Heading displayed above suggested links in hero"
     },
     {
         "name": "links",
         "type": "list",
-        "required": true,
+        "required": false,
         "description": "Suggested links",
         "items": [
             {

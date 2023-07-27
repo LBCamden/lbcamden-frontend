@@ -8,8 +8,20 @@
     {
         "name": "heading",
         "type": "string",
-        "required": true,
+        "required": false,
         "description": "Heading content of gallery."
+    },
+    {
+        "name": "shortDescription",
+        "type": "string",
+        "required": false,
+        "description": "Description of gallery content."
+    },
+    {
+        "name": "surround",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, render with a surrounding background color."
     },
     {
         "name": "showAllHref",
