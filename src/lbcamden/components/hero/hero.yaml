@@ -5,7 +5,7 @@ params:
     description: Classes to add to the header container.
   - name: welcomeMessage
     type: string
-    required: true
+    required: false
     description: h1 welcome message displayed at top of hero
   - name: attributes
     type: object
@@ -17,11 +17,11 @@ params:
     description: Image configuration as per LBCamden image component
   - name: linkHeading
     type: string
-    required: true
+    required: false
     description: Heading displayed above suggested links in hero
   - name: links
     type: list
-    required: true
+    required: false
     description: Suggested links
     items:
       - name: label
@@ -70,6 +70,12 @@ examples:
           href: "#"
         - label: Find a job at Camden
           href: "#"
+
+  - name: without-links-or-heading
+    description: Application of hero image without links
+    data:
+      image:
+        src: /example-assets/images/hero.jpg
 
   - name: engagement
     description: Application of hero image with engagement content
