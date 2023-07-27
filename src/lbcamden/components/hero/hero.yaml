@@ -5,7 +5,7 @@ params:
     description: Classes to add to the header container.
   - name: welcomeMessage
     type: string
-    required: true
+    required: false
     description: h1 welcome message displayed at top of hero
   - name: attributes
     type: object
@@ -71,10 +71,9 @@ examples:
         - label: Find a job at Camden
           href: "#"
 
-  - name: without-links
+  - name: without-links-or-heading
     description: Application of hero image without links
     data:
-      welcomeMessage: Welcome to Camden.gov.uk
       image:
         src: /example-assets/images/hero.jpg
 
