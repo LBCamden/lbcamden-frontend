@@ -18,6 +18,12 @@
         "description": "If true, render with a surrounding background color."
     },
     {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "Description of the gallery."
+    },
+    {
         "name": "items",
         "type": "array",
         "required": true,
@@ -34,6 +40,12 @@
                 "type": "string",
                 "required": false,
                 "description": "If set, the heading will contain a link"
+            },
+            {
+                "name": "shortDescription",
+                "type": "string",
+                "required": false,
+                "description": "Short description of the card"
             },
             {
                 "name": "image",

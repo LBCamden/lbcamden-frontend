@@ -40,7 +40,7 @@ describe('link-list-gallery', () => {
 
   describe('with heading', () => {
     it('renders heading', () => {
-      const $ = render('link-list-gallery', examples['with heading'])
+      const $ = render('link-list-gallery', examples['with heading and description'])
 
       const $component = $('h2')
       expect($component.text()).toContain('Contents')

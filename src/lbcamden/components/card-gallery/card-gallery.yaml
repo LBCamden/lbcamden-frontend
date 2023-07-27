@@ -11,6 +11,10 @@ params:
     type: boolean
     required: false
     description: If true, render with a surrounding background color.
+  - name: description
+    type: string
+    required: false
+    description: Description of the gallery.
   - name: items
     type: array
     required: true
@@ -24,6 +28,10 @@ params:
         type: string
         required: false
         description: If set, the heading will contain a link
+      - name: shortDescription
+        type: string
+        required: false
+        description: Short description of the card
       - name: image
         type: object
         required: true
@@ -84,6 +92,11 @@ examples:
           image: *card_image
           alt: Image alt text
           shortDescription: Get help and support for you and your child, apply for a new school place, find term dates and school travel.
+  - name: without-description
+    description: Application of a card gallery without description.
+    data:
+      heading: Get more from Camden
+      items: *card_items
   - name: with surround
     description: Card gallery with a surround background colour.
     data:

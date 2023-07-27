@@ -5,8 +5,16 @@ params:
     description: Classes to add to the gallery.
   - name: heading
     type: string
-    required: true
+    required: false
     description: Heading content of gallery.
+  - name: shortDescription
+    type: string
+    required: false
+    description: Description of gallery content.
+  - name: surround
+    type: boolean
+    required: false
+    description: If true, render with a surrounding background color.
   - name: showAllHref
     type: string
     required: false
@@ -33,7 +41,7 @@ examples:
   - name: default
     description: Standard application of a promo gallery.
     data:
-      items:
+      items: &card_items
         - title: Housing Repairs
           href: "#1"
         - title: Leaseholder and Freeholders
@@ -42,35 +50,24 @@ examples:
           href: "#3"
         - title: Apply for council housing
           href: "#4"
-  - name: with heading
+  - name: with heading and description
     description: Standard application of a promo gallery.
     data:
       heading: Popular
-      items:
-        - title: Housing Repairs
-          href: "#1"
-        - title: Leaseholder and Freeholders
-          href: "#2"
-        - title: Bid for a property
-          href: "#3"
-        - title: Apply for council housing
-          href: "#4"
+      shortDescription: Find relevant services, support and things to do.
+      items: *card_items
+  - name: with surround
+    description: Application of a promo gallery with surround content.
+    data:
+      items: *card_items
+      surround: true
   - name: with show all button in panel
     description: Standard application of a promo gallery.
     data:
       heading: Popular
       showAllHref: '#'
       showAllLabel: 'All services'
-      panel: true
-      items:
-        - title: Housing Repairs
-          href: "#1"
-        - title: Leaseholder and Freeholders
-          href: "#2"
-        - title: Bid for a property
-          href: "#3"
-        - title: Apply for council housing
-          href: "#4"
+      items: *card_items
   - name: classes
     hidden: true
     data:
