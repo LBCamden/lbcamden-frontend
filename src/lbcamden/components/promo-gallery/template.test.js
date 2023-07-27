@@ -37,7 +37,7 @@ describe('promo-gallery', () => {
 
   describe('with heading', () => {
     it('renders heading', () => {
-      const $ = render('promo-gallery', examples['with heading'])
+      const $ = render('promo-gallery', examples['with heading and description'])
 
       const $component = $('h2')
       expect($component.text()).toContain('Popular')

@@ -5,8 +5,20 @@ params:
     description: Classes to add to the gallery.
   - name: heading
     type: string
-    required: true
+    required: false
     description: Heading content of gallery.
+  - name: shortDescription
+    type: string
+    required: false
+    description: Description of gallery content.
+  - name: surround
+    type: boolean
+    required: false
+    description: If true, render with a surrounding background color.
+  - name: items
+    type: array
+    required: true
+    description: Cards displayed in the promo gallery
   - name: items
     type: array
     required: true
@@ -34,7 +46,7 @@ examples:
   - name: default
     description: Default application of a link list gallery.
     data:
-      items:
+      items: &card_items
         - title: Business rates
           viewAllHref: '#'
           links:
@@ -85,60 +97,17 @@ examples:
             - title: e-invoicing Support
               href: "#"
 
-  - name: with heading
-    description: Standard application of a link list gallery.
+  - name: with heading and description
+    description: Application of a link list gallery with heading and description.
     data:
       heading: Contents
-      items:
-        - title: Business rates
-          viewAllHref: '#'
-          links:
-            - title: Business rates explained
-              href: "#"
-            - title: Discounts and exemptions for business rates
-              href: "#"
-            - title: Paying your business rates
-              href: "#"
-        - title: Markets
-          links:
-            - title: Visit Camden's markets
-              href: "#"
-            - title: Apply to trade in Camden
-              href: "#"
-            - title: Market news
-              href: "#"
-        - title: Licensing
-          links:
-            - title: Alcohol and entertainment
-              href: "#"
-            - title: Other licenses and permits
-              href: "#"
-            - title: Search the licensing public register
-              href: "#"
-        - title: Doing business in Camden
-          links:
-            - title: Starting or growing your business
-              href: "#"
-            - title: Business rates, licensing and permits
-              href: "#"
-            - title: Trading standards
-              href: "#"
-        - title: Food business
-          links:
-            - title: Registering a food business
-              href: "#"
-            - title: Food and hygiene information
-              href: "#"
-            - title: Food safety training
-              href: "#"
-        - title: Getting paid by Camden
-          links:
-            - title: Camden's Accounts Payable Policy
-              href: "#"
-            - title: Camden's new e-invoicing service
-              href: "#"
-            - title: e-invoicing Support
-              href: "#"
+      shortDescription: Find relevant services, support and things to do.
+      items: *card_items
+  - name: with surround
+    description: Application of a link list gallery with surround content.
+    data:
+      items: *card_items
+      surround: true
   - name: classes
     hidden: true
     data:
