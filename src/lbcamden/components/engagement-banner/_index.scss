@@ -22,18 +22,6 @@
     }
   }
 
-  &__heading:not(.lbcamden-engagement-banner__heading--mobile) {
-    @include govuk-responsive-margin(2, "bottom");
-
-    @include govuk-media-query($until: "desktop") {
-      display: none;
-    }
-  }
-
-  &__description {
-    @include govuk-responsive-margin(2, "bottom");
-  }
-
   &__image {
     width: 100%;
     aspect-ratio: 3 / 2;
@@ -50,6 +38,22 @@
 
     @include govuk-media-query($from: "desktop") {
       @include govuk-responsive-padding(6);
+    }
+
+    > h2 {
+      @include govuk-responsive-margin(2, "bottom");
+
+      @include govuk-media-query($until: "desktop") {
+        display: none;
+      }
+    }
+
+    > p:last-of-type {
+      @include govuk-responsive-margin(2, "bottom");
+    }
+
+    > a:last-child {
+      @extend .lbcamden-link--action;
     }
   }
 
