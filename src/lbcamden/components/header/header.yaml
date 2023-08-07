@@ -257,24 +257,19 @@ examples:
         <section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death lbcamden-emergency-banner--homepage ">
           <div class="govuk-width-container">
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-                <h2 class="lbcamden-emergency-banner__heading ">His Royal Highness Henry VIII</h2>
+              <div class="govuk-grid-column-two-thirds lbcamden-emergency-banner__content">
+                <h2 class="">His Royal Highness Henry VIII</h2>
 
-                
-                <p class="lbcamden-emergency-banner__description ">
-                  1491–1547
-                </p>
-                
+                  <p> 1491–1547</p>
 
-                
-                <a href="https://www.gov.uk/" class="lbcamden-emergency-banner__link">
-                  Override Link Text
-                </a>
-                
+                  <a href="https://www.gov.uk/">
+                    Override Link Text
+                  </a>
               </div>
             </div>
           </div>
         </section>
+
       navigation:
         - href: '#1'
           text: Navigation item 1
@@ -321,24 +316,18 @@ examples:
   - name: with death of a notable person and no navigation
     description: Header with emergency-banner banner for death of a notable person
     data:
-      emergencyBanner: |
+      emergencyBanner:  |
         <section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death lbcamden-emergency-banner--homepage ">
           <div class="govuk-width-container">
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-                <h2 class="lbcamden-emergency-banner__heading ">His Royal Highness Henry VIII</h2>
+              <div class="govuk-grid-column-two-thirds lbcamden-emergency-banner__content">
+                <h2 class="">His Royal Highness Henry VIII</h2>
 
-                
-                <p class="lbcamden-emergency-banner__description ">
-                  1491–1547
-                </p>
-                
+                  <p> 1491–1547</p>
 
-                
-                <a href="https://www.gov.uk/" class="lbcamden-emergency-banner__link">
-                  Override Link Text
-                </a>
-                
+                  <a href="https://www.gov.uk/">
+                    Override Link Text
+                  </a>
               </div>
             </div>
           </div>
