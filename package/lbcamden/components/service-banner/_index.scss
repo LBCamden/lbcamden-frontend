@@ -3,16 +3,21 @@
   border-bottom: 2px solid lbcamden-colour("white");
   background-color: lbcamden-colour("govuk-brand1-6-colour");
 
-  &__heading {
+  h2 {
     @include govuk-font(24, "bold");
     margin: 0;
     margin-bottom: govuk-spacing(1);
     padding: 0;
   }
 
-  &__description {
+  p {
     @include govuk-font(16);
     margin: 0;
+    margin-bottom: govuk-spacing(1);
     padding: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
