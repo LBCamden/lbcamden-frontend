@@ -1,7 +1,7 @@
 <nav aria-labelledby="super-navigation-menu-heading"
      class="lbcamden-header__content"
      data-module="super-navigation-mega-menu">
-  {% if params.navigation !== false %}
+  {% if params.navigation and params.navigation | length %}
     <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
       Navigation menu
     </h2>
