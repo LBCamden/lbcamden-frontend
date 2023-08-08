@@ -24,17 +24,14 @@ notes: >-
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/select/macro.njk" import govukSelect %}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "search/macro.njk" import LBCamdenSearch %}
 {% from "search-results/macro.njk" import LBCamdenSearchResults %}
 
+
 {% set pageTitle = "Search" %}
 {% block pageTitle %}{{ pageTitle }} - GOV.UK{% endblock %}
-
-{% block head %}
-  {{ super() }}
-  <link rel="stylesheet" href="/public/full-page-examples/search.css">
-{% endblock %}
 
 {% block beforeContent %}
     {{ govukBreadcrumbs({
@@ -48,7 +45,7 @@ notes: >-
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ pageTitle }}</h1>
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">{{ pageTitle }}</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -56,19 +53,24 @@ notes: >-
         {{ LBCamdenSearch({ value: "driving" }) }}
       </div>
 
-      <div class="govuk-!-margin-bottom-9 govuk-body">
+      <div class="govuk-!-margin-bottom-7 govuk-body-s">
         Showing <strong>{{ documents | length }}</strong> of <strong>{{ total }}</strong> results for "driving"
       </div>
 
       {{ LBCamdenSearchResults({ items: documents }) }}
 
-      <p class="govuk-body">
-        <a class="app-next-page govuk-link govuk-link--no-underline" href="#">
-          <span class="app-next-page__text govuk-!-font-weight-bold">Next page</span><br>
-          <span class="app-next-page__number govuk-!-font-size-16">2 of 2939</span>
-        </a>
-      </p>
-
+      {{ govukPagination({
+        "previous": {
+          "text": "Previous page",
+          "labelText": "1 of 3",
+          "href": "/previous"
+        },
+        "next": {
+          "text": "Next page",
+          "labelText": "3 of 3",
+          "href": "/next"
+        }
+      }) }}
     </div>
   </div>
 {% endblock %}

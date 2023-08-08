@@ -10,8 +10,8 @@
       "href": "/income-tax-rates",
       "summary": "Income tax is a tax you pay on your earnings - find out about what it is, how you pay and how to check you're paying the right amount using HMRC's tax calculator",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -19,8 +19,8 @@
       "href": "/government/news/aaib-investigation-into-the-loss-of-aircraft-n264db",
       "summary": "The AAIB is investigating the loss of an aircraft north of Guernsey.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -28,8 +28,8 @@
       "href": "/government/news/proposed-new-timetable-for-state-pension-age-increases",
       "summary": "The government’s review proposes a new timetable for the rise to 68, in line with continuing increases in life expectancy.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -37,8 +37,8 @@
       "href": "/government/news/lpc-welcomes-acceptance-of-its-2019-minimum-wage-rate-recommendations",
       "summary": "Bryan Sanderson, Chair of the Low Pay Commission (LPC), today welcomed the Government's announcement that it has accepted in full the recommendations the LPC made for future minimum wage rates.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -46,8 +46,8 @@
       "href": "/government/news/mot-changes-20-may-2018",
       "summary": "The MOT test changed on 20 May 2018, with new defect types, stricter rules for diesel car emissions, and some vehicles over 40 years old becoming exempt.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -55,8 +55,8 @@
       "href": "/government/news/uk-and-faroe-islands-sign-trade-continuity-agreement",
       "summary": "The UK has signed a new trade continuity agreement with the Faroe Islands.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -64,8 +64,8 @@
       "href": "/government/news/one-of-the-largest-mental-health-trials-launches-in-schools",
       "summary": "Up to 370 schools to join one of the largest trials in the world to boost the evidence about what works to support mental health and wellbeing",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -73,8 +73,8 @@
       "href": "/government/news/free-helplines-for-universal-credit-claimants",
       "summary": "From today (29 November 2017) all Universal Credit telephone lines are Freephone numbers.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -82,8 +82,8 @@
       "href": "/government/news/hiring-a-vehicle",
       "summary": "If you are going on holiday and hiring a vehicle, or you are a company hiring out vehicles, these changes may affect you. ",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -91,8 +91,8 @@
       "href": "/government/news/hm-revenue-and-customs-simplifies-importing-from-the-eu-as-part-of-no-deal-preparation",
       "summary": "HMRC announces Transitional Simplified Procedures for customs, should we leave the EU without a deal, by writing to 145,000 VAT registered businesses trading with the EU. ",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -100,8 +100,8 @@
       "href": "/government/news/update-your-charity-details-improved-service-coming-soon",
       "summary": "All registered charities in England and Wales will need to check and update their details before they can submit an annual return. ",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -109,8 +109,8 @@
       "href": "/government/news/joint-statement-on-behalf-of-the-prime-minister-and-president-juncker",
       "summary": "Prime Minister Theresa May met President Juncker in Brussels.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -118,8 +118,8 @@
       "href": "/government/news/government-outlines-no-deal-arrangements-for-eu-citizens",
       "summary": "In the event of no deal, EU citizens will be able to enter the UK to visit, work or study after 29 March 2019.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -127,8 +127,8 @@
       "href": "/drug-device-alerts/class-4-defect-information-amoxicillin-500mg-capsules-bp-mdr-92-12-18",
       "summary": "Accord Healthcare Limited has informed us that that a change to the Patient Information Leaflet (PIL) for\\r\\nthis product has not been implemented by the required timeline.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -136,8 +136,8 @@
       "href": "/government/news/hmrc-warns-on-tax-refund-scams",
       "summary": "Fraudsters are sending scam emails and SMS-messages that promise tax rebates to trick people into disclosing their account and personal details.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -145,8 +145,8 @@
       "href": "/government/news/7-tips-for-motorists-to-stay-safe-online",
       "summary": "With new online scams cropping up all the time, motorists have increasingly become a target for fraudsters.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -154,8 +154,8 @@
       "href": "/government/news/new-advice-for-travellers-visiting-the-uk-eu-or-european-economic-area-in-the-event-of-a-no-deal-eu-exit",
       "summary": "The government has published its latest advice for people travelling to the UK, European Union, European Economic Area or Switzerland after 29 March 2019.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -163,8 +163,8 @@
       "href": "/government/publications/no-deal-brexit-advice-for-businesses-only-trading-with-the-eu",
       "summary": "HMRC letters to VAT-registered businesses only trading with the EU explaining how to prepare for changes to customs, excise and VAT if the UK leaves the EU without a deal.  ",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -172,8 +172,8 @@
       "href": "/government/speeches/defence-in-global-britain",
       "summary": "Defence Secretary Gavin Williamson gave a speech at RUSI outlining the future direction of the UK Armed Forces.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -181,8 +181,8 @@
       "href": "/government/news/dart-charge-dartford-crossing-remote-payment",
       "summary": "Dart Charge: new payment arrangements are now in place.",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     },
     {
@@ -190,8 +190,8 @@
       "href": "/government/news/charitable-think-tank-warned-over-breaches-of-charity-law",
       "summary": "Charity Commission issues formal legal warning against Institute of Economic Affairs",
       "breadcrumbs": [
-        { "title": "Housing", "href": "#" },
-        { "title": "Housing Repairs", "href": "#" }
+        { "text": "Housing", "href": "#" },
+        { "text": "Housing Repairs", "href": "#" }
       ]
     }
   ],

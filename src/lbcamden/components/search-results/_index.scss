@@ -1,22 +1,48 @@
 .lbcamden-search-results {
+  @include govuk-font($size: 16, $line-height: 18px);
+
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid lbcamden-colour("light-grey");
   list-style: none;
 
   a:not(:hover) {
     text-decoration: none;
   }
 
-  h2,
+  h2 {
+    @include govuk-responsive-margin(1, "bottom");
+    line-height: 125%;
+  }
+
   &__breadcrumbs {
     @include govuk-responsive-margin(2, "bottom");
   }
 
+  &__breadcrumb {
+    display: inline-block;
+
+    &:not(:last-child) {
+      @include govuk-responsive-margin(1, "right");
+
+      &:after {
+        @include govuk-responsive-margin(1, "left");
+
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 14px;
+        background-image: url("data:image/svg+xml,%3Csvg width='7' height='20' viewBox='0 0 7 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.81019 10.4213L2.1065 13.8255C1.85332 14.0582 1.44296 14.0582 1.18988 13.8255C0.936705 13.5929 0.936705 13.2156 1.18988 12.983L4.43538 10L1.18988 7.01695C0.936705 6.78434 0.936705 6.40707 1.18988 6.17447C1.44296 5.94184 1.85332 5.94184 2.1065 6.17447L5.81019 9.57866C6.06327 9.81128 6.06327 10.1885 5.81019 10.4211V10.4213Z' fill='%234D5051'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
   &__item {
     @include govuk-responsive-padding(2, "top");
-    @include govuk-responsive-padding(6, "bottom");
+    @include govuk-responsive-padding(7, "bottom");
 
     margin: 0;
-    border-bottom: 1px solid lbcamden-colour("light-grey-3");
+    border-top: 1px solid lbcamden-colour("light-grey-3");
   }
 }

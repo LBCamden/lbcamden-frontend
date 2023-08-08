@@ -8,8 +8,13 @@
     </h2>
 
     <div class="lbcamden-search-results__breadcrumbs">
-      {% set comma = joiner(' > ') %}
-      {% for crumb in item.breadcrumbs %}{{ comma() }}{{ crumb.title }}{% endfor %}
+      {% for crumb in item.breadcrumbs %}
+        <span class="lbcamden-search-results__breadcrumb">
+          <a href="{{ crumb.href }}">
+            {{ crumb.text }}
+          </a>
+        </span>
+      {% endfor %}
     </div>
 
     <div class="lbcamden-search-results__description">
