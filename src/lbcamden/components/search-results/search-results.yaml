@@ -20,19 +20,19 @@ params:
     type: string
     required: true
     description: Text summary of the returned result
+  - name: externalSite
+    type: string
+    required: false
+    description: If hosted on an external site, the domain of the external site
   - name: breadcrumbs
     type: array
-    required: true
-    description: Breadcrumbs indicating the search result
+    required: false
+    description: If hosted on the present site, breadcrumbs indicating the search result
     items:
     - name: text
       type: string
       required: true
       description: Text content of the breadcrumb item
-    - name: href
-      type: string
-      required: true
-      description: Href of the breadcrumb item
 
 examples:
 - name: default
@@ -44,26 +44,23 @@ examples:
         "href": "/income-tax-rates",
         "summary": "Income tax is a tax you pay on your earnings - find out about what it is, how you pay and how to check you're paying the right amount using HMRC's tax calculator",
         "breadcrumbs": [
-          { "text": "Housing", "href": "#" },
-          { "text": "Housing Repairs", "href": "#" }
+          { "text": "Housing" },
+          { "text": "Housing Repairs" }
         ]
       },
       {
         "title": "Update 4: AAIB investigation into the loss of aircraft N264DB",
         "href": "/government/news/aaib-investigation-into-the-loss-of-aircraft-n264db",
         "summary": "The AAIB is investigating the loss of an aircraft north of Guernsey.",
-        "breadcrumbs": [
-          { "text": "Housing", "href": "#" },
-          { "text": "Housing Repairs", "href": "#" }
-        ]
+        "externalSite": "families.camden.gov.uk"
       },
       {
         "title": "Proposed new timetable for State Pension age increases",
         "href": "/government/news/proposed-new-timetable-for-state-pension-age-increases",
-        "summary": "The government’s review proposes a new timetable for the rise to 68, in line with continuing increases in life expectancy.",
+        "summary": "The government's review proposes a new timetable for the rise to 68, in line with continuing increases in life expectancy.",
         "breadcrumbs": [
-          { "text": "Housing", "href": "#" },
-          { "text": "Housing Repairs", "href": "#" }
+          { "text": "Education, training and skills" },
+          { "text": "Special educational needs and disabilities (SEND) and high needs" }
         ]
       }
     ]

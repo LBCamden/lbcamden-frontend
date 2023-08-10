@@ -7,15 +7,21 @@
       </a>
     </h2>
 
-    <div class="lbcamden-search-results__breadcrumbs">
-      {% for crumb in item.breadcrumbs %}
-        <span class="lbcamden-search-results__breadcrumb">
-          <a href="{{ crumb.href }}">
-            {{ crumb.text }}
-          </a>
-        </span>
-      {% endfor %}
-    </div>
+    {% if item.externalSite %}
+      <div class="lbcamden-search-results__location">
+        {{ item.externalSite }}
+      </div>
+    {% else %}
+      <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile lbcamden-search-results__location">
+        <ol class="govuk-breadcrumbs__list">
+          {% for crumb in item.breadcrumbs %}
+            <li class="govuk-breadcrumbs__list-item">
+              {{crumb.text}}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
 
     <div class="lbcamden-search-results__description">
       {{ item.summary }}
