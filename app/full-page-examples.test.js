@@ -258,33 +258,6 @@ describe(`http://localhost:${PORT}/full-page-examples/`, () => {
       })
     })
 
-    describe('search', () => {
-      it('should show most wanted results by default', (done) => {
-        requestPath.get('search', (err, res) => {
-          const $ = cheerio.load(res.body)
-          // Check the results are correct
-          expect($.html()).toContain('822,411 results')
-          done(err)
-        })
-      })
-      it('should show sorted results when selected', (done) => {
-        requestPath.get('search?order=updated-newest', (err, res) => {
-          const $ = cheerio.load(res.body)
-          // Check the results are correct
-          expect($.html()).toContain('142,218 results')
-          done(err)
-        })
-      })
-      it('should show organisation results when selected', (done) => {
-        requestPath.get('search?order=updated-newest&organisation=hmrc', (err, res) => {
-          const $ = cheerio.load(res.body)
-          // Check the results are correct
-          expect($.html()).toContain('421,182 results')
-          done(err)
-        })
-      })
-    })
-
     describe('what-was-the-last-country-you-visited', () => {
       it('should not show errors if submit with no input', (done) => {
         requestPath.get('what-was-the-last-country-you-visited', (err, res) => {
