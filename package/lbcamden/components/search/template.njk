@@ -9,6 +9,7 @@
   </label>
   <input type="text" name="search"
          class="lbcamden-search__input"
+         value="{{ params.value }}"
          id="lbcamden-search__box" {% if params.placeholderText %}placeholder="{{ params.placeholderText }}{% endif %}" />
   <button type="submit" class="lbcamden-search__btn"
           id="lbcamden-search__btn">{{ params.labelText | default('Search Camden.gov.uk') }}</button>
