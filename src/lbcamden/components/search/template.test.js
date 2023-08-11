@@ -32,13 +32,6 @@ describe('search', () => {
       expect($component.attr('name')).toEqual('search')
     })
 
-    it('input renders with value', () => {
-      const $ = render('search', examples.default)
-
-      const $component = $('.lbcamden-search__input')
-      expect($component.attr('value')).toEqual('Housing Repairs')
-    })
-
     it('renders with a form', () => {
       const $ = render('search', examples.default)
 
@@ -60,6 +53,13 @@ describe('search', () => {
 
       const $component = $('.lbcamden-search')
       expect($component.hasClass('search-class-test')).toBeTruthy()
+    })
+
+    it('input renders with value', () => {
+      const $ = render('search', examples['Search input with value'])
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('value')).toEqual('Housing Repairs')
     })
 
     it('renders alt classname', () => {
