@@ -27,6 +27,7 @@ accessibilityCriteria: |
 examples:
   - name: default
     description: The standard implementation of a search bar
+    data:
   
   - name: Search input with value
     description: The standard implementation of a search bar with value entered
