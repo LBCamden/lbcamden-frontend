@@ -26,7 +26,7 @@
 
   &__item {
     @include govuk-responsive-padding(2, "top");
-    @include govuk-responsive-padding(7, "bottom");
+    // @include govuk-responsive-padding(4, "bottom");
 
     margin: 0;
     border-top: 1px solid lbcamden-colour("light-grey-3");
