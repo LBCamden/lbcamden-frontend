@@ -1,5 +1,5 @@
 <article>
-  <h2 {% if params.recordId%}id="{{params.recordId}}"{% endif %}>{{params.title}}</h2>
+  <h2{% if params.recordId%} id="{{params.recordId}}"{% endif %}>{{params.title}}</h2>
   {% if params.alias %}<p>{{params.alias}}</p>{% endif %}
   <dl>
     {% for item in params.items %}
