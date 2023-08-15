@@ -1,0 +1,10 @@
+<article>
+  <h2 id="{{params.recordId}}">{{params.title}}</h2>
+  {% if params.alias %}<p>{{params.alias}}</p>{% endif %}
+  <dl>
+    {% for item in params.items %}
+    <dt>{{item.label}}</dt>
+    <dd>{{item.value | safe}}</dd>
+    {% endfor %}
+  </dl>
+</article>
