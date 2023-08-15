@@ -6,7 +6,7 @@ notes:
 {% set mainClasses = 'govuk-width-container' %}
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "directory-record/macro.njk" import LBCamdenDirectoryRecord %}
 
 {% set pageTitle = "Contact Building Control" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
@@ -37,26 +37,33 @@ notes:
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop lbcamden-prose">
-      <article>
-        <h2>Building Control (Camden Council)</h2>
-
-        <dl>
-          <dt>Email</dt>
-          <dd><a href="mailto:building.control@camden.gov.uk" title="building.control@camden.gov.uk">building.control@camden.gov.uk</a></dd>
-                
-          <dt>Website</dt>
-          <dd><a href="http://www.camden.gov.uk/building-control" rel="external" target="_blank"> www.camden.gov.uk/building-control</a></dd>
-                
-          <dt>Address</dt>
-          <dd>2nd Floor 5<br>Pancras Square<br>London<br>N1C 4AG</dd>
-                
-          <dt>Details</dt>
-          <dd>Ensures that all building work, both public and private sector, meets the requirements of the Building Regulations. These include structural and fire safety, thermal and sound insulation, drainage, and access and facilities for disabled people. Also deals with reports of dangerous structures. This is during opening hours for private properties only, and all other properties in Camden at any time. Out of hours reports are passed by the switchboard to a duty rota of building control managers.</dd>
-            
-          <dt>When is it on</dt>
-          <dd>9am-5pm.</dd>
-        </dl>
-      </article>
+      
+      {{ LBCamdenDirectoryRecord({
+        'title': 'Building Control (Camden Council)',
+        'items': [
+          {
+            'label': 'Email',
+            'value': '<a href="mailto:building.control@camden.gov.uk" title="building.control@camden.gov.uk">building.control@camden.gov.uk</a>'
+          },
+          {    
+          'label': 'Website',
+          'value': '<a href="http://www.camden.gov.uk/building-control" rel="external" target="_blank"> www.camden.gov.uk/building-control</a>'
+          },
+          {     
+          'label': 'Address',
+          'value': '2nd Floor 5<br>Pancras Square<br>London<br>N1C 4AG'
+          },
+          {      
+          'label': 'Details',
+          'value': 'Ensures that all building work, both public and private sector, meets the requirements of the Building Regulations. These include structural and fire safety, thermal and sound insulation, drainage, and access and facilities for disabled people. Also deals with reports of dangerous structures. This is during opening hours for private properties only, and all other properties in Camden at any time. Out of hours reports are passed by the switchboard to a duty rota of building control managers.'
+          },
+          { 
+          'label': 'When is it on',
+          'value': '9am-5pm.'
+          }
+        ]
+      })}}
+      
     </div>
     <div class="govuk-grid-column-one-third-from-desktop">
       <aside class="lbcamden-card lbcamden-card--alt-1">
