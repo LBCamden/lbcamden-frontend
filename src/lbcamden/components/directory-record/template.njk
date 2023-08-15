@@ -4,7 +4,7 @@
   <dl>
     {% for item in params.items %}
     <dt>{{item.label}}</dt>
-    <dd>{{item.value | safe}}</dd>
+    <dd class="govuk-body">{{item.value | safe}}</dd>
     {% endfor %}
   </dl>
 </article>
