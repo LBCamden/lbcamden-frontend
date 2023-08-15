@@ -1,7 +1,6 @@
 function LBCamdenGuideContent ($module) {
   this.$module = $module
   this.headingTarget = this.$module && this.$module.dataset.headingTarget
-  this.hasShownActiveGuide = false
 }
 
 LBCamdenGuideContent.prototype.init = function () {
@@ -18,7 +17,6 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     return
   }
 
-  console.log(window.location.hash)
   if (!window.location.hash) {
     window.history.replaceState(null, null, window.location.pathname + window.location.search)
   }
@@ -45,14 +43,6 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     if (shouldShow) {
       if (headingTarget) {
         headingTarget.innerText = item.getAttribute('aria-label')
-
-        if (this.hasShownActiveGuide) {
-          headingTarget.scrollIntoView({ block: 'start' })
-        }
-      } else {
-        if (this.hasShownActiveGuide) {
-          this.$module.scrollIntoView({ block: 'start' })
-        }
       }
 
       const prev = targets[i - 1]
@@ -71,6 +61,14 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     item.classList.toggle('lbcamden-guide-content__item--active', shouldShow)
 
     i += 1
+  }
+
+  if (window.location.hash) {
+    if (headingTarget) {
+      headingTarget.scrollIntoView({ block: 'start' })
+    } else {
+      this.$module.scrollIntoView({ block: 'start' })
+    }
   }
 
   this.hasShownActiveGuide = true
