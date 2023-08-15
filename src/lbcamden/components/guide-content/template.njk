@@ -1,6 +1,6 @@
 <div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content" data-heading-target="{{ params.headingElement }}">
   {% for item in params.items %}
-    <article id="{{ item.id }}" class="lbcamden-guide-content__item" hidden="until-found" aria-label="{{ item.heading }}">
+    <article id="{{ item.id }}" class="lbcamden-guide-content__item" aria-label="{{ item.heading }}">
       {{ item.html|safe }}
     </article>
   {% endfor %}

@@ -26,6 +26,7 @@ LBCamdenGuideContent.prototype.showActiveGuide = function () {
   let i = 0
 
   for (const item of targets) {
+    console.log({ id, item: item.id })
     const shouldShow = Boolean(id && item.id === id)
 
     if (shouldShow) {
