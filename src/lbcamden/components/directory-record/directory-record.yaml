@@ -2,19 +2,19 @@ params:
 - name: title
   type: string
   required: false
-  description: XXX
+  description: Title of record
 - name: recordId
   type: string
   required: false
-  description: YYY
+  description: Sets an id on the record title
 - name: alias
   type: string
   required: false
-  description: ZZZ
+  description: Adds in an extract paragraph for 'also known as' content.
 - name: items
   type: array
   required: true
-  description: YYY
+  description: Key/Value objects for each display field
   params:
     - name: label
       type: string
@@ -28,20 +28,7 @@ params:
 
 previewLayout: full-width
 accessibilityCriteria: |
-  Text and links in the Header must:
-  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
-
-  Links in the Card must:
-  - accept focus
-  - be focusable with a keyboard
-  - be usable with a keyboard
-  - indicate when they have focus
-  - change in appearance when touched (in the touch-down state)
-  - change in appearance when hovered
-  - have visible text
-
-  Images in the Card must:
-  - be presentational when linked to from accompanying text
+  TBD
 
 examples:
 - name: default
