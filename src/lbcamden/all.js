@@ -37,5 +37,6 @@ export {
   initAll,
   LBCamdenButton,
   LBCamdenGuideContent,
+  LBCamdenGuideHeader,
   LBCamdenHeader
 }

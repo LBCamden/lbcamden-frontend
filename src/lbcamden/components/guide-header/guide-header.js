@@ -12,11 +12,19 @@ LBCamdenGuideHeader.prototype.init = function () {
 }
 
 LBCamdenGuideHeader.prototype.updateActiveLink = function () {
-  for (const link of this.getLinks()) {
-    const fullUrl = new URL(link.href, window.location.href)
-    const isActive = fullUrl.href === window.location.href
+  let i = 0
 
-    link.classList.toggle(':active', isActive)
+  for (const link of this.getLinks()) {
+    if (i === 0 && !window.location.hash) {
+      link.classList.toggle(':active', true)
+    } else {
+      const fullUrl = new URL(link.href, window.location.href)
+      const isActive = fullUrl.href === window.location.href
+
+      link.classList.toggle(':active', isActive)
+    }
+
+    i += 1
   }
 }
 
