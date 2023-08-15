@@ -1,5 +1,7 @@
 import { nodeListForEach } from './common'
-import LBCamdenButton from './components/button/button.mjs'
+import LBCamdenButton from './components/button/button'
+import LBCamdenGuideContent from './components/guide-content/guide-content'
+import LBCamdenGuideHeader from './components/guide-header/guide-header'
 import LBCamdenHeader from './components/header/header'
 
 function initAll (options) {
@@ -19,10 +21,21 @@ function initAll (options) {
   nodeListForEach($LBCamdenButtons, function ($LBCamdenButton) {
     new LBCamdenButton($LBCamdenButton).init()
   })
+
+  var $LBCamdenGuideContents = scope.querySelectorAll('[data-module="lbcamden-guide-content"]')
+  nodeListForEach($LBCamdenGuideContents, function ($LBCamdenGuideContent) {
+    new LBCamdenGuideContent($LBCamdenGuideContent).init()
+  })
+
+  var $LBCamdenGuideHeaders = scope.querySelectorAll('[data-module="lbcamden-guide-header"]')
+  nodeListForEach($LBCamdenGuideHeaders, function ($LBCamdenGuideHeader) {
+    new LBCamdenGuideHeader($LBCamdenGuideHeader).init()
+  })
 }
 
 export {
   initAll,
   LBCamdenButton,
+  LBCamdenGuideContent,
   LBCamdenHeader
 }
