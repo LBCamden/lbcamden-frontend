@@ -24,7 +24,8 @@
                   "text": item.shortDescription
                 } if item.shortDescription else null,
                 "classes": "lbcamden-card--image-3x2",
-                "image": item.image
+                "image": item.image,
+                "type": params.cardType if params.cardType else 'naked'
               }) }}
             </li>
         {% endfor %}
