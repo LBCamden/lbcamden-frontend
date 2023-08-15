@@ -22,5 +22,11 @@
         "type": "string",
         "required": false,
         "description": "Option to customise the placeholder text value"
+    },
+    {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "description": "Value provided to search field"
     }
 ]

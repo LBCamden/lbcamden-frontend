@@ -15,6 +15,10 @@ params:
     type: string
     required: false
     description: Option to customise the placeholder text value
+  - name: value
+    type: string
+    required: false
+    description: Value provided to search field
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -24,6 +28,11 @@ examples:
   - name: default
     description: The standard implementation of a search bar
     data:
+  
+  - name: Search input with value
+    description: The standard implementation of a search bar with value entered
+    data:
+      value: Housing Repairs      
 
   - name: Colour variant
     description: Allows the search component to be used on a darker background

@@ -30,6 +30,7 @@ describe('When nunjucks is configured with a different base path', () => {
 
 it('_all.scss renders to CSS without errors', () => {
   return renderSass({
+    data: '@import "../base"; @import "../elements/all";',
     file: `${configPaths.src}/components/_all.scss`
   })
 })

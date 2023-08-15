@@ -55,6 +55,13 @@ describe('search', () => {
       expect($component.hasClass('search-class-test')).toBeTruthy()
     })
 
+    it('input renders with value', () => {
+      const $ = render('search', examples['Search input with value'])
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('value')).toEqual('Housing Repairs')
+    })
+
     it('renders alt classname', () => {
       const $ = render('search', examples['Colour variant'])
 

@@ -17,14 +17,15 @@
               {{ LBCamdenCard({
               "heading": {
                   "title": item.title,
-                  "href": item.href
+                  "href": item.href,
+                  "headingLevel": params.cardHeadingLevel
                 },
                 "content": {
                   "text": item.shortDescription
                 } if item.shortDescription else null,
-                "type": "naked",
                 "classes": "lbcamden-card--image-3x2",
-                "image": item.image
+                "image": item.image,
+                "type": params.cardType if params.cardType else 'naked'
               }) }}
             </li>
         {% endfor %}

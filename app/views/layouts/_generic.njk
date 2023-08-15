@@ -86,23 +86,22 @@
         "text": "Popular search 3"
       }
     ],
-    emergencyBanner: '<section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death  ">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="lbcamden-emergency-banner__heading ">His Royal Highness Henry VIII</h2>
+    emergencyBanner: '
+        <section role="banner" class="lbcamden-emergency-banner lbcamden-emergency-banner--notable-death lbcamden-emergency-banner--homepage ">
+          <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds lbcamden-emergency-banner__content">
+                <h2 class="">His Royal Highness Henry VIII</h2>
 
-        <p class="lbcamden-emergency-banner__description ">
-          1491–1547
-        </p>
+                  <p> 1491–1547</p>
 
-        <a href="https://www.gov.uk/" class="lbcamden-emergency-banner__link">
-          Override Link Text
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+                  <a href="https://www.gov.uk/">
+                    Override Link Text
+                  </a>
+              </div>
+            </div>
+          </div>
+        </section>
 ',
     "navigation": [
       {
@@ -228,18 +227,18 @@
             "href": "#1-2",
             "text": "Business"
           }
-          
+
         ]
       }
     ]
   }) }}
   {{ LBCamdenServiceBanner({
       'heading': 'Council Tax and benefit forms unavailable',
-      'shortDescription': 'Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.'
+      'shortDescription': '<p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>'
   }) }}
     {{ LBCamdenServiceBanner({
       'heading': 'Parking Suspension is not available',
-      'shortDescription': 'Application forms are unavailable this evening between 6pm and 9pm. Find out more here'
+      'shortDescription': '<p>Application forms are unavailable this evening between 6pm and 9pm. Find out more here</p>'
   }) }}
 {% endblock %}
 
@@ -269,7 +268,7 @@
           "text": "Contact Camden Council"
         }
     ],
-    "navigationSecondary": [        
+    "navigationSecondary": [
         {
           "href": "#4",
           "text": "Subscribe to our e-newsletter",
@@ -297,7 +296,7 @@
           "text": "Modern slavery statement"
         }
     ],
-    
+
     "navigationSocial": [
         {
           "href": "#1",

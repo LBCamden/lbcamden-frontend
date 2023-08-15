@@ -76,7 +76,7 @@ examples:
               - src: /example-assets/images/1800x1200.jpg
                 width: 1800
       heading:  News
-      shortDescription: Find out what’s going on in our community with all the latest news stories, announcements, and events.
+      shortDescription: <p>Find out what’s going on in our community with all the latest news stories, announcements, and events.</p>
       link: '#'
       linkText: All news
   - name: classes
