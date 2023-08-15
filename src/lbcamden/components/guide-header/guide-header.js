@@ -12,14 +12,15 @@ LBCamdenGuideHeader.prototype.init = function () {
 }
 
 LBCamdenGuideHeader.prototype.updateActiveLink = function () {
+  const isEmptyHash = !window.location.hash || window.location.hash === '#'
   let i = 0
 
   for (const link of this.getLinks()) {
-    if (i === 0 && !window.location.hash) {
+    if (i === 0 && isEmptyHash) {
       link.classList.toggle(':active', true)
     } else {
       const fullUrl = new URL(link.href, window.location.href)
-      const isActive = fullUrl.href === window.location.href
+      const isActive = !isEmptyHash && fullUrl.href === window.location.href
 
       link.classList.toggle(':active', isActive)
     }

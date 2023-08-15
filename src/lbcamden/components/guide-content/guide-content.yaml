@@ -7,6 +7,10 @@ params:
     type: string
     required: false
     description: Selector of element that should be set to page title.
+  - name: notFound
+    type: object
+    required: false
+    description: Content shown when no matching guide for the current hash.
   - name: items
     type: array
     required: false
@@ -29,7 +33,7 @@ params:
 previewLayout: full-width
 examples:
   - name: default
-    description: The standard header as used on information pages on GOV.UK
+    description: Default example of guide content
     data:
       items:
         - heading: Report a repair

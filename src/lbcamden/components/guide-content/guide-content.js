@@ -1,6 +1,7 @@
 function LBCamdenGuideContent ($module) {
   this.$module = $module
   this.headingTarget = this.$module && this.$module.dataset.headingTarget
+  this.hasShownActiveGuide = false
 }
 
 LBCamdenGuideContent.prototype.init = function () {
@@ -12,26 +13,46 @@ LBCamdenGuideContent.prototype.init = function () {
   this.showActiveGuide()
 }
 
-LBCamdenGuideContent.prototype.showActiveGuide = function () {
+LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
   if (!this.$module) {
     return
   }
 
-  window.scrollTo({ top: 0 })
+  console.log(window.location.hash)
+  if (!window.location.hash) {
+    window.history.replaceState(null, null, window.location.pathname + window.location.search)
+  }
+
   const targets = this.getTargets()
+  if (targets.length === 0) {
+    return
+  }
+
   const headingTarget = this.getHeadingTarget()
   const [prevTarget, nextTarget] = this.getPaginationTargets()
 
-  const id = targets.length > 0 ? (window.location.hash.substring(1) || targets[0].id) : undefined
   let i = 0
+  const activeItem = this.getActiveItem()
+
+  if (!activeItem) {
+    window.location.hash = ''
+    return
+  }
 
   for (const item of targets) {
-    console.log({ id, item: item.id })
-    const shouldShow = Boolean(id && item.id === id)
+    const shouldShow = item === activeItem
 
     if (shouldShow) {
       if (headingTarget) {
         headingTarget.innerText = item.getAttribute('aria-label')
+
+        if (this.hasShownActiveGuide) {
+          headingTarget.scrollIntoView({ block: 'start' })
+        }
+      } else {
+        if (this.hasShownActiveGuide) {
+          this.$module.scrollIntoView({ block: 'start' })
+        }
       }
 
       const prev = targets[i - 1]
@@ -51,6 +72,8 @@ LBCamdenGuideContent.prototype.showActiveGuide = function () {
 
     i += 1
   }
+
+  this.hasShownActiveGuide = true
 }
 
 LBCamdenGuideContent.prototype.getTargets = function () {
@@ -63,6 +86,21 @@ LBCamdenGuideContent.prototype.getHeadingTarget = function () {
   }
 
   return this.$module.ownerDocument.querySelector(this.headingTarget)
+}
+
+LBCamdenGuideContent.prototype.getActiveItem = function () {
+  const targets = this.getTargets()
+  const id = window.location.hash.substring(1)
+
+  if (!id) {
+    return targets[0]
+  }
+
+  for (const t of targets) {
+    if (t.id === id) {
+      return t
+    }
+  }
 }
 
 LBCamdenGuideContent.prototype.getPaginationTargets = function () {
