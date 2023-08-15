@@ -1,7 +1,9 @@
 // import * as urls from '../../_site/urls.js'
 
 const urls = [
-  '/full-page-examples/services', 
+  '/full-page-examples/services',
+  '/full-page-examples/directory-single',
+  '/full-page-examples/directory-multi',
   '/full-page-examples/article',
   '/full-page-examples/category-page',
   '/full-page-examples/category-page-housing',
