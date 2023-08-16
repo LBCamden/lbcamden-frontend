@@ -27,15 +27,9 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
   }
 
   const headingTarget = this.getHeadingTarget()
-  const [prevTarget, nextTarget] = this.getPaginationTargets()
 
   let i = 0
   const activeItem = this.getActiveItem()
-
-  if (!activeItem) {
-    window.location.hash = ''
-    return
-  }
 
   for (const item of targets) {
     const shouldShow = item === activeItem
@@ -48,14 +42,7 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
       const prev = targets[i - 1]
       const next = targets[i + 1]
 
-      prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && prev.getAttribute('aria-label')
-      nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && next.getAttribute('aria-label')
-
-      prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.id}`
-      nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.id}`
-
-      this.$module.classList.toggle('lbcamden-guide-content--prev', !!prev)
-      this.$module.classList.toggle('lbcamden-guide-content--next', !!next)
+      this.setPagination({ next, prev })
     }
 
     item.classList.toggle('lbcamden-guide-content__item--active', shouldShow)
@@ -63,7 +50,7 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     i += 1
   }
 
-  if (window.location.hash) {
+  if (activeItem && window.location.hash) {
     if (headingTarget) {
       headingTarget.scrollIntoView({ block: 'start' })
     } else {
@@ -71,11 +58,34 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     }
   }
 
-  this.hasShownActiveGuide = true
+  if (!activeItem) {
+    const notFound = this.getNotFound()
+
+    if (headingTarget) {
+      headingTarget.innerText = notFound.getAttribute('aria-label')
+    }
+
+    notFound.classList.toggle('lbcamden-guide-content__item--active', true)
+
+    this.setPagination({ next: targets[0] })
+  }
 }
 
 LBCamdenGuideContent.prototype.getTargets = function () {
   return this.$module.querySelectorAll('.lbcamden-guide-content__item[id]')
+}
+
+LBCamdenGuideContent.prototype.setPagination = function ({ next, prev }) {
+  const [prevTarget, nextTarget] = this.getPaginationTargets()
+
+  prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && prev.getAttribute('aria-label')
+  nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && next.getAttribute('aria-label')
+
+  prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.id}`
+  nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.id}`
+
+  this.$module.classList.toggle('lbcamden-guide-content--prev', !!prev)
+  this.$module.classList.toggle('lbcamden-guide-content--next', !!next)
 }
 
 LBCamdenGuideContent.prototype.getHeadingTarget = function () {
@@ -106,6 +116,10 @@ LBCamdenGuideContent.prototype.getPaginationTargets = function () {
     this.$module.querySelector('.govuk-pagination__prev'),
     this.$module.querySelector('.govuk-pagination__next')
   ]
+}
+
+LBCamdenGuideContent.prototype.getNotFound = function () {
+  return this.$module.querySelector('.lbcamden-guide-content__item[data-guide-not-found]')
 }
 
 export default LBCamdenGuideContent

@@ -10,7 +10,17 @@ params:
   - name: notFound
     type: object
     required: false
-    description: Content shown when no matching guide for the current hash.
+    description: Content displayed when no matching guide for the current hash.
+    params:
+      - name: heading
+        type: string
+        required: true
+        description: The title displayed when no matching guide for the current hash
+      - name: html
+        type: string
+        required: true
+        description: HTML content displayed no matching guide for the current hash
+
   - name: items
     type: array
     required: false

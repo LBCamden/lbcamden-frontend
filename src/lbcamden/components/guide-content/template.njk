@@ -1,7 +1,23 @@
+{% if params.notFound %}
+{% set notFoundHeading = param.notFound.heading %}
+{% set notFoundHtml = param.notFound.html %}
+{% else %}
+{% set notFoundHeading = "Page not found" %}
+{% set notFoundHtml %}
+<p>
+  If you can't find what you're looking for, it might have been moved or deleted.
+</p>
+{% endset %}
+{% endif %}
+
 <div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content" data-heading-target="{{ params.headingElement }}">
   {% for item in params.items %}
     <article id="{{ item.id }}" class="lbcamden-guide-content__item" aria-label="{{ item.heading }}">
       {{ item.html|safe }}
+    </article>
+
+    <article class="lbcamden-guide-content__item" data-guide-not-found aria-label="{{ notFoundHeading }}">
+      {{ notFoundHtml|safe }}
     </article>
   {% endfor %}
 
