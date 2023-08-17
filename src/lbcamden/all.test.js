@@ -45,6 +45,8 @@ describe('CAMDEN.GOV.UK Frontend', () => {
       // Ensure GOV.UK Frontend exports the expected components
       expect(components).toEqual([
         'LBCamdenButton',
+        'LBCamdenGuideContent',
+        'LBCamdenGuideHeader',
         'LBCamdenHeader'
       ])
     })
