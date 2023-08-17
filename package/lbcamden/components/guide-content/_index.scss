@@ -1,0 +1,28 @@
+.lbcamden-guide-content {
+  &__item {
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .govuk-pagination__prev {
+    border-top: 1px solid lbcamden-colour("light-grey");
+  }
+
+  .govuk-pagination__next,
+  .govuk-pagination__prev {
+    display: none;
+  }
+
+  &--next {
+    .govuk-pagination__next {
+      display: block;
+    }
+  }
+
+  &--prev {
+    .govuk-pagination__prev {
+      display: block;
+    }
+  }
+}
