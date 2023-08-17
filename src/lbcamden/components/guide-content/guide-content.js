@@ -50,25 +50,20 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
     i += 1
   }
 
-  if (activeItem && window.location.hash) {
-    if (headingTarget) {
-      headingTarget.scrollIntoView({ block: 'start' })
-    } else {
-      this.$module.scrollIntoView({ block: 'start' })
-    }
+  const hasActiveItem = !!activeItem
+  const notFound = this.getNotFound()
+
+  if (!hasActiveItem && headingTarget) {
+    headingTarget.innerText = notFound.getAttribute('aria-label')
   }
 
-  if (!activeItem) {
-    const notFound = this.getNotFound()
+  notFound.classList.toggle('lbcamden-guide-content__item--active', !hasActiveItem)
 
-    if (headingTarget) {
-      headingTarget.innerText = notFound.getAttribute('aria-label')
-    }
-
-    notFound.classList.toggle('lbcamden-guide-content__item--active', true)
-
+  if (!hasActiveItem) {
     this.setPagination({ next: targets[0] })
   }
+
+  window.scrollTo({ top: 0, behavior: 'instant' })
 }
 
 LBCamdenGuideContent.prototype.getTargets = function () {
