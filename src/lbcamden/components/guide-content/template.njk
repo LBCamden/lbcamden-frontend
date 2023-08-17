@@ -1,6 +1,6 @@
 {% if params.notFound %}
-{% set notFoundHeading = param.notFound.heading %}
-{% set notFoundHtml = param.notFound.html %}
+{% set notFoundHeading = params.notFound.heading %}
+{% set notFoundHtml = params.notFound.html %}
 {% else %}
 {% set notFoundHeading = "Page not found" %}
 {% set notFoundHtml %}
@@ -15,11 +15,11 @@
     <article id="{{ item.id }}" class="lbcamden-guide-content__item" aria-label="{{ item.heading }}">
       {{ item.html|safe }}
     </article>
-
-    <article class="lbcamden-guide-content__item" data-guide-not-found aria-label="{{ notFoundHeading }}">
-      {{ notFoundHtml|safe }}
-    </article>
   {% endfor %}
+
+  <article class="lbcamden-guide-content__item" data-guide-not-found aria-label="{{ notFoundHeading }}">
+    {{ notFoundHtml|safe }}
+  </article>
 
   <nav class="govuk-pagination govuk-pagination--block" role="navigation" aria-label="results">
     <div class="govuk-pagination__prev">
