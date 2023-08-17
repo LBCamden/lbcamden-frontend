@@ -1,10 +1,7 @@
 .lbcamden-guide-content {
   &__item {
-    @include govuk-responsive-margin(9, "bottom");
-    display: none;
-
-    &--active {
-      display: block;
+    &[hidden] {
+      display: none;
     }
   }
 

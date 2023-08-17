@@ -83,18 +83,6 @@ examples:
   - name: default error
     description: Default example of guide content
     data: {}
-  - name: with custom error
-    description: Default example of guide content
-    data:
-      notFound:
-        heading: Guide not found
-        html: |
-          <p>
-            The guide you're looking for was not found
-          </p>
-          <p>
-            Try selecting a different article from the top.
-          </p>
 
   - name: classes
     hidden: true

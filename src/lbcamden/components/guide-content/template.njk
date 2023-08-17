@@ -1,25 +1,15 @@
-{% if params.notFound %}
-{% set notFoundHeading = params.notFound.heading %}
-{% set notFoundHtml = params.notFound.html %}
-{% else %}
-{% set notFoundHeading = "Page not found" %}
-{% set notFoundHtml %}
-<p>
-  If you can't find what you're looking for, it might have been moved or deleted.
-</p>
-{% endset %}
-{% endif %}
-
 <div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content" data-heading-target="{{ params.headingElement }}">
   {% for item in params.items %}
-    <article id="{{ item.id }}" class="lbcamden-guide-content__item" aria-label="{{ item.heading }}">
-      {{ item.html|safe }}
-    </article>
+    <div id="{{ item.id }}" data-guide-article data-heading="{{ item.heading }}">
+      <article class="lbcamden-guide-content__item" hidden>
+        {{ item.html|safe }}
+      </article>
+    </div>
   {% endfor %}
 
-  <article class="lbcamden-guide-content__item" data-guide-not-found aria-label="{{ notFoundHeading }}">
-    {{ notFoundHtml|safe }}
-  </article>
+  <div data-guide-not-found>
+    <article class="lbcamden-guide-content__item" hidden></article>
+  </div>
 
   <nav class="govuk-pagination govuk-pagination--block" role="navigation" aria-label="results">
     <div class="govuk-pagination__prev">
