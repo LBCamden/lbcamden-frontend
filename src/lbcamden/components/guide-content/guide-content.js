@@ -30,14 +30,17 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 
   if (activeItem) {
     const notFoundContent = this.getNotFoundArticle()
-    this.setArticleVisibility(notFoundContent, false)
+    this.setArticleVisibility(notFoundContent, false, {
+      hiddenAttr: true
+    })
   } else {
     const notFoundContent = this.getNotFoundArticle()
 
     this.setArticleVisibility(notFoundContent, true, {
       setContent: DEFAULT_NOT_FOUND_CONTENT,
       setHeading: DEFAULT_NOT_FOUND_HEADING,
-      setPagination: { next: articles[0] }
+      setPagination: { next: articles[0] },
+      hiddenAttr: true
     })
   }
 
@@ -57,7 +60,7 @@ LBCamdenGuideContent.prototype.setPagination = function ({ next, prev }) {
   this.$module.classList.toggle('lbcamden-guide-content--next', !!next)
 }
 
-LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible, { setPagination, setContent, setHeading } = {}) {
+LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible, { setPagination, setContent, setHeading, hiddenAttr } = {}) {
   const content = article.querySelector('.lbcamden-guide-content__item')
 
   if (visible) {
@@ -71,7 +74,21 @@ LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible
       content.innerHTML = setContent
     }
 
+    if (setHeading) {
+      const h2 = article.querySelector('h2')
+
+      if (h2) {
+        h2.innerText = setHeading
+      }
+    }
+
     this.setPagination(setPagination || { next, prev })
+  }
+
+  if (hiddenAttr) {
+    article.hidden = !visible
+  } else {
+    article.classList.toggle('lbcamden-guide-content--hidden', !visible)
   }
 }
 
