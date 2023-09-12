@@ -1,14 +1,16 @@
-<div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content" data-heading-target="{{ params.headingElement }}">
+<div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content">
   {% for item in params.items %}
-    <div id="{{ item.id }}" data-guide-article data-heading="{{ item.heading }}">
-      <article class="lbcamden-guide-content__item" hidden>
+    <div id="{{ item.id }}" data-guide-article>
+      <article class="lbcamden-guide-content__item">
+        <h2 data-guide-heading>{{ item.heading }}</h2>
+
         {{ item.html|safe }}
       </article>
     </div>
   {% endfor %}
 
   <div data-guide-not-found>
-    <article class="lbcamden-guide-content__item" hidden></article>
+    <article class="lbcamden-guide-content__item"></article>
   </div>
 
   <nav class="govuk-pagination govuk-pagination--block" role="navigation" aria-label="results">

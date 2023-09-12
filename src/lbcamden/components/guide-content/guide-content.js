@@ -1,6 +1,5 @@
 export default function LBCamdenGuideContent ($module) {
   this.$module = $module
-  this.headingTarget = this.$module && this.$module.dataset.headingTarget
 }
 
 LBCamdenGuideContent.prototype.init = function () {
@@ -10,6 +9,7 @@ LBCamdenGuideContent.prototype.init = function () {
 
   window.addEventListener('hashchange', this.showActiveGuide.bind(this))
   this.showActiveGuide()
+  this.$module.classList.add('lbcamden-guide-content--loaded')
 }
 
 LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
@@ -47,8 +47,8 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 LBCamdenGuideContent.prototype.setPagination = function ({ next, prev }) {
   const [prevTarget, nextTarget] = this.getPaginationTargets()
 
-  prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && prev.getAttribute('data-heading')
-  nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && next.getAttribute('data-heading')
+  prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && getHeading(prev)
+  nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && getHeading(next)
 
   prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.id}`
   nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.id}`
@@ -62,15 +62,10 @@ LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible
 
   if (visible) {
     const articles = this.getArticles()
-    const headingTarget = this.getHeadingTarget()
     const i = articles.indexOf(article)
 
     const prev = articles[i - 1]
     const next = articles[i + 1]
-
-    if (headingTarget) {
-      headingTarget.innerText = setHeading || article.getAttribute('data-heading')
-    }
 
     if (content && setContent) {
       content.innerHTML = setContent
@@ -78,22 +73,10 @@ LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible
 
     this.setPagination(setPagination || { next, prev })
   }
-
-  if (content) {
-    content.hidden = !visible
-  }
 }
 
 LBCamdenGuideContent.prototype.getArticles = function () {
   return Array.from(this.$module.querySelectorAll('[data-guide-article][id]'))
-}
-
-LBCamdenGuideContent.prototype.getHeadingTarget = function () {
-  if (!this.headingTarget) {
-    return
-  }
-
-  return this.$module.ownerDocument.querySelector(this.headingTarget)
 }
 
 LBCamdenGuideContent.prototype.getActiveItem = function () {
@@ -124,3 +107,8 @@ LBCamdenGuideContent.prototype.getNotFoundArticle = function () {
 
 const DEFAULT_NOT_FOUND_HEADING = 'Sorry, this content has been moved or deleted.'
 const DEFAULT_NOT_FOUND_CONTENT = '<p>Try navigating the topic or search the site.</p>'
+
+function getHeading (content) {
+  const heading = content.querySelector('[data-guide-heading]')
+  return heading && heading.innerText
+}

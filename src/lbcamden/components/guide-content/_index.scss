@@ -1,6 +1,10 @@
 .lbcamden-guide-content {
   &__item {
-    &[hidden] {
+    .lbcamden-guide-content:not(.lbcamden-guide-content--loaded) & {
+      display: none;
+    }
+
+    &--hidden {
       display: none;
     }
   }
@@ -24,5 +28,9 @@
     .govuk-pagination__prev {
       display: block;
     }
+  }
+
+  &--hidden {
+    display: none;
   }
 }
