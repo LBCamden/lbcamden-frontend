@@ -1,56 +1,9 @@
-$lbcamden-header-height: 50px;
-$lbcamden-header-colour: lbcamden-colour("black");
-$lbcamden-header-bar-colour: lbcamden-colour("govuk-brand1-1-colour");
-
 .lbcamden-header {
-  position: relative;
-  border-bottom: 10px solid $lbcamden-header-bar-colour;
-  color: lbcamden-colour("white");
-  background: $lbcamden-header-colour;
-
-  &__bar {
-    min-height: $lbcamden-header-height;
+  &--estate {
+    @import "./includes/estate-header";
   }
 
-  &__logo {
-    @include govuk-responsive-margin(2, "top");
-    @include govuk-responsive-margin(2, "bottom");
-    display: inline-block;
-    width: 140px;
-    max-width: 140px;
-    height: 30px;
-    padding-bottom: 5px;
-
-    @include govuk-media-query($from: desktop) {
-      display: block;
-      float: left;
-    }
-
-    &:hover {
-      box-shadow: 0 3px lbcamden-colour("white");
-    }
+  &--site-navigation {
+    @import "./includes/site-header";
   }
-
-  &--with-phase-banner {
-    margin-bottom: 0;
-  }
-
-  &__link {
-    display: block;
-    max-width: 100%;
-    margin-top: 2px;
-    color: lbcamden-colour("white");
-
-    &:visited,
-    &:link {
-      color: lbcamden-colour("white");
-    }
-
-    &:focus {
-      color: lbcamden-colour("black");
-      background: $govuk-focus-colour;
-    }
-  }
-
-  @import "./includes/navigation";
 }
