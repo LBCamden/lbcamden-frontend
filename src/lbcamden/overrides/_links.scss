@@ -4,6 +4,6 @@
 // we ensure that this usage makes it into production builds.
 .govuk-link {
   &.\:active {
-    @extend .govuk-link:active;
+    @extend .govuk-link, :active;
   }
 }
