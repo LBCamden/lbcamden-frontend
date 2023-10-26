@@ -3,4 +3,9 @@
   &__cell {
     border-color: $lbcamden-border-colour;
   }
+
+  &__scroll-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
 }
