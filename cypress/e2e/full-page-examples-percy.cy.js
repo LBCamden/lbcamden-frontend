@@ -11,7 +11,9 @@ const urls = [
   '/full-page-examples/cookie-consent-page',
   '/full-page-examples/home-page',
   '/full-page-examples/home-page-engagement',
-  '/full-page-examples/search'
+  '/full-page-examples/search',
+  '/full-page-examples/super-header-page',
+  '/full-page-examples/guide-page'
 ];
 // const excludePagesBreadcrumb = ['/404.html', '/', '/typography/', '/typography-alt/', '/typography-alt-1/', '/accessibility/'];
 // const excludePagesCGULinkInPhaseBanner = ['/404.html', '/', '/typography/', '/typography-alt/', '/typography-alt-1/', '/accessibility/', '/cookies/'];
