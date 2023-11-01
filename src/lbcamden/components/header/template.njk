@@ -50,15 +50,18 @@
 
 {% if params.phaseBanner %}
 <div class="govuk-phase-banner">
-  <div class="govuk-width-container">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      {{ params.phaseBanner.tag.text }}
+    </strong>
+    <span class="govuk-phase-banner__text">
+      {% if params.phaseBanner.html %}
+      {{ params.phaseBanner.html|safe }}
+      {% else %}
+      {{ params.phaseBanner.text }}
+      {% endif %}
+    </span>
+  </p>
 </div>
+
 {% endif %}
