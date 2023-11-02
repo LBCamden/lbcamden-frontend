@@ -16,7 +16,7 @@ params:
   required: false
   description: HTML attributes (for example data attributes) to add to the header container.
 - name: phaseBanner
-  type: boolean
+  type: object
   required: false
   description: If present, adds a phasebanner to the header
 - name: emergencyBanner
@@ -296,7 +296,9 @@ examples:
   - name: with phasebanner
     description: Default but with a phasebanner
     data:
-      phaseBanner: true
+      phaseBanner:
+        tag: { text: "beta" }
+        html: This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
 
   - name: with no navigation or search
     description: Header with no main navigation or search function.
