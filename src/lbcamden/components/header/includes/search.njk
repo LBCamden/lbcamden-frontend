@@ -1,8 +1,10 @@
+{% from "../../search/macro.njk" import LBCamdenSearch %}
+
 {% if params.search !== false %}
-  <button aria-controls="super-search-menu" aria-expanded="true" aria-label="Hide search menu"
+  <button aria-controls="{{ id_prefix }}-search-menu" aria-expanded="true" aria-label="Hide search menu"
           class="lbcamden-header__search-toggle-button" data-text-for-hide="Hide search menu"
           data-text-for-show="Show search menu" data-toggle-mobile-group="top" data-toggle-desktop-group="top"
-          data-tracking-key="search" hidden id="super-search-menu-toggle" type="button">
+          data-tracking-key="search" hidden id="{{ id_prefix }}-search-menu-toggle" type="button">
         <span class="govuk-visually-hidden">
           Search Camden.gov.uk
         </span>
@@ -33,7 +35,7 @@
         </span>
   </button>
 
-  <div id="super-search-menu" class="lbcamden-header__search-items">
+  <div id="{{ id_prefix }}-search-menu" class="lbcamden-header__search-items">
     <h3 class="govuk-visually-hidden">
       Search
     </h3>
