@@ -35,14 +35,16 @@
     margin: 0;
   }
 
-  &__sponsor {
+  &__sponsor-logos {
     @include govuk-responsive-margin(7, "top");
     max-width: 100%;
+  }
+
+  &__sponsor {
+    @include govuk-responsive-margin(3, top);
+    display: block;
 
     img {
-      @include govuk-responsive-margin(3, top);
-
-      display: block;
       width: auto;
       max-width: 250px;
       height: auto;

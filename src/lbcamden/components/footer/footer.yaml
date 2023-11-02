@@ -202,16 +202,20 @@ examples:
         - href: '#4'
           text: Utility item 4
       sponsorLogos:
-        - src: /assets/images/funded-by-uk-government.png
-          alt: Funded by UK government
-          lazy: true
-          width: 1488
-          height: 325
-        - src: /assets/images/funded-by-uk-government.png
-          alt: Funded by UK government
-          lazy: true
-          width: 1488
-          height: 325
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
       navigationSocial:
         - href: '#1'
           text: Navigation item 1
@@ -262,16 +266,20 @@ examples:
           attributes:
             data-highlighted: true
       sponsorLogos:
-        - src: /assets/images/funded-by-uk-government.png
-          alt: Funded by UK government
-          lazy: true
-          width: 1488
-          height: 325
-        - src: /assets/images/funded-by-uk-government.png
-          alt: Funded by UK government
-          lazy: true
-          width: 1488
-          height: 325
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
       navigationSocial:
         - href: '#1'
           text: Navigation item 1

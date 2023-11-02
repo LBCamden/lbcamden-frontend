@@ -36,9 +36,17 @@
           </ul>
           {% endif %}
           {% if params.sponsorLogos | length %}
-          <div class="lbcamden-footer__sponsor">
-            {% for image in params.sponsorLogos %}
-              {{ LBCamdenImage(image) }}
+          <div class="lbcamden-footer__sponsor-logos">
+            {% for sponsor in params.sponsorLogos %}
+              {% if sponsor.href %}
+              <a class="lbcamden-footer__sponsor" href="{{ sponsor.href }}">
+              {{ LBCamdenImage(sponsor.image) }}
+              </a>
+              {% else %}
+              <div class="lbcamden-footer__sponsor">
+              {{ LBCamdenImage(sponsor.image) }}
+              </div>
+              {% endif %}
             {% endfor %}
           </div>
           {% endif %}
