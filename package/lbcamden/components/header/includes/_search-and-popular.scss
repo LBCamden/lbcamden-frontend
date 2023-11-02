@@ -15,7 +15,7 @@
     display: none;
   }
 
-  .js-module-initialised & {
+  @at-root #{selector-append(".js-module-initialised", &)} {
     background: lbcamden-colour("govuk-bg-bright2-colour");
 
     @include govuk-media-query($from: desktop) {

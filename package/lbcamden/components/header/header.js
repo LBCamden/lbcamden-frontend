@@ -25,16 +25,15 @@ const settings = {
 
 function LBCamdenHeader ($module) {
   this.$module = $module;
-  this.$navigationToggle = this.$module.querySelector('#super-navigation-menu-toggle');
-  this.$navigationMenu = this.$module.querySelector('#super-navigation-menu');
-  this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle');
-  this.$searchMenu = this.$module.querySelector('#super-search-menu');
-  this.$emergencyBanner = this.$module.querySelector('#lbcamden-emergency-banner');
+  this.$navigationToggle = this.$module.querySelector('.lbcamden-header__navigation-top-toggle-button');
+  this.$navigationMenu = this.$module.querySelector('.lbcamden-header__navigation-items');
+  this.$searchToggle = this.$module.querySelector('.lbcamden-header__search-toggle-button');
+  this.$searchMenu = this.$module.querySelector('.lbcamden-header__search-items');
+  this.$emergencyBanner = this.$module.querySelector('.lbcamden-header__emergency-banner');
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]');
   this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item--with-children');
   this.$phaseBanner = document.querySelector('.govuk-phase-banner');
-  this.$header = document.querySelector('.lbcamden-header');
-  this.$navContainer = this.$header.children[0];
+  this.$navContainer = this.$module.children[0];
   // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]');
   this.menuOpen = false;
@@ -116,10 +115,14 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
   } else {
     e.target.classList.toggle('lbcamden-header__open-button');
   }
+
   this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('lbcamden-header__open-button'));
+
   const theTarget = document.getElementById(theTargetID);
   this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true));
+
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true');
+
   if (this.mql.matches === true) {
     this.menuContentShift(theTarget.offsetHeight);
   }

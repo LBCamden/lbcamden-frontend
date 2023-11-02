@@ -851,7 +851,6 @@ Button.prototype.init = function () {
 
 function LBCamdenGuideContent ($module) {
   this.$module = $module;
-  this.headingTarget = this.$module && this.$module.dataset.headingTarget;
 }
 
 LBCamdenGuideContent.prototype.init = function () {
@@ -861,6 +860,7 @@ LBCamdenGuideContent.prototype.init = function () {
 
   window.addEventListener('hashchange', this.showActiveGuide.bind(this));
   this.showActiveGuide();
+  this.$module.classList.add('lbcamden-guide-content--loaded');
 };
 
 LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
@@ -881,14 +881,17 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 
   if (activeItem) {
     const notFoundContent = this.getNotFoundArticle();
-    this.setArticleVisibility(notFoundContent, false);
+    this.setArticleVisibility(notFoundContent, false, {
+      hiddenAttr: true
+    });
   } else {
     const notFoundContent = this.getNotFoundArticle();
 
     this.setArticleVisibility(notFoundContent, true, {
       setContent: DEFAULT_NOT_FOUND_CONTENT,
       setHeading: DEFAULT_NOT_FOUND_HEADING,
-      setPagination: { next: articles[0] }
+      setPagination: { next: articles[0] },
+      hiddenAttr: true
     });
   }
 
@@ -898,53 +901,50 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 LBCamdenGuideContent.prototype.setPagination = function ({ next, prev }) {
   const [prevTarget, nextTarget] = this.getPaginationTargets();
 
-  prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && prev.getAttribute('data-heading');
-  nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && next.getAttribute('data-heading');
+  prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && getHeading(prev);
+  nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && getHeading(next);
 
-  prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.id}`;
-  nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.id}`;
+  prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.dataset.guideArticle}`;
+  nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.dataset.guideArticle}`;
 
   this.$module.classList.toggle('lbcamden-guide-content--prev', !!prev);
   this.$module.classList.toggle('lbcamden-guide-content--next', !!next);
 };
 
-LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible, { setPagination, setContent, setHeading } = {}) {
+LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible, { setPagination, setContent, setHeading, hiddenAttr } = {}) {
   const content = article.querySelector('.lbcamden-guide-content__item');
 
   if (visible) {
     const articles = this.getArticles();
-    const headingTarget = this.getHeadingTarget();
     const i = articles.indexOf(article);
 
     const prev = articles[i - 1];
     const next = articles[i + 1];
 
-    if (headingTarget) {
-      headingTarget.innerText = setHeading || article.getAttribute('data-heading');
-    }
-
     if (content && setContent) {
       content.innerHTML = setContent;
+    }
+
+    if (setHeading) {
+      const h2 = article.querySelector('h2');
+
+      if (h2) {
+        h2.innerText = setHeading;
+      }
     }
 
     this.setPagination(setPagination || { next, prev });
   }
 
-  if (content) {
-    content.hidden = !visible;
+  if (hiddenAttr) {
+    article.hidden = !visible;
+  } else {
+    article.classList.toggle('lbcamden-guide-content--hidden', !visible);
   }
 };
 
 LBCamdenGuideContent.prototype.getArticles = function () {
-  return Array.from(this.$module.querySelectorAll('[data-guide-article][id]'))
-};
-
-LBCamdenGuideContent.prototype.getHeadingTarget = function () {
-  if (!this.headingTarget) {
-    return
-  }
-
-  return this.$module.ownerDocument.querySelector(this.headingTarget)
+  return Array.from(this.$module.querySelectorAll('[data-guide-article]'))
 };
 
 LBCamdenGuideContent.prototype.getActiveItem = function () {
@@ -956,7 +956,7 @@ LBCamdenGuideContent.prototype.getActiveItem = function () {
   }
 
   for (const t of targets) {
-    if (t.id === id) {
+    if (t.dataset.guideArticle === id) {
       return t
     }
   }
@@ -975,6 +975,11 @@ LBCamdenGuideContent.prototype.getNotFoundArticle = function () {
 
 const DEFAULT_NOT_FOUND_HEADING = 'Sorry, this content has been moved or deleted.';
 const DEFAULT_NOT_FOUND_CONTENT = '<p>Try navigating the topic or search the site.</p>';
+
+function getHeading (content) {
+  const heading = content.querySelector('[data-guide-heading]');
+  return heading && heading.innerText
+}
 
 function LBCamdenGuideHeader ($module) {
   this.$module = $module;
@@ -1013,16 +1018,15 @@ LBCamdenGuideHeader.prototype.getLinks = function () {
 
 function LBCamdenHeader ($module) {
   this.$module = $module;
-  this.$navigationToggle = this.$module.querySelector('#super-navigation-menu-toggle');
-  this.$navigationMenu = this.$module.querySelector('#super-navigation-menu');
-  this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle');
-  this.$searchMenu = this.$module.querySelector('#super-search-menu');
-  this.$emergencyBanner = this.$module.querySelector('#lbcamden-emergency-banner');
+  this.$navigationToggle = this.$module.querySelector('.lbcamden-header__navigation-top-toggle-button');
+  this.$navigationMenu = this.$module.querySelector('.lbcamden-header__navigation-items');
+  this.$searchToggle = this.$module.querySelector('.lbcamden-header__search-toggle-button');
+  this.$searchMenu = this.$module.querySelector('.lbcamden-header__search-items');
+  this.$emergencyBanner = this.$module.querySelector('.lbcamden-header__emergency-banner');
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]');
   this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-item--with-children');
   this.$phaseBanner = document.querySelector('.govuk-phase-banner');
-  this.$header = document.querySelector('.lbcamden-header');
-  this.$navContainer = this.$header.children[0];
+  this.$navContainer = this.$module.children[0];
   // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]');
   this.menuOpen = false;
@@ -1104,10 +1108,14 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
   } else {
     e.target.classList.toggle('lbcamden-header__open-button');
   }
+
   this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('lbcamden-header__open-button'));
+
   const theTarget = document.getElementById(theTargetID);
   this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true));
+
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true');
+
   if (this.mql.matches === true) {
     this.menuContentShift(theTarget.offsetHeight);
   }
