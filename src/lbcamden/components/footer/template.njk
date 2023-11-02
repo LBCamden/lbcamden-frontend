@@ -1,4 +1,6 @@
 {% from "../logo/macro.njk" import LBCamdenLogo %}
+{% from "../image/macro.njk" import LBCamdenImage %}
+
 <footer class="lbcamden-footer {{params.classes}}" role="contentinfo" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="govuk-width-container">
     {% if params.navigation | length or params.navigationSocial.length or params.navigationSocial %}
@@ -33,7 +35,13 @@
             {% endfor %}
           </ul>
           {% endif %}
-          {% if params.sponsorLogo %}<div class="lbcamden-footer__sponsor">{{ params.sponsorLogo | safe }}</div>{% endif %}
+          {% if params.sponsorLogos | length %}
+          <div class="lbcamden-footer__sponsor">
+            {% for image in params.sponsorLogos %}
+              {{ LBCamdenImage(image) }}
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>

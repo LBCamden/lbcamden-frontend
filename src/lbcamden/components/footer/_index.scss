@@ -38,6 +38,16 @@
   &__sponsor {
     @include govuk-responsive-margin(7, "top");
     max-width: 100%;
+
+    img {
+      @include govuk-responsive-margin(3, top);
+
+      display: block;
+      width: auto;
+      max-width: 250px;
+      height: auto;
+      max-height: 250px;
+    }
   }
 
   &__list-item {
