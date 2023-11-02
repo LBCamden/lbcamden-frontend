@@ -1,20 +1,24 @@
-<nav aria-labelledby="super-navigation-menu-heading"
+<nav aria-labelledby="{{id_prefix}}-navigation-menu-heading"
      class="lbcamden-header__content"
      data-module="super-navigation-mega-menu">
   {% if params.navigation and params.navigation | length %}
-    <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
+    <h2 id="{{ id_prefix }}-navigation-menu-heading" class="govuk-visually-hidden">
       Navigation menu
     </h2>
-    <button aria-controls="super-navigation-menu" aria-expanded="true" aria-label="Show navigation menu"
-            class="lbcamden-header__navigation-top-toggle-button {% if params.search === false %}lbcamden-header__navigation-top-toggle-button--no-search{% endif %}"
-            data-toggle-desktop-group="hidden"
-            data-toggle-mobile-group="top" data-tracking-key="menu" hidden id="super-navigation-menu-toggle"
-            type="button">
+    <button aria-controls="{{id_prefix}}-navigation-menu"
+      aria-expanded="true" aria-label="Show navigation menu"
+      class="lbcamden-header__navigation-top-toggle-button {% if params.search === false %}lbcamden-header__navigation-top-toggle-button--no-search{% endif %}"
+      data-toggle-desktop-group="hidden"
+      data-toggle-mobile-group="top"
+      data-tracking-key="menu"
+      hidden
+      id="{{id_prefix}}-navigation-menu-toggle"
+      type="button">
         <span class="lbcamden-header__navigation-top-toggle-button-inner">
           Menu
         </span>
     </button>
-    <ul id="super-navigation-menu" class="lbcamden-header__navigation-items">
+    <ul id="{{id_prefix}}-navigation-menu" class="lbcamden-header__navigation-items">
       {% for menuItem in params.navigation %}
         <li
           class="lbcamden-header__navigation-item{% if menuItem.subItems %} lbcamden-header__navigation-item--with-children{% endif %}">
@@ -26,7 +30,7 @@
               </span>
             </a>
             {% if menuItem.subItems %}
-            <button aria-controls="super-navigation-menu__section-{{ loop.index }}"
+            <button aria-controls="{{id_prefix}}-navigation-menu__section-{{ loop.index }}"
                     aria-expanded="false"
                     aria-label="Show {{ menuItem.text }} menu"
                     class="lbcamden-header__navigation-second-toggle-button"
@@ -41,7 +45,7 @@
           </div>
           {% if menuItem.subItems %}
           <div hidden class="lbcamden-header__navigation-dropdown-menu"
-               id="super-navigation-menu__section-{{ loop.index }}">
+               id="{{id_prefix}}-navigation-menu__section-{{ loop.index }}">
             <div class="govuk-width-container lbcamden-header__width-container">
               <div class="govuk-grid-row">
                 {% if menuItem.description %}
