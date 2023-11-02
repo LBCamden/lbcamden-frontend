@@ -3,12 +3,20 @@ params:
   type: string
   required: false
   description: Classes to add to the header container.
+- name: variant
+  type: string
+  required: false
+  description: "Variant of the header. Currently supported values: site-navigation"
+- name: title
+  type: string
+  required: false
+  description: Title displayed in the header
 - name: attributes
   type: object
   required: false
   description: HTML attributes (for example data attributes) to add to the header container.
 - name: phaseBanner
-  type: boolean
+  type: object
   required: false
   description: If present, adds a phasebanner to the header
 - name: emergencyBanner
@@ -189,6 +197,52 @@ examples:
           text: 'Sign in / Register'
           classes: 'lbcamden-header__navigation-item-link--sign-in'
 
+  - name: with site navigation
+    description: Header with with single and nested navigation items and site navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+
+        - href: '#2'
+          text: Navigation item 2
+          description: Search for a department and find out what the council is doing
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+              description: 'Description of service'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+              description: 'Description of service'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+              description: 'Description of service'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+              description: 'Description of service'
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+      siteNavigation:
+        title: Family Hubs
+        search: false
+        homepageUrl: "#"
+        navigation:
+          - href: '#1'
+            text: Navigation item 1
+
+          - href: '#2'
+            text: Navigation item 2
+            subItems:
+              - href: '#1-1'
+                text: 'Sub Item 1'
+              - href: '#1-2'
+                text: 'Sub Item 2'
+              - href: '#1-3'
+                text: 'Sub Item 3'
+              - href: '#1-4'
+                text: 'Sub Item 4'
+
   - name: with no search
     description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
     data:
@@ -242,7 +296,9 @@ examples:
   - name: with phasebanner
     description: Default but with a phasebanner
     data:
-      phaseBanner: true
+      phaseBanner:
+        tag: { text: "beta" }
+        html: This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
 
   - name: with no navigation or search
     description: Header with no main navigation or search function.

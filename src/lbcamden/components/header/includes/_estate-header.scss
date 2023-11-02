@@ -1,0 +1,13 @@
+$header-height: 50px;
+$header-bg-colour: lbcamden-colour("black");
+$header-text-colour: lbcamden-colour("white");
+$header-text-colour-hover: lbcamden-colour("light-grey-2");
+$header-target-indicator-colour: lbcamden-colour("light-grey-2");
+$menu-bg-colour: lbcamden-colour("govuk-bg-bright2-colour");
+$menu-text-colour: lbcamden-colour("black");
+$header-bar-height: 10px;
+$header-bar-colour: lbcamden-colour("govuk-brand1-1-colour");
+$mobile-menu-font-weight: inherit;
+$header-padding-bottom: 5px;
+
+@import "./base";

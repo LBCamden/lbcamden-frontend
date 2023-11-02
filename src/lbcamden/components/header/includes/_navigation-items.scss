@@ -21,14 +21,14 @@
 
   @include govuk-media-query($until: desktop) {
     @include govuk-responsive-padding(6, "left");
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: $menu-bg-colour;
   }
 
   @include govuk-media-query($until: tablet) {
     @include govuk-responsive-padding(4, "left");
   }
 
-  .js-module-initialised & {
+  @at-root #{selector-append(".js-module-initialised", &)} {
     @include govuk-media-query($until: desktop) {
       padding: 0;
       @include govuk-responsive-padding(6, "top");
@@ -42,7 +42,7 @@
     display: inline-block;
   }
 
-  .js-module-initialised & {
+  @at-root #{selector-append(".js-module-initialised", &)} {
     @include govuk-media-query($until: desktop) {
       padding: 0;
       @include govuk-responsive-padding(4, "top");
@@ -58,7 +58,7 @@
   margin: 0;
   padding: 0;
 
-  .js-module-initialised & {
+  @at-root #{selector-append(".js-module-initialised", &)} {
     @include govuk-media-query($until: desktop) {
       padding: 0 30px;
     }
@@ -109,11 +109,11 @@
   }
 
   @include govuk-media-query($from: desktop) {
-    color: lbcamden-colour("white");
+    color: $header-text-colour;
 
     &:link,
     &:visited {
-      color: lbcamden-colour("white");
+      color: $header-text-colour;
     }
   }
 }
@@ -123,7 +123,8 @@
 &__navigation-second-toggle-button {
   display: inline-block;
   margin: 15px 0;
-  color: lbcamden-colour("white");
+  color: $header-text-colour;
+
   @include govuk-media-query($until: desktop) {
     width: 100%;
     text-align: left;
@@ -131,7 +132,7 @@
 
   @include govuk-media-query($from: desktop) {
     &:hover:not(:focus) {
-      color: lbcamden-colour("light-grey-2");
+      color: $header-text-colour-hover;
 
       &:after {
         content: "";
@@ -141,7 +142,7 @@
         bottom: 0;
         left: 15px;
         height: 3px;
-        background: lbcamden-colour("light-grey-2");
+        background: $header-target-indicator-colour;
       }
     }
   }

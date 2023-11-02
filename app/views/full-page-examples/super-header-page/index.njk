@@ -1,43 +1,31 @@
-{% extends "template.njk" %}
+---
+scenario: You want to change your name by deed poll
+notes:
+---
+{% extends "full-page-example.njk" %}
+{% set mainClasses = 'govuk-width-container' %}
 
-{% block head %}
+{% from "engagement-banner/macro.njk" import LBCamdenEngagementBanner %}
+{% from "promo-gallery/macro.njk" import LBCamdenPromoGallery %}
+{% from "card-gallery/macro.njk" import LBCamdenCardGallery %}
+{% from "hero/macro.njk" import LBCamdenHero %}
 
-  {% if legacy %}
-    <!--[if !IE 8]><!-->
-      <link rel="stylesheet" href="/vendor/govuk_template/stylesheets/govuk-template.css">
-    <!--<![endif]-->
-    <!--[if IE 8]>
-      <link rel="stylesheet" href="/vendor/govuk_template/govuk-template-ie8.css">
-    <![endif]-->
-    <link rel="stylesheet" media="print" href="/vendor/govuk_template/stylesheets/govuk-template-print.css">
-    <link rel="stylesheet" media="all" href="/vendor/govuk_template/stylesheets/fonts.css"/>
-    <!--[if !IE 8]><!-->
-      <link rel="stylesheet" href="/public/app-legacy.css">
-    <!--<![endif]-->
-    <!--[if IE 8]>
-      <link rel="stylesheet" href="/public/app-legacy-ie8.css">
-    <![endif]-->
-  {% else %}
-    <!--[if !IE 8]><!-->
-      <link rel="stylesheet" href="/public/app.css">
-    <!--<![endif]-->
-    <!--[if IE 8]>
-      <link rel="stylesheet" href="/public/app-ie8.css">
-    <![endif]-->
-  {% endif %}
+{% block styles %}
+  <style>
+    body {
+      background-color: #F6F6F6 !important;
+      overflow-x: hidden;
+    }
 
-  {% if componentPage %}
-  <!--[if !IE 8]><!-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js" integrity="sha256-Zb9yKJ/cfs+jG/zIOFL0QEuXr2CDKF7FR5YBJY3No+c=" crossorigin="anonymous"></script>
-  <!--<![endif]-->
-  {% endif %}
-  <!--[if lt IE 9]>
-    <script src="/vendor/html5-shiv/html5shiv.js"></script>
-  <![endif]-->
-
-  {% block styles %}{% endblock %}
+    .govuk-main-wrapper {
+      padding-top: 0;
+    }
+  </style>
 {% endblock %}
+
+{% set pageTitle = "Home" %}
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
 
 {% block header %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
@@ -235,39 +223,59 @@
       }
     ],
     "siteNavigation": {
-      "title": "Site Area",
+      "title": "Family Hubs",
       "search": false,
-      "homepageUrl": "#",
       "navigation": [
         {
-          "href": "#",
-          "text": "Navigation item 1"
+          "text": "Visit us",
+          "href": "#"
         },
         {
+          "text": "Support for parents",
+          "href": "#"
+        },
+        {
+          "text": "Young people",
+          "href": "#"
+        },
+        {
+          "text": "SEND Support",
           "href": "#",
-          "text": "Navigation item 2",
           "subItems": [
             {
-              "href": "#",
-              "text": "Sub-navigation item 1"
+              "text": "About Camden's local offer",
+              "href": "#"
             },
             {
-              "href": "#",
-              "text": "Sub-navigation item 2"
+              "text": "Information for parents and carers",
+              "href": "#"
             },
             {
-              "href": "#",
-              "text": "Sub-navigation item 3"
+              "text": "Types of SEND",
+              "href": "#"
+            },
+            {
+              "text": "Information and resources for SEND practitioners",
+              "href": "#"
+            },
+            {
+              "text": "SEND support services and resources",
+              "href": "#"
+            },
+            {
+              "text": "Help with learning and education",
+              "href": "#"
+            },
+            {
+              "text": "Information for young people",
+              "href": "#"
             }
           ]
-        },
-        {
-          "href": "#",
-          "text": "Navigation item 3"
         }
       ]
     }
   }) }}
+
   {{ LBCamdenServiceBanner({
       'heading': 'Council Tax and benefit forms unavailable',
       'shortDescription': '<p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>'
@@ -278,15 +286,178 @@
   }) }}
 {% endblock %}
 
-{% block bodyStart %}
-  {% block banner %}
-    {% include "../partials/banner.njk" %}
-  {% endblock %}
-{% endblock %}
+{% block content %}
 
-{% if not mainClasses %}
-  {% set mainClasses = 'govuk-width-container' %}
-{% endif %}
+{{ LBCamdenHero({
+  welcomeMessage: "Welcome to Camden.gov.uk",
+  image: {
+    src: "/example-assets/images/hero.jpg"
+  },
+  linkHeading: "Popular tasks",
+  links: [
+    {
+      "label": "Get a resident permit parking",
+      "href": "/full-page-examples/article"
+    },
+    {
+      "label": "Search for a planning application",
+      "href": "/full-page-examples/article"
+    },
+    {
+      "label": "Book a housing repair",
+      "href": "/full-page-examples/article"
+    },
+    {
+      "label": "Search for a business license",
+      "href": "/full-page-examples/article"
+    },
+    {
+      "label": "Get Council Tax support",
+      "href": "/full-page-examples/article"
+    },
+    {
+      "label": "Find a job at Camden",
+      "href": "/full-page-examples/article"
+    }
+  ]
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {{ LBCamdenPromoGallery({
+      "heading": "Popular",
+      "showAllHref": "#",
+      "showAllLabel": "All services",
+      "classes": "govuk-!-margin-bottom-9",
+      "panel": true,
+      "items": [
+        {
+          "title": "Housing Repairs",
+          "href": "/full-page-examples/category-page"
+        },
+        {
+          "title": "Leaseholder and Freeholders",
+          "href": "/full-page-examples/category-page"
+        },
+        {
+          "title": "Bid for a property",
+          "href": "/full-page-examples/category-page"
+        },
+        {
+          "title": "Apply for council housing",
+          "href": "/full-page-examples/category-page"
+        }
+      ]
+    }) }}
+  </div>
+</div>
+
+
+{{ LBCamdenCardGallery({
+  "heading": "Get more from Camden",
+  "shortDescription": "Find relevant services, support and things to do.",
+  "classes": "govuk-!-margin-bottom-9",
+  "cardType": "alt-1",
+  "items": [
+    {
+      "title": "Starting school",
+      "href": "#1",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
+    },
+    {
+      "title": "Moving into Camden",
+      "href": "#2",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Check off what you need to do when you move into Camden, and what to do if you need support."
+    },
+    {
+      "title": "Making the most of Summer",
+      "href": "#3",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Find out what’s happening in Camden, host a street party, or get support over the summer holidays."
+    },
+    {
+      "title": "Starting school",
+      "href": "#4",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
+    }
+  ]
+}) }}
+
+{{ LBCamdenCardGallery({
+  "heading": "Get more from Camden",
+  "shortDescription": "Find relevant services, support and things to do.",
+  "classes": "govuk-!-margin-bottom-9",
+  "surround": true,
+  "cardType": "alt-1",
+  "items": [
+    {
+      "title": "Starting school",
+      "href": "#1",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
+    },
+    {
+      "title": "Moving into Camden",
+      "href": "#2",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Check off what you need to do when you move into Camden, and what to do if you need support."
+    },
+    {
+      "title": "Making the most of Summer",
+      "href": "#3",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Find out what’s happening in Camden, host a street party, or get support over the summer holidays."
+    },
+    {
+      "title": "Starting school",
+      "href": "#4",
+      "image": {
+        "src": "/example-assets/images/1200x800.webp",
+        "alt": "Image alt text"
+      },
+      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
+    }
+  ]
+}) }}
+
+
+{{ LBCamdenEngagementBanner({
+  "image": {
+    "src": "/example-assets/images/1200x800.webp",
+    "alt": "Image alt text"
+  },
+  "heading": "News",
+  "shortDescription": "<p>Find out what’s going on in our community with all the latest news stories, announcements, and events.</p>",
+  "classes": "govuk-!-margin-bottom-9",
+  "link": "#",
+  "linkText": "All news"
+}) }}
+
+{% endblock %}
 
 {% block footer %}
   {{ LBCamdenFooter({
@@ -364,14 +535,4 @@
       }
     ]
   }) }}
-{% endblock %}
-
-{% block bodyEnd %}
-  {% if legacy %}
-    {% include "partials/legacyJavaScript.njk" %}
-  {% endif %}
-  <script src="/public/govuk-frontend.js"></script>
-  <script src="/public/all.js"></script>
-  <script>window.GOVUKFrontend.initAll()</script>
-  <script>window.LBCamdenFrontend.initAll()</script>
 {% endblock %}

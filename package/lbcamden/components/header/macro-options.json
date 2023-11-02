@@ -6,6 +6,18 @@
         "description": "Classes to add to the header container."
     },
     {
+        "name": "variant",
+        "type": "string",
+        "required": false,
+        "description": "Variant of the header. Currently supported values: site-navigation"
+    },
+    {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "Title displayed in the header"
+    },
+    {
         "name": "attributes",
         "type": "object",
         "required": false,
@@ -13,7 +25,7 @@
     },
     {
         "name": "phaseBanner",
-        "type": "boolean",
+        "type": "object",
         "required": false,
         "description": "If present, adds a phasebanner to the header"
     },

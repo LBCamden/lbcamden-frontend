@@ -3,16 +3,17 @@
   position: absolute;
   z-index: 10;
   top: 0;
-  right: $lbcamden-header-height;
-  height: $lbcamden-header-height;
+  right: $header-height;
+  height: $header-height;
   margin: 0;
   padding: 0;
   @include govuk-responsive-padding(3, "left");
   @include govuk-responsive-padding(3, "right");
   border: 0;
-  color: lbcamden-colour("white");
+  color: $header-text-colour;
   background: transparent;
   font-size: 16px;
+  font-weight: $mobile-menu-font-weight;
   cursor: pointer;
 
   &--no-search {
@@ -26,7 +27,7 @@
   &:before {
     content: "";
     display: inline-block;
-    @include lbcamden-chevron(lbcamden-colour("white"), 90);
+    @include lbcamden-chevron($header-text-colour, 90);
   }
 
   &:after {
@@ -37,7 +38,11 @@
     right: 0;
     width: 1px;
     height: 60%;
-    background: lbcamden-colour("light-grey");
+    background: $header-target-indicator-colour;
+  }
+
+  &--no-search:after {
+    display: none;
   }
 
   &:focus-visible {
@@ -51,12 +56,12 @@
       color: $govuk-focus-text-colour;
 
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("black"), 90);
+        @include lbcamden-chevron($header-text-colour, 90);
       }
     }
 
     &:before {
-      @include lbcamden-chevron(lbcamden-colour("black"), 90);
+      @include lbcamden-chevron($header-text-colour, 90);
     }
   }
 
@@ -71,11 +76,12 @@
   /* stylelint-disable */
   &.lbcamden-header__open-button {
     color: $govuk-link-colour;
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: $menu-bg-colour;
 
     &:focus-visible {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("black"), -90);
+
+        @include lbcamden-chevron($header-text-colour, -90);
       }
     }
 
@@ -159,14 +165,14 @@
 
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+        @include lbcamden-chevron($header-text-colour-hover, 90);
       }
     }
   }
 
   @include govuk-media-query($from: desktop) {
-    min-height: $lbcamden-header-height;
-    color: lbcamden-colour("white");
+    min-height: $header-height;
+    color: $header-text-colour;
 
     &-inner {
       @include govuk-responsive-padding(1, "all");
@@ -178,7 +184,7 @@
         content: "";
         display: inline-block;
         @include govuk-responsive-margin(1, "right");
-        @include lbcamden-chevron(lbcamden-colour("white"), 90);
+        @include lbcamden-chevron($header-text-colour, 90);
       }
     }
   }
@@ -205,7 +211,7 @@
     }
 
     &:hover:not(:focus) {
-      color: lbcamden-colour("light-grey-2");
+      color: $header-text-colour-hover;
 
       &:after {
         content: "";
@@ -215,18 +221,18 @@
         bottom: 0;
         left: 15px;
         height: 3px;
-        background: lbcamden-colour("light-grey-2");
+        background: $header-target-indicator-colour;
       }
     }
 
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
-        @include lbcamden-chevron(lbcamden-colour("white"), 90);
+        @include lbcamden-chevron($header-text-colour, 90);
       }
 
       &:hover {
         &:before {
-          @include lbcamden-chevron(lbcamden-colour("light-grey-2"), 90);
+          @include lbcamden-chevron($header-text-colour-hover, 90);
         }
       }
     }
@@ -235,7 +241,7 @@
   /* stylelint-disable */
   &.lbcamden-header__open-button {
     color: $govuk-link-colour;
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: $menu-bg-colour;
 
     &:focus-visible {
       background: $govuk-focus-colour;
@@ -261,11 +267,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: $lbcamden-header-height;
-  height: $lbcamden-header-height;
+  width: $header-height;
+  height: $header-height;
   padding: 15px;
   border: 0;
-  color: lbcamden-colour("white");
+  color: $header-text-colour;
   background: transparent;
   cursor: pointer;
 
@@ -275,7 +281,7 @@
   }
 
   &:hover:not(:focus) {
-    color: lbcamden-colour("light-grey-2");
+    color: $header-text-colour-hover;
 
     &:after {
       content: "";
@@ -285,7 +291,7 @@
       bottom: 0;
       left: 10%;
       height: 3px;
-      background: lbcamden-colour("light-grey-2");
+      background: $header-target-indicator-colour;
     }
   }
 
@@ -300,8 +306,9 @@
 }
 
 &__open-button {
-  color: $menu-main-text-colour;
-  background: lbcamden-colour("govuk-bg-bright2-colour");
+  color: $header-text-colour;
+
+  background: $menu-bg-colour;
 
   &:hover {
     &:after {

@@ -1,6 +1,3 @@
-$menu-main-bg-colour: lbcamden-colour("black");
-$menu-main-text-colour: lbcamden-colour("white");
-
 &__content {
   flex: 1 0 100%;
   background: lbcamden-colour("govuk-bg-bright2-colour");
@@ -35,7 +32,7 @@ $menu-main-text-colour: lbcamden-colour("white");
     z-index: 10;
     right: 0;
     left: 0;
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: $menu-bg-colour;
   }
 }
 
