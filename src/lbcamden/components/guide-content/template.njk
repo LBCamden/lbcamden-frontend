@@ -1,6 +1,6 @@
 <div class="lbcamden-guide-content {{params.classes}}" data-module="lbcamden-guide-content">
   {% for item in params.items %}
-    <div id="{{ item.id }}" data-guide-article>
+    <div data-guide-article="{{ item.id }}">
       <article class="lbcamden-guide-content__item">
         <h2 data-guide-heading>{{ item.heading }}</h2>
 

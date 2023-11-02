@@ -53,8 +53,8 @@ LBCamdenGuideContent.prototype.setPagination = function ({ next, prev }) {
   prevTarget.querySelector('.govuk-pagination__link-label').innerText = prev && getHeading(prev)
   nextTarget.querySelector('.govuk-pagination__link-label').innerText = next && getHeading(next)
 
-  prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.id}`
-  nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.id}`
+  prevTarget.querySelector('.govuk-pagination__link').href = prev && `#${prev.dataset.guideArticle}`
+  nextTarget.querySelector('.govuk-pagination__link').href = next && `#${next.dataset.guideArticle}`
 
   this.$module.classList.toggle('lbcamden-guide-content--prev', !!prev)
   this.$module.classList.toggle('lbcamden-guide-content--next', !!next)
@@ -93,7 +93,7 @@ LBCamdenGuideContent.prototype.setArticleVisibility = function (article, visible
 }
 
 LBCamdenGuideContent.prototype.getArticles = function () {
-  return Array.from(this.$module.querySelectorAll('[data-guide-article][id]'))
+  return Array.from(this.$module.querySelectorAll('[data-guide-article]'))
 }
 
 LBCamdenGuideContent.prototype.getActiveItem = function () {
@@ -105,7 +105,7 @@ LBCamdenGuideContent.prototype.getActiveItem = function () {
   }
 
   for (const t of targets) {
-    if (t.id === id) {
+    if (t.dataset.guideArticle === id) {
       return t
     }
   }
