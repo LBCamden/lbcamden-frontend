@@ -64,6 +64,10 @@
 &__popular-item {
   position: relative;
   padding: 5px 0;
+
+  &:before {
+    content: none;
+  }
 }
 
 &__popular-link {
