@@ -16,10 +16,10 @@
     @include govuk-responsive-margin(2, "bottom");
     display: inline-block;
     height: 30px;
-    padding-bottom: $header-padding-bottom;
 
     @include govuk-media-query($from: desktop) {
       display: block;
+      padding-bottom: $header-padding-bottom;
       float: left;
     }
 
