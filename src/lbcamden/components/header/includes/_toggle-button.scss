@@ -303,10 +303,8 @@
 
   background: $menu-bg-colour;
 
-  &:hover {
-    &:after {
-      display: none;
-    }
+  &:after {
+    display: none;
   }
 
   &:focus {

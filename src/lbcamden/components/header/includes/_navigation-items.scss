@@ -153,6 +153,17 @@
     background-color: $govuk-focus-colour;
     box-shadow: none;
     text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      height: 3px;
+      background: lbcamden-colour("black");
+    }
   }
 
   @include govuk-media-query($from: desktop) {
