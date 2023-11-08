@@ -243,6 +243,60 @@ examples:
               - href: '#1-4'
                 text: 'Sub Item 4'
 
+  - name: with mixed-level site navigation
+    description: Header with with single and nested navigation items and single and nested site navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+
+        - href: '#2'
+          text: Navigation item 2
+          description: Search for a department and find out what the council is doing
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+              description: 'Description of service'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+              description: 'Description of service'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+              description: 'Description of service'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+              description: 'Description of service'
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+      siteNavigation:
+        title: Family Hubs
+        search: false
+        homepageUrl: "#"
+        navigation:
+        - href: '#1'
+          text: Navigation item 1
+
+        - href: '#2'
+          text: Navigation item 2
+          description: Search for a department and find out what the council is doing
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+              description: 'Description of service'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+              description: 'Description of service'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+              description: 'Description of service'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+              description: 'Description of service'
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+
   - name: with no search
     description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
     data:
