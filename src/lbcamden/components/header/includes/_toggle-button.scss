@@ -158,12 +158,6 @@
 
   &:hover {
     cursor: pointer;
-
-    .lbcamden-header__navigation-second-toggle-button-inner {
-      &:before {
-        @include lbcamden-chevron($header-text-colour-hover, 90);
-      }
-    }
   }
 
   @include govuk-media-query($from: desktop) {
@@ -221,12 +215,6 @@
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
         @include lbcamden-chevron($header-text-colour, 90);
-      }
-
-      &:hover {
-        &:before {
-          @include lbcamden-chevron($header-text-colour-hover, 90);
-        }
       }
     }
   }

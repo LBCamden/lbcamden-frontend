@@ -153,7 +153,10 @@
     background-color: $govuk-focus-colour;
     box-shadow: none;
     text-decoration: none;
+  }
 
+  &.lbcamden-header__open-button:focus:focus-visible,
+  &:not(.lbcamden-header__open-button:focus-visible):focus {
     &:after {
       content: "";
       position: absolute;
