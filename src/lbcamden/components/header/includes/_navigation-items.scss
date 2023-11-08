@@ -155,6 +155,20 @@
     text-decoration: none;
   }
 
+  &.lbcamden-header__open-button:focus:focus-visible,
+  &:not(.lbcamden-header__open-button:focus-visible):focus {
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      height: 3px;
+      background: lbcamden-colour("black");
+    }
+  }
+
   @include govuk-media-query($from: desktop) {
     display: block;
     position: relative;
