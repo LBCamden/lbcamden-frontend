@@ -197,7 +197,7 @@ examples:
           text: 'Sign in / Register'
           classes: 'lbcamden-header__navigation-item-link--sign-in'
 
-  - name: with site navigation
+  - name: with mixed level site navigation
     description: Header with with single and nested navigation items and site navigation
     data:
       navigation:
@@ -242,6 +242,27 @@ examples:
                 text: 'Sub Item 3'
               - href: '#1-4'
                 text: 'Sub Item 4'
+
+  - name: with site navigation
+    description: Header with with single and nested navigation items and single and nested site navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+      siteNavigation:
+        title: Family Hubs
+        search: false
+        homepageUrl: "#"
+        navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
 
   - name: with no search
     description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
