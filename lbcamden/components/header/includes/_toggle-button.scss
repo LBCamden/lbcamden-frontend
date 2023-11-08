@@ -162,12 +162,6 @@
 
   &:hover {
     cursor: pointer;
-
-    .lbcamden-header__navigation-second-toggle-button-inner {
-      &:before {
-        @include lbcamden-chevron($header-text-colour-hover, 90);
-      }
-    }
   }
 
   @include govuk-media-query($from: desktop) {
@@ -190,9 +184,6 @@
   }
 
   &:focus {
-    outline: 3px solid transparent;
-    box-shadow: none;
-
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
         @include lbcamden-chevron($govuk-focus-text-colour, 90);
@@ -228,12 +219,6 @@
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
         @include lbcamden-chevron($header-text-colour, 90);
-      }
-
-      &:hover {
-        &:before {
-          @include lbcamden-chevron($header-text-colour-hover, 90);
-        }
       }
     }
   }
@@ -310,10 +295,8 @@
 
   background: $menu-bg-colour;
 
-  &:hover {
-    &:after {
-      display: none;
-    }
+  &:after {
+    display: none;
   }
 
   &:focus {
