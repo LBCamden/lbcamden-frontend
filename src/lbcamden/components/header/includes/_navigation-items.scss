@@ -88,12 +88,6 @@
         border: none;
       }
     }
-
-    &:last-child {
-      .lbcamden-header__navigation-item-link-inner {
-        border-right: 1px solid lbcamden-colour("light-grey-2");
-      }
-    }
   }
 }
 
