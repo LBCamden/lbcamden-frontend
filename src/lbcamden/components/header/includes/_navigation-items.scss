@@ -88,12 +88,6 @@
         border: none;
       }
     }
-
-    &:last-child {
-      .lbcamden-header__navigation-item-link-inner {
-        border-right: 1px solid lbcamden-colour("light-grey-2");
-      }
-    }
   }
 }
 
@@ -118,6 +112,93 @@
   }
 }
 
+@mixin navigation-toggles {
+  &__navigation-item-link,
+  &__navigation-second-toggle-button {
+    @include govuk-media-query($from: desktop) {
+      @content;
+    }
+  }
+
+  &__navigation-top-toggle-button,
+  &__search-toggle-button {
+    @content;
+  }
+}
+
+@include navigation-toggles {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: none;
+  }
+
+  &:hover:not(:focus) {
+    color: $header-text-colour-hover;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      width: auto;
+      height: 3px;
+      background: $header-target-indicator-colour;
+    }
+  }
+
+  &:focus:not(.lbcamden-header__open-button) {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: $govuk-focus-colour;
+    box-shadow: none;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
+      width: auto;
+      height: 3px;
+      background: lbcamden-colour("black");
+    }
+
+    &.lbcamden-header__search-toggle-button {
+      &:after {
+        right: 10%;
+        left: 10%;
+      }
+    }
+  }
+
+  &.lbcamden-header__open-button {
+    background-color: $menu-bg-colour;
+  }
+}
+
+&__navigation-second-toggle-button {
+  @include govuk-media-query($until: desktop) {
+    &:hover {
+      @include govuk-link-decoration;
+      @include govuk-link-hover-decoration;
+    }
+
+    &:focus:not(.lbcamden-header__open-button),
+    &:focus-visible {
+      @include govuk-focused-text;
+    }
+  }
+}
+
 &__navigation-item-link,
 &__search-item-link,
 &__navigation-second-toggle-button {
@@ -128,31 +209,6 @@
   @include govuk-media-query($until: desktop) {
     width: 100%;
     text-align: left;
-  }
-
-  @include govuk-media-query($from: desktop) {
-    &:hover:not(:focus) {
-      color: $header-text-colour-hover;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: auto;
-        right: 15px;
-        bottom: 0;
-        left: 15px;
-        height: 3px;
-        background: $header-target-indicator-colour;
-      }
-    }
-  }
-
-  &:focus {
-    outline: 3px solid transparent;
-    color: #0b0c0c;
-    background-color: $govuk-focus-colour;
-    box-shadow: 0 -2px $govuk-focus-colour, 0 4px lbcamden-colour("black");
-    text-decoration: none;
   }
 
   @include govuk-media-query($from: desktop) {
@@ -168,16 +224,6 @@
 
   &[hidden] {
     display: none;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: none;
   }
 }
 

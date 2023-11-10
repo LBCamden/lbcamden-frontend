@@ -53,3 +53,11 @@
   position: relative;
   padding: 0 0 20px;
 }
+
+&__navigation-items:last-child {
+  li:last-child {
+    .lbcamden-header__navigation-item-link-inner {
+      border-right: none;
+    }
+  }
+}

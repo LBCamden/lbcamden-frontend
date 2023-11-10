@@ -1029,6 +1029,7 @@ function LBCamdenHeader ($module) {
   this.$navContainer = this.$module.children[0];
   // this.$menuButtons = this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]');
+  this.$contentShiftContainer = this.$module.querySelector('.lbcamden-header__bar') || this.$module;
   this.menuOpen = false;
   this.searchOpen = false;
   this.lastWindowSize = null;
@@ -1128,7 +1129,7 @@ LBCamdenHeader.prototype.menuContentShift = function (offsetPixels) {
   if (this.$emergencyBanner) {
     this.$emergencyBanner.style.marginTop = offsetPixels + 'px';
   } else {
-    this.$module.style.marginBottom = offsetPixels + 'px';
+    this.$contentShiftContainer.style.marginBottom = offsetPixels + 'px';
   }
 };
 
@@ -1203,7 +1204,7 @@ LBCamdenHeader.prototype.handleSearchButtonClick = function () {
     this.openSearch(this.$searchToggle, this.$searchMenu);
 
     if (this.mql.matches === true) {
-      this.menuContentShift(this.$searchMenu.offsetHeight - 10);
+      this.menuContentShift(this.$searchMenu.offsetHeight);
     }
   }
 };
