@@ -180,6 +180,14 @@
     }
   }
 
+  &:focus {
+    .lbcamden-header__navigation-second-toggle-button-inner {
+      &:before {
+        @include lbcamden-chevron($govuk-focus-text-colour, 90);
+      }
+    }
+  }
+
   &:focus-visible {
     color: $govuk-focus-text-colour;
     background: $govuk-focus-colour;
@@ -233,12 +241,14 @@
       }
     }
 
-    &:hover,
-    &:focus-visible .lbcamden-header__navigation-second-toggle-button-inner {
-      color: $govuk-focus-text-colour;
+    @include govuk-media-query($until: "desktop") {
+      &:hover,
+      &:focus-visible .lbcamden-header__navigation-second-toggle-button-inner {
+        color: $govuk-focus-text-colour;
 
-      &:before {
-        @include lbcamden-chevron($govuk-focus-text-colour, -90);
+        &:before {
+          @include lbcamden-chevron($govuk-focus-text-colour, -90);
+        }
       }
     }
   }
