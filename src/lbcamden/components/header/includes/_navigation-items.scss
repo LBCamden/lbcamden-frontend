@@ -144,18 +144,25 @@
   &:hover:not(:focus) {
     &:not(.lbcamden-header__open-button) {
       color: $header-text-colour-hover;
-    }
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: auto;
-      right: 15px;
-      bottom: 0;
-      left: 15px;
-      width: auto;
-      height: 3px;
-      background: $header-target-indicator-colour;
+      &:after {
+        content: "";
+        position: absolute;
+        top: auto;
+        right: 15px;
+        bottom: 0;
+        left: 15px;
+        width: auto;
+        height: 3px;
+        background: $header-target-indicator-colour;
+      }
+
+      &.lbcamden-header__search-toggle-button {
+        &:after {
+          right: 10%;
+          left: 10%;
+        }
+      }
     }
   }
 

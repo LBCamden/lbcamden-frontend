@@ -200,17 +200,6 @@
 
     &:hover:not(:focus) {
       color: $header-text-colour-hover;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: auto;
-        right: 15px;
-        bottom: 0;
-        left: 15px;
-        height: 3px;
-        background: $header-target-indicator-colour;
-      }
     }
 
     .lbcamden-header__navigation-second-toggle-button-inner {
@@ -275,17 +264,6 @@
 
   &:hover:not(:focus) {
     color: $header-text-colour-hover;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: auto;
-      right: 10%;
-      bottom: 0;
-      left: 10%;
-      height: 3px;
-      background: $header-target-indicator-colour;
-    }
   }
 
   &:focus {
