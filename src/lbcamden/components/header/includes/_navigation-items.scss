@@ -102,6 +102,10 @@
     color: $govuk-link-colour;
   }
 
+  &:focus {
+    color: lbcamden-colour("black");
+  }
+
   @include govuk-media-query($from: desktop) {
     color: $header-text-colour;
 
