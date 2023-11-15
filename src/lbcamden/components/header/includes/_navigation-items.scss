@@ -127,6 +127,8 @@
 }
 
 @include navigation-toggles {
+  @include govuk-font(16, 600);
+
   &:after {
     content: "";
     position: absolute;
