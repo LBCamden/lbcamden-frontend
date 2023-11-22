@@ -30,7 +30,7 @@
           <ul class="lbcamden-footer__list lbcamden-footer__list--social">
             {% for item in params.navigationSocial %}
               <li class="lbcamden-footer__list--social__item">
-                <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
+                <a rel="noreferrer noopener" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
               </li>
             {% endfor %}
           </ul>
