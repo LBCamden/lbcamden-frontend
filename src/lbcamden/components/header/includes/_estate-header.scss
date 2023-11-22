@@ -7,7 +7,7 @@ $menu-bg-colour: lbcamden-colour("govuk-bg-bright2-colour");
 $menu-text-colour: lbcamden-colour("black");
 $header-bar-height: 10px;
 $header-bar-colour: lbcamden-colour("govuk-brand1-1-colour");
-$mobile-menu-font-weight: inherit;
+$mobile-menu-font-weight: 600;
 $header-padding-bottom: 5px;
 
 @import "./base";

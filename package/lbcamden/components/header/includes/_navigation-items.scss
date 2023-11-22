@@ -102,6 +102,10 @@
     color: $govuk-link-colour;
   }
 
+  &:focus {
+    color: lbcamden-colour("black");
+  }
+
   @include govuk-media-query($from: desktop) {
     color: $header-text-colour;
 
@@ -127,6 +131,8 @@
 }
 
 @include navigation-toggles {
+  @include govuk-font(16, 600);
+
   &:after {
     content: "";
     position: absolute;
@@ -138,21 +144,31 @@
   }
 
   &:hover:not(:focus) {
-    color: $header-text-colour-hover;
+    &:not(.lbcamden-header__open-button) {
+      color: $header-text-colour-hover;
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: auto;
-      right: 15px;
-      bottom: 0;
-      left: 15px;
-      width: auto;
-      height: 3px;
-      background: $header-target-indicator-colour;
+      &:after {
+        content: "";
+        position: absolute;
+        top: auto;
+        right: 15px;
+        bottom: 0;
+        left: 15px;
+        width: auto;
+        height: 3px;
+        background: $header-target-indicator-colour;
+      }
+
+      &.lbcamden-header__search-toggle-button {
+        &:after {
+          right: 10%;
+          left: 10%;
+        }
+      }
     }
   }
 
+  &:focus:focus-visible,
   &:focus:not(.lbcamden-header__open-button) {
     outline: 3px solid transparent;
     color: #0b0c0c;
