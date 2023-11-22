@@ -4,7 +4,7 @@
 <footer class="lbcamden-footer {{params.classes}}" role="contentinfo" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="govuk-width-container">
     {% if params.navigation | length or params.navigationSocial.length or params.navigationSocial %}
-
+    <h2 class="govuk-visually-hidden">Site navigation</h2>
     <div class="govuk-row lbcamden-footer__navigation">
       <ul class="lbcamden-footer__list lbcamden-footer__list--primary govuk-grid-column-two-thirds-from-desktop">
         {% for item in params.navigation %}
@@ -30,7 +30,7 @@
           <ul class="lbcamden-footer__list lbcamden-footer__list--social">
             {% for item in params.navigationSocial %}
               <li class="lbcamden-footer__list--social__item">
-                <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
+                <a rel="noreferrer noopener" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
               </li>
             {% endfor %}
           </ul>
