@@ -35,8 +35,7 @@
     "chromatic": "^10.1.0",
     "govuk-frontend": "^4.7.0",
     "html-escaper": "^3.0.3",
-    "iframe-resizer": "^4.3.6",
-    "jest-environment-jsdom": "^29.7.0"
+    "iframe-resizer": "^4.3.6"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
@@ -84,6 +83,7 @@
     "html5shiv": "^3.7.3",
     "jest": "^29.7.0",
     "jest-axe": "^5.0.1",
+    "jest-environment-jsdom": "^29.7.0",
     "jest-puppeteer": "^9.0.2",
     "jest-serializer-html": "^7.0.0",
     "jquery": "1.12.4",
