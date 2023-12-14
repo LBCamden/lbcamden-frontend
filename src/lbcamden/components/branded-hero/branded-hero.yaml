@@ -1,0 +1,42 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: heading
+    type: string
+    required: false
+    description: Heading text
+  - name: logo
+    type: object
+    required: false
+    description: Logo for microsite
+  - name: image
+    type: object
+    required: false
+    description: Image configuration as per LBCamden image component
+  - name: attributes
+      type: object
+      required: false
+      description: HTML attributes (for example data attributes) to add to the header container.
+
+examples:
+  - name: default
+    description: Standard application of hero image
+    data:
+      heading: Families
+      image:
+        src: /example-assets/images/hero.jpg
+        alt: ""
+      heading: Families
+      logo:
+        src: /example-assets/images/logo.png
+        alt: Camden Families logo
+  - name: without-links-or-heading
+    description: Application of hero image without links
+    data:
+      heading: Families
+      image:
+        src: /example-assets/images/hero.jpg
+      attributes:
+        style: "background-color: #a066dd;"
