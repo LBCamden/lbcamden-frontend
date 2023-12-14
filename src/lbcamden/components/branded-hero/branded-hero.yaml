@@ -16,10 +16,9 @@ params:
     required: false
     description: Image configuration as per LBCamden image component
   - name: attributes
-      type: object
-      required: false
-      description: HTML attributes (for example data attributes) to add to the header container.
-
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the header container.
 examples:
   - name: default
     description: Standard application of hero image
