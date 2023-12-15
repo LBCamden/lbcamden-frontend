@@ -31,11 +31,17 @@ examples:
       logo:
         src: /example-assets/images/logo.png
         alt: Camden Families logo
+      attributes:
+        style: 'background-color: #a066dd;'
   - name: without-links-or-heading
     description: Application of hero image without links
     data:
       heading: Families
+      logo:
+        src: /example-assets/images/logo.png
+        alt: Camden Families logo
       image:
         src: /example-assets/images/hero.jpg
+        alt: ""
       attributes:
         style: "background-color: #a066dd;"

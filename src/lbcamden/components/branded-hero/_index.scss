@@ -1,32 +1,21 @@
-$lbcamden-hero-height: 442px;
-$lbcamden-hero-max-width: 1440px;
+$lbcamden-hero-branded-height: 442px;
+$lbcamden-hero-branded-max-width: 1440px;
 
 .lbcamden-branded-hero {
-  position: relative;
+  display: flex;
+  flex-direction: row;
 
   z-index: 1;
   right: 50%;
   left: 50%;
 
   width: 100vw;
-  min-height: $lbcamden-hero-height;
+  max-height: $lbcamden-hero-height;
   margin-right: -50vw;
   margin-left: -50vw;
 
   @include govuk-media-query($from: "tablet") {
     margin-bottom: govuk-spacing(6);
-  }
-
-  &__bg {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    max-width: $lbcamden-hero-max-width;
-    height: 100%;
-    object-fit: cover;
-    transform: translateX(-50%);
   }
 
   &__content {

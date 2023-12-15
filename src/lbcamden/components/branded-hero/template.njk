@@ -1,3 +1,18 @@
-<h1> hello world </h1>
+{% from "../image/macro.njk" import LBCamdenImage %}
+
+<div class="lbcamden-branded-hero">
+  {{ LBCamdenImage({
+    "src": params.image.src,
+    "alt": params.image.alt
+  }) }}
+
+  <div class="govuk-width-container" style="{{params.attributes.style}}">
+    <div class="lbcamden-hero__content">
+      <img src="{{params.logo.src}}" alt="{{params.logo.alt}}">
+      <h1>{{ params.heading }}</h1>
+    </div>
+  </div>
+</div>
+
 
 
