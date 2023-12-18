@@ -3,32 +3,33 @@ $lbcamden-hero-branded-max-width: 1440px;
 
 .lbcamden-branded-hero {
   display: flex;
-  flex-direction: row;
-
-  z-index: 1;
-  right: 50%;
-  left: 50%;
-
+  flex-direction: column;
   width: 100vw;
-  max-height: $lbcamden-hero-height;
-  margin-right: -50vw;
-  margin-left: -50vw;
+  max-height: $lbcamden-hero-branded-height;
 
   @include govuk-media-query($from: "tablet") {
     margin-bottom: govuk-spacing(6);
+    flex-direction: row;
+  }
+
+  .lbcamden-image {
+
+    @include govuk-media-query($from: "tablet") {
+      width: 50vw;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
+    width: 50vw;
     padding: 0 govuk-spacing(1);
+    color: inherit;
 
     h1 {
       @extend %govuk-heading-m;
       @include govuk-responsive-margin(1, "bottom");
-
+      color: inherit;
       font-weight: 300;
     }
 
@@ -38,9 +39,7 @@ $lbcamden-hero-branded-max-width: 1440px;
     }
 
     @include govuk-media-query($from: "mobile-large") {
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: flex-start;
+      justify-content: flex-end;
     }
 
     @include govuk-media-query($from: "tablet") {
@@ -52,71 +51,7 @@ $lbcamden-hero-branded-max-width: 1440px;
     }
   }
 
-  &__spacer {
-    flex-grow: 1;
-    min-width: govuk-spacing(6);
-  }
-
-  &__engagement,
-  &__links {
-    @include govuk-responsive-margin(7, "top");
-    @include govuk-responsive-margin(7, "bottom");
-
-    display: inline-block;
-    width: auto;
-    padding: govuk-spacing(5);
-
-    color: inherit;
-    background-color: govuk-colour("white");
-    text-decoration: none;
-
-    @include govuk-media-query($from: "mobile-large") {
-      width: 290px;
-    }
-
-    @include govuk-media-query($from: "tablet") {
-      padding: govuk-spacing(5) govuk-spacing(4);
-    }
-
-    @include govuk-media-query($from: "desktop") {
-      width: 390px;
-    }
-
-    &:visited {
-      color: inherit;
-    }
-
-    > a {
-      display: block;
-      margin-bottom: govuk-spacing(2);
-      font-weight: 600;
-
-      &:after {
-        content: " >";
-      }
-    }
-  }
-
-  &__links {
-    flex-shrink: .3;
-  }
-
-  &__engagement {
-    h2 {
-      @extend %govuk-heading-m;
-      @include govuk-responsive-margin(1, "bottom");
-    }
-
-    > *:last-child {
-      margin-bottom: 0;
-    }
-
-    max-width: 610px;
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    @include govuk-media-query($until: "mobile-large") {
-      margin-top: govuk-spacing(-4);
-    }
+  &__logo {
+    max-height: 50px;
   }
 }

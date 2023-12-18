@@ -1,18 +1,15 @@
 {% from "../image/macro.njk" import LBCamdenImage %}
 
-<div class="lbcamden-branded-hero">
+<div class="lbcamden-branded-hero"  style="{{params.attributes.style}}">
   {{ LBCamdenImage({
     "src": params.image.src,
     "alt": params.image.alt
   }) }}
 
-  <div class="govuk-width-container" style="{{params.attributes.style}}">
-    <div class="lbcamden-hero__content">
-      <img src="{{params.logo.src}}" alt="{{params.logo.alt}}">
+  <div class="govuk-width-container">
+    <div class="lbcamden-branded-hero__content">
+      <img class="lbcamden-branded-hero__logo" src="{{params.logo.src}}" alt="{{params.logo.alt}}">
       <h1>{{ params.heading }}</h1>
     </div>
   </div>
 </div>
-
-
-

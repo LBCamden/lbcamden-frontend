@@ -23,20 +23,19 @@ examples:
   - name: default
     description: Standard application of hero image
     data:
-      heading: Families
+      heading: Supporting families to give children the best start in life
       image:
         src: /example-assets/images/hero.jpg
         alt: ""
-      heading: Families
       logo:
         src: /example-assets/images/logo.png
         alt: Camden Families logo
       attributes:
-        style: 'background-color: #a066dd;'
+        style: 'background-color: #a066dd; color: #fff;'
   - name: without-links-or-heading
     description: Application of hero image without links
     data:
-      heading: Families
+      heading: Supporting families to give children the best start in life
       logo:
         src: /example-assets/images/logo.png
         alt: Camden Families logo
