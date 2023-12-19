@@ -1,57 +1,60 @@
-$lbcamden-hero-branded-height: 442px;
 $lbcamden-hero-branded-max-width: 1440px;
+$lbcamden-branded-hero-height: 442px;
 
 .lbcamden-branded-hero {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  max-height: $lbcamden-hero-branded-height;
+  align-items: flex-end;
+  max-width: $lbcamden-hero-branded-max-width;
+  max-height: $lbcamden-branded-hero-height;
+  overflow: hidden;
 
   @include govuk-media-query($from: "tablet") {
-    margin-bottom: govuk-spacing(6);
     flex-direction: row;
   }
 
+  @include govuk-media-query($until: "tablet") {
+    height: 100%;
+  }
+
   .lbcamden-image {
+    width: 100%;
+    aspect-ratio: .99;
 
     @include govuk-media-query($from: "tablet") {
-      width: 50vw;
+      width: 50%;
     }
+
+    height: 100%;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    padding: 0 govuk-spacing(1);
+    padding: govuk-spacing(2) govuk-spacing(4);
     color: inherit;
 
-    h1 {
-      @extend %govuk-heading-m;
-      @include govuk-responsive-margin(1, "bottom");
-      color: inherit;
-      font-weight: 300;
+    @include govuk-media-query($until: "tablet") {
+      width: 100%;
     }
 
     h2 {
-      @extend %govuk-heading-l;
-      @include govuk-responsive-margin(4, "bottom");
+      @extend %govuk-heading-m;
+      color: inherit;
+    }
+
+    p {
+      color: inherit;
     }
 
     @include govuk-media-query($from: "mobile-large") {
       justify-content: flex-end;
     }
-
-    @include govuk-media-query($from: "tablet") {
-      margin: 0 govuk-spacing(-3);
-    }
-
-    @include govuk-media-query($from: "wide") {
-      margin: 0 govuk-spacing(-4);
-    }
   }
 
   &__logo {
-    max-height: 50px;
+    width: 40%;
+    max-width: 50%;
+    padding-top: govuk-spacing(2);
   }
 }

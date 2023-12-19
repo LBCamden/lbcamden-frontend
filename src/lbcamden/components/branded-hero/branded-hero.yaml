@@ -3,10 +3,14 @@ params:
     type: string
     required: false
     description: Classes to add to the header container.
-  - name: heading
+  - name: headline
+    type: object
+    required: true
+    description: Heading text
+  - name: tagline
     type: string
     required: false
-    description: Heading text
+    description: Tagline text
   - name: logo
     type: object
     required: false
@@ -23,24 +27,16 @@ examples:
   - name: default
     description: Standard application of hero image
     data:
-      heading: Supporting families to give children the best start in life
+      headline: Supporting families to give children the best start in life
+      tagline:
+        text: For children and young people 0-25
+        classes: ''
+        url: ''
       image:
-        src: /example-assets/images/hero.jpg
+        src: /example-assets/images/image.png
         alt: ""
       logo:
         src: /example-assets/images/logo.png
         alt: Camden Families logo
       attributes:
-        style: 'background-color: #a066dd; color: #fff;'
-  - name: without-links-or-heading
-    description: Application of hero image without links
-    data:
-      heading: Supporting families to give children the best start in life
-      logo:
-        src: /example-assets/images/logo.png
-        alt: Camden Families logo
-      image:
-        src: /example-assets/images/hero.jpg
-        alt: ""
-      attributes:
-        style: "background-color: #a066dd;"
+        style: 'background-color: #6667e9; color: #fff;'
