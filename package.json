@@ -30,7 +30,7 @@
     "percy": "npx percy exec -- cypress run"
   },
   "dependencies": {
-    "chromatic": "^6.18.0",
+    "chromatic": "^10.1.0",
     "govuk-frontend": "^4.4.1",
     "html-escaper": "^3.0.3",
     "iframe-resizer": "^4.3.6"
