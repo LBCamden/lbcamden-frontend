@@ -35,6 +35,7 @@ $lbcamden-branded-hero-height: 442px;
     flex-direction: column;
     padding: govuk-spacing(2) govuk-spacing(4);
     color: inherit;
+    align-items: start;
 
     h2 {
       @extend %govuk-heading-m;
@@ -56,7 +57,7 @@ $lbcamden-branded-hero-height: 442px;
   }
 
   &__logo {
-    width: fit-content;
+    width: auto;
     height: 75px;
     padding-bottom: govuk-spacing(4);
   }
