@@ -1,0 +1,64 @@
+$lbcamden-hero-branded-max-width: 1440px;
+$lbcamden-branded-hero-height: 442px;
+
+.lbcamden-branded-hero {
+  display: flex;
+  flex-direction: column;
+  max-width: $lbcamden-hero-branded-max-width;
+  height: 100%;
+  overflow: hidden;
+
+  @include govuk-media-query($from: "tablet") {
+    flex-direction: row;
+  }
+
+  @include govuk-media-query($until: "desktop") {
+    height: 100%;
+  }
+
+  .lbcamden-image {
+    @include govuk-media-query($from: "mobile-large") {
+      object-fit: cover;
+    }
+
+    @include govuk-media-query($until: "tablet") {
+      max-height: 400px;
+    }
+
+    @include govuk-media-query($from: "tablet") {
+      width: 50%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: govuk-spacing(2) govuk-spacing(4);
+    color: inherit;
+    align-items: start;
+
+    h2 {
+      @extend %govuk-heading-m;
+      height: 100%;
+      color: inherit;
+    }
+
+    p {
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+
+    @include govuk-media-query($from: "tablet") {
+      justify-content: flex-end;
+      align-self: flex-end;
+      padding: govuk-spacing(4);
+    }
+  }
+
+  &__logo {
+    width: auto;
+    height: 75px;
+    padding-bottom: govuk-spacing(4);
+  }
+}

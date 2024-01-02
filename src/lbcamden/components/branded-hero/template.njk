@@ -1,0 +1,20 @@
+{% from "../image/macro.njk" import LBCamdenImage %}
+
+<div class="lbcamden-branded-hero"  style="{{params.attributes.style}}">
+  {{ LBCamdenImage({
+    "src": params.image.src,
+    "alt": params.image.alt
+  }) }}
+
+  <div class="lbcamden-branded-hero__content">
+    <img class="lbcamden-branded-hero__logo" src="{{ params.logo.src }}" alt="{{ params.logo.alt }}">
+    <h2>{{ params.headline }}</h2>
+      {% if params.tagline.url %}
+      <a href="{{ params.tagline.url }}">
+        <p>{{ params.tagline.text }}</p>
+      </a> 
+      {% else %} 
+      <p>{{ params.tagline.text }}</p>
+      {% endif %}
+  </div>
+</div>
