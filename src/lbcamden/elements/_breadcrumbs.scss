@@ -28,6 +28,19 @@
   }
 
   &--inverse {
+    .govuk-breadcrumbs__list-item,
+    .govuk-breadcrumbs__link {
+      color: lbcamden-colour("white");
+
+      &:hover {
+        color: lbcamden-colour("white");
+
+        &:link {
+          color: lbcamden-colour("white");
+        }
+      }
+    }
+
     .govuk-breadcrumbs__list-item {
       &:before {
         @include lbcamden-chevron(lbcamden-colour("white"), 0);
