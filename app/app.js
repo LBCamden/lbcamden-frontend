@@ -286,7 +286,10 @@ module.exports = (options) => {
 
     let bodyClasses = ''
     if (req.query.iframe) {
-      bodyClasses = 'app-iframe-in-component-preview'
+      bodyClasses = 'app-iframe-in-component-preview ' +
+        ((exampleConfig.data.classes &&
+          exampleConfig.data.classes.includes('inverse')
+        ) ? 'inverse-background' : '')
     }
 
     res.render('component-preview', { bodyClasses, previewLayout })
