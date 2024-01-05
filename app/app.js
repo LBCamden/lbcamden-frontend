@@ -278,6 +278,7 @@ module.exports = (options) => {
     // Construct and evaluate the component with the data for this example
     const macroName = helperFunctions.govukComponentNameToMacroName(componentName)
     const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+    // Add a class for an alternative background colour if the component is inverted
     const inverseClasses = ['govuk-breadcrumbs--inverse', 'govuk-back-link--inverse']
 
     res.locals.componentView = env.renderString(
