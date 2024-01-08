@@ -291,7 +291,7 @@ module.exports = (options) => {
       bodyClasses = 'app-iframe-in-component-preview ' +
         ((exampleConfig.data.classes &&
           inverseClasses.includes(exampleConfig.data.classes)
-        ) ? 'inverse-background' : '')
+        ) ? 'app-inverse-background' : '')
     }
 
     res.render('component-preview', { bodyClasses, previewLayout })
