@@ -30,7 +30,7 @@ const urls = [
 // const excludePagesCGULinkInPhaseBanner = ['/404.html', '/', '/typography/', '/typography-alt/', '/typography-alt-1/', '/accessibility/', '/cookies/'];
 const viewports = ['macbook-13']
 
-describe('Full Page examples visual regression test', () => {
+describe('Pattern examples visual regression test', () => {
 
   urls.forEach(url => {
     viewports.forEach(viewport => {
