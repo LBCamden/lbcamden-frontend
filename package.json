@@ -27,7 +27,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=c73762ed4204",
-    "percy": "npx percy exec -- cypress run",
+    "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
 
   },
