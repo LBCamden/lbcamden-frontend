@@ -278,6 +278,8 @@ module.exports = (options) => {
     // Construct and evaluate the component with the data for this example
     const macroName = helperFunctions.govukComponentNameToMacroName(componentName)
     const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+    // Add a class for an alternative background colour if the component is inverted
+    const inverseClasses = ['govuk-breadcrumbs--inverse', 'govuk-back-link--inverse']
 
     res.locals.componentView = env.renderString(
       `{% from '${componentName}/macro.njk' import ${macroName} %}
@@ -286,7 +288,10 @@ module.exports = (options) => {
 
     let bodyClasses = ''
     if (req.query.iframe) {
-      bodyClasses = 'app-iframe-in-component-preview'
+      bodyClasses = 'app-iframe-in-component-preview ' +
+        ((exampleConfig.data.classes &&
+          inverseClasses.includes(exampleConfig.data.classes)
+        ) ? 'app-inverse-background' : '')
     }
 
     res.render('component-preview', { bodyClasses, previewLayout })
