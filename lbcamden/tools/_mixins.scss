@@ -75,11 +75,9 @@
     height: $size * 4 + px;
   }
 
-  -webkit-transform: rotate($rotation + deg);
+  -ms-transform: rotate($rotation + deg);
 
-      -ms-transform: rotate($rotation + deg);
-
-          transform: rotate($rotation + deg);
+      transform: rotate($rotation + deg);
   border: none;
   background: chevron-stroke-width($stroke, $colour);
   background-repeat: no-repeat;
