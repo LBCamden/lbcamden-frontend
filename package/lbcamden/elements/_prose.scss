@@ -37,8 +37,7 @@
     img {
       width: 100%;
       height: auto;
-      -o-object-fit: cover;
-         object-fit: cover;
+      object-fit: cover;
       max-height: 300px;
 
       @include govuk-media-query($from: desktop) {

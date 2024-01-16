@@ -25,11 +25,9 @@ $lbcamden-hero-max-width: 1440px;
     width: 100%;
     max-width: $lbcamden-hero-max-width;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    object-fit: cover;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
   }
 
   &__content {
