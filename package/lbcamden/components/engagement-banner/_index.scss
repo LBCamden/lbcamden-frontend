@@ -28,8 +28,7 @@
   &__image {
     width: 100%;
     aspect-ratio: 3 / 2;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     -ms-flex-negative: 0;
         flex-shrink: 0;
 

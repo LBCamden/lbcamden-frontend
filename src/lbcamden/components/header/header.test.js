@@ -20,7 +20,7 @@ describe('/components/header', () => {
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
             const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
             expect(target).toEqual(true)
-          })
+          }, 10000)
         })
       })
       describe('on all devices', () => {

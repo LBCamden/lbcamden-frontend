@@ -18,11 +18,11 @@ const eol = require('gulp-eol')
 const glob = require('glob')
 const rename = require('gulp-rename')
 const cssnano = require('cssnano')
-const postcsspseudoclasses = require('postcss-pseudo-classes')({
-  // Work around a bug in pseudo classes plugin that badly transforms
-  // :not(:whatever) pseudo selectors
-  blacklist: [':not(', ':disabled)', ':first-child)', ':last-child)', ':focus)', ':active)', ':hover)']
-})
+// const postcsspseudoclasses = require('postcss-pseudo-classes')({
+//   // Work around a bug in pseudo classes plugin that badly transforms
+//   // :not(:whatever) pseudo selectors
+//   blacklist: [':not(', ':disabled)', ':first-child)', ':last-child)', ':focus)', ':active)', ':hover)']
+// })
 
 // Compile CSS and JS task --------------
 // --------------------------------------
@@ -66,10 +66,10 @@ function compileStyles (done) {
       cssnano
     ])))
     .pipe(gulpif(!isDist, postcss([
-      autoprefixer,
+      autoprefixer
       // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
       // :hover class you can use to simulate the hover state in the review app
-      postcsspseudoclasses
+      // postcsspseudoclasses
     ])))
     .pipe(gulpif(isDist,
       rename({

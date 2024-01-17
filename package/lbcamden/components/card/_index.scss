@@ -217,8 +217,7 @@
   }
 
   &--image-3x2 img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     width: 100%;
     aspect-ratio: 3 / 2;
   }
