@@ -25,9 +25,6 @@
       fill="{% if params.pride %}url(#prideGradient){% else %}#{{ params.fillColour | default('000000') }}{% endif %}"/>
   </svg>
   <!--<![endif]-->
-  <!--[if IE 8]>
-      <img src="{{ params.assetsPath | default('/assets/images') }}/camden-logo--icon.png" width="60" height="60" />
-  <![endif]-->
 {% else %}
   <!--[if gt IE 8]><!-->
   <svg class="lbcamden-logo {% if params.classes %}{{ params.classes }}{% endif %}"
@@ -45,7 +42,4 @@
       fill="{% if params.pride %}url(#prideGradient){% else %}{{ params.fillColour | default('currentColor') }}{% endif %}"/>
   </svg>
   <!--<![endif]-->
-  <!--[if IE 8]>
-      <img src="{{ params.assetsPath | default('/assets/images') }}/camden-logo--full.png" width="250" height="50" />
-  <![endif]-->
 {% endif %}
