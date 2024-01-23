@@ -87,6 +87,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   &.\:active {
     // Bump the button down so it looks like its being pressed in
     top: $button-shadow-size;
+  }
 
   &:focus,
   &.\:focus {
