@@ -21,7 +21,6 @@ gulp.task('update-assets-version', () => {
   fs.writeFileSync(taskArguments.destination + '/VERSION.txt', pkg.version + '\r\n')
   return gulp.src([
     taskArguments.destination + '/lbcamden-frontend.min.css',
-    taskArguments.destination + '/lbcamden-frontend-ie8.min.css',
     taskArguments.destination + '/lbcamden-frontend.min.js'
   ])
     .pipe(vinylPaths(del))

@@ -153,14 +153,10 @@ gulp.task('js:compile', (done) => {
         // Used to set the `window` global and UMD/AMD export name
         // Component JavaScript is given a unique name to aid individual imports, e.g GOVUKFrontend.Accordion
         name: moduleName,
-        // Legacy mode is required for IE8 support
-        legacy: true,
         // UMD allows the published bundle to work in CommonJS and in the browser.
         format: 'umd'
       }))
-      .pipe(gulpif(isDist, uglify({
-        ie8: true
-      })))
+      .pipe(gulpif(isDist, uglify()))
       .pipe(gulpif(isDist,
         rename({
           basename: 'lbcamden-frontend',
@@ -178,9 +174,7 @@ gulp.task('js:copy-govukfrontend', () => {
     return gulp.src([
       configPaths.node_modules + 'govuk-frontend/govuk/all.js'
     ])
-      .pipe(uglify({
-        ie8: true
-      }))
+      .pipe(uglify())
       .pipe(
         rename({
           basename: 'govuk-frontend',
