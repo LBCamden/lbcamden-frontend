@@ -79,7 +79,6 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
-    "html5shiv": "^3.7.3",
     "jest": "^29.7.0",
     "jest-axe": "^5.0.1",
     "jest-environment-jsdom": "^29.7.0",
@@ -125,7 +124,7 @@
     "last 2 Edge versions",
     "last 2 Samsung versions",
     "Safari >= 9",
-    "ie 8-11",
+    "ie 9-11",
     "iOS >= 9"
   ],
   "standard": {
