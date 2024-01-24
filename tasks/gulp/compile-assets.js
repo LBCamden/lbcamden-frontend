@@ -82,47 +82,6 @@ function compileStyles (done) {
   done()
 }
 
-function compileOldIE (done) {
-  const compileOldIeStylesheet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
-  const sassOptions = {
-    includePaths: ['node_modules']
-  }
-  gulp.src(compileOldIeStylesheet)
-    .pipe(plumber(errorHandler))
-    .pipe(sass(sassOptions))
-    // minify css add vendor prefixes and normalize to compiled css
-    .pipe(gulpif(isDist, postcss([
-      autoprefixer,
-      cssnano,
-      // transpile css for ie https://github.com/jonathantneal/oldie
-      require('oldie')({
-        rgba: { filter: true },
-        rem: { disable: true },
-        unmq: { disable: true },
-        pseudo: { disable: true }
-      })
-    ])))
-    .pipe(gulpif(!isDist, postcss([
-      autoprefixer,
-      require('oldie')({
-        rgba: { filter: true },
-        rem: { disable: true },
-        unmq: { disable: true },
-        pseudo: { disable: true }
-        // more rules go here
-      })
-    ])))
-    .pipe(gulpif(isDist,
-      rename({
-        basename: 'lbcamden-frontend-ie8',
-        extname: '.min.css'
-      })
-    ))
-    .pipe(gulp.dest(taskArguments.destination + '/'))
-
-  done()
-}
-
 // function compileLegacy (done) {
 //   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
 //     .pipe(plumber(errorHandler))
@@ -134,27 +93,6 @@ function compileOldIE (done) {
 //       // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
 //       // :hover class you can use to simulate the hover state in the review app
 //       postcsspseudoclasses
-//     ]))
-//     .pipe(gulp.dest(taskArguments.destination + '/'))
-//
-//   done()
-// }
-
-// function compileLegacyIE (done) {
-//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy-ie8.scss'))
-//     .pipe(plumber(errorHandler))
-//     .pipe(sass({
-//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-//     }))
-//     .pipe(postcss([
-//       autoprefixer,
-//       postcsspseudoclasses,
-//       require('oldie')({
-//         rgba: { filter: true },
-//         rem: { disable: true },
-//         unmq: { disable: true },
-//         pseudo: { disable: true }
-//       })
 //     ]))
 //     .pipe(gulp.dest(taskArguments.destination + '/'))
 //
@@ -178,12 +116,12 @@ function compileFullPageStyles (done) {
 
 gulp.task('scss:compile', function (done) {
   // Default tasks if compiling for dist
-  var tasks = gulp.parallel(compileStyles, compileOldIE)
+  var tasks = gulp.parallel(compileStyles)
 
   if (isPublic) {
-    tasks = gulp.parallel(compileStyles, compileOldIE, compileFullPageStyles)
+    tasks = gulp.parallel(compileStyles, compileFullPageStyles)
   } else if (!isDist) {
-    tasks = gulp.parallel(compileStyles, compileOldIE)
+    tasks = gulp.parallel(compileStyles)
   }
 
   tasks()
@@ -215,14 +153,10 @@ gulp.task('js:compile', (done) => {
         // Used to set the `window` global and UMD/AMD export name
         // Component JavaScript is given a unique name to aid individual imports, e.g GOVUKFrontend.Accordion
         name: moduleName,
-        // Legacy mode is required for IE8 support
-        legacy: true,
         // UMD allows the published bundle to work in CommonJS and in the browser.
         format: 'umd'
       }))
-      .pipe(gulpif(isDist, uglify({
-        ie8: true
-      })))
+      .pipe(gulpif(isDist, uglify()))
       .pipe(gulpif(isDist,
         rename({
           basename: 'lbcamden-frontend',
@@ -240,9 +174,7 @@ gulp.task('js:copy-govukfrontend', () => {
     return gulp.src([
       configPaths.node_modules + 'govuk-frontend/govuk/all.js'
     ])
-      .pipe(uglify({
-        ie8: true
-      }))
+      .pipe(uglify())
       .pipe(
         rename({
           basename: 'govuk-frontend',
