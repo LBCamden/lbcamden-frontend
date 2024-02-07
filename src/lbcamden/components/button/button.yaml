@@ -113,7 +113,7 @@ examples:
   data:
     name: focus
     text: Focussed
-    classes: focussed
+    classes: :focus
 - name: Secondary
   description: A button for secondary actions
   data:

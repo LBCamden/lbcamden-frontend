@@ -37,8 +37,7 @@
     }
 
     &:focus,
-    &.\:focus,
-    &.focussed {
+    &.\:focus {
       color: lbcamden-colour("black");
 
       &:after {
@@ -128,8 +127,7 @@
     }
 
     &:focus,
-    &.\:focus,
-    &.focussed {
+    &.\:focus {
       color: lbcamden-colour("black");
       box-shadow: 0 0 0 2px lbcamden-colour("black");
       text-decoration: underline;
@@ -177,8 +175,7 @@
       }
 
       &:focus,
-      &.\:focus,
-      &.focussed {
+      &.\:focus {
         color: lbcamden-colour("black");
 
         &:after {

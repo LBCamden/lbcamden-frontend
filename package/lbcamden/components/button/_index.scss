@@ -90,8 +90,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   }
 
   &:focus,
-  &.\:focus,
-  &.focussed {
+  &.\:focus {
     border-color: $govuk-focus-colour;
     // When colours are overridden, for example when users have a dark mode,
     // backgrounds and box-shadows disappear, so we need to ensure there's a
@@ -225,8 +224,7 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
 
     &:focus,
-    &.\:focus,
-    &.focussed {
+    &.\:focus {
       color: $govuk-focus-text-colour;
 
       &:hover,
@@ -274,8 +272,7 @@ $button-shadow-size: $govuk-border-width-form-element;
     }
 
     &:focus,
-    &.\:focus,
-    &.focussed {
+    &.\:focus {
       color: $govuk-focus-text-colour;
 
       &:hover,
