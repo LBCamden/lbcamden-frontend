@@ -28,7 +28,8 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=c73762ed4204",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
-    "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
+    "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
+    "cypress": "npx cypress run --spec \"cypress/e2e/focus.cy.js\""
   },
   "dependencies": {
     "chromatic": "^10.1.0",
@@ -57,6 +58,7 @@
     "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.11",
+    "cypress-real-events": "^1.11.0",
     "del": "^5.0.0",
     "eslint": "^6.8.0",
     "express": "^4.16.4",
