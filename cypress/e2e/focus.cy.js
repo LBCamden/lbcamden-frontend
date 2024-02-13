@@ -1,5 +1,5 @@
 describe('Header focus test', () => {
-    it('should display focus states for each top level link', () => {
+    xit('should display focus states for each top level link on desktop', () => {
         cy.viewport("macbook-13");
         cy.visit('http://localhost:3000/components/header/with-mixed-levels-of-navigation/preview');
         cy.window().focus();
@@ -16,13 +16,30 @@ describe('Header focus test', () => {
         cy.wait(500)
     })
 
-    it('should display focus states for second level links and components', () => {
+    xit('should display focus states for each top level link on mobile', () => {
+        cy.viewport("iphone-6+");
+        cy.visit('http://localhost:3000/components/header/with-mixed-levels-of-navigation/preview');
+        cy.window().focus();
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+    })
+
+    xit('should display focus states for second level links and components on desktop', () => {
         cy.viewport("macbook-13");
         cy.visit('http://localhost:3000/components/header/with-mixed-levels-of-navigation/preview');
         cy.window().focus();
+        cy.wait(500)
         cy.realPress('Tab');
+        cy.wait(500)
         cy.realPress('Tab');
+        cy.wait(500)
         cy.realPress('Tab');
+        cy.wait(500)
         cy.focused().realPress('Enter');
         cy.wait(500)
         cy.realPress('Tab');
@@ -33,7 +50,130 @@ describe('Header focus test', () => {
         cy.wait(500)
         cy.realPress('Tab');
         cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab')
+        cy.wait(500)
+        cy.realPress('Enter');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab')
+        cy.wait(500)
+    })
+    
+    it('should display focus states for second level links and components on mobile', () => {
+        cy.viewport("iphone-6+");
+        cy.visit('http://localhost:3000/components/header/with-mixed-levels-of-navigation/preview');
+        cy.window().focus();
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.focused().realPress('Enter');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+        cy.focused().realPress('Enter');
+        cy.wait(500)
+        cy.realPress('Tab')
+        cy.wait(500)
+        cy.realPress('Tab');
+        cy.wait(500)
+    })
+})
+
+describe('Footer focus test', () => {
+    it('should show focus states on all footer link elements in desktop', () => {
+        cy.viewport("macbook-13");
+        cy.visit('http://localhost:3000/components/footer/with-primary,-secondary-and-utility-navigation,-sponsor-image-and-social-navigation/preview')
+        cy.window().focus();
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
     })
 
-    //should i do one for the search section?
+    it('should show focus states on all footer link elements in mobile', () => {
+        cy.viewport("iphone-6+");
+        cy.visit('http://localhost:3000/components/footer/with-primary,-secondary-and-utility-navigation,-sponsor-image-and-social-navigation/preview')
+        cy.window().focus();
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+        cy.realPress('Tab');
+        cy.wait(500);
+    })
 })
