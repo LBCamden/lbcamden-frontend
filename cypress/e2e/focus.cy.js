@@ -30,29 +30,27 @@ describe('Focus tests', () => {
   Object.keys(focusTests).forEach(test => {
     Object.keys(focusTests[test].tests).forEach(currentTest => {
       Object.keys(focusTests[test].tests[currentTest]).forEach(viewport => {
-        it(`should display focus states for ${test} ${currentTest} for ${viewport}`), () => {
-          cy.viewport(viewports[viewport])
-          cy.visit(domain + focusTests[test].url)
+        it(`should display focus states for ${test} ${currentTest} for ${viewport}`, () => {
+          cy.viewport(viewports[viewport]);
+          cy.visit(domain + focusTests[test].url);
           cy.window().focus();
-          cy.wait(500)
+          cy.wait(waitTime);
           focusTests[test].tests[currentTest][viewport].forEach(testAction => {
+            cy.wait(waitTime);
             switch (testAction) {
               case 'tab':
                 cy.realPress('Tab');
-                cy.wait(500)
+                cy.wait(waitTime);
                 break;
               case 'enter':
                 cy.realPress('Enter');
-                cy.wait(500)
+                cy.wait(waitTime);
                 break;
               default:
-                //throw exception
-                console.log('unknown action')
-                break;
+                throw new Error('unknown action');
             }
-          }
-          )
-        }
+          })
+        })
       })
     })
   })
