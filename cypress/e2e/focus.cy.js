@@ -1,41 +1,19 @@
 const waitTime = 500;
 const viewports = { "desktop": 'macbook-13', "mobile": 'iphone-6+' };
 const domain = 'http://localhost:3000'
-const focusTests = {
-  "header": {
-    "url": '/components/header/with-mixed-levels-of-navigation/preview',
-    "tests": {
-      "top level links": {
-        "desktop": ['tab', 'tab', 'tab', 'tab', 'tab'],
-        "mobile": ['tab', 'tab', 'enter', 'tab', 'tab', 'tab', 'tab', 'enter', 'tab', 'tab']
-      },
-      "second level links": {
-        "desktop": ['tab', 'tab', 'tab', 'enter', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'enter', 'tab', 'tab'],
-        "mobile": ['tab', 'tab', 'enter', 'tab', 'tab', 'tab', 'tab', 'enter', 'tab', 'tab']
-      }
-    }
-  },
-  "footer": {
-    "url": '/components/footer/with-primary,-secondary-and-utility-navigation,-sponsor-image-and-social-navigation/preview',
-    "tests": {
-      "links": {
-        "desktop": ['tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab'],
-        "mobile": ['tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab', 'tab']
-      }
-    }
-  }
-};
+import headerFocusTests from '../fixtures/headerFocus'
+import footerFocusTests from '../fixtures/footerFocus'
 
-describe('Focus tests', () => {
-  Object.keys(focusTests).forEach(test => {
-    Object.keys(focusTests[test].tests).forEach(currentTest => {
-      Object.keys(focusTests[test].tests[currentTest]).forEach(viewport => {
+const testInstantiator = (testData) => {
+  Object.keys(testData).forEach(test => {
+    Object.keys(testData[test].tests).forEach(currentTest => {
+      Object.keys(testData[test].tests[currentTest]).forEach(viewport => {
         it(`should display focus states for ${test} ${currentTest} for ${viewport}`, () => {
           cy.viewport(viewports[viewport]);
-          cy.visit(domain + focusTests[test].url);
+          cy.visit(domain + testData[test].url);
           cy.window().focus();
           cy.wait(waitTime);
-          focusTests[test].tests[currentTest][viewport].forEach(testAction => {
+          testData[test].tests[currentTest][viewport].forEach(testAction => {
             cy.wait(waitTime);
             switch (testAction) {
               case 'tab':
@@ -54,4 +32,9 @@ describe('Focus tests', () => {
       })
     })
   })
+}
+
+describe('Focus tests', () => {
+  testInstantiator(headerFocusTests);
+  testInstantiator(footerFocusTests);
 })
