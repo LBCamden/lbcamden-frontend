@@ -15,7 +15,7 @@
         right: 1px;
       }
       -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+      transform: translateY(-50%);
     }
 
     &:hover,
@@ -26,7 +26,7 @@
       &:before {
         @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 3);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
     }
 
@@ -35,7 +35,7 @@
       &:before {
         @include lbcamden-chevron($govuk-link-visited-colour, 0, 1, 3);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
     }
 
@@ -50,7 +50,7 @@
       &:before {
         @include lbcamden-chevron(lbcamden-colour("black"), 0, 1, 3);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
 
       &:hover,
@@ -64,7 +64,7 @@
       &:before {
         @include lbcamden-chevron(lbcamden-colour("black"), 0, 1, 3);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
     }
   }
@@ -76,7 +76,7 @@
     display: -ms-inline-flexbox;
     display: inline-flex;
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
     position: relative;
     min-height: 50px;
     margin-bottom: 0;
@@ -128,7 +128,7 @@
       top: 50%;
       right: 10px;
       -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+      transform: translateY(-50%);
 
       @include govuk-media-query($from: tablet) {
         right: 15px;
@@ -145,7 +145,7 @@
       &:after {
         @include lbcamden-chevron(lbcamden-colour("black"), 0, 2, 4);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
     }
 
@@ -176,14 +176,14 @@
         &:after {
           @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 4);
           -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
+          transform: translateY(-50%);
         }
       }
 
       &:after {
         @include lbcamden-chevron(lbcamden-colour("blue"), 0, 1, 4);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+        transform: translateY(-50%);
       }
 
       &:focus,
@@ -193,7 +193,7 @@
         &:after {
           @include lbcamden-chevron(lbcamden-colour("black"), 0, 1, 4);
           -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
+          transform: translateY(-50%);
         }
       }
     }
