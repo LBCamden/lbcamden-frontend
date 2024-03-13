@@ -1,6 +1,6 @@
 const waitTime = 500;
 const viewports = { "desktop": 'macbook-13', "mobile": 'iphone-6+' };
-const domain = 'http://localhost:3000'
+const domain = Cypress.env('domain') || 'http://localhost:3000';
 import headerFocusTests from '../fixtures/headerFocus'
 import footerFocusTests from '../fixtures/footerFocus'
 
