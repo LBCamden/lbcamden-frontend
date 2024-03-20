@@ -13,9 +13,8 @@ LBCamdenGuideContent.prototype.init = function () {
 }
 
 LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
-  if (!this.$module) {
-    return
-  }
+  if (!this.$module) return
+  if (window.location.hash === '#main-content') return
 
   if (!window.location.hash) {
     window.history.replaceState(null, null, window.location.pathname + window.location.search)

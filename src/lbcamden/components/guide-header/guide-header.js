@@ -12,6 +12,8 @@ LBCamdenGuideHeader.prototype.init = function () {
 }
 
 LBCamdenGuideHeader.prototype.updateActiveLink = function () {
+  if (window.location.hash === '#main-content') return
+
   const isEmptyHash = !window.location.hash || window.location.hash === '#'
   let i = 0
 
