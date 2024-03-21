@@ -15,7 +15,7 @@ LBCamdenGuideHeader.prototype.updateActiveLink = function ({ handleNotFound } = 
   // This is needed to prevent internal navigation by anchor links (most importantly, "skip to main content")
   // from navigating to a 'not found' view
   if (!handleNotFound) {
-    if (!this.$module.querySelector(`[href=${window.location.hash}]`)) {
+    if (!this.$module.querySelector(`[href="${window.location.hash}"]`)) {
       return
     }
   }
