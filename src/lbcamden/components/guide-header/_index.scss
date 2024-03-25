@@ -3,6 +3,10 @@
     @include govuk-responsive-padding(3);
   }
 
+  &.lbcamden-list--dash li {
+    padding-right: 30px;
+  }
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
