@@ -4,7 +4,9 @@
   }
 
   &.lbcamden-list--dash li {
-    padding-right: 30px;
+    @include govuk-responsive-margin(5, "left");
+    @include govuk-responsive-padding(0, "left");
+    @include govuk-responsive-padding(6, "right");
   }
 
   display: flex;
@@ -39,7 +41,8 @@
     }
 
     @include govuk-media-query($from: desktop) {
-      width: calc(100% / 3);
+      // 90px is the width of the three padding-right values
+      width: calc((100% - 90px) / 3);
 
       &:nth-last-child(3) {
         margin-bottom: 0;
