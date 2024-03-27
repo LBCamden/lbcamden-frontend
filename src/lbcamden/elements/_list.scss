@@ -15,22 +15,13 @@ ul {
   &--dash {
     @extend .govuk-list--spaced;
     @include govuk-responsive-margin(5, "bottom");
-    padding: 0;
-    list-style: none outside;
+    list-style: "— " outside;
 
     li {
-      @include govuk-responsive-padding(5, "left");
+      @include govuk-responsive-padding(1, "left");
       @include govuk-responsive-margin(5, "bottom");
       @include govuk-font(16);
       position: relative;
-
-      &:before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        width: 15px;
-        overflow: hidden;
-      }
     }
 
     a:not(:hover) {
