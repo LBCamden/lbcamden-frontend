@@ -4,8 +4,11 @@
   }
 
   &.lbcamden-list--dash li {
-    @include govuk-responsive-margin(5, "left");
-    @include govuk-responsive-padding(0, "left");
+    @include govuk-media-query($from: tablet) {
+      @include govuk-responsive-margin(5, "left");
+    }
+
+    @include govuk-responsive-padding(1, "left");
     @include govuk-responsive-padding(6, "right");
   }
 
