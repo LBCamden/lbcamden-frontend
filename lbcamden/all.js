@@ -858,15 +858,13 @@ LBCamdenGuideContent.prototype.init = function () {
     return
   }
 
-  window.addEventListener('hashchange', this.showActiveGuide.bind(this));
-  this.showActiveGuide();
+  window.addEventListener('hashchange', () => this.showActiveGuide());
+  this.showActiveGuide({ handleNotFound: true });
   this.$module.classList.add('lbcamden-guide-content--loaded');
 };
 
-LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
-  if (!this.$module) {
-    return
-  }
+LBCamdenGuideContent.prototype.showActiveGuide = function ({ handleNotFound } = {}) {
+  if (!this.$module) return
 
   if (!window.location.hash) {
     window.history.replaceState(null, null, window.location.pathname + window.location.search);
@@ -874,6 +872,12 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 
   const articles = this.getArticles();
   const activeItem = this.getActiveItem();
+
+  // This is needed to prevent internal navigation by anchor links (most importantly, "skip to main content")
+  // from navigating to a 'not found' view
+  if (!handleNotFound && !activeItem) {
+    return
+  }
 
   for (const item of articles) {
     this.setArticleVisibility(item, item === activeItem);
@@ -990,11 +994,19 @@ LBCamdenGuideHeader.prototype.init = function () {
     return
   }
 
-  window.addEventListener('hashchange', this.updateActiveLink.bind(this));
-  this.updateActiveLink();
+  window.addEventListener('hashchange', () => this.updateActiveLink());
+  this.updateActiveLink({ handleNotFound: true });
 };
 
-LBCamdenGuideHeader.prototype.updateActiveLink = function () {
+LBCamdenGuideHeader.prototype.updateActiveLink = function ({ handleNotFound } = {}) {
+  // This is needed to prevent internal navigation by anchor links (most importantly, "skip to main content")
+  // from navigating to a 'not found' view
+  if (!handleNotFound) {
+    if (!this.$module.querySelector(`[href="${window.location.hash}"]`)) {
+      return
+    }
+  }
+
   const isEmptyHash = !window.location.hash || window.location.hash === '#';
   let i = 0;
 
@@ -1113,7 +1125,11 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
   this.$module.querySelectorAll('.lbcamden-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('lbcamden-header__open-button'));
 
   const theTarget = document.getElementById(theTargetID);
-  this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true));
+
+  // AW: Only close other sub-menus when in desktop mode
+  if (this.mql.matches === true) {
+    this.$module.querySelectorAll('.lbcamden-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true));
+  }
 
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true');
 
