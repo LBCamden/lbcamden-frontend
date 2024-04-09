@@ -13,15 +13,13 @@ LBCamdenGuideContent.prototype.init = function () {
     return
   }
 
-  window.addEventListener('hashchange', this.showActiveGuide.bind(this));
-  this.showActiveGuide();
+  window.addEventListener('hashchange', () => this.showActiveGuide());
+  this.showActiveGuide({ handleNotFound: true });
   this.$module.classList.add('lbcamden-guide-content--loaded');
 };
 
-LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = {}) {
-  if (!this.$module) {
-    return
-  }
+LBCamdenGuideContent.prototype.showActiveGuide = function ({ handleNotFound } = {}) {
+  if (!this.$module) return
 
   if (!window.location.hash) {
     window.history.replaceState(null, null, window.location.pathname + window.location.search);
@@ -29,6 +27,12 @@ LBCamdenGuideContent.prototype.showActiveGuide = function ({ scrollIntoView } = 
 
   const articles = this.getArticles();
   const activeItem = this.getActiveItem();
+
+  // This is needed to prevent internal navigation by anchor links (most importantly, "skip to main content")
+  // from navigating to a 'not found' view
+  if (!handleNotFound && !activeItem) {
+    return
+  }
 
   for (const item of articles) {
     this.setArticleVisibility(item, item === activeItem);

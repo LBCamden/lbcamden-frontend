@@ -13,11 +13,19 @@ LBCamdenGuideHeader.prototype.init = function () {
     return
   }
 
-  window.addEventListener('hashchange', this.updateActiveLink.bind(this));
-  this.updateActiveLink();
+  window.addEventListener('hashchange', () => this.updateActiveLink());
+  this.updateActiveLink({ handleNotFound: true });
 };
 
-LBCamdenGuideHeader.prototype.updateActiveLink = function () {
+LBCamdenGuideHeader.prototype.updateActiveLink = function ({ handleNotFound } = {}) {
+  // This is needed to prevent internal navigation by anchor links (most importantly, "skip to main content")
+  // from navigating to a 'not found' view
+  if (!handleNotFound) {
+    if (!this.$module.querySelector(`[href="${window.location.hash}"]`)) {
+      return
+    }
+  }
+
   const isEmptyHash = !window.location.hash || window.location.hash === '#';
   let i = 0;
 
