@@ -65,4 +65,3 @@ treat it as an interactive element - without this it will be
 {%- elseif element == 'input' %}
 <input value="{{ params.text }}" type="{{ params.type if params.type else 'submit' }}" {{- buttonAttributes | safe }} {{- commonAttributes | safe }}>
 {%- endif %}
-xxx

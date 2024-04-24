@@ -1,4 +1,4 @@
-$lbcamden-button-colour: $govuk-link-colour;
+$lbcamden-button-colour: lbcamden-colour("black");
 $lbcamden-button-hover-colour: $govuk-link-hover-colour;
 $lbcamden-button-shadow-colour: govuk-shade($lbcamden-button-colour, 60%);
 $lbcamden-button-text-colour: lbcamden-colour("white");
