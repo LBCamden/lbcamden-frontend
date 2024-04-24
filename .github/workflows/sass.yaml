@@ -12,12 +12,12 @@ jobs:
     name: Dart Sass v1 (latest)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version-file: '.nvmrc'
       - run: |
-          npm install govuk-frontend@v4.1.0
+          npm install govuk-frontend@v4.7.0
           npm install -g sass@v1.52.3
           sass --version
       # Treat CAMDEN.GOV.UK Frontend as a dependency by importing it via load paths,
@@ -33,12 +33,12 @@ jobs:
     name: LibSass v3 (latest, deprecated)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version-file: '.nvmrc'
       - run: |
           npm install -g node-sass@v7
-          npm install govuk-frontend@v4.1.0
+          npm install govuk-frontend@v4.7.0
           node-sass --version
       - run: time node-sass --includePath=node_modules src/lbcamden/all.scss > /dev/null

@@ -1,0 +1,39 @@
+name: "Chromatic"
+
+on: 
+    push:
+        branches:
+            - release-*
+            - main
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        # ⚠️ Pick one of these, matching the package manager for your project
+        run: npm ci
+
+    #   - name: Run tests
+    #     run: node_modules/.bin/chromatic --project-token=c73762ed4204
+    #     env:
+    #         project-token: c73762ed4204
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+          projectToken: c73762ed4204
+          debug: true
+          dryRun: true
+          exitZeroOnChanges: true
+          autoAcceptChanges: "main"

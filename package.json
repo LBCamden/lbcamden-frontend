@@ -29,10 +29,9 @@
     "chromatic": "npx chromatic --project-token=c73762ed4204",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
-
   },
   "dependencies": {
-    "chromatic": "^10.1.0",
+    "chromatic": "^11.3.0",
     "govuk-frontend": "^4.7.0",
     "html-escaper": "^3.0.3",
     "iframe-resizer": "^4.3.6"
