@@ -5,6 +5,7 @@ on:
         branches:
             - release-*
             - main
+            - chromatic-action
 
 jobs:
   chromatic:
