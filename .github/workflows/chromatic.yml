@@ -24,6 +24,12 @@ jobs:
         # ⚠️ Pick one of these, matching the package manager for your project
         run: npm ci
 
+      - name: Build package
+        run: npm run build:package
+
+      - name: Build dist
+        run: npm run build:dist        
+
     #   - name: Run tests
     #     run: node_modules/.bin/chromatic --project-token=c73762ed4204
     #     env:
