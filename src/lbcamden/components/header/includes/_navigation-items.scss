@@ -95,7 +95,7 @@
 &__search-item-link {
   @include govuk-link-style-no-underline;
   @include govuk-typography-weight-bold;
-  font-size: 16px;
+  @include govuk-font(16);
 
   &:link,
   &:visited {

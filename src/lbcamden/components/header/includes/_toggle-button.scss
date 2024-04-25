@@ -12,7 +12,7 @@
   border: 0;
   color: $header-text-colour;
   background: transparent;
-  font-size: 16px;
+  @include govuk-font(16);
   font-weight: $mobile-menu-font-weight;
   cursor: pointer;
 
@@ -131,9 +131,8 @@
   border: 0;
   color: $govuk-link-colour;
   background: none;
-  font-size: 16px;
   font-weight: $govuk-font-weight-bold;
-  //@include govuk-font(16, bold);
+  @include govuk-font(16);
 
   &-inner {
     @include govuk-responsive-padding(1, "top");
