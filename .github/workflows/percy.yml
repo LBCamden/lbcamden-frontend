@@ -1,0 +1,30 @@
+name: "Percy"
+
+on: 
+    push:
+        branches:
+            - release-*
+            - main
+
+jobs:
+  percy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        # ⚠️ Pick one of these, matching the package manager for your project
+        run: npm ci
+
+      - name: Build start project
+        run: npm run start
+
+      - name: Run tests
+        run: PERCY_TOKEN=web_66feecbd61c857d4fdc44f41f5823a5eb93c361861d236a36909b88ce741fe9c npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
