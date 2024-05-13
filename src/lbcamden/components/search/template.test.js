@@ -29,7 +29,7 @@ describe('search', () => {
       const $ = render('search', examples.default)
 
       const $component = $('.lbcamden-search__input')
-      expect($component.attr('name')).toEqual('search')
+      expect($component.attr('name')).toEqual('q')
     })
 
     it('renders with a form', () => {
