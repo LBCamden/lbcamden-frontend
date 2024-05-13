@@ -2,15 +2,45 @@
   {% set classNames = classNames + " " + params.classes %}
 {% endif %}
 
-<form class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}" action="/"
-      method="post" autocomplete="off" role="search">
-  <label class="govuk-label govuk-label--l govuk-visually-hidden" for="lbcamden-search__box">
-    {{ params.labelText | default('Search Camden.gov.uk') }}
+{%- if params.action %} 
+  {% set action = params.action %}
+  {% else %} 
+    {% set action = 'search' %}
+{% endif %}
+
+{%- if params.postMethod %}
+  {% set method = 'post' %}
+  {% else %}
+    {% set method  = 'get' %}
+{% endif %}
+
+{%- if params.name %}
+  {% set name = params.name %}
+  {% else %}
+    {% set name  = 'q' %}
+{% endif %}
+
+<form 
+  class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}" 
+  action="/{{ action }}"
+  method="{{ method }}" 
+  autocomplete="off" 
+  role="search">
+  <label 
+    class="govuk-label govuk-label--l govuk-visually-hidden" 
+    for="lbcamden-search__box">
+      {{ params.labelText | default('Search Camden.gov.uk') }}
   </label>
-  <input type="text" name="search"
-         class="lbcamden-search__input"
-         value="{{ params.value }}"
-         id="lbcamden-search__box" {% if params.placeholderText %}placeholder="{{ params.placeholderText }}"{% endif %} />
-  <button type="submit" class="lbcamden-search__btn"
-          id="lbcamden-search__btn">{{ params.labelText | default('Search Camden.gov.uk') }}</button>
+  <input 
+    type="text" 
+    name="{{ name }}"
+    class="lbcamden-search__input"
+    value="{{ params.value }}"
+    id="lbcamden-search__box" {% if params.placeholderText %}placeholder="{{ params.placeholderText }}"{% endif %} />
+  <button 
+    type="submit"
+    class="lbcamden-search__btn"
+    id="lbcamden-search__btn">
+      {{ params.labelText | default('Search Camden.gov.uk') }}
+  </button>
 </form>

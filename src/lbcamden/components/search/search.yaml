@@ -19,6 +19,23 @@ params:
     type: string
     required: false
     description: Value provided to search field
+  - name: name
+    type: string
+    required: false
+    description: Name attribute for the input field
+  - name: action
+    type: string
+    required: false
+    description: Action attribute for the input field
+  - name: postMethod
+    type: boolean
+    required: false
+    description: Boolean deciding whether to use a post method rather than get for the form
+  - name: info
+    type: string
+    required: false
+    description: Extra paramaters in object format 
+
 
 previewLayout: full-width
 accessibilityCriteria: |
