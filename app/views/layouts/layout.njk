@@ -2,13 +2,85 @@
 
 {% set htmlClasses = "app-no-canvas-background" %}
 
-{% block pageTitle %}CAMDEN.GOV.UK Frontend{% endblock %}
+{% block pageTitle %}Frontend Library - Digital - Camden Council{% endblock %}
 
 {# Turn the header and footer off #}
 {% block header %}
-  {{ LBCamdenHeader({
-    "search": false
-  }) }}
+{% from "header/macro.njk" import LBCamdenHeader %}
+
+{{ LBCamdenHeader({
+  "homepageUrl": "https://www.camden.gov.uk",
+  "search": false,
+  "siteNavigation": {
+    "title": "Frontend Library",
+    "search": false,
+    "homepageUrl": "/",
+    "navigation": [
+      {
+        "href": "#1",
+        "text": "Components",
+        "description": "Search for a department and find out what the council is doing",
+        "subItems": [
+          {
+            "href": "#1-1",
+            "text": "Bespoke",
+            "description": "Description of service"
+          },
+          {
+            "href": "#1-2",
+            "text": "Base",
+            "description": "Description of service"
+          }
+        ]
+      },
+      {
+        "href": "#1",
+        "text": "Examples",
+        "description": "Search for a department and find out what the council is doing",
+        "subItems": [
+          {
+            "href": "#1-1",
+            "text": "Full pages",
+            "description": "Description of service"
+          },
+          {
+            "href": "#1-2",
+            "text": "Patterns",
+            "description": "Description of service"
+          }
+        ]
+      },
+      {
+        "href": "#1",
+        "text": "Documentation",
+        "description": "Search for a department and find out what the council is doing",
+        "subItems": [
+          {
+            "href": "#1-1",
+            "text": "Get started",
+            "description": "Description of service"
+          },
+          {
+            "href": "#1",
+            "text": "Resources",
+            "description": "Description of service"
+          },
+          {
+            "href": "#1",
+            "text": "Contributing",
+            "description": "Description of service"
+          }
+        ]
+      }
+    ]
+  },
+  "phaseBanner": {
+    "tag": {
+      "text": "beta"
+    },
+    "html": "This is a new service – your <a class=\"govuk-link\" href=\"#\">feedback</a> will help us to improve it."
+  }
+}) }}
 {% endblock %}
 
 {% block bodyEnd %}
