@@ -85,11 +85,11 @@ describe('search', () => {
       expect($component.attr('placeholder')).toBe('Customised placeholder')
     })
 
-    xit('contains POST method', () => {
+    it('contains POST method', () => {
       const $ = render('search', examples['method attribute'])
 
-      const $component = $('.lbcamden-search__input')
-      expect($component.attr('action')).toBe('post')
+      const $component = $('.lbcamden-search')
+      expect($component.attr('method')).toBe('post')
     })
 
     it('renders custom form action', () => {
@@ -99,11 +99,11 @@ describe('search', () => {
       expect($component.attr('action')).toBe('/q')
     })
 
-    xit('includes additonal parameter hidden inputs', () => {
-      const $ = render('search', examples['additonal parameters'])
+    it('includes additonal parameter hidden inputs', () => {
+      const $ = render('search', examples['additional parameters'])
 
-      const $components = $('input')
-      expect($components.attr('action')).toBe('/q')
+      const $component = $('[name=highlighting]')
+      expect($component.attr('value')).toBe('true')
     })
   })
 })
