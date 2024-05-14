@@ -5,11 +5,11 @@
 {%- if params.action %} 
   {% set action = params.action %}
   {% else %} 
-    {% set action = 'search' %}
+    {% set action = '/search' %}
 {% endif %}
 
-{%- if params.postMethod %}
-  {% set method = 'post' %}
+{%- if params.method %}
+  {% set method = params.method %}
   {% else %}
     {% set method  = 'get' %}
 {% endif %}
@@ -17,17 +17,17 @@
 {%- if params.name %}
   {% set name = params.name %}
   {% else %}
-    {% set name  = 'q' %}
+    {% set name  = 'search' %}
 {% endif %}
 
 <form 
-  class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}" 
-  action="/{{ action }}"
-  method="{{ method }}" 
-  autocomplete="off" 
+  class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}"
+  action="{{ action }}"
+  method="{{ method }}"
+  autocomplete="off"
   role="search">
-  <label 
-    class="govuk-label govuk-label--l govuk-visually-hidden" 
+  <label
+    class="govuk-label govuk-label--l govuk-visually-hidden"
     for="lbcamden-search__box">
       {{ params.labelText | default('Search Camden.gov.uk') }}
   </label>
@@ -37,6 +37,11 @@
     class="lbcamden-search__input"
     value="{{ params.value }}"
     id="lbcamden-search__box" {% if params.placeholderText %}placeholder="{{ params.placeholderText }}"{% endif %} />
+    {% if params.additionalParameters %}
+      {% for name, value in params.additionalParameters %}
+        <input type="hidden" name="{{ name }}" value="{{ value }}">
+      {% endfor %}
+    {% endif %}
   <button 
     type="submit"
     class="lbcamden-search__btn"

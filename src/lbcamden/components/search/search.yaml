@@ -31,7 +31,7 @@ params:
     type: boolean
     required: false
     description: Boolean deciding whether to use a post method rather than get for the form
-  - name: info
+  - name: additionalParameters
     type: string
     required: false
     description: Extra paramaters in object format 
@@ -44,7 +44,6 @@ accessibilityCriteria: |
 examples:
   - name: default
     description: The standard implementation of a search bar
-    data:
   
   - name: Search input with value
     description: The standard implementation of a search bar with value entered
@@ -75,3 +74,15 @@ examples:
     hidden: true
     data:
       labelText: 'Search test'
+  - name: additional parameters
+    hidden: true
+    data:
+      additionalParameters: { highlighting: 'true', sort: 'relevance'}
+  - name: method attribute
+    hidden: true
+    data:
+      method: post
+  - name: action attribute
+    hidden: true
+    data:
+      action: '/q'

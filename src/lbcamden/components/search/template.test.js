@@ -29,7 +29,7 @@ describe('search', () => {
       const $ = render('search', examples.default)
 
       const $component = $('.lbcamden-search__input')
-      expect($component.attr('name')).toEqual('q')
+      expect($component.attr('name')).toEqual('search')
     })
 
     it('renders with a form', () => {
@@ -83,6 +83,27 @@ describe('search', () => {
 
       const $component = $('.lbcamden-search__input')
       expect($component.attr('placeholder')).toBe('Customised placeholder')
+    })
+
+    xit('contains POST method', () => {
+      const $ = render('search', examples['method attribute'])
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('action')).toBe('post')
+    })
+
+    it('renders custom form action', () => {
+      const $ = render('search', examples['action attribute'])
+
+      const $component = $('.lbcamden-search')
+      expect($component.attr('action')).toBe('/q')
+    })
+
+    xit('includes additonal parameter hidden inputs', () => {
+      const $ = render('search', examples['additonal parameters'])
+
+      const $components = $('input')
+      expect($components.attr('action')).toBe('/q')
     })
   })
 })
