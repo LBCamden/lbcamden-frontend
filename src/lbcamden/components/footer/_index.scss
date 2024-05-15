@@ -90,7 +90,7 @@
     }
 
     .lbcamden-footer__list-item a {
-      font-size: 16px;
+      @include govuk-font(16);
 
       @include govuk-media-query($from: desktop) {
         @include govuk-responsive-margin(7, "right");
@@ -105,7 +105,7 @@
     margin-right: -($govuk-gutter-half);
     margin-left: -($govuk-gutter-half);
     color: lbcamden-colour("white");
-    font-size: 16px;
+    @include govuk-font(16);
     flex-direction: column;
     @include govuk-responsive-margin(6, "top");
     @include govuk-responsive-margin(6, "bottom");
