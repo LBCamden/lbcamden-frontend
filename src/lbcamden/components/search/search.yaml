@@ -19,6 +19,23 @@ params:
     type: string
     required: false
     description: Value provided to search field
+  - name: name
+    type: string
+    required: false
+    description: Name attribute for the input field
+  - name: action
+    type: string
+    required: false
+    description: Action attribute for the search field
+  - name: method
+    type: string
+    required: false
+    description: Method attribute on the search field
+  - name: additionalParameters
+    type: object
+    required: false
+    description: Extra paramaters in object format 
+
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -49,12 +66,28 @@ examples:
     data:
       classes: 'govuk-input--width-30'
 
-  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
-    hidden: true
+    description: Search input with custom classes
     data:
       classes: search-class-test
   - name: labelText
-    hidden: true
+    description: Search input with custom label text
     data:
       labelText: 'Search test'
+  - name: additional parameters
+    description: Search input passing additional parameters
+    data:
+      additionalParameters: 
+        highlighting: true
+  - name: method attribute
+    description: Search input with POST method attribute
+    data:
+      method: post
+  - name: action attribute
+    description: Search input with custom action attribute
+    data:
+      action: '/q'
+  - name: name attribute
+    description: Search input with custom name attribute
+    data:
+      name: 'find'

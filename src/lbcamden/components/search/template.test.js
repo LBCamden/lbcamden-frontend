@@ -45,6 +45,13 @@ describe('search', () => {
       const $label = $('.govuk-label')
       expect($label.attr('for')).toEqual('lbcamden-search__box')
     })
+
+    it('renders default form action', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.lbcamden-search')
+      expect($component.attr('action')).toBe('/search')
+    })
   })
 
   describe('custom options', () => {
@@ -83,6 +90,34 @@ describe('search', () => {
 
       const $component = $('.lbcamden-search__input')
       expect($component.attr('placeholder')).toBe('Customised placeholder')
+    })
+
+    it('contains POST method', () => {
+      const $ = render('search', examples['method attribute'])
+
+      const $component = $('.lbcamden-search')
+      expect($component.attr('method')).toBe('post')
+    })
+
+    it('renders custom form action', () => {
+      const $ = render('search', examples['action attribute'])
+
+      const $component = $('.lbcamden-search')
+      expect($component.attr('action')).toBe('/q')
+    })
+
+    it('includes additonal parameter hidden inputs', () => {
+      const $ = render('search', examples['additional parameters'])
+
+      const $component = $('[name=highlighting]')
+      expect($component.attr('value')).toBe('true')
+    })
+
+    it('input renders with custom name', () => {
+      const $ = render('search', examples['name attribute'])
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('name')).toEqual('find')
     })
   })
 })
