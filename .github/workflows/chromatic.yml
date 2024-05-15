@@ -29,15 +29,10 @@ jobs:
       - name: Build dist
         run: npm run build:dist        
 
-    #   - name: Run tests
-    #     run: node_modules/.bin/chromatic --project-token=c73762ed4204
-    #     env:
-    #         project-token: c73762ed4204
-
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
           # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
-          projectToken: c73762ed4204
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
           autoAcceptChanges: "main"

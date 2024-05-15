@@ -27,4 +27,4 @@ jobs:
         run: npm run start
 
       - name: Run tests
-        run: PERCY_TOKEN=web_66feecbd61c857d4fdc44f41f5823a5eb93c361861d236a36909b88ce741fe9c npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
+        run: PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
