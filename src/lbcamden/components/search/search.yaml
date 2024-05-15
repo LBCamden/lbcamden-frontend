@@ -87,3 +87,7 @@ examples:
     description: Search input with custom action attribute
     data:
       action: '/q'
+  - name: name attribute
+    description: Search input with custom name attribute
+    data:
+      name: 'find'

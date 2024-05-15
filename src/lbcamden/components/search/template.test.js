@@ -112,5 +112,12 @@ describe('search', () => {
       const $component = $('[name=highlighting]')
       expect($component.attr('value')).toBe('true')
     })
+
+    it('input renders with custom name', () => {
+      const $ = render('search', examples['name attribute'])
+
+      const $component = $('.lbcamden-search__input')
+      expect($component.attr('name')).toEqual('find')
+    })
   })
 })
