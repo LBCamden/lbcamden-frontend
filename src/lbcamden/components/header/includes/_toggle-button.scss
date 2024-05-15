@@ -132,7 +132,7 @@
   color: $govuk-link-colour;
   background: none;
   font-weight: $govuk-font-weight-bold;
-  @include govuk-font(16);
+  @include govuk-font(16, bold);
 
   &-inner {
     @include govuk-responsive-padding(1, "top");
