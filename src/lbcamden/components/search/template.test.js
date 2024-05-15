@@ -45,6 +45,13 @@ describe('search', () => {
       const $label = $('.govuk-label')
       expect($label.attr('for')).toEqual('lbcamden-search__box')
     })
+
+    it('renders default form action', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.lbcamden-search')
+      expect($component.attr('action')).toBe('/search')
+    })
   })
 
   describe('custom options', () => {

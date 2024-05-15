@@ -2,28 +2,10 @@
   {% set classNames = classNames + " " + params.classes %}
 {% endif %}
 
-{%- if params.action %} 
-  {% set action = params.action %}
-  {% else %} 
-    {% set action = '/search' %}
-{% endif %}
-
-{%- if params.method %}
-  {% set method = params.method %}
-  {% else %}
-    {% set method  = 'get' %}
-{% endif %}
-
-{%- if params.name %}
-  {% set name = params.name %}
-  {% else %}
-    {% set name  = 'search' %}
-{% endif %}
-
 <form 
   class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}"
-  action="{{ action }}"
-  method="{{ method }}"
+  action="{{ params.action | default('/search') }}"
+  method="{{ params.method | default('get')}}"
   autocomplete="off"
   role="search">
   <label
@@ -33,7 +15,7 @@
   </label>
   <input 
     type="text" 
-    name="{{ name }}"
+    name="{{ params.name | default('search') }}"
     class="lbcamden-search__input"
     value="{{ params.value }}"
     id="lbcamden-search__box" {% if params.placeholderText %}placeholder="{{ params.placeholderText }}"{% endif %} />

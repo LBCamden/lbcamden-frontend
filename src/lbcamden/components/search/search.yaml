@@ -26,13 +26,13 @@ params:
   - name: action
     type: string
     required: false
-    description: Action attribute for the input field
-  - name: postMethod
-    type: boolean
-    required: false
-    description: Boolean deciding whether to use a post method rather than get for the form
-  - name: additionalParameters
+    description: Action attribute for the search field
+  - name: method
     type: string
+    required: false
+    description: Method attribute on the search field
+  - name: additionalParameters
+    type: object
     required: false
     description: Extra paramaters in object format 
 
@@ -66,25 +66,24 @@ examples:
     data:
       classes: 'govuk-input--width-30'
 
-  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
-    hidden: true
+    description: Search input with custom classes
     data:
       classes: search-class-test
   - name: labelText
-    hidden: true
+    description: Search input with custom label text
     data:
       labelText: 'Search test'
   - name: additional parameters
-    hidden: true
+    description: Search input passing additional parameters
     data:
       additionalParameters: 
         highlighting: true
   - name: method attribute
-    hidden: true
+    description: Search input with POST method attribute
     data:
       method: post
   - name: action attribute
-    hidden: true
+    description: Search input with custom action attribute
     data:
       action: '/q'
