@@ -25,6 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build start project and run percy
+        working-directory: /
         run: |
           npm run start &
           pwd &
