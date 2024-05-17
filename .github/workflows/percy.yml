@@ -27,7 +27,9 @@ jobs:
       - name: Build start project and run percy
         run: |
           npm run start &
-          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"/cypress/e2e/full-page-examples-percy.cy.js\"
+          pwd &
+          ls &
+          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
 
       # - name: Run tests
       #   run: PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
