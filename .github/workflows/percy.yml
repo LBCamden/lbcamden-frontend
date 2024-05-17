@@ -5,6 +5,7 @@ on:
         branches:
             - release-*
             - main
+            - percy-path
 
 jobs:
   percy:
@@ -26,7 +27,7 @@ jobs:
       - name: Build start project and run percy
         run: |
           npm run start &
-          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
+          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"/cypress/e2e/full-page-examples-percy.cy.js\"
 
       # - name: Run tests
       #   run: PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
