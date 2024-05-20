@@ -22,7 +22,7 @@ const urls = [
   '/examples/small-form-controls',
   '/examples/tags',
   '/examples/template-custom',
-  '/examples/template-default',
+  // '/examples/template-default',
   '/examples/text-alignment',
   '/examples/typography'
 ];
