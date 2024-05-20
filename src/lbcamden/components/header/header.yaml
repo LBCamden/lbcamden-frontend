@@ -416,7 +416,6 @@ examples:
       navigation: []
       search: false  
 
-  # TODO
   - name: with search that has customised parameters
     description: Header with search component with additional parameters, custom action and name attributes
     data:
