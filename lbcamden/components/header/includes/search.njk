@@ -60,10 +60,20 @@
         <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">Search</h2>
           {{ LBCamdenSearch({
-            fullWidth: true
+            fullWidth: true,
+            classes: params.search.classes,
+            alt: params.search.alt,
+            labelText: params.search.labelText,
+            placeholderText: params.search.placeholderText,
+            name: params.search.name,
+            value: params.search.value,
+            additionalParameters: params.search.additionalParameters,
+            action: params.search.action,
+            method: params.search.method
           }) }}
         </div>
       </div>
+      {% if params.searchItems | length %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">Popular on Camden.gov.uk</h2>
@@ -77,6 +87,7 @@
           </ul>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
 {% endif %}
