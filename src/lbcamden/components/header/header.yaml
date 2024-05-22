@@ -23,6 +23,10 @@ params:
   type: string
   required: false
   description: If present, adds html banner content before the brand bar
+- name: search
+  type: object
+  required: false
+  description: Params for the search component
 
 previewLayout: full-width
 accessibilityCriteria: |
@@ -411,6 +415,23 @@ examples:
         </section>
       navigation: []
       search: false  
+
+  - name: with search that has customised parameters
+    description: Header with search component with additional parameters, custom action and name attributes
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: 'Sign in / Register'
+          classes: 'lbcamden-header__navigation-item-link--sign-in'
+      search:
+        action: 'https://www.camden.gov.uk/search?q='
+        name: 'find'
+        additionalParameters: 
+          highlighting: true
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes

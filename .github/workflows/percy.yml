@@ -1,0 +1,56 @@
+name: "Percy"
+
+on: 
+    push:
+        branches:
+            - release-*
+            - main
+
+jobs:
+  percy-patterns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        # ⚠️ Pick one of these, matching the package manager for your project
+        run: npm ci
+
+      - name: Build start project and run percy
+        run: |
+          npm run start &
+          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec "cypress/e2e/full-page-examples-percy.cy.js"
+
+      # - name: Run tests
+      #   run: PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
+
+  percy-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        # ⚠️ Pick one of these, matching the package manager for your project
+        run: npm ci
+
+      - name: Build start project and run percy
+        run: |
+          npm run start &
+          PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN_EXAMPLES }} npx percy exec -- cypress run --spec "cypress/e2e/pattern-examples-percy.cy.js"
+
+      # - name: Run tests
+      #   run: PERCY_TOKEN=${{ secrets.PERCY_PROJECT_TOKEN }} npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"
