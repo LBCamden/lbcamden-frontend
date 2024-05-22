@@ -73,6 +73,7 @@
           }) }}
         </div>
       </div>
+      {% if params.searchItems | length %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">Popular on Camden.gov.uk</h2>
@@ -86,6 +87,7 @@
           </ul>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
 {% endif %}
