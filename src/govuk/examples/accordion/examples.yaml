@@ -1,12 +1,12 @@
 examples:
-  - name: Example Amy
+  - name: Amy Design System Example 1
     data:
       id: "add-example"
       items: 
         - heading:
-            text: "Section B"
+            text: "Vote by post"
           content: 
-            text: "Section B Text"
+            text: "We need to know your nationality so we can work out which "
         - heading:
             text: "Section A"
           content: 
