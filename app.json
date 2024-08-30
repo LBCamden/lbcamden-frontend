@@ -11,7 +11,8 @@
     "review": {
       "env": {
         "NODE_ENV": "development",
-        "NPM_CONFIG_LOGLEVEL": "notice"
+        "NPM_CONFIG_LOGLEVEL": "verbose",
+        "NPM_CONFIG_PRODUCTION": "false"
       }
     }
   },
