@@ -7,6 +7,13 @@
     "NPM_CONFIG_PRODUCTION": "false",
     "NODE_MODULES_CACHE": "false"
   },
+  "environments": {
+    "review": {
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
   "stack": "heroku-24",
   "formation": {
   },
