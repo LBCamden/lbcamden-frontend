@@ -38,18 +38,6 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
-    "@percy/cli": "^1.26.3",
-    "@percy/cypress": "^3.1.2",
-    "@percy/logger": "1.0.0-beta.74",
-    "@percy/puppeteer": "^2.0.0",
-    "@storybook/addon-essentials": "^7.0.7",
-    "@storybook/addon-interactions": "^7.0.7",
-    "@storybook/addon-links": "^7.0.7",
-    "@storybook/addon-styling": "^1.0.5",
-    "@storybook/blocks": "^7.0.7",
-    "@storybook/html": "^7.0.7",
-    "@storybook/html-webpack5": "^7.0.7",
-    "@storybook/testing-library": "^0.0.14-next.2",
     "acorn": "^7.4.0",
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.18.3",
@@ -106,7 +94,6 @@
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
     "standard": "^14.3.4",
-    "storybook": "^7.0.7",
     "stylelint": "^14.6.1",
     "stylelint-config-gds": "^0.2.0",
     "stylelint-order": "^5.0.0",
@@ -115,7 +102,20 @@
     "yargs": "^15.4.1"
   },
   "optionalDependencies": {
-    "fsevents": "*"
+    "fsevents": "*",
+    "@percy/cli": "^1.26.3",
+    "@percy/cypress": "^3.1.2",
+    "@percy/logger": "1.0.0-beta.74",
+    "@percy/puppeteer": "^2.0.0",
+    "storybook": "^7.0.7",
+    "@storybook/addon-essentials": "^7.0.7",
+    "@storybook/addon-interactions": "^7.0.7",
+    "@storybook/addon-links": "^7.0.7",
+    "@storybook/addon-styling": "^1.0.5",
+    "@storybook/blocks": "^7.0.7",
+    "@storybook/html": "^7.0.7",
+    "@storybook/html-webpack5": "^7.0.7",
+    "@storybook/testing-library": "^0.0.14-next.2"
   },
   "browserslist": [
     ">0.1%",
