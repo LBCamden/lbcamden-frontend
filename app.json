@@ -5,12 +5,13 @@
   "env": {
     "HEROKU_APP": "REVIEW",
     "NPM_CONFIG_PRODUCTION": "false",
-    "NODE_MODULES_CACHE": "false"
+    "NODE_MODULES_CACHE": "true"
   },
   "environments": {
     "review": {
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "NPM_CONFIG_LOGLEVEL": "notice"
       }
     }
   },
