@@ -7,7 +7,7 @@
     "NPM_CONFIG_PRODUCTION": "false",
     "NODE_MODULES_CACHE": "false"
   },
-  "stack": "heroku-20",
+  "stack": "heroku-24",
   "formation": {
   },
   "addons": [
