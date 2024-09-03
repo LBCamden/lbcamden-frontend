@@ -32,7 +32,10 @@
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
   },
   "dependencies": {
-    "govuk-frontend": "^4.7.0"
+    "govuk-frontend": "^4.7.0",
+    "html-escaper": "^3.0.3",
+    "iframe-resizer": "^4.3.6",
+    "sass": "^1.77.8"
   },
   "devDependencies": {
     "yargs": "^15.4.1"
