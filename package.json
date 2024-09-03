@@ -34,6 +34,12 @@
   "dependencies": {
     "govuk-frontend": "^4.7.0"
   },
+  "devDependencies": {
+    "yargs": "^15.4.1"
+  },
+  "optionalDependencies": {
+    "storybook": "^7.0.7"
+  },
   "browserslist": [
     ">0.1%",
     "last 2 Chrome versions",
