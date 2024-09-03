@@ -11,7 +11,8 @@
     "preinstall": "node bin/check-nvmrc.js",
     "prestart": "node bin/check-nvmrc.js",
     "start": "gulp dev",
-    "heroku": "node ./node_modules/gulp/bin/gulp copy-assets && node ./node_modules/gulp/bin/gulp sassdoc && node app/start.js",
+    "heroku-postbuild": "node ./node_modules/gulp/bin/gulp copy-assets && node ./node_modules/gulp/bin/gulp sassdoc",
+    "heroku": "node app/start.js",
     "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "publish-release": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
     "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
@@ -31,7 +32,6 @@
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
   },
   "dependencies": {
-    "chromatic": "^11.3.0",
     "govuk-frontend": "^4.7.0",
     "html-escaper": "^3.0.3",
     "iframe-resizer": "^4.3.6",
@@ -102,6 +102,7 @@
     "yargs": "^15.4.1"
   },
   "optionalDependencies": {
+    "chromatic": "^11.3.0",
     "@percy/cli": "^1.26.3",
     "@percy/cypress": "^3.1.2",
     "@percy/logger": "1.0.0-beta.74",
