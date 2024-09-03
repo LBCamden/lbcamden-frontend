@@ -60,23 +60,6 @@
     "yaml-loader": "^0.8.0",
     "yargs": "^15.4.1"
   },
-  "optionalDependencies": {
-    "chromatic": "^11.3.0",
-    "@percy/cli": "^1.26.3",
-    "@percy/cypress": "^3.1.2",
-    "@percy/logger": "1.0.0-beta.74",
-    "@percy/puppeteer": "^2.0.0",
-    "@storybook/addon-essentials": "^7.0.7",
-    "@storybook/addon-interactions": "^7.0.7",
-    "@storybook/addon-links": "^7.0.7",
-    "@storybook/addon-styling": "^1.0.5",
-    "@storybook/blocks": "^7.0.7",
-    "@storybook/html": "^7.0.7",
-    "@storybook/html-webpack5": "^7.0.7",
-    "@storybook/testing-library": "^0.0.14-next.2",
-    "fsevents": "*",
-    "storybook": "^7.0.7"
-  },
   "browserslist": [
     ">0.1%",
     "last 2 Chrome versions",
