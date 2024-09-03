@@ -38,6 +38,18 @@
     "sass": "^1.77.8"
   },
   "devDependencies": {
+    
+    "recursive-readdir": "^2.2.2",
+    "request": "^2.88.2",
+    "sass-color-helpers": "^2.1.1",
+    "sassdoc": "^2.7.3",
+    "shuffle-seed": "^1.1.6",
+    "standard": "^14.3.4",
+    "stylelint": "^14.6.1",
+    "stylelint-config-gds": "^0.2.0",
+    "stylelint-order": "^5.0.0",
+    "vinyl-paths": "^3.0.1",
+    "yaml-loader": "^0.8.0",
     "yargs": "^15.4.1"
   },
   "optionalDependencies": {
