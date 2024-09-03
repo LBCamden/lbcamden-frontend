@@ -84,6 +84,7 @@
     "react-dom": "^18.2.0",
     "recursive-readdir": "^2.2.2",
     "request": "^2.88.2",
+    "sassdoc": "^2.7.3",
     "sass-color-helpers": "^2.1.1",
     "shuffle-seed": "^1.1.6",
     "standard": "^14.3.4",
