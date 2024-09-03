@@ -11,7 +11,7 @@
     "review": {
       "env": {
         "NODE_ENV": "production",
-        "NPM_CONFIG_LOGLEVEL": "verbose",
+        "NPM_CONFIG_LOGLEVEL": "silly",
         "NPM_CONFIG_PRODUCTION": "false",
         "NPM_CONFIG_OMIT":"optional"
       }
