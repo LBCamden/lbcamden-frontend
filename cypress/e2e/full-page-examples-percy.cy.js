@@ -17,7 +17,7 @@ const urls = [
 ];
 // const excludePagesBreadcrumb = ['/404.html', '/', '/typography/', '/typography-alt/', '/typography-alt-1/', '/accessibility/'];
 // const excludePagesCGULinkInPhaseBanner = ['/404.html', '/', '/typography/', '/typography-alt/', '/typography-alt-1/', '/accessibility/', '/cookies/'];
-const viewports = ['macbook-13']
+const viewports = ['macbook-13', 'iphone-6']
 
 describe('Full Page examples visual regression test', () => {
 
@@ -31,6 +31,7 @@ describe('Full Page examples visual regression test', () => {
               cy.viewport(viewport);
               cy.visit('http://localhost:3000' + url);
               
+              cy.takeSnapshot();
               cy.percySnapshot(url, { widths: [320, 576, 768, 1200] });
 
             });

@@ -96,6 +96,7 @@
     "yargs": "^15.4.1"
   },
   "optionalDependencies": {
+    "@chromatic-com/cypress": "^0.6.17",
     "@percy/cli": "^1.26.3",
     "@percy/cypress": "^3.1.2",
     "@percy/logger": "1.0.0-beta.74",
@@ -108,7 +109,7 @@
     "@storybook/html": "^7.0.7",
     "@storybook/html-webpack5": "^7.0.7",
     "@storybook/testing-library": "^0.0.14-next.2",
-    "chromatic": "^11.3.0",
+    "chromatic": "^11.7.1",
     "fsevents": "*",
     "jest": "^29.7.0",
     "jest-axe": "^5.0.1",
