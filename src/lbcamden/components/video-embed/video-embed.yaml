@@ -1,0 +1,9 @@
+params:
+  - name: platform
+    type: string
+    required: true
+    description: Platform the video is from
+  - name: id
+    type: string
+    required: true
+    description: ID of the video

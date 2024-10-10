@@ -11,17 +11,17 @@
 
   svg {
     @include govuk-media-query($from: "tablet") {
-      padding-right: govuk-spacing(5);
       height: auto;
+      padding-right: govuk-spacing(5);
     }
 
     flex-shrink: 0;
     align-self: flex-start;
-    margin-bottom: govuk-spacing(5);
     height: 48px;
+    margin-bottom: govuk-spacing(5);
   }
 
-  & .fh-quotation-attribution {
+  & .lbcamden-quotation-attribution {
     @extend .govuk-body-s;
 
     @include govuk-media-query($from: "tablet") {
@@ -32,31 +32,31 @@
   }
 
   &.brand-colour {
-    path.fh-quotation-mark {
+    path.lbcamden-quotation-mark {
       fill: $lbcamden-brand-colour;
     }
   }
 
   &.lilac {
-    path.fh-quotation-mark {
+    path.lbcamden-quotation-mark {
       fill: #6668e9;
     }
   }
 
   &.purple {
-    path.fh-quotation-mark {
+    path.lbcamden-quotation-mark {
       fill: #4b1464;
     }
   }
 
   &.teal {
-    path.fh-quotation-mark {
+    path.lbcamden-quotation-mark {
       fill: #00939d;
     }
   }
 
   &.orange {
-    path.fh-quotation-mark {
+    path.lbcamden-quotation-mark {
       fill: #fc8630;
     }
   }

@@ -1,9 +1,9 @@
 {% from "node_modules/lbcamden-frontend/lbcamden/components/image/macro.njk" import LBCamdenImage %}
 {% if params.caption == "\n" %}
-    <div class="fh-image">{{ LBCamdenImage(params.image) }}</div>
+    <div class="lb-image-component">{{ LBCamdenImage(params.image) }}</div>
 {% else %}
-    <figure class="fh-image">
+    <figure class="lbcamden-image-component">
         {{ LBCamdenImage(params.image) }}
-        <figcaption class="fh-image__caption">{{ params.caption | safe }}</figcaption>
+        <figcaption class="lbcamden-image-component__caption">{{ params.caption | safe }}</figcaption>
     </figure>
 {% endif %}
