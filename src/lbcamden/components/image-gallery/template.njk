@@ -1,5 +1,5 @@
-{% from "node_modules/lbcamden-frontend/lbcamden/components/card/macro.njk" import LBCamdenCard %}
-<ul class="lbcamden-card-grid lbcamden-image-gallery">
+{% from "../card/macro.njk" import LBCamdenCard %}
+<ul class="lbcamden-card-grid lbcamden-image-gallery">   
     {% for item in params.items %}
         {{ LBCamdenCard({
                 element: "li",

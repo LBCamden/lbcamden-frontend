@@ -1,20 +1,20 @@
-{% from "node_modules/lbcamden-frontend/lbcamden/components/button/macro.njk" import LBCamdenButton %}
-{% macro infoCallout(params) %}
-    <div class="lbcamden-info-callout">
-        {% if params.heading %}<h2 class="lbcamden-info-callout__heading">{{ params.heading }}</h2>{% endif %}
-        {% if params.subheading %}<p class="lbcamden-info-callout__subheading">{{ params.subheading }}</p>{% endif %}
-        {% if params.heading %}<div class="lbcamden-info-callout__content">{{ params.content }}</div>{% endif %}
-        {% if params.linkHref and params.linkLabel and not (params.buttonStyle == "ACTION_LINK") %}
-                {{ LBCamdenButton({
-                    "text": params.linkLabel,
-                    "href": params.linkHref,
-                    "isStartButton": params.buttonStyle == 'START_NOW'
-                    }) 
-                }}
-        {% endif %}
-        {% if params.linkHref and params.linkLabel and (params.buttonStyle == "ACTION_LINK") %}
-            <a href="{{ params.linkHref }}"
-               class="lbcamden-link--action lbcamden-info-callout__link">{{ params.linkLabel }}</a>
-        {% endif %}
-    </div>
-{% endmacro %}
+{% from "../button/macro.njk" import LBCamdenButton %}
+
+<div class="lbcamden-info-callout">
+    {% if params.heading %}<h2 class="lbcamden-info-callout__heading">{{ params.heading }}</h2>{% endif %}
+    {% if params.subheading %}<p class="lbcamden-info-callout__subheading">{{ params.subheading }}</p>{% endif %}
+    {% if params.heading %}<div class="lbcamden-info-callout__content">{{ params.content }}</div>{% endif %}
+    {% if params.linkHref and params.linkLabel and not (params.buttonStyle == "ACTION_LINK") %}
+            {{ LBCamdenButton({
+                "text": params.linkLabel,
+                "href": params.linkHref,
+                "isStartButton": params.buttonStyle == 'START_NOW'
+                }) 
+            }}
+    {% endif %}
+    {% if params.linkHref and params.linkLabel and (params.buttonStyle == "ACTION_LINK") %}
+        <a href="{{ params.linkHref }}"
+            class="lbcamden-link--action lbcamden-info-callout__link">{{ params.linkLabel }}</a>
+    {% endif %}
+</div>
+

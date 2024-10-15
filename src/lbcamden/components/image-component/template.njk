@@ -1,4 +1,4 @@
-{% from "node_modules/lbcamden-frontend/lbcamden/components/image/macro.njk" import LBCamdenImage %}
+{% from "../image/macro.njk" import LBCamdenImage %}
 {% if params.caption == "\n" %}
     <div class="lb-image-component">{{ LBCamdenImage(params.image) }}</div>
 {% else %}

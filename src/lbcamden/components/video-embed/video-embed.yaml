@@ -7,3 +7,9 @@ params:
     type: string
     required: true
     description: ID of the video
+examples:
+  - name: default
+    description: Standard application of video embed
+    data:
+      platform: youtube
+      id: 9bZkp7q19f0

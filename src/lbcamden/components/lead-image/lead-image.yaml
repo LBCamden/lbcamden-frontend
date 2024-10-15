@@ -3,3 +3,9 @@ params:
     type: object
     required: true
     description: Image configuration as per LBCamden image component
+examples:
+  - name: default
+    description: Standard application of lead image
+    data:
+      image:
+        src: /example-assets/images/hero.jpg
