@@ -1,3 +1,5 @@
+$lbcamden-brand-colour: #005ea5;
+
 .lbcamden-quotation {
   display: flex;
   flex-direction: column;
@@ -32,31 +34,31 @@
   }
 
   &.brand-colour {
-    path.lbcamden-quotation-mark {
+    .lbcamden-quotation-mark {
       fill: $lbcamden-brand-colour;
     }
   }
 
   &.lilac {
-    path.lbcamden-quotation-mark {
+    .lbcamden-quotation-mark {
       fill: #6668e9;
     }
   }
 
   &.purple {
-    path.lbcamden-quotation-mark {
+    .lbcamden-quotation-mark {
       fill: #4b1464;
     }
   }
 
   &.teal {
-    path.lbcamden-quotation-mark {
+    .lbcamden-quotation-mark {
       fill: #00939d;
     }
   }
 
   &.orange {
-    path.lbcamden-quotation-mark {
+    .lbcamden-quotation-mark {
       fill: #fc8630;
     }
   }

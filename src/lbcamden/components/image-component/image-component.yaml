@@ -7,3 +7,10 @@ params:
     type: string
     required: false
     description: Caption for the image
+examples:
+  - name: default
+    description: Standard application of image component
+    data:
+      image:
+        src: /example-assets/images/hero.jpg
+      caption: We provide services and information for residents, businesses and visitors to the London Borough of Camden.
