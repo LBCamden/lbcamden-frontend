@@ -25,7 +25,16 @@ examples:
     data:
       orientation: text-left
       heading: Heading
-      shortDescription: Short description 
+      shortDescription: "<p>Short description</p>"
+      link: /test
+      image:
+        src: /example-assets/images/hero.jpg
+  - name: text-right
+    description: Standard application of campaign engagement banner
+    data:
+      orientation: text-right
+      heading: Heading
+      shortDescription: "<p>Short description</p>"
       link: /test
       image:
         src: /example-assets/images/hero.jpg
