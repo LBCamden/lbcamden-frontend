@@ -6,7 +6,7 @@
         <h2>
             <a href="{{ params.link }}">{{ params.heading }}</a>
         </h2>
-        {{ params.shortDescription }}
+        {{ params.shortDescription | safe }}
     </div>
     {% if params.orientation == "text-left" %}{{ LBCamdenImage(params.image) }}{% endif %}
 </section>

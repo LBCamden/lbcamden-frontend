@@ -116,7 +116,7 @@ $theme-brand-colour: #005ea5;
     // text-right orientation
     .lbcamden-campaign-engagement-banner--text-right & {
       padding-right: govuk-spacing(7);
-      padding-left: calc(govuk-spacing(6) + var(--gap));
+      padding-left: calc(#{govuk-spacing(6)} + var(--gap));
       border-bottom-right-radius: 50px;
       background-position: top left;
 
@@ -128,7 +128,7 @@ $theme-brand-colour: #005ea5;
 
     // text-left orientation
     .lbcamden-campaign-engagement-banner--text-left & {
-      padding-right: calc(govuk-spacing(6) + var(--gap));
+      padding-right: calc(#{govuk-spacing(6)} + var(--gap));
       padding-left: govuk-spacing(7);
       border-bottom-left-radius: 50px;
       background-position: top right;
