@@ -23,9 +23,9 @@ examples:
   - name: default
     description: Standard application of campaign engagement banner
     data:
-      orientation: text-right
+      orientation: text-left
       heading: Heading
-      shortDescription: Short description
+      shortDescription: Short description 
       link: /test
       image:
         src: /example-assets/images/hero.jpg

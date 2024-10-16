@@ -21,7 +21,7 @@ describe('lead-image', () => {
     it('renders contents', () => {
       const $ = render('lead-image', examples.default)
 
-      expect($('.lbcamden-lead-image img').attr('src')).toEqual(examples.default.items[0].image.src)
+      expect($('.lbcamden-lead-image img').attr('src')).toEqual(examples.default.image.src)
     })
   })
 })

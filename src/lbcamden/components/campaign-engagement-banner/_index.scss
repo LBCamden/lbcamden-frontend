@@ -15,6 +15,12 @@ $theme-brand-colour: #005ea5;
   overflow: hidden;
   background-color: $theme-brand-colour;
 
+  /* stylelint-disable */
+    img {
+      display: none;
+    }
+  /* stylelint-enable */
+
   @include govuk-media-query("mobile-large") {
     --picture-width: 4 / 12 * 100%;
     --overfill: 0;
@@ -144,6 +150,7 @@ $theme-brand-colour: #005ea5;
     @include govuk-typography-responsive("36-campaign");
     font-weight: 300;
   }
+    /* stylelint-disable */
 
   img {
     width: calc(var(--picture-width) - .5 * var(--gap));
@@ -154,4 +161,5 @@ $theme-brand-colour: #005ea5;
     object-fit: cover;
     flex-shrink: 0;
   }
+    /* stylelint-enable */
 }
