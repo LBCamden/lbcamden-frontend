@@ -21,7 +21,7 @@ describe('campaign-hero', () => {
     it('renders contents', () => {
       const $ = render('campaign-hero', examples.default)
 
-      expect($('h2').text()).toContain('Welcome to Camden.gov.uk')
+      expect($('h1').text()).toContain('Welcome to Camden.gov.uk')
       //   expect($('.lbcamden-card-gallery__description').text()).toContain('Find relevant services')
 
       //   expect($('li a').first().text()).toContain('Starting school')

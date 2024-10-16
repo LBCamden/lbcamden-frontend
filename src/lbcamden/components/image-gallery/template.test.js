@@ -21,8 +21,7 @@ describe('image-gallery', () => {
     it('renders contents', () => {
       const $ = render('image-gallery', examples.default)
 
-      expect($('h2').text()).toContain('Get more from Camden')
-      expect($('.lbcamden-card-gallery__description').text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
+      expect($('.lbcamden-card__content p').first().text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
     })
   })
 })
