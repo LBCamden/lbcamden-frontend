@@ -18,5 +18,5 @@ examples:
       title: Welcome to Camden.gov.uk
       image:
         src: /example-assets/images/hero.jpg
-      extract: We provide services and information for residents, businesses and visitors to the London Borough of Camden.
+      extract: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
 

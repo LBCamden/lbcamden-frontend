@@ -93,7 +93,7 @@
       }
     }
 
-    padding-right: calc(govuk-spacing(4) + var(--gap) + var(--overfill));
+    padding-right: calc(#{govuk-spacing(4)} + var(--gap) + var(--overfill));
     padding-left: govuk-spacing(7);
 
     border-bottom-left-radius: 50px;
