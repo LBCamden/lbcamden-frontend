@@ -2,7 +2,7 @@
 <div class="lbcamden-campaign-hero">
     <div class="lbcamden-campaign-hero__content">
         <h1>{{ params.title }}</h1>
-        {{ params.extract }}
+        {{ params.extract | safe }}
     </div>
     {{ LBCamdenImage(params.image) }}
 </div>
