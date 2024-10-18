@@ -22,12 +22,8 @@ describe('campaign-hero', () => {
       const $ = render('campaign-hero', examples.default)
 
       expect($('h1').text()).toContain('Welcome to Camden.gov.uk')
-      //   expect($('.lbcamden-card-gallery__description').text()).toContain('Find relevant services')
-
-      //   expect($('li a').first().text()).toContain('Starting school')
-      //   expect($('li a').attr('href')).toEqual('#1')
-      //   expect($('li img').attr('src')).toEqual(examples.default.items[0].image.src)
-      //   expect($('li img').attr('alt')).toEqual(examples.default.items[0].image.alt)
+      expect($('p').text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
+      expect($('img').attr('src')).toEqual(examples.default.image.src)
     })
   })
 })

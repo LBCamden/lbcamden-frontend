@@ -106,5 +106,7 @@
 
   h1 {
     margin-bottom: govuk-spacing(3);
+    @include govuk-typography-responsive("48-campaign");
+    font-weight: 300;
   }
 }

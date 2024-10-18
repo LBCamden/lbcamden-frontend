@@ -18,16 +18,10 @@ describe('video-embed', () => {
       expect(results).toHaveNoViolations()
     })
 
-    // it('renders contents', () => {
-    //   const $ = render('video-embed', examples.default)
+    it('renders contents', () => {
+      const $ = render('video-embed', examples.default)
 
-    //   expect($('h2').text()).toContain('Get more from Camden')
-    //   expect($('.lbcamden-video-embed__description').text()).toContain('Find relevant services')
-
-    //   expect($('li a').first().text()).toContain('Starting school')
-    //   expect($('li a').attr('href')).toEqual('#1')
-    //   expect($('li img').attr('src')).toEqual(examples.default.items[0].image.src)
-    //   expect($('li img').attr('alt')).toEqual(examples.default.items[0].image.alt)
-    // })
+      expect($('iframe').attr('title')).toContain('No Excuses Camden Local Offer Quality teaching and learning for ALL learners')
+    })
   })
 })

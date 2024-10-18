@@ -31,5 +31,14 @@ examples:
       subheading: Subheading
       content: Content
       linkLabel: Link label
-      linkHref: /example-assets/images/hero.jpg
-      buttonStyle: primary
+      linkHref: /test
+      buttonStyle: ACTION_LINK
+  - name: start now button option
+    description: Standard application of info callout
+    data:
+      heading: Heading
+      subheading: Subheading
+      content: Content
+      linkLabel: Link label
+      linkHref: /test
+      buttonStyle: START_NOW

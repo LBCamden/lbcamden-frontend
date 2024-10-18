@@ -13,8 +13,14 @@ params:
     description: Title of the video frame
 examples:
   - name: default
-    description: Standard application of video embed
+    description: YouTube application of video embed
     data:
       platform: youtube
-      id: 9bZkp7q19f0
-      frameTitle: "Psy - Gangnam Style"
+      id: 7dGPCXHj85I
+      frameTitle: "No Excuses Camden Local Offer Quality teaching and learning for ALL learners"
+  - name: vimeo
+    description: Vimeo application of video embed
+    data:
+      platform: vimeo
+      id: 122655717
+      frameTitle: "Step by step guide to getting married in the London Borough of Camden"

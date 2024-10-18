@@ -22,6 +22,7 @@ describe('image-gallery', () => {
       const $ = render('image-gallery', examples.default)
 
       expect($('.lbcamden-card__content p').first().text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
+      expect($('img').first().attr('src')).toEqual(examples.default.items[0].image.src)
     })
   })
 })
