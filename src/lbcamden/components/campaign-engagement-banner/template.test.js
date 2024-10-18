@@ -22,12 +22,8 @@ describe('campaign-engagement-banner', () => {
       const $ = render('campaign-engagement-banner', examples.default)
 
       expect($('h2').text()).toContain('Heading')
-      //   expect($('.lbcamden-card-gallery__description').text()).toContain('Find relevant services')
-
-      //   expect($('li a').first().text()).toContain('Starting school')
-      //   expect($('li a').attr('href')).toEqual('#1')
-      //   expect($('li img').attr('src')).toEqual(examples.default.items[0].image.src)
-      //   expect($('li img').attr('alt')).toEqual(examples.default.items[0].image.alt)
+      expect($('p').text()).toContain('Short description')
+      expect($('a').attr('href')).toContain('/test')
     })
   })
 })

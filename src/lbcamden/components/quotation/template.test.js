@@ -22,6 +22,7 @@ describe('quotation', () => {
       const $ = render('quotation', examples.default)
 
       expect($('p').text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
+      expect($('.lbcamden-quotation-attribution').text()).toContain('Camden Council')
     })
   })
 })
