@@ -1,4 +1,10 @@
+$theme-brand-colour: var(
+  --lbcamden-theme-brand-colour,
+  lbcamden-colour("bright-grey")
+);
+
 .lbcamden-campaign-hero {
+  --lbcamden-theme-brand-colour: var(bright-grey);
   // Spacing between speech text content
   --gap: 0;
 
@@ -35,7 +41,7 @@
   @include govuk-media-query("mobile-large") {
     --picture-width: 4 / 12 * 100%;
     --gap: #{govuk-spacing(6)};
-    --overfill: 0;
+    --overfill: 0px; // stylelint-disable-line length-zero-no-unit
 
     max-width: unset;
     height: 270px;
@@ -93,7 +99,7 @@
       }
     }
 
-    padding-right: calc(#{govuk-spacing(4)} + var(--gap) + var(--overfill));
+    padding-right: calc(#{govuk-spacing(4)} + var(--gap) + var(--overfill, 0px));
     padding-left: govuk-spacing(7);
 
     border-bottom-left-radius: 50px;

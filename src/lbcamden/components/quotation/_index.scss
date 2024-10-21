@@ -1,4 +1,7 @@
-$lbcamden-brand-colour: #005ea5;
+$theme-brand-colour: var(
+  --lbcamden-theme-brand-colour,
+  lbcamden-colour("bright-grey")
+);
 
 .lbcamden-quotation {
   display: flex;
@@ -35,7 +38,7 @@ $lbcamden-brand-colour: #005ea5;
 
   &.brand-colour {
     .lbcamden-quotation-mark {
-      fill: $lbcamden-brand-colour;
+      fill: $theme-brand-colour;
     }
   }
 

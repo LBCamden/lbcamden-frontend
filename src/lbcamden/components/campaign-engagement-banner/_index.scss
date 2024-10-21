@@ -1,4 +1,7 @@
-$theme-brand-colour: #005ea5;
+$theme-brand-colour: var(
+  --lbcamden-theme-brand-colour,
+  lbcamden-colour("bright-grey")
+);
 
 .lbcamden-campaign-engagement-banner {
   // Spacing between speech text content and image. Also defines the triangle size.
@@ -80,18 +83,7 @@ $theme-brand-colour: #005ea5;
     justify-content: center;
     padding-block: govuk-spacing(6);
     position: relative;
-
-    @include govuk-media-query($until: "mobile-large") {
-      min-width: calc(100% - var(--picture-width));
-    }
-
-    @include govuk-media-query("mobile-large") {
-      min-width: 66%;
-    }
-
-    @include govuk-media-query($until: "tablet") {
-      min-width: 77%;
-    }
+    flex-grow: 1;
 
     @include govuk-media-query("mobile-large") {
       padding-block: govuk-spacing(4);
