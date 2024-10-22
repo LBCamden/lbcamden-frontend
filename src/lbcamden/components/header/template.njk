@@ -3,10 +3,9 @@
 
 {% set title = params.title | default("Camden.gov.uk") %}
 {% set id_prefix = params.id_prefix | default("super") %}
-<header>
+<header role="banner">
 <div
-  class="lbcamden-header lbcamden-header--estate {{ params.classes if params.classes }}{% if params.phaseBanner and not params.siteNavigation %} lbcamden-header--with-phase-banner{% endif %}"
-  role="banner" data-module="lbcamden-header"
+  class="lbcamden-header lbcamden-header--estate {{ params.classes if params.classes }}{% if params.phaseBanner and not params.siteNavigation %} lbcamden-header--with-phase-banner{% endif %}" data-module="lbcamden-header"
   {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 
   <div class="lbcamden-header__bar {{ params.containerClasses | default('govuk-width-container') }}">
@@ -34,7 +33,6 @@
 
   <div
     class="lbcamden-header lbcamden-header--site-navigation {% if params.phaseBanner %}lbcamden-header--with-phase-banner{% endif %}"
-    role="banner"
     data-module="lbcamden-header">
     <div class="lbcamden-header__bar {{ params.containerClasses | default('govuk-width-container') }}">
       <div class="lbcamden-header__title">
