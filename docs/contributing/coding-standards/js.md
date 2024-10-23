@@ -122,12 +122,6 @@ Use default export over named export.
 
 If you need to support older browsers, import the necessary [polyfills](/src/govuk/vendor/polyfills) and they will be added to the environment when the feature is not supported.
 
-For example, if you want to polyfill `addEventListener` for IE8, import the Event polyfills.
-
-```js
-import '../vendor/polyfills/Event'
-```
-
 If you need polyfills for features that are not yet included in this project, please see the following guide on [how to add polyfills](../polyfilling.md).
 
 ## Formatting and linting

@@ -24,6 +24,6 @@ describe('Individual components', () => {
     Promise
       .all(getSassRenders())
       .then(() => { done() })
-      .catch(error => { throw error })
+      .catch(error => { throw new Error(error.message) })
   })
 })

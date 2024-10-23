@@ -63,14 +63,6 @@ describe('dist/', () => {
     })
   })
 
-  describe(`lbcamden-frontend-ie8-${version}.min.css`, () => {
-    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `lbcamden-frontend-ie8-${version}.min.css`))
-
-    it('should not contain current media query displayed on body element', () => {
-      expect(stylesheet).not.toMatch(/body:before{content:/)
-    })
-  })
-
   describe(`lbcamden-frontend-${version}.min.js`, () => {
     const javascript = lib.readFileContents(path.join(configPaths.dist, `lbcamden-frontend-${version}.min.js`))
 
