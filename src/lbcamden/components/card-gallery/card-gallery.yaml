@@ -15,6 +15,9 @@ params:
     type: string
     required: false
     description: Description of the gallery.
+  - name: cardHeadingLevel
+    type: int
+    description: Set the heading level of card items to something other than the default h2.  
   - name: items
     type: array
     required: true
@@ -43,6 +46,7 @@ examples:
     data:
       heading: Get more from Camden
       shortDescription: Find relevant services, support and things to do.
+      cardHeadingLevel: 3
       items:  &card_items
         - title: Starting school
           image: &card_image
@@ -96,11 +100,13 @@ examples:
     description: Application of a card gallery without description.
     data:
       heading: Get more from Camden
+      cardHeadingLevel: 3
       items: *card_items
   - name: with surround
     description: Card gallery with a surround background colour.
     data:
       heading: Get more from Camden
       shortDescription: Find relevant services, support and things to do.
+      cardHeadingLevel: 3
       items: *card_items
       surround: true

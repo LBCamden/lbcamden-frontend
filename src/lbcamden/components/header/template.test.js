@@ -21,7 +21,7 @@ describe('header', () => {
     it('has a role of `banner`', () => {
       const $ = render('header', examples.default)
 
-      const $component = $('.lbcamden-header')
+      const $component = $('header')
       expect($component.attr('role')).toEqual('banner')
     })
   })

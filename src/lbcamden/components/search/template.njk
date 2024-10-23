@@ -1,13 +1,12 @@
 {%- if params.classes %}
   {% set classNames = classNames + " " + params.classes %}
 {% endif %}
-
+<search>
 <form 
   class="lbcamden-search {{ classNames }} {% if params.alt %} lbcamden-search--alt{% endif %}"
   action="{{ params.action | default('/search') }}"
   method="{{ params.method | default('get')}}"
-  autocomplete="off"
-  role="search">
+  autocomplete="off">
   <label
     class="govuk-label govuk-label--l govuk-visually-hidden"
     for="lbcamden-search__box">
@@ -31,3 +30,4 @@
       {{ params.labelText | default('Search Camden.gov.uk') }}
   </button>
 </form>
+</search>
