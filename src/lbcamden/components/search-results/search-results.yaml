@@ -12,6 +12,10 @@ params:
     type: string
     required: true
     description: Title of the search result
+  - name: headingLevel
+    type: number
+    required: false
+    description: Level of the heading for the search result. Defaults to h3.
   - name: href
     type: string
     required: true

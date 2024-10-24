@@ -31,6 +31,10 @@ params:
     type: string
     required: false
     description: Method attribute on the search field
+  - name: resultsCountId
+    type: string
+    required: false
+    description: id of related results count element to reference for accessibility
   - name: additionalParameters
     type: object
     required: false
