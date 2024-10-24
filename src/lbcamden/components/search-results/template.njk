@@ -8,11 +8,11 @@
     </h2>
 
     {% if item.externalSite %}
-      <div class="lbcamden-search-results__location">
+      <div class="lbcamden-search-results__location" aria-hidden="true">
         {{ item.externalSite }}
       </div>
     {% else %}
-      <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile lbcamden-search-results__location">
+      <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile lbcamden-search-results__location" aria-hidden="true">
         <ol class="govuk-breadcrumbs__list">
           {% for crumb in item.breadcrumbs %}
             <li class="govuk-breadcrumbs__list-item">
