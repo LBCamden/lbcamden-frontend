@@ -50,10 +50,10 @@ notes: >-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <div class="govuk-!-margin-bottom-2 govuk-!-margin-top-2">
-        {{ LBCamdenSearch({ value: "driving" }) }}
+        {{ LBCamdenSearch({ value: "driving", id: "search-input", resultsCountId: "results-count" }) }}
       </div>
 
-      <h2 class="govuk-!-margin-bottom-7 govuk-body-s">
+      <h2 class="govuk-!-margin-bottom-7 govuk-body-s" id="results-count">
         Showing <strong>{{ documents | length }}</strong> of <strong>{{ total }}</strong> results for "driving"
       </h2>
 
