@@ -13,4 +13,9 @@ examples:
     data:
       image:
         src: /example-assets/images/hero.jpg
-      caption: We provide services and information for residents, businesses and visitors to the London Borough of Camden.
+      caption: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden. </p>"
+  - name: no caption
+    description: Standard application of image component with no caption
+    data:
+      image:
+        src: /example-assets/images/hero.jpg

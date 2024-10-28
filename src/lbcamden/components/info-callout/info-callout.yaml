@@ -29,7 +29,7 @@ examples:
     data:
       heading: Heading
       subheading: Subheading
-      content: Content
+      content: "<p>Content</p>"
       linkLabel: Link label
       linkHref: /test
       buttonStyle: ACTION_LINK
@@ -38,7 +38,7 @@ examples:
     data:
       heading: Heading
       subheading: Subheading
-      content: Content
+      content: "<p>Content</p>"
       linkLabel: Link label
       linkHref: /test
       buttonStyle: START_NOW
