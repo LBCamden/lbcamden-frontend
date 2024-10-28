@@ -2,7 +2,7 @@ params:
   - name: image
     type: object
     required: true
-    description: Image configuration as per LBCamden image component
+    description: Image configuration as per LBCamden image component with confined ratio
   - name: caption
     type: string
     required: false
