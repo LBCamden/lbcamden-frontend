@@ -22,7 +22,7 @@ params:
         description: Icon for the card
 examples:
   - name: default
-    description: Standard application of the campaign promo gallery§
+    description: Standard application of the campaign promo gallery
     data:
       heading: Heading
       items:
