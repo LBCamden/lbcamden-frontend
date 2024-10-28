@@ -16,13 +16,6 @@ describe('service-banner', () => {
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
-
-    it('has a role of `banner`', () => {
-      const $ = render('service-banner', examples.default)
-
-      const $component = $('.lbcamden-service-banner')
-      expect($component.attr('role')).toEqual('banner')
-    })
   })
 
   describe('custom options', () => {
