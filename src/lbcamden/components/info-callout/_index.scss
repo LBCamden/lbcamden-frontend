@@ -1,5 +1,3 @@
-$theme-tint-colour: #f0f0f0;
-
 .lbcamden-info-callout {
   @include govuk-responsive-padding(3, "left");
   @include govuk-responsive-padding(3, "right");
@@ -7,7 +5,7 @@ $theme-tint-colour: #f0f0f0;
   padding-top: govuk-spacing(7);
   padding-bottom: govuk-spacing(8);
   border-radius: 0 govuk-spacing(7);
-  background-color: $theme-tint-colour;
+  background-color: $lbcamden-theme-tint-colour;
 
   @include govuk-media-query(tablet) {
     padding-bottom: govuk-spacing(8);

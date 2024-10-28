@@ -1,10 +1,4 @@
-$theme-brand-colour: var(
-  --lbcamden-theme-brand-colour,
-  lbcamden-colour("bright-grey")
-);
-
 .lbcamden-campaign-hero {
-  --lbcamden-theme-brand-colour: var(bright-grey);
   // Spacing between speech text content
   --gap: 0;
 
@@ -20,7 +14,7 @@ $theme-brand-colour: var(
   margin-bottom: -#{govuk-spacing(2)};
   overflow: hidden;
   border-bottom-left-radius: 50px;
-  background-color: $theme-brand-colour;
+  background-color: $lbcamden-theme-brand-colour;
 
   img {
     display: none;

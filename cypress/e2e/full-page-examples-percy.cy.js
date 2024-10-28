@@ -5,6 +5,7 @@ const urls = [
   '/full-page-examples/directory-single',
   '/full-page-examples/directory-multi',
   '/full-page-examples/article',
+  '/full-page-examples/article-themed',
   '/full-page-examples/category-page',
   '/full-page-examples/category-page-housing',
   '/full-page-examples/check-your-answers',
