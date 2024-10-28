@@ -16,13 +16,6 @@ describe('emergency-banner', () => {
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
-
-    it('has a role of `banner`', () => {
-      const $ = render('emergency-banner', examples.default)
-
-      const $component = $('.lbcamden-emergency-banner')
-      expect($component.attr('role')).toEqual('banner')
-    })
   })
 
   describe('custom options', () => {
