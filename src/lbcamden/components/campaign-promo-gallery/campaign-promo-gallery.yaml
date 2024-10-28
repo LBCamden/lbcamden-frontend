@@ -1,0 +1,44 @@
+params:
+  - name: heading
+    type: string
+    required: false
+    description: Heading displayed
+  - name: items
+    type: array
+    required: true
+    description: Cards displayed in the promo gallery
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the card heading
+      - name: href
+        type: string
+        required: false
+        description: If set, the heading will contain a link
+      - name: icon
+        type: object
+        required: true
+        description: Icon for the card
+examples:
+  - name: default
+    description: Standard application of the campaign promo gallery
+    data:
+      heading: Heading
+      items:
+        - title: Housing Repairs
+          href: "#1"
+          icon:
+            src: /example-assets/images/home.png
+        - title: Leaseholder and Freeholders
+          href: "#2"
+          icon:
+            src: /example-assets/images/home.png
+        - title: Bid for a property
+          href: "#3"
+          icon:
+            src: /example-assets/images/home.png
+        - title: Apply for council housing
+          href: "#4"
+          icon:
+            src: /example-assets/images/home.png

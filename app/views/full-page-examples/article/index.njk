@@ -7,6 +7,8 @@ notes:
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
+
 
 {% set pageTitle = "Change you name by deed poll" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
@@ -266,17 +268,27 @@ notes:
           an appointment</a></p>
     </div>
     <div class="govuk-grid-column-one-third-from-desktop">
-      <aside class="lbcamden-card lbcamden-card--alt-1">
-        <h2>Related content</h2>
-        <div class="lbcamden-card__content">
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text</p>
-          <ul class="lbcamden-list lbcamden-list--dash">
-            <li><a href="https://www.camden.gov.uk/">Example</a></li>
-            <li><a href="https://www.camden.gov.uk/">Example</a></li>
-            <li><a href="https://www.camden.gov.uk/">Example</a></li>
-          </ul>
-        </div>
-      </aside>
+    
+      {{ LBCamdenRelatedContentCard({
+        "heading": "Related content",
+        "shortDescription": "Contrary to popular belief, Lorem Ipsum is not simply random text",
+        "relatedContent": [
+          {
+            "href": "#1",
+            "text": "Related item 1"
+          },
+          {
+            "href": "#2",
+            "text": "Related item 2"
+          },
+          {
+            "href": "#3",
+            "text": "Related item 3"
+          }
+        ]
+      }) }}
+  
+
     </div>
   </div>
 {% endblock %}
