@@ -8,8 +8,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "preinstall": "node bin/check-nvmrc.js",
-    "prestart": "node bin/check-nvmrc.js",
     "start": "gulp dev",
     "heroku-postbuild": "node ./node_modules/gulp/bin/gulp copy-assets && node ./node_modules/gulp/bin/gulp sassdoc",
     "heroku": "node app/start.js",
@@ -25,19 +23,28 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=c73762ed4204",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
-    "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\""
+    "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "govuk-frontend": "^4.7.0",
+    "govuk-frontend": "^5.0.0",
     "html-escaper": "^3.0.3",
-    "iframe-resizer": "^4.3.6"
+    "iframe-resizer": "^4.3.6",
+    "storybook-addon-govuk-fixtures": "file:../govuk-storybook"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/html": "^8.3.6",
+    "@storybook/html-vite": "^8.3.6",
+    "@storybook/test": "^8.3.6",
     "acorn": "^7.4.0",
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.18.3",
@@ -47,6 +54,7 @@
     "cssnano": "^4.1.11",
     "del": "^5.0.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-storybook": "^0.10.1",
     "express": "^4.16.4",
     "express-validator": "^6.6.1",
     "front-matter": "^4.0.2",
@@ -79,8 +87,6 @@
     "postcss": "^8.4.7",
     "postcss-pseudo-classes": "0.4.0",
     "postcss-scss": "^4.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "recursive-readdir": "^2.2.2",
     "request": "^2.88.2",
     "sass": "^1.77.8",
@@ -88,10 +94,12 @@
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
     "standard": "^14.3.4",
+    "storybook": "^8.3.6",
     "stylelint": "^14.6.1",
     "stylelint-config-gds": "^0.2.0",
     "stylelint-order": "^5.0.0",
     "vinyl-paths": "^3.0.1",
+    "yaml": "^2.6.0",
     "yaml-loader": "^0.8.0",
     "yargs": "^15.4.1"
   },
@@ -100,14 +108,6 @@
     "@percy/cypress": "^3.1.2",
     "@percy/logger": "1.0.0-beta.74",
     "@percy/puppeteer": "^2.0.0",
-    "@storybook/addon-essentials": "^7.0.7",
-    "@storybook/addon-interactions": "^7.0.7",
-    "@storybook/addon-links": "^7.0.7",
-    "@storybook/addon-styling": "^1.0.5",
-    "@storybook/blocks": "^7.0.7",
-    "@storybook/html": "^7.0.7",
-    "@storybook/html-webpack5": "^7.0.7",
-    "@storybook/testing-library": "^0.0.14-next.2",
     "chromatic": "^11.3.0",
     "fsevents": "*",
     "jest": "^29.7.0",
@@ -115,8 +115,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-puppeteer": "^9.0.2",
     "jest-serializer-html": "^7.0.0",
-    "puppeteer": "^21.6.1",
-    "storybook": "^7.0.7"
+    "puppeteer": "^21.6.1"
   },
   "browserslist": [
     ">0.1%",
@@ -154,5 +153,10 @@
     ]
   },
   "readme": "ERROR: No README data found!",
-  "_id": "lbcamden-frontend@0.2.6"
+  "_id": "lbcamden-frontend@0.2.6",
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
 }
