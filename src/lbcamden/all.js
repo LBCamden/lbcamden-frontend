@@ -1,3 +1,5 @@
+import * as govuk from "govuk-frontend"
+
 import { nodeListForEach } from './common'
 import LBCamdenButton from './components/button/button'
 import LBCamdenGuideContent from './components/guide-content/guide-content'
@@ -5,6 +7,8 @@ import LBCamdenGuideHeader from './components/guide-header/guide-header'
 import LBCamdenHeader from './components/header/header'
 
 function initAll () {
+  govuk.initAll()
+
   var $LBCamdenHeaders = document.querySelectorAll('[data-module="lbcamden-header"]')
   nodeListForEach($LBCamdenHeaders, function ($LBCamdenHeader) {
     new LBCamdenHeader($LBCamdenHeader).init()
@@ -26,16 +30,10 @@ function initAll () {
   })
 }
 
-if (document.readyState === "complete" || document.readyState === "interactive") {
-  // call on next available tick
-  setTimeout(initAll, 1);
-} else {
-  document.addEventListener("DOMContentLoaded", initAll);
-}
-
 export {
   LBCamdenButton,
   LBCamdenGuideContent,
   LBCamdenGuideHeader,
-  LBCamdenHeader
+  LBCamdenHeader,
+  initAll
 }

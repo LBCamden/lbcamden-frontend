@@ -1,26 +1,12 @@
 {% extends "src/lbcamden/template.njk" %}
 
 {% block head %}
-
-  {% if legacy %}
-    <link rel="stylesheet" href="/vendor/govuk_template/stylesheets/govuk-template.css">
-    <link rel="stylesheet" media="print" href="/vendor/govuk_template/stylesheets/govuk-template-print.css">
-    <link rel="stylesheet" media="all" href="/vendor/govuk_template/stylesheets/fonts.css"/>
-    <link rel="stylesheet" href="/public/app-legacy.css">
-  {% else %}
-    <link rel="stylesheet" href="/public/app.css">
-  {% endif %}
-
-  {% if componentPage %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js" integrity="sha256-Zb9yKJ/cfs+jG/zIOFL0QEuXr2CDKF7FR5YBJY3No+c=" crossorigin="anonymous"></script>
-  {% endif %}
   {% block styles %}{% endblock %}
 {% endblock %}
 
 {% block header %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
-{% from "service-banner/macro.njk" import LBCamdenServiceBanner %}
+{% from "src/lbcamden/components/service-banner/macro.njk" import LBCamdenServiceBanner %}
 
   {{ govukCookieBanner({
     "messages": [
@@ -345,11 +331,4 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  {% if legacy %}
-    {% include "partials/legacyJavaScript.njk" %}
-  {% endif %}
-  <script src="/public/govuk-frontend.js"></script>
-  <script src="/public/all.js"></script>
-  <script>window.GOVUKFrontend.initAll()</script>
-  <script>window.LBCamdenFrontend.initAll()</script>
 {% endblock %}

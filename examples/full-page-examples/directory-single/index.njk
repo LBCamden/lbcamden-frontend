@@ -2,11 +2,11 @@
 scenario: You want to change your name by deed poll
 notes:
 ---
-{% extends "full-page-example.njk" %}
+{% extends "examples/layouts/full-page-example.njk" %}
 {% set mainClasses = 'govuk-width-container' %}
 
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{% from "directory-record/macro.njk" import LBCamdenDirectoryRecord %}
+{% from "src/lbcamden/components/directory-record/macro.njk" import LBCamdenDirectoryRecord %}
 
 {% set pageTitle = "Contact Building Control" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}

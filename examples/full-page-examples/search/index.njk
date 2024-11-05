@@ -18,7 +18,7 @@ notes: >-
   This example merges features seen on GOV.UK news and communication finders and search pages.
 ---
 
-{% extends "full-page-example.njk" %}
+{% extends "examples/layouts/full-page-example.njk" %}
 
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/input/macro.njk" import govukInput %}
@@ -26,8 +26,8 @@ notes: >-
 {% from "node_modules/govuk-frontend/dist/govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/pagination/macro.njk" import govukPagination %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/button/macro.njk" import govukButton %}
-{% from "search/macro.njk" import LBCamdenSearch %}
-{% from "search-results/macro.njk" import LBCamdenSearchResults %}
+{% from "src/lbcamden/components/search/macro.njk" import LBCamdenSearch %}
+{% from "src/lbcamden/components/search-results/macro.njk" import LBCamdenSearchResults %}
 
 
 {% set pageTitle = "Search" %}

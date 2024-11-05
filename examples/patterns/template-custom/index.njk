@@ -6,7 +6,7 @@
 {% from "node_modules/govuk-frontend/dist/govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/footer/macro.njk" import govukFooter %}
 
-{% extends "template.njk" %}
+{% extends "src/lbcamden/template.njk" %}
 
 {% set htmlClasses = 'app-html-class' %}
 {% set htmlLang = 'fr' %}
@@ -16,12 +16,6 @@
 {% set containerClasses = "app-width-container--wide" %}
 
 {% block pageTitle %}GOV.UK - Le meilleur endroit pour trouver des services gouvernementaux et de l'information{% endblock %}
-
-{% block head %}
-  <!-- block:head -->
-  <link rel="stylesheet" href="/public/app.css">
-  <!-- endblock:head -->
-{% endblock %}
 
 {% block bodyStart %}
   <!-- block:bodyStart -->

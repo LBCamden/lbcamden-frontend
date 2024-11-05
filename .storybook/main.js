@@ -21,6 +21,10 @@ const config = {
         {
           searchPath: "examples/patterns",
           storyNamespace: 'patterns',
+        },
+        {
+          searchPath: "examples/full-page-examples",
+          storyNamespace: 'full-page-examples',
         }
       ],
       additionalTemplatePaths: ["examples"],
@@ -34,5 +38,15 @@ const config = {
     name: "@storybook/html-vite",
     options: {},
   },
+  staticDirs: [
+    {
+      to: "/assets",
+      from: "../src/lbcamden/assets"
+    },
+    {
+      to: "/example-assets",
+      from: "../src/lbcamden/example-assets"
+    },
+  ]
 };
 export default config;

@@ -2,13 +2,13 @@
 scenario: You want to change your name by deed poll
 notes:
 ---
-{% extends "full-page-example.njk" %}
+{% extends "examples/layouts/full-page-example.njk" %}
 {% set mainClasses = 'govuk-width-container' %}
 
-{% from "engagement-banner/macro.njk" import LBCamdenEngagementBanner %}
-{% from "promo-gallery/macro.njk" import LBCamdenPromoGallery %}
-{% from "card-gallery/macro.njk" import LBCamdenCardGallery %}
-{% from "hero/macro.njk" import LBCamdenHero %}
+{% from "src/lbcamden/components/engagement-banner/macro.njk" import LBCamdenEngagementBanner %}
+{% from "src/lbcamden/components/promo-gallery/macro.njk" import LBCamdenPromoGallery %}
+{% from "src/lbcamden/components/card-gallery/macro.njk" import LBCamdenCardGallery %}
+{% from "src/lbcamden/components/hero/macro.njk" import LBCamdenHero %}
 
 
 {% block styles %}

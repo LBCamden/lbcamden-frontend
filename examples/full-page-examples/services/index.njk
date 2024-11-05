@@ -2,13 +2,13 @@
 scenario: You want to find information about services provided by Camden
 notes:
 ---
-{% extends "full-page-example.njk" %}
+{% extends "examples/layouts/full-page-example.njk" %}
 {% set mainClasses = 'govuk-wrapper-spacing--auto' %}
 
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/inset-text/macro.njk" import govukInsetText %}
-{% from "components/card/macro.njk" import LBCamdenCard %}
-{% from "components/card-gallery/macro.njk" import LBCamdenCardGallery %}
+{% from "src/lbcamden/components/card/macro.njk" import LBCamdenCard %}
+{% from "src/lbcamden/components/card-gallery/macro.njk" import LBCamdenCardGallery %}
 
 
 {% set pageTitle = "Services" %}
