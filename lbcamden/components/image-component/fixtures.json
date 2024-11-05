@@ -1,0 +1,16 @@
+{
+    "component": "image-component",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "image": {
+                    "src": "/example-assets/images/hero.jpg"
+                },
+                "caption": "We provide services and information for residents, businesses and visitors to the London Borough of Camden."
+            },
+            "html": "<figure class=\"lbcamden-image-component\">\n        <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n        <figcaption class=\"lbcamden-image-component__caption\">We provide services and information for residents, businesses and visitors to the London Borough of Camden.</figcaption>\n    </figure>",
+            "hidden": false
+        }
+    ]
+}
