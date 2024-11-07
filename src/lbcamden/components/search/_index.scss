@@ -63,7 +63,7 @@
     }
 
     &:hover {
-      background-color: darken($govuk-brand-colour, 5%);
+      background-color: lbcamden-colour("govuk-brand-hover-colour");
       cursor: pointer;
     }
 
