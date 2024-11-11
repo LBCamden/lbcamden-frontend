@@ -7,8 +7,8 @@
   "sassdoc": "sassdoc/",
   "src": "src/lbcamden/",
   "components": "src/lbcamden/components/",
-  "govukSrc": "node_modules/govuk-frontend/govuk/dist/",
-  "govukComponents": "node_modules/govuk-frontend/govuk/dist/components",
+  "govukSrc": "node_modules/govuk-frontend/dist/govuk/",
+  "govukComponents": "node_modules/govuk-frontend/dist/govuk/components",
   "ports": {
     "app": 3000,
     "test": 8888

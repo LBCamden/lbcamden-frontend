@@ -11,6 +11,13 @@ const config = {
           nunjucksPrefix: 'govuk'
         },
         {
+          storyNamespace: "components/govuk",
+          searchPath: "src/govuk",
+          nunjucksPrefix: 'govuk',
+          type: "yaml",
+          resolveTemplate: name => `node_modules/govuk-frontend/dist/govuk/components/${name}/template.njk`
+        },
+        {
           storyNamespace: "components/lbcamden",
           searchPath: "src/lbcamden",
           type: "yaml",

@@ -16,7 +16,7 @@
     "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package' && npm run test:build:package",
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist' && npm run test:build:dist",
-    "test": "npm run test:dependencies && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
+    "test": "npm run test:dependencies && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
     "test:build:package": "jest tasks/gulp/__tests__/after-build-package.test.js",
     "test:build:dist": "jest tasks/gulp/__tests__/after-build-dist.test.js",
@@ -45,12 +45,14 @@
     "@storybook/html": "^8.3.6",
     "@storybook/html-vite": "^8.3.6",
     "@storybook/test": "^8.3.6",
+    "@testing-library/dom": "^10.4.0",
     "acorn": "^7.4.0",
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.3",
+    "css-mediaquery": "^0.1.2",
     "cssnano": "^4.1.11",
     "del": "^5.0.0",
     "eslint": "^6.8.0",
@@ -89,7 +91,7 @@
     "postcss-scss": "^4.0.3",
     "recursive-readdir": "^2.2.2",
     "request": "^2.88.2",
-    "sass": "^1.77.8",
+    "sass": "^1.80.6",
     "sass-color-helpers": "^2.1.1",
     "sassdoc": "^2.7.3",
     "shuffle-seed": "^1.1.6",
@@ -144,7 +146,7 @@
     ]
   },
   "jest": {
-    "preset": "jest-puppeteer",
+    "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
       "./config/jest-setup.js"
     ],
