@@ -53,7 +53,7 @@ const errorHandler = function (error) {
 }
 
 function compileStyles (done) {
-  const compileStylesheet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
+  const compileStylesheet = configPaths.src + 'all.scss'
   const sassOptions = {
     includePaths: ['node_modules']
   }
@@ -81,23 +81,6 @@ function compileStyles (done) {
 
   done()
 }
-
-// function compileLegacy (done) {
-//   gulp.src(path.join(configPaths.app, 'assets/scss/app-legacy.scss'))
-//     .pipe(plumber(errorHandler))
-//     .pipe(sass({
-//       includePaths: ['node_modules/govuk_frontend_toolkit/stylesheets', 'node_modules']
-//     }))
-//     .pipe(postcss([
-//       autoprefixer,
-//       // Auto-generate 'companion' classes for pseudo-selector states - e.g. a
-//       // :hover class you can use to simulate the hover state in the review app
-//       postcsspseudoclasses
-//     ]))
-//     .pipe(gulp.dest(taskArguments.destination + '/'))
-//
-//   done()
-// }
 
 function compileFullPageStyles (done) {
   const compileFullPageExampleStylesheets = configPaths.fullPageExamples + '**/styles.scss'
@@ -170,30 +153,16 @@ gulp.task('js:compile', (done) => {
 })
 
 gulp.task('js:copy-govukfrontend', () => {
-  if (isDist) {
-    return gulp.src([
-      configPaths.node_modules + 'govuk-frontend/govuk/all.js'
-    ])
-      .pipe(uglify())
-      .pipe(
-        rename({
-          basename: 'govuk-frontend',
-          extname: '.min.js'
-        })
-      )
-      .pipe(eol())
-      .pipe(gulp.dest(destinationPath()))
-  } else {
-    return gulp.src([
-      configPaths.node_modules + 'govuk-frontend/govuk/all.js'
-    ])
-      .pipe(
-        rename({
-          basename: 'govuk-frontend',
-          extname: '.js'
-        })
-      )
-      .pipe(eol())
-      .pipe(gulp.dest(destinationPath()))
-  }
+  return gulp.src([
+    configPaths.node_modules + 'govuk-frontend/dist/govuk/all.bundle.js'
+  ])
+    .pipe(uglify())
+    .pipe(
+      rename({
+        basename: 'govuk-frontend',
+        extname: '.min.js'
+      })
+    )
+    .pipe(eol())
+    .pipe(gulp.dest(destinationPath()))
 })

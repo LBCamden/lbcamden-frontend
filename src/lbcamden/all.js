@@ -1,4 +1,4 @@
-import * as govuk from "govuk-frontend"
+import * as govuk from 'govuk-frontend'
 
 import { nodeListForEach } from './common'
 import LBCamdenButton from './components/button/button'
