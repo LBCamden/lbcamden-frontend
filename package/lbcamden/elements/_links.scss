@@ -117,7 +117,7 @@
       @include govuk-link-hover-decoration;
 
       &:not(.lbcamden-link--promo-alt):not(:focus) {
-        background: darken($govuk-brand-colour, 5%);
+        background: lbcamden-colour("govuk-brand-hover-colour");
       }
     }
 
