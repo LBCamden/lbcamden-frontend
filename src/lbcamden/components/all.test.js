@@ -1,3 +1,4 @@
+/* @jest-environment node */
 /* eslint-env jest */
 
 const { allComponents } = require('../../../lib/file-helper')
