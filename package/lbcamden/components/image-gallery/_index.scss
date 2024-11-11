@@ -21,7 +21,7 @@
   }
 }
 
-.lbcamden-prose .lbcamden-image-gallery {
+.lbcamden-prose ul.lbcamden-image-gallery { // stylelint-disable-line selector-no-qualifying-type
   // breaks out of inherited css - better to approach this by moving lbcamden-prose up to the individual block level rather than installing it at the root
   padding-left: 0;
   list-style-type: none;

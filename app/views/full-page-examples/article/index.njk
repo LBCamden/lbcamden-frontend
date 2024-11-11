@@ -8,6 +8,7 @@ notes:
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
+{% from "image-gallery/macro.njk" import LBCamdenImageGallery %}
 
 
 {% set pageTitle = "Change you name by deed poll" %}
@@ -170,6 +171,29 @@ notes:
         </table>
       </div>
 
+      {{ LBCamdenImageGallery({
+      items: [
+        {
+          image: {
+            src: "../example-assets/images/hero.jpg"
+          },
+          caption: "Image 1"
+        },
+        {
+          image: {
+            src: "../example-assets/images/hero.jpg"
+          },
+          caption: "Image 2"
+        },
+        {
+          image: {
+            src: "/example-assets/images/hero.jpg"
+          },
+          caption: "Image 3"
+        }
+      ]
+    }) }}
+
       <h2>What about my name can I change?</h2>
 
       <h3>You can:</h3>
@@ -267,6 +291,7 @@ notes:
             href="https://www.camden.gov.uk/">Book
           an appointment</a></p>
     </div>
+  
     <div class="govuk-grid-column-one-third-from-desktop">
     
       {{ LBCamdenRelatedContentCard({
