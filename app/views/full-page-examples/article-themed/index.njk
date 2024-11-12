@@ -3,12 +3,20 @@ scenario: You want to change your name by deed poll
 notes:
 ---
 {% extends "full-page-example.njk" %}
-{% set mainClasses = 'govuk-width-container lbcamden-campaign--local-offer' %}
+{% set mainClasses = 'govuk-width-container lbcamden-campaign--example-theme' %}
 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
 
+{% block styles %}
+<style>
+  .lbcamden-campaign--example-theme {
+    --lbcamden-theme-brand-colour: #ffba00;
+    --lbcamden-theme-tint-colour: #fff0c8;
+  }
+</style>
+{% endblock %}
 
 {% set pageTitle = "Change you name by deed poll" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
@@ -268,7 +276,7 @@ notes:
           an appointment</a></p>
     </div>
     <div class="govuk-grid-column-one-third-from-desktop">
-    
+
       {{ LBCamdenRelatedContentCard({
         "heading": "Related content",
         "shortDescription": "Contrary to popular belief, Lorem Ipsum is not simply random text",
@@ -287,7 +295,7 @@ notes:
           }
         ]
       }) }}
-  
+
 
     </div>
   </div>
