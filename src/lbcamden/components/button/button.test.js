@@ -81,7 +81,7 @@ describe('/components/button', () => {
   })
 })
 
-function encloseInForm(button) {
+function encloseInForm (button) {
   const form = document.createElement('form')
   button.parentNode.appendChild(form)
   button.parentNode.removeChild(button)
@@ -89,7 +89,7 @@ function encloseInForm(button) {
   return form
 }
 
-function renderExample(example = examples.default) {
+function renderExample (example = examples.default) {
   return renderDOM('button', example, {
     jsModules: [LBCamdenButton]
   })

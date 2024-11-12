@@ -6,7 +6,6 @@ const { renderSass } = require('../../../lib/jest-helpers')
 
 const configPaths = require('../../../config/paths.json')
 
-
 // We can't use the render function from jest-helpers, because we need control
 // over the nunjucks environment.
 const nunjucks = require('nunjucks')
