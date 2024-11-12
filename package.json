@@ -14,6 +14,7 @@
     "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package' && npm run test:build:package",
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist' && npm run test:build:dist",
+    "build:storybook": "storybook build",
     "test": "npm run test:dependencies && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
     "test:build:package": "jest tasks/gulp/__tests__/after-build-package.test.js",
@@ -24,8 +25,7 @@
     "chromatic": "npx chromatic --project-token=c73762ed4204",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
-    "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 --no-open"
   },
   "dependencies": {
     "govuk-frontend": "^5.0.0",
