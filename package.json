@@ -30,7 +30,7 @@
   "dependencies": {
     "govuk-frontend": "^5.0.0",
     "iframe-resizer": "^4.3.6",
-    "storybook-addon-govuk-fixtures": "file:../govuk-storybook"
+    "storybook-addon-govuk-fixtures": "github:lbcamden/storybook-addon-govuk-fixtures"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
