@@ -7,8 +7,8 @@ notes:
 
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/inset-text/macro.njk" import govukInsetText %}
-{% from "related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
-{% from "image-gallery/macro.njk" import LBCamdenImageGallery %}
+{% from "src/lbcamden/components/related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
+{% from "src/lbcamden/components/image-gallery/macro.njk" import LBCamdenImageGallery %}
 
 {% set pageTitle = "Change you name by deed poll" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
@@ -21,7 +21,7 @@ notes:
         href: "#/"
       },
       {
-        text: "Births, deaths, marriages and citizservice-bannerenship",
+        text: "Births, deaths, marriages and citizenship",
         href: "#/"
       }
     ]

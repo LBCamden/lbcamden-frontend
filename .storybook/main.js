@@ -24,7 +24,7 @@ const config = {
           nunjucksPrefix: 'LBCamden'
         },
       ],
-      fullPageExamples: [
+      standaloneExamples: [
         {
           searchPath: "examples/patterns",
           storyNamespace: 'patterns',

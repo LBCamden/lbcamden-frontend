@@ -22,15 +22,14 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
-    "chromatic": "npx chromatic --project-token=c73762ed4204",
+    "chromatic": "npx chromatic --project-token=c73762ed4204 --build-script-name=build:storybook",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
     "storybook": "storybook dev -p 6006 --no-open"
   },
   "dependencies": {
     "govuk-frontend": "^5.0.0",
-    "iframe-resizer": "^4.3.6",
-    "storybook-addon-govuk-fixtures": "github:lbcamden/storybook-addon-govuk-fixtures"
+    "iframe-resizer": "^4.3.6"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
@@ -87,6 +86,7 @@
     "shuffle-seed": "^1.1.6",
     "standard": "^14.3.4",
     "storybook": "^8.3.6",
+    "storybook-addon-govuk-fixtures": "github:lbcamden/storybook-addon-govuk-fixtures",
     "stylelint": "^14.6.1",
     "stylelint-config-gds": "^0.2.0",
     "stylelint-order": "^5.0.0",
