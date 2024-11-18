@@ -16,7 +16,15 @@ export default defineConfig({
     build: {
         outDir: '../../package',
         assetsDir: 'dist/assets',
-        emptyOutDir: true
+        emptyOutDir: true,
+        rollupOptions: {
+            output: {
+              inlineDynamicImports : true,
+              entryFileNames: `dist/assets/[name].js`,
+              chunkFileNames: `dist/assets/[name].js`,
+              assetFileNames: `dist/assets/[name].[ext]`
+            }
+        }
     }
 
 })
