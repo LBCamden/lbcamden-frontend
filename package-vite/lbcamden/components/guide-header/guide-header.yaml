@@ -1,0 +1,72 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: items
+    type: array
+    required: false
+    description: Option to show the icon only (with no text).
+    params:
+      - name: text
+        type: string
+        required: true
+        description: The title of the link
+      - name: href
+        type: string
+        required: true
+        description: URL target of the link
+
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Header must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Header must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Header must:
+  - be presentational when linked to from accompanying text (crown icon).
+
+  Landmarks and Roles in the Header should:
+  - have a role of `banner` at the root of the component (<header>) (https://www.w3.org/TR/wai-aria-1.1/#banner)
+
+examples:
+  - name: default
+    description: The standard header as used on information pages on GOV.UK
+    data:
+      items:
+        - text: Report a repair
+          href: "#"
+        - text: Gas safety
+          href: "#"
+        - text: Tenants
+          href: "#"
+        - text: Damp and mould
+          href: "#"
+        - text: Heating repairs
+          href: "#"
+        - text: Leaseholders
+          href: "#"
+        - text: Enhanced tenants
+          href: "#"
+        - text: Lifts awaiting repairs
+          href: "#"
+        - text: Housing repairs complaints
+          href: "#"
+        - text: Types of repairs
+          href: "#"
+        - text: Insurance cover
+          href: "#"
+
+  - name: classes
+    hidden: true
+    data:
+      classes: logo-class-test

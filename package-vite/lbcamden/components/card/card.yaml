@@ -1,0 +1,222 @@
+params:
+- name: classes
+  type: string
+  required: false
+  description: Classes to add to the container.
+- name: element
+  type: string
+  required: false
+  description: HTML element to replace the default 'div' element.
+- name: attributes
+  type: object
+  required: false
+  description: HTML attributes (for example data attributes) to add to the container.
+- name: clickable
+  type: boolean
+  required: false
+  description: If set, entire card will be clickable
+- name: type
+  type: string
+  required: false
+  description: If set, this will alter the appearance of the card
+- name: heading
+  type: array
+  required: true
+  description: If set, entire card will be wrapped in a link
+  params:
+    - name: title
+      type: string
+      required: true
+      description: The title of the card heading
+    - name: href
+      type: string
+      required: false
+      description: If set, the heading will contain a link
+    - name: headingLevel
+      type: int
+      required: false
+      description: Sets the heading level - if omitted will default to H2
+- name: content
+  type: object
+  required: false
+  description: If set, card body will display this value
+  params:
+    - name: text
+      type: string
+      required: false
+      description: If present, the value of this attribute will be displayed in a paragraph tag
+    - name: html
+      type: string
+      required: false
+      description: If present, the value of this attribute will be displayed within the card as HTML
+- name: image
+  type: object
+  required: true
+  description: Image configuration as per LBCamden image component
+- name: topBorder
+  type: boolean
+  required: false
+  description: If set, the card will receive a decorative border on the top of the card
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Header must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Card must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Card must:
+  - be presentational when linked to from accompanying text
+
+examples:
+- name: default
+  description: Standard application of a card.
+  data:
+    heading:
+      title: Example heading
+    content:
+      text: 'This is a description'
+
+- name: with H3 in header
+  description: Standard application of a card.
+  data:
+    heading:
+      title: Example heading
+      headingLevel: 3
+    content:
+      text: 'This is a description'
+
+- name: as a span
+  description: Container element uses an 'li' rather than a 'div.
+  data:
+    element: span
+    heading:
+      title: Example heading
+    content:
+      text: 'This is a description'
+
+- name: card with link in header
+  description: Standard application of a card with a link in the header.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+
+- name: clickable card
+  description: Clickable version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+
+- name: decorated type 1
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'alt-1'
+
+- name: decorated type 2
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'alt-2'
+
+- name: decorated type 3
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+    content:
+      html: 'This is a description with a <a href="#">link</a> in it'
+    clickable: true
+    type: 'alt-3'
+
+- name: decorated type 1 with top border
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    topBorder: true
+    clickable: true
+    type: 'alt-1'
+
+- name: promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link'
+
+- name: alternative promo link type
+  description: Decorated version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    clickable: true
+    type: 'promo-link--alt'
+
+- name: naked card
+  description: Basic stripped back version of the card.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: 'naked'
+
+- name: with image
+  description: Card with styles and an image.
+  data:
+    heading:
+      title: Example heading
+      href: '#'
+    content:
+      text: 'This is a description'
+    clickable: true
+    type: alt-1
+    image:
+      src: /example-assets/images/1800x1200.jpg
+      alt: 'Image of Camden market'
+
+
+# Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+- name: attributes
+  hidden: true
+  data:
+    attributes:
+      data-test-attribute: value
+      data-test-attribute-2: value-2
+- name: classes
+  hidden: true
+  data:
+    classes: app-header--custom-modifier

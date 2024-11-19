@@ -1,0 +1,333 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the footer container.
+  - name: navigation
+    type: array
+    required: false
+    description: Array of items for use in the primary navigation section of the footer.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: List item text in the navigation section of the footer.
+      - name: href
+        type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationUtility
+    type: array
+    required: false
+    description: Array of items for use in the utility navigation section of the footer.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: List item text in the navigation section of the footer.
+      - name: href
+        type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationSecondary
+    type: array
+    required: false
+    description: Array of items for use in the secondary navigation section of the footer.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: List item text in the navigation section of the footer.
+      - name: href
+        type: string
+        required: true
+        description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+  - name: navigationSocial
+    type: array
+    required: false
+    description: Array of items for use in the social navigation section of the footer.
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Title for a section.
+      - name: columns
+        type: integer
+        required: false
+        description: Amount of columns to display items in navigation section of the footer.
+      - name: width
+        type: string
+        required: false
+        description: Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'.
+      - name: items
+        type: array
+        required: false
+        description: Array of items to display in the list in navigation section of the footer.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: List item text in the navigation section of the footer.
+          - name: href
+            type: string
+            required: true
+            description: List item href attribute in the navigation section of the footer. Both `text` and `href` attributes need to be present to create a link.
+          - name: attributes
+            type: object
+            required: false
+            description: HTML attributes (for example data attributes) to add to the anchor in the footer navigation section.
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Footer must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+  Links in the Footer must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+  Images in the Footer must:
+  - be presentational when linked to from accompanying text (Open Government Licence (OGL) icon).
+  - have a meaningful accessible name if also a linked element (crest icon).
+  Landmarks and Roles in the Footer should:
+  - avoid navigation landmarks or roles
+    "The footer element alone is sufficient for such cases; while a nav element can be used in such cases, it is usually unnecessary." - (https://www.w3.org/TR/html52/sections.html#the-nav-element)
+    Note: This decision has been made based on prior experience seeing removal of overuse of `<nav>` elements from www.GOV.UK, which made it confusing for users of assistive technologies to know what were the most important navigation aspects of GOV.UK.
+    Should be challenged if user research indicates this is an issue.
+  - have a role of `contentinfo` at the root of the component (<footer>) (https://www.w3.org/TR/wai-aria-1.1/#contentinfo)
+    Note: This decision has been made given that most uses of this role tend to be used directly on a `<footer>` element.
+    Assumption made is that is most predictable for users of assistive technologies.
+    The spec indicates that `contentinfo` is useful for "Examples of information included in this region of the page are copyrights and links to privacy statements.", which may indicate that it might be better placed around the 'meta' section of this component.
+    Should be challenged if user research indicates this is an issue.
+    See also: http://www.brucelawson.co.uk/2013/why-does-html-take-rolecontentinfo
+
+examples:
+  - name: default
+    data:
+      {}
+
+  - name: with primary navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+
+  - name: with primary and utility navigation and social navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-highlighted: true
+        - href: '#1'
+          text: Navigation item 4
+        - href: '#2'
+          text: Navigation item 5
+        - href: '#3'
+          text: Navigation item 6
+        - href: '#4'
+          text: Navigation item 7
+      navigationUtility:
+        - href: '#1'
+          text: Utility item 1
+        - href: '#2'
+          text: Utility item 2
+        - href: '#3'
+          text: Utility item 3
+        - href: '#4'
+          text: Utility item 4
+      navigationSocial:
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-icon: facebook
+        - href: '#2'
+          text: Navigation item 2
+          attributes:
+            data-icon: youtube
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-icon: twitter
+        - href: '#4'
+          text: Navigation item 4
+          attributes:
+            data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
+
+  - name: with primary and utility navigation, sponsor images and social navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-highlighted: true
+      navigationUtility:
+        - href: '#1'
+          text: Utility item 1
+        - href: '#2'
+          text: Utility item 2
+        - href: '#3'
+          text: Utility item 3
+        - href: '#4'
+          text: Utility item 4
+      sponsorLogos:
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+      navigationSocial:
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-icon: facebook
+        - href: '#2'
+          text: Navigation item 2
+          attributes:
+            data-icon: youtube
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-icon: twitter
+        - href: '#4'
+          text: Navigation item 4
+          attributes:
+            data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
+
+  - name: with primary, secondary and utility navigation, sponsor image and social navigation
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+      navigationUtility:
+        - href: '#1'
+          text: Utility item 1
+        - href: '#2'
+          text: Utility item 2
+        - href: '#3'
+          text: Utility item 3
+        - href: '#4'
+          text: Utility item 4
+      navigationSecondary:
+        - href: '#1'
+          text: Secondary item 1
+          attributes:
+            data-highlighted: true
+        - href: '#2'
+          text: Secondary item 2
+          attributes:
+            data-highlighted: true
+      sponsorLogos:
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+        - image:
+            src: /assets/images/funded-by-uk-government.png
+            alt: Funded by UK government
+            lazy: true
+            width: 1488
+            height: 325
+          href: '#'
+      navigationSocial:
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-icon: facebook
+        - href: '#2'
+          text: Navigation item 2
+          attributes:
+            data-icon: youtube
+        - href: '#3'
+          text: Navigation item 3
+          attributes:
+            data-icon: twitter
+        - href: '#4'
+          text: Navigation item 4
+          attributes:
+            data-icon: linkedin
+        - href: '#5'
+          text: Navigation item 5
+          attributes:
+            data-icon: instagram
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: attributes
+    hidden: true
+    data:
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+  - name: classes
+    hidden: true
+    data:
+      classes: app-footer--custom-modifier
+  - name: with custom width
+    hidden: true
+    data:
+      navigation:
+        - width: two-thirds
+  - name: with empty navigation
+    hidden: true
+    data:
+      navigation: [ ]
+  - name: with navigation item attributes
+    hidden: true
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+          attributes:
+            data-attribute: my-attribute
+            data-attribute-2: my-attribute-2

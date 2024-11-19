@@ -25,7 +25,7 @@ describe('package/', () => {
         files => {
           return files
             // Remove /package prefix from filenames
-            .map(file => file.replace(/^package\//, ''))
+            .map(file => file.replace(/^package-vite\//, ''))
             // Sort to make comparison easier
             .sort()
         },

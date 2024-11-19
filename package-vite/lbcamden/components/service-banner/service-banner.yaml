@@ -1,0 +1,27 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of banner.
+  - name: shortDescription
+    type: string
+    required: false
+    description: Short description of the emergency-banner
+
+previewLayout: full-width
+
+examples:
+  - name: default
+    description: Standard application of the service-banner element.
+    data:
+      heading: Council Tax and benefit forms unavailable
+      shortDescription: <p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>
+
+  - name: classes
+    hidden: true
+    data:
+      classes: app-service-banner--custom-modifier

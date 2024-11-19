@@ -1,0 +1,13 @@
+.lbcamden-header {
+  &--estate {
+    @import "./includes/estate-header";
+  }
+
+  &--site-navigation {
+    @import "./includes/site-header";
+
+    + .govuk-phase-banner {
+      border-top: 1px solid lbcamden-colour("light-grey-3");
+    }
+  }
+}

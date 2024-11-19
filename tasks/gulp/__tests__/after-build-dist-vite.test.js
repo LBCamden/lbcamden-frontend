@@ -34,7 +34,7 @@ describe('dist/', () => {
           files => {
             return files
               // Remove /package prefix from filenames
-              .map(file => file.replace(/^dist\/assets\//, ''))
+              .map(file => file.replace(/^package-vite\/dist\/assets\//, ''))
               // Sort to make comparison easier
               .sort()
           },

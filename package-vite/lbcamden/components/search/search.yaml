@@ -1,0 +1,97 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: alt
+    type: boolean
+    required: false
+    description: Option to display variant that is optimised for a darker background
+  - name: labelText
+    type: string
+    required: false
+    description: Option to customise the label and button string value
+  - name: placeholderText
+    type: string
+    required: false
+    description: Option to customise the placeholder text value
+  - name: value
+    type: string
+    required: false
+    description: Value provided to search field
+  - name: name
+    type: string
+    required: false
+    description: Name attribute for the input field
+  - name: action
+    type: string
+    required: false
+    description: Action attribute for the search field
+  - name: method
+    type: string
+    required: false
+    description: Method attribute on the search field
+  - name: resultsCountId
+    type: string
+    required: false
+    description: id of related results count element to reference for accessibility
+  - name: additionalParameters
+    type: object
+    required: false
+    description: Extra paramaters in object format 
+
+
+previewLayout: full-width
+accessibilityCriteria: |
+  TBC
+
+examples:
+  - name: default
+    description: The standard implementation of a search bar
+    data:
+  
+  - name: Search input with value
+    description: The standard implementation of a search bar with value entered
+    data:
+      value: Housing Repairs      
+
+  - name: Colour variant
+    description: Allows the search component to be used on a darker background
+    data:
+      alt: true
+
+  - name: Placeholder text
+    description: Allows the placeholder text to be customised
+    data:
+      placeholderText: 'Customised placeholder'
+
+  - name: width modifier
+    description: Input with specified width
+    data:
+      classes: 'govuk-input--width-30'
+
+  - name: classes
+    description: Search input with custom classes
+    data:
+      classes: search-class-test
+  - name: labelText
+    description: Search input with custom label text
+    data:
+      labelText: 'Search test'
+  - name: additional parameters
+    description: Search input passing additional parameters
+    data:
+      additionalParameters: 
+        highlighting: true
+  - name: method attribute
+    description: Search input with POST method attribute
+    data:
+      method: post
+  - name: action attribute
+    description: Search input with custom action attribute
+    data:
+      action: '/q'
+  - name: name attribute
+    description: Search input with custom name attribute
+    data:
+      name: 'find'

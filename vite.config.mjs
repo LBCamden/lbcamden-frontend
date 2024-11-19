@@ -24,6 +24,10 @@ export default defineConfig({
             {
               src: '**/*',
               dest: 'lbcamden'
+            },
+            {
+              src: 'README.md',
+              dest: './'
             }
           ],
           structured:true
@@ -36,6 +40,7 @@ export default defineConfig({
         minify: true,
         assetsDir: 'dist/assets',
         emptyOutDir: true,
+        assetsInclude: ['**/*.md'],
         rollupOptions: {
             manualChunks: false,
             treeshake: false,
@@ -44,11 +49,12 @@ export default defineConfig({
               govuk_js: './node_modules/govuk-frontend/govuk/all.js',
               lbcamden_js: './src/lbcamden/all.js',
               lbcamden_css: './src/lbcamden/all.scss'
+
             },
             output: {
               inlineDynamicImports : false,
               entryFileNames: function(file) {
-                // console.log("🐱" + JSON.stringify(file, null, 4))
+                console.log("🐱" + JSON.stringify(file, null, 4))
                 
                 // if(file.name == 'lbcamden_css') {
                 //   return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
@@ -65,7 +71,7 @@ export default defineConfig({
                 return`aaa-dist/[name].js`
               },
               chunkFileNames: function(file) {
-                // console.log("🐵" + JSON.stringify(file, null, 4))
+                console.log("🐵" + JSON.stringify(file, null, 4))
                 if(file.name == 'index.js') {
                     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
                 }
@@ -73,10 +79,16 @@ export default defineConfig({
                 return`bbb-dist/[name].js`
               },
               assetFileNames: function (file) {
-                // console.log("🐶" + JSON.stringify(file, null, 4))
+                console.log("🐶" + JSON.stringify(file, null, 4))
                 if(file.name == 'lbcamden_css.css') {
                     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
                 }
+
+                if(file.name == 'lbcamden_readme') {
+                  return `[name].[ext]`
+              }
+
+                
 
                 if(file.name.endsWith('woff') || file.name.endsWith('woff2')) {
                     return `dist/assets/fonts/[name].[ext]`
