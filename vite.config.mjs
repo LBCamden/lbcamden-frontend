@@ -14,6 +14,10 @@ export default defineConfig({
         viteStaticCopy({
           targets: [
             {
+              src: 'package.json',
+              dest: './'
+            },
+            {
                 src: 'assets/images/*',
                 dest: 'dist'
             },
@@ -36,18 +40,32 @@ export default defineConfig({
             manualChunks: false,
             treeshake: false,
             inlineDynamicImports:true,
+            input: {
+              govuk_js: './node_modules/govuk-frontend/govuk/all.js',
+              lbcamden_js: './src/lbcamden/all.js',
+              lbcamden_css: './src/lbcamden/all.scss'
+            },
             output: {
-              inlineDynamicImports : true,
+              inlineDynamicImports : false,
               entryFileNames: function(file) {
-                console.log(">>>>>>" + JSON.stringify(file, null, 4))
-                if(file.name == 'index') {
+                // console.log("🐱" + JSON.stringify(file, null, 4))
+                
+                // if(file.name == 'lbcamden_css') {
+                //   return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+                // }
+                
+                if(file.name == 'lbcamden_js') {
                     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
+                }
+
+                if(file.name == 'govuk_js') {
+                  return 'dist/govuk-frontend-4.7.0.min.js' //AW: MUST FIX: MAGIC STRING
                 }
 
                 return`aaa-dist/[name].js`
               },
               chunkFileNames: function(file) {
-                
+                // console.log("🐵" + JSON.stringify(file, null, 4))
                 if(file.name == 'index.js') {
                     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
                 }
@@ -55,8 +73,8 @@ export default defineConfig({
                 return`bbb-dist/[name].js`
               },
               assetFileNames: function (file) {
-                // console.log("<<<<<>>>>>>>>>>>" + JSON.stringify(file, null, 4))
-                if(file.name == 'index.css') {
+                // console.log("🐶" + JSON.stringify(file, null, 4))
+                if(file.name == 'lbcamden_css.css') {
                     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
                 }
 
