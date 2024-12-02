@@ -1,0 +1,25 @@
+examples:
+  - name: Amy Design System Example 1
+    data:
+      id: "add-example"
+      items: 
+        - heading:
+            text: "Vote by post"
+          content: 
+            text: "We need to know your nationality so we can work out which "
+        - heading:
+            text: "Section A"
+          content: 
+            text: "Section A text"
+  - name: Example Alex
+    data:
+      id: "bad-example"
+      items: 
+        - heading:
+            text: "Section Baby"
+          content: 
+            text: "Section B Text"
+        - heading:
+            text: "Section Amy"
+          content: 
+            text: "Section A text"
