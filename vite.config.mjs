@@ -72,19 +72,19 @@ export default defineConfig({
       targets: [
         {
           src: 'package.json',
-          dest: './package-vite/'
+          dest: 'package-vite/'
         },
         {
           src: 'assets/images/*',
-          dest: './dist'
+          dest: 'dist'
         },
         {
           src: '**/*',
-          dest: './package-vite/lbcamden/'
+          dest: 'package-vite/lbcamden/'
         },
         {
           src: 'README.md',
-          dest: './package-vite/'
+          dest: 'package-vite/'
         }
       ],
       structured: true
@@ -97,7 +97,7 @@ export default defineConfig({
     outDir: '../../',
     minify: true,
     assetsDir: 'dist/assets',
-    emptyOutDir: true,
+    emptyOutDir: false,
     // assetsInclude: ['**/*.md', '**/*.yaml'],
     rollupOptions: {
       manualChunks: false,
@@ -135,14 +135,14 @@ export default defineConfig({
           // }
 
           if (file.name === 'lbcamden_js') {
-            return './dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
+            return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
           }
 
           if (file.name === 'govuk_js') {
-            return './dist/govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
+            return 'dist/govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
           }
 
-          return './dist/aaa-dist/[name].js'
+          return 'dist/aaa-dist/[name].js'
         },
         chunkFileNames: function (file) {
           console.log('🐵' + JSON.stringify(file, null, 4))
@@ -150,20 +150,20 @@ export default defineConfig({
           //     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
           // }
 
-          return './dist/bbb-dist/[name].js'
+          return 'dist/bbb-dist/[name].js'
         },
         assetFileNames: function (file) {
           // console.log("🐶" + JSON.stringify(file, null, 4))
 
           // Rename CSS output
           if (file.name === 'lbcamden_css.css') {
-            return './dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+            return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
 
           if (file.name.endsWith('yaml')) {
             console.log('YAML')
             console.log(file.originalFileName)
-            return './package-vite/lbcamden/' + file.originalFileName
+            return 'package-vite/lbcamden/' + file.originalFileName
           }
 
           if (file.name.endsWith('emit')) {
@@ -176,10 +176,10 @@ export default defineConfig({
 
           // Handle fonts
           if (file.name.endsWith('woff') || file.name.endsWith('woff2')) {
-            return './dist/assets/fonts/[name].[ext]'
+            return 'dist/assets/fonts/[name].[ext]'
           }
 
-          return './dist/assets/[name].[ext]'
+          return 'dist/assets/[name].[ext]'
         }
 
       }

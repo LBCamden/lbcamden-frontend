@@ -104,14 +104,14 @@ export default function fixtures () {
           // the file system to find this id
           this.emitFile({
             name: chunk.name + '-options',
-            fileName: path.dirname(chunk.name) + '/macro-options.json',
+            fileName: 'package-vite/' + path.dirname(chunk.name) + '/macro-options.json',
             code: generateMacroOptions(chunk.facadeModuleId),
             type: 'prebuilt-chunk'
           })
 
           this.emitFile({
             name: chunk.name + '-fixture',
-            fileName: path.dirname(chunk.name) + '/fixtures.json',
+            fileName: 'package-vite/' + path.dirname(chunk.name) + '/fixtures.json',
             code: generateFixtures(chunk.facadeModuleId),
             type: 'prebuilt-chunk'
           })
