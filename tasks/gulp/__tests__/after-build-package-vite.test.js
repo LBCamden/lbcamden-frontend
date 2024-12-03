@@ -18,9 +18,9 @@ const componentNames = lib.allComponents.slice()
 const componentsWithJavaScript = glob.sync(configPaths.package_vite + 'lbcamden/components/' + '**/!(*.test).js')
 
 describe('package/', () => {
-  it('should contain the expected files', () => {
+  it('should contain the expected files', async () => {
     // Build an array of the files that are present in the package directory.
-    const actualPackageFiles = () => {
+    const actualPackageFiles = async () => {
       return recursive(configPaths.package_vite).then(
         files => {
           return files
@@ -37,7 +37,7 @@ describe('package/', () => {
 
     // Build an array of files we expect to be found in the package directory,
     // based on the contents of the src directory.
-    const expectedPackageFiles = () => {
+    const expectedPackageFiles = async () => {
       const filesToIgnore = [
         '.DS_Store',
         '*.test.js',
@@ -65,18 +65,21 @@ describe('package/', () => {
               // Remove /src prefix from filenames
               var fileWithoutSrc = file.replace(/^src\//, '')
 
+
+            //AW: removing all of this because we don't have an ESM folder anymore  
               // Account for lbcamden-esm folder
-              if (fileWithoutSrc.split('.').pop() === 'js') {
-                var esmFile = fileWithoutSrc.replace('lbcamden/', 'lbcamden-esm/')
+              // if (fileWithoutSrc.split('.').pop() === 'js') {
+              //   var esmFile = fileWithoutSrc.replace('lbcamden/', 'lbcamden-esm/')
 
-                if (!esmFile.includes('vendor/')) {
-                  esmFile = esmFile.replace('.js', '.mjs')
-                }
+              //   if (!esmFile.includes('vendor/')) {
+              //     esmFile = esmFile.replace('.js', '.mjs')
+              //   }
 
-                return [fileWithoutSrc, esmFile]
-              } else {
-                return fileWithoutSrc
-              }
+              //   return [fileWithoutSrc, esmFile]
+              // } else {
+              //   return fileWithoutSrc
+              // }
+              return fileWithoutSrc;
             })
             // Allow for additional files that are not in src
             .concat(filesNotInSrc)
@@ -92,16 +95,27 @@ describe('package/', () => {
 
     // Compare the expected directory listing with the files we expect
     // to be present
-    Promise.all([actualPackageFiles(), expectedPackageFiles()])
+    console.log("AW: ACTUAL FILES")
+    console.log(await actualPackageFiles())
+
+    console.log("AW: EXPECTED FILES")
+    console.log(await expectedPackageFiles())
+
+    await Promise.all([await actualPackageFiles(), await expectedPackageFiles()])
       .then(results => {
         const [actualPackageFiles, expectedPackageFiles] = results
-
+        
+        console.log("IN FUNCTION")
+        console.log(actualPackageFiles)
+        console.log(expectedPackageFiles)
         expect(actualPackageFiles).toEqual(expectedPackageFiles)
+      }).catch(error => {
+        throw error
       })
   })
 
   describe('README.md', () => {
-    it('is not overwritten', () => {
+    it('is not overwritten', async () => {
       return readFile(path.join(configPaths.package_vite, 'README.md'), 'utf8')
         .then(contents => {
           // Look for H1 matching 'GOV.UK Frontend' from existing README
