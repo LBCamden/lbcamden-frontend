@@ -134,7 +134,7 @@ describe('package/', () => {
   })
 
   describe('component', () => {
-    it.each(componentNames)('\'%s\' should have macro-options.json that contains JSON', (name) => {
+    it.each(componentNames)('\'%s\' should have macro-options.json that contains JSON', async (name) => {
       const filePath = path.join(configPaths.package_vite, 'lbcamden', 'components', name, 'macro-options.json')
       return readFile(filePath, 'utf8')
         .then((data) => {
