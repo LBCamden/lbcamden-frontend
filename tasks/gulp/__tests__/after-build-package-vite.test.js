@@ -65,8 +65,7 @@ describe('package/', () => {
               // Remove /src prefix from filenames
               var fileWithoutSrc = file.replace(/^src\//, '')
 
-
-            //AW: removing all of this because we don't have an ESM folder anymore  
+              // AW: removing all of this because we don't have an ESM folder anymore
               // Account for lbcamden-esm folder
               // if (fileWithoutSrc.split('.').pop() === 'js') {
               //   var esmFile = fileWithoutSrc.replace('lbcamden/', 'lbcamden-esm/')
@@ -79,7 +78,7 @@ describe('package/', () => {
               // } else {
               //   return fileWithoutSrc
               // }
-              return fileWithoutSrc;
+              return fileWithoutSrc
             })
             // Allow for additional files that are not in src
             .concat(filesNotInSrc)
@@ -95,17 +94,17 @@ describe('package/', () => {
 
     // Compare the expected directory listing with the files we expect
     // to be present
-    console.log("AW: ACTUAL FILES")
+    console.log('AW: ACTUAL FILES')
     console.log(await actualPackageFiles())
 
-    console.log("AW: EXPECTED FILES")
+    console.log('AW: EXPECTED FILES')
     console.log(await expectedPackageFiles())
 
     await Promise.all([await actualPackageFiles(), await expectedPackageFiles()])
       .then(results => {
         const [actualPackageFiles, expectedPackageFiles] = results
-        
-        console.log("IN FUNCTION")
+
+        console.log('IN FUNCTION')
         console.log(actualPackageFiles)
         console.log(expectedPackageFiles)
         expect(actualPackageFiles).toEqual(expectedPackageFiles)
