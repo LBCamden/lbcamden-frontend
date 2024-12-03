@@ -4,69 +4,30 @@ import glob from 'glob'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import del from 'rollup-plugin-delete'
+import yaml from '@rollup/plugin-yaml'
+
 import fixtures from './rollup-plugin-fixtures'
 
-// import yaml from '@rollup/plugin-yaml'
-
 const { GlobSync: globSync } = glob
-
-// function generateMacroOptions (file) {
-//   const json = convertYamlToJson(file)
-//   let paramsJson
-
-//   if (json) {
-//     paramsJson = json.params // We only want the 'params' data from component yaml
-
-//     if (paramsJson) {
-//       file.contents = Buffer.from(JSON.stringify(paramsJson, null, 4))
-//       return file
-//     } else {
-//       console.error(file.path + ' is missing "params"')
-//     }
-//   }
-// }
-
-// function generateFixtures (file) {
-//   const json = convertYamlToJson(file)
-//   const componentName = path.dirname(file.path).split(path.sep).slice(-1).toString()
-//   const componentTemplatePath = path.join(configPaths.components, componentName, 'template.njk')
-
-//   if (json) {
-//     const examplesJson = json.examples
-
-//     if (examplesJson) {
-//       const fixtures = {
-//         component: componentName,
-//         fixtures: []
-//       }
-
-//       examplesJson.forEach(function (example) {
-//         const fixture = {
-//           name: example.name,
-//           options: example.data,
-//           html: nunjucks.render(componentTemplatePath, { params: example.data }).trim(),
-//           hidden: Boolean(example.hidden)
-//         }
-
-//         fixtures.fixtures.push(fixture)
-//       })
-
-//       file.contents = Buffer.from(JSON.stringify(fixtures, null, 4))
-//       return file
-//     } else {
-//       console.error(file.path + ' is missing "examples" and/or "params"')
-//     }
-//   }
-// }
 
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
-    // yaml({
-    //   safe:true,
-    //   }),
+    yaml({
+      safe:true,
+      }),
+      del({
+        targets: ['dist', 'package-vite'],
+        verbose: true
+      }),
+      del({
+        targets: ['dist/lbcamden'],
+        hook: 'closeBundle',
+        verbose: true
+      }),
     fixtures(),
     viteStaticCopy({
       targets: [
@@ -78,13 +39,65 @@ export default defineConfig({
           src: 'assets/images/*',
           dest: 'dist'
         },
+        // {
+        //   src: '**/[!.]*',
+        //   dest: 'package-vite/lbcamden/'
+        // },
+        // {
+        //     src: '**/[!.]*',
+        //     dest: 'package-vite/lbcamden/'
+        // },
         {
-          src: '**/*',
+          src: '**/*.woff',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.woff2',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.jpg',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.png',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.webp',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.scss',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.xml',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.ico',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/manifest.json',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: '**/*.njk',
+          dest: 'package-vite/lbcamden/'
+        },
+        {
+          src: ['**/*.js', '!**/*.test.js'],
           dest: 'package-vite/lbcamden/'
         },
         {
           src: 'README.md',
           dest: 'package-vite/'
+        },
+        {
+          src: '**/components/**/README.md',
+          dest: 'package-vite/lbcamden'
         }
       ],
       structured: true
@@ -92,7 +105,7 @@ export default defineConfig({
   ],
   root: 'src/lbcamden',
   emitIndex: false,
-  assetsInclude: ['**/*.md', '**/*.yaml', '**/*.woff', '**/*.woff2'],
+  assetsInclude: ['**/*.md', '**/*.woff', '**/*.woff2'],
   build: {
     outDir: '../../',
     minify: true,
@@ -126,13 +139,11 @@ export default defineConfig({
         entryFileNames: function (file) {
           console.log('🐱' + JSON.stringify(file, null, 4))
 
-          // if(file.name == 'lbcamden_css') {
-          //   return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
-          // }
-
-          // if(file.name.endsWith('fixtures.yaml')) {
-          //   return file.name.slice(0, file.name.length - path.extname(file.name).length) + '.json'
-          // }
+          if (file.name.endsWith('yaml')) {
+            console.log('YAML')
+            console.log('dist/' + path.dirname(file.name) + '.yaml')
+            return 'dist/' + path.dirname(file.name) + '.yaml'
+          }
 
           if (file.name === 'lbcamden_js') {
             return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
@@ -159,20 +170,6 @@ export default defineConfig({
           if (file.name === 'lbcamden_css.css') {
             return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
-
-          if (file.name.endsWith('yaml')) {
-            console.log('YAML')
-            console.log(file.originalFileName)
-            return 'package-vite/lbcamden/' + file.originalFileName
-          }
-
-          if (file.name.endsWith('emit')) {
-            console.log('EMIT')
-          }
-
-          // if(file.name == 'lbcamden_readme') {
-          //   return `aaa[name].[ext]`
-          // }
 
           // Handle fonts
           if (file.name.endsWith('woff') || file.name.endsWith('woff2')) {

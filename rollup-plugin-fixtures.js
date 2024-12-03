@@ -39,13 +39,13 @@ function convertYamlToJson (file) {
 }
 
 function generateFixtures (file) {
-  console.log('####' + file + '@@@@')
+  // console.log('####' + file + '@@@@')
   const json = convertYamlToJson({ path: file })
   const componentName = path.dirname(file).split(path.sep).slice(-1).toString()
   const componentTemplatePath = path.join(path.dirname(file), 'template.njk')
 
   if (json) {
-    console.log(json)
+    // console.log(json)
     const examplesJson = json.examples
 
     if (examplesJson) {
@@ -98,7 +98,7 @@ export default function fixtures () {
       order: 'post',
       handler (code, chunk) {
         // console.log("🟦" + JSON.stringify(chunk, null, 4));
-
+        console.log("AW: CHUNK: " + chunk.name);
         if (chunk.name.endsWith('fixtures.yaml')) {
           // this signals that Rollup should not ask other plugins or check
           // the file system to find this id
@@ -116,18 +116,21 @@ export default function fixtures () {
             type: 'prebuilt-chunk'
           })
 
+          
+
           // console.log("🟦" + JSON.stringify(chunk, null, 4));
           // code = generateFixtures(chunk.facadeModuleId);
           return null
         }
       }
 
-    }
-    //   transform(code, id) {
-    //     // console.log("🔴 CODE" + code)
-    //     console.log("🔴 transform:ID " + id)
-    //     return null;
-    //   },
+    },
+    // transform(code, id) {
+    //   // console.log("🔴 CODE" + code)
+    //   console.log("🔴 transform:ID " + id)
+
+    //   return null;
+    // },
     //   moduleParsed(moduleInfo) {
     //     console.log(moduleInfo)
     //   }
