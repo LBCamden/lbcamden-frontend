@@ -48,7 +48,7 @@ describe('package/', () => {
 
       const additionalFilesNotInSrc = [
         'package.json',
-        'govuk-prototype-kit.config.json',
+        // 'govuk-prototype-kit.config.json',
         '**/macro-options.json',
         '**/fixtures.json',
         'README.md'
@@ -95,10 +95,10 @@ describe('package/', () => {
     // Compare the expected directory listing with the files we expect
     // to be present
     console.log('AW: ACTUAL FILES')
-    console.log(await actualPackageFiles())
+    console.dir(await actualPackageFiles(), {'maxArrayLength': null})
 
     console.log('AW: EXPECTED FILES')
-    console.log(await expectedPackageFiles())
+    console.dir(await expectedPackageFiles(), {'maxArrayLength': null})
 
     await Promise.all([await actualPackageFiles(), await expectedPackageFiles()])
       .then(results => {

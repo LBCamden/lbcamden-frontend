@@ -98,7 +98,7 @@ export default function fixtures () {
       order: 'post',
       handler (code, chunk) {
         // console.log("🟦" + JSON.stringify(chunk, null, 4));
-        console.log("AW: CHUNK: " + chunk.name);
+        // console.log("AW: CHUNK: " + chunk.name);
         if (chunk.name.endsWith('fixtures.yaml')) {
           // this signals that Rollup should not ask other plugins or check
           // the file system to find this id

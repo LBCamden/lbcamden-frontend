@@ -92,6 +92,10 @@ export default defineConfig({
           dest: 'package-vite/lbcamden/'
         },
         {
+          src: ['**/*.map'],
+          dest: 'package-vite/lbcamden/'
+        },
+        {
           src: 'README.md',
           dest: 'package-vite/'
         },
@@ -137,11 +141,11 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
         entryFileNames: function (file) {
-          console.log('🐱' + JSON.stringify(file, null, 4))
+          // console.log('🐱' + JSON.stringify(file, null, 4))
 
           if (file.name.endsWith('yaml')) {
-            console.log('YAML')
-            console.log('dist/' + path.dirname(file.name) + '.yaml')
+            // console.log('YAML')
+            // console.log('dist/' + path.dirname(file.name) + '.yaml')
             return 'dist/' + path.dirname(file.name) + '.yaml'
           }
 
