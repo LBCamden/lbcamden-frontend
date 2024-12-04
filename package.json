@@ -115,7 +115,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-puppeteer": "^9.0.2",
     "jest-serializer-html": "^7.0.0",
-    "puppeteer": "^21.6.1",
+    "puppeteer": "^23.10.0",
     "storybook": "^7.0.7"
   },
   "browserslist": [
