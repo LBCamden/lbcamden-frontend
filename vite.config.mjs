@@ -33,75 +33,75 @@ export default defineConfig({
       targets: [
         {
           src: 'package.json',
-          dest: 'package-vite/'
+          dest: './'
         },
         {
           src: 'assets/images/*',
-          dest: 'dist'
+          dest: './dist'
         },
         // {
         //   src: '**/[!.]*',
-        //   dest: 'package-vite/lbcamden/'
+        //   dest: '/lbcamden/'
         // },
         // {
         //     src: '**/[!.]*',
-        //     dest: 'package-vite/lbcamden/'
+        //     dest: '/lbcamden/'
         // },
         {
           src: '**/*.woff',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.woff2',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.jpg',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.png',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.webp',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.scss',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.xml',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.ico',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/manifest.json',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: '**/*.njk',
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: ['**/*.js', '!**/*.test.js'],
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: ['**/*.map'],
-          dest: 'package-vite/lbcamden/'
+          dest: './lbcamden/'
         },
         {
           src: 'README.md',
-          dest: 'package-vite/'
+          dest: './'
         },
         {
           src: '**/components/**/README.md',
-          dest: 'package-vite/lbcamden'
+          dest: './lbcamden'
         }
       ],
       structured: true
@@ -111,7 +111,7 @@ export default defineConfig({
   emitIndex: false,
   assetsInclude: ['**/*.md', '**/*.woff', '**/*.woff2'],
   build: {
-    outDir: '../../',
+    outDir: '../../package-vite',
     minify: true,
     assetsDir: 'dist/assets',
     emptyOutDir: false,
