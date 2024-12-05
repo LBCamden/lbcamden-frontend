@@ -16,3 +16,5 @@ chromatic-diagnostics.json
 storybook-static
 
 package
+package-vite
+dist
