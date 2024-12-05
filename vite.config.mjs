@@ -20,11 +20,11 @@ export default defineConfig({
       safe:true,
       }),
       del({
-        targets: ['dist', 'package-vite'],
+        targets: ['package-vite'],
         verbose: true
       }),
       del({
-        targets: ['dist/lbcamden'],
+        targets: ['package-vite/dist/lbcamden'],
         hook: 'closeBundle',
         verbose: true
       }),

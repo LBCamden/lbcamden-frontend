@@ -43,7 +43,8 @@ describe('package/', () => {
         '*.test.js',
         '*.yaml',
         '*.snap',
-        '*/lbcamden/README.md'
+        '*/lbcamden/README.md',
+        '*/lbcamden/package.json'
       ]
 
       const additionalFilesNotInSrc = [
@@ -51,14 +52,24 @@ describe('package/', () => {
         // 'govuk-prototype-kit.config.json',
         '**/macro-options.json',
         '**/fixtures.json',
-        'README.md'
+        'README.md',
+        'dist/assets/fonts/*.*',
+        'dist/assets/images/*.*',
+        'dist/assets/images/favicons/*.*',
+        'dist/govuk-frontend-*.min.js',
+        'dist/lbcamden-frontend-*.min.css',
+        'dist/lbcamden-frontend-*.min.js',
       ]
 
       return recursive(configPaths.src, filesToIgnore).then(
         files => {
           let filesNotInSrc = files
           // Use glob to generate an array of files that accounts for wildcards in filenames
-          filesNotInSrc = glob.sync('{' + additionalFilesNotInSrc.join(',') + '}', { cwd: 'package' })
+          filesNotInSrc = glob.sync('{' + additionalFilesNotInSrc.join(',') + '}', { cwd: 'package-vite' })
+
+          console.log('🎄');
+          console.log(additionalFilesNotInSrc.join(','))
+          console.dir(filesNotInSrc, {'maxArrayLength': null});
 
           return files
             .map(file => {
