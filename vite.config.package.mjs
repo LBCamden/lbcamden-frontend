@@ -24,7 +24,7 @@ export default defineConfig({
         verbose: true
       }),
       del({
-        targets: ['package-vite/dist/lbcamden'],
+        targets: ['package-vite/to-be-deleted'],
         hook: 'closeBundle',
         verbose: true
       }),
@@ -36,8 +36,8 @@ export default defineConfig({
           dest: './'
         },
         {
-          src: 'assets/images/*',
-          dest: './dist'
+          src: '../../dist/*',
+          dest: './'
         },
         // {
         //   src: '**/[!.]*',
@@ -109,11 +109,10 @@ export default defineConfig({
   ],
   root: 'src/lbcamden',
   emitIndex: false,
-  assetsInclude: ['**/*.md', '**/*.woff', '**/*.woff2'],
+  assetsInclude: ['**/*.md'],
   build: {
     outDir: '../../package-vite',
-    minify: true,
-    assetsDir: 'dist/assets',
+    minify: false,
     emptyOutDir: false,
     // assetsInclude: ['**/*.md', '**/*.yaml'],
     rollupOptions: {
@@ -121,9 +120,6 @@ export default defineConfig({
       treeshake: false,
       inlineDynamicImports: true,
       input: {
-        govuk_js: './node_modules/govuk-frontend/govuk/all.js',
-        lbcamden_js: './src/lbcamden/all.js',
-        lbcamden_css: './src/lbcamden/all.scss',
         ...Object.fromEntries(
           globSync('./src/lbcamden/components/**/*.yaml').found.map(file => [
             // This remove `src/` as well as the file extension from each
@@ -140,47 +136,20 @@ export default defineConfig({
       },
       output: {
         inlineDynamicImports: false,
+        // generatedCode: "es2015",
         entryFileNames: function (file) {
           // console.log('🐱' + JSON.stringify(file, null, 4))
 
           if (file.name.endsWith('yaml')) {
             // console.log('YAML')
             // console.log('dist/' + path.dirname(file.name) + '.yaml')
-            return 'dist/' + path.dirname(file.name) + '.yaml'
+            return 'to-be-deleted/' + path.dirname(file.name) + '.yaml'
           }
-
-          if (file.name === 'lbcamden_js') {
-            return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
-          }
-
-          if (file.name === 'govuk_js') {
-            return 'dist/govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
-          }
-
-          return 'dist/aaa-dist/[name].js'
-        },
-        chunkFileNames: function (file) {
-          console.log('🐵' + JSON.stringify(file, null, 4))
-          // if(file.name == 'index.js') {
-          //     return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
-          // }
-
-          return 'dist/bbb-dist/[name].js'
+          return 'to-be-deleted/[name].js'
         },
         assetFileNames: function (file) {
-          // console.log("🐶" + JSON.stringify(file, null, 4))
 
-          // Rename CSS output
-          if (file.name === 'lbcamden_css.css') {
-            return 'dist/lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
-          }
-
-          // Handle fonts
-          if (file.name.endsWith('woff') || file.name.endsWith('woff2')) {
-            return 'dist/assets/fonts/[name].[ext]'
-          }
-
-          return 'dist/assets/[name].[ext]'
+          return 'to-be-deleted/[name].[ext]'
         }
 
       }

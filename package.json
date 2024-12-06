@@ -8,7 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:vite": "vite build",
+    "build:package:vite": "vite build --config vite.config.package.mjs",
+    "build:dist:vite": "vite build --config vite.config.dist.mjs",
     "preinstall": "node bin/check-nvmrc.js",
     "prestart": "node bin/check-nvmrc.js",
     "start": "gulp dev",
