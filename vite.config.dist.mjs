@@ -11,11 +11,7 @@ export default defineConfig({
         {
           src: 'assets/images/*',
           dest: ''
-        },
-        {
-          src: 'assets/fonts/*',
-          dest: ''
-        },
+        }
       ],
       structured: true
     })
@@ -50,13 +46,18 @@ export default defineConfig({
             return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
           }
 
-          return 'aaa-dist/[name]'
+          return 'unknown/[name]'
         },
         assetFileNames: function (file) {
 
           // Rename CSS output
           if (file.name === 'lbcamden_css.css') {
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+          }
+
+          // Handle fonts parsed by scss
+          if (file.name.endsWith('woff') || file.name.endsWith('woff2')) {
+            return 'assets/fonts/[name].[ext]'
           }
 
           return 'assets/[name].[ext]'
