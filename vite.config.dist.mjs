@@ -50,7 +50,7 @@ export default defineConfig({
             return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
           }
 
-          return 'aaa-dist/[name].[ext]'
+          return 'aaa-dist/[name]'
         },
         assetFileNames: function (file) {
 
