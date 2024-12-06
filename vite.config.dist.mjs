@@ -23,19 +23,21 @@ export default defineConfig({
     minify: false,
     assetsDir: 'assets',
     emptyOutDir: true,
+    sourcemap: true,
     rollupOptions: {
-      manualChunks: false,
+      
       treeshake: false,
-      inlineDynamicImports: true,
+      
       input: {
         govuk_js: './node_modules/govuk-frontend/govuk/all.js',
         lbcamden_js: './src/lbcamden/all.js',
         lbcamden_css: './src/lbcamden/all.scss',
       },
       output: {
-        sourcemap: true,
+
+        manualChunks: false,
         inlineDynamicImports: false,
-        // generatedCode: "es2015",
+        generatedCode: "es2015",
         entryFileNames: function (file) {
 
           if (file.name === 'lbcamden_js') {
