@@ -34,10 +34,8 @@ export default defineConfig({
         lbcamden_css: './src/lbcamden/all.scss',
       },
       output: {
-
         manualChunks: false,
-        inlineDynamicImports: false,
-        generatedCode: "es2015",
+        generatedCode: 'es2015',
         entryFileNames: function (file) {
 
           if (file.name === 'lbcamden_js') {
