@@ -1,29 +1,19 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
-import glob from 'glob'
-// import path from 'node:path'
-// import { fileURLToPath } from 'node:url'
-
-import del from 'rollup-plugin-delete'
-// import yaml from '@rollup/plugin-yaml'
-
-// import fixtures from './rollup-plugin-fixtures'
-
-// const { GlobSync: globSync } = glob
 
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
-    // del({
-    //   targets: ['dist'],
-    //   verbose: true
-    // }),
     viteStaticCopy({
       targets: [
         {
           src: 'assets/images/*',
+          dest: ''
+        },
+        {
+          src: 'assets/fonts/*',
           dest: ''
         },
       ],
@@ -32,13 +22,11 @@ export default defineConfig({
   ],
   root: 'src/lbcamden',
   emitIndex: false,
-  assetsInclude: ['**/*.md', '**/*.woff', '**/*.woff2'],
   build: {
     outDir: '../../dist',
     minify: false,
     assetsDir: 'assets',
     emptyOutDir: true,
-    // assetsInclude: ['**/*.md', '**/*.yaml'],
     rollupOptions: {
       manualChunks: false,
       treeshake: false,
@@ -49,6 +37,7 @@ export default defineConfig({
         lbcamden_css: './src/lbcamden/all.scss',
       },
       output: {
+        sourcemap: true,
         inlineDynamicImports: false,
         // generatedCode: "es2015",
         entryFileNames: function (file) {
@@ -61,19 +50,13 @@ export default defineConfig({
             return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
           }
 
-          return 'aaa-dist/[name].js'
+          return 'aaa-dist/[name].[ext]'
         },
         assetFileNames: function (file) {
-          // console.log("🐶" + JSON.stringify(file, null, 4))
 
           // Rename CSS output
           if (file.name === 'lbcamden_css.css') {
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
-          }
-
-          // Handle fonts
-          if (file.name.endsWith('woff') || file.name.endsWith('woff2')) {
-            return 'assets/fonts/[name].[ext]'
           }
 
           return 'assets/[name].[ext]'

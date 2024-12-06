@@ -10,6 +10,9 @@
   "scripts": {
     "build:package:vite": "vite build --config vite.config.package.mjs",
     "build:dist:vite": "vite build --config vite.config.dist.mjs",
+    "test:build:vite:package": "jest tasks/gulp/__tests__/after-build-package-vite.test.js",
+    "test:build:vite:dist": "jest tasks/gulp/__tests__/after-build-dist-vite.test.js",
+    
     "preinstall": "node bin/check-nvmrc.js",
     "prestart": "node bin/check-nvmrc.js",
     "start": "gulp dev",
@@ -23,9 +26,9 @@
     "test": "npm run test:dependencies && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
     "test:build:package": "jest tasks/gulp/__tests__/after-build-package.test.js",
-    "test:build:vite:package": "jest tasks/gulp/__tests__/after-build-package-vite.test.js",
+
     "test:build:dist": "jest tasks/gulp/__tests__/after-build-dist.test.js",
-    "test:build:vite:dist": "jest tasks/gulp/__tests__/after-build-dist-vite.test.js",
+    
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
