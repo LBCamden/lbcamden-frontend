@@ -46,7 +46,7 @@ export default defineConfig({
             return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
           }
 
-          return 'unknown/[name]'
+          return 'unknown-entry/[name]'
         },
         assetFileNames: function (file) {
 

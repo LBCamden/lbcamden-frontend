@@ -52,6 +52,7 @@ describe('package/', () => {
         // 'govuk-prototype-kit.config.json',
         '**/macro-options.json',
         '**/fixtures.json',
+        '*.map',
         'README.md',
         'dist/assets/fonts/*.*',
         'dist/assets/images/*.*',
@@ -59,6 +60,7 @@ describe('package/', () => {
         'dist/govuk-frontend-*.min.js',
         'dist/lbcamden-frontend-*.min.css',
         'dist/lbcamden-frontend-*.min.js',
+        'dist/*.map',
       ]
 
       return recursive(configPaths.src, filesToIgnore).then(
