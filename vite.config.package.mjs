@@ -20,10 +20,6 @@ export default defineConfig({
       safe:true,
       }),
       del({
-        targets: ['package-vite'],
-        verbose: true
-      }),
-      del({
         targets: ['package-vite/to-be-deleted'],
         hook: 'closeBundle',
         verbose: true
@@ -39,14 +35,6 @@ export default defineConfig({
           src: '../../dist/*',
           dest: './'
         },
-        // {
-        //   src: '**/[!.]*',
-        //   dest: '/lbcamden/'
-        // },
-        // {
-        //     src: '**/[!.]*',
-        //     dest: '/lbcamden/'
-        // },
         {
           src: '**/*.woff',
           dest: './lbcamden/'
@@ -109,16 +97,13 @@ export default defineConfig({
   ],
   root: 'src/lbcamden',
   emitIndex: false,
-  assetsInclude: ['**/*.md'],
   build: {
     outDir: '../../package-vite',
     minify: false,
-    emptyOutDir: false,
-    // assetsInclude: ['**/*.md', '**/*.yaml'],
+    emptyOutDir: true,
     rollupOptions: {
-      manualChunks: false,
+      
       treeshake: false,
-      inlineDynamicImports: true,
       input: {
         ...Object.fromEntries(
           globSync('./src/lbcamden/components/**/*.yaml').found.map(file => [
@@ -135,22 +120,21 @@ export default defineConfig({
         )
       },
       output: {
+        manualChunks: false,
         inlineDynamicImports: false,
         // generatedCode: "es2015",
         entryFileNames: function (file) {
-          // console.log('🐱' + JSON.stringify(file, null, 4))
 
+          //AW: Haven't found a way to not output these files once parsed, so putting them in a dir and then deleting after build
           if (file.name.endsWith('yaml')) {
-            // console.log('YAML')
-            // console.log('dist/' + path.dirname(file.name) + '.yaml')
             return 'to-be-deleted/' + path.dirname(file.name) + '.yaml'
           }
           return 'to-be-deleted/[name].js'
         },
-        assetFileNames: function (file) {
+        // assetFileNames: function (file) {
 
-          return 'to-be-deleted/[name].[ext]'
-        }
+        //   return 'to-be-deleted/[name].[ext]'
+        // }
 
       }
     }
