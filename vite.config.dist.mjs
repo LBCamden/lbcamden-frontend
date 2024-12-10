@@ -35,7 +35,8 @@ export default defineConfig({
       },
       output: {
         manualChunks: false,
-        generatedCode: 'es2015',
+        // generatedCode: 'es2015',
+        format: 'es',
         entryFileNames: function (file) {
 
           if (file.name === 'lbcamden_js') {
