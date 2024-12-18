@@ -20,11 +20,11 @@ export default defineConfig({
   emitIndex: false,
   build: {
     outDir: '../../dist',
-    minify: false,
+    minify: true,
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
-    emitAssets:true,
+    // emitAssets:true,
     // assetsInlineLimit: 0,
     lib:{
       entry: {
