@@ -24,6 +24,7 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
+    publicDir: 'assets',
     // emitAssets:true,
     // assetsInlineLimit: 0,
     lib:{
