@@ -1,11 +1,19 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+
+// import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
+    // libAssetsPlugin({ 
+    //   limit:0,
+    //   name: '[name].[ext]'
+    // }),
+    viteCommonjs(),
     viteStaticCopy({
       targets: [
         {
@@ -24,16 +32,17 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
-    publicDir: 'assets',
+    // publicDir: 'assets',
     // emitAssets:true,
     // assetsInlineLimit: 0,
     lib:{
       entry: {
         govuk_js: '../../node_modules/govuk-frontend/govuk/all.js',
-        lbcamden_js: './all.js',
-        lbcamden_css: './all.scss',
+        // lbcamden_js: './all.js',
+        // lbcamden_css: './all.scss',
       },
-      formats: ['es'],
+      formats: ['umd'],
+      name: 'GOVUK',
       fileName: (format, entryName) => {
 
           
@@ -55,11 +64,11 @@ export default defineConfig({
       },
       cssFileName: 'lbcamden-frontend-' + (process.env.npm_package_version),
     },
-    rollupOptions: {
-      output: {
-        assetFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.[ext]'
-      },
-    },
+    // rollupOptions: {
+    //   output: {
+    //     assetFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.[ext]'
+    //   },
+    // },
     // rollupOptions: {
       
     //   treeshake: false,
