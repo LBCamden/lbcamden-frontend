@@ -25,7 +25,6 @@ export default defineConfig({
   emitIndex: false,
   build: {
     outDir: '../../dist',
-    minify: false,
     assetsDir: 'assets',
     emptyOutDir: false,
     sourcemap: true,

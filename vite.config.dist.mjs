@@ -39,7 +39,7 @@ export default defineConfig({
   emitIndex: false,
   build: {
     outDir: '../../dist',
-    minify: true,
+    // minify: true,
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
@@ -73,7 +73,7 @@ export default defineConfig({
 
         return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
       },
-      cssFileName: 'lbcamden-frontend-' + (process.env.npm_package_version),
+      // cssFileName: 'lbcamden-frontend-' + (process.env.npm_package_version),
     },
     // rollupOptions: {
     //   output: {
