@@ -22,6 +22,17 @@ export default defineConfig({
         }
       ],
       structured: true
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: '../../node_modules/govuk-frontend/govuk/all.js',
+          dest: '',
+          rename: 'govuk-frontend-4.7.0.min.js'
+        }
+      ],
+      structured: false
+
     })
   ],
   root: 'src/lbcamden',
@@ -37,12 +48,12 @@ export default defineConfig({
     // assetsInlineLimit: 0,
     lib:{
       entry: {
-        govuk_js: '../../node_modules/govuk-frontend/govuk/all.js',
-        // lbcamden_js: './all.js',
+        // govuk_js: '../../node_modules/govuk-frontend/govuk/all.js',
+        lbcamden_js: './all.js',
         // lbcamden_css: './all.scss',
       },
-      formats: ['umd'],
-      name: 'GOVUK',
+      formats: ['es'],
+
       fileName: (format, entryName) => {
 
           
@@ -51,9 +62,9 @@ export default defineConfig({
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
           }
 
-          if (entryName === 'govuk_js') {
-            return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
-          }
+          // if (entryName === 'govuk_js') {
+          //   return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
+          // }
 
           // if (entryName === 'lbcamden_css') {
           //   console.log("AAA" + entryName)
