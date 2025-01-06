@@ -9,13 +9,13 @@ var glob = require('glob')
 
 const configPaths = require('../../../config/paths.json')
 const lib = require('../../../lib/file-helper')
-const { componentNameToJavaScriptModuleName } = require('../../../lib/helper-functions')
+// const { componentNameToJavaScriptModuleName } = require('../../../lib/helper-functions')
 
 const { renderSass } = require('../../../lib/jest-helpers')
 
 const readFile = util.promisify(fs.readFile)
 const componentNames = lib.allComponents.slice()
-const componentsWithJavaScript = glob.sync(configPaths.package_vite + 'lbcamden/components/' + '**/!(*.test).js')
+// const componentsWithJavaScript = glob.sync(configPaths.package_vite + 'lbcamden/components/' + '**/!(*.test).js')
 
 describe('package/', () => {
   it('should contain the expected files', async () => {
