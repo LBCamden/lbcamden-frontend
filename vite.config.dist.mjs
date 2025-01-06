@@ -53,13 +53,17 @@ export default defineConfig({
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
           //AW: Handle favicons
+          if (assetInfo.name == "1200x800.webp" || assetInfo.name == "hero.jpg") {
+            return 'assets/images/example-assets/[name].[ext]'
+          }
+
           if (assetInfo.name == "favicon.ico" || assetInfo.name == "apple-icon.png" || assetInfo.name == "apple-icon-180x180.png" || assetInfo.name == "apple-icon-152x152.png") {
             return 'assets/images/favicons/[name].[ext]'
           }
 
           if (assetInfo.name.endsWith('woff') || assetInfo.name.endsWith('woff2')) {
             return 'assets/fonts/[name].[ext]'
-          }          
+          }        
 
           return 'assets/[name].[ext]';
         },
