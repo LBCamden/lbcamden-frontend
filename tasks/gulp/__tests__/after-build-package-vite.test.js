@@ -44,7 +44,8 @@ describe('package/', () => {
         '*.yaml',
         '*.snap',
         '*/lbcamden/README.md',
-        '*/lbcamden/package.json'
+        '*/lbcamden/package.json',
+        '*/lbcamden/index.html'
       ]
 
       const additionalFilesNotInSrc = [
@@ -61,6 +62,7 @@ describe('package/', () => {
         'dist/lbcamden-frontend-*.min.css',
         'dist/lbcamden-frontend-*.min.js',
         'dist/*.map',
+        'dist/index.html'
       ]
 
       return recursive(configPaths.src, filesToIgnore).then(
@@ -145,19 +147,20 @@ describe('package/', () => {
     })
   })
 
-  describe('all.js', () => {
-    it('should have correct module name', async () => {
-      const allJsFile = path.join(configPaths.package_vite, 'lbcamden', 'all.js')
+  //AW: removing because this test is for CJS/AMD and we are now pure ES
+  // describe('all.js', () => {
+  //   it('should have correct module name', async () => {
+  //     const allJsFile = path.join(configPaths.package_vite, 'lbcamden', 'all.js')
 
-      return readFile(allJsFile, 'utf8')
-        .then((data) => {
-          expect(data).toContain("typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports'")
-        })
-        .catch(error => {
-          throw error
-        })
-    })
-  })
+  //     return readFile(allJsFile, 'utf8')
+  //       .then((data) => {
+  //         expect(data).toContain("typeof define === 'function' && define.amd ? define('LBCamdenFrontend', ['exports'")
+  //       })
+  //       .catch(error => {
+  //         throw error
+  //       })
+  //   })
+  // })
 
   describe('component', () => {
     it.each(componentNames)('\'%s\' should have macro-options.json that contains JSON', async (name) => {
@@ -185,19 +188,20 @@ describe('package/', () => {
     })
   })
 
-  describe('components with JavaScript', () => {
-    it.each(componentsWithJavaScript)('\'%s\' should have component JavaScript file with correct module name', (javaScriptFile) => {
-      const moduleName = componentNameToJavaScriptModuleName(path.parse(javaScriptFile).name)
+  //AW: removing because this test is for CJS/AMD and we are now pure ES
+  // describe('components with JavaScript', () => {
+  //   it.each(componentsWithJavaScript)('\'%s\' should have component JavaScript file with correct module name', (javaScriptFile) => {
+  //     const moduleName = componentNameToJavaScriptModuleName(path.parse(javaScriptFile).name)
 
-      return readFile(javaScriptFile, 'utf8')
-        .then((data) => {
-          expect(data).toContain("typeof define === 'function' && define.amd ? define('" + moduleName + "', factory)")
-        })
-        .catch(error => {
-          throw error
-        })
-    })
-  })
+  //     return readFile(javaScriptFile, 'utf8')
+  //       .then((data) => {
+  //         expect(data).toContain("typeof define === 'function' && define.amd ? define('" + moduleName + "', factory)")
+  //       })
+  //       .catch(error => {
+  //         throw error
+  //       })
+  //   })
+  // })
 
   describe('fixtures', () => {
     it.each(componentNames)('\'%s\' should have fixtures.json that contains JSON', (name) => {
