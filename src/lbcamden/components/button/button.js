@@ -1,4 +1,4 @@
-//AW: Removing these polyfills to avoid CJS build issues. I believe they aren't needed if we don't support IE10 anymore
+// AW: Removing these polyfills to avoid CJS build issues. I believe they aren't needed if we don't support IE10 anymore
 
 // import '../../vendor/polyfills/Event' // addEventListener and event.target normaliziation
 // import '../../vendor/polyfills/Function/prototype/bind'

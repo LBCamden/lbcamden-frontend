@@ -116,15 +116,13 @@ export default function fixtures () {
             type: 'prebuilt-chunk'
           })
 
-          
-
           // console.log("🟦" + JSON.stringify(chunk, null, 4));
           // code = generateFixtures(chunk.facadeModuleId);
           return null
         }
       }
 
-    },
+    }
     // transform(code, id) {
     //   // console.log("🔴 CODE" + code)
     //   console.log("🔴 transform:ID " + id)

@@ -17,13 +17,13 @@ export default defineConfig({
   },
   plugins: [
     yaml({
-      safe:true,
-      }),
-      del({
-        targets: ['package-vite/to-be-deleted'],
-        hook: 'closeBundle',
-        verbose: true
-      }),
+      safe: true
+    }),
+    del({
+      targets: ['package-vite/to-be-deleted'],
+      hook: 'closeBundle',
+      verbose: true
+    }),
     fixtures(),
     viteStaticCopy({
       targets: [
@@ -102,7 +102,7 @@ export default defineConfig({
     minify: false,
     emptyOutDir: true,
     rollupOptions: {
-      
+
       treeshake: false,
       input: {
         ...Object.fromEntries(
@@ -124,13 +124,12 @@ export default defineConfig({
         inlineDynamicImports: false,
         // generatedCode: "es2015",
         entryFileNames: function (file) {
-
-          //AW: Haven't found a way to not output these files once parsed, so putting them in a dir and then deleting after build
+          // AW: Haven't found a way to not output these files once parsed, so putting them in a dir and then deleting after build
           if (file.name.endsWith('yaml')) {
             return 'to-be-deleted/' + path.dirname(file.name) + '.yaml'
           }
           return 'to-be-deleted/[name].js'
-        },
+        }
         // assetFileNames: function (file) {
 
         //   return 'to-be-deleted/[name].[ext]'

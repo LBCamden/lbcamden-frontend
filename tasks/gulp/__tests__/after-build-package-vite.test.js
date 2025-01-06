@@ -71,10 +71,6 @@ describe('package/', () => {
           // Use glob to generate an array of files that accounts for wildcards in filenames
           filesNotInSrc = glob.sync('{' + additionalFilesNotInSrc.join(',') + '}', { cwd: 'package-vite' })
 
-          console.log('🎄');
-          console.log(additionalFilesNotInSrc.join(','))
-          console.dir(filesNotInSrc, {'maxArrayLength': null});
-
           return files
             .map(file => {
               // Remove /src prefix from filenames
@@ -107,21 +103,10 @@ describe('package/', () => {
       )
     }
 
-    // Compare the expected directory listing with the files we expect
-    // to be present
-    console.log('AW: ACTUAL FILES')
-    console.dir(await actualPackageFiles(), {'maxArrayLength': null})
-
-    console.log('AW: EXPECTED FILES')
-    console.dir(await expectedPackageFiles(), {'maxArrayLength': null})
-
     await Promise.all([await actualPackageFiles(), await expectedPackageFiles()])
       .then(results => {
         const [actualPackageFiles, expectedPackageFiles] = results
 
-        console.log('IN FUNCTION')
-        console.log(actualPackageFiles)
-        console.log(expectedPackageFiles)
         expect(actualPackageFiles).toEqual(expectedPackageFiles)
       }).catch(error => {
         throw error
@@ -147,7 +132,7 @@ describe('package/', () => {
     })
   })
 
-  //AW: removing because this test is for CJS/AMD and we are now pure ES
+  // AW: removing because this test is for CJS/AMD and we are now pure ES
   // describe('all.js', () => {
   //   it('should have correct module name', async () => {
   //     const allJsFile = path.join(configPaths.package_vite, 'lbcamden', 'all.js')
@@ -188,7 +173,7 @@ describe('package/', () => {
     })
   })
 
-  //AW: removing because this test is for CJS/AMD and we are now pure ES
+  // AW: removing because this test is for CJS/AMD and we are now pure ES
   // describe('components with JavaScript', () => {
   //   it.each(componentsWithJavaScript)('\'%s\' should have component JavaScript file with correct module name', (javaScriptFile) => {
   //     const moduleName = componentNameToJavaScriptModuleName(path.parse(javaScriptFile).name)
