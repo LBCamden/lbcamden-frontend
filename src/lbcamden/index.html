@@ -996,10 +996,15 @@ Site Area navigation menu
     </div>
   </div>
 </footer>
-    <!-- <script type="module" src="../../node_modules/govuk-frontend/govuk/all.js"></script> -->
     <script src="/govuk-frontend-4.7.0.min.js"></script>
     <script>window.GOVUKFrontend.initAll()</script>
+
+    <!-- <script type="module" src="all.js"></script> -->
+    <script type="module">
+      // import * as LBCamden from "lbcamden-frontend-0.5.3.min";
+      import * as LBCamden from './all.js';
+      LBCamden.initAll();
+    </script>
     
-    <script type="module" src="all.js"></script>
   </body>
 </html>

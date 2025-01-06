@@ -41,7 +41,8 @@ export default defineConfig({
     emptyOutDir: true,
     minify: false, //AW: Disable minifying while debugging JS
     rollupOptions: {
-      treeshake: false, //AW: We disable treeshaking as we're building a library
+      treeshake: false, //AW: We disable treeshaking as we're building a library,
+      external: ['lbcamden-frontend-0.5.3.min'],
       output: {
         format: 'es',
         entryFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js',
