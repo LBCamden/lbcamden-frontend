@@ -23,27 +23,35 @@ export default defineConfig({
       ],
       structured: true
     }),
-  //   viteStaticCopy({
-  //     targets: [
-  //       {
-  //         src: '../../node_modules/govuk-frontend/govuk/all.js',
-  //         dest: '',
-  //         rename: 'govuk-frontend-4.7.0.min.js'
-  //       }
-  //     ],
-  //     structured: false
+    viteStaticCopy({
+      targets: [
+        {
+          src: '../../node_modules/govuk-frontend/govuk/all.js',
+          dest: '',
+          rename: 'govuk-frontend-4.7.0.min.js'
+        }
+      ],
+      structured: false
 
-  //   })
+    })
   ],
   root: 'src/lbcamden',
   build: {
     outDir: '../../dist',
     emptyOutDir: true,
+    minify: false, //AW: Disable minifying while debugging JS
     rollupOptions: {
+      treeshake: false, //AW: We disable treeshaking as we're building a library
       output: {
-        entryFileNames: `assets/[name].js`,
+        format: 'es',
+        entryFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js',
         chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name == "index.css") {
+            return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+          }
+          return 'assets/[name].[ext]';
+        },
       }
     }
   }
