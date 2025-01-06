@@ -10,22 +10,18 @@
   "scripts": {
     "build:package:vite": "vite build --config vite.config.package.mjs",
     "build:dist:vite": "vite build --config vite.config.dist.mjs",
+
     "test:build:vite:package": "jest tasks/gulp/__tests__/after-build-package-vite.test.js",
     "test:build:vite:dist": "jest tasks/gulp/__tests__/after-build-dist-vite.test.js",
-    "preinstall": "node bin/check-nvmrc.js",
-    "prestart": "node bin/check-nvmrc.js",
-    "start": "gulp dev",
-    "heroku-postbuild": "node ./node_modules/gulp/bin/gulp copy-assets && node ./node_modules/gulp/bin/gulp sassdoc",
-    "heroku": "node app/start.js",
+    
     "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "publish-release": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
-    "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
-    "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package' && npm run test:build:package",
-    "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist' && npm run test:build:dist",
+    
+    "heroku-postbuild": "node ./node_modules/gulp/bin/gulp copy-assets && node ./node_modules/gulp/bin/gulp sassdoc",
+    "heroku": "node app/start.js",
+    
     "test": "npm run test:dependencies && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
-    "test:build:package": "jest tasks/gulp/__tests__/after-build-package.test.js",
-    "test:build:dist": "jest tasks/gulp/__tests__/after-build-dist.test.js",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
