@@ -1,6 +1,6 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+// import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 // import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
@@ -40,6 +40,7 @@ export default defineConfig({
     outDir: '../../dist',
     emptyOutDir: true,
     minify: true, //AW: Disable minifying while debugging JS
+    sourcemap: true,
     modulePreload: { polyfill: false }, //AW: Preload is supported on all major browsers now https://caniuse.com/link-rel-modulepreload
     rollupOptions: {
       treeshake: false, //AW: We disable treeshaking as we're building a library,
@@ -52,6 +53,11 @@ export default defineConfig({
           if (assetInfo.name == "index.css") {
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
+
+          if (assetInfo.name.endsWith('woff') || assetInfo.name.endsWith('woff2')) {
+            return 'assets/fonts/[name].[ext]'
+          }          
+
           return 'assets/[name].[ext]';
         },
       }
