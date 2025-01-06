@@ -52,11 +52,13 @@ export default defineConfig({
           if (assetInfo.name == "index.css") {
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
-          //AW: Handle favicons
+          
+          //AW: Handle assets on entry page
           if (assetInfo.name == "1200x800.webp" || assetInfo.name == "hero.jpg") {
             return 'assets/images/example-assets/[name].[ext]'
           }
 
+          //AW: Handle favicons
           if (assetInfo.name == "favicon.ico" || assetInfo.name == "apple-icon.png" || assetInfo.name == "apple-icon-180x180.png" || assetInfo.name == "apple-icon-152x152.png") {
             return 'assets/images/favicons/[name].[ext]'
           }
