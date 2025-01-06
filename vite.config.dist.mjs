@@ -1,6 +1,6 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+// import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 // import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
@@ -9,11 +9,11 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
-    // libAssetsPlugin({ 
-    //   limit:0,
-    //   name: '[name].[ext]'
-    // }),
-    viteCommonjs(),
+  //   // libAssetsPlugin({ 
+  //   //   limit:0,
+  //   //   name: '[name].[ext]'
+  //   // }),
+  //   viteCommonjs(),
     viteStaticCopy({
       targets: [
         {
@@ -36,45 +36,75 @@ export default defineConfig({
     })
   ],
   root: 'src/lbcamden',
-  emitIndex: false,
   build: {
     outDir: '../../dist',
-    // minify: true,
-    assetsDir: 'assets',
     emptyOutDir: true,
+    minify: true, //AW: Disable minifying while debugging JS
     sourcemap: true,
-    // publicDir: 'assets',
-    // emitAssets:true,
-    // assetsInlineLimit: 0,
-    lib:{
-      entry: {
-        // govuk_js: '../../node_modules/govuk-frontend/govuk/all.js',
-        lbcamden_js: './all.js',
-        // lbcamden_css: './all.scss',
-      },
-      formats: ['es'],
+    modulePreload: { polyfill: false }, //AW: Preload is supported on all major browsers now https://caniuse.com/link-rel-modulepreload
+    rollupOptions: {
+      treeshake: false, //AW: We disable treeshaking as we're building a library,
+      output: {
+        format: 'es',
+        entryFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js',
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name == "index.css") {
+            return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+          }
+          //AW: Handle favicons
+          if (assetInfo.name == "favicon.ico" || assetInfo.name == "apple-icon.png" || assetInfo.name == "apple-icon-180x180.png" || assetInfo.name == "apple-icon-152x152.png") {
+            return 'assets/images/favicons/[name].[ext]'
+          }
 
-      fileName: (format, entryName) => {
+          if (assetInfo.name.endsWith('woff') || assetInfo.name.endsWith('woff2')) {
+            return 'assets/fonts/[name].[ext]'
+          }          
+
+          return 'assets/[name].[ext]';
+        },
+      }
+    }
+  }
+  // emitIndex: false,
+  // build: {
+  //   outDir: '../../dist',
+  //   // minify: true,
+  //   assetsDir: 'assets',
+  //   emptyOutDir: true,
+  //   sourcemap: true,
+  //   // publicDir: 'assets',
+  //   // emitAssets:true,
+  //   // assetsInlineLimit: 0,
+  //   lib:{
+  //     entry: {
+  //       // govuk_js: '../../node_modules/govuk-frontend/govuk/all.js',
+  //       lbcamden_js: './all.js',
+  //       // lbcamden_css: './all.scss',
+  //     },
+  //     formats: ['es'],
+
+  //     fileName: (format, entryName) => {
 
           
 
-          if (entryName === 'lbcamden_js') {
-            return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
-          }
+  //         if (entryName === 'lbcamden_js') {
+  //           return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
+  //         }
 
-          // if (entryName === 'govuk_js') {
-          //   return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
-          // }
+  //         // if (entryName === 'govuk_js') {
+  //         //   return 'govuk-frontend-4.7.0.min.js' // AW: MUST FIX: MAGIC STRING
+  //         // }
 
-          // if (entryName === 'lbcamden_css') {
-          //   console.log("AAA" + entryName)
-          //   return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
-          // }
+  //         // if (entryName === 'lbcamden_css') {
+  //         //   console.log("AAA" + entryName)
+  //         //   return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
+  //         // }
 
-        return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
-      },
-      // cssFileName: 'lbcamden-frontend-' + (process.env.npm_package_version),
-    },
+  //       return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js'
+  //     },
+  //     // cssFileName: 'lbcamden-frontend-' + (process.env.npm_package_version),
+  //   },
     // rollupOptions: {
     //   output: {
     //     assetFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.[ext]'
@@ -121,6 +151,6 @@ export default defineConfig({
 
     //   }
     // }
-  }
+  // }
 
 })
