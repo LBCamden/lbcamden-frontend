@@ -40,6 +40,7 @@ export default defineConfig({
     outDir: '../../dist',
     emptyOutDir: true,
     minify: false, //AW: Disable minifying while debugging JS
+    modulePreload: { polyfill: false }, //AW: Preload is supported on all major browsers now https://caniuse.com/link-rel-modulepreload
     rollupOptions: {
       treeshake: false, //AW: We disable treeshaking as we're building a library,
       external: ['lbcamden-frontend-0.5.3.min'],

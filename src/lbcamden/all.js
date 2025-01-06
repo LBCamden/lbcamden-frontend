@@ -1,5 +1,5 @@
 import { nodeListForEach } from './common'
-// import LBCamdenButton from './components/button/button'
+import LBCamdenButton from './components/button/button'
 import LBCamdenGuideContent from './components/guide-content/guide-content'
 import LBCamdenGuideHeader from './components/guide-header/guide-header'
 import LBCamdenHeader from './components/header/header'
@@ -37,7 +37,7 @@ function initAll (options) {
 
 export {
   initAll,
-  // LBCamdenButton,
+  LBCamdenButton,
   LBCamdenGuideContent,
   LBCamdenGuideHeader,
   LBCamdenHeader
