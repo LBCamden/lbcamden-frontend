@@ -1,4 +1,3 @@
-/* @jest-environment node */
 /* eslint-env jest */
 const path = require('path')
 const lib = require('../../../lib/file-helper')
@@ -35,7 +34,7 @@ describe('dist/', () => {
           files => {
             return files
               // Remove /package prefix from filenames
-              .map(file => file.replace(/^dist\/assets\//, ''))
+              .map(file => file.replace(/^package\/dist\/assets\//, ''))
               // Sort to make comparison easier
               .sort()
           },
@@ -72,8 +71,8 @@ describe('dist/', () => {
     })
   })
 
-  describe(`govuk-frontend-${govukVersion}.min.js`, () => {
-    const javascript = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend-${govukVersion}.min.js`))
+  describe(`govuk-frontend.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `govuk-frontend.min.js`))
 
     it('should have a bundled version of govuk-frontend', () => {
       expect(javascript).toBeTruthy()

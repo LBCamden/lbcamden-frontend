@@ -40,6 +40,7 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    '@storybook/addon-storysource'
   ],
   framework: {
     name: "@storybook/html-vite",

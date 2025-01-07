@@ -256,13 +256,10 @@ $button-shadow-size: $govuk-border-width-form-element;
     @include govuk-typography-responsive($size: 19, $override-line-height: 1);
     @include govuk-responsive-padding(4, "top");
     @include govuk-responsive-padding(4, "bottom");
-    display: -ms-inline-flexbox;
     display: inline-flex;
     min-height: auto;
 
-    -ms-flex-pack: center;
-
-        justify-content: center;
+    justify-content: center;
   }
 
   &__start-icon {
@@ -272,10 +269,8 @@ $button-shadow-size: $govuk-border-width-form-element;
       margin-left: govuk-spacing(2);
     }
     vertical-align: middle;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
-    -ms-flex-item-align: center;
-        align-self: center;
+    flex-shrink: 0;
+    align-self: center;
     // Work around SVGs not inheriting color from parent in forced color mode
     // (https://github.com/w3c/csswg-drafts/issues/6310)
     forced-color-adjust: auto;
