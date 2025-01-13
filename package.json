@@ -99,6 +99,7 @@
     "vinyl-paths": "^3.0.1",
     "vite": "^5.4.11",
     "vite-plugin-static-copy": "^2.1.0",
+    "vitest": "^2.1.8",
     "yaml": "^2.6.0",
     "yaml-loader": "^0.8.0",
     "yargs": "^15.4.1"
