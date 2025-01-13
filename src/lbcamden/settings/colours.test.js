@@ -1,5 +1,4 @@
-/* @jest-environment node */
-/* eslint-env jest */
+import { describe, it } from 'vitest'
 
 const { renderSass } = require('../../../lib/jest-helpers')
 

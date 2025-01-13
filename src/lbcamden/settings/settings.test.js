@@ -1,5 +1,4 @@
-/* @jest-environment node */
-/* eslint-env jest */
+import { describe, expect, it } from 'vitest'
 
 const glob = require('glob')
 const path = require('path')

@@ -15,7 +15,7 @@ describe('video-embed', () => {
   describe('default example', () => {
     it('passes accessibility tests', async () => {
       const $ = render('video-embed', examples.default)
-
+      console.log($.html())
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })

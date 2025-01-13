@@ -1,8 +1,16 @@
-/* eslint-env jest */
+import { describe, expect, it } from 'vitest'
+import { configureAxe } from "vitest-axe";
+const axe = configureAxe({
+  rules: {
+    'skip-link': { enabled: false },
+    region: { enabled: false }
+  }
+})
 
 const userEvent = require('@testing-library/user-event').default
 const { renderDOM, getExamples } = require('../../../../lib/jest-helpers')
-const LBCamdenButton = require('./button').default
+
+import LBCamdenButton from './button';
 
 const examples = getExamples('button')
 

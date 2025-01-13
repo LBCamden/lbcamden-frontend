@@ -1,5 +1,11 @@
-/* @jest-environment node */
-/* eslint-env jest */
+import { describe, expect, it, beforeAll } from 'vitest'
+import { configureAxe } from "vitest-axe";
+const axe = configureAxe({
+  rules: {
+    'skip-link': { enabled: false },
+    region: { enabled: false }
+  }
+})
 
 const { allComponents } = require('../../../lib/file-helper')
 const { renderSass } = require('../../../lib/jest-helpers')
