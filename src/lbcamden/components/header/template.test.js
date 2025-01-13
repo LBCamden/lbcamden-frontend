@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, expect, it } from 'vitest'
 
 const axe = require('../../../../lib/axe-helper')
 

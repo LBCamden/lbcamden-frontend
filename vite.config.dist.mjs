@@ -72,7 +72,10 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  test: {
+    setupFiles: ["vitest-setup.js"],
+  },
   // emitIndex: false,
   // build: {
   //   outDir: '../../dist',
