@@ -108,6 +108,7 @@
     "yargs": "^15.4.1"
   },
   "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.30.1",
     "chromatic": "^11.3.0",
     "fsevents": "*",
     "jest": "^29.7.0",
