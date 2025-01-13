@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest'
-
-const axe = require('../../../../lib/axe-helper')
+import { configureAxe } from "vitest-axe";
+const axe = configureAxe({
+  rules: {
+    'skip-link': { enabled: false },
+    region: { enabled: false }
+  }
+})
 
 const { render, getExamples } = require('../../../../lib/jest-helpers')
 
