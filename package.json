@@ -11,6 +11,7 @@
     "build": "vite build --config vite.config.dist.mjs && vite build --config vite.config.package.mjs", 
     "build:package": "vite build --config vite.config.package.mjs",
     "build:dist": "vite build --config vite.config.dist.mjs",
+    "release:build": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "publish-release": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
     "test": "vitest --config ./vitest.config.js",
