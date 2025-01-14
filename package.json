@@ -11,17 +11,20 @@
     "build": "vite build --config vite.config.dist.mjs && vite build --config vite.config.package.mjs", 
     "build:package": "vite build --config vite.config.package.mjs",
     "build:dist": "vite build --config vite.config.dist.mjs",
+    
     "release:build": "node bin/check-nvmrc.js && ./bin/build-release.sh",
-    "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
-    "publish-release": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
+    "release:publish": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
+    
     "test": "vitest --config ./vitest.config.js",
     "test:run": "vitest run --config ./vitest.config.js",
     "test:build": "vitest --config ./vitest.config.js --dir tests",
     "test:build:run": "vitest run --config ./vitest.config.js --dir tests",
     "test:dependencies": "npm ls --depth=0",
+    
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
+    
     "chromatic": "npx chromatic --project-token=c73762ed4204 --build-script-name=build:storybook",
     "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
     "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
