@@ -97,6 +97,13 @@ export default defineConfig({
   ],
   root: 'src/lbcamden',
   emitIndex: false,
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'legacy'
+      }
+    }
+  },
   build: {
     outDir: '../../package',
     minify: false,

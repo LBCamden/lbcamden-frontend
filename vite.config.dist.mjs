@@ -28,6 +28,13 @@ export default defineConfig({
     })
   ],
   root: 'src/lbcamden',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'legacy'
+      }
+    }
+  },
   build: {
     outDir: '../../dist',
     emptyOutDir: true,
