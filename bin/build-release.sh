@@ -27,11 +27,13 @@ if [[ $continue_prompt != 'y' ]]; then
 fi
 
 npm run test
-npm run build:package
-npm run build:dist
+# npm run build:package
+# npm run build:dist
+npm run build
 
-rm -rf package/dist
-cp -r dist package/dist
+# rm -rf package/dist
+# cp -r dist package/dist
+npm run test:build
 
 ALL_PACKAGE_VERSION=$(node -p "require('./package/package.json').version")
 TAG="v$ALL_PACKAGE_VERSION"
