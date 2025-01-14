@@ -48,7 +48,7 @@
     "eslint": "^9.18.0",
     "eslint-plugin-storybook": "^0.10.1",
     "front-matter": "^4.0.2",
-    "glob": "^7.2.3",
+    "glob": "^11.0.1",
     "jquery": "1.12.4",
     "js-yaml": "^3.14.1",
     "jsdom": "^26.0.0",

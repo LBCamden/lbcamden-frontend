@@ -1,6 +1,6 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
-import glob from 'glob'
+import {glob, globSync } from 'glob'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -9,7 +9,7 @@ import yaml from '@rollup/plugin-yaml'
 
 import fixtures from './rollup-plugin-fixtures'
 
-const { GlobSync: globSync } = glob
+// const { GlobSync: globSync } = glob
 
 export default defineConfig({
   define: {
@@ -106,7 +106,7 @@ export default defineConfig({
       treeshake: false,
       input: {
         ...Object.fromEntries(
-          globSync('./src/lbcamden/components/**/*.yaml').found.map(file => [
+          globSync('./src/lbcamden/components/**/*.yaml').map(file => [
             // This remove `src/` as well as the file extension from each
             // file, so e.g. src/nested/foo.js becomes nested/foo
             path.relative(
