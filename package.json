@@ -105,15 +105,6 @@
       "/cypress/**/*.js"
     ]
   },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": [
-      "./config/jest-setup.js"
-    ],
-    "snapshotSerializers": [
-      "jest-serializer-html"
-    ]
-  },
   "readme": "ERROR: No README data found!",
   "_id": "lbcamden-frontend@0.2.6",
   "eslintConfig": {
