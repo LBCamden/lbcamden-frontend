@@ -59,7 +59,6 @@
     "rollup-plugin-delete": "^2.1.0",
     "sass": "^1.80.6",
     "sass-color-helpers": "^2.1.1",
-    "sassdoc": "^2.7.3",
     "standard": "^17.1.2",
     "storybook": "^8.3.6",
     "storybook-addon-govuk-fixtures": "github:lbcamden/storybook-addon-govuk-fixtures",
