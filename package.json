@@ -28,8 +28,7 @@
     "build:storybook": "storybook build"
   },
   "dependencies": {
-    "govuk-frontend": "^5.0.0",
-    "iframe-resizer": "^4.3.6"
+    "govuk-frontend": "^5.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
