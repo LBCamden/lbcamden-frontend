@@ -32,7 +32,7 @@ function convertYamlToJson (file) {
   }
 
   if (yaml) {
-    return yamlToJson.safeLoad(yaml)
+    return yamlToJson.load(yaml)
   }
 
   return false
