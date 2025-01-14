@@ -1,19 +1,11 @@
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'vite'
-// import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
-
-// import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
-  //   // libAssetsPlugin({
-  //   //   limit:0,
-  //   //   name: '[name].[ext]'
-  //   // }),
-  //   viteCommonjs(),
     viteStaticCopy({
       targets: [
         {
