@@ -55,6 +55,20 @@ const config = {
       to: "/example-assets",
       from: "../src/lbcamden/example-assets"
     },
-  ]
+  ],
+  async viteFinal(config) {
+    // Merge custom configuration into the default config
+    const { mergeConfig } = await import('vite');
+ 
+    return mergeConfig(config, {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: 'legacy'
+          }
+        }
+      }
+    });
+  },
 };
 export default config;
