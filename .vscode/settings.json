@@ -9,8 +9,6 @@
   "[scss]": {
     "editor.formatOnSave": false
   },
-  "jest.runMode": "on-demand",
-  "jest.jestCommandLine": "npx jest",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#de0c64",
     "activityBar.background": "#de0c64",
