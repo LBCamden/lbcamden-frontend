@@ -1,0 +1,8 @@
+.lbcamden-image {
+  &__wrapper {
+    display: contents;
+  }
+
+  aspect-ratio: var(--aspect-ratio);
+  object-position: var(--object-position);
+}

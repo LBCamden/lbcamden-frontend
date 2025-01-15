@@ -1,0 +1,14 @@
+[
+    {
+        "name": "heading",
+        "type": "string",
+        "required": true,
+        "description": "Heading content of section."
+    },
+    {
+        "name": "relatedContent",
+        "type": "array",
+        "required": true,
+        "description": "XXX"
+    }
+]

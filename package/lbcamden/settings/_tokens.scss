@@ -1,0 +1,17 @@
+$lbc-default-spacing: 6;
+$lbc-default-spacing--small: 2;
+
+$lbcamden-theme-tint-colour: var(
+  --lbcamden-theme-tint-colour,
+  #f0f0f0
+);
+
+$lbcamden-theme-brand-colour: var(
+  --lbcamden-theme-brand-colour,
+  lbcamden-colour("bright-grey")
+);
+
+$lbcamden-brand-colour: var(
+  --lbcamden-theme-brand-colour,
+  lbcamden-colour("govuk-brand1-1-colour")
+);
