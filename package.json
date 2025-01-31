@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "start": "storybook dev -p 6006 --no-open",
     "build": "vite build --config vite.config.dist.mjs && vite build --config vite.config.package.mjs",
     "build:package": "vite build --config vite.config.package.mjs",
     "build:dist": "vite build --config vite.config.dist.mjs",
