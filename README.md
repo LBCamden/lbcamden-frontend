@@ -13,10 +13,10 @@ It utilises components from the [GOV.UK Frontend](https://github.com/alphagov/go
 LBCamden Frontend is currently in Beta while we finish implementing our governance processes for contribution and usage. You can read more about this in our [Before you start](https://zeroheight.com/4c170debc/v/latest/p/22c3a6-before-you-start) design system page.
 
 ## Developing applications with LBCamden Frontend
-To start implementing LBCamden Frontend in to your project, you can read the [Get started for developers documentation](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within our Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
+To start implementing LBCamden Frontend in your project, you can read the [Get started for developers documentation](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within our Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
 
 ## Extending or customising LBCamden Frontend
-To extend or customise LBCamden Frontend, start by cloning this repository to your local machine and reading the sections below, and then run `npm i` to install all dependencies.
+To extend or customise LBCamden Frontend, start by cloning this [repository](https://github.com/LBCamden/lbcamden-frontend) to your local machine, and then running `npm i` to install all dependencies.
 
 > [!IMPORTANT] 
 > While LBCamden Frontend is publicly available, we are still establishing our contribution process for external changes. See the [contributing section](#contributing) for more information.
@@ -40,12 +40,20 @@ Each component within Storybook includes instances of that component configured 
 ### Adding new examples [#](#adding-new-examples)
 
 ## Testing LBCamden Frontend
+While developing new components or amending aspect of LBCamden Frontend, it is suggested you regularly lint and test your code using the tools provided.
 
 ### How to run linting
-`npm run lint`
+LBCamden Frontend includes linting for both scss files (using [Stylelint](https://stylelint.io/)) and JavaScript (using [Standard](https://standardjs.com/))
+
+To run all linting tools sequentially, run `npm run lint`, or see the 'scripts' section of `package.json` for the commands to run individual linters.
 
 ### How to run test suite
-`npm run test`
+LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that you include additional tests where appropriate.
+
+To run all tests, run `npm run test` and monitor the output. By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
+
+> [!TIP]
+> VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
 
 ### How to run visual regression tests
 `npm run chromatic`
