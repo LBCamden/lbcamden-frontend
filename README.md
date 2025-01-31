@@ -58,7 +58,13 @@ To run all tests, run `npm run test` and monitor the output. By default, Vitest 
 > VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
 
 ### How to run visual regression tests
+LBCamden Frontend implement visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. You will need to create a Chromatic project and retrieve the project token to be able to run the tests.
+
+Once you have your Chromatic project token, use
+`export CHROMATIC_PROJECT_TOKEN=YOUR_CHROMATIC_PROJECT_TOKEN`
+and then
 `npm run chromatic`
+to run build and upload all components to Chromatic for testing. Follow the instruction outputted to the terminal to review changes and re-baseline your project.
 
 ## Releasing LBCamden Frontend
 

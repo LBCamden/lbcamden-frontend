@@ -22,9 +22,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "standard",
     "lint:scss": "stylelint \"app/**/*.scss\" \"src/**/*.scss\"",
-    "chromatic": "npx chromatic --project-token=c73762ed4204 --build-script-name=build:storybook",
-    "percy": "npx percy exec -- cypress run --spec \"cypress/e2e/full-page-examples-percy.cy.js\"",
-    "percy:patterns": "npx percy exec -- cypress run --spec \"cypress/e2e/pattern-examples-percy.cy.js\"",
+    "chromatic": "npx chromatic --build-script-name=build:storybook",
     "storybook": "storybook dev -p 6006 --no-open",
     "build:storybook": "storybook build"
   },
