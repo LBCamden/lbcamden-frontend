@@ -5,7 +5,8 @@ LBCamden Frontend
 
 LBCamden Frontend contains the code you need to start building a user interface for Camden platforms and services.
 
-It is best used in conjunction with the guidance included in the [LBCamden Design System documentation](https://zeroheight.com/4c170debc).
+> [!TIP]
+> LBCamden Frontend is best used in conjunction with the guidance included in the [LBCamden Design System documentation](https://zeroheight.com/4c170debc).
 
 It utilises components from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend), and extends these with components and customisations developed for Camden specific implementations.
 
@@ -21,7 +22,10 @@ To extend or customise LBCamden Frontend, start by cloning this repository to yo
 > While LBCamden Frontend is publicly available, we are still establishing our contribution process for external changes. See the [contributing section](#contributing) for more information.
 
 ### Reviewing the Frontend Library
-From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.js.org/) based, allowing components to be viewed and configured via the web UI. Previous versions that implemented the GOV.UK Frontend Review app are no longer supported.
+From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.js.org/) based, allowing components to be viewed and configured via the web UI. 
+
+> [!WARNING]  
+> Previous versions that implemented the GOV.UK Frontend Review app are no longer supported.
 
 To start Storybook on your local machine, run `npm run start` and follow the instructions in your terminal.
 
