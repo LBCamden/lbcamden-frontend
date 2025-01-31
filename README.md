@@ -50,7 +50,7 @@ To run all linting tools sequentially, run `npm run lint`, or see the 'scripts' 
 ### How to run the test suite
 LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that you include additional tests where appropriate. 
 
-As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitext implementation of [Axe](https://github.com/dequelabs/axe-core).
+As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitest implementation of [Axe](https://github.com/dequelabs/axe-core).
 
 To run all tests, run `npm run test` and monitor the output. By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
 
