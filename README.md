@@ -67,12 +67,15 @@ and then
 to run build and upload all components to Chromatic for testing. Follow the instruction outputted to the terminal to review changes and re-baseline your project.
 
 ## Releasing LBCamden Frontend
+LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
 
 ### How to package up for release
-`npm run build`
+To build the package ahead of release, use `npm run build`. This script collects and parses the files required for each component, and bundles up the supporting CSS and JS files. The output of this command is placed in the `/package` directory which is included in the repository.
+
+Once built, use `npm run test:build` to verify the output matches the required format.
 
 ### How to release
-`npm run release`
+To publish an update LBCamden package, use `npm run release`. You will need to be authenticated into npm, and be part of the LBCamden organisation.
 
 ## Example pages and patterns
 
