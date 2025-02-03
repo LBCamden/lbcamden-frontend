@@ -72,10 +72,13 @@ LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). T
 ### How to package up for release
 To build the package ahead of release, use `npm run build`. This script collects and parses the files required for each component, and bundles up the supporting CSS and JS files. The output of this command is placed in the `/package` directory which is included in the repository.
 
-Once built, use `npm run test:build` to verify the output matches the required format.
+Once built, use `npm run test:build` to verify the output matches the required format. You should also run the visual regression tests against your changes prior to releasing an update.
 
 ### How to release
-To publish an update LBCamden package, use `npm run release`. You will need to be authenticated into npm, and be part of the LBCamden organisation.
+To publish an update LBCamden package, use `npm run release` when checked into the `main` branch. 
+
+You will need to be authenticated into npm, and be part of the LBCamden organisation.
+
 
 ## Example pages and patterns
 
