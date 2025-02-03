@@ -77,15 +77,17 @@ to run build and upload all components to Chromatic for testing. Follow the inst
 ## Example pages and patterns
 
 ## Getting updates
-We'll publish breaking changes in our release notes here.
-Follow semantic versioning
-Recommend that you implement visual regression testing as part of your practise
+We publish breaking changes as part of our [release notes](https://github.com/LBCamden/lbcamden-frontend/releases) for each release.
+
+LBCamden Frontend aims to follow [semantic versioning](https://semver.org/), and implements MAJOR, MINOR and PATCH releases.
+
+If you are implementing LBCamden Frontend into a project, it is recommend that you have functional and visual regression testing as part of your practise. We recommend using [Cypress](https://www.cypress.io/) and [Chromatic](https://www.chromatic.com/) as part of your toolchain.
 
 ## Browser support
-We aim to follow the GOV.UK standards for browser support, read here
+We aim to follow the GOV.UK Frontend standards for [browser support](https://frontend.design-system.service.gov.uk/browser-support/#browser-support). 
 
 ## Accessibility and assistive technology
-We aim to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatially compliant, and all projects will require futher automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc) section.
+We aim to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatially compliant, and all projects will require futher automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc/p/69d09b-accessibility) section.
 
 ## Security
 LBCamden is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
