@@ -34,6 +34,24 @@ Storybook displays both the GOV.UK Frontend components (previously called "Base"
 Each component within Storybook includes instances of that component configured with parameters that are contained within the component's fixtures file. For information about expanding the example instances see the [Adding new examples](#adding-new-examples) section. 
 
 ### Component structure
+Each component within LBCamden Frontend follows the GOV.UK Frontend component structure.
+
+A valid component has:
+- a directory within the `components` directory with a [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) name
+- a file called `macro.njk` which serves as an entry point for the component
+- a file called `template.njk` which contains the component's mark up and dynamic functionality via [Nunjucks](https://mozilla.github.io/nunjucks/) code.
+- a .scss file named the same as the component's directory
+- a .yaml file named the same as the component's directory, which contains information about the component's parameters and example configurations rendered in Storybook
+- a file called `template.test.js` which contains the standard component accessibility test and any further functional tests required.
+
+Additionally, components may also have:
+- a .js file named the same as the component's directory, which contains additional dynamic functionality relating to the component
+- a .test.js file names the same as the component's directory, which contains additional tests that relate to  dynamic functionality defined in the file above
+- Additional .scss or .njk files to allow for more modular component structure
+- a README.md file with additional information about the component and its usage
+
+> [!IMPORTANT]
+> Placing additional files inside a component's directory may cause the build and test processes to fail.
 
 ### SASS variables
 
@@ -75,10 +93,9 @@ To build the package ahead of release, use `npm run build`. This script collects
 Once built, use `npm run test:build` to verify the output matches the required format. You should also run the visual regression tests against your changes prior to releasing an update.
 
 ### How to release
-To publish an update LBCamden package, use `npm run release` when checked into the `main` branch. 
+To publish an update LBCamden package, use `npm run release` when checked into the `main` branch. You will need to be authenticated into npm, and be part of the LBCamden organisation.
 
-You will need to be authenticated into npm, and be part of the LBCamden organisation.
-
+Once released, you must update the [Releases section](https://github.com/LBCamden/lbcamden-frontend/releases) of the repository and set the current release to "Latest".
 
 ## Example pages and patterns
 
