@@ -16,7 +16,7 @@ LBCamden Frontend is currently in Beta while we finish implementing our governan
 To start implementing LBCamden Frontend in your project, you can read the [Get started for developers documentation](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within our Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
 
 ## Extending or customising LBCamden Frontend
-To extend or customise LBCamden Frontend, start by cloning this [repository](https://github.com/LBCamden/lbcamden-frontend) to your local machine, and then running `npm i` to install all dependencies.
+To extend or customise LBCamden Frontend, start by cloning this [repository](https://github.com/LBCamden/lbcamden-frontend) to your local machine, and then use `npm i` to install all dependencies.
 
 > [!IMPORTANT] 
 > While LBCamden Frontend is publicly available, we are still establishing our contribution process for external changes. See the [contributing section](#contributing) for more information.
@@ -27,7 +27,7 @@ From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.
 > [!WARNING]  
 > Previous versions that implemented the GOV.UK Frontend Review app are no longer supported.
 
-To start Storybook on your local machine, run `npm run start` and follow the instructions in your terminal.
+To start Storybook on your local machine, use `npm run start` and follow the instructions in your terminal.
 
 Storybook displays both the GOV.UK Frontend components (previously called "Base" components) and LBCamden Frontend components (previously called "Bespoke" components). It also displays examples of common patterns and full page designs.
 
@@ -45,14 +45,14 @@ While developing new components or amending aspect of LBCamden Frontend, it is s
 ### How to run linting
 LBCamden Frontend includes linting for both scss files (using [Stylelint](https://stylelint.io/)) and JavaScript (using [Standard](https://standardjs.com/))
 
-To run all linting tools sequentially, run `npm run lint`, or see the 'scripts' section of `package.json` for the commands to run individual linters.
+To run all linting tools sequentially, use `npm run lint`, or see the 'scripts' section of `package.json` for the commands to run individual linters.
 
 ### How to run the test suite
 LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that you include additional tests where appropriate. 
 
 As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitest implementation of [Axe](https://github.com/dequelabs/axe-core).
 
-To run all tests, run `npm run test` and monitor the output. By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
+To run all tests, use `npm run test` and monitor the output. By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
 
 > [!TIP]
 > VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
@@ -85,18 +85,18 @@ Recommend that you implement visual regression testing as part of your practise
 We aim to follow the GOV.UK standards for browser support, read here
 
 ## Accessibility and assistive technology
-We aim to meet WCAG 2.2 AA for all components.
+We aim to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatially compliant, and all projects will require futher automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc) section.
 
 ## Security
-GDS is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
+LBCamden is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
 
-For full details on how to tell us about vulnerabilities, [see our security policy](https://github.com/alphagov/govuk-frontend/security/policy).
+While we are working on our security policy for this work, please [contact the Design System team](#contact) if you have any question. Further information and guidance about disclosing security issues can also be found via the [GOV.UK Frontend Security policy](https://github.com/alphagov/govuk-frontend/security/policy).
 
 ## Licence
 Unless stated otherwise, the codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation. The documentation is &copy; Crown copyright and available under the terms of the Open Government 3.0 licence.
 
 ## Contributing [#](#contributing)
-We are working on our contribution process
+We are working on our contribution process. If you are interested in implementing or extending LBCamden Frontend while we establish our formal processes, please [contact the Design System team](#contact).
 
-## Contact the team
-If you wish to 
+## Contact the team [#](#contact)
+To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk)
