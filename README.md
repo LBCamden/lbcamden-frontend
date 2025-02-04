@@ -27,8 +27,6 @@ From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.
 > [!WARNING]  
 > Previous versions that implemented the GOV.UK Frontend Review app are no longer supported.
 
-To start Storybook, use `npm run start` and follow the instructions in the terminal.
-
 To start Storybook, use the following command and follow the instructions in the terminal
 ```console
 npm run start
@@ -87,14 +85,21 @@ While developing new components or amending aspect of LBCamden Frontend, it is r
 ### How to run linting
 LBCamden Frontend includes linting for both scss files (using [Stylelint](https://stylelint.io/)) and JavaScript (using [Standard](https://standardjs.com/))
 
-To run all linting tools sequentially, use `npm run lint`, or see the 'scripts' section of `package.json` for the commands to run individual linters.
+To run all linting tools sequentially, use the following command or see the 'scripts' section of `package.json` for the commands to run individual linters.
+```console
+npm run lint
+```
 
 ### How to run the test suite
 LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that additional tests are include where appropriate. 
 
 As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitest implementation of [Axe](https://github.com/dequelabs/axe-core).
 
-To run all tests, use `npm run test` and monitor the output. By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
+To run all tests, use the following command and monitor the output. 
+```console
+npm run test
+```
+By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
 
 > [!TIP]
 > VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
@@ -103,21 +108,39 @@ To run all tests, use `npm run test` and monitor the output. By default, Vitest 
 LBCamden Frontend implement visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. It is necessary to create a Chromatic project and [retrieve the project token](https://www.chromatic.com/docs/faq/find-project-token/) to be able to run the tests.
 
 To set the Chromatic project token, use
-`export CHROMATIC_PROJECT_TOKEN=YOUR_CHROMATIC_PROJECT_TOKEN`
+```console
+export CHROMATIC_PROJECT_TOKEN=YOUR_CHROMATIC_PROJECT_TOKEN
+```
 and then
-`npm run chromatic`
+```console
+npm run chromatic
+```
 to run build and upload all components to Chromatic for testing. Follow the instruction outputted to review changes and re-baseline the project if necessary.
 
 ## Releasing LBCamden Frontend
 LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
 
 ### How to package up for release
-To build the package ahead of release, use `npm run build`. This script collects and parses the files required for each component, and bundles the supporting CSS and JS files. The output of this process is placed in the `/package` directory which is included in the repository source control.
+To build the package ahead of release, use the following command.
+```console
+npm run build
+```
+This script collects and parses the files required for each component, and bundles the supporting CSS and JS files. The output of this process is placed in the `/package` directory which is included in the repository source control.
 
-Once built, use `npm run test:build` to verify the output matches the required format. Visual regression tests should also be run against changes prior to releasing an update.
+Once built, use the following command to verify the output matches the required format. 
+```console
+npm run test:build
+```
+
+Visual regression tests should also be run against changes prior to releasing an update.
 
 ### How to release
-To publish an update LBCamden package, use `npm run release` when checked into the `main` branch. The process will require authentication into the LBCamden npm organisation.
+To publish an update LBCamden package, use the following command when checked into the `main` branch. 
+```console
+npm run release
+```
+
+The process will require authentication into the LBCamden npm organisation.
 
 Once released, you must update the [Releases section](https://github.com/LBCamden/lbcamden-frontend/releases) of the LBCamden Frontend repository and set the current release to "Latest".
 
