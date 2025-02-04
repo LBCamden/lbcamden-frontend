@@ -50,10 +50,30 @@ Additionally, components may also have:
 - Additional .scss or .njk files to allow for more modular component structure
 - a README.md file with additional information about the component and its usage
 
+Finally, for a component's CSS to be bundled as part of the main stylesheet, you must `import` it in the `_all.scss` file within the components directory.
+
 > [!IMPORTANT]
 > Placing additional files inside a component's directory may cause the build and test processes to fail.
 
-### SASS variables
+### GOV.UK styles and LBCamden styles
+LBCamden Frontend components utilise a mix of upstream GOV.UK and bespoke LBCamden styles and variables. 
+
+All GOV.UK styles are prefixed with `govuk-`.
+
+All LBCamden styles are prefixed with `lbcamden-`.
+
+- Overriding the styles of a GOV.UK component: done in the ~/elements directory
+- Overriding GOV.UK variables: done in ~/settings directory
+- Overriding GOV.UK styles: done in the ~/overrides directory
+
+
+### SASS overrides
+LBCamden Frontend override some of the default variables 
+
+### Overriding GOV.UK Frontend
+It is strongly encourage that you do not amend the functionality or mark up of upstream GOV.UK components. 
+
+However if you wish to override the look and feel of a GOV.UK component, you must override its default styles via `.scss` files.
 
 ### Adding new examples [#](#adding-new-examples)
 
