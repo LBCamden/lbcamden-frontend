@@ -60,22 +60,21 @@ LBCamden Frontend components utilise a mix of upstream GOV.UK and bespoke LBCamd
 
 All GOV.UK styles are prefixed with `govuk-`.
 
-All LBCamden styles are prefixed with `lbcamden-`.
+All LBCamden styles must be prefixed with `lbcamden-`.
 
-- Overriding the styles of a GOV.UK component: done in the ~/elements directory
-- Overriding GOV.UK variables: done in ~/settings directory
-- Overriding GOV.UK styles: done in the ~/overrides directory
+### Overriding GOV.UK Frontend component styles
+It is strongly encourage that you do not amend the functionality or mark up of upstream GOV.UK components. However if you wish to override the look and feel of a GOV.UK component, you must override its default styles via `.scss` files.
 
+If you wish to override the styles of a specific GOV.UK component, add or amend a file matching that components name in the ~/elements directory.
 
-### SASS overrides
-LBCamden Frontend override some of the default variables 
+If you wish to override GOV.UK SASS variables, add or amend a file in the ~/settings directory.
 
-### Overriding GOV.UK Frontend
-It is strongly encourage that you do not amend the functionality or mark up of upstream GOV.UK components. 
-
-However if you wish to override the look and feel of a GOV.UK component, you must override its default styles via `.scss` files.
+If you wish to override a specific GOV.UK styles, add or amend a file in the ~/overrides directory.
 
 ### Adding new examples [#](#adding-new-examples)
+Each component in LBCamden Frontend implements example configurations that are displayed in Storybook. 
+
+You can add or amend examples within the `examples` section of the yaml file within the component directory. This file is parsed into the `fixtures.json` file contained with into LBCamden Frontend package at build time.
 
 ## Testing LBCamden Frontend
 While developing new components or amending aspect of LBCamden Frontend, it is suggested you regularly lint and test your code using the tools provided.
@@ -118,6 +117,10 @@ To publish an update LBCamden package, use `npm run release` when checked into t
 Once released, you must update the [Releases section](https://github.com/LBCamden/lbcamden-frontend/releases) of the repository and set the current release to "Latest".
 
 ## Example pages and patterns
+In addition to individual components, it is possible to create and amend full page and pattern examples that are displayed within Storybook. Full page and pattern examples are stored within the ~/examples directory.
+
+> [!IMPORTANT]  
+> The full page and pattern examples contained within LBCamden Frontend may contradict guidance in the Design System documentation. The Design System should be considered the source of truth for all patterns and guidance.
 
 ## Getting updates
 We publish breaking changes as part of our [release notes](https://github.com/LBCamden/lbcamden-frontend/releases) for each release.
