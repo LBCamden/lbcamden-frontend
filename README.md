@@ -29,6 +29,11 @@ From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.
 
 To start Storybook, use `npm run start` and follow the instructions in the terminal.
 
+To start Storybook, use the following command and follow the instructions in the terminal
+```console
+npm run start
+```
+
 Storybook displays both the GOV.UK Frontend components (previously called "Base" components) and LBCamden Frontend components (previously called "Bespoke" components). It also displays examples of common patterns and full page designs.
 
 Each component within Storybook includes instances of that component configured with parameters that are contained within the component's fixtures file. For information about expanding the example instances, see the [Adding new examples](#adding-new-examples) section. 
