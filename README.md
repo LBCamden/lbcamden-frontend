@@ -1,87 +1,178 @@
-LBCamden Frontend Library
+LBCamden Frontend
 =====================
 
-LBCamden Frontend contains the code you need to start building a user interface
-for government platforms and services.
+![Tests](https://github.com/LBCamden/lbcamden-frontend/actions/workflows/tests.yml/badge.svg?branch=main) ![NPM Version](https://img.shields.io/npm/v/lbcamden-frontend) [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://main--645a25e00de84a612195c9a5.chromatic.com/)
 
-It is built on top of the amazing [GOV.UK Frontend
-System](https://frontend.design-system.service.gov.uk/). The aim of the project is to follow conventions set out in GOV.UK Frontend and incorporate updates and releases in that project.
+LBCamden Frontend contains the code needed to start building a user interface for Camden platforms and services.
 
-See live examples of GOV.UK Frontend components, and guidance on when to use
-them in your service, in the [GOV.UK Design
-System](https://design-system.service.gov.uk/).
+It utilises components from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend), and extends these with components via customisations developed for Camden specific implementations.
 
-## Contact the team
+> [!TIP]
+> LBCamden Frontend is best used in conjunction with the guidance included in the [LBCamden Design System documentation](https://zeroheight.com/4c170debc).
 
-TBC
+LBCamden Frontend is currently in Beta while the governance processes for contribution and usage is defined. More information is available on the [Before you start](https://zeroheight.com/4c170debc/v/latest/p/22c3a6-before-you-start) design system page.
 
-## Quick start
+## Developing applications with LBCamden Frontend
+To start implementing LBCamden Frontend into a project, read the [Get started for developers documentation](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within the Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
 
-The set-up process should mirror that of GOV.UK Frontend exactly: There are 2 ways to start using GOV.UK Frontend in your app.
+## Extending or customising LBCamden Frontend
+To extend or customise LBCamden Frontend, start by cloning this [repository](https://github.com/LBCamden/lbcamden-frontend), and then use `npm i` to install all dependencies.
 
-Once installed, you will be able to use the code from the examples in the
-[GOV.UK Design System](https://design-system.service.gov.uk/)
-in your service.
+> [!IMPORTANT] 
+> While LBCamden Frontend is publicly available, the contribution process for external changes is still being established. See the [contributing section](#contributing) for more information.
 
-### 1. Install with npm (recommended)
+### Reviewing the Frontend Library
+From version 1.0.0, LBCamden Frontend is entirely [Storybook](https://storybook.js.org/) based, allowing components to be viewed and configured via the browser based UI. 
 
-We recommend [installing GOV.UK Frontend using node package manager
-(npm)](https://frontend.design-system.service.gov.uk/installing-with-npm/).
+> [!WARNING]  
+> Previous versions that implemented the GOV.UK Frontend Review app are no longer supported.
 
-### 2. Install using compiled files
+To start Storybook, use the following command and follow the instructions in the terminal
+```console
+npm run start
+```
 
-You can also install GOV.UK Frontend by [copying our CSS, JavaScript and asset
-files into your project](https://frontend.design-system.service.gov.uk/install-using-precompiled-files/).
+Storybook displays both the GOV.UK Frontend components (previously called "Base" components) and LBCamden Frontend components (previously called "Bespoke" components). It also displays examples of common patterns and full page designs.
 
-## Browser and assistive technology support
+Each component within Storybook includes instances of that component configured with parameters that are contained within the component's fixtures file. For information about expanding the example instances, see the [Adding new examples](#adding-new-examples) section. 
 
-GOV.UK Frontend supports:
+### Component structure
+Each component within LBCamden Frontend follows the GOV.UK Frontend component structure.
 
-- [recommended browsers](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices#browsers-to-test-in)
-- [recommended assistive technologies](https://www.gov.uk/service-manual/technology/testing-with-assistive-technologies#which-assistive-technologies-to-test-with)
-- Internet Explorer 8, 9 and 10, although components may not look perfect
-- your users overriding colours in Windows, Firefox and Chrome
+A valid component has:
+- a directory within the `src/lbcamden/components` directory with a [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) name
+- a `macro.njk` file which serves as an entry point for the component
+- a `template.njk` file containing the component's mark up and dynamic functionality via [Nunjucks](https://mozilla.github.io/nunjucks/) code
+- a `.scss` file named the same as the component's directory
+- a `.yaml` file named the same as the component's directory, which contains information about the component's parameters and example configurations rendered in Storybook
+- a `template.test.js` file containing the standard component accessibility test and any further functional tests required
 
-## Accessibility
+Additionally, components may also have:
+- a `.js` file named the same as the component's directory, which contains additional dynamic functionality relating to the component
+- a `.test.js` file named the same as the component's directory, which contains additional tests that relate to  dynamic functionality defined in the file above
+- Additional `.scss` or `.njk` files to allow for more modular component structure
+- a `README.md` file with additional information about the component and its usage
 
-The GOV.UK Design System team works hard to ensure that GOV.UK Frontend is accessible.
+For a component's CSS to be bundled as part of the main LBCamden Frontend stylesheet, you must `import` it in the `_all.scss` file within the `src/lbcamden/components` directory.
 
-Using Frontend will help your service meet [level AA of WCAG 2.1](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag). But you must still [check that your service meets accessibility requirements](https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction), especially if you extend or modify components.
+> [!IMPORTANT]
+> Placing additional files inside a component's directory may cause the build and test processes to fail. More information can be found in `tests/after-build-package.test.js`.
 
-You should also use:
+### GOV.UK styles and LBCamden styles
+LBCamden Frontend components utilise a mix of upstream GOV.UK and bespoke LBCamden styles and variables. 
 
-- [the JavaScript from GOV.UK Frontend](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#javascript)
+All GOV.UK styles are prefixed with `govuk-`.
 
-Your service will not meet level AA of WCAG 2.1 if you use [compatibility mode](https://frontend.design-system.service.gov.uk/compatibility-mode/) to use GOV.UK Frontend with old frameworks or the old colour palette.
+All LBCamden styles **must** be prefixed with `lbcamden-`.
 
-You can also read the [accessibility statement for the GOV.UK Design System](https://design-system.service.gov.uk/accessibility/).
+### Overriding GOV.UK Frontend component styles
+It is strongly encourage that the functionality or mark up of upstream GOV.UK components is not modified. However, to override the look and feel of a GOV.UK component, it is possible to override the default styles via `.scss` files.
 
-### Accessibility warnings
+To override the styles of a specific GOV.UK component, add or amend a file matching that components name in the `src/lbcamden/elements` directory.
 
-If you get a warning from a linter or accessibility checker, check our list of [issues you should not need to fix](https://github.com/alphagov/govuk-frontend/issues/1280#issuecomment-509588851).
+To override GOV.UK SASS variables, add or amend a file in the `src/lbcamden/settings` directory.
+
+To override a specific GOV.UK styles, add or amend a file in the `src/lbcamden/overrides` directory.
+
+### Adding new examples [#](#adding-new-examples)
+Each component in LBCamden Frontend implements example configurations that are displayed in Storybook. 
+
+You can add or amend examples within the `examples` section of the yaml file within the component directory. This file is parsed into the `fixtures.json` file contained within the LBCamden Frontend package at build time.
+
+## Testing LBCamden Frontend
+While developing new components or amending aspect of LBCamden Frontend, it is recommended to regularly lint and test code using the tools provided.
+
+### How to run linting
+LBCamden Frontend includes linting for both scss files (using [Stylelint](https://stylelint.io/)) and JavaScript (using [Standard](https://standardjs.com/))
+
+To run all linting tools sequentially, use the following command or see the 'scripts' section of `package.json` for the commands to run individual linters.
+```console
+npm run lint
+```
+
+### How to run the test suite
+LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that additional tests are include where appropriate. 
+
+As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitest implementation of [Axe](https://github.com/dequelabs/axe-core).
+
+To run all tests, use the following command and monitor the output. 
+```console
+npm run test
+```
+By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#watch-mode). See the 'scripts' section of `package.json` for the commands to run individual tests or single run test suites.
+
+> [!TIP]
+> VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
+
+### How to run visual regression tests
+LBCamden Frontend implement visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. It is necessary to create a Chromatic project and [retrieve the project token](https://www.chromatic.com/docs/faq/find-project-token/) to be able to run the tests.
+
+To set the Chromatic project token, use
+```console
+export CHROMATIC_PROJECT_TOKEN=YOUR_CHROMATIC_PROJECT_TOKEN
+```
+and then
+```console
+npm run chromatic
+```
+to run build and upload all components to Chromatic for testing. Follow the instruction outputted to review changes and re-baseline the project if necessary.
+
+## Releasing LBCamden Frontend
+LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
+
+### How to package up for release
+To build the package ahead of release, use the following command.
+```console
+npm run build
+```
+This script collects and parses the files required for each component, and bundles the supporting CSS and JS files. The output of this process is placed in the `/package` directory which is included in the repository source control.
+
+Once built, use the following command to verify the output matches the required format. 
+```console
+npm run test:build
+```
+
+Visual regression tests should also be run against changes prior to releasing an update.
+
+### How to release
+To publish an update LBCamden package, use the following command when checked into the `main` branch. 
+```console
+npm run release
+```
+
+The process will require authentication into the LBCamden npm organisation.
+
+Once released, you must update the [Releases section](https://github.com/LBCamden/lbcamden-frontend/releases) of the LBCamden Frontend repository and set the current release to "Latest".
+
+## Example pages and patterns
+In addition to individual components, it is possible to create and amend full page and pattern examples that are displayed within Storybook. Full page and pattern examples are stored within the `examples` directory.
+
+> [!IMPORTANT]  
+> The full page and pattern examples contained within LBCamden Frontend may contradict guidance in the Design System documentation. The Design System should be considered the source of truth for all patterns and guidance.
 
 ## Getting updates
+Breaking changes are published as part of the [release notes](https://github.com/LBCamden/lbcamden-frontend/releases) for each release.
 
-To be notified when there’s a new release, you can either:
+LBCamden Frontend aims to follow [semantic versioning](https://semver.org/), and implements MAJOR, MINOR and PATCH releases.
 
-- [watch the govuk-frontend Github repository](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository)
-- join the [#govuk-design-system channel on cross-government Slack](https://ukgovernmentdigital.slack.com/app_redirect?channel=govuk-design-system)
+When implementing LBCamden Frontend into a project, it is recommend to have functional (for example [Cypress](https://www.cypress.io/)) and visual regression (for example [Chromatic](https://www.chromatic.com/)) tests in place to ensure upstream changes do not impact downsteam implementations.
 
-Find out how to [update with npm](https://frontend.design-system.service.gov.uk/updating-with-npm/).
+## Browser support
+LBCamden Frontend aims to follow the GOV.UK Frontend standards for [browser support](https://frontend.design-system.service.gov.uk/browser-support/#browser-support). 
 
-### Security
+## Accessibility and assistive technology
+LBCamden Frontend aims to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatially compliant, and all projects will require futher automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc/p/69d09b-accessibility) section.
 
-GDS is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
+## Security
+LBCamden is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
 
-For full details on how to tell us about vulnerabilities, [see our security policy](https://github.com/alphagov/govuk-frontend/security/policy).
+While we are working on our security policy, please [contact the Design System team](#contact) if you have any questions. Further information and guidance about disclosing security issues can also be found via the [GOV.UK Frontend Security policy](https://github.com/alphagov/govuk-frontend/security/policy).
 
 ## Licence
+Unless stated otherwise, the codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation. The documentation is &copy; Crown copyright and available under the terms of the Open Government 3.0 licence.
 
-Unless stated otherwise, the codebase is released under the MIT License. This
-covers both the codebase and any sample code in the documentation. The
-documentation is &copy; Crown copyright and available under the terms of the
-Open Government 3.0 licence.
+## Contributing [#](#contributing)
+We are working on our contribution process. If you are interested in implementing or extending LBCamden Frontend while we establish our formal processes, please [contact the Design System team](#contact).
 
-## Contributing
-
-TBC
+## Contact the team [#](#contact)
+To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk)

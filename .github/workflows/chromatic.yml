@@ -23,12 +23,12 @@ jobs:
         # ⚠️ Pick one of these, matching the package manager for your project
         run: npm ci
 
+      - name: Build dist
+        run: npm run build:dist 
+
       - name: Build package
         run: npm run build:package
-
-      - name: Build dist
-        run: npm run build:dist        
-
+       
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
@@ -36,3 +36,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
           autoAcceptChanges: "main"
+          buildScriptName: "build:storybook"
