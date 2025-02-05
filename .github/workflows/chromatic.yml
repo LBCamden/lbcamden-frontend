@@ -36,3 +36,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
           autoAcceptChanges: "main"
+          buildScriptName: "build:storybook"
