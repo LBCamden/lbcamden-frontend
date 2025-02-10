@@ -37,7 +37,12 @@
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
           'Contrary to popular belief, Lorem Ipsum is not simply random text',
           'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form',
-          'The standard chunk used since the 1500s'
+          'The standard chunk used since the 1500s',
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+          'Contrary to popular belief, Lorem Ipsum is not simply random text',
+          'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form',
+          'The standard chunk used since the 1500s',
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
         ] %}
 
         <section class="lbcamden-row">
@@ -57,7 +62,7 @@
                     alt: 'Image of Camden market'
                   },
                   content: {
-                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                    text: randomText[item-1]
                   },
                   type: 'alt-1',
                   clickable: true
@@ -78,7 +83,7 @@
                     href: '#'
                   },
                   content: {
-                    text: randomText | random
+                    text: randomText[item-1]
                   },
                   clickable: true,
                   type: variant_class
