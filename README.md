@@ -3,17 +3,17 @@ LBCamden Frontend
 
 ![Tests](https://github.com/LBCamden/lbcamden-frontend/actions/workflows/tests.yml/badge.svg?branch=main) ![NPM Version](https://img.shields.io/npm/v/lbcamden-frontend) [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://main--645a25e00de84a612195c9a5.chromatic.com/)
 
-LBCamden Frontend contains the code needed to start building a user interface for Camden platforms and services.
+LBCamden Frontend contains the code you need to start building a user interface for Camden platforms and services.
 
-It utilises components from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend), and extends these with components via customisations developed for Camden specific implementations.
+It uses components from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend), and extends these with components via customisations developed for Camden specific implementations.
 
 > [!TIP]
 > LBCamden Frontend is best used in conjunction with the guidance included in the [LBCamden Design System documentation](https://zeroheight.com/4c170debc).
 
-LBCamden Frontend is currently in Beta while the governance processes for contribution and usage is defined. More information is available on the [Before you start](https://zeroheight.com/4c170debc/v/latest/p/22c3a6-before-you-start) design system page.
+LBCamden Frontend is currently in beta while the governance processes for contribution and usage are defined. More information is available on the [Before you start](https://zeroheight.com/4c170debc/v/latest/p/22c3a6-before-you-start) design system page.
 
 ## Developing applications with LBCamden Frontend
-To start implementing LBCamden Frontend into a project, read the [Get started for developers documentation](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within the Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
+To start implementing LBCamden Frontend into a project, read [Get started for developers](https://zeroheight.com/4c170debc/p/718aa5-get-started-for-developers) within the Design System documentation. This includes instructions about how to install the LBCamden Frontend package and the suggested routes for integration.
 
 ## Extending or customising LBCamden Frontend
 To extend or customise LBCamden Frontend, start by cloning this [repository](https://github.com/LBCamden/lbcamden-frontend), and then use `npm i` to install all dependencies.
@@ -59,14 +59,14 @@ For a component's CSS to be bundled as part of the main LBCamden Frontend styles
 > Placing additional files inside a component's directory may cause the build and test processes to fail. More information can be found in `tests/after-build-package.test.js`.
 
 ### GOV.UK styles and LBCamden styles
-LBCamden Frontend components utilise a mix of upstream GOV.UK and bespoke LBCamden styles and variables. 
+LBCamden Frontend components uses a mix of upstream GOV.UK and bespoke LBCamden styles and variables. 
 
 All GOV.UK styles are prefixed with `govuk-`.
 
 All LBCamden styles **must** be prefixed with `lbcamden-`.
 
 ### Overriding GOV.UK Frontend component styles
-It is strongly encourage that the functionality or mark up of upstream GOV.UK components is not modified. However, to override the look and feel of a GOV.UK component, it is possible to override the default styles via `.scss` files.
+It is strongly encouraged that the functionality or mark up of upstream GOV.UK components is not modified. However, to override the look and feel of a GOV.UK component, it is possible to override the default styles via `.scss` files.
 
 To override the styles of a specific GOV.UK component, add or amend a file matching that components name in the `src/lbcamden/elements` directory.
 
@@ -80,7 +80,7 @@ Each component in LBCamden Frontend implements example configurations that are d
 You can add or amend examples within the `examples` section of the yaml file within the component directory. This file is parsed into the `fixtures.json` file contained within the LBCamden Frontend package at build time.
 
 ## Testing LBCamden Frontend
-While developing new components or amending aspect of LBCamden Frontend, it is recommended to regularly lint and test code using the tools provided.
+While developing new components or amending aspects of LBCamden Frontend, we recommend you regularly lint and test code using the tools provided.
 
 ### How to run linting
 LBCamden Frontend includes linting for both scss files (using [Stylelint](https://stylelint.io/)) and JavaScript (using [Standard](https://standardjs.com/))
@@ -91,7 +91,7 @@ npm run lint
 ```
 
 ### How to run the test suite
-LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that additional tests are include where appropriate. 
+LBCamden Frontend includes a suite of tests for all components (using [Vitest](https://vitest.dev/)). As part of extending or customising LBCamden Frontend it is required that additional tests are included where appropriate. 
 
 As well as component specific tests, each component is tested for WCAG 2.2 AA compliance using a Vitest implementation of [Axe](https://github.com/dequelabs/axe-core).
 
@@ -105,7 +105,7 @@ By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#wa
 > VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
 
 ### How to run visual regression tests
-LBCamden Frontend implement visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. It is necessary to create a Chromatic project and [retrieve the project token](https://www.chromatic.com/docs/faq/find-project-token/) to be able to run the tests.
+LBCamden Frontend implements visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. It is necessary to create a Chromatic project and [retrieve the project token](https://www.chromatic.com/docs/faq/find-project-token/) to be able to run the tests.
 
 To set the Chromatic project token, use
 ```console
@@ -135,7 +135,7 @@ npm run test:build
 Visual regression tests should also be run against changes prior to releasing an update.
 
 ### How to release
-To publish an update LBCamden package, use the following command when checked into the `main` branch. 
+To publish an updated LBCamden package, use the following command when checked into the `main` branch. 
 ```console
 npm run release
 ```
@@ -155,13 +155,13 @@ Breaking changes are published as part of the [release notes](https://github.com
 
 LBCamden Frontend aims to follow [semantic versioning](https://semver.org/), and implements MAJOR, MINOR and PATCH releases.
 
-When implementing LBCamden Frontend into a project, it is recommend to have functional (for example [Cypress](https://www.cypress.io/)) and visual regression (for example [Chromatic](https://www.chromatic.com/)) tests in place to ensure upstream changes do not impact downsteam implementations.
+When implementing LBCamden Frontend into a project, we recommend you have functional (for example [Cypress](https://www.cypress.io/)) and visual regression (for example [Chromatic](https://www.chromatic.com/)) tests in place to make sure upstream changes do not impact downsteam implementations.
 
 ## Browser support
 LBCamden Frontend aims to follow the GOV.UK Frontend standards for [browser support](https://frontend.design-system.service.gov.uk/browser-support/#browser-support). 
 
 ## Accessibility and assistive technology
-LBCamden Frontend aims to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatially compliant, and all projects will require futher automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc/p/69d09b-accessibility) section.
+LBCamden Frontend aims to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatically compliant, and all projects will require further automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc/p/69d09b-accessibility) section.
 
 ## Security
 LBCamden is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
