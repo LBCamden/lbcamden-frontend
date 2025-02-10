@@ -1,7 +1,7 @@
 {
     "name": "lbcamden-frontend",
     "description": "LBCamden Frontend contains the code you need to start building a user interface for London Borough of Camden products.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "lbcamden/all.js",
     "module": "lbcamden-esm/all.mjs",
     "exports": {
