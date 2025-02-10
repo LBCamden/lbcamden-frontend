@@ -164,7 +164,7 @@ LBCamden Frontend aims to follow the GOV.UK Frontend standards for [browser supp
 LBCamden Frontend aims to meet WCAG 2.2 AA for all components. This does not mean that any project implementing LBCamden Frontend is automatically compliant, and all projects will require further automated and manual testing to ensure compliance. The LBCamden Design System documentation contains more information in the [Accessibility](https://zeroheight.com/4c170debc/p/69d09b-accessibility) section.
 
 ## Security
-LBCamden is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
+We are an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
 
 While we are working on our security policy, please [contact the Design System team](#contact) if you have any questions. Further information and guidance about disclosing security issues can also be found via the [GOV.UK Frontend Security policy](https://github.com/alphagov/govuk-frontend/security/policy).
 
