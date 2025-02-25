@@ -151,12 +151,12 @@
 
       &:link,
       &.\:link {
-        color: $govuk-link-colour;
+        color: lbcamden-colour("govuk-link-colour");
       }
 
       &:visited,
       &.\:visited {
-        color: $govuk-link-colour;
+        color: lbcamden-colour("govuk-link-colour");
       }
 
       &:hover,

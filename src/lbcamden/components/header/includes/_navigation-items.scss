@@ -99,7 +99,7 @@
 
   &:link,
   &:visited {
-    color: $govuk-link-colour;
+    color: lbcamden-colour("govuk-link-colour");
   }
 
   &:focus {

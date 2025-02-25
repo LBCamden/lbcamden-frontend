@@ -210,7 +210,7 @@
 
   /* stylelint-disable */
   &.lbcamden-header__open-button {
-    color: $govuk-link-colour;
+    color: lbcamden-colour("govuk-link-colour");
     background: $menu-bg-colour;
 
     &:focus-visible {
@@ -218,7 +218,7 @@
     }
 
     &:hover {
-      color: $govuk-link-colour;
+      color: lbcamden-colour("govuk-link-colour");
     }
 
     .lbcamden-header__navigation-second-toggle-button-inner {
