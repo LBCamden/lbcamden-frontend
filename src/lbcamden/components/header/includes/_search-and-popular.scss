@@ -44,7 +44,7 @@
 
     &:focus {
       color: $govuk-focus-text-colour;
-      background: $govuk-focus-colour;
+      background: lbcamden-colour("govuk-focus-colour");
     }
   }
 

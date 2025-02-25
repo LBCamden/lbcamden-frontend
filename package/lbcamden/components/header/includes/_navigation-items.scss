@@ -172,7 +172,7 @@
   &:focus:not(.lbcamden-header__open-button) {
     outline: 3px solid transparent;
     color: #0b0c0c;
-    background-color: $govuk-focus-colour;
+    background-color: lbcamden-colour("govuk-focus-colour");
     box-shadow: none;
     text-decoration: none;
 

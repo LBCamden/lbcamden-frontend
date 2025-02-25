@@ -44,7 +44,7 @@
   &:focus-visible {
     outline: 3px solid transparent;
     color: $govuk-focus-text-colour;
-    background-color: $govuk-focus-colour;
+    background-color: lbcamden-colour("govuk-focus-colour");
     text-decoration: none;
 
     &__navigation-top-toggle-button-inner {
@@ -189,7 +189,7 @@
 
   &:focus-visible {
     color: $govuk-focus-text-colour;
-    background: $govuk-focus-colour;
+    background: lbcamden-colour("govuk-focus-colour");
   }
 
   @include govuk-media-query($from: desktop) {
@@ -214,7 +214,7 @@
     background: $menu-bg-colour;
 
     &:focus-visible {
-      background: $govuk-focus-colour;
+      background: lbcamden-colour("govuk-focus-colour");
     }
 
     &:hover {
@@ -271,7 +271,7 @@
 
   &:focus-visible {
     color: $govuk-focus-text-colour;
-    background: $govuk-focus-colour;
+    background: lbcamden-colour("govuk-focus-colour");
   }
 }
 
@@ -290,7 +290,7 @@
 
   &:focus-visible {
     color: $govuk-focus-text-colour;
-    background: $govuk-focus-colour;
+    background: lbcamden-colour("govuk-focus-colour");
   }
 
   .lbcamden-header__navigation-top-toggle-close-icon {
