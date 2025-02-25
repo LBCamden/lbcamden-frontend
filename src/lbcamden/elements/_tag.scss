@@ -1,11 +1,11 @@
 .govuk-tag {
   border-radius: 3px;
-  color: lbcamden-colour("govuk-bg-bright2-colour");
+  color: lbcamden-colour("govuk-bg-bright1-colour");
   background: lbcamden-colour("dark-blue");
 
   &--inverted {
     color: lbcamden-colour("dark-blue");
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: lbcamden-colour("govuk-bg-bright1-colour");
   }
 
   &--grey {

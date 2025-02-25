@@ -1,6 +1,6 @@
 &__content {
   flex: 1 0 100%;
-  background: lbcamden-colour("govuk-bg-bright2-colour");
+  background: lbcamden-colour("govuk-bg-bright1-colour");
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex: 0 0 70%;

@@ -13,7 +13,7 @@ $lbcamden-secondary-button-text-colour: $govuk-link-colour;
 // Warning button variables
 $govuk-warning-button-hover-colour: govuk-shade($govuk-warning-button-colour, 20%);
 $govuk-warning-button-shadow-colour: govuk-shade($govuk-warning-button-colour, 60%);
-$govuk-warning-button-text-colour: govuk-colour("white");
+$govuk-warning-button-text-colour: lbcamden-colour("govuk-negative-text-colour");
 
 // Because the shadow (s0) is visually 'part of' the button, we need to reduce
 // the height of the button to compensate by adjusting its padding (s1) and
