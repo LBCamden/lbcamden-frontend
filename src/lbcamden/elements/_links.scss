@@ -161,7 +161,7 @@
 
       &:hover,
       &.\:hover {
-        color: $govuk-link-hover-colour;
+        color: lbcamden-colour("govuk-link-hover-colour");
 
         &:after {
           @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 4);

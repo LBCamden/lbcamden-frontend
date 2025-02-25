@@ -1,5 +1,5 @@
 $lbcamden-button-colour: $govuk-link-colour;
-$lbcamden-button-hover-colour: $govuk-link-hover-colour;
+$lbcamden-button-hover-colour: lbcamden-colour("govuk-link-hover-colour");
 $lbcamden-button-shadow-colour: govuk-shade($lbcamden-button-colour, 60%);
 $lbcamden-button-text-colour: lbcamden-colour("white");
 $lbcamden-button-border-radius: 3px;
@@ -7,7 +7,7 @@ $lbcamden-focus-box-shadow: 0 0 0 2px lbcamden-colour("black");
 
 // Secondary button variables
 $lbcamden-secondary-button-colour: lbcamden-colour("white");
-$lbcamden-secondary-button-hover-colour: $govuk-link-hover-colour;
+$lbcamden-secondary-button-hover-colour: lbcamden-colour("govuk-link-hover-colour");
 $lbcamden-secondary-button-text-colour: $govuk-link-colour;
 
 // Warning button variables
