@@ -23,7 +23,7 @@ describe('campaign-hero', () => {
     it('renders contents', () => {
       const $ = render('campaign-hero', examples.default)
 
-      expect($('h1').text()).toContain('Welcome to Camden.gov.uk')
+      expect($('h1').text()).toContain('Welcome to Camden')
       expect($('p').text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
       expect($('img').attr('src')).toEqual(examples.default.image.src)
     })
