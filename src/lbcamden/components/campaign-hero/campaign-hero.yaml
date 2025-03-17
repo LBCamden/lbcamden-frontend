@@ -15,14 +15,7 @@ examples:
   - name: default
     description: Standard application of campaign hero image
     data:
-      title: Welcome to Camden
-      image:
-        src: /example-assets/images/hero.jpg
-      extract: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
-  - name: long-title
-    description: A long text example to should word breaking
-    data:
-      title: Hypothetically Interdisciplinary
+      title: Welcome to Camden.gov.uk
       image:
         src: /example-assets/images/hero.jpg
       extract: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
