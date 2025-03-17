@@ -24,8 +24,8 @@ examples:
     description: Standard application of campaign engagement banner
     data:
       orientation: text-left
-      heading: Heading
-      shortDescription: "<p>Short description</p>"
+      heading: Welcome to Camden
+      shortDescription: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
       link: /test
       image:
         src: /example-assets/images/hero.jpg
@@ -33,9 +33,18 @@ examples:
     description: Standard application of campaign engagement banner
     data:
       orientation: text-right
-      heading: Heading
-      shortDescription: "<p>Short description</p>"
+      heading: Welcome to Camden
+      shortDescription: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
       link: /test
       image:
         src: /example-assets/images/hero.jpg
+  - name: long-text
+    description: A long text example to should word breaking
+    data:
+      orientation: text-left
+      heading: Hypothetically Interdisciplinary
+      shortDescription: "<p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>"
+      link: /test
+      image:
+        src: /example-assets/images/hero.jpg        
   
