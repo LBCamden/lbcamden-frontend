@@ -23,8 +23,8 @@ describe('campaign-engagement-banner', () => {
     it('renders contents', () => {
       const $ = render('campaign-engagement-banner', examples.default)
 
-      expect($('h2').text()).toContain('Heading')
-      expect($('p').text()).toContain('Short description')
+      expect($('h2').text()).toContain('Welcome to Camden')
+      expect($('p').text()).toContain('We provide services and information for residents, businesses and visitors to the London Borough of Camden.')
       expect($('a').attr('href')).toContain('/test')
     })
   })
