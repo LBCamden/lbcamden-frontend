@@ -1,7 +1,7 @@
 // GOVUK Overrides
-$lbcamden-border-colour: lbcamden-colour("light-grey");
+$lbcamden-border-colour: lbcamden-colour("govuk-border-colour");
 
-$govuk-focus-colour: lbcamden-colour("yellow");
+$govuk-focus-colour: lbcamden-colour("govuk-focus-colour");
 $button-shadow-size: 2;
 
 $govuk-canvas-background-colour: lbcamden-colour("govuk-bg-dark1-colour");
@@ -19,17 +19,17 @@ $govuk-font-weight-bold: 600 !default;
 $govuk-text-colour: lbcamden-colour("black");
 $govuk-link-colour: lbcamden-colour("blue");
 $govuk-link-hover-colour: lbcamden-colour("dark-blue");
-$govuk-link-visited-colour: lbcamden-colour("purple");
+$govuk-link-visited-colour: lbcamden-colour("govuk-link-visited-colour");
 
 $govuk-warning-button-colour: lbcamden-colour("dark-red");
 
 $govuk-border-colour: $lbcamden-border-colour; // This is reset in the GOVUK Frontend code and will not apply without a change to that codebase (needs !default value added) - we reapply this across our own system to achieve the same result
-$govuk-input-border-colour: lbcamden-colour("black");
+$govuk-input-border-colour: lbcamden-colour("govuk-input-border-colour");
 
 $govuk-brand-colour: lbcamden-colour("govuk-brand1-1-colour");
-$govuk-success-colour: lbcamden-colour("green");
+$govuk-success-colour: lbcamden-colour("govuk-success-colour");
 
-$govuk-error-colour: lbcamden-colour("dark-red");
+$govuk-error-colour: lbcamden-colour("govuk-error-colour");
 
 @include mq-add-breakpoint(mobile-l, 576px);
 
