@@ -1,0 +1,41 @@
+examples:  
+  - name: lbcamden - Character count with hint and label
+    data:
+      name: lbcamden_character_count_with_hint_and_label
+      id: lbcamden_character_count_with_hint_and_label
+      maxlength: 200
+      label:
+        html: |
+          <label class="govuk-label govuk-label--l" for="with-hint">Can you provide more detail?</label>
+      hint:
+        text: Do not include personal or financial information like your National Insurance number or credit card details.
+  - name: lbcamden - Character count with hint
+    data:
+      name: lbcamden_character_count_with_hint
+      id: lbcamden_character_count_with_hint
+      maxlength: 200
+      label:
+        text: Can you provide more detail?
+      hint:
+        text: Do not include personal or financial information like your National Insurance number or credit card details.      
+  - name: lbcamden - with word count with label
+    data:
+      id: lbcamden_with_word_count_with_label
+      name: lbcamden_with_word_count_with_label
+      maxwords: 10
+      label:
+        html: |
+          <label class="govuk-label govuk-label--l" for="with-hint">What is your full address?</label>
+
+  - name: lbcamden - Character count with hint and label and threshold
+    data:
+      name: lbcamden_character_count_with_hint_and_label
+      id: lbcamden_character_count_with_hint_and_label
+      maxlength: 1000
+      threshold: 85
+      label:
+        html: |
+          <label class="govuk-label govuk-label--l" for="with-hint">Can you provide more detail?</label>
+      hint:
+        text: Do not include personal or financial information like your National Insurance number or credit card details.
+      value: This example of a textarea has a character limit of 1000 characters. The character count is hidden, but will appear when more than 850 characters are entered in this textarea. Type some more text into this textarea to see the character count appear. This paragraph will now repeat 1 more time.  
