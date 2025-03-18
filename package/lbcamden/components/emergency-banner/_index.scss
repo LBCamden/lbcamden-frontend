@@ -5,19 +5,19 @@
 
   margin-top: 2px;
   border-top: 3px solid govuk-colour("white");
-  color: govuk-colour("white");
+  color: lbcamden-colour("govuk-negative-text-colour");
   background-color: govuk-colour("mid-grey");
 
   &__content {
     > h2 {
       @include govuk-font(24, $weight: "bold");
       margin: 0;
-      color: govuk-colour("white");
+      color: lbcamden-colour("govuk-negative-text-colour");
     }
 
     > p {
       @include govuk-font(16);
-      color: govuk-colour("white");
+      color: lbcamden-colour("govuk-negative-text-colour");
 
       &:first-of-type {
         margin-top: 0;
@@ -30,11 +30,11 @@
 
     > a:last-child {
       @include govuk-font(16);
-      color: govuk-colour("white");
+      color: lbcamden-colour("govuk-negative-text-colour");
 
       &:link,
       &:visited {
-        color: govuk-colour("white");
+        color: lbcamden-colour("govuk-negative-text-colour");
       }
 
       &:focus {

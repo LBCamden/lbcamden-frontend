@@ -14,7 +14,7 @@
   }
 
   @at-root #{selector-append(".js-module-initialised", &)} {
-    background: lbcamden-colour("govuk-bg-bright2-colour");
+    background: lbcamden-colour("govuk-bg-bright1-colour");
 
     @include govuk-media-query($from: desktop) {
       position: absolute;
@@ -43,8 +43,8 @@
     }
 
     &:focus {
-      color: $govuk-focus-text-colour;
-      background: $govuk-focus-colour;
+      color: lbcamden-colour("govuk-focus-text-colour");
+      background: lbcamden-colour("govuk-focus-colour");
     }
   }
 

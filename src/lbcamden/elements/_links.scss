@@ -151,17 +151,17 @@
 
       &:link,
       &.\:link {
-        color: $govuk-link-colour;
+        color: lbcamden-colour("govuk-link-colour");
       }
 
       &:visited,
       &.\:visited {
-        color: $govuk-link-colour;
+        color: lbcamden-colour("govuk-link-colour");
       }
 
       &:hover,
       &.\:hover {
-        color: $govuk-link-hover-colour;
+        color: lbcamden-colour("govuk-link-hover-colour");
 
         &:after {
           @include lbcamden-chevron(lbcamden-colour("dark-blue"), 0, 1, 4);

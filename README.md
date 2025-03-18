@@ -120,7 +120,28 @@ to run build and upload all components to Chromatic for testing. Follow the inst
 ## Releasing LBCamden Frontend
 LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
 
-### How to package up for release
+### Setting up a new release
+1. Ensure you are checked into `main` and have pulled the latest version
+2. Create a new release branch, using the following command, where `X.Y.Z` is your next release following semver versioning
+```console
+git checkout -b release-X.Y.Z
+```
+3. Update both `package.json` and `src/lbcamden/package.json` to ensure `version` matches `X.Y.Z`
+4. Build the latest `package` and `dist` directories for this release, using the command
+```console
+npm run build
+```
+5. Once built, use the following command to verify the output matches the required format. 
+```console
+npm run test:build
+```
+6. Push the new release branch back to Github using the command
+```console
+git push origin release-X.Y.Z
+```
+and create a new PR for this release branch. Update all existing PRs to use this branch as their new target.
+
+### How to package up ahead of release
 To build the package ahead of release, use the following command.
 ```console
 npm run build
@@ -138,6 +159,7 @@ Visual regression tests should also be run against changes prior to releasing an
 To publish an updated LBCamden package, use the following command when checked into the `main` branch. 
 ```console
 npm run release
+npm run release:publish
 ```
 
 The process will require authentication into the LBCamden npm organisation.

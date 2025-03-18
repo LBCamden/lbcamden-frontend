@@ -18,7 +18,7 @@ $govuk-new-link-styles: true;
 
 .app-covid-banner-top .govuk-heading-xl {
   padding-top: govuk-spacing(2);
-  color: govuk-colour("white");
+  color: lbcamden-colour("govuk-negative-text-colour");
 }
 
 .app-covid-banner-bottom {
@@ -29,7 +29,7 @@ $govuk-new-link-styles: true;
 
 .app-covid-banner-bottom .govuk-body,
 .app-covid-banner-bottom .govuk-heading-m {
-  color: govuk-colour("white");
+  color: lbcamden-colour("govuk-negative-text-colour");
 }
 
 .app-covid-banner-top .govuk-breadcrumbs__link {
@@ -63,11 +63,11 @@ $govuk-new-link-styles: true;
   border-left: solid #fff500;
   border-width: 0 0 0 10px;
   border-image: repeating-linear-gradient(25deg, transparent 0, #fff500 1px, #fff500 10px, transparent 11px, transparent 20px) 25;
-  color: govuk-colour("white");
+  color: lbcamden-colour("govuk-negative-text-colour");
   background-color: #272828;
 }
 
 .app-danger-box .govuk-body,
 .app-danger-box .govuk-heading-m {
-  color: govuk-colour("white");
+  color: lbcamden-colour("govuk-negative-text-colour");
 }
