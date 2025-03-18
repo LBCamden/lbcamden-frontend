@@ -43,7 +43,7 @@
     }
 
     &:focus {
-      color: $govuk-focus-text-colour;
+      color: lbcamden-colour("govuk-focus-text-colour");
       background: lbcamden-colour("govuk-focus-colour");
     }
   }

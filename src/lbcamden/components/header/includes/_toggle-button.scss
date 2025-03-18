@@ -43,12 +43,12 @@
 
   &:focus-visible {
     outline: 3px solid transparent;
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
     background-color: lbcamden-colour("govuk-focus-colour");
     text-decoration: none;
 
     &__navigation-top-toggle-button-inner {
-      color: $govuk-focus-text-colour;
+      color: lbcamden-colour("govuk-focus-text-colour");
 
       &:before {
         @include lbcamden-chevron(lbcamden-colour("black"), 90);
@@ -64,7 +64,7 @@
   }
 
   &:active {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
   }
 
   &:not(:hover):not(:active) {
@@ -149,10 +149,10 @@
   }
 
   &:focus-visible .lbcamden-header__navigation-second-toggle-button-inner {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
 
     &:before {
-      @include lbcamden-chevron($govuk-focus-text-colour, 90);
+      @include lbcamden-chevron(lbcamden-colour("govuk-focus-text-colour"), 90);
     }
   }
 
@@ -182,13 +182,13 @@
   &:focus {
     .lbcamden-header__navigation-second-toggle-button-inner {
       &:before {
-        @include lbcamden-chevron($govuk-focus-text-colour, 90);
+        @include lbcamden-chevron(lbcamden-colour("govuk-focus-text-colour"), 90);
       }
     }
   }
 
   &:focus-visible {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
     background: lbcamden-colour("govuk-focus-colour");
   }
 
@@ -232,10 +232,10 @@
     @include govuk-media-query($until: "desktop") {
       &:hover,
       &:focus-visible .lbcamden-header__navigation-second-toggle-button-inner {
-        color: $govuk-focus-text-colour;
+        color: lbcamden-colour("govuk-focus-text-colour");
 
         &:before {
-          @include lbcamden-chevron($govuk-focus-text-colour, -90);
+          @include lbcamden-chevron(lbcamden-colour("govuk-focus-text-colour"), -90);
         }
       }
     }
@@ -270,7 +270,7 @@
   }
 
   &:focus-visible {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
     background: lbcamden-colour("govuk-focus-colour");
   }
 }
@@ -284,12 +284,12 @@
     outline: 3px solid transparent;
 
     svg {
-      fill: $govuk-focus-text-colour;
+      fill: lbcamden-colour("govuk-focus-text-colour");
     }
   }
 
   &:focus-visible {
-    color: $govuk-focus-text-colour;
+    color: lbcamden-colour("govuk-focus-text-colour");
     background: lbcamden-colour("govuk-focus-colour");
   }
 
@@ -305,7 +305,7 @@
 
 &__navigation-top-toggle-close-icon {
   display: none;
-  color: $govuk-focus-text-colour;
+  color: lbcamden-colour("govuk-focus-text-colour");
   pointer-events: none;
   text-align: center;
 }
