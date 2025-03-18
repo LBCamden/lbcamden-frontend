@@ -29,7 +29,7 @@ $govuk-input-border-colour: lbcamden-colour("govuk-input-border-colour");
 $govuk-brand-colour: lbcamden-colour("govuk-brand1-1-colour");
 $govuk-success-colour: lbcamden-colour("green");
 
-$govuk-error-colour: lbcamden-colour("dark-red");
+$govuk-error-colour: lbcamden-colour("govuk-error-colour");
 
 @include mq-add-breakpoint(mobile-l, 576px);
 
