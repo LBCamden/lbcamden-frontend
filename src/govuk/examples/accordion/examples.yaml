@@ -1,0 +1,52 @@
+examples:
+  - name: lbcamden - Accordion with one section open
+    data:
+      id: lbcamden-accordion-with-one-section-open
+      items:
+        - heading:
+            text: Vote by post
+          content:
+            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+          expanded: true
+        - heading:
+            text: Vote by proxy
+          content:
+            text: If you are unable to get to your polling station or you’d like to nominate someone to vote on your behalf, you can apply for a proxy vote.
+  - name: lbcamden - Default 
+    data:
+      id: lbcamden-default
+      items:
+        - heading:
+            text: Vote by post
+          content:
+            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+        - heading:
+            text: Vote by proxy
+          content:
+            text: If you are unable to get to your polling station or you’d like to nominate someone to vote on your behalf, you can apply for a proxy vote.            
+  - name: lbcamden - Accordion with hidden descriptions 
+    data:
+      id: lbcamden-accordion-with-hidden-descriptions
+      items:
+        - heading:
+            text: Understanding agile project management
+          summary: 
+            text: Introductions, methods, core features.
+          content:
+            html: |
+              <h3>Agile and government services: an introduction</h3>
+              <p>Agile methods: an introduction</p>
+              <p>Core principles of agile</p>
+        - heading:
+            text: Working with agile methods
+          summary: 
+            text: Workspaces, tools and techniques, user stories, planning.
+          content:
+            html: |
+              <p>Creating an agile working environment</p>
+              <p>Agile tools and techniques</p>
+              <p>Set up a team wall</p>
+              <p>Writing user stories</p>
+              <p>Planning in agile</p>
+              <p>Deciding on priorities</p>
+              <p>Developing a roadmap</p>

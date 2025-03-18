@@ -1,0 +1,8 @@
+examples:
+  - name: Alex Wybr
+    data:
+      items:
+        - text: Section
+          href: '/section'
+        - text: Sub-section
+          href: '/section/sub-section'
