@@ -1,8 +1,30 @@
 examples:
-  - name: Alex Wybr
+  - name: lbcamden - Breadcrumbs with multiple levels
     data:
       items:
-        - text: Section
+        - text: Home
+          href: '/'
+        - text: Planning and development
           href: '/section'
-        - text: Sub-section
+        - text: Planning applications
           href: '/section/sub-section'
+  - name: lbcamden - Breadcrumbs with collapse on mobile
+    data:
+      collapseOnMobile: true
+      items:
+        - text: Home
+          href: '/'
+        - text: Planning and development
+          href: '/section'
+        - text: Planning applications
+          href: '/section/sub-section'
+  - name: lbcamden - inverse
+    data:
+      classes: govuk-breadcrumbs--inverse
+      items:
+        - text: Home
+          href: '/'
+        - text: Planning and development
+          href: '/section'
+        - text: Planning applications
+          href: '/section/sub-section'       
