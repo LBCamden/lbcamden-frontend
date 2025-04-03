@@ -1,6 +1,5 @@
 {% from "../image/macro.njk" import LBCamdenImage %}
-<section class="lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--{{ params.orientation }}"
-    {% for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<section class="lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--{{ params.orientation }}">
     {% if params.orientation == "text-right" %}{{ LBCamdenImage(params.image) }}{% endif %}
     <div class="lbcamden-campaign-engagement-banner__content">
         <h2>
