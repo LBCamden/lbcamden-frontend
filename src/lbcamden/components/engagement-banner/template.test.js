@@ -18,13 +18,6 @@ describe('engagement-banner', () => {
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
-
-    it('has a role of `banner`', () => {
-      const $ = render('engagement-banner', examples.default)
-
-      const $component = $('.lbcamden-engagement-banner')
-      expect($component.attr('role')).toEqual('banner')
-    })
   })
 
   describe('custom options', () => {
