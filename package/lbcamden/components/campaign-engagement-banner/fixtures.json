@@ -12,7 +12,7 @@
                     "src": "/example-assets/images/hero.jpg"
                 }
             },
-            "html": "<section role=\"banner\"\n         class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-left\">\n    \n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Welcome to Camden</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n</section>",
+            "html": "<section class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-left\">\n    \n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Welcome to Camden</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n</section>",
             "hidden": false
         },
         {
@@ -26,7 +26,7 @@
                     "src": "/example-assets/images/hero.jpg"
                 }
             },
-            "html": "<section role=\"banner\"\n         class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-right\">\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Welcome to Camden</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    \n</section>",
+            "html": "<section class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-right\">\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Welcome to Camden</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    \n</section>",
             "hidden": false
         },
         {
@@ -40,7 +40,7 @@
                     "src": "/example-assets/images/hero.jpg"
                 }
             },
-            "html": "<section role=\"banner\"\n         class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-left\">\n    \n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Hypothetically Interdisciplinary</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n</section>",
+            "html": "<section class=\"lbcamden-campaign-engagement-banner lbcamden-campaign-engagement-banner--text-left\">\n    \n    <div class=\"lbcamden-campaign-engagement-banner__content\">\n        <h2>\n            <a href=\"/test\">Hypothetically Interdisciplinary</a>\n        </h2>\n        <p>We provide services and information for residents, businesses and visitors to the London Borough of Camden.</p>\n    </div>\n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image \"\n    src=\"/example-assets/images/hero.jpg\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n</section>",
             "hidden": false
         }
     ]

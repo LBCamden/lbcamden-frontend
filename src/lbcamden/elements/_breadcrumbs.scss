@@ -8,7 +8,7 @@
   }
 
   .govuk-breadcrumbs__link {
-    color: $govuk-link-colour;
+    color: lbcamden-colour("govuk-link-colour");
     text-underline-offset: $text-underline-offset;
 
     &:focus {

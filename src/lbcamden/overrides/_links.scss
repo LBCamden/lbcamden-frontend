@@ -4,6 +4,6 @@
 // we ensure that this usage makes it into production builds.
 .govuk-link {
   &.\:active {
-    color: $govuk-link-active-colour;
+    color: lbcamden-colour("govuk-link-active-colour");
   }
 }
