@@ -39,6 +39,7 @@ export default defineConfig({
     outDir: '../../dist',
     emptyOutDir: true,
     minify: true, // AW: Disable minifying while debugging JS
+    cssMinify: false,
     sourcemap: true,
     modulePreload: { polyfill: false }, // AW: Preload is supported on all major browsers now https://caniuse.com/link-rel-modulepreload
     rollupOptions: {

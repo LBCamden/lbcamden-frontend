@@ -107,6 +107,7 @@ export default defineConfig({
   build: {
     outDir: '../../package',
     minify: true,
+    cssMinify: false,
     emptyOutDir: true,
     rollupOptions: {
 
