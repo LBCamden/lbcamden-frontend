@@ -14,17 +14,6 @@ export default defineConfig({
         }
       ],
       structured: true
-    }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: '../../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js',
-          dest: '',
-          rename: 'govuk-frontend.min.js'
-        }
-      ],
-      structured: false
-
     })
   ],
   root: 'src/lbcamden',
@@ -38,19 +27,19 @@ export default defineConfig({
   build: {
     outDir: '../../dist',
     emptyOutDir: true,
+    cssCodeSplit: false,
     minify: true, // AW: Disable minifying while debugging JS
     cssMinify: false,
     sourcemap: true,
     modulePreload: { polyfill: false }, // AW: Preload is supported on all major browsers now https://caniuse.com/link-rel-modulepreload
     rollupOptions: {
       treeshake: false, // AW: We disable treeshaking as we're building a library,
-      external: ['/govuk-frontend.min.js'],
       output: {
-        format: 'es',
+        format: 'umd',
         entryFileNames: 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'index.css') {
+          if (assetInfo.name === 'style.css') {
             return 'lbcamden-frontend-' + (process.env.npm_package_version) + '.min.css'
           }
 
