@@ -10,18 +10,36 @@
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" href="/assets/images/favicons/apple-icon.png">    
+    <link rel="apple-touch-icon" href="/assets/images/favicons/apple-icon.png">
+    <link rel="stylesheet" href="./all.scss">
     <meta property="og:image" content="/assets/images/ms-icon-310x310.png">
+    <script type="module">
+      import * as GOVUK from 'govuk-frontend/dist/govuk/govuk-frontend.min.js'
+      import * as LBCamden from './all.js';
+
+      (function initLibs () {
+        const tryInit = () => {
+          if (document.readyState === 'complete') {
+            GOVUK.initAll();
+            LBCamden.initAll();
+            return true
+          }
+        }
+
+        tryInit()
+        document.addEventListener('readystatechange', tryInit)
+      })()
+    </script>
   </head>
   <body class="govuk-template__body">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled')</script>
     <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
-  
+
     <header role="banner">
     <div class="lbcamden-header lbcamden-header--estate " data-module="lbcamden-header">
       <div class="lbcamden-header__bar govuk-width-container">
         <div class="lbcamden-header__logo">
-          <a href="/" class="lbcamden-header__link">        
+          <a href="/" class="lbcamden-header__link">
             <svg class="lbcamden-logo "
                 viewBox="0 0 150 31"
                 fill="none"
@@ -311,7 +329,7 @@
   </main>
 
 
-  
+
 <footer class="lbcamden-footer " role="contentinfo">
   <div class="govuk-width-container">
     <h2 class="govuk-visually-hidden">Site navigation</h2>
@@ -375,7 +393,7 @@
     <div class="lbcamden-footer__lower govuk-grid-column-full">
       <div class="lbcamden-footer__logo">
         <a href="https://www.camden.gov.uk/" class="lbcamden-footer__link">
-          
+
   <svg class="lbcamden-logo "
        viewBox="0 0 150 31"
        fill="none"
@@ -395,15 +413,5 @@
     </div>
   </div>
 </footer>
-    <script type="module">
-      import * as GOVUK from '../../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'
-      GOVUK.initAll();
-    </script>
-
-    <script type="module">
-      import * as LBCamden from './all.js';
-      LBCamden.initAll();
-    </script>
-    
   </body>
 </html>
