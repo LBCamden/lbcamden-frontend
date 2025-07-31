@@ -6,8 +6,7 @@ $button-shadow-size: 2;
 
 $govuk-canvas-background-colour: lbcamden-colour("govuk-bg-dark1-colour");
 
-$govuk-font-family: inherit;
-$govuk-font-family: "Inter", arial, sans-serif;
+$govuk-font-family: Inter;
 $govuk-global-styles: true; // Applies styles to entire site eg. p and ul
 
 $govuk-page-width: 1170px;
@@ -40,3 +39,7 @@ $govuk-breakpoints: (
   desktop: 768px,
   wide: 992px
 );
+
+:root {
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
+}
