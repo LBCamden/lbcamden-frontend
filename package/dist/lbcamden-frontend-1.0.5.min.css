@@ -14,7 +14,7 @@
 }
 
 .lbcamden-prose a, a, .govuk-link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -168,7 +168,7 @@ a:focus, .govuk-link:focus {
 
 .govuk-list, ul,
 ol {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -270,7 +270,7 @@ ol > li {
 
 .lbcamden-prose h1, .govuk-heading-xl, h1 {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -316,7 +316,7 @@ ol > li {
 .lbcamden-hero__content h2, .lbcamden-prose h2, .govuk-heading-l, .lbcamden-card.lbcamden-related-content-card h2, .lbcamden-card--related.lbcamden-card > h2,
 .lbcamden-card--related.lbcamden-card > h3, h2 {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -366,7 +366,7 @@ ol > li {
 
 .lbcamden-hero__engagement h2, .lbcamden-hero__content h1, .lbcamden-prose h3, .govuk-heading-m, h3 {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -416,7 +416,7 @@ ol > li {
 h5,
 h6 {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -485,7 +485,7 @@ h6 {
 }
 
 .govuk-caption-xl {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -517,7 +517,7 @@ h6 {
 }
 
 .govuk-caption-l {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -555,7 +555,7 @@ h6 {
 }
 
 .govuk-caption-m {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -587,7 +587,7 @@ h6 {
 
 .govuk-body-lead, .govuk-body-l {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -631,7 +631,7 @@ h6 {
 
 .lbcamden-prose p, p, .govuk-body, .govuk-body-m {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -675,7 +675,7 @@ h6 {
 
 .govuk-body-s, .lbcamden-quotation .lbcamden-quotation-attribution, .lbcamden-footer h3, .govuk-breadcrumbs__list {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -719,7 +719,7 @@ h6 {
 
 .govuk-body-xs {
   color: #0b0c0c;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1143,7 +1143,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-button-group .govuk-link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1500,7 +1500,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-accordion__section-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -1585,7 +1585,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-frontend-supported .govuk-accordion__show-all {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1873,7 +1873,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 .govuk-back-link {
   font-size: 0.875rem;
   line-height: 1.1428571429;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -2001,7 +2001,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-breadcrumbs {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2093,7 +2093,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-breadcrumbs__link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -2186,7 +2186,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2393,7 +2393,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-error-message {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -2427,7 +2427,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-hint {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2470,7 +2470,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-label {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2580,7 +2580,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-textarea {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2695,7 +2695,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-fieldset__legend {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2908,7 +2908,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-checkboxes__divider {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3056,7 +3056,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-input, .lbcamden-search__input {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3181,7 +3181,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 
 .govuk-input__prefix,
 .govuk-input__suffix {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3283,7 +3283,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-details {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3451,7 +3451,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-error-summary {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3567,7 +3567,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 
 .govuk-error-summary__list a {
   font-weight: 600;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -3706,7 +3706,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-file-upload {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3766,7 +3766,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-footer, .lbcamden-footer {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3812,7 +3812,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-footer__link, .lbcamden-footer__link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -4012,7 +4012,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-header {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4255,7 +4255,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-header__menu-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4444,7 +4444,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-inset-text {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4506,7 +4506,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-notification-banner {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4631,7 +4631,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-notification-banner__link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -4734,7 +4734,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 .govuk-pagination__item,
 .govuk-pagination__next,
 .govuk-pagination__prev {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4960,7 +4960,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-panel {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5071,7 +5071,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-tag {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5174,7 +5174,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-phase-banner__content {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5343,7 +5343,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-radios__divider {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5467,7 +5467,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-select {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5591,7 +5591,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-service-navigation__link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -5652,7 +5652,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-service-navigation__service-name {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -5705,7 +5705,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-service-navigation__toggle {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -5787,7 +5787,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-service-navigation__list {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5838,7 +5838,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-skip-link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -5933,7 +5933,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-summary-list {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -6165,7 +6165,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-summary-card__title {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -6297,7 +6297,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-table, .lbcamden-prose table {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -6442,7 +6442,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 .govuk-tabs {
   margin-top: 5px;
   margin-bottom: 25px;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -6541,7 +6541,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-tabs__tab {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
@@ -6708,7 +6708,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-task-list {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -6810,7 +6810,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 
 .govuk-warning-text {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -9372,7 +9372,7 @@ hr {
 }
 
 .lbcamden-link--promo, .lbcamden-card--promo-link--alt, .lbcamden-card--promo-link {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -9531,7 +9531,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
 .lbcamden-link--promo-alt, .lbcamden-card--promo-link--alt {
   background: #f2f5f9;
   box-shadow: 1px 1px 1px rgba(11, 12, 12, 0.25);
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
@@ -9655,7 +9655,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
 .lbcamden-list--dash li {
   padding-left: 5px;
   margin-bottom: 20px;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -10464,7 +10464,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-family: Inter;
   font-style: normal;
   font-weight: 100;
-  src: url("/assets/fonts/Inter-Thin.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Thin.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Thin.woff2?v=4.1") format("woff2");
   font-display: fallback;
 }
 
@@ -10473,7 +10473,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 100;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-ThinItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-ThinItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-ThinItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10481,7 +10481,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 200;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-ExtraLight.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-ExtraLight.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-ExtraLight.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10489,7 +10489,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 200;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-ExtraLightItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-ExtraLightItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-ExtraLightItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10497,7 +10497,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 300;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Light.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Light.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Light.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10505,7 +10505,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 300;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-LightItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-LightItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-LightItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10513,7 +10513,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Regular.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Regular.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Regular.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10521,7 +10521,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 400;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Italic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Italic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Italic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10529,7 +10529,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 500;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Medium.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Medium.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Medium.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10537,7 +10537,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 500;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-MediumItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-MediumItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-MediumItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10545,7 +10545,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 600;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-SemiBold.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-SemiBold.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10553,7 +10553,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 600;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-SemiBoldItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-SemiBoldItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-SemiBoldItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10561,7 +10561,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 700;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Bold.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Bold.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Bold.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10569,7 +10569,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 700;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-BoldItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-BoldItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-BoldItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10577,7 +10577,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 800;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-ExtraBold.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-ExtraBold.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-ExtraBold.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10585,7 +10585,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 800;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-ExtraBoldItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-ExtraBoldItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-ExtraBoldItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10593,7 +10593,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: normal;
   font-weight: 900;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-Black.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-Black.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-Black.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10601,7 +10601,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-style: italic;
   font-weight: 900;
   font-display: fallback;
-  src: url("/assets/fonts/Inter-BlackItalic.woff2?v=4.1") format("woff2"), url("/assets/fonts/Inter-BlackItalic.woff?v=3.19") format("woff");
+  src: url("/assets/fonts/Inter-BlackItalic.woff2?v=4.1") format("woff2");
 }
 
 @font-face {
@@ -10691,7 +10691,7 @@ body {
 
 .lbcamden-button,
 .govuk-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -11517,7 +11517,7 @@ body {
 .lbcamden-card > h4,
 .lbcamden-card > h5 {
   margin-bottom: 10px;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -11564,7 +11564,7 @@ body {
 }
 
 .lbcamden-card p, .lbcamden-card__description {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -11787,7 +11787,7 @@ body {
 }
 
 .lbcamden-card--popular {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -11857,7 +11857,7 @@ body {
   .lbcamden-card-grid--link-description {
     margin-bottom: 0;
     margin-top: 10px;
-    font-family: Inter;
+    font-family: "Inter", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -12088,7 +12088,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-directory-record {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12142,7 +12142,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-directory-record dt {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -12189,7 +12189,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-emergency-banner {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12236,7 +12236,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-emergency-banner__content > h2 {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -12267,7 +12267,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-emergency-banner__content > p {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12305,7 +12305,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-emergency-banner__content > a:last-child {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12373,7 +12373,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-emergency-banner--homepage .lbcamden-emergency-banner__content > h2 {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -12524,7 +12524,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 .lbcamden-footer {
   padding-top: 25px;
   padding-bottom: 25px;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12586,7 +12586,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 
 .lbcamden-footer a {
   color: #ffffff;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12729,7 +12729,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-footer__estate .lbcamden-footer__list-item a {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -12775,7 +12775,7 @@ ul > .lbcamden-card-grid__link-wrapper {
   margin-right: -15px;
   margin-left: -15px;
   color: #ffffff;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -13166,7 +13166,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--estate .lbcamden-header__title {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -13392,7 +13392,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 
 .lbcamden-header--estate .lbcamden-header__navigation-item-link, .lbcamden-header--estate .lbcamden-header__search-item-link {
   font-weight: 600;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -13443,7 +13443,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 
 @media (min-width: 48em) {
   .lbcamden-header--estate .lbcamden-header__navigation-item-link, .lbcamden-header--estate .lbcamden-header__navigation-second-toggle-button {
-    font-family: Inter;
+    font-family: "Inter", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 0.875rem;
@@ -13527,7 +13527,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--estate .lbcamden-header__navigation-top-toggle-button, .lbcamden-header--estate .lbcamden-header__search-toggle-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -13745,7 +13745,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--estate .lbcamden-header__navigation-second-item-description {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -13788,7 +13788,7 @@ ul > .lbcamden-card-grid__link-wrapper {
   border: 0;
   color: #ffffff;
   background: transparent;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -14024,7 +14024,7 @@ ul > .lbcamden-card-grid__link-wrapper {
   color: #003e90;
   background: none;
   font-weight: 600;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -14575,7 +14575,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--site-navigation .lbcamden-header__title {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -14801,7 +14801,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 
 .lbcamden-header--site-navigation .lbcamden-header__navigation-item-link, .lbcamden-header--site-navigation .lbcamden-header__search-item-link {
   font-weight: 600;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -14852,7 +14852,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 
 @media (min-width: 48em) {
   .lbcamden-header--site-navigation .lbcamden-header__navigation-item-link, .lbcamden-header--site-navigation .lbcamden-header__navigation-second-toggle-button {
-    font-family: Inter;
+    font-family: "Inter", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 0.875rem;
@@ -14936,7 +14936,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--site-navigation .lbcamden-header__navigation-top-toggle-button, .lbcamden-header--site-navigation .lbcamden-header__search-toggle-button {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -15154,7 +15154,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-header--site-navigation .lbcamden-header__navigation-second-item-description {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -15197,7 +15197,7 @@ ul > .lbcamden-card-grid__link-wrapper {
   border: 0;
   color: #0b0c0c;
   background: transparent;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -15433,7 +15433,7 @@ ul > .lbcamden-card-grid__link-wrapper {
   color: #003e90;
   background: none;
   font-weight: 600;
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -16581,7 +16581,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-search-results {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -16662,7 +16662,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-service-banner h2 {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -16694,7 +16694,7 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 
 .lbcamden-service-banner p {
-  font-family: Inter;
+  font-family: "Inter", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
