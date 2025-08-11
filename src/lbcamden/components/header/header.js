@@ -303,7 +303,7 @@ LBCamdenHeader.prototype.closeDesktopMenus = function () {
 LBCamdenHeader.prototype.openSearch = function ($button, $target) {
   this.searchOpen = true;
   $button.setAttribute("aria-expanded", !0);
-  $button.setAttribute("aria-label", "Hide navigation menu");
+  $button.setAttribute("aria-label", "Hide search menu");
   this.$module
     .querySelectorAll(".lbcamden-header__open-button")
     .forEach((x) => x.classList.remove("lbcamden-header__open-button"));
@@ -321,7 +321,7 @@ LBCamdenHeader.prototype.openSearch = function ($button, $target) {
 LBCamdenHeader.prototype.closeSearch = function ($button, $target) {
   this.searchOpen = false;
   $button.setAttribute("aria-expanded", !1);
-  $button.setAttribute("aria-label", "Show navigation menu");
+  $button.setAttribute("aria-label", "Show search menu");
   $button.classList.remove("lbcamden-header__open-button");
   $target.setAttribute("hidden", !0);
 };
