@@ -1,41 +1,41 @@
 {
-    "name": "lbcamden-frontend",
-    "description": "LBCamden Frontend contains the code you need to start building a user interface for London Borough of Camden products.",
-    "version": "1.0.4",
-    "type": "module",
-    "main": "lbcamden/all.js",
-    "exports": {
-      ".": {
-        "sass": "./lbcamden/all.scss",
-        "import": "./lbcamden/all.js"
-      },
-      "./lbcamden/": "./lbcamden/",
-      "./dist/": "./dist/"
+  "name": "lbcamden-frontend",
+  "description": "LBCamden Frontend contains the code you need to start building a user interface for London Borough of Camden products.",
+  "version": "1.0.5",
+  "type": "module",
+  "main": "lbcamden/all.js",
+  "exports": {
+    ".": {
+      "sass": "./lbcamden/all.scss",
+      "import": "./lbcamden/all.js"
     },
-    "sideEffects": [
-      "lbcamden/vendor/**"
-    ],
-    "sass": "lbcamden/all.scss",
-    "engines": {
-      "node": ">= 4.2.0"
-    },
-    "author": {
-      "name": "",
-      "email": ""
-    },
-    "repository": {
-      "type": "git",
-      "url": ""
-    },
-    "bugs": {
-      "url": ""
-    },
-    "homepage": "",
-    "keywords": [
-      "lbcamden",
-      "frontend",
-      "design system",
-      "template"
-    ],
-    "license": "MIT"
-  }
+    "./lbcamden/": "./lbcamden/",
+    "./dist/": "./dist/"
+  },
+  "sideEffects": [
+    "lbcamden/vendor/**"
+  ],
+  "sass": "lbcamden/all.scss",
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "keywords": [
+    "lbcamden",
+    "frontend",
+    "design system",
+    "template"
+  ],
+  "license": "MIT"
+}
