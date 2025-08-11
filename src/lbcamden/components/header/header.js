@@ -132,12 +132,23 @@ LBCamdenHeader.prototype.teardownDesktopMenu = function () {
 };
 
 LBCamdenHeader.prototype.menuItemClick = function (e) {
-  let theTargetID = e.target.getAttribute("aria-controls");
-  if (theTargetID == null) {
-    theTargetID = e.target.parentNode.getAttribute("aria-controls");
-    e.target.parentNode.classList.toggle("lbcamden-header__open-button");
+  console.log("click", e.currentTarget);
+
+  let theTargetID = e.currentTarget.getAttribute("aria-controls");
+
+  e.currentTarget.classList.toggle("lbcamden-header__open-button");
+  if (e.currentTarget.classList.contains("lbcamden-header__open-button")) {
+    e.currentTarget.setAttribute(
+      "aria-label",
+      e.currentTarget.dataset.textForHide,
+    );
+    e.target.setAttribute("aria-expanded", "true");
   } else {
-    e.target.classList.toggle("lbcamden-header__open-button");
+    e.currentTarget.setAttribute(
+      "aria-label",
+      e.currentTarget.dataset.textForShow,
+    );
+    e.currentTarget.setAttribute("aria-expanded", "false");
   }
 
   this.$module
@@ -146,7 +157,11 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
         theTargetID +
         "])",
     )
-    .forEach((i) => i.classList.remove("lbcamden-header__open-button"));
+    .forEach((i) => {
+      i.classList.remove("lbcamden-header__open-button");
+      i.setAttribute("aria-expanded", "false");
+      i.setAttribute("aria-label", i.dataset.dataTextForShow);
+    });
 
   const theTarget = document.getElementById(theTargetID);
 
@@ -274,7 +289,10 @@ LBCamdenHeader.prototype.openMenu = function ($button, $target) {
   this.menuOpen = true;
   $button.classList.add("lbcamden-header__open-button");
   $button.setAttribute("aria-expanded", !0);
-  $button.setAttribute("aria-label", "Hide navigation menu");
+  $button.setAttribute(
+    "aria-label",
+    $button.dataset.textForHide || "Hide navigation menu",
+  );
   $button.classList.add("lbcamden-header__open-button");
   $target.removeAttribute("hidden");
   if (this.$searchMenu != null) {
@@ -288,7 +306,10 @@ LBCamdenHeader.prototype.closeMenu = function ($button, $target) {
   if (this.$navigationMenu != null) {
     $button.classList.remove("lbcamden-header__open-button");
     $button.setAttribute("aria-expanded", !1);
-    $button.setAttribute("aria-label", "Show navigation menu");
+    $button.setAttribute(
+      "aria-label",
+      $button.dataset.textForShow || "Show navigation menu",
+    );
     $button.classList.remove("lbcamden-header__open-button");
     $target.setAttribute("hidden", !0);
   }
@@ -303,7 +324,10 @@ LBCamdenHeader.prototype.closeDesktopMenus = function () {
 LBCamdenHeader.prototype.openSearch = function ($button, $target) {
   this.searchOpen = true;
   $button.setAttribute("aria-expanded", !0);
-  $button.setAttribute("aria-label", "Hide search menu");
+  $button.setAttribute(
+    "aria-label",
+    $button.dataset.textForHide || "Hide search menu",
+  );
   this.$module
     .querySelectorAll(".lbcamden-header__open-button")
     .forEach((x) => x.classList.remove("lbcamden-header__open-button"));
@@ -321,7 +345,10 @@ LBCamdenHeader.prototype.openSearch = function ($button, $target) {
 LBCamdenHeader.prototype.closeSearch = function ($button, $target) {
   this.searchOpen = false;
   $button.setAttribute("aria-expanded", !1);
-  $button.setAttribute("aria-label", "Show search menu");
+  $button.setAttribute(
+    "aria-label",
+    $button.dataset.textForShow || "Show search menu",
+  );
   $button.classList.remove("lbcamden-header__open-button");
   $target.setAttribute("hidden", !0);
 };
