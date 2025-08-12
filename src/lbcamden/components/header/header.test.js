@@ -41,6 +41,57 @@ describe("/components/header", () => {
       describe("on desktop devices", () => {
         beforeEach(() => setViewportWidth(1024));
 
+        describe("opening a nav item with sub-items", () => {
+          it("should change the aria-label text from show to hide and the aria-expanded to true", async () => {
+            const user = userEvent.setup();
+            const example = setup(
+              examples["Nested navigation (with three columns)"],
+            );
+            const item = example.querySelector(
+              ".lbcamden-header__navigation-second-toggle-button",
+            );
+
+            await user.click(item);
+
+            expect(item.ariaLabel).toEqual("Hide Navigation item 1 menu");
+            expect(item.ariaExpanded).toEqual("true");
+          });
+
+          it("should change the aria-label text for previously expanded items from hide to show and the aria-expanded to false", async () => {
+            const user = userEvent.setup();
+            const example = setup(
+              examples["Nested navigation (with three columns)"],
+            );
+            const [oldItem, newItem] = example.querySelectorAll(
+              ".lbcamden-header__navigation-second-toggle-button",
+            );
+
+            await user.click(oldItem);
+            await user.click(newItem);
+
+            expect(oldItem.ariaLabel).toEqual("Show Navigation item 1 menu");
+            expect(oldItem.ariaExpanded).toEqual("false");
+          });
+        });
+
+        describe("closing a nav item with sub-items", () => {
+          it("should change the aria-label text from hide to show and the aria-expanded to false", async () => {
+            const user = userEvent.setup();
+            const example = setup(
+              examples["Nested navigation (with three columns)"],
+            );
+            const item = example.querySelector(
+              ".lbcamden-header__navigation-second-toggle-button",
+            );
+
+            await user.click(item);
+            await user.click(item);
+
+            expect(item.ariaLabel).toEqual("Show Navigation item 1 menu");
+            expect(item.ariaExpanded).toEqual("false");
+          });
+        });
+
         describe("the navigation function", () => {
           it("the menu toggle button should be hidden", async () => {
             const target = setup().querySelector(
@@ -53,7 +104,7 @@ describe("/components/header", () => {
 
       describe("on all devices", () => {
         describe("the search function", () => {
-          it("clicking search button should give self 'open' class", async () => {
+          it("clicking search button should give self 'open' class and update aria attributes", async () => {
             const target = setup();
             const user = userEvent.setup();
 

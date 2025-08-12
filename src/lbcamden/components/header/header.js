@@ -132,8 +132,6 @@ LBCamdenHeader.prototype.teardownDesktopMenu = function () {
 };
 
 LBCamdenHeader.prototype.menuItemClick = function (e) {
-  console.log("click", e.currentTarget);
-
   let theTargetID = e.currentTarget.getAttribute("aria-controls");
 
   e.currentTarget.classList.toggle("lbcamden-header__open-button");
@@ -160,7 +158,7 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
     .forEach((i) => {
       i.classList.remove("lbcamden-header__open-button");
       i.setAttribute("aria-expanded", "false");
-      i.setAttribute("aria-label", i.dataset.dataTextForShow);
+      i.setAttribute("aria-label", i.dataset.textForShow);
     });
 
   const theTarget = document.getElementById(theTargetID);
