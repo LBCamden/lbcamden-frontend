@@ -159,37 +159,6 @@
         font-display: fallback;
         src: govuk-font-url("Inter-BlackItalic.woff2?v=4.1") format("woff2");
       }
-
-      // Variable font.
-      // Usage:
-      // html { font-family: Inter, sans-serif; }
-      //
-      //   @supports (font-variation-settings: normal) {
-      //     html { font-family: "Inter var", sans-serif; }
-      //   }
-      @font-face {
-        font-family: "Inter var";
-        font-style: normal;
-        font-weight: 100 900;
-        font-display: fallback;
-        src: govuk-font-url("Inter-roman.var.woff2?v=4.1") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Inter var";
-        font-style: italic;
-        font-weight: 100 900;
-        font-display: fallback;
-        src: govuk-font-url("Inter-italic.var.woff2?v=4.1") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Inter var experimental";
-        font-style: oblique 0deg 10deg;
-        font-weight: 100 900;
-        font-display: fallback;
-        src: govuk-font-url("Inter.var.woff2?v=4.1") format("woff2");
-      }
     }
   }
 }
