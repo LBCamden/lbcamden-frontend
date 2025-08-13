@@ -140,7 +140,7 @@ LBCamdenHeader.prototype.menuItemClick = function (e) {
       "aria-label",
       e.currentTarget.dataset.textForHide,
     );
-    e.target.setAttribute("aria-expanded", "true");
+    e.currentTarget.setAttribute("aria-expanded", "true");
   } else {
     e.currentTarget.setAttribute(
       "aria-label",
