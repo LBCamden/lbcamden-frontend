@@ -63,3 +63,8 @@ address {
 body {
   text-underline-offset: $text-underline-offset;
 }
+
+:root {
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
+}
+
