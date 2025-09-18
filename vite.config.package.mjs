@@ -36,10 +36,6 @@ export default defineConfig({
           dest: './'
         },
         {
-          src: '**/*.woff',
-          dest: './lbcamden/'
-        },
-        {
           src: '**/*.woff2',
           dest: './lbcamden/'
         },
