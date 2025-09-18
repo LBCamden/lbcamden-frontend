@@ -18,13 +18,23 @@
       import * as LBCamden from './all.js';
 
       (function initLibs () {
+        const init = (opts) => {
+          GOVUK.initAll(opts);
+          LBCamden.initAll(opts);
+        }
+
         const tryInit = () => {
           if (document.readyState === 'complete') {
-            GOVUK.initAll();
-            LBCamden.initAll();
+            init()
             return true
           }
         }
+
+        Object.assign(window, {
+          LBCamden: {
+            reinitialize: init
+          }
+        })
 
         tryInit()
         document.addEventListener('readystatechange', tryInit)

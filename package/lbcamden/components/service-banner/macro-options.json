@@ -16,5 +16,11 @@
         "type": "string",
         "required": false,
         "description": "Short description of the emergency-banner"
+    },
+    {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": "Unique id for the banner."
     }
 ]

@@ -36,8 +36,6 @@
   &__title {
     @include govuk-font(24);
     @include govuk-typography-weight-bold;
-
-    font-size: 24px;
   }
 
   &--with-phase-banner {
