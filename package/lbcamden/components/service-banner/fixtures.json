@@ -5,9 +5,10 @@
             "name": "default",
             "options": {
                 "heading": "Council Tax and benefit forms unavailable",
-                "shortDescription": "<p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>"
+                "shortDescription": "<p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>",
+                "id": "taxBanner"
             },
-            "html": "<div class=\"lbcamden-service-banner \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"\">Council Tax and benefit forms unavailable</h2>\n\n        <p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>\n      </div>\n    </div>\n  </div>\n</div>",
+            "html": "<aside id=\"taxBanner\" aria-labelledby=\"taxBanner--heading\" class=\"lbcamden-service-banner \">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 id=\"taxBanner--heading\" class=\"\">Council Tax and benefit forms unavailable</h2>\n\n        <p>Council Tax and housing benefit application forms are unavailable this evening between 6pm and 9pm. Try again after this time.</p>\n      </div>\n    </div>\n  </div>\n</aside>",
             "hidden": false
         },
         {
@@ -15,7 +16,7 @@
             "options": {
                 "classes": "app-service-banner--custom-modifier"
             },
-            "html": "<div class=\"lbcamden-service-banner app-service-banner--custom-modifier\">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 class=\"\"></h2>\n\n        \n      </div>\n    </div>\n  </div>\n</div>",
+            "html": "<aside id=\"\" aria-labelledby=\"--heading\" class=\"lbcamden-service-banner app-service-banner--custom-modifier\">\n  <div class=\"govuk-width-container\">\n    <div class=\"govuk-grid-row\">\n      <div class=\"govuk-grid-column-two-thirds\">\n        <h2 id=\"--heading\" class=\"\"></h2>\n\n        \n      </div>\n    </div>\n  </div>\n</aside>",
             "hidden": true
         }
     ]

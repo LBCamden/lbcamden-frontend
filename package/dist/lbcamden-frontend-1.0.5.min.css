@@ -81031,7 +81031,8 @@ body {
 
 
 
-:root {
+:root, * {
+  font-family: "Inter", arial, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1, "ss02" 1;
 }
 
@@ -99524,7 +99525,6 @@ ul > .lbcamden-card-grid__link-wrapper {
   font-size: 1.125rem;
   line-height: 1.1111111111;
   font-weight: 600;
-  font-size: 24px;
 }
 
 
@@ -109146,7 +109146,6 @@ ul > .lbcamden-card-grid__link-wrapper {
   font-size: 1.125rem;
   line-height: 1.1111111111;
   font-weight: 600;
-  font-size: 24px;
 }
 
 
@@ -122276,6 +122275,13 @@ ul > .lbcamden-card-grid__link-wrapper {
 @media (forced-colors: active) {
   .lbcamden-link--promo, .lbcamden-card--promo-link, .lbcamden-card--promo-link--alt {
     border: 0.25rem solid;
+  }
+  .lbcamden-link--promo-alt::after, .lbcamden-card--promo-link--alt::after,
+  .lbcamden-link--promo-alt:hover::after,
+  .lbcamden-link--promo-alt:focus-within::after {
+    background: url("data:image/svg+xml,%3Csvg width='56' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M43.3796317,16.0659773 L19.6760056,39.0442854 C18.0556176,40.6143387 15.4293191,40.6143387 13.8096716,39.0442854 C12.1893207,37.4742322 12.1893207,34.9276768 13.8096716,33.3576235 L34.5808233,13.2218814 L13.8096716,-6.91377078 C12.1893207,-8.48391407 12.1893207,-11.0304559 13.8096716,-12.6005317 C15.4293739,-14.1707222 18.0556633,-14.1707222 19.6760056,-12.6005317 L43.3796317,10.3778304 C44.999334,11.9480187 44.999334,14.494484 43.3796317,16.0645823 L43.3796317,16.0659773 Z' fill='yellow' transform='translate(0, 14.000000)' /%3E%3C/svg%3E");
+    background-size: contain;
+    transform: translateY(-50%);
   }
 }
 
