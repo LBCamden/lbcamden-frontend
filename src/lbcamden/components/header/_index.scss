@@ -11,3 +11,12 @@
     }
   }
 }
+
+@media print {
+  .lbcamden-header {
+    display: none;
+  }
+  .govuk-phase-banner {
+    display: none;
+  }
+}

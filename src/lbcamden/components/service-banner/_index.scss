@@ -21,3 +21,9 @@
     }
   }
 }
+
+@media print {
+  .lbcamden-service-banner {
+    display: none;
+  }
+}

@@ -26,3 +26,18 @@
     transform: translateY(-50%);
   }
 }
+
+@media print {
+  a[href^="/"]::after,
+  [href^="/"].govuk-link::after,
+  a[href^="http://"]::after,
+  [href^="http://"].govuk-link::after,
+  a[href^="https://"]::after,
+  [href^="https://"].govuk-link::after{
+    content: "";
+  }
+
+  hr {
+    display: none;
+  }
+}
