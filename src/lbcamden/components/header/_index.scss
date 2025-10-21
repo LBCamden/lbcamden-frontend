@@ -13,10 +13,20 @@
 }
 
 @media print {
-  .lbcamden-header {
+  .lbcamden-emergency-banner__content,
+  .govuk-phase-banner,
+  .lbcamden-header--with-phase-banner {
     display: none;
   }
-  .govuk-phase-banner {
-    display: none;
+  .lbcamden-header--estate {
+    border: none;
+  }
+
+  .lbcamden-header__logo {
+    background-color: black;
+  }
+
+  body {
+    print-color-adjust: exact;
   }
 }

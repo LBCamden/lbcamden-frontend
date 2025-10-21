@@ -28,16 +28,21 @@
 }
 
 @media print {
-  a[href^="/"]::after,
-  [href^="/"].govuk-link::after,
-  a[href^="http://"]::after,
-  [href^="http://"].govuk-link::after,
-  a[href^="https://"]::after,
-  [href^="https://"].govuk-link::after{
-    content: "";
-  }
-
   hr {
     display: none;
+  }
+
+  .lbcamden-promo-gallery .lbcamden-link--promo {
+    all: unset;
+  }
+
+  .lbcamden-promo-gallery .lbcamden-link--promo-alt::after {
+    width: auto;
+    background: none;
+  }
+
+  .lbcamden-promo-gallery__all {
+    border: 1px solid black !important;
+    padding: govuk-spacing(1) !important;
   }
 }
