@@ -39,3 +39,9 @@ $govuk-breakpoints: (
   desktop: 768px,
   wide: 992px
 );
+
+@media print {
+  body {
+    print-color-adjust: exact;
+  }
+}
