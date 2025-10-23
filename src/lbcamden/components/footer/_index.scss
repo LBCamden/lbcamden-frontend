@@ -285,6 +285,11 @@
   }
 
   .lbcamden-footer {
-    color: black
+   background: transparent;
+   border: none;
+  }
+
+  .lbcamden-footer__lower {
+    color: lbcamden-colour("black");
   }
 }

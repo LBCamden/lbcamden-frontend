@@ -42,7 +42,11 @@
   }
 
   .lbcamden-promo-gallery__all {
-    border: 1px solid black !important;
+    border: 1px solid lbcamden-colour("black") !important;
     padding: govuk-spacing(1) !important;
+  }
+
+  a[href]:after {
+    position: inherit;
   }
 }

@@ -283,5 +283,6 @@ $button-shadow-size: $govuk-border-width-form-element;
     border: 1px solid black !important;
     color: black !important;
     padding: govuk-spacing(1) !important;
+    break-inside: avoid;
   }
 }

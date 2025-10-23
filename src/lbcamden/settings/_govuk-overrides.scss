@@ -44,4 +44,15 @@ $govuk-breakpoints: (
   body {
     print-color-adjust: exact;
   }
+  a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+
+  .lbcamden-row--related {
+    border: none;
+  }
+
+  table {
+    break-inside: avoid;
+  }
 }

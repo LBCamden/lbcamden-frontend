@@ -22,7 +22,11 @@
     border: none;
   }
 
-  .lbcamden-header__logo {
-    background-color: black;
+  .lbcamden-header {
+    background: transparent;
+  }
+
+  .lbcamden-logo path {
+    fill: lbcamden-colour("black");
   }
 }
