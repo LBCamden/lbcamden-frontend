@@ -1,0 +1,201 @@
+{% extends "examples/layouts/full-page-example.njk" %}
+
+{% from "src/lbcamden/components/footer/macro.njk" import LBCamdenFooter %}
+{% from "src/lbcamden/components/campaign-hero/macro.njk" import LBCamdenCampaignHero %}
+{% from "src/lbcamden/components/campaign-engagement-banner/macro.njk" import LBCamdenCampaignEngagementBanner %}
+{% from "src/lbcamden/components/campaign-promo-gallery/macro.njk" import LBCamdenCampaignPromoGallery %}
+
+{% set pageTitle = "Campaign homepage" %}
+
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block bodyStart %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("lbcamden-campaign");
+    document.body.classList.add("lbcamden-campaign--local-offer");
+  });
+</script>
+{% endblock %}
+
+{% block styles %}
+  <style>
+    .lbcamden-campaign--local-offer {
+    --lbcamden-theme-brand-colour: #ffba00;
+    --lbcamden-theme-tint-colour: #fff0c8;
+}
+h1 {
+    .lbcamden-campaign & {
+        @include govuk-typography-responsive("48-campaign");
+        font-weight: 300;
+    }
+}
+
+// theming
+.lbcamden-campaign-promo-gallery h2,
+.lbcamden-row--related h2,
+.lbcamden-related-card h2,
+.fh-info-callout h2,
+.lbcamden-promo-gallery h2,
+.lbcamden-card-gallery > h2,
+.lbcamden-engagement-banner h2,
+.lbcamden-campaign-engagement-banner h2,
+.lbcamden-link-list-gallery h2 {
+    .lbcamden-campaign & {
+        @include govuk-typography-responsive("36-campaign");
+        font-weight: 300;
+    }
+}
+
+.lbcamden-campaign {
+    .lbcamden-header--estate {
+        border-color: #d8e3e9;
+  }
+  .lbcamden-related-content-card .lbcamden-card .lbcamden-card--alt-1 {
+    border-top:  var(--lbcamden-theme-brand-colour);
+  }
+}
+
+
+  </style>
+{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+{% block content %}
+  <main class="govuk-width-container" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ LBCamdenCampaignHero({
+          "title": "Campaign site",
+          "image": {
+            "src": "example-assets/images/1800x1200.jpg",
+            "alt": "Example image"
+          }
+        }) }}
+      </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-full">
+        {{ LBCamdenCampaignPromoGallery({
+          "heading": "Explore our local offers",
+          "items": [
+            {
+              "href": "#1",
+              "icon": {
+                "src": "/example-assets/images/home.png"
+              },
+              "title": "Local offer 1"
+            },
+            {
+              "href": "#2",
+              "icon": {
+                "src": "/example-assets/images/home.png"
+              },
+              "title": "Local offer 2"
+            },
+            {
+              "href": "#3",
+              "icon": {
+                "src": "/example-assets/images/home.png"
+              },
+              "title": "Local offer 3"
+            }
+          ]
+        }) }}
+      </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-full">
+        {{ LBCamdenCampaignEngagementBanner({
+          "heading": "Local offer",
+          "image": {
+            "src": "example-assets/images/1800x1200.jpg",
+            "alt": "Example image"
+          },
+          "orientation": "text-right"
+        }) }}
+      </div>
+    </div>
+  </main>
+{% endblock %}
+  {% block footer %}
+    {{ LBCamdenFooter({
+      "navigation": [
+          {
+            "href": "#1",
+            "text": "Home"
+          },
+          {
+            "href": "#2",
+            "text": "Site map"
+          },
+          {
+            "href": "#3",
+            "text": "Contact Camden Council"
+          }
+      ],
+      "navigationSecondary": [
+          {
+            "href": "#4",
+            "text": "Subscribe to our e-newsletter",
+            "attributes": {
+              "data-highlighted": true
+            }
+          }
+      ],
+      "navigationUtility": [
+
+          {
+            "href": "#1",
+            "text": "Accessibility statement"
+          },
+          {
+            "href": "#2",
+            "text": "Freedom of information disclaimer"
+          },
+          {
+            "href": "#3",
+            "text": "Privacy statement & cookies"
+          },
+          {
+            "href": "#4",
+            "text": "Modern slavery statement"
+          }
+      ],
+
+      "navigationSocial": [
+          {
+            "href": "#1",
+            "text": "Navigation item 1",
+            "attributes": {
+              "data-icon": "facebook"
+            }
+          },
+          {
+            "href": "#2",
+            "text": "Navigation item 2",
+            "attributes": {
+              "data-icon": "youtube"
+            }
+          },
+          {
+            "href": "#3",
+            "text": "Navigation item 3",
+            "attributes": {
+              "data-icon": "twitter"
+            }
+          },
+          {
+            "href": "#4",
+            "text": "Navigation item 4",
+            "attributes": {
+              "data-icon": "linkedin"
+            }
+        }
+      ]
+    }) }}
+  {% endblock %}

@@ -17,8 +17,22 @@
   height: 100%;
 }
 
+.print-only {
+  display: none;
+}
+
 @media print {
   .lbcamden-video-embed {
-    display: none;
+    height: auto;
+    margin: 0;
+    padding-bottom: 30px;
+
+    iframe {
+      display: none;
+    }
+
+    .print-only {
+      display: block;
+    }
   }
 }
