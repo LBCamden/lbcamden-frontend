@@ -39,3 +39,20 @@ $govuk-breakpoints: (
   desktop: 768px,
   wide: 992px
 );
+
+@media print {
+  body {
+    print-color-adjust: exact;
+  }
+  a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+
+  .lbcamden-row--related {
+    border: none;
+  }
+
+  table {
+    break-inside: avoid;
+  }
+}

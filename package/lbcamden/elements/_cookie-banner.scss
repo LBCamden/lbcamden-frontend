@@ -1,3 +1,9 @@
 .govuk-cookie-banner {
   background: lbcamden-colour("govuk-bg-bright1-colour");
 }
+
+@media print {
+  .govuk-cookie-banner {
+    display: none;
+  }
+}
