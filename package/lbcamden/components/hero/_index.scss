@@ -131,3 +131,13 @@ $lbcamden-hero-max-width: 1440px;
     }
   }
 }
+
+@media print {
+  .lbcamden-hero .lbcamden-hero__bg {
+    display: none;
+  }
+
+  .lbcamden-hero__links {
+    margin: 0;
+  }
+}

@@ -1,0 +1,9 @@
+.lbcamden-print-only {
+  display: none;
+}
+
+@media print {
+  .lbcamden-print-only {
+    display: block;
+  }
+}
