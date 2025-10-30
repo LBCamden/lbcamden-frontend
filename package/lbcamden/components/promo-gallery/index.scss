@@ -26,3 +26,27 @@
     transform: translateY(-50%);
   }
 }
+
+@media print {
+  hr {
+    display: none;
+  }
+
+  .lbcamden-promo-gallery .lbcamden-link--promo {
+    all: unset;
+  }
+
+  .lbcamden-promo-gallery .lbcamden-link--promo-alt::after {
+    width: auto;
+    background: none;
+  }
+
+  .lbcamden-promo-gallery__all {
+    border: 1px solid lbcamden-colour("black") !important;
+    padding: govuk-spacing(1) !important;
+  }
+
+  a[href]:after {
+    position: inherit;
+  }
+}

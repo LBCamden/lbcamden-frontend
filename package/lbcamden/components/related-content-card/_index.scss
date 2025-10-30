@@ -9,3 +9,9 @@
     }
   }
 }
+
+@media print {
+  .lbcamden-related-content-card {
+    display: none;
+  }
+}
