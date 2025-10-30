@@ -5,6 +5,7 @@
                 rel="0"
                 allowfullscreen>
         </iframe>
+        <span class="lbcamden-print-only">Video: {{ params.frameTitle }} (https://www.youtube.com/watch?v={{ params.id }})</span>
     </div>
 {% elif "vimeo" == params.platform %}
     <div class="lbcamden-video-embed">
@@ -14,5 +15,6 @@
                 allow="fullscreen; picture-in-picture"
                 allowfullscreen>
         </iframe>
+        <span class="lbcamden-print-only">Video: {{ params.frameTitle }} (https://vimeo.com/{{ params.id }})</span>
     </div>
 {% endif %}

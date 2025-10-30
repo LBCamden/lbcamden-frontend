@@ -1,0 +1,119 @@
+{% extends "examples/layouts/full-page-example.njk" %}
+
+{% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "node_modules/govuk-frontend/dist/govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "src/lbcamden/components/video-embed/macro.njk" import LBCamdenVideoEmbed %}
+{% from "src/lbcamden/components/related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
+{% from "src/lbcamden/components/footer/macro.njk" import LBCamdenFooter %}
+
+{% set pageTitle = "Preparing for adulthood" %}
+
+{% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
+
+{% block bodyStart %}
+<script>
+  document.body.classList.add("lbcamden-campaign");
+  document.body.classList.add("lbcamden-campaign--local-offer");
+</script>
+{% endblock %}
+
+{% block styles %}
+  <style>
+    .lbcamden-campaign--local-offer {
+    --lbcamden-theme-brand-colour: #ffba00;
+    --lbcamden-theme-tint-colour: #fff0c8;
+}
+h1 {
+    .lbcamden-campaign & {
+        @include govuk-typography-responsive("48-campaign");
+        font-weight: 300;
+    }
+}
+
+// theming
+.lbcamden-campaign-promo-gallery h2,
+.lbcamden-row--related h2,
+.lbcamden-related-card h2,
+.fh-info-callout h2,
+.lbcamden-promo-gallery h2,
+.lbcamden-card-gallery > h2,
+.lbcamden-engagement-banner h2,
+.lbcamden-campaign-engagement-banner h2,
+.lbcamden-link-list-gallery h2 {
+    .lbcamden-campaign & {
+        @include govuk-typography-responsive("36-campaign");
+        font-weight: 300;
+    }
+}
+
+.lbcamden-campaign {
+    .lbcamden-header--estate {
+        border-color: #d8e3e9;
+  }
+  .lbcamden-related-content-card .lbcamden-card .lbcamden-card--alt-1 {
+    border-top:  var(--lbcamden-theme-brand-colour);
+  }
+}
+
+
+  </style>
+{% endblock %}
+
+{% block header %}
+  {{ LBCamdenHeader({
+
+  }) }}
+{% endblock %}
+{% block content %}
+  <main class="govuk-width-container" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1>{{ pageTitle }}</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop lbcamden-prose">
+        <p>Preparing for adulthood can be an exciting but daunting time for young people and their families. At Camden, we are committed to providing support and resources to help young people transition smoothly into adulthood.</p>
+
+        <h2>What to consider</h2>
+
+        <p>There are 4 main areas to consider when you prepare for adulthood.</p>
+
+        {{ LBCamdenVideoEmbed({
+          id: "DhLvihyZJuU",
+          frameTitle: "Preparing for adulthood overview",
+          platform: "youtube"
+        }) }}
+
+        <h3><b>1 - Getting a job</b></h3>
+        <p>Get information on <a href="https://example.com">finding employment</a>.</p>
+        <h3><b>2 - Living independently</b></h3>
+        <p>Get information on <a href="https://example.com">living independently</a>.</p>
+        <h3><b>3 - Health and wellbeing</b></h3>
+        <p>Get information on <a href="https://example.com">health and wellbeing</a>.</p>
+        <h3><b>4 - Building relationships</b></h3>
+        <p>Get information on <a href="https://example.com">building relationships</a>.</p>
+
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop fh-sidebar">
+        {{ LBCamdenRelatedContentCard({
+          "heading": "Related content",
+          "relatedContent": [
+            {
+              "href": "#1",
+              "text": "Related item 1"
+            },
+            {
+              "href": "#2",
+              "text": "Related item 2"
+            },
+            {
+              "href": "#3",
+              "text": "Related item 3"
+            }
+          ]
+        }) }}
+      </div>
+    </div>
+  </main>
+{% endblock %}

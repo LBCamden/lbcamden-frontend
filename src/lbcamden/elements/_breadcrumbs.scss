@@ -48,3 +48,9 @@
     }
   }
 }
+
+@media print {
+  .govuk-breadcrumbs {
+    display: none;
+  }
+}

@@ -276,3 +276,20 @@
     }
   }
 }
+
+@media print {
+  .lbcamden-footer__navigation,
+  .lbcamden-footer__estate,
+  .lbcamden-footer__link {
+    display: none;
+  }
+
+  .lbcamden-footer {
+   background: transparent;
+   border: none;
+  }
+
+  .lbcamden-footer__lower {
+    color: lbcamden-colour("black");
+  }
+}

@@ -11,3 +11,22 @@
     }
   }
 }
+
+@media print {
+  .lbcamden-emergency-banner__content,
+  .govuk-phase-banner,
+  .lbcamden-header--with-phase-banner {
+    display: none;
+  }
+  .lbcamden-header--estate {
+    border: none;
+  }
+
+  .lbcamden-header {
+    background: transparent;
+  }
+
+  .lbcamden-logo path {
+    fill: lbcamden-colour("black");
+  }
+}
