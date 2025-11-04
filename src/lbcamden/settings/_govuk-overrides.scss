@@ -41,8 +41,9 @@ $govuk-breakpoints: (
 );
 
 @media print {
-  body {
+  body{
     print-color-adjust: exact;
+    font-family: $govuk-font-family;
   }
   a[href]:after {
 		content: ' (' attr(href) ')';
