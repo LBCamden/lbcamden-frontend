@@ -43,3 +43,9 @@
     margin-bottom: 0;
   }
 }
+
+@media print {
+  .lbcamden-info-callout {
+    break-inside: avoid;
+  }
+}
