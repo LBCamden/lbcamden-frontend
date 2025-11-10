@@ -1,12 +1,15 @@
 // GOVUK Overrides
+
+// Override the GOV.UK font family for screen (not print)
+$govuk-font-family: "Inter", Arial, sans-serif;
+$govuk-font-family-print: Arial, sans-serif; // Keep standard font for print
+
 $lbcamden-border-colour: lbcamden-colour("govuk-border-colour");
 
 $govuk-focus-colour: lbcamden-colour("govuk-focus-colour");
 $button-shadow-size: 2;
 
 $govuk-canvas-background-colour: lbcamden-colour("govuk-bg-dark1-colour");
-
-$govuk-font-family: "Inter", Arial, sans-serif !default;
 $govuk-global-styles: true; // Applies styles to entire site eg. p and ul
 
 $govuk-page-width: 1170px;
