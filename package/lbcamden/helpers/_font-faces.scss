@@ -22,6 +22,7 @@
         font-weight: 100;
         src: govuk-font-url("Inter-Thin.woff2?v=4.1") format("woff2");
         font-display: fallback;
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -30,6 +31,7 @@
         font-weight: 100;
         font-display: fallback;
         src: govuk-font-url("Inter-ThinItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -38,6 +40,7 @@
         font-weight: 200;
         font-display: fallback;
         src: govuk-font-url("Inter-ExtraLight.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -46,6 +49,7 @@
         font-weight: 200;
         font-display: fallback;
         src: govuk-font-url("Inter-ExtraLightItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -54,6 +58,7 @@
         font-weight: 300;
         font-display: fallback;
         src: govuk-font-url("Inter-Light.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -62,6 +67,7 @@
         font-weight: 300;
         font-display: fallback;
         src: govuk-font-url("Inter-LightItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -70,6 +76,7 @@
         font-weight: 400;
         font-display: fallback;
         src: govuk-font-url("Inter-Regular.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -78,6 +85,7 @@
         font-weight: 400;
         font-display: fallback;
         src: govuk-font-url("Inter-Italic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -94,6 +102,7 @@
         font-weight: 500;
         font-display: fallback;
         src: govuk-font-url("Inter-MediumItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -102,6 +111,7 @@
         font-weight: 600;
         font-display: fallback;
         src: govuk-font-url("Inter-SemiBold.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -110,6 +120,7 @@
         font-weight: 600;
         font-display: fallback;
         src: govuk-font-url("Inter-SemiBoldItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -118,6 +129,7 @@
         font-weight: 700;
         font-display: fallback;
         src: govuk-font-url("Inter-Bold.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -126,6 +138,7 @@
         font-weight: 700;
         font-display: fallback;
         src:govuk-font-url("Inter-BoldItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -134,6 +147,7 @@
         font-weight: 800;
         font-display: fallback;
         src: govuk-font-url("Inter-ExtraBold.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -142,6 +156,7 @@
         font-weight: 800;
         font-display: fallback;
         src: govuk-font-url("Inter-ExtraBoldItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -150,6 +165,7 @@
         font-weight: 900;
         font-display: fallback;
         src: govuk-font-url("Inter-Black.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {
@@ -158,6 +174,7 @@
         font-weight: 900;
         font-display: fallback;
         src: govuk-font-url("Inter-BlackItalic.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
     }
   }

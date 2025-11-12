@@ -142,7 +142,7 @@ git push origin release-X.Y.Z
 and create a new PR for this release branch. Update all existing PRs to use this branch as their new target.
 
 ### How to package up ahead of release
-To build the package ahead of release, use the following command.
+To build the package ahead of release, with the release branch checked out, use the following command.
 ```console
 npm run build
 ```
@@ -152,6 +152,8 @@ Once built, use the following command to verify the output matches the required 
 ```console
 npm run test:build
 ```
+
+If any changes were created by the `npm run build` command, commit these after testing the build.
 
 Visual regression tests should also be run against changes prior to releasing an update.
 
