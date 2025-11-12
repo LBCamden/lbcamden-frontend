@@ -201,4 +201,4 @@ Unless stated otherwise, the codebase is released under the MIT License. This co
 We are working on our contribution process. If you are interested in implementing or extending LBCamden Frontend while we establish our formal processes, please [contact the Design System team](#contact).
 
 ## Contact the team [#](#contact)
-To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk)
+To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk).
