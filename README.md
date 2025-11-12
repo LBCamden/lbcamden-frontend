@@ -135,7 +135,7 @@ npm run build
 ```console
 npm run test:build
 ```
-6. Push the new release branch back to Github using the command
+6. Add the newly created files and commit the changes. Push the new release branch back to Github using the command
 ```console
 git push origin release-X.Y.Z
 ```
