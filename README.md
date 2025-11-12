@@ -157,6 +157,8 @@ If any changes were created by the `npm run build` command, commit these after t
 
 Visual regression tests should also be run against changes prior to releasing an update.
 
+Once all tests have completed, merge the `release-x.y.z` branch into the `main` branch.
+
 ### How to release
 To publish an updated LBCamden package, use the following command when checked into the `main` branch. 
 ```console
