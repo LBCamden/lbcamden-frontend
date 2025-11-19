@@ -1,7 +1,7 @@
 // GOVUK Overrides
 
 // Override the GOV.UK font family for screen (not print)
-$govuk-font-family: "Inter", Arial, sans-serif;
+$govuk-font-family: "Inter", Arial, sans-serif !default;
 $govuk-font-family-print: sans-serif; // Keep standard font for print
 
 $lbcamden-border-colour: lbcamden-colour("govuk-border-colour");
