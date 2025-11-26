@@ -94,6 +94,7 @@
         font-weight: 500;
         font-display: fallback;
         src: govuk-font-url("Inter-Medium.woff2?v=4.1") format("woff2");
+        font-feature-settings: 'liga' 1, 'calt' 1, 'ss02' 1;
       }
 
       @font-face {

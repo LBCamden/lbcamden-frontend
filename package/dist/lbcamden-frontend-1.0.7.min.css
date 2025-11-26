@@ -8985,6 +8985,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-weight: 500;
   font-display: fallback;
   src: url("/assets/fonts/Inter-Medium.woff2?v=4.1") format("woff2");
+  font-feature-settings: "liga" 1, "calt" 1, "ss02" 1;
 }
 @font-face {
   font-family: Inter;
@@ -9095,6 +9096,11 @@ address {
 }
 body {
   text-underline-offset: 0.25em;
+}
+@media screen {
+  :root, * {
+    font-family: "Inter", arial, sans-serif;
+  }
 }
 .lbcamden-print-only {
   display: none;

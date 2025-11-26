@@ -63,3 +63,10 @@ address {
 body {
   text-underline-offset: $text-underline-offset;
 }
+
+:root, * {
+  @media screen {
+    font-family: "Inter", arial, sans-serif;
+  }
+}
+
