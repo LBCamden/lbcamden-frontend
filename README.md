@@ -135,14 +135,14 @@ npm run build
 ```console
 npm run test:build
 ```
-6. Push the new release branch back to Github using the command
+6. Add the newly created files and commit the changes. Push the new release branch back to Github using the command
 ```console
 git push origin release-X.Y.Z
 ```
 and create a new PR for this release branch. Update all existing PRs to use this branch as their new target.
 
 ### How to package up ahead of release
-To build the package ahead of release, use the following command.
+To build the package ahead of release, with the release branch checked out, use the following command.
 ```console
 npm run build
 ```
@@ -153,7 +153,11 @@ Once built, use the following command to verify the output matches the required 
 npm run test:build
 ```
 
+If any changes were created by the `npm run build` command, commit these after testing the build.
+
 Visual regression tests should also be run against changes prior to releasing an update.
+
+Once all tests have completed, merge the `release-x.y.z` branch into the `main` branch.
 
 ### How to release
 To publish an updated LBCamden package, use the following command when checked into the `main` branch. 
@@ -197,4 +201,4 @@ Unless stated otherwise, the codebase is released under the MIT License. This co
 We are working on our contribution process. If you are interested in implementing or extending LBCamden Frontend while we establish our formal processes, please [contact the Design System team](#contact).
 
 ## Contact the team [#](#contact)
-To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk)
+To ask questions, inform us about any security issues, or discuss how to implement or extend LBCamden Frontend, please contact the Design System team via [design-system@camden.gov.uk](mailto:design-system@camden.gov.uk).
