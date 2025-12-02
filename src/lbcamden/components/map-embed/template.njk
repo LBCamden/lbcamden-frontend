@@ -1,0 +1,31 @@
+{% from "../image-component/macro.njk" import LBCamdenImageComponent %}
+
+{% set mapSrc = [
+  "https://maps.googleapis.com/maps/api/staticmap?",
+  "center=", params.latlng,
+  "&zoom=", params.zoom,
+  "&size=600x400",
+  "&markers=color:red%7C", params.latlng,
+  "&key=AIzaSyA6UU8pNEjDMuFQpup0OJl5QiOo5ZlItv0"
+] | join %}
+{% set mapAltText = ["Map of ", params.address] | join %}
+{% set mapCaption = ["Address: ", params.address] | join %}
+
+{# var size = {
+  width: window.innerWidth || document.body.clientWidth,
+  height: window.innerHeight || document.body.clientHeight
+} #}
+
+
+<div class="lbcamden-map-embed">
+  {{
+    LBCamdenImageComponent({
+      image: {
+        src: mapSrc,
+        alt: mapAltText
+      },
+      caption: mapCaption
+    })
+  }}
+</div>
+
