@@ -1,17 +1,17 @@
 params:
-  - latlng:
-      type: string
-      description: Latitude and longitude coordinates. The center of the map and pin are placed here.
-      required: true
-  - zoom:
-      type: integer
-      description: Zoom level of the map. Higher numbers zoom in closer.
-      required: false
-      default: 15
-  - address:
-      type: string
-      description: Address displayed by the map. Shown in map caption and alt text.
-      required: false
+  - name: latlng
+    type: string
+    description: Latitude and longitude coordinates. The center of the map and pin are placed here.
+    required: true
+  - name: zoom
+    type: integer
+    description: Zoom level of the map. Higher numbers zoom in closer.
+    required: false
+    default: 15
+  - name: address
+    type: string
+    description: Address displayed by the map. Shown in map caption and alt text.
+    required: false
 examples:
   - name: default
     description: Example of map embed component.
