@@ -1,0 +1,32 @@
+params:
+  - name: latlng
+    type: string
+    description: Latitude and longitude coordinates. The center of the map and pin are placed here.
+    required: true
+  - name: zoom
+    type: integer
+    description: Zoom level of the map. Higher numbers zoom in closer.
+    required: false
+    default: 15
+  - name: address
+    type: string
+    description: Address displayed by the map. Shown in map caption and alt text.
+    required: false
+  - name: key
+    type: string
+    description: API key for the map service.
+    required: true
+  - name: url
+    type: string
+    description: URL linking to Google Maps for the address.
+    required: false
+    default: '#'
+examples:
+  - name: default
+    description: Example of map embed component.
+    data:
+      latlng: '51.533956,-0.1264872'
+      zoom: 15
+      address: '5 Pancras Square, London, N1C 4AG'
+      key: ''
+      url: 'https://google.com/maps/place/5+Pancras+Square,+London,+N1C+4AG/@51.533956,-0.1264872,15z'
