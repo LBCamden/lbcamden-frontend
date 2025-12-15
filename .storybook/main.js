@@ -1,4 +1,4 @@
-import path from "path";
+
 import govukStorybook from "storybook-addon-govuk-fixtures";
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
@@ -35,7 +35,7 @@ const config = {
           storyNamespace: 'full-page-examples',
         }
       ],
-      additionalTemplatePaths: ["examples", path.resolve("node_modules/govuk-frontend/dist")],
+      additionalTemplatePaths: ["examples"],
     }),
     "@storybook/addon-links",
     "@storybook/addon-essentials",

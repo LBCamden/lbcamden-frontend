@@ -1,21 +1,25 @@
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
+
 
 <div class="lbcamden-calendar-picker {{ params.classes }}" data-module="lbcamden-calendar-picker" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="lbcamden-calendar-picker__input-wrapper">
-    {{ govukInput({
-      id: params.id,
-      name: params.name,
-      label: params.label,
-      hint: params.hint,
-      value: params.value,
-      errorMessage: params.errorMessage,
-      classes: "lbcamden-calendar-picker__input " + (params.inputClasses if params.inputClasses else ""),
-      attributes: {
-        "autocomplete": "off",
-        "placeholder": "dd/mm/yyyy"
-      }
-    }) }}
+    <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %}">
+      {% if params.label %}
+      <label class="govuk-label {{ params.label.classes }}" for="{{ params.id }}">
+        {{ params.label.text }}
+      </label>
+      {% endif %}
+      {% if params.hint %}
+      <div id="{{ params.id }}-hint" class="govuk-hint {{ params.hint.classes }}">
+        {{ params.hint.text }}
+      </div>
+      {% endif %}
+      {% if params.errorMessage %}
+      <p id="{{ params.id }}-error" class="govuk-error-message {{ params.errorMessage.classes }}">
+        <span class="govuk-visually-hidden">Error:</span> {{ params.errorMessage.text }}
+      </p>
+      {% endif %}
+      <input class="govuk-input lbcamden-calendar-picker__input {{ params.inputClasses }} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" type="text" value="{{ params.value | default('') }}" autocomplete="off" placeholder="dd/mm/yyyy" {%- if params.hint or params.errorMessage %} aria-describedby="{%- if params.hint %}{{ params.id }}-hint{% endif %} {%- if params.errorMessage %}{{ params.id }}-error{% endif %}"{% endif %}>
+    </div>
     
     <button type="button" class="lbcamden-calendar-picker__toggle" aria-label="Choose date" aria-expanded="false" aria-controls="{{ params.id }}-dialog">
       <span class="lbcamden-calendar-picker__toggle-icon" aria-hidden="true">
