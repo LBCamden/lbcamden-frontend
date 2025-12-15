@@ -20,7 +20,10 @@ describe('When nunjucks is configured with a different base path', () => {
   beforeAll(() => {
     // Create a new Nunjucks environment that uses the src directory as its
     // base path, rather than the components folder itself
-    nunjucks.configure(configPaths.src)
+    nunjucks.configure([
+      configPaths.src,
+      configPaths.node_modules + 'govuk-frontend/dist'
+    ])
   })
 
   it.each(allComponents)('render(\'%s\') does not error', (component) => {
