@@ -1,0 +1,162 @@
+
+
+.lbcamden-calendar-picker {
+  position: relative;
+  
+  &__input-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    flex-wrap: wrap; // Wrap on small screens if needed
+  }
+  
+  .govuk-form-group {
+    margin-bottom: 0; // Remove bottom margin to align with button
+    flex-grow: 1;
+  }
+  
+  &__toggle {
+    @include govuk-font($size: 19);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px; // Match input height
+    margin-bottom: 2px; // Visual alignment
+    padding: 5px 10px;
+    background-color: govuk-colour("light-grey");
+    border: 2px solid transparent; // High contrast mode support
+    border-radius: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: govuk-colour("black");
+    
+    &:hover {
+      background-color: govuk-colour("mid-grey");
+    }
+    
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  &__dialog {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    margin-top: 5px;
+    background: govuk-colour("white");
+    border: 2px solid govuk-colour("black");
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 320px;
+    max-width: 100vw;
+    display: block; // For non-hidden state
+    
+    &[hidden] {
+      display: none;
+    }
+    
+    &-content {
+      padding: 15px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__month-year {
+    @include govuk-font($size: 19, $weight: "bold");
+    margin: 0;
+  }
+
+  &__nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: govuk-colour("black");
+    
+    &:hover {
+      background-color: govuk-colour("light-grey");
+    }
+    
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  &__weekdays {
+    th {
+        @include govuk-font($size: 16);
+        font-weight: normal;
+        padding-bottom: 5px;
+    }
+  }
+
+  &__dates {
+    td {
+      padding: 0;
+    }
+    
+    button {
+      @include govuk-font($size: 19);
+      width: 100%;
+      height: 40px;
+      background: none;
+      border: 1px solid transparent; // High contrast
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1px 0; // Separator
+      
+      &:hover:not(:disabled) {
+        background-color: govuk-colour("light-grey");
+      }
+      
+      &:focus {
+        @include govuk-focused-text;
+        position: relative;
+        z-index: 1;
+      }
+      
+      &[aria-pressed="true"] { // Selected
+        background-color: govuk-colour("black");
+        color: govuk-colour("white");
+      }
+      
+      &[aria-current="date"] { // Today
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      &:disabled {
+        color: govuk-colour("mid-grey");
+        cursor: not-allowed;
+        background: none;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+    
+    button {
+        margin-bottom: 0; 
+        font-size: 1rem; // Reduce size slightly for compact view
+    }
+  }
+}
