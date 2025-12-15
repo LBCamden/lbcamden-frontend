@@ -1,4 +1,3 @@
-
 const KEY_CODES = {
   ENTER: 13,
   SPACE: 32,
@@ -51,7 +50,7 @@ LBCamdenCalendarPicker.prototype.init = function () {
   if (this.$nextBtn) this.$nextBtn.addEventListener('click', this.handleNextMonth.bind(this))
   if (this.$cancelBtn) this.$cancelBtn.addEventListener('click', this.close.bind(this))
   if (this.$todayBtn) this.$todayBtn.addEventListener('click', this.handleTodayClick.bind(this))
-  
+
   // Date selection delegator
   if (this.$gridBody) {
     this.$gridBody.addEventListener('click', this.handleDateClick.bind(this))
@@ -88,10 +87,10 @@ LBCamdenCalendarPicker.prototype.open = function () {
   this.$dialog.removeAttribute('hidden')
   this.$toggle.setAttribute('aria-expanded', 'true')
   this.renderCalendar(this.currentDate)
-  
+
   const focusTarget = this.$gridBody.querySelector('[aria-pressed="true"]') || this.$gridBody.querySelector('[tabindex="0"]') || this.$gridBody.querySelector('button')
   if (focusTarget) {
-    setTimeout(() => focusTarget.focus(), 50) 
+    setTimeout(() => focusTarget.focus(), 50)
   }
 }
 
@@ -102,43 +101,43 @@ LBCamdenCalendarPicker.prototype.close = function () {
 
 LBCamdenCalendarPicker.prototype.renderCalendar = function (date) {
   this.$gridBody.innerHTML = ''
-  
+
   const year = date.getFullYear()
   const month = date.getMonth()
-  
-  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   this.$monthYear.textContent = `${monthNames[month]} ${year}`
-  
+
   const firstDay = new Date(year, month, 1)
   const lastDay = new Date(year, month + 1, 0)
   const daysInMonth = lastDay.getDate()
-  
+
   let startDay = firstDay.getDay() - 1
-  if (startDay === -1) startDay = 6 
-  
+  if (startDay === -1) startDay = 6
+
   let html = '<tr>'
-  
+
   for (let i = 0; i < startDay; i++) {
     html += '<td></td>'
   }
-  
+
   const today = new Date()
-  
+
   for (let d = 1; d <= daysInMonth; d++) {
     const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}` // YYYY-MM-DD
-    
+
     // Check selection using date string comparison to avoid time issues
     let isSelected = false
     if (this.selectedDate) {
       const selectedString = `${this.selectedDate.getFullYear()}-${String(this.selectedDate.getMonth() + 1).padStart(2, '0')}-${String(this.selectedDate.getDate()).padStart(2, '0')}`
       if (dateString === selectedString) isSelected = true
     }
-    
-    let isToday = (today.getDate() === d && today.getMonth() === month && today.getFullYear() === year)
-    
+
+    const isToday = (today.getDate() === d && today.getMonth() === month && today.getFullYear() === year)
+
     let tabindex = -1
     if (d === this.currentDate.getDate()) {
-       tabindex = 0
+      tabindex = 0
     }
 
     html += `<td>
@@ -152,12 +151,12 @@ LBCamdenCalendarPicker.prototype.renderCalendar = function (date) {
         ${d}
       </button>
     </td>`
-    
+
     if ((startDay + d) % 7 === 0) {
       html += '</tr><tr>'
     }
   }
-  
+
   html += '</tr>'
   this.$gridBody.innerHTML = html
 }
@@ -177,19 +176,19 @@ LBCamdenCalendarPicker.prototype.handleTodayClick = function () {
   this.currentDate = new Date(today)
   this.renderCalendar(this.currentDate)
   setTimeout(() => {
-     const todayBtn = this.$gridBody.querySelector('[aria-current="date"]')
-     if (todayBtn) todayBtn.focus()
+    const todayBtn = this.$gridBody.querySelector('[aria-current="date"]')
+    if (todayBtn) todayBtn.focus()
   }, 0)
 }
 
 LBCamdenCalendarPicker.prototype.handleDateClick = function (e) {
   const btn = e.target.closest('button')
   if (!btn) return
-  
+
   const dateStr = btn.getAttribute('data-date') // YYYY-MM-DD
   const parts = dateStr.split('-')
   const date = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10))
-  
+
   this.selectDate(date)
 }
 
@@ -198,7 +197,7 @@ LBCamdenCalendarPicker.prototype.selectDate = function (date) {
   const day = date.getDate().toString().padStart(2, '0')
   const month = (date.getMonth() + 1).toString().padStart(2, '0')
   const year = date.getFullYear()
-  
+
   this.$input.value = `${day}/${month}/${year}`
   this.close()
   this.$toggle.focus()
@@ -207,10 +206,10 @@ LBCamdenCalendarPicker.prototype.selectDate = function (date) {
 LBCamdenCalendarPicker.prototype.handleGridKeyDown = function (e) {
   const btn = e.target.closest('button')
   if (!btn) return
-  
+
   const dateStr = btn.getAttribute('data-date')
   const parts = dateStr.split('-')
-  let date = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10))
+  const date = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10))
   let newDate = null
 
   switch (e.keyCode) {
@@ -244,12 +243,12 @@ LBCamdenCalendarPicker.prototype.handleGridKeyDown = function (e) {
   if (newDate) {
     this.currentDate = newDate
     this.renderCalendar(newDate)
-    
+
     setTimeout(() => {
-        const buttons = this.$gridBody.querySelectorAll('button')
-        const dayToFind = newDate.getDate()
-        const btn = Array.from(buttons).find(b => parseInt(b.textContent) === dayToFind)
-        if (btn) btn.focus()
+      const buttons = this.$gridBody.querySelectorAll('button')
+      const dayToFind = newDate.getDate()
+      const btn = Array.from(buttons).find(b => parseInt(b.textContent) === dayToFind)
+      if (btn) btn.focus()
     }, 0)
   }
 }

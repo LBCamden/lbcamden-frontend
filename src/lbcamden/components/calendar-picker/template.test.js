@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { configureAxe } from "vitest-axe";
+import { configureAxe } from 'vitest-axe'
 const axe = configureAxe({
   rules: {
     'skip-link': { enabled: false },
@@ -21,17 +21,17 @@ describe('Calendar Picker Template', () => {
 
     it('renders the default example structure', () => {
       const $ = render('calendar-picker', examples.default)
-      
+
       const $wrapper = $('.lbcamden-calendar-picker')
       expect($wrapper.length).toEqual(1)
-      
+
       const $input = $('.lbcamden-calendar-picker__input')
       expect($input.get(0).tagName).toEqual('input')
-      
+
       const $toggle = $('.lbcamden-calendar-picker__toggle')
       expect($toggle.length).toEqual(1)
       expect($toggle.text()).toContain('Choose date')
-      
+
       const $dialog = $('.lbcamden-calendar-picker__dialog')
       expect($dialog.attr('hidden')).toBeDefined()
     })
@@ -44,7 +44,7 @@ describe('Calendar Picker Template', () => {
       expect($input.val()).toEqual('15/06/2023')
     })
   })
-  
+
   describe('error state', () => {
     it('renders error message', () => {
       const $ = render('calendar-picker', examples.error)

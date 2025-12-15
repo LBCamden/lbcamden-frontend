@@ -33,21 +33,21 @@ describe('Calendar Picker JS', () => {
     const component = renderExample()
     const toggle = component.querySelector('.lbcamden-calendar-picker__toggle')
     const dialog = component.querySelector('.lbcamden-calendar-picker__dialog')
-    
+
     expect(dialog.hidden).toBe(true)
     expect(toggle.getAttribute('aria-expanded')).toBe('false')
-    
+
     await user.click(toggle)
-    
+
     expect(dialog.hidden).toBe(false)
     expect(toggle.getAttribute('aria-expanded')).toBe('true')
-    
+
     // Ensure focus is within module so key events are captured
     // In real browser, click focuses button. In JSDOM/user-event, verify:
-    toggle.focus() 
-    
+    toggle.focus()
+
     await user.keyboard('{Escape}')
-    
+
     expect(dialog.hidden).toBe(true)
     expect(toggle.getAttribute('aria-expanded')).toBe('false')
   })
@@ -56,10 +56,10 @@ describe('Calendar Picker JS', () => {
     const component = renderExample()
     const toggle = component.querySelector('.lbcamden-calendar-picker__toggle')
     const dialog = component.querySelector('.lbcamden-calendar-picker__dialog')
-    
+
     await user.click(toggle)
     expect(dialog.hidden).toBe(false)
-    
+
     await user.keyboard('{Escape}')
     expect(dialog.hidden).toBe(true)
     expect(document.activeElement).toBe(toggle)
@@ -70,15 +70,15 @@ describe('Calendar Picker JS', () => {
     const toggle = component.querySelector('.lbcamden-calendar-picker__toggle')
     const input = component.querySelector('.lbcamden-calendar-picker__input')
     const dialog = component.querySelector('.lbcamden-calendar-picker__dialog')
-    
+
     await user.click(toggle)
-    
+
     // Find a specific date button, e.g., 20th
     // Since we mocked date to June 2023, 20th exists.
     const dateBtn = component.querySelector('button[data-date*="2023-06-20"]')
-    
+
     await user.click(dateBtn)
-    
+
     expect(input.value).toBe('20/06/2023')
     expect(dialog.hidden).toBe(true)
     expect(document.activeElement).toBe(toggle)
@@ -89,10 +89,10 @@ describe('Calendar Picker JS', () => {
     const toggle = component.querySelector('.lbcamden-calendar-picker__toggle')
     const header = component.querySelector('.lbcamden-calendar-picker__month-year')
     const nextBtn = component.querySelector('.lbcamden-calendar-picker__nav--next')
-    
+
     await user.click(toggle)
     expect(header.textContent).toBe('June 2023')
-    
+
     await user.click(nextBtn)
     expect(header.textContent).toBe('July 2023')
   })
