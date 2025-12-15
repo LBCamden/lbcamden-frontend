@@ -36,7 +36,6 @@
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
     "@storybook/addon-links": "^8.3.6",
-    "@storybook/addon-storysource": "^8.4.7",
     "@storybook/blocks": "^8.3.6",
     "@storybook/html": "^8.3.6",
     "@storybook/html-vite": "^8.3.6",
