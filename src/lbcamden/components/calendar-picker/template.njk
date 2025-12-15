@@ -1,5 +1,5 @@
-{% from "node_modules/govuk-frontend/dist/govuk/components/button/macro.njk" import govukButton %}
-{% from "node_modules/govuk-frontend/dist/govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 <div class="lbcamden-calendar-picker {{ params.classes }}" data-module="lbcamden-calendar-picker" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="lbcamden-calendar-picker__input-wrapper">
