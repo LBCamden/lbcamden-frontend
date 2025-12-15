@@ -34,7 +34,7 @@ const config = {
           storyNamespace: 'full-page-examples',
         }
       ],
-      additionalTemplatePaths: ["examples"],
+      additionalTemplatePaths: ["examples", "node_modules/govuk-frontend/dist"],
     }),
     "@storybook/addon-links",
     "@storybook/addon-essentials",
