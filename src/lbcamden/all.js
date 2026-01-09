@@ -3,6 +3,7 @@ import LBCamdenButton from './components/button/button'
 import LBCamdenGuideContent from './components/guide-content/guide-content'
 import LBCamdenGuideHeader from './components/guide-header/guide-header'
 import LBCamdenHeader from './components/header/header'
+import LBCamdenCalendarPicker from './components/calendar-picker/calendar-picker'
 
 function initAll (options) {
   options = typeof options !== 'undefined' ? options : {}
@@ -30,6 +31,11 @@ function initAll (options) {
   nodeListForEach($LBCamdenGuideHeaders, function ($LBCamdenGuideHeader) {
     new LBCamdenGuideHeader($LBCamdenGuideHeader).init()
   })
+
+  var $LBCamdenCalendarPickers = scope.querySelectorAll('[data-module="lbcamden-calendar-picker"]')
+  nodeListForEach($LBCamdenCalendarPickers, function ($LBCamdenCalendarPicker) {
+    new LBCamdenCalendarPicker($LBCamdenCalendarPicker).init()
+  })
 }
 
 export {
@@ -37,5 +43,6 @@ export {
   LBCamdenGuideContent,
   LBCamdenGuideHeader,
   LBCamdenHeader,
+  LBCamdenCalendarPicker,
   initAll
 }
