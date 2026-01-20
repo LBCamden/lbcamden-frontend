@@ -9,7 +9,7 @@ describe('map-embed', () => {
     it('renders contents', () => {
       const $ = render('map-embed', examples.default)
 
-      expect($('img').attr('alt')).toContain('The map has not loaded.')
+      expect($('img').attr('alt')).toContain('Please enter a valid API key to display the map.')
     })
   })
 })
