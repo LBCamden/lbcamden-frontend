@@ -1,0 +1,41 @@
+{% from "../image/macro.njk" import LBCamdenImage %}
+
+<section class="lbcamden-state-of-the-borough-banner {{ params.classes }}">
+  {% if not params.quoteStyle %}
+    <h2 class="lbcamden-state-of-the-borough-banner__heading--mobile">{{ params.heading }}</h2>
+    {{ LBCamdenImage({
+      classes: "lbcamden-state-of-the-borough-banner__image",
+      sources: params.image.sources,
+      alt: params.image.alt,
+      lazy: params.image.lazy,
+      src: params.image.src,
+      widths: params.image.widths
+    }) }}
+    <div class="lbcamden-state-of-the-borough-banner__content">
+      <h2>{{ params.heading }}</h2>
+      {{ params.shortDescription | safe }}
+
+      {% if params.link and params.linkText %}
+      <a href="{{ params.link }}">
+        {{ params.linkText }}
+      </a>
+      {% endif %}
+    </div>
+
+  {% else %}
+    {{ LBCamdenImage({
+      classes: "lbcamden-state-of-the-borough-banner__imagequote",
+      sources: params.image.sources,
+      alt: params.image.alt,
+      lazy: params.image.lazy,
+      src: params.image.src,
+      widths: params.image.widths
+    }) }}
+
+    <div class="lbcamden-state-of-the-borough-banner__content">
+      <div>
+        <p><strong class="lbcamden-state-of-the-borough-banner__quote-header">{{ params.heading }}</strong><span class="lbcamden-state-of-the-borough-banner__quote-content"> - {{ params.shortDescription }}</span></p>
+      </div>
+    </div>
+   {% endif %} 
+</section>

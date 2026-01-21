@@ -9,6 +9,7 @@ notes:
 {% from "node_modules/govuk-frontend/dist/govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "src/lbcamden/components/related-content-card/macro.njk" import LBCamdenRelatedContentCard %}
 {% from "src/lbcamden/components/image-gallery/macro.njk" import LBCamdenImageGallery %}
+{% from "src/lbcamden/components/state-of-the-borough-banner/macro.njk" import LBCamdenStateOfTheBoroughBanner %}
 
 {% set pageTitle = "Change you name by deed poll" %}
 {% block pageTitle %}{{ pageTitle }} - CAMDEN.GOV.UK{% endblock %}
@@ -65,6 +66,27 @@ notes:
         responsibility for you. Please <a href="https://www.camden.gov.uk/">book an appointment</a> and come with relevant ID and a witness.</p>
 
       <p><a href="https://www.camden.gov.uk/" class="lbcamden-button">Link button</a></p>
+
+      {{ LBCamdenStateOfTheBoroughBanner({
+        "image": {
+          "src": "/example-assets/images/600x400.jpg",
+          "alt": "Image alt text"
+        },
+        "heading": "\"I feel Camden provides good opportunities and, overwhelmings, is a wonderful place to live.\"",
+        "shortDescription": "SOTB general survey",
+        "classes": "govuk-!-margin-bottom-9"
+      }) }}
+
+      {{ LBCamdenStateOfTheBoroughBanner({
+        "image": {
+          "src": "/example-assets/images/150x150.jpg",
+          "alt": "Image alt text"
+        },
+        "heading": "\"I feel Camden provides good opportunities and, overwhelmings, is a wonderful place to live.\"",
+        "shortDescription": "SOTB general survey",
+        "classes": "govuk-!-margin-bottom-9",
+        "quoteStyle": true
+      }) }}
 
       <h3>Children</h3>
 
