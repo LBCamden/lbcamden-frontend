@@ -29,9 +29,6 @@
     aspect-ratio: 3 / 2;
     object-fit: cover;
     flex-grow: 1;
-    @include govuk-media-query($until: "tablet") {
-      margin-bottom: govuk-spacing(5);
-    }
 
     @include govuk-media-query($from: "desktop") {
       // width: calc(100% / 12 * 5);
@@ -87,7 +84,7 @@
     }
 
     @include govuk-media-query($from: "desktop") {
-      @include govuk-responsive-padding(4, "left");
+      @include govuk-responsive-padding(4);
     }
 
     > h2 {
