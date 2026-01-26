@@ -64,6 +64,6 @@ examples:
       shortDescription: Female, 38
       quoteStyle: true  
   - name: classes
-    hidden: true
+    hidden: false
     data:
-      classes: app-engagement-banner--custom-modifier
+      classes: app-state-of-the-borough-banner--custom-modifier

@@ -1,0 +1,43 @@
+{
+    "component": "state-of-the-borough-banner",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "image": {
+                    "src": "/example-assets/images/300x200.jpg",
+                    "alt": "Placeholder image showing its intrinsic dimensions",
+                    "lazy": true
+                },
+                "heading": "Read the full report on This Is Camden",
+                "link": "https://www.camden.gov.uk/",
+                "linkText": "Read the report"
+            },
+            "html": "<section class=\"lbcamden-state-of-the-borough-banner \">\n  \n    \n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image lbcamden-state-of-the-borough-banner__image\"\n    src=\"/example-assets/images/300x200.jpg\"\n    alt=\"Placeholder image showing its intrinsic dimensions\"\n    \n    \n    loading=\"lazy\"\n    style=\"\"\n  />\n</picture>\n\n    <div class=\"lbcamden-state-of-the-borough-banner__content\">\n      <h2>Read the full report on This Is Camden</h2>\n      \n\n      \n      <a href=\"https://www.camden.gov.uk/\">\n        Read the report\n      </a>\n      \n    </div>\n\n  \n</section>",
+            "hidden": false
+        },
+        {
+            "name": "quote",
+            "options": {
+                "image": {
+                    "src": "/example-assets/images/300x300.jpg",
+                    "alt": "Image alt text",
+                    "lazy": true
+                },
+                "heading": "“I feel connected in Camden […] it’s not like I see only white people, I see Black people, Muslim, Indian […] we are all in the community. I don’t feel like I am in a foreign country”",
+                "shortDescription": "Female, 38",
+                "quoteStyle": true
+            },
+            "html": "<section class=\"lbcamden-state-of-the-borough-banner \">\n  \n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image lbcamden-state-of-the-borough-banner__imagequote\"\n    src=\"/example-assets/images/300x300.jpg\"\n    alt=\"Image alt text\"\n    \n    \n    loading=\"lazy\"\n    style=\"\"\n  />\n</picture>\n\n\n    <div class=\"lbcamden-state-of-the-borough-banner__content \">\n      <div>\n        <p><strong class=\"lbcamden-state-of-the-borough-banner__quote-header\">“I feel connected in Camden […] it’s not like I see only white people, I see Black people, Muslim, Indian […] we are all in the community. I don’t feel like I am in a foreign country”</strong><span class=\"lbcamden-state-of-the-borough-banner__quote-content\"> - Female, 38</span></p>\n      </div>\n    </div>\n   \n</section>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "classes": "app-state-of-the-borough-banner--custom-modifier"
+            },
+            "html": "<section class=\"lbcamden-state-of-the-borough-banner app-state-of-the-borough-banner--custom-modifier\">\n  \n    \n    <picture class=\"lbcamden-image__wrapper\">\n  \n\n  \n\n  \n\n  <img\n    class=\"lbcamden-image lbcamden-state-of-the-borough-banner__image\"\n    src=\"\"\n    alt=\"\"\n    \n    \n    \n    style=\"\"\n  />\n</picture>\n\n    <div class=\"lbcamden-state-of-the-borough-banner__content\">\n      <h2></h2>\n      \n\n      \n    </div>\n\n  \n</section>",
+            "hidden": false
+        }
+    ]
+}
