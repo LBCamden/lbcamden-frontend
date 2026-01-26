@@ -56,14 +56,14 @@
   }
 
   &__quote-header {
-    font-weight: bold;
     @include govuk-font(19);
+    font-weight: bold;
     flex-grow: 999;
   }
 
   &__quote-content {
-    font-weight: normal;
     @include govuk-font(19);
+    font-weight: normal;
     flex-grow: 999;
     flex-basis: 0;
   }

@@ -44,41 +44,25 @@ accessibilityCriteria: |
 
 examples:
   - name: default
-    description: Standard application of the engagement banner.
+    description: SOTB banner with image
     data:
       image:
         src: /example-assets/images/300x200.jpg
         alt: Placeholder image showing its intrinsic dimensions
         lazy: true
-        widths:
-          mobile: 100vw
-          desktop: 50vw
-          wide: 25vw
-        sources:
-          - type: image/webp
-            sources:
-              - src: /example-assets/images/300x200.webp
-                width: 300
-              - src: /example-assets/images/600x400.webp
-                width: 600
-              - src: /example-assets/images/1200x800.webp
-                width: 1200
-              - src: /example-assets/images/1800x1200.webp
-                width: 1800
-          - type: image/jpeg
-            sources:
-              - src: /example-assets/images/300x200.jpg
-                width: 300
-              - src: /example-assets/images/600x400.jpg
-                width: 600
-              - src: /example-assets/images/1200x800.jpg
-                width: 1200
-              - src: /example-assets/images/1800x1200.jpg
-                width: 1800
-      heading:  News
-      shortDescription: <p>Find out what’s going on in our community with all the latest news stories, announcements, and events.</p>
-      link: '#'
-      linkText: All news
+      heading:  Read the full report on This Is Camden
+      link: 'https://www.camden.gov.uk/'
+      linkText: Read the report
+  - name: quote
+    description: SOTB quote banner with image
+    data:
+      image:
+        src: /example-assets/images/300x300.jpg
+        alt: Image alt text
+        lazy: true
+      heading:  “I feel connected in Camden […] it’s not like I see only white people, I see Black people, Muslim, Indian […] we are all in the community. I don’t feel like I am in a foreign country”
+      shortDescription: Female, 38
+      quoteStyle: true  
   - name: classes
     hidden: true
     data:
