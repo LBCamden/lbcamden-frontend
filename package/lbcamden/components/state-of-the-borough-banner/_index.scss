@@ -1,0 +1,125 @@
+.lbcamden-state-of-the-borough-banner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  // position: relative;
+  background-color: lbcamden-colour("govuk-bg-bright1-colour");
+
+  @include govuk-media-query($from: "desktop") {
+    flex-direction: row;
+  }
+
+  @include govuk-media-query($until: "desktop") {
+    margin: 0 #{-$govuk-gutter-half};
+    padding: $govuk-gutter-half $govuk-gutter-half 0 $govuk-gutter-half;
+    // padding-bottom: govuk-spacing(7);
+  }
+
+  &__heading--mobile {
+    @include govuk-responsive-margin(5, "bottom");
+
+    @include govuk-media-query($from: "desktop") {
+      display: none !important;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    flex-grow: 1;
+
+    @include govuk-media-query($from: "desktop") {
+      // width: calc(100% / 12 * 5);
+      width: 50%;
+    }
+  }
+
+   &__imagequote {
+    // width: 100%;
+    aspect-ratio: 1 / 1;
+    // object-fit: cover;
+    align-self: stretch;
+    flex-basis: 10rem;
+    flex-grow: 1;
+    display: none;
+
+
+    @include govuk-media-query($from: "mobile") {
+      max-width: 215px;
+    }
+
+    @media screen and (min-width: 840px) {
+      display: block;
+    }
+  }
+
+  &__quote-header {
+    @include govuk-font(19);
+    font-weight: bold;
+    flex-grow: 999;
+  }
+
+  &__quote-content {
+    @include govuk-font(19);
+    font-weight: normal;
+    flex-grow: 999;
+    flex-basis: 0;
+  }
+
+  &__content {
+    flex-grow: 999;
+    flex-basis: 0;
+    align-self: flex-start;
+
+    @include govuk-media-query($from: "desktop") {
+      align-self: center;
+    }
+
+    @include govuk-responsive-padding(3, "bottom");
+    @include govuk-media-query($until: "tablet") {
+      @include govuk-responsive-margin(5, "bottom");
+      @include govuk-responsive-margin(5, "top");
+    }
+
+    @include govuk-media-query($from: "desktop") {
+      @include govuk-responsive-padding(4);
+    }
+
+    > h2 {
+      @include govuk-responsive-margin(2, "bottom");
+      @include govuk-responsive-margin(2, "top");
+      @include govuk-font(19, "bold");
+      @include govuk-media-query($from: "desktop") {
+        @include govuk-font(24, "bold");
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    > p:last-of-type {
+      @include govuk-responsive-margin(2, "bottom");
+    }
+
+    > a:last-child {
+      @extend .lbcamden-link--action;
+    }
+  }
+
+  a {
+    display: inline-block;
+    @include govuk-font(19);
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+}
+
+// h2.lbcamden-state-of-the-borough-banner__heading--mobile {
+//   @include govuk-responsive-margin(3, "top");
+//   @include govuk-font(19, "bold");
+// }

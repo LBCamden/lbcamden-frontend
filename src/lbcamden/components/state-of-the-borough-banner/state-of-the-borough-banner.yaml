@@ -1,0 +1,69 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+  - name: image
+    type: object
+    required: true
+    description: Image configuration as per LBCamden image component
+  - name: heading
+    type: string
+    required: true
+    description: Heading content of banner.
+  - name: shortDescription
+    type: string
+    required: false
+    description: Short description of the linked content
+  - name: link
+    type: string
+    required: true
+    description: URL of linked content
+  - name: linkText
+    type: string
+    required: true
+    description: Text of action link to engagement content
+  - name: lazyImages
+    type: boolean
+    required: false
+    description: If true, lazy-load images
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Links in the component must:
+    - accept focus
+    - be focusable with a keyboard
+    - be usable with a keyboard
+    - indicate when they have focus
+    - change in appearance when touched (in the touch-down state)
+    - change in appearance when hovered
+    - be usable with touch
+    - be usable with voice commands
+    - have visible text
+    - have meaningful text
+
+examples:
+  - name: default
+    description: SOTB banner with image
+    data:
+      image:
+        src: /example-assets/images/300x200.jpg
+        alt: Placeholder image showing its intrinsic dimensions
+        lazy: true
+      heading:  Read the full report on This Is Camden
+      link: 'https://www.camden.gov.uk/'
+      linkText: Read the report
+  - name: quote
+    description: SOTB quote banner with image
+    data:
+      image:
+        src: /example-assets/images/300x300.jpg
+        alt: Image alt text
+        lazy: true
+      heading:  “I feel connected in Camden […] it’s not like I see only white people, I see Black people, Muslim, Indian […] we are all in the community. I don’t feel like I am in a foreign country”
+      shortDescription: Female, 38
+      quoteStyle: true  
+  - name: classes
+    hidden: false
+    data:
+      classes: app-state-of-the-borough-banner--custom-modifier

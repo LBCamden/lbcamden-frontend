@@ -7839,18 +7839,18 @@ hr {
 .govuk-inset-text {
   border-color: #8b9192;
 }
-.lbcamden-link--action, .lbcamden-engagement-banner__content > a:last-child {
+.lbcamden-link--action, .lbcamden-state-of-the-borough-banner__content > a:last-child, .lbcamden-engagement-banner__content > a:last-child {
   position: relative;
   font-weight: 600;
   text-decoration: none;
   padding-right: 15px;
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action, .lbcamden-engagement-banner__content > a:last-child {
+  .lbcamden-link--action, .lbcamden-state-of-the-borough-banner__content > a:last-child, .lbcamden-engagement-banner__content > a:last-child {
     padding-right: 15px;
   }
 }
-.lbcamden-link--action:before, .lbcamden-engagement-banner__content > a:last-child:before {
+.lbcamden-link--action:before, .lbcamden-state-of-the-borough-banner__content > a:last-child:before, .lbcamden-engagement-banner__content > a:last-child:before {
   width: 9px;
   height: 9px;
   transform: rotate(0deg);
@@ -7865,17 +7865,17 @@ hr {
   transform: translateY(-50%);
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:before, .lbcamden-engagement-banner__content > a:last-child:before {
+  .lbcamden-link--action:before, .lbcamden-state-of-the-borough-banner__content > a:last-child:before, .lbcamden-engagement-banner__content > a:last-child:before {
     width: 12px;
     height: 12px;
   }
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:before, .lbcamden-engagement-banner__content > a:last-child:before {
+  .lbcamden-link--action:before, .lbcamden-state-of-the-borough-banner__content > a:last-child:before, .lbcamden-engagement-banner__content > a:last-child:before {
     right: 1px;
   }
 }
-.lbcamden-link--action:hover, .lbcamden-engagement-banner__content > a:hover:last-child, .lbcamden-link--action.\:hover, .lbcamden-engagement-banner__content > a.\:hover:last-child {
+.lbcamden-link--action:hover, .lbcamden-state-of-the-borough-banner__content > a:hover:last-child, .lbcamden-engagement-banner__content > a:hover:last-child, .lbcamden-link--action.\:hover, .lbcamden-state-of-the-borough-banner__content > a.\:hover:last-child, .lbcamden-engagement-banner__content > a.\:hover:last-child {
   text-decoration: underline;
   text-decoration-thickness: max(3px, .1875rem, .12em);
   -webkit-text-decoration-skip-ink: none;
@@ -7883,7 +7883,7 @@ hr {
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
-.lbcamden-link--action:hover:before, .lbcamden-engagement-banner__content > a:hover:last-child:before, .lbcamden-link--action.\:hover:before, .lbcamden-engagement-banner__content > a.\:hover:last-child:before {
+.lbcamden-link--action:hover:before, .lbcamden-state-of-the-borough-banner__content > a:hover:last-child:before, .lbcamden-engagement-banner__content > a:hover:last-child:before, .lbcamden-link--action.\:hover:before, .lbcamden-state-of-the-borough-banner__content > a.\:hover:last-child:before, .lbcamden-engagement-banner__content > a.\:hover:last-child:before {
   width: 9px;
   height: 9px;
   transform: rotate(0deg);
@@ -7894,12 +7894,12 @@ hr {
   transform: translateY(-50%);
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:hover:before, .lbcamden-engagement-banner__content > a:hover:last-child:before, .lbcamden-link--action.\:hover:before, .lbcamden-engagement-banner__content > a.\:hover:last-child:before {
+  .lbcamden-link--action:hover:before, .lbcamden-state-of-the-borough-banner__content > a:hover:last-child:before, .lbcamden-engagement-banner__content > a:hover:last-child:before, .lbcamden-link--action.\:hover:before, .lbcamden-state-of-the-borough-banner__content > a.\:hover:last-child:before, .lbcamden-engagement-banner__content > a.\:hover:last-child:before {
     width: 12px;
     height: 12px;
   }
 }
-.lbcamden-link--action:visited:before, .lbcamden-engagement-banner__content > a:visited:last-child:before, .lbcamden-link--action.\:visited:before, .lbcamden-engagement-banner__content > a.\:visited:last-child:before {
+.lbcamden-link--action:visited:before, .lbcamden-state-of-the-borough-banner__content > a:visited:last-child:before, .lbcamden-engagement-banner__content > a:visited:last-child:before, .lbcamden-link--action.\:visited:before, .lbcamden-state-of-the-borough-banner__content > a.\:visited:last-child:before, .lbcamden-engagement-banner__content > a.\:visited:last-child:before {
   width: 9px;
   height: 9px;
   transform: rotate(0deg);
@@ -7910,18 +7910,18 @@ hr {
   transform: translateY(-50%);
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:visited:before, .lbcamden-engagement-banner__content > a:visited:last-child:before, .lbcamden-link--action.\:visited:before, .lbcamden-engagement-banner__content > a.\:visited:last-child:before {
+  .lbcamden-link--action:visited:before, .lbcamden-state-of-the-borough-banner__content > a:visited:last-child:before, .lbcamden-engagement-banner__content > a:visited:last-child:before, .lbcamden-link--action.\:visited:before, .lbcamden-state-of-the-borough-banner__content > a.\:visited:last-child:before, .lbcamden-engagement-banner__content > a.\:visited:last-child:before {
     width: 12px;
     height: 12px;
   }
 }
-.lbcamden-link--action:focus, .lbcamden-engagement-banner__content > a:focus:last-child, .lbcamden-link--action.\:focus, .lbcamden-engagement-banner__content > a.\:focus:last-child {
+.lbcamden-link--action:focus, .lbcamden-state-of-the-borough-banner__content > a:focus:last-child, .lbcamden-engagement-banner__content > a:focus:last-child, .lbcamden-link--action.\:focus, .lbcamden-state-of-the-borough-banner__content > a.\:focus:last-child, .lbcamden-engagement-banner__content > a.\:focus:last-child {
   color: #0b0c0c;
 }
-.lbcamden-link--action:focus:after, .lbcamden-engagement-banner__content > a:focus:last-child:after, .lbcamden-link--action.\:focus:after, .lbcamden-engagement-banner__content > a.\:focus:last-child:after {
+.lbcamden-link--action:focus:after, .lbcamden-state-of-the-borough-banner__content > a:focus:last-child:after, .lbcamden-engagement-banner__content > a:focus:last-child:after, .lbcamden-link--action.\:focus:after, .lbcamden-state-of-the-borough-banner__content > a.\:focus:last-child:after, .lbcamden-engagement-banner__content > a.\:focus:last-child:after {
   border-color: #0b0c0c;
 }
-.lbcamden-link--action:focus:before, .lbcamden-engagement-banner__content > a:focus:last-child:before, .lbcamden-link--action.\:focus:before, .lbcamden-engagement-banner__content > a.\:focus:last-child:before {
+.lbcamden-link--action:focus:before, .lbcamden-state-of-the-borough-banner__content > a:focus:last-child:before, .lbcamden-engagement-banner__content > a:focus:last-child:before, .lbcamden-link--action.\:focus:before, .lbcamden-state-of-the-borough-banner__content > a.\:focus:last-child:before, .lbcamden-engagement-banner__content > a.\:focus:last-child:before {
   width: 9px;
   height: 9px;
   transform: rotate(0deg);
@@ -7932,15 +7932,15 @@ hr {
   transform: translateY(-50%);
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:focus:before, .lbcamden-engagement-banner__content > a:focus:last-child:before, .lbcamden-link--action.\:focus:before, .lbcamden-engagement-banner__content > a.\:focus:last-child:before {
+  .lbcamden-link--action:focus:before, .lbcamden-state-of-the-borough-banner__content > a:focus:last-child:before, .lbcamden-engagement-banner__content > a:focus:last-child:before, .lbcamden-link--action.\:focus:before, .lbcamden-state-of-the-borough-banner__content > a.\:focus:last-child:before, .lbcamden-engagement-banner__content > a.\:focus:last-child:before {
     width: 12px;
     height: 12px;
   }
 }
-.lbcamden-link--action:focus:hover, .lbcamden-engagement-banner__content > a:focus:hover:last-child, .lbcamden-link--action:focus.\:hover, .lbcamden-engagement-banner__content > a:focus.\:hover:last-child, .lbcamden-link--action.\:focus:hover, .lbcamden-engagement-banner__content > a.\:focus:hover:last-child, .lbcamden-link--action.\:focus.\:hover, .lbcamden-engagement-banner__content > a.\:focus.\:hover:last-child {
+.lbcamden-link--action:focus:hover, .lbcamden-state-of-the-borough-banner__content > a:focus:hover:last-child, .lbcamden-engagement-banner__content > a:focus:hover:last-child, .lbcamden-link--action:focus.\:hover, .lbcamden-state-of-the-borough-banner__content > a:focus.\:hover:last-child, .lbcamden-engagement-banner__content > a:focus.\:hover:last-child, .lbcamden-link--action.\:focus:hover, .lbcamden-state-of-the-borough-banner__content > a.\:focus:hover:last-child, .lbcamden-engagement-banner__content > a.\:focus:hover:last-child, .lbcamden-link--action.\:focus.\:hover, .lbcamden-state-of-the-borough-banner__content > a.\:focus.\:hover:last-child, .lbcamden-engagement-banner__content > a.\:focus.\:hover:last-child {
   text-decoration: none;
 }
-.lbcamden-link--action:active:before, .lbcamden-engagement-banner__content > a:active:last-child:before, .lbcamden-link--action.\:active:before, .lbcamden-engagement-banner__content > a.\:active:last-child:before {
+.lbcamden-link--action:active:before, .lbcamden-state-of-the-borough-banner__content > a:active:last-child:before, .lbcamden-engagement-banner__content > a:active:last-child:before, .lbcamden-link--action.\:active:before, .lbcamden-state-of-the-borough-banner__content > a.\:active:last-child:before, .lbcamden-engagement-banner__content > a.\:active:last-child:before {
   width: 9px;
   height: 9px;
   transform: rotate(0deg);
@@ -7951,7 +7951,7 @@ hr {
   transform: translateY(-50%);
 }
 @media (min-width: 40.0625em) {
-  .lbcamden-link--action:active:before, .lbcamden-engagement-banner__content > a:active:last-child:before, .lbcamden-link--action.\:active:before, .lbcamden-engagement-banner__content > a.\:active:last-child:before {
+  .lbcamden-link--action:active:before, .lbcamden-state-of-the-borough-banner__content > a:active:last-child:before, .lbcamden-engagement-banner__content > a:active:last-child:before, .lbcamden-link--action.\:active:before, .lbcamden-state-of-the-borough-banner__content > a.\:active:last-child:before, .lbcamden-engagement-banner__content > a.\:active:last-child:before {
     width: 12px;
     height: 12px;
   }
@@ -8569,7 +8569,7 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
 .lbcamden-prose pre + h4 {
   padding-top: 10px;
 }
-.lbcamden-prose .lbcamden-link--action, .lbcamden-prose .lbcamden-engagement-banner__content > a:last-child {
+.lbcamden-prose .lbcamden-link--action, .lbcamden-prose .lbcamden-state-of-the-borough-banner__content > a:last-child, .lbcamden-prose .lbcamden-engagement-banner__content > a:last-child {
   text-decoration: none;
 }
 .lbcamden-print-only {
@@ -14388,6 +14388,266 @@ ul > .lbcamden-card-grid__link-wrapper {
   .lbcamden-service-banner {
     display: none;
   }
+}
+.lbcamden-state-of-the-borough-banner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: #f2f5f9;
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner {
+    flex-direction: row;
+  }
+}
+@media (max-width: 47.99em) {
+  .lbcamden-state-of-the-borough-banner {
+    margin: 0 -15px;
+    padding: 15px 15px 0 15px;
+  }
+}
+.lbcamden-state-of-the-borough-banner__heading--mobile {
+  margin-bottom: 20px;
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__heading--mobile {
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__heading--mobile {
+    display: none !important;
+  }
+}
+.lbcamden-state-of-the-borough-banner__image {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  flex-grow: 1;
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__image {
+    width: 50%;
+  }
+}
+.lbcamden-state-of-the-borough-banner__imagequote {
+  aspect-ratio: 1/1;
+  align-self: stretch;
+  flex-basis: 10rem;
+  flex-grow: 1;
+  display: none;
+}
+@media (min-width: 20em) {
+  .lbcamden-state-of-the-borough-banner__imagequote {
+    max-width: 215px;
+  }
+}
+@media screen and (min-width: 840px) {
+  .lbcamden-state-of-the-borough-banner__imagequote {
+    display: block;
+  }
+}
+.lbcamden-state-of-the-borough-banner__quote-header {
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: bold;
+  flex-grow: 999;
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__quote-header {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__quote-header {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__quote-header {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.lbcamden-state-of-the-borough-banner__quote-content {
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: normal;
+  flex-grow: 999;
+  flex-basis: 0;
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__quote-content {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__quote-content {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__quote-content {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.lbcamden-state-of-the-borough-banner__content {
+  flex-grow: 999;
+  flex-basis: 0;
+  align-self: flex-start;
+  padding-bottom: 15px;
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    align-self: center;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 40.0525em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    margin-top: 25px;
+  }
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    padding: 15px;
+  }
+}
+@media (min-width: 48em) and (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content {
+    padding: 20px;
+  }
+}
+.lbcamden-state-of-the-borough-banner__content > h2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    margin-top: 10px;
+  }
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+@media (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-family: "Inter", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.1111111111;
+  }
+}
+@media print and (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 48em) and (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+@media print and (min-width: 48em) {
+  .lbcamden-state-of-the-borough-banner__content > h2 {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+.lbcamden-state-of-the-borough-banner__content p {
+  margin: 0;
+}
+.lbcamden-state-of-the-borough-banner__content > p:last-of-type {
+  margin-bottom: 10px;
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner__content > p:last-of-type {
+    margin-bottom: 10px;
+  }
+}
+.lbcamden-state-of-the-borough-banner a {
+  display: inline-block;
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner a {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-state-of-the-borough-banner a {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .lbcamden-state-of-the-borough-banner a {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.lbcamden-state-of-the-borough-banner a:not(:hover) {
+  text-decoration: none;
 }
 .lbcamden-video-embed {
   position: relative;
