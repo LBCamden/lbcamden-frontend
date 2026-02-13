@@ -1,0 +1,47 @@
+params:
+  - name: headingLevel
+    type: string
+    required: true
+    description: Level of the heading (H2 or H3)
+  - name: heading
+    type: string
+    required: true
+    description: Text of the heading
+  - name: items
+    type: array
+    required: true
+    description: List of items to display on the page
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Text of the item to display on the page
+      - name: href
+        type: string
+        required: true
+        description: link for the item
+
+examples:
+  - name: Example with H2 heading
+    params:
+      headingLevel: H2
+      heading: "On This Page"
+      items:
+        - title: "Introduction"
+          href: "#introduction"
+        - title: "Features"
+          href: "#features"
+        - title: "Contact Information"
+          href: "#contact-information"
+
+  - name: Example with H3 heading
+    params:
+      headingLevel: H3
+      heading: "Contents"
+      items:
+        - title: "Overview"
+          href: "#overview"
+        - title: "Details"
+          href: "#details"
+        - title: "Summary"
+          href: "#summary"
