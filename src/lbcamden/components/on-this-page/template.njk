@@ -1,0 +1,17 @@
+<div class="lbcamden-on-this-page">
+  {% if params.headingLevel is "H2" %}
+    <h2>{{ params.heading }}</h2>
+    {# TODO: do we need visually hidden page title to clarify the section for screen readers? #}
+
+  {% elseif params.headingLevel is "H3" %}
+    <h3>{{ params.heading }}</h3>
+  {% endif %}
+
+  {% if params.items %}
+    <ul class="lbcamden-on-this-page__list lbcamden-list--dash">
+      {% for item in params.items %}
+        <li><a href="{{ item.href }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
