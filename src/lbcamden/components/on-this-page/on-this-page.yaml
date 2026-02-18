@@ -1,12 +1,16 @@
 params:
-  - name: headingLevel
+  - name: titleHeadingLevel
     type: string
     required: true
     description: Level of the heading (H2 or H3)
-  - name: heading
+  - name: titleText
     type: string
     required: true
     description: Text of the heading
+  - name: excludeHeadings
+    type: array
+    required: false
+    description: List of heading levels to exclude from the items list (e.g., ["H2", "H3"])
   - name: items
     type: array
     required: true
@@ -16,7 +20,7 @@ params:
         type: string
         required: true
         description: Text of the item to display on the page
-      - name: href
+      - name: anchor
         type: string
         required: true
         description: link for the item
@@ -24,24 +28,36 @@ params:
 examples:
   - name: Example with H2 heading
     params:
-      headingLevel: H2
-      heading: "On This Page"
+      titleHeadingLevel: H2
+      titleText: "On This Page"
       items:
         - title: "Introduction"
-          href: "#introduction"
+          anchor: "#introduction"
+          headingLevel: H2
+          include: true
         - title: "Features"
-          href: "#features"
+          anchor: "#features"
+          headingLevel: H2
+          include: false
         - title: "Contact Information"
-          href: "#contact-information"
+          anchor: "#contact-information"
+          headingLevel: H2
+          include: true
 
   - name: Example with H3 heading
     params:
-      headingLevel: H3
-      heading: "Contents"
+      titleHeadingLevel: H3
+      titleText: "Contents"
       items:
         - title: "Overview"
-          href: "#overview"
+          anchor: "#overview"
+          headingLevel: H3
+          include: false
         - title: "Details"
-          href: "#details"
+          anchor: "#details"
+          headingLevel: H3
+          include: true
         - title: "Summary"
-          href: "#summary"
+          anchor: "#summary"
+          include: true
+          headingLevel: H2

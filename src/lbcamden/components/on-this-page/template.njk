@@ -1,17 +1,23 @@
+{% if params.excludeHeadings %}
+    {% set excludedHeadings = params.excludeHeadings %}
+    {% else %}
+    {% set excludedHeadings = [] %}
+{% endif %}
+
 <div class="lbcamden-on-this-page">
-  {% if params.headingLevel is "H2" %}
-    <h2>{{ params.heading }}</h2>
-    {# TODO: do we need visually hidden page title to clarify the section for screen readers? #}
+    {% if params.titleHeadingLevel == "H2" %}
+        <h2>{{ params.titleText }}</h2>
+    {% elif params.titleHeadingLevel == "H3" %}
+        <h3>{{ params.titleText }}</h3>
+    {% endif %}
 
-  {% elseif params.headingLevel is "H3" %}
-    <h3>{{ params.heading }}</h3>
-  {% endif %}
-
-  {% if params.items %}
-    <ul class="lbcamden-on-this-page__list lbcamden-list--dash">
-      {% for item in params.items %}
-        <li><a href="{{ item.href }}">{{ item.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+    {% if params.items %}
+        <ul class="lbcamden-on-this-page__list lbcamden-list--dash">
+        {% for item in params.items %}
+            {% if item.include === "true" and item.headingLevel not in excludedHeadings %}
+                <li><a href="#{{ item.anchor }}">{{ item.text }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
 </div>
