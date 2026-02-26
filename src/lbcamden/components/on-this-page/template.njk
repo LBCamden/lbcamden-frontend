@@ -1,4 +1,4 @@
-{% if params.excludeHeadings %}
+{% if params.excludeHeadings|length %}
     {% set excludedHeadings = params.excludeHeadings %}
     {% else %}
     {% set excludedHeadings = [] %}
@@ -7,15 +7,17 @@
 <div class="lbcamden-on-this-page">
     {% if params.titleHeadingLevel == "H2" %}
         <h2>{{ params.titleText }}</h2>
-    {% elif params.titleHeadingLevel == "H3" %}
+    {% elseif params.titleHeadingLevel == "H3" %}
         <h3>{{ params.titleText }}</h3>
     {% endif %}
 
     {% if params.items %}
         <ul class="lbcamden-on-this-page__list lbcamden-list--dash">
         {% for item in params.items %}
-            {% if item.include === "true" and item.headingLevel not in excludedHeadings %}
-                <li><a href="#{{ item.anchor }}">{{ item.text }}</a></li>
+            {% if item.headingLevel not in excludedHeadings %}
+                {% if item.include %}
+                    <li><a href="#{{ item.anchor }}">{{ item.text }}</a></li>
+                {% endif %}
             {% endif %}
         {% endfor %}
         </ul>
