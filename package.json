@@ -27,7 +27,7 @@
     "build:storybook": "storybook build"
   },
   "dependencies": {
-    "govuk-frontend": "^6.0.0"
+    "govuk-frontend": "^6.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
