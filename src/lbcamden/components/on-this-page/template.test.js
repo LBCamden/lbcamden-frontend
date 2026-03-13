@@ -17,7 +17,7 @@ describe('on-this-page', () => {
     it('renders contents', () => {
       const $ = render('on-this-page', examples.default)
 
-      expect($('h2').text()).toContain('On this page')
+      expect($('h2').text()).toContain('On This Page')
     })
   })
 })

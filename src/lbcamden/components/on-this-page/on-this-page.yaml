@@ -26,7 +26,7 @@ params:
         description: link for the item
 
 examples:
-  - name: Example with H2 heading
+  - name: default
     params:
       titleHeadingLevel: H2
       titleText: "On This Page"
