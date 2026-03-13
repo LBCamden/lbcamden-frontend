@@ -9,23 +9,15 @@ const axe = configureAxe({
 
 const { render, getExamples } = require('../../../../lib/jest-helpers')
 
-const examples = getExamples('video-embed')
+const examples = getExamples('on-this-page')
 
-describe('video-embed', () => {
+describe('on-this-page', () => {
   describe('default example', () => {
-    
-    //AW: Disabling accessibility check on this for the moment because Vitest doesn't like the iframe
-    // it('passes accessibility tests', async () => {
-    //   const $ = render('video-embed', examples.default)
-    //   console.log($.html())
-    //   const results = await axe($.html())
-    //   expect(results).toHaveNoViolations()
-    // })
 
     it('renders contents', () => {
-      const $ = render('video-embed', examples.default)
+      const $ = render('on-this-page', examples.default)
 
-      expect($('iframe').attr('title')).toContain('No Excuses Camden Local Offer Quality teaching and learning for ALL learners')
+      expect($('h2').text()).toContain('On this page')
     })
   })
 })
