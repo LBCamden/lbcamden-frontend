@@ -16,7 +16,7 @@ params:
     required: true
     description: List of items to display on the page
     params:
-      - name: title
+      - name: text
         type: string
         required: true
         description: Text of the item to display on the page
@@ -27,37 +27,39 @@ params:
 
 examples:
   - name: default
-    params:
+    data:
       titleHeadingLevel: H2
       titleText: "On This Page"
+      excludeHeadings: ["H3"]
       items:
-        - title: "Introduction"
-          anchor: "#introduction"
+        - text: "Introduction"
+          anchor: "introduction"
           headingLevel: H2
           include: true
-        - title: "Features"
-          anchor: "#features"
+        - text: "Features"
+          anchor: "features"
           headingLevel: H2
           include: false
-        - title: "Contact Information"
-          anchor: "#contact-information"
+        - text: "Contact Information"
+          anchor: "contact-information"
           headingLevel: H2
           include: true
 
   - name: Example with H3 heading
-    params:
+    data:
       titleHeadingLevel: H3
       titleText: "Contents"
+      excludeHeadings: [""]
       items:
-        - title: "Overview"
-          anchor: "#overview"
+        - text: "Overview"
+          anchor: "overview"
           headingLevel: H3
           include: false
-        - title: "Details"
-          anchor: "#details"
+        - text: "Details"
+          anchor: "details"
           headingLevel: H3
           include: true
-        - title: "Summary"
-          anchor: "#summary"
+        - text: "Summary"
+          anchor: "summary"
           include: true
           headingLevel: H2
