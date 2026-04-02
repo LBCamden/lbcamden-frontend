@@ -16,6 +16,12 @@
     color: lbcamden-colour("white");
   }
 
+  .lbcamden-footer__list--utility {
+    @include govuk-media-query($from: desktop) {
+      @include govuk-responsive-margin(3, "left");
+    }
+  }
+
   &__section:last-child {
     margin-bottom: 0;
     padding-bottom: 0;

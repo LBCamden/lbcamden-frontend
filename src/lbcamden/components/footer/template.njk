@@ -59,7 +59,7 @@
     {% endif %}
     <div class="lbcamden-footer__estate">
       <div class="lbcamden-footer__section govuk-grid-column-full">
-        <ul class="lbcamden-footer__list">
+        <ul class="lbcamden-footer__list lbcamden-footer__list--utility">
           {% for item in params.navigationUtility %}
           <li class="lbcamden-footer__list-item">
             <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.text }}</a>
