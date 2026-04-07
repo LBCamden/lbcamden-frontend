@@ -309,6 +309,10 @@ examples:
           text: Navigation item 5
           attributes:
             data-icon: instagram
+        - href: '#6'
+          text: Navigation item 6
+          attributes:
+            data-icon: whatsapp
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
