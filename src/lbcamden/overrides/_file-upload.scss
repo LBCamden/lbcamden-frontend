@@ -1,0 +1,7 @@
+.govuk-file-upload-button {
+  &__instruction {
+    @include govuk-media-query(tablet) {
+      @include govuk-responsive-margin(2, left);
+    }
+  }
+}
