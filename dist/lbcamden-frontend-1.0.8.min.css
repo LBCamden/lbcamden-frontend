@@ -9313,6 +9313,9 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
     margin-left: 10px;
   }
 }
+.govuk-footer, .lbcamden-footer {
+  border-top: none;
+}
 .govuk-link.\:active {
   color: #0b0c0c;
 }
