@@ -1,6 +1,13 @@
 .govuk-file-upload-button {
+  &__pseudo-button.govuk-button {
+    margin-bottom: 0;
+  }
+
   &__instruction {
+    display: none;
+
     @include govuk-media-query(tablet) {
+      display: initial;
       @include govuk-responsive-margin(2, left);
     }
   }
