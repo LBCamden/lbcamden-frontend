@@ -1,0 +1,7 @@
+.govuk-service-navigation {
+    &__container {
+        @include govuk-media-query(tablet) {
+            padding: 15px 0;
+        }
+    }
+}
