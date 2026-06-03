@@ -9527,6 +9527,11 @@ body {
     font-family: "Inter", arial, sans-serif;
   }
 }
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__service-name {
+    padding: 15px 0;
+  }
+}
 .lbcamden-print-only {
   display: none;
 }
