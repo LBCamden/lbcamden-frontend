@@ -1,4 +1,5 @@
 .govuk-service-navigation {
+    &__item,
     &__service-name {
         @include govuk-media-query(tablet) {
             padding: 15px 0;

@@ -9303,23 +9303,6 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
     padding-bottom: 30px;
   }
 }
-.govuk-file-upload-button__pseudo-button.govuk-button {
-  margin-bottom: 0;
-}
-.govuk-file-upload-button__instruction {
-  display: none;
-}
-@media (min-width: 40.0625em) {
-  .govuk-file-upload-button__instruction {
-    display: initial;
-    margin-left: 10px;
-  }
-}
-@media (min-width: 40.0625em) and (min-width: 40.0625em) {
-  .govuk-file-upload-button__instruction {
-    margin-left: 10px;
-  }
-}
 .govuk-footer, .lbcamden-footer {
   border-top: none;
 }
@@ -9527,8 +9510,29 @@ body {
     font-family: "Inter", arial, sans-serif;
   }
 }
+.govuk-file-upload-button__pseudo-button.govuk-button {
+  margin-bottom: 0;
+}
+.govuk-file-upload-button__instruction {
+  display: none;
+}
 @media (min-width: 40.0625em) {
-  .govuk-service-navigation__service-name {
+  .govuk-file-upload-button__instruction {
+    display: initial;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+  .govuk-file-upload-button__instruction {
+    margin-left: 10px;
+  }
+}
+.govuk-file-upload-button__status {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__item, .govuk-service-navigation__service-name {
     padding: 15px 0;
   }
 }

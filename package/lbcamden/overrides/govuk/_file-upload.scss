@@ -11,4 +11,9 @@
       @include govuk-responsive-margin(2, left);
     }
   }
+
+  &__status {
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
 }
