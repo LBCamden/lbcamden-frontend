@@ -11,4 +11,19 @@
   &__all {
     @include govuk-responsive-margin(6, "top");
   }
+
+  & ul.two-column-gallery__links {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      list-style: none;
+    }
+  }
+
+  @include govuk-media-query($until: "tablet") {
+    .lbcamden-card-grid-two-columns {
+      grid-template-columns: 1fr;
+    }
+  }
 }

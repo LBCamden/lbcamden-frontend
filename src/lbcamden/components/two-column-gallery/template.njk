@@ -11,11 +11,11 @@
     </p>
   {% endif %}
 
-  <ul class="lbcamden-card-grid">
+  <ul class="lbcamden-card-grid lbcamden-card-grid-two-columns">
     {% for item in params.items %}
       {% set cardHtml %}
         {% if item.links %}
-          <ul class="lbcamden-list--dash">
+          <ul class="two-column-gallery__links">
             {% for link in item.links %}
               <li><a href="{{link.href}}">{{ link.title }}</a></li>
             {% endfor %}

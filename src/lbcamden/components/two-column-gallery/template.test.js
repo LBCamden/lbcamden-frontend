@@ -9,19 +9,19 @@ const axe = configureAxe({
 
 const { render, getExamples } = require('../../../../lib/jest-helpers')
 
-const examples = getExamples('link-list-gallery')
+const examples = getExamples('two-column-gallery')
 
-describe('link-list-gallery', () => {
+describe('two-column-gallery', () => {
   describe('default example', () => {
     it('passes accessibility tests', async () => {
-      const $ = render('link-list-gallery', examples.default)
+      const $ = render('two-column-gallery', examples.default)
 
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
 
     it('renders contents', () => {
-      const $ = render('link-list-gallery', examples.default)
+      const $ = render('two-column-gallery', examples.default)
 
       expect($('h3').first().text()).toContain('Business rates')
       expect($('a').first().text()).toContain('Business rates explained')
@@ -33,16 +33,16 @@ describe('link-list-gallery', () => {
 
   describe('custom options', () => {
     it('renders classes', () => {
-      const $ = render('link-list-gallery', examples.classes)
+      const $ = render('two-column-gallery', examples.classes)
 
-      const $component = $('.lbcamden-link-list-gallery')
-      expect($component.hasClass('app-link-list-gallery--custom-modifier')).toBeTruthy()
+      const $component = $('.lbcamden-two-column-gallery')
+      expect($component.hasClass('app-two-column-gallery--custom-modifier')).toBeTruthy()
     })
   })
 
   describe('with heading', () => {
     it('renders heading', () => {
-      const $ = render('link-list-gallery', examples['with heading and description'])
+      const $ = render('two-column-gallery', examples['with heading and description'])
 
       const $component = $('h2')
       expect($component.text()).toContain('Contents')
