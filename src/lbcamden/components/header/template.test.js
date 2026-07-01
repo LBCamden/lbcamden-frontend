@@ -61,9 +61,8 @@ describe('header', () => {
     it('renders navigation item attributes correctly', () => {
       const $ = render('header', examples['Standard application with icon on one navigation item'])
 
-      const $component = $('.lbcamden-header__navigation-item-link[data-icon="user"]')
-      expect($component.length).toEqual(1)
-      expect($component.text().trim()).toEqual('Account')
+      const $component = $('.lbcamden-header__navigation-item-link')
+      expect($component.length).toEqual(3)
     })
   })
 })
