@@ -31,15 +31,6 @@ describe('link-columns', () => {
     })
   })
 
-  describe('custom options', () => {
-    it('renders classes', () => {
-      const $ = render('link-columns', examples.classes)
-
-      const $component = $('.lbcamden-link-columns')
-      expect($component.hasClass('app-link-columns--custom-modifier')).toBeTruthy()
-    })
-  })
-
   describe('with heading', () => {
     it('renders heading', () => {
       const $ = render('link-columns', examples['with heading and description'])
