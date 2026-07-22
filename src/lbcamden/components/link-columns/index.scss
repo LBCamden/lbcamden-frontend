@@ -1,4 +1,4 @@
-.two-column-gallery {
+.link-columns {
   h2 {
     @include govuk-responsive-margin(6, "bottom");
   }
@@ -12,12 +12,16 @@
     @include govuk-responsive-margin(6, "top");
   }
 
-  & ul.two-column-gallery__links {
+  & ul.link-columns__links {
     list-style: none;
     padding-left: 0;
 
     > li {
       list-style: none;
+      @include govuk-media-query($from: "tablet") {
+        margin: 12px 0;
+      }
+      margin: 15px 0;
     }
   }
 

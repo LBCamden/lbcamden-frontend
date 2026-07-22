@@ -2,15 +2,15 @@ params:
   - name: classes
     type: string
     required: false
-    description: Classes to add to the gallery.
+    description: Classes to add to the link columns.
   - name: heading
     type: string
     required: false
-    description: Heading content of gallery.
+    description: Heading content of link columns.
   - name: shortDescription
     type: string
     required: false
-    description: Description of gallery content.
+    description: Description of link columns content.
   - name: surround
     type: boolean
     required: false
@@ -18,11 +18,11 @@ params:
   - name: items
     type: array
     required: true
-    description: Cards displayed in the promo gallery
+    description: Cards displayed in the link columns
   - name: items
     type: array
     required: true
-    description: Cards displayed in the link list gallery
+    description: Cards displayed in the link columns
     params:
       - name: title
         type: string
@@ -44,7 +44,7 @@ params:
 previewLayout: full-width
 examples:
   - name: default
-    description: Default application of a link list gallery.
+    description: Default application of link columns.
     data:
       items: &card_items
         - title: Business rates
@@ -98,13 +98,13 @@ examples:
               href: "#"
 
   - name: with heading and description
-    description: Application of a link list gallery with heading and description.
+    description: Application of link columns with heading and description.
     data:
       heading: Contents
       shortDescription: Find relevant services, support and things to do.
       items: *card_items
   - name: with surround
-    description: Application of a link list gallery with surround content.
+    description: Application of link columns with surround content.
     data:
       items: *card_items
       surround: true

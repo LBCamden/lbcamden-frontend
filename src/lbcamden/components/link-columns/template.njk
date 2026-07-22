@@ -1,12 +1,12 @@
 {% from "../card/macro.njk" import LBCamdenCard %}
 
-<div class="two-column-gallery {% if params.surround %}lbcamden-surround {% endif %} {{params.classes}}">
+<div class="link-columns {% if params.surround %}lbcamden-surround {% endif %} {{params.classes}}">
   {% if params.heading %}
     <h2>{{ params.heading }}</h2>
   {% endif %}
 
   {% if params.shortDescription %}
-    <p class="two-column-gallery__description">
+    <p class="link-columns__description">
       {{ params.shortDescription }}
     </p>
   {% endif %}
@@ -15,7 +15,7 @@
     {% for item in params.items %}
       {% set cardHtml %}
         {% if item.links %}
-          <ul class="two-column-gallery__links">
+          <ul class="link-columns__links">
             {% for link in item.links %}
               <li><a href="{{link.href}}">{{ link.title }}</a></li>
             {% endfor %}
