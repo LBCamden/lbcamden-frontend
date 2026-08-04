@@ -112,6 +112,12 @@ $lbcamden-hero-max-width: 1440px;
     flex-shrink: .3;
   }
 
+  &--homepage &__links {
+    .lbcamden-list--dash li {
+      @include govuk-font(19);
+    }
+  }
+
   &__engagement {
     h2 {
       @extend %govuk-heading-m;
