@@ -313,7 +313,7 @@
     background-color: lbcamden-colour("black");
   }
 
-&__navigation-item-link:has(.lbcamden-header__navigation-item-link-icon),
+&__navigation-item-link:not([hidden]):has(.lbcamden-header__navigation-item-link-icon),
 &__navigation-item-link-inner:has(.lbcamden-header__navigation-item-link-icon) {
   display: flex;
   align-items: center;
