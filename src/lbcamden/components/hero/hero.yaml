@@ -53,6 +53,7 @@ examples:
   - name: default
     description: Standard application of hero image
     data:
+      classes: lbcamden-hero--homepage
       welcomeMessage: Welcome to Camden.gov.uk
       image:
         src: /example-assets/images/hero.jpg
@@ -80,6 +81,7 @@ examples:
   - name: engagement
     description: Application of hero image with engagement content
     data:
+      classes: lbcamden-hero--homepage
       welcomeMessage: Welcome to Camden.gov.uk
       image:
         src: /example-assets/images/hero-pride.png
