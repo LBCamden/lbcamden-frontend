@@ -24,6 +24,7 @@ concurrency:
 jobs:
   prepare:
     if: github.ref == 'refs/heads/main'
+    environment: release-management
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main with tags
