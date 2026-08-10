@@ -1,0 +1,72 @@
+name: Publish release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version merged to main (for example, 1.2.3)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: npm-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    environment: npm-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Validate version and unpublished state
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          node -e "if (!/^\\d+\\.\\d+\\.\\d+$/.test(process.argv[1])) throw new Error('Version must be X.Y.Z')" "$VERSION"
+          node -e "const fs=require('fs'); const expected=process.argv[1]; for (const file of ['package.json','src/lbcamden/package.json','package/package.json']) { const actual=JSON.parse(fs.readFileSync(file)).version; if (actual !== expected) throw new Error(file+' has '+actual+', expected '+expected) }" "$VERSION"
+          if git rev-parse "v$VERSION" >/dev/null 2>&1; then echo "v$VERSION already exists" >&2; exit 1; fi
+          if npm view "lbcamden-frontend@$VERSION" version >/dev/null 2>&1; then echo "lbcamden-frontend@$VERSION is already published" >&2; exit 1; fi
+
+      - run: npm ci
+      - run: npm run test:run
+
+      - name: Verify committed build artifacts
+        run: |
+          npm run build
+          npm run test:build:run
+          git diff --exit-code -- dist package
+
+      - name: Publish package to npm
+        working-directory: package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --provenance
+
+      - name: Create GitHub release artifact
+        env:
+          VERSION: ${{ inputs.version }}
+        run: git archive -o "release-v$VERSION.zip" HEAD:dist
+
+      - name: Tag and create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          git tag "v$VERSION" -m "LBCamden Frontend release v$VERSION"
+          git push origin "v$VERSION"
+          gh release create "v$VERSION" "release-v$VERSION.zip" --title "LBCamden Frontend v$VERSION" --generate-notes --latest

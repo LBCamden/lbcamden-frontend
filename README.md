@@ -121,54 +121,19 @@ to run build and upload all components to Chromatic for testing. Follow the inst
 LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
 
 ### Setting up a new release
-1. Ensure you are checked into `main` and have pulled the latest version
-2. Create a new release branch, using the following command, where `X.Y.Z` is your next release following semver versioning
-```console
-git checkout -b release-X.Y.Z
-```
-3. Update both `package.json` and `src/lbcamden/package.json` to ensure `version` matches `X.Y.Z`
-4. Build the latest `package` and `dist` directories for this release, using the command
-```console
-npm run build
-```
-5. Once built, use the following command to verify the output matches the required format. 
-```console
-npm run test:build
-```
-6. Add the newly created files and commit the changes. Push the new release branch back to Github using the command
-```console
-git push origin release-X.Y.Z
-```
-and create a new PR for this release branch. Update all existing PRs to use this branch as their new target.
+Run the **Prepare release** workflow from the `main` branch and choose a patch, minor, or major increment. The workflow uses the latest `vX.Y.Z` tag to calculate the next sequential version, updates all package versions, runs tests, builds `package/` and `dist/`, and opens a `release-X.Y.Z` pull request into `main`.
+
+Only one release should be prepared at a time. After the branch is created, retarget any pull requests intended for this release from `main` to `release-X.Y.Z`. Configure a fine-grained `RELEASE_TOKEN` repository secret with contents and pull-request write access. Using this token ensures that the branch push and pull request trigger the review workflows; events created with the default `GITHUB_TOKEN` do not trigger further workflow runs.
 
 ### How to package up ahead of release
-To build the package ahead of release, with the release branch checked out, use the following command.
-```console
-npm run build
-```
-This script collects and parses the files required for each component, and bundles the supporting CSS and JS files. The output of this process is placed in the `/package` directory which is included in the repository source control.
+Pull requests and pushes to a release branch run the existing **Tests**, **Sass**, and **Chromatic** workflows. The **Release candidate** workflow additionally checks that the branch and package versions match, runs Vitest, rebuilds the package, validates build output, and fails if committed `package/` or `dist/` artifacts are stale.
 
-Once built, use the following command to verify the output matches the required format. 
-```console
-npm run test:build
-```
-
-If any changes were created by the `npm run build` command, commit these after testing the build.
-
-Visual regression tests should also be run against changes prior to releasing an update.
-
-Once all tests have completed, merge the `release-x.y.z` branch into the `main` branch.
+Review the generated files and Chromatic results in the release pull request. Require these checks through branch protection, obtain normal approvals, then merge `release-X.Y.Z` into `main`. Do not edit generated files by hand.
 
 ### How to release
-To publish an updated LBCamden package, use the following command when checked into the `main` branch. 
-```console
-npm run release
-npm run release:publish
-```
+After the release pull request is merged, run **Publish release** from `main` and enter the exact `X.Y.Z` version. The workflow verifies versions and artifacts, refuses an existing Git or npm version, publishes the package with npm provenance, creates the `vX.Y.Z` tag, uploads a zipped `dist/`, and creates the latest GitHub release with generated notes.
 
-The process will require authentication into the LBCamden npm organisation.
-
-Once released, you must update the [Releases section](https://github.com/LBCamden/lbcamden-frontend/releases) of the LBCamden Frontend repository and set the current release to "Latest".
+Configure an `npm-release` GitHub environment with required reviewers and an `NPM_TOKEN` secret that can publish to the LBCamden npm organisation. Restrict deployment branches to `main`. If npm trusted publishing is configured for this workflow, the token can be removed from the workflow after verifying the npm organisation setup.
 
 ## Example pages and patterns
 In addition to individual components, it is possible to create and amend full page and pattern examples that are displayed within Storybook. Full page and pattern examples are stored within the `examples` directory.

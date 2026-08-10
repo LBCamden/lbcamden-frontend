@@ -1,0 +1,94 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: Semantic version increment
+        required: true
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main with tags
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Calculate next sequential version
+        id: version
+        env:
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          latest_tag="$(git tag --list 'v[0-9]*' --sort=-v:refname | head -n 1)"
+          current="${latest_tag#v}"
+          root_version="$(node -p "require('./package.json').version")"
+          if [ -z "$current" ]; then current="$root_version"; fi
+          if [ "$root_version" != "$current" ]; then
+            echo "package.json ($root_version) must match the latest tag ($current)" >&2
+            exit 1
+          fi
+          next="$(node -e "const [a,b,c]=process.argv[1].split('.').map(Number); const t=process.argv[2]; console.log(t==='major' ? [a+1,0,0].join('.') : t==='minor' ? [a,b+1,0].join('.') : [a,b,c+1].join('.'))" "$current" "$RELEASE_TYPE")"
+          if git show-ref --verify --quiet "refs/heads/release-$next" || git ls-remote --exit-code --heads origin "release-$next" >/dev/null 2>&1; then
+            echo "release-$next already exists" >&2
+            exit 1
+          fi
+          echo "version=$next" >> "$GITHUB_OUTPUT"
+          echo "branch=release-$next" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update versions and build release artifacts
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          npm version "$VERSION" --no-git-tag-version
+          npm pkg set "version=$VERSION" --prefix src/lbcamden
+          npm run test:run
+          npm run build
+          npm run test:build:run
+
+      - name: Commit and push release branch
+        env:
+          BRANCH: ${{ steps.version.outputs.branch }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git switch -c "$BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json src/lbcamden/package.json package dist
+          git commit -m "Build package for $VERSION"
+          git push --set-upstream origin "$BRANCH"
+
+      - name: Open release pull request
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          BRANCH: ${{ steps.version.outputs.branch }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh pr create --base main --head "$BRANCH" --title "Release $VERSION" --body "Automated release candidate for v$VERSION. Before merging, review the required Tests, Sass, Chromatic, and Release candidate checks."
