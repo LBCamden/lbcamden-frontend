@@ -1,2 +1,8 @@
 *   @alexwybraniec
 *   @chrisdevereux
+
+.github/workflows/ @LBCamden/release-managers
+bin/ @LBCamden/release-managers
+package.json @LBCamden/release-managers
+package-lock.json @LBCamden/release-managers
+src/lbcamden/package.json @LBCamden/release-managers
