@@ -1,0 +1,41 @@
+name: Release candidate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - 'release-*'
+      - 'gh-action-build'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: startsWith(github.head_ref || github.ref_name, 'release-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Check release version
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          expected="${BRANCH#release-}"
+          node -e "const fs=require('fs'); const expected=process.argv[1]; for (const file of ['package.json','src/lbcamden/package.json','package/package.json']) { const actual=JSON.parse(fs.readFileSync(file)).version; if (actual !== expected) throw new Error(file+' has '+actual+', expected '+expected) }" "$expected"
+
+      - run: npm ci
+      - run: npm run test:run
+
+      - name: Rebuild and validate package
+        run: |
+          npm run build
+          npm run test:build:run
+          git diff --exit-code -- dist package
