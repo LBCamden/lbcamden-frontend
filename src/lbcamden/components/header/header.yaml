@@ -70,6 +70,28 @@ examples:
           text: 'Sign in / Register'
           classes: 'lbcamden-header__navigation-item-link--sign-in'
 
+  - name: Standard application with icon on one navigation item
+    description: Standard application of the header element with an icon on one navigation item.
+    data:
+      searchItems:
+        - href: '#1'
+          text: 'Popular search 1'
+        - href: '#2'
+          text: 'Popular search 2'
+        - href: '#3'
+          text: 'Popular search 3'
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+
+        - href: '#2'
+          text: Navigation item 2
+
+        - href: '#3'
+          text: 'Account'
+          attributes:
+            data-icon: 'user'
+
   - name: Nested navigation
     description: Standard application of the header element with nested nav items.
     data:

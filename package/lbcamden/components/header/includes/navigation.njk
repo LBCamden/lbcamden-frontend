@@ -23,9 +23,9 @@
         <li
           class="lbcamden-header__navigation-item{% if menuItem.subItems %} lbcamden-header__navigation-item--with-children{% endif %}">
           <div class="lbcamden-header__navigation-toggle-wrapper govuk-clearfix">
-            <a class="lbcamden-header__navigation-item-link{% if menuItem.classes %} {{ menuItem.classes }}{% endif %}"
-               href="{{ menuItem.href }}">
+            <a class="lbcamden-header__navigation-item-link{% if menuItem.classes %} {{ menuItem.classes }}{% endif %}" href="{{ menuItem.href }}">
               <span class="lbcamden-header__navigation-item-link-inner">
+                <span class="lbcamden-header__navigation-item-link-icon" {%- for attribute, value in menuItem.attributes %} {{ attribute }}="{{ value }}"{% endfor %}></span>
                 {{ menuItem.text }}
               </span>
             </a>
