@@ -13,6 +13,7 @@ Use Node `20.10.x` and install dependencies with `npm install`.
 - `npm start`: run Storybook locally on port 6006.
 - `npm run build`: build both `dist/` and the publishable `package/`.
 - `npm run build:storybook`: create a static Storybook build.
+- `npm run changeset`: record the version impact and release note for a publishable change.
 - `npm test`: run Vitest in watch mode.
 - `npm run test:run`: run the complete test suite once (preferred for CI checks).
 - `npm run test:build:run`: validate generated package and distribution output.

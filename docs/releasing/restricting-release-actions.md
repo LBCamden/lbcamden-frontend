@@ -109,9 +109,9 @@ Open **Settings → Actions → General**:
 
 1. Ask a non-release manager to run **Prepare release** from `main`.
 2. Confirm the job pauses at `release-management` and only an authorised reviewer can approve it.
-3. Approve it and verify that the release branch, pull request, and downstream checks are created.
+3. Choose a patch, minor, or major increment, approve the job, and verify that Changesets updates the calculated version and changelog before creating the release branch, pull request, and downstream checks.
 4. Review and merge the release pull request.
 5. Run **Publish release** from `main` and confirm it pauses at `npm-release`.
-6. Confirm publishing proceeds only after an authorised reviewer checks the version, commit, build results, and release notes.
+6. Confirm publishing proceeds only after an authorised reviewer checks the version, commit, Changesets release notes, and build results.
 
 Protected environments control privileged execution. Branch rules and CODEOWNERS prevent contributors from weakening those controls through an unreviewed workflow change.

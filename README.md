@@ -104,6 +104,16 @@ By default, Vitest will run in [watch mode](https://vitest.dev/guide/features#wa
 > [!TIP]
 > VS Code users may find the [Vitest extension](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) useful while developing changes.
 
+### How to add a changeset
+
+Pull requests that change the published package must include a Changesets release note. Run:
+
+```console
+npm run changeset
+```
+
+Select `lbcamden-frontend`, choose `patch`, `minor`, or `major`, and add a concise user-facing summary. Documentation, test-only, and internal tooling changes do not require a changeset. Pending changesets are consumed when a release branch is prepared and are used to update the package version and `CHANGELOG.md`.
+
 ### How to run visual regression tests
 LBCamden Frontend implements visual regression tests for each component, pattern and full page example using [Chromatic](https://www.chromatic.com/). Visual regression testing is only available to internal Camden users, or via personal Chromatic accounts. It is necessary to create a Chromatic project and [retrieve the project token](https://www.chromatic.com/docs/faq/find-project-token/) to be able to run the tests.
 
@@ -121,7 +131,7 @@ to run build and upload all components to Chromatic for testing. Follow the inst
 LBCamden Frontend is published as a package via [npm](https://www.npmjs.com/). This repository contains scripts to build and release updates. Only authorised internal users can release a new version of the package.
 
 ### Setting up a new release
-Run the **Prepare release** workflow from the `main` branch and choose a patch, minor, or major increment. The workflow uses the latest `vX.Y.Z` tag to calculate the next sequential version, updates all package versions, runs tests, builds `package/` and `dist/`, and opens a `release-X.Y.Z` pull request into `main`.
+Run the **Prepare release** workflow from the `main` branch and choose a patch, minor, or major increment. The workflow calculates the next sequential version from the latest `vX.Y.Z` tag. Changesets consumes the pending release notes, updates `package.json` and `CHANGELOG.md`, and must produce the calculated version. The workflow then synchronises the source and generated package versions, runs tests, builds `package/` and `dist/`, and opens a `release-X.Y.Z` pull request into `main`.
 
 Only one release should be prepared at a time. After the branch is created, retarget any pull requests intended for this release from `main` to `release-X.Y.Z`. Configure a fine-grained `RELEASE_TOKEN` repository secret with contents and pull-request write access. Using this token ensures that the branch push and pull request trigger the review workflows; events created with the default `GITHUB_TOKEN` do not trigger further workflow runs.
 
@@ -131,7 +141,7 @@ Pull requests and pushes to a release branch run the existing **Tests**, **Sass*
 Review the generated files and Chromatic results in the release pull request. Require these checks through branch protection, obtain normal approvals, then merge `release-X.Y.Z` into `main`. Do not edit generated files by hand.
 
 ### How to release
-After the release pull request is merged, run **Publish release** from `main` and enter the exact `X.Y.Z` version. The workflow verifies versions and artifacts, refuses an existing Git or npm version, publishes the package with npm provenance, creates the `vX.Y.Z` tag, uploads a zipped `dist/`, and creates the latest GitHub release with generated notes.
+After the release pull request is merged, run **Publish release** from `main` and enter the exact `X.Y.Z` version. The workflow verifies versions and artifacts and refuses an existing Git or npm version. It stages the Changesets configuration inside the generated package, excluding that configuration from the npm tarball, then Changesets publishes with npm provenance and creates the `vX.Y.Z` tag. Finally, the workflow uploads a zipped `dist/` and creates the latest GitHub release with generated notes.
 
 Configure an `npm-release` GitHub environment with required reviewers and an `NPM_TOKEN` secret that can publish to the LBCamden npm organisation. Restrict deployment branches to `main`. If npm trusted publishing is configured for this workflow, the token can be removed from the workflow after verifying the npm organisation setup.
 

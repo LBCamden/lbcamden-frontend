@@ -51,11 +51,18 @@ jobs:
           npm run test:build:run
           git diff --exit-code -- dist package
 
-      - name: Publish package to npm
-        working-directory: package
+      - name: Publish and tag package with Changesets
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public --provenance
+          NPM_CONFIG_PROVENANCE: true
+          VERSION: ${{ inputs.version }}
+        run: |
+          mkdir -p package/.changeset
+          cp .changeset/config.json package/.changeset/config.json
+          node -e "require('fs').writeFileSync('package/.npmignore', '.changeset\n')"
+          cd package
+          ../node_modules/.bin/changeset publish
+          git rev-parse "v$VERSION"
 
       - name: Create GitHub release artifact
         env:
@@ -67,6 +74,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
         run: |
-          git tag "v$VERSION" -m "LBCamden Frontend release v$VERSION"
           git push origin "v$VERSION"
           gh release create "v$VERSION" "release-v$VERSION.zip" --title "LBCamden Frontend v$VERSION" --generate-notes --latest

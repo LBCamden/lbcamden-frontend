@@ -12,6 +12,8 @@
     "build": "vite build --config vite.config.dist.mjs && vite build --config vite.config.package.mjs",
     "build:package": "vite build --config vite.config.package.mjs",
     "build:dist": "vite build --config vite.config.dist.mjs",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
     "release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "release:publish": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
     "test": "vitest --config ./vitest.config.js",
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
+    "@changesets/cli": "^2.31.1",
     "@chromatic-com/storybook": "^3.2.3",
     "@rollup/plugin-yaml": "^4.1.2",
     "@storybook/addon-essentials": "^8.3.6",
