@@ -1,0 +1,33 @@
+.link-columns {
+  h2 {
+    @include govuk-responsive-margin(6, "bottom");
+  }
+
+  &__description {
+    @include govuk-responsive-margin(6, "bottom");
+    margin-top: govuk-spacing(-2);
+  }
+
+  &__all {
+    @include govuk-responsive-margin(6, "top");
+  }
+
+  & ul.link-columns__links {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      list-style: none;
+      @include govuk-media-query($from: "tablet") {
+        margin: 12px 0;
+      }
+      margin: 15px 0;
+    }
+  }
+
+  @include govuk-media-query($until: "tablet") {
+    .lbcamden-card-grid-two-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+}
