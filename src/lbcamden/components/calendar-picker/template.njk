@@ -1,0 +1,67 @@
+
+
+<div class="lbcamden-calendar-picker {{ params.classes }}" data-module="lbcamden-calendar-picker" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="lbcamden-calendar-picker__input-wrapper">
+    <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %}">
+      {% if params.label %}
+      <label class="govuk-label {{ params.label.classes }}" for="{{ params.id }}">
+        {{ params.label.text }}
+      </label>
+      {% endif %}
+      {% if params.hint %}
+      <div id="{{ params.id }}-hint" class="govuk-hint {{ params.hint.classes }}">
+        {{ params.hint.text }}
+      </div>
+      {% endif %}
+      {% if params.errorMessage %}
+      <p id="{{ params.id }}-error" class="govuk-error-message {{ params.errorMessage.classes }}">
+        <span class="govuk-visually-hidden">Error:</span> {{ params.errorMessage.text }}
+      </p>
+      {% endif %}
+      <input class="govuk-input lbcamden-calendar-picker__input {{ params.inputClasses }} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" type="text" value="{{ params.value | default('') }}" autocomplete="off" placeholder="dd/mm/yyyy" {%- if params.hint or params.errorMessage %} aria-describedby="{%- if params.hint %}{{ params.id }}-hint{% endif %} {%- if params.errorMessage %}{{ params.id }}-error{% endif %}"{% endif %}>
+    </div>
+    
+    <button type="button" class="lbcamden-calendar-picker__toggle" aria-label="Choose date" aria-expanded="false" aria-controls="{{ params.id }}-dialog">
+      <span class="lbcamden-calendar-picker__toggle-icon" aria-hidden="true">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.25 2.375H13.8542V0.791667H12.2708V2.375H6.72917V0.791667H5.14583V2.375H4.75C3.87167 2.375 3.16667 3.08833 3.16667 3.95833V16.625C3.16667 17.5033 3.87167 18.2083 4.75 18.2083H14.25C15.1208 18.2083 15.8333 17.5033 15.8333 16.625V3.95833C15.8333 3.08833 15.1208 2.375 14.25 2.375ZM14.25 16.625H4.75V7.125H14.25V16.625ZM14.25 5.54167H4.75V3.95833H14.25V5.54167Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="lbcamden-calendar-picker__toggle-text">Choose date</span>
+    </button>
+  </div>
+
+  <div id="{{ params.id }}-dialog" class="lbcamden-calendar-picker__dialog" role="dialog" aria-modal="true" aria-label="Choose date" hidden>
+    <div class="lbcamden-calendar-picker__dialog-content">
+      <div class="lbcamden-calendar-picker__header">
+        <button type="button" class="lbcamden-calendar-picker__nav lbcamden-calendar-picker__nav--prev" aria-label="Previous month">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <h2 class="lbcamden-calendar-picker__month-year" id="{{ params.id }}-month-year" aria-live="polite"></h2>
+        <button type="button" class="lbcamden-calendar-picker__nav lbcamden-calendar-picker__nav--next" aria-label="Next month">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <table class="lbcamden-calendar-picker__grid" role="grid" aria-labelledby="{{ params.id }}-month-year">
+        <thead class="lbcamden-calendar-picker__weekdays">
+          <tr>
+            <th scope="col" aria-label="Monday">Mo</th>
+            <th scope="col" aria-label="Tuesday">Tu</th>
+            <th scope="col" aria-label="Wednesday">We</th>
+            <th scope="col" aria-label="Thursday">Th</th>
+            <th scope="col" aria-label="Friday">Fr</th>
+            <th scope="col" aria-label="Saturday">Sa</th>
+            <th scope="col" aria-label="Sunday">Su</th>
+          </tr>
+        </thead>
+        <tbody class="lbcamden-calendar-picker__dates">
+          <!-- Dates will be populated by JS -->
+        </tbody>
+      </table>
+      <div class="lbcamden-calendar-picker__actions">
+        <button type="button" class="govuk-button govuk-button--secondary lbcamden-calendar-picker__cancel">Cancel</button>
+        <button type="button" class="govuk-button lbcamden-calendar-picker__today">Today</button>
+      </div>
+    </div>
+  </div>
+</div>

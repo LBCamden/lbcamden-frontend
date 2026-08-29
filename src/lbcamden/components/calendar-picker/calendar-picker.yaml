@@ -1,0 +1,55 @@
+params:
+- name: classes
+  type: string
+  description: Classes to add to the container
+- name: attributes
+  type: object
+  description: HTML attributes to add to the container
+- name: id
+  type: string
+  description: The ID of the input element
+- name: name
+  type: string
+  description: The name of the input element
+- name: value
+  type: string
+  description: Initial value of the input
+- name: label
+  type: object
+  description: params for the govukLabel component
+- name: hint
+  type: object
+  description: params for the govukHint component
+- name: errorMessage
+  type: object
+  description: params for the govukErrorMessage component
+
+examples:
+- name: default
+  isDefault: true
+  data:
+    id: "date-picker-default"
+    name: "date-picker-default"
+    label:
+      text: "When will the event happen?"
+    hint:
+      text: "For example, 15/06/2023"
+
+- name: withValues
+  data:
+    id: "date-picker-values"
+    name: "date-picker-values"
+    value: "15/06/2023"
+    label:
+      text: "When will the event happen?"
+    hint:
+      text: "For example, 15 06 2023"
+
+- name: error
+  data:
+    id: "date-picker-error"
+    name: "date-picker-error"
+    label:
+      text: "When will the event happen?"
+    errorMessage:
+      text: "The date must be in the future"
