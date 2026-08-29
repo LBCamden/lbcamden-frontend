@@ -1,3 +1,5 @@
+{% from "../logo/macro.njk" import LBCamdenLogo %}
+
 {# Set classes for this component #}
 {%- set classNames = "lbcamden-button" -%}
 
@@ -38,6 +40,17 @@ treat it as an interactive element - without this it will be
   {% set classNames = classNames + " lbcamden-button--start" %}
 {% endif %}
 
+{% if params.isChatButton %}
+  {% set iconHtml %}
+    {{ LBCamdenLogo({
+      icon: true,
+      classes: 'lbcamden-button__logo-icon',
+      fillColour: 'ffffff'
+    }) }}
+  {% endset %}
+  {% set classNames = classNames + " lbcamden-button--chat" %}
+{% endif %}
+
 {#- Define common attributes that we can use across all element types #}
 
 {%- set commonAttributes %} class="{{ classNames }}" data-module="lbcamden-button"{% for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}{% endset %}
@@ -50,16 +63,18 @@ treat it as an interactive element - without this it will be
 
 {%- if element == 'a' %}
 <a href="{{ params.href if params.href else '#' }}" role="button" draggable="false" {{- commonAttributes | safe }}>
+  {% if params.isChatButton %}{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}} {% endif %}
   {{ params.html | safe if params.html else params.text }}
 {# Indentation is intentional to output HTML nicely #}
-{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
+  {% if not params.isChatButton %}{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}{% endif %}
 </a>
 
 {%- elseif element == 'button' %}
 <button {%- if params.value %} value="{{ params.value }}"{% endif %}{%- if params.type %} type="{{ params.type }}"{% endif %} {{- buttonAttributes | safe }} {{- commonAttributes | safe }}>
+  {% if params.isChatButton %}{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}} {% endif %}
   {{ params.html | safe if params.html else params.text }}
 {# Indentation is intentional to output HTML nicely #}
-{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
+  {% if not params.isChatButton %}{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}{% endif %}
 </button>
 
 {%- elseif element == 'input' %}
