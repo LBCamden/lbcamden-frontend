@@ -51,7 +51,7 @@
 
   &__view-all {
     @include govuk-responsive-margin(6, "top");
-    @include govuk-typography-responsive(19);
+    @include govuk-font(19);
     display: inline-block;
     font-weight: 500;
   }

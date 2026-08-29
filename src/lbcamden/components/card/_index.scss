@@ -27,10 +27,10 @@
   }
 
   &__content {
-    @include govuk-typography-responsive(16);
+    @include govuk-font(16);
 
     * {
-      @include govuk-typography-responsive(16);
+      @include govuk-font(16);
     }
   }
 
