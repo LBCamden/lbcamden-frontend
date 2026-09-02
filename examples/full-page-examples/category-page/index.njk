@@ -5,7 +5,6 @@ notes:
 {% extends "examples/layouts/full-page-example.njk" %}
 
 {% from "src/lbcamden/components/card/macro.njk" import LBCamdenCard %}
-{% from "src/lbcamden/components/more-in/macro.njk" import LBCamdenMoreIn %}
 {% from "src/lbcamden/components/link-list-gallery/macro.njk" import LBCamdenLinkListGallery %}
 {% from "src/lbcamden/components/promo-gallery/macro.njk" import LBCamdenPromoGallery %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
@@ -36,7 +35,7 @@ notes:
   </div>
 
   {{ LBCamdenPromoGallery({
-    "heading": "Popular",
+    "heading": "Most visited",
     "classes": "govuk-!-margin-bottom-9",
     "items": [
       {
@@ -70,7 +69,7 @@ notes:
     <div class="govuk-grid-column-full">
 
       {{ LBCamdenLinkListGallery({
-        "heading": "Contents",
+        "heading": "In this section",
         "items": [
           {
             "title": "Business rates",
@@ -180,16 +179,4 @@ notes:
       }) }}
     </div>
   </div>
-{% endblock %}
-
-{% block postContent %}
-  {{ LBCamdenMoreIn({
-    heading: 'Related',
-    relatedContent: [
-      { href: "#", text: "Business rates" },
-      { href: "#", text: "Apply for business and trade parking permits" },
-      { href: "#", text: "Advertisements and signs and planning permission" },
-      { href: "#", text: "Estate agent boards and planning permission" }
-    ]
-  }) }}
 {% endblock %}
