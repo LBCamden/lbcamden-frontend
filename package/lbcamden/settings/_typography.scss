@@ -31,12 +31,12 @@ $govuk-typography-scale: map-merge(
     ),
     36: (
       null: (
-        font-size: 24px,
-        line-height: 25px,
+        font-size: 27px,
+        line-height: 30px,
       ),
       tablet: (
-        font-size: 32px,
-        line-height: 36px,
+        font-size: 36px,
+        line-height: 40px,
       ),
       print: (
         font-size: 24pt,
@@ -59,8 +59,8 @@ $govuk-typography-scale: map-merge(
     ),
     24: (
       null: (
-        font-size: 18px,
-        line-height: 20px,
+        font-size: 21px,
+        line-height: 25px,
       ),
       tablet: (
         font-size: 24px,
@@ -73,8 +73,8 @@ $govuk-typography-scale: map-merge(
     ),
     19: (
       null: (
-        font-size: 16px,
-        line-height: 20px,
+        font-size: 19px,
+        line-height: 25px,
       ),
       tablet: (
         font-size: 19px,
@@ -87,8 +87,8 @@ $govuk-typography-scale: map-merge(
     ),
     16: (
       null: (
-        font-size: 14px,
-        line-height: 16px,
+        font-size: 16px,
+        line-height: 20px,
       ),
       tablet: (
         font-size: 16px,

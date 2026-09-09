@@ -30,6 +30,7 @@ notes:
 {% block content %}
 
 {{ LBCamdenHero({
+  classes: "lbcamden-hero--homepage",
   welcomeMessage: "Welcome to Camden.gov.uk",
   image: {
     src: "/example-assets/images/hero.jpg"
@@ -66,27 +67,35 @@ notes:
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {{ LBCamdenPromoGallery({
-      "heading": "Popular",
+      "heading": "Council services",
       "showAllHref": "#",
       "showAllLabel": "All services",
       "classes": "govuk-!-margin-bottom-9",
-      "panel": true,
+      "surround": true,
       "items": [
         {
-          "title": "Housing Repairs",
-          "href": "/full-page-examples/category-page"
+          "title": "Parking",
+          "href": "https://www.camden.gov.uk/parking"
         },
         {
-          "title": "Leaseholder and Freeholders",
-          "href": "/full-page-examples/category-page"
+          "title": "Council Tax",
+          "href": "https://www.camden.gov.uk/council-tax"
         },
         {
-          "title": "Bid for a property",
-          "href": "/full-page-examples/category-page"
+          "title": "Benefits and financial support",
+          "href": "https://www.camden.gov.uk/benefits-support"
         },
         {
-          "title": "Apply for council housing",
-          "href": "/full-page-examples/category-page"
+          "title": "Housing",
+          "href": "https://www.camden.gov.uk/housing"
+        },
+        {
+          "title": "Recycling and rubbish",
+          "href": "https://www.camden.gov.uk/recycling-and-rubbish"
+        },
+        {
+          "title": "Make a payment",
+          "href": "https://www.camden.gov.uk/pay"
         }
       ]
     }) }}
@@ -98,7 +107,6 @@ notes:
   "heading": "Get more from Camden",
   "shortDescription": "Find relevant services, support and things to do.",
   "classes": "govuk-!-margin-bottom-9",
-  "cardType": "alt-1",
   "items": [
     {
       "title": "Starting school",
@@ -126,65 +134,9 @@ notes:
         "alt": "Image alt text"
       },
       "shortDescription": "Find out what’s happening in Camden, host a street party, or get support over the summer holidays."
-    },
-    {
-      "title": "Starting school",
-      "href": "#4",
-      "image": {
-        "src": "/example-assets/images/1200x800.webp",
-        "alt": "Image alt text"
-      },
-      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
     }
   ]
 }) }}
-
-{{ LBCamdenCardGallery({
-  "heading": "Get more from Camden",
-  "shortDescription": "Find relevant services, support and things to do.",
-  "classes": "govuk-!-margin-bottom-9",
-  "surround": true,
-  "cardType": "alt-1",
-  "items": [
-    {
-      "title": "Starting school",
-      "href": "#1",
-      "image": {
-        "src": "/example-assets/images/1200x800.webp",
-        "alt": "Image alt text"
-      },
-      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
-    },
-    {
-      "title": "Moving into Camden",
-      "href": "#2",
-      "image": {
-        "src": "/example-assets/images/1200x800.webp",
-        "alt": "Image alt text"
-      },
-      "shortDescription": "Check off what you need to do when you move into Camden, and what to do if you need support."
-    },
-    {
-      "title": "Making the most of Summer",
-      "href": "#3",
-      "image": {
-        "src": "/example-assets/images/1200x800.webp",
-        "alt": "Image alt text"
-      },
-      "shortDescription": "Find out what’s happening in Camden, host a street party, or get support over the summer holidays."
-    },
-    {
-      "title": "Starting school",
-      "href": "#4",
-      "image": {
-        "src": "/example-assets/images/1200x800.webp",
-        "alt": "Image alt text"
-      },
-      "shortDescription": "Get help and support for you and your child, apply for a new school place, find term dates and school travel."
-    }
-  ]
-}) }}
-
 
 {{ LBCamdenEngagementBanner({
   "image": {

@@ -159,8 +159,8 @@ ol {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   margin-top: 0;
   margin-bottom: 15px;
@@ -287,8 +287,8 @@ ol > li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
   display: block;
   margin-top: 0;
   margin-bottom: 25px;
@@ -308,8 +308,8 @@ ol > li {
 @media (min-width: 40.0625em) {
   .lbcamden-hero__content h2, .lbcamden-prose h2, .govuk-heading-l, .lbcamden-card.lbcamden-related-content-card h2, .lbcamden-card--related.lbcamden-card > h2,
   .lbcamden-card--related.lbcamden-card > h3, h2 {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -331,8 +331,8 @@ ol > li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   display: block;
   margin-top: 0;
   margin-bottom: 15px;
@@ -375,8 +375,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: block;
   margin-top: 0;
   margin-bottom: 15px;
@@ -466,8 +466,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   display: block;
   margin-bottom: 5px;
   color: #505a5f;
@@ -499,8 +499,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: block;
   color: #505a5f;
 }
@@ -527,8 +527,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -565,8 +565,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -603,8 +603,8 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -1040,8 +1040,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875;
+  font-size: 1.1875rem;
+  line-height: 1;
   display: inline-block;
   max-width: 100%;
   margin-top: 5px;
@@ -1343,8 +1343,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   color: #0b0c0c;
   display: block;
   margin-bottom: 0;
@@ -1414,8 +1414,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   position: relative;
   z-index: 1;
   margin-bottom: 9px;
@@ -1606,8 +1606,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   display: inline;
 }
 .govuk-frontend-supported .govuk-accordion__section-toggle {
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   font-weight: 400;
   color: #003e90;
 }
@@ -1655,8 +1655,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-back-link {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   font-family: "Inter", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1770,8 +1770,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #0b0c0c;
   margin-top: 15px;
   margin-bottom: 10px;
@@ -1928,8 +1928,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875;
+  font-size: 1.1875rem;
+  line-height: 1;
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -2066,7 +2066,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 .govuk-button--start {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.3125rem;
   line-height: 1;
   display: inline-flex;
   min-height: auto;
@@ -2101,8 +2101,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: block;
   margin-top: 0;
   margin-bottom: 15px;
@@ -2131,8 +2131,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-bottom: 15px;
   color: #505a5f;
 }
@@ -2167,8 +2167,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   display: block;
   margin-bottom: 5px;
@@ -2218,13 +2218,13 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-label--l {
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
 }
 @media (min-width: 40.0625em) {
   .govuk-label--l {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -2234,8 +2234,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-label--m {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
 }
 @media (min-width: 40.0625em) {
   .govuk-label--m {
@@ -2260,7 +2260,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.1875rem;
   line-height: 1.25;
   box-sizing: border-box;
   display: block;
@@ -2357,8 +2357,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   box-sizing: border-box;
   display: table;
@@ -2412,13 +2412,13 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-fieldset__legend--l {
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
 }
 @media (min-width: 40.0625em) {
   .govuk-fieldset__legend--l {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -2428,8 +2428,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-fieldset__legend--m {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
 }
 @media (min-width: 40.0625em) {
   .govuk-fieldset__legend--m {
@@ -2540,8 +2540,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   width: 40px;
   margin-bottom: 10px;
@@ -2662,8 +2662,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   box-sizing: border-box;
   width: 100%;
   height: 2.5rem;
@@ -2765,8 +2765,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -2853,8 +2853,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   margin-bottom: 25px;
   display: block;
@@ -3005,8 +3005,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   padding: 15px;
   margin-bottom: 35px;
@@ -3048,8 +3048,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   outline: 3px solid #ffde02;
 }
 .govuk-error-summary__title {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 15px;
@@ -3220,8 +3220,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   max-width: 100%;
   margin-left: -5px;
@@ -3271,8 +3271,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   padding-top: 30px;
   padding-bottom: 20px;
   border-top: 1px solid #8B9192;
@@ -3479,7 +3479,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1;
   border-bottom: 10px solid #ffffff;
   color: #ffffff;
@@ -3544,7 +3544,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   margin-right: 0;
 }
 .govuk-header__product-name {
-  font-size: 1.125rem;
+  font-size: 1.3125rem;
   line-height: 1;
   font-weight: 400;
   display: inline-table;
@@ -3631,8 +3631,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 .govuk-header__service-name {
   display: inline-block;
   margin-bottom: 10px;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
 }
 @media (min-width: 40.0625em) {
@@ -3685,8 +3685,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   position: absolute;
   top: 13px;
   right: 0;
@@ -3799,8 +3799,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-header__navigation-item a {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -3849,8 +3849,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   padding: 15px;
   margin-top: 25px;
@@ -3902,8 +3902,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-bottom: 35px;
   border: 5px solid #ae094e;
   background-color: #ae094e;
@@ -3943,8 +3943,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-notification-banner__title {
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   font-weight: 600;
   margin: 0;
   padding: 0;
@@ -3985,8 +3985,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   margin-bottom: 0;
 }
 .govuk-notification-banner__heading {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
   margin: 0 0 15px;
   padding: 0;
@@ -4093,8 +4093,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   box-sizing: border-box;
   position: relative;
   min-width: 45px;
@@ -4280,8 +4280,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
   box-sizing: border-box;
   margin-bottom: 15px;
   padding: 35px;
@@ -4295,8 +4295,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
 }
 @media (min-width: 40.0625em) {
   .govuk-panel {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -4375,8 +4375,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: inline-block;
   max-width: 160px;
   margin-top: -2px;
@@ -4462,8 +4462,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #0b0c0c;
   display: table;
   margin: 0;
@@ -4491,8 +4491,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-phase-banner__content__tag {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   margin-right: 10px;
 }
 @media (min-width: 40.0625em) {
@@ -4608,8 +4608,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   width: 40px;
   margin-bottom: 10px;
@@ -4711,7 +4711,7 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.1875rem;
   line-height: 1.25;
   box-sizing: border-box;
   min-width: 11.5em;
@@ -4868,8 +4868,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media print {
   .govuk-service-navigation__service-name {
@@ -4912,8 +4912,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: inline-flex;
   margin: 10px 0;
   padding: 0;
@@ -4985,8 +4985,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin: 0;
   margin-bottom: 15px;
   padding: 0;
@@ -5031,8 +5031,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   text-decoration: underline;
   text-decoration-thickness: max(1px, .0625rem);
   text-underline-offset: 0.1578em;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   display: block;
   padding: 10px 15px;
 }
@@ -5111,8 +5111,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   margin: 0;
   margin-bottom: 25px;
@@ -5308,8 +5308,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   margin: 5px 20px 10px 0;
 }
@@ -5341,8 +5341,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-summary-card__actions {
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   font-weight: 600;
   display: flex;
   flex-wrap: wrap;
@@ -5420,8 +5420,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #0b0c0c;
   width: 100%;
   margin-bottom: 25px;
@@ -5505,13 +5505,13 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-table__caption--l {
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
 }
 @media (min-width: 40.0625em) {
   .govuk-table__caption--l {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -5521,8 +5521,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-table__caption--m {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
 }
 @media (min-width: 40.0625em) {
   .govuk-table__caption--m {
@@ -5543,8 +5543,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media (min-width: 40.0625em) {
   .govuk-tabs {
@@ -5574,8 +5574,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-tabs__title {
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   font-weight: 400;
   color: #0b0c0c;
   margin-bottom: 10px;
@@ -5776,8 +5776,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-top: 0;
   margin-bottom: 25px;
   padding: 0;
@@ -5863,8 +5863,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-bottom: 25px;
   font-weight: 600;
   position: relative;
@@ -7247,13 +7247,13 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-\!-font-size-36 {
-  font-size: 1.5rem !important;
-  line-height: 1.0416666667 !important;
+  font-size: 1.6875rem !important;
+  line-height: 1.1111111111 !important;
 }
 @media (min-width: 40.0625em) {
   .govuk-\!-font-size-36 {
-    font-size: 2rem !important;
-    line-height: 1.125 !important;
+    font-size: 2.25rem !important;
+    line-height: 1.1111111111 !important;
   }
 }
 @media print {
@@ -7279,8 +7279,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-\!-font-size-24 {
-  font-size: 1.125rem !important;
-  line-height: 1.1111111111 !important;
+  font-size: 1.3125rem !important;
+  line-height: 1.1904761905 !important;
 }
 @media (min-width: 40.0625em) {
   .govuk-\!-font-size-24 {
@@ -7295,8 +7295,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-\!-font-size-19 {
-  font-size: 1rem !important;
-  line-height: 1.25 !important;
+  font-size: 1.1875rem !important;
+  line-height: 1.3157894737 !important;
 }
 @media (min-width: 40.0625em) {
   .govuk-\!-font-size-19 {
@@ -7311,8 +7311,8 @@ hr, .lbcamden-prose hr, .govuk-section-break--visible {
   }
 }
 .govuk-\!-font-size-16 {
-  font-size: 0.875rem !important;
-  line-height: 1.1428571429 !important;
+  font-size: 1rem !important;
+  line-height: 1.25 !important;
 }
 @media (min-width: 40.0625em) {
   .govuk-\!-font-size-16 {
@@ -7961,8 +7961,8 @@ hr {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -8099,8 +8099,8 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   font-family: "Inter", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media print {
   .lbcamden-link--promo-alt, .lbcamden-card--promo-link--alt {
@@ -8206,8 +8206,8 @@ h2 .lbcamden-link--promo, h2 .lbcamden-card--promo-link--alt, h2 .lbcamden-card-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   position: relative;
 }
 @media (min-width: 40.0625em) {
@@ -9138,8 +9138,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875;
+  font-size: 1.1875rem;
+  line-height: 1;
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -9408,7 +9408,7 @@ body {
 .lbcamden-button--start,
 .govuk-button--start {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1875rem;
   line-height: 1;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -9815,8 +9815,8 @@ body {
   }
 }
 .lbcamden-campaign-promo-gallery__card a {
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
   line-height: 116.667%;
 }
@@ -9866,8 +9866,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
 }
 @media (min-width: 40.0625em) {
   .lbcamden-card > h2,
@@ -9908,8 +9908,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media print {
   .lbcamden-card p, .lbcamden-card__description {
@@ -9918,46 +9918,46 @@ body {
 }
 @media (min-width: 40.0625em) {
   .lbcamden-card p, .lbcamden-card__description {
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print {
   .lbcamden-card p, .lbcamden-card__description {
     font-size: 14pt;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 }
 .lbcamden-card__content {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media (min-width: 40.0625em) {
   .lbcamden-card__content {
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print {
   .lbcamden-card__content {
     font-size: 14pt;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 }
 .lbcamden-card__content * {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
 }
 @media (min-width: 40.0625em) {
   .lbcamden-card__content * {
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print {
   .lbcamden-card__content * {
     font-size: 14pt;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 }
 .lbcamden-card .lbcamden-list--dash a:not(:hover) {
@@ -10094,8 +10094,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media print {
   .lbcamden-card--popular {
@@ -10155,8 +10155,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.1428571429;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
@@ -10329,8 +10329,8 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 .lbcamden-card-gallery__view-all {
   margin-top: 25px;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   display: inline-block;
   font-weight: 500;
 }
@@ -10356,8 +10356,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   padding-bottom: 15px;
   margin-bottom: 35px;
   border-bottom: 1px solid #8b9192;
@@ -10402,8 +10402,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-bottom: 5px;
 }
 @media print {
@@ -10442,8 +10442,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   padding-top: 12px;
   padding-bottom: 15px;
   margin-top: 2px;
@@ -10483,8 +10483,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   margin: 0;
   color: #ffffff;
 }
@@ -10510,8 +10510,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #ffffff;
 }
 @media print {
@@ -10542,8 +10542,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #ffffff;
 }
 @media print {
@@ -10599,8 +10599,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.0416666667;
+  font-size: 1.6875rem;
+  line-height: 1.1111111111;
 }
 @media print {
   .lbcamden-emergency-banner--homepage .lbcamden-emergency-banner__content > h2 {
@@ -10609,8 +10609,8 @@ ul > .lbcamden-card-grid__link-wrapper {
 }
 @media (min-width: 40.0625em) {
   .lbcamden-emergency-banner--homepage .lbcamden-emergency-banner__content > h2 {
-    font-size: 2rem;
-    line-height: 1.125;
+    font-size: 2.25rem;
+    line-height: 1.1111111111;
   }
 }
 @media print {
@@ -10724,8 +10724,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   max-width: 100vw;
   padding: 0;
   overflow-x: hidden;
@@ -10792,8 +10792,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media print {
   .lbcamden-footer a {
@@ -10911,8 +10911,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media print {
   .lbcamden-footer__estate .lbcamden-footer__list-item a {
@@ -10951,8 +10951,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   flex-direction: column;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -11297,8 +11297,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
 }
 @media print {
@@ -11487,8 +11487,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 .lbcamden-header--estate .lbcamden-header__navigation-item-link:not(:hover):not(:active), .lbcamden-header--estate .lbcamden-header__search-item-link:not(:hover):not(:active) {
   text-decoration: none;
@@ -11529,8 +11529,8 @@ ul > .lbcamden-card-grid__link-wrapper {
     font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 0.875rem;
-    line-height: 1.1428571429;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 }
 @media print and (min-width: 48em) {
@@ -11608,8 +11608,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   font-family: "Inter", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media print {
   .lbcamden-header--estate .lbcamden-header__navigation-top-toggle-button, .lbcamden-header--estate .lbcamden-header__search-toggle-button {
@@ -11821,8 +11821,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   margin: 0;
 }
 @media print {
@@ -11860,8 +11860,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   font-weight: 600;
   cursor: pointer;
   /* stylelint-disable */
@@ -12064,8 +12064,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   /* stylelint-disable */
   /* stylelint-enable */
 }
@@ -12537,8 +12537,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   font-weight: 600;
 }
 @media print {
@@ -12727,8 +12727,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 .lbcamden-header--site-navigation .lbcamden-header__navigation-item-link:not(:hover):not(:active), .lbcamden-header--site-navigation .lbcamden-header__search-item-link:not(:hover):not(:active) {
   text-decoration: none;
@@ -12769,8 +12769,8 @@ ul > .lbcamden-card-grid__link-wrapper {
     font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 0.875rem;
-    line-height: 1.1428571429;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 }
 @media print and (min-width: 48em) {
@@ -12848,8 +12848,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   font-family: "Inter", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media print {
   .lbcamden-header--site-navigation .lbcamden-header__navigation-top-toggle-button, .lbcamden-header--site-navigation .lbcamden-header__search-toggle-button {
@@ -13061,8 +13061,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   margin: 0;
 }
 @media print {
@@ -13100,8 +13100,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   font-weight: 600;
   cursor: pointer;
   /* stylelint-disable */
@@ -13304,8 +13304,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   /* stylelint-disable */
   /* stylelint-enable */
 }
@@ -13872,6 +13872,31 @@ ul > .lbcamden-card-grid__link-wrapper {
 .lbcamden-hero__links {
   flex-shrink: 0.3;
 }
+.lbcamden-hero--homepage .lbcamden-hero__links .lbcamden-list--dash li {
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+@media print {
+  .lbcamden-hero--homepage .lbcamden-hero__links .lbcamden-list--dash li {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .lbcamden-hero--homepage .lbcamden-hero__links .lbcamden-list--dash li {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .lbcamden-hero--homepage .lbcamden-hero__links .lbcamden-list--dash li {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
 .lbcamden-hero__engagement {
   max-width: 610px;
   flex-grow: 1;
@@ -14017,8 +14042,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   }
 }
 .lbcamden-info-callout__subheading {
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   margin-bottom: 15px;
 }
 @media (min-width: 40.0625em) {
@@ -14042,8 +14067,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   margin-bottom: 0;
 }
 .lbcamden-info-callout__content, .lbcamden-info-callout__content p, .lbcamden-info-callout__link {
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 @media (min-width: 40.0625em) {
   .lbcamden-info-callout__content, .lbcamden-info-callout__content p, .lbcamden-info-callout__link {
@@ -14374,8 +14399,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.2857142857;
+  font-size: 1rem;
+  line-height: 1.125;
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #8b9192;
@@ -14442,8 +14467,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   margin: 0;
   margin-bottom: 5px;
   padding: 0;
@@ -14470,8 +14495,8 @@ ul > .lbcamden-card-grid__link-wrapper {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 1rem;
+  line-height: 1.25;
   margin: 0;
   margin-bottom: 5px;
   padding: 0;
