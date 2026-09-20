@@ -23,14 +23,14 @@
 
   p,
   &__description {
-    @include govuk-font(16);
+    @include govuk-font(19);
   }
 
   &__content {
-    @include govuk-typography-responsive(16);
+    @include govuk-typography-responsive(19);
 
     * {
-      @include govuk-typography-responsive(16);
+      @include govuk-typography-responsive(19);
     }
   }
 

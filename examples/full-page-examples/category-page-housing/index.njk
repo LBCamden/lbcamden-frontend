@@ -5,7 +5,6 @@ notes:
 {% extends "examples/layouts/full-page-example.njk" %}
 
 {% from "src/lbcamden/components/card/macro.njk" import LBCamdenCard %}
-{% from "src/lbcamden/components/more-in/macro.njk" import LBCamdenMoreIn %}
 {% from "src/lbcamden/components/link-list-gallery/macro.njk" import LBCamdenLinkListGallery %}
 {% from "src/lbcamden/components/promo-gallery/macro.njk" import LBCamdenPromoGallery %}
 {% from "node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
@@ -35,7 +34,7 @@ notes:
   </div>
 
   {{ LBCamdenPromoGallery({
-    "heading": "Popular",
+    "heading": "Most visited",
     "classes": "govuk-!-margin-bottom-9",
     "items": [
       {
@@ -60,7 +59,7 @@ notes:
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       {{ LBCamdenLinkListGallery({
-        "heading": "Contents",
+        "heading": "In this section",
         "items": [
           {
             title: "Council tenants",
@@ -219,20 +218,4 @@ notes:
       }) }}
     </div>
   </div>
-{% endblock %}
-
-{% block afterContent %}
-
-  {{ LBCamdenMoreIn({
-    heading: 'More in Housing',
-    relatedContent: [
-      { href: "#", text: "Tenant and Resident Associations (TRAs) in Camden" },
-      { href: "#", text: "Apply for a garage, parking space, or a shed" },
-      { href: "#", text: "Building Safety Fund" },
-      { href: "#", text: "Estate walkabouts" },
-      { href: "#", text: "Camden housing and property residents panel" },
-      { href: "#", text: "Electricity meters in locked communal areas" }
-    ]
-  }) }}
-
 {% endblock %}
