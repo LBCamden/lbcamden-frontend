@@ -48,6 +48,7 @@ $button-shadow-size: $govuk-border-width-form-element;
   vertical-align: top;
   cursor: pointer;
   -webkit-appearance: none;
+  appearance: none;
 
   @include govuk-media-query($from: tablet) {
     width: auto;
@@ -242,6 +243,61 @@ $button-shadow-size: $govuk-border-width-form-element;
         background-color: $govuk-warning-button-colour;
         box-shadow: $lbcamden-focus-box-shadow;
       }
+    }
+  }
+
+  &--theme {
+    background-color: $lbcamden-brand-colour;
+    color: lbcamden-colour("white");
+
+    &:link,
+    &.\:link,
+    &:visited,
+    &.\:visited,
+    &:active,
+    &.\:active,
+    &:hover,
+    &.\:hover {
+      color: lbcamden-colour("white");
+    }
+
+    &:hover,
+    &.\:hover {
+      background-color: $lbcamden-brand-colour;
+      filter: brightness(90%);
+
+      &[disabled] {
+        background-color: $lbcamden-brand-colour;
+        filter: none;
+      }
+    }
+
+    &:focus,
+    &.\:focus {
+      color: lbcamden-colour("govuk-focus-text-colour");
+      background-color: lbcamden-colour("govuk-focus-colour");
+
+      &:hover,
+      &.\:hover {
+        border-color: lbcamden-colour("govuk-focus-colour");
+        color: lbcamden-colour("white");
+        background-color: $lbcamden-brand-colour;
+        box-shadow: $lbcamden-focus-box-shadow;
+      }
+    }
+  }
+
+
+  &--chat {
+    @extend .lbcamden-button--theme;
+    display: inline-flex;
+    align-items: center;
+
+    .lbcamden-button__logo-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: govuk-spacing(2);
+      flex-shrink: 0;
     }
   }
 

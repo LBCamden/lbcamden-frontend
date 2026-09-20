@@ -152,6 +152,26 @@ examples:
     text: Warning button
     href: '/'
     classes: lbcamden-button--warning
+- name: Theme
+  description: A button using the main theme colour
+  data:
+    name: Theme
+    text: Theme button
+    classes: lbcamden-button--theme
+- name: Theme link
+  description: A link button using the main theme colour
+  data:
+    name: Theme
+    text: Theme button
+    href: '/'
+    classes: lbcamden-button--theme
+- name: Chat with us
+  description: A button for chatting with the council
+  data:
+    name: Chat
+    text: Chat with us
+    isChatButton: true
+    classes: lbcamden-button--theme
 
 # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
 - name: attributes
