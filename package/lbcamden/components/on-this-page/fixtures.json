@@ -1,0 +1,69 @@
+{
+    "component": "on-this-page",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "titleHeadingLevel": "H2",
+                "titleText": "On This Page",
+                "excludeHeadings": [
+                    "H3"
+                ],
+                "items": [
+                    {
+                        "text": "Introduction",
+                        "anchor": "introduction",
+                        "headingLevel": "H2",
+                        "include": true
+                    },
+                    {
+                        "text": "Features",
+                        "anchor": "features",
+                        "headingLevel": "H2",
+                        "include": false
+                    },
+                    {
+                        "text": "Contact Information",
+                        "anchor": "contact-information",
+                        "headingLevel": "H2",
+                        "include": true
+                    }
+                ]
+            },
+            "html": "<div class=\"lbcamden-on-this-page\">\n    \n        <h2>On This Page</h2>\n    \n\n    \n        <ul class=\"lbcamden-on-this-page__list lbcamden-list--dash\">\n        \n            \n                \n                    <li><a href=\"#introduction\">Introduction</a></li>\n                \n            \n        \n            \n                \n            \n        \n            \n                \n                    <li><a href=\"#contact-information\">Contact Information</a></li>\n                \n            \n        \n        </ul>\n    \n</div>",
+            "hidden": false
+        },
+        {
+            "name": "Example with H3 heading",
+            "options": {
+                "titleHeadingLevel": "H3",
+                "titleText": "Contents",
+                "excludeHeadings": [
+                    ""
+                ],
+                "items": [
+                    {
+                        "text": "Overview",
+                        "anchor": "overview",
+                        "headingLevel": "H3",
+                        "include": false
+                    },
+                    {
+                        "text": "Details",
+                        "anchor": "details",
+                        "headingLevel": "H3",
+                        "include": true
+                    },
+                    {
+                        "text": "Summary",
+                        "anchor": "summary",
+                        "include": true,
+                        "headingLevel": "H2"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbcamden-on-this-page\">\n    \n        <h3>Contents</h3>\n    \n\n    \n        <ul class=\"lbcamden-on-this-page__list lbcamden-list--dash\">\n        \n            \n                \n            \n        \n            \n                \n                    <li><a href=\"#details\">Details</a></li>\n                \n            \n        \n            \n                \n                    <li><a href=\"#summary\">Summary</a></li>\n                \n            \n        \n        </ul>\n    \n</div>",
+            "hidden": false
+        }
+    ]
+}

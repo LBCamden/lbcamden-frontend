@@ -1,0 +1,65 @@
+params:
+  - name: titleHeadingLevel
+    type: string
+    required: true
+    description: Level of the heading (H2 or H3)
+  - name: titleText
+    type: string
+    required: true
+    description: Text of the heading
+  - name: excludeHeadings
+    type: array
+    required: false
+    description: List of heading levels to exclude from the items list (e.g., ["H2", "H3"])
+  - name: items
+    type: array
+    required: true
+    description: List of items to display on the page
+    params:
+      - name: text
+        type: string
+        required: true
+        description: Text of the item to display on the page
+      - name: anchor
+        type: string
+        required: true
+        description: link for the item
+
+examples:
+  - name: default
+    data:
+      titleHeadingLevel: H2
+      titleText: "On This Page"
+      excludeHeadings: ["H3"]
+      items:
+        - text: "Introduction"
+          anchor: "introduction"
+          headingLevel: H2
+          include: true
+        - text: "Features"
+          anchor: "features"
+          headingLevel: H2
+          include: false
+        - text: "Contact Information"
+          anchor: "contact-information"
+          headingLevel: H2
+          include: true
+
+  - name: Example with H3 heading
+    data:
+      titleHeadingLevel: H3
+      titleText: "Contents"
+      excludeHeadings: [""]
+      items:
+        - text: "Overview"
+          anchor: "overview"
+          headingLevel: H3
+          include: false
+        - text: "Details"
+          anchor: "details"
+          headingLevel: H3
+          include: true
+        - text: "Summary"
+          anchor: "summary"
+          include: true
+          headingLevel: H2

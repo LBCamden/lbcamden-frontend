@@ -1,0 +1,40 @@
+[
+    {
+        "name": "titleHeadingLevel",
+        "type": "string",
+        "required": true,
+        "description": "Level of the heading (H2 or H3)"
+    },
+    {
+        "name": "titleText",
+        "type": "string",
+        "required": true,
+        "description": "Text of the heading"
+    },
+    {
+        "name": "excludeHeadings",
+        "type": "array",
+        "required": false,
+        "description": "List of heading levels to exclude from the items list (e.g., [\"H2\", \"H3\"])"
+    },
+    {
+        "name": "items",
+        "type": "array",
+        "required": true,
+        "description": "List of items to display on the page",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "Text of the item to display on the page"
+            },
+            {
+                "name": "anchor",
+                "type": "string",
+                "required": true,
+                "description": "link for the item"
+            }
+        ]
+    }
+]
