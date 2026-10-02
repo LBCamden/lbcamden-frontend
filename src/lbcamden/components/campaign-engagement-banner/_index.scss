@@ -144,13 +144,13 @@
 
     &,
     & > p {
-      @include govuk-typography-responsive("18-campaign");
+      @include govuk-font("18-campaign");
     }
   }
 
   h2 {
     margin-bottom: govuk-spacing(4);
-    @include govuk-typography-responsive("36-campaign");
+    @include govuk-font("36-campaign");
     font-weight: 300;
   }
 }

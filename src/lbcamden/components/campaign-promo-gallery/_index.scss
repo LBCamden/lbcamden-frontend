@@ -31,7 +31,7 @@
     }
 
     a {
-      @include govuk-typography-responsive(24);
+      @include govuk-font(24);
       font-weight: 600;
       line-height: 116.667%;
 

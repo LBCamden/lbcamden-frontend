@@ -9,6 +9,7 @@
   overflow-x: hidden;
 
   background: lbcamden-colour("grey");
+  border-top: none;
 
   h3 {
     @extend .govuk-body-s;
